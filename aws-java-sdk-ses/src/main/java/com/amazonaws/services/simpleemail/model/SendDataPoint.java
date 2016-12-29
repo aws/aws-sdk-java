@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of
  * sending activity.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendDataPoint"/>AWS API Documentation</a>
  */
 public class SendDataPoint implements Serializable, Cloneable {
 

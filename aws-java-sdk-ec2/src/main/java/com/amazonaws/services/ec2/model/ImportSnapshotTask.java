@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an import snapshot task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshotTask"/>AWS API Documentation</a>
  */
 public class ImportSnapshotTask implements Serializable, Cloneable {
 

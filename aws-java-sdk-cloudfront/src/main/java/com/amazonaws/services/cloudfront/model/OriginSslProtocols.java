@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an
  * HTTPS connection with your origin.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/OriginSslProtocols"/>AWS API
+ *      Documentation</a>
  */
 public class OriginSslProtocols implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a schedule that is available for your Scheduled Instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstanceAvailability"/>AWS API
+ *      Documentation</a>
  */
 public class ScheduledInstanceAvailability implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the inputs for the <a>DescribeHapg</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg"/>AWS API Documentation</a>
  */
 public class DescribeHapgRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

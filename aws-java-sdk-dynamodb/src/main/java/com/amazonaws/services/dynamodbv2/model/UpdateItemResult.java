@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output of an <i>UpdateItem</i> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem"/>AWS API Documentation</a>
  */
 public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

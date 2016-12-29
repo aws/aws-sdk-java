@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a repository.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryMetadata"/>AWS API
+ *      Documentation</a>
  */
 public class RepositoryMetadata implements Serializable, Cloneable {
 

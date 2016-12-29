@@ -19,6 +19,9 @@ import java.io.Serializable;
  * When you start your application, you provide this configuration, which identifies the input source and the point in
  * the input source at which you want the application to start processing records.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class InputConfiguration implements Serializable, Cloneable {
 

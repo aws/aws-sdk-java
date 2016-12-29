@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Specifies the part of a web request that you want to inspect the size of and indicates whether you want to add the
  * specification to a <a>SizeConstraintSet</a> or delete it from a <code>SizeConstraintSet</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SizeConstraintSetUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class SizeConstraintSetUpdate implements Serializable, Cloneable {
 

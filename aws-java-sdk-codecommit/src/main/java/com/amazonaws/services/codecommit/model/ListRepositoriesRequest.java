@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a list repositories operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories"/>AWS API
+ *      Documentation</a>
  */
 public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

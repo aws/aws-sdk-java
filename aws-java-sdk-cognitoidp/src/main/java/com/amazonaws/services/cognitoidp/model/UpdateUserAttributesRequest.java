@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to update user attributes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

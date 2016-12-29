@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterSecurityGroup"/>AWS API
+ *      Documentation</a>
  */
 public class ClusterSecurityGroup implements Serializable, Cloneable {
 

@@ -26,6 +26,9 @@ import java.io.Serializable;
  * <p>
  * <code>"name2, "address2"</code>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CSVMappingParameters"/>AWS API
+ *      Documentation</a>
  */
 public class CSVMappingParameters implements Serializable, Cloneable {
 

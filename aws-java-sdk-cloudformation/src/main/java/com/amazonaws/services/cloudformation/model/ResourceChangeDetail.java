@@ -19,6 +19,9 @@ import java.io.Serializable;
  * For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the
  * changes AWS CloudFormation will make to that resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceChangeDetail"/>AWS API
+ *      Documentation</a>
  */
 public class ResourceChangeDetail implements Serializable, Cloneable {
 

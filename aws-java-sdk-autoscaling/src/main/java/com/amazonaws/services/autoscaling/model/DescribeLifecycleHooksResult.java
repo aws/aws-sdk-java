@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output of DescribeLifecycleHooks.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeLifecycleHooksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

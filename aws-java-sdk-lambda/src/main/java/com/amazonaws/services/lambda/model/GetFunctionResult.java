@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This response contains the object for the Lambda function location (see <a>FunctionCodeLocation</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction"/>AWS API Documentation</a>
  */
 public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

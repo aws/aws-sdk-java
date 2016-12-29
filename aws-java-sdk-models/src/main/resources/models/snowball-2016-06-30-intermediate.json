@@ -70,6 +70,7 @@
     "syncClient" : "AmazonSnowballClient",
     "syncClientBuilderClassName" : "AmazonSnowballClientBuilder",
     "syncInterface" : "AmazonSnowball",
+    "uid" : "snowball-2016-06-30",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

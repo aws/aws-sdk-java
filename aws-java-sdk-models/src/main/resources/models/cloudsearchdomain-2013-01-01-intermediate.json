@@ -91,6 +91,7 @@
     "syncClient" : "AmazonCloudSearchDomainClient",
     "syncClientBuilderClassName" : "AmazonCloudSearchDomainClientBuilder",
     "syncInterface" : "AmazonCloudSearchDomain",
+    "uid" : "cloudsearchdomain-2013-01-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

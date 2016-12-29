@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a delete pipeline action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline"/>AWS API
+ *      Documentation</a>
  */
 public class DeletePipelineRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

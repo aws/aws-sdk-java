@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a <code>CreateCacheParameterGroup</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheParameterGroup"/>AWS API
+ *      Documentation</a>
  */
 public class CacheParameterGroup implements Serializable, Cloneable {
 

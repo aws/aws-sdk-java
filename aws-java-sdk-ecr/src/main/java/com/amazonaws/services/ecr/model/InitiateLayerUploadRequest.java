@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload"/>AWS API Documentation</a>
  */
 public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

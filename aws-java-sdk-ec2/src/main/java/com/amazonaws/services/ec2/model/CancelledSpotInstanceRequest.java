@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a request to cancel a Spot instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelledSpotInstanceRequest"/>AWS API
+ *      Documentation</a>
  */
 public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 

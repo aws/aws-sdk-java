@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * The response to a successful DescribeIdentityUsage request.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeIdentityUsageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

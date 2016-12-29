@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession"/>AWS API Documentation</a>
  */
 public class ExpireSessionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

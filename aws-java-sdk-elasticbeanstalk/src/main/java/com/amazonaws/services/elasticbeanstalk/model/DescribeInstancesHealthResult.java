@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

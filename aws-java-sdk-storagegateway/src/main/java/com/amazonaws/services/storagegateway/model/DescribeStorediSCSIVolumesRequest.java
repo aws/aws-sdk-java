@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A JSON object containing a list of <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeStorediSCSIVolumesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

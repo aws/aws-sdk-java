@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input argument to the <a>AddJobFlowSteps</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps"/>AWS API
+ *      Documentation</a>
  */
 public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

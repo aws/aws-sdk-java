@@ -167,6 +167,8 @@ public interface AWSHealth {
      * @throws UnsupportedLocaleException
      *         The specified locale is not supported.
      * @sample AWSHealth.DescribeAffectedEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities"/>AWS API
+     *      Documentation</a>
      */
     DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest);
 
@@ -179,6 +181,8 @@ public interface AWSHealth {
      * @param describeEntityAggregatesRequest
      * @return Result of the DescribeEntityAggregates operation returned by the service.
      * @sample AWSHealth.DescribeEntityAggregates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates"/>AWS API
+     *      Documentation</a>
      */
     DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest);
 
@@ -193,6 +197,8 @@ public interface AWSHealth {
      * @throws InvalidPaginationTokenException
      *         The specified pagination token (<code>nextToken</code>) is not valid.
      * @sample AWSHealth.DescribeEventAggregates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates"/>AWS API
+     *      Documentation</a>
      */
     DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest);
 
@@ -212,6 +218,8 @@ public interface AWSHealth {
      * @throws UnsupportedLocaleException
      *         The specified locale is not supported.
      * @sample AWSHealth.DescribeEventDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails"/>AWS API
+     *      Documentation</a>
      */
     DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest);
 
@@ -228,6 +236,8 @@ public interface AWSHealth {
      * @throws UnsupportedLocaleException
      *         The specified locale is not supported.
      * @sample AWSHealth.DescribeEventTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes"/>AWS API
+     *      Documentation</a>
      */
     DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest describeEventTypesRequest);
 
@@ -250,6 +260,7 @@ public interface AWSHealth {
      * @throws UnsupportedLocaleException
      *         The specified locale is not supported.
      * @sample AWSHealth.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents"/>AWS API Documentation</a>
      */
     DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest);
 

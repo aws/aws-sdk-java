@@ -46,6 +46,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateCloudFrontOriginAccessIdentity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
             CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest);
@@ -68,6 +71,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateCloudFrontOriginAccessIdentity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
             CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest,
@@ -83,6 +89,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new distribution.
      * @return A Java Future containing the result of the CreateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest);
 
@@ -100,6 +108,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult> asyncHandler);
@@ -113,6 +123,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new distribution with tags.
      * @return A Java Future containing the result of the CreateDistributionWithTags operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateDistributionWithTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
             CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
@@ -130,6 +142,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDistributionWithTags operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateDistributionWithTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
             CreateDistributionWithTagsRequest createDistributionWithTagsRequest,
@@ -144,6 +158,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create an invalidation.
      * @return A Java Future containing the result of the CreateInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateInvalidation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest createInvalidationRequest);
 
@@ -160,6 +176,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateInvalidation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest createInvalidationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult> asyncHandler);
@@ -201,6 +219,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new streaming distribution.
      * @return A Java Future containing the result of the CreateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateStreamingDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(
             CreateStreamingDistributionRequest createStreamingDistributionRequest);
@@ -246,6 +266,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateStreamingDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(
             CreateStreamingDistributionRequest createStreamingDistributionRequest,
@@ -261,6 +283,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateStreamingDistributionWithTags operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateStreamingDistributionWithTags
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
             CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest);
@@ -279,6 +304,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateStreamingDistributionWithTags operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateStreamingDistributionWithTags
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
             CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest,
@@ -294,6 +322,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.DeleteCloudFrontOriginAccessIdentity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
@@ -312,6 +343,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteCloudFrontOriginAccessIdentity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest,
@@ -386,6 +420,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        >Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest);
 
@@ -462,6 +498,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult> asyncHandler);
@@ -536,6 +574,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to delete a streaming distribution.
      * @return A Java Future containing the result of the DeleteStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteStreamingDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
@@ -614,6 +654,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteStreamingDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest,
@@ -629,6 +671,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetCloudFrontOriginAccessIdentity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult> getCloudFrontOriginAccessIdentityAsync(
             GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
@@ -647,6 +692,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetCloudFrontOriginAccessIdentity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult> getCloudFrontOriginAccessIdentityAsync(
             GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest,
@@ -663,6 +711,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentityConfig operation returned by
      *         the service.
      * @sample AmazonCloudFrontAsync.GetCloudFrontOriginAccessIdentityConfig
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult> getCloudFrontOriginAccessIdentityConfigAsync(
             GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest);
@@ -682,6 +733,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentityConfig operation returned by
      *         the service.
      * @sample AmazonCloudFrontAsyncHandler.GetCloudFrontOriginAccessIdentityConfig
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult> getCloudFrontOriginAccessIdentityConfigAsync(
             GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest,
@@ -696,6 +750,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a distribution's information.
      * @return A Java Future containing the result of the GetDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionResult> getDistributionAsync(GetDistributionRequest getDistributionRequest);
 
@@ -712,6 +768,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionResult> getDistributionAsync(GetDistributionRequest getDistributionRequest,
             com.amazonaws.handlers.AsyncHandler<GetDistributionRequest, GetDistributionResult> asyncHandler);
@@ -725,6 +783,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a distribution configuration.
      * @return A Java Future containing the result of the GetDistributionConfig operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetDistributionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionConfigResult> getDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest);
 
@@ -741,6 +801,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDistributionConfig operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetDistributionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionConfigResult> getDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest,
             com.amazonaws.handlers.AsyncHandler<GetDistributionConfigRequest, GetDistributionConfigResult> asyncHandler);
@@ -754,6 +816,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get an invalidation's information.
      * @return A Java Future containing the result of the GetInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetInvalidation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest getInvalidationRequest);
 
@@ -770,6 +834,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetInvalidation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest getInvalidationRequest,
             com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult> asyncHandler);
@@ -783,6 +849,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a streaming distribution's information.
      * @return A Java Future containing the result of the GetStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetStreamingDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest);
 
@@ -799,6 +867,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetStreamingDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest,
             com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionRequest, GetStreamingDistributionResult> asyncHandler);
@@ -813,6 +883,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetStreamingDistributionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetStreamingDistributionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionConfigResult> getStreamingDistributionConfigAsync(
             GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
@@ -831,6 +903,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetStreamingDistributionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetStreamingDistributionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionConfigResult> getStreamingDistributionConfigAsync(
             GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest,
@@ -846,6 +920,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListCloudFrontOriginAccessIdentities operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.ListCloudFrontOriginAccessIdentities
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest);
@@ -864,6 +941,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListCloudFrontOriginAccessIdentities operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.ListCloudFrontOriginAccessIdentities
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest,
@@ -878,6 +958,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list your distributions.
      * @return A Java Future containing the result of the ListDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest listDistributionsRequest);
 
@@ -894,6 +976,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListDistributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest listDistributionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult> asyncHandler);
@@ -907,6 +991,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list distributions that are associated with a specified AWS WAF web ACL.
      * @return A Java Future containing the result of the ListDistributionsByWebACLId operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributionsByWebACLId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(
             ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
@@ -924,6 +1010,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDistributionsByWebACLId operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListDistributionsByWebACLId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(
             ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest,
@@ -938,6 +1026,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list invalidations.
      * @return A Java Future containing the result of the ListInvalidations operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListInvalidations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest);
 
@@ -954,6 +1044,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListInvalidations operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListInvalidations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler);
@@ -967,6 +1059,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list your streaming distributions.
      * @return A Java Future containing the result of the ListStreamingDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListStreamingDistributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(
             ListStreamingDistributionsRequest listStreamingDistributionsRequest);
@@ -984,6 +1078,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStreamingDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListStreamingDistributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(
             ListStreamingDistributionsRequest listStreamingDistributionsRequest,
@@ -998,6 +1094,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list tags for a CloudFront resource.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -1014,6 +1112,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
@@ -1027,6 +1127,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to add tags to a CloudFront resource.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
@@ -1043,6 +1145,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
@@ -1056,6 +1160,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to remove tags from a CloudFront resource.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
@@ -1072,6 +1178,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
@@ -1086,6 +1194,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.UpdateCloudFrontOriginAccessIdentity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult> updateCloudFrontOriginAccessIdentityAsync(
             UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest);
@@ -1104,6 +1215,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateCloudFrontOriginAccessIdentity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult> updateCloudFrontOriginAccessIdentityAsync(
             UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest,
@@ -1118,6 +1232,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to update a distribution.
      * @return A Java Future containing the result of the UpdateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest);
 
@@ -1134,6 +1250,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult> asyncHandler);
@@ -1147,6 +1265,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to update a streaming distribution.
      * @return A Java Future containing the result of the UpdateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdateStreamingDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateStreamingDistributionResult> updateStreamingDistributionAsync(
             UpdateStreamingDistributionRequest updateStreamingDistributionRequest);
@@ -1164,6 +1284,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateStreamingDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateStreamingDistributionResult> updateStreamingDistributionAsync(
             UpdateStreamingDistributionRequest updateStreamingDistributionRequest,

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a cross-account destination that receives subscription log events.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/Destination"/>AWS API Documentation</a>
  */
 public class Destination implements Serializable, Cloneable {
 

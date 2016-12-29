@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an association of an SSM document and an instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Association"/>AWS API Documentation</a>
  */
 public class Association implements Serializable, Cloneable {
 

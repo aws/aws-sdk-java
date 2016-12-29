@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The tags associated with a resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/TagDescription"/>AWS API
+ *      Documentation</a>
  */
 public class TagDescription implements Serializable, Cloneable {
 

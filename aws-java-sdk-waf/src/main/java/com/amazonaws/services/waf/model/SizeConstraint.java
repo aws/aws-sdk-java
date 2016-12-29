@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is
  * true, the <code>SizeConstraint</code> is considered to match.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SizeConstraint"/>AWS API
+ *      Documentation</a>
  */
 public class SizeConstraint implements Serializable, Cloneable {
 

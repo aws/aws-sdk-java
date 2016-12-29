@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an import instance task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstanceTaskDetails"/>AWS API
+ *      Documentation</a>
  */
 public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 

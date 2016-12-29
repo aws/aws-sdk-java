@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "cloudformation",
     "targetPrefix" : null,
+    "uid" : "cloudformation-2010-05-15",
     "xmlNamespace" : "http://cloudformation.amazonaws.com/doc/2010-05-15/"
   },
   "operations" : {

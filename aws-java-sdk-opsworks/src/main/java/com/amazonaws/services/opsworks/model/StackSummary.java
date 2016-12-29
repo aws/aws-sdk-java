@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Summarizes the number of layers, instances, and apps in a stack.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StackSummary"/>AWS API Documentation</a>
  */
 public class StackSummary implements Serializable, Cloneable {
 

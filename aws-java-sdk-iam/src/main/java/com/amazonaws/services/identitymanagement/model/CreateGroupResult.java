@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the response to a successful <a>CreateGroup</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup"/>AWS API Documentation</a>
  */
 public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A time zone associated with a <a>DBInstance</a> or a <a>DBSnapshot</a>. This data type is an element in the response
  * to the <a>DescribeDBInstances</a>, the <a>DescribeDBSnapshots</a>, and the <a>DescribeDBEngineVersions</a> actions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Timezone"/>AWS API Documentation</a>
  */
 public class Timezone implements Serializable, Cloneable {
 

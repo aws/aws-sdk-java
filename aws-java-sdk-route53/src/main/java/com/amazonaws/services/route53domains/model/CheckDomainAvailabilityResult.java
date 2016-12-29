@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The CheckDomainAvailability response includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability"/>AWS API
+ *      Documentation</a>
  */
 public class CheckDomainAvailabilityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

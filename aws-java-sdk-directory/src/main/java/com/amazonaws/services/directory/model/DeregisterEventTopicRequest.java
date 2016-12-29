@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Removes the specified directory as a publisher to the specified SNS topic.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic"/>AWS API Documentation</a>
  */
 public class DeregisterEventTopicRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -16,6 +16,7 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph"/>AWS API Documentation</a>
  */
 public class GetTraceGraphResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and
  * fleet ID.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ScalingPolicy"/>AWS API Documentation</a>
  */
 public class ScalingPolicy implements Serializable, Cloneable {
 

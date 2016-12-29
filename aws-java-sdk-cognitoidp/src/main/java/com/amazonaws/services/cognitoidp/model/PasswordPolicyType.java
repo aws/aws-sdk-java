@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The password policy type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/PasswordPolicyType"/>AWS API
+ *      Documentation</a>
  */
 public class PasswordPolicyType implements Serializable, Cloneable {
 

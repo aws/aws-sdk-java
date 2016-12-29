@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents a log event, which is a record of activity that was recorded by the application or resource being
  * monitored.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/InputLogEvent"/>AWS API Documentation</a>
  */
 public class InputLogEvent implements Serializable, Cloneable {
 

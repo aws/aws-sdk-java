@@ -19,6 +19,9 @@ import java.io.Serializable;
  * An output for the specified Product object created as the result of a request. For example, a CloudFormation-backed
  * product that creates an S3 bucket would have an output for the S3 bucket URL.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordOutput"/>AWS API
+ *      Documentation</a>
  */
 public class RecordOutput implements Serializable, Cloneable {
 

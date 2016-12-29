@@ -19,6 +19,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Request to list an environment's upcoming and in-progress managed actions.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeEnvironmentManagedActionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -28,6 +28,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How CloudFront Forwards
  * and Caches Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/Headers"/>AWS API Documentation</a>
  */
 public class Headers implements Serializable, Cloneable {
 

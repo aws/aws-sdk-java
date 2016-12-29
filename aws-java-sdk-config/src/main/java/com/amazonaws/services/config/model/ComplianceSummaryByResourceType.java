@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The number of AWS resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each
  * compliance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceSummaryByResourceType"/>AWS API
+ *      Documentation</a>
  */
 public class ComplianceSummaryByResourceType implements Serializable, Cloneable {
 

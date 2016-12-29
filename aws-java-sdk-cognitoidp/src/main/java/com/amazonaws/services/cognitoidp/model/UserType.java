@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The user type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserType"/>AWS API Documentation</a>
  */
 public class UserType implements Serializable, Cloneable {
 

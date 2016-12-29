@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "polly",
     "targetPrefix" : null,
+    "uid" : "polly-2016-06-10",
     "xmlNamespace" : null
   },
   "operations" : {

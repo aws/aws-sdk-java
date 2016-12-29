@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a trust relationship between an Microsoft AD in the AWS cloud and an external domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Trust"/>AWS API Documentation</a>
  */
 public class Trust implements Serializable, Cloneable {
 

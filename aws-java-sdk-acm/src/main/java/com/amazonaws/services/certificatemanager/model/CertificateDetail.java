@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Contains detailed metadata about an ACM Certificate. This structure is returned in the response to a
  * <a>DescribeCertificate</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CertificateDetail"/>AWS API Documentation</a>
  */
 public class CertificateDetail implements Serializable, Cloneable {
 

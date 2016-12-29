@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains input to the ResolveCustomer operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer"/>AWS API
+ *      Documentation</a>
  */
 public class ResolveCustomerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

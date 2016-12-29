@@ -86,6 +86,7 @@
     "syncClient" : "AWSKMSClient",
     "syncClientBuilderClassName" : "AWSKMSClientBuilder",
     "syncInterface" : "AWSKMS",
+    "uid" : "kms-2014-11-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

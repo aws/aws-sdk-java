@@ -22,6 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
  * SES Developer Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies"/>AWS API
+ *      Documentation</a>
  */
 public class ListIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes stack or user permissions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Permission"/>AWS API Documentation</a>
  */
 public class Permission implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

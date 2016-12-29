@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object representing an Amazon ECR image layer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Layer"/>AWS API Documentation</a>
  */
 public class Layer implements Serializable, Cloneable {
 

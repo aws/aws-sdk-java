@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The Docker and Amazon ECS container agent version information about a container instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/VersionInfo"/>AWS API Documentation</a>
  */
 public class VersionInfo implements Serializable, Cloneable {
 

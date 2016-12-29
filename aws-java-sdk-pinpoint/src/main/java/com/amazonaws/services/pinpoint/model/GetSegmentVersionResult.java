@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class GetSegmentVersionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private SegmentResponse segmentResponse;

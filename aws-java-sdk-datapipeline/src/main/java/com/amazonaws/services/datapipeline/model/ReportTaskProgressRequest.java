@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for ReportTaskProgress.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress"/>AWS API
+ *      Documentation</a>
  */
 public class ReportTaskProgressRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

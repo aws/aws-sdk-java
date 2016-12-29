@@ -24,6 +24,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
  * <i>AWS Key Management Service Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantConstraints"/>AWS API Documentation</a>
  */
 public class GrantConstraints implements Serializable, Cloneable {
 

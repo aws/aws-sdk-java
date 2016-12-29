@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the properties of the Dedicated Host.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Host"/>AWS API Documentation</a>
  */
 public class Host implements Serializable, Cloneable {
 

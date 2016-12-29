@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Container definitions are used in task definitions to describe the different containers that are launched as part of
  * a task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDefinition"/>AWS API Documentation</a>
  */
 public class ContainerDefinition implements Serializable, Cloneable {
 

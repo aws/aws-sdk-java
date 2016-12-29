@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>ModifyDBInstance</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingModifiedValues"/>AWS API Documentation</a>
  */
 public class PendingModifiedValues implements Serializable, Cloneable {
 

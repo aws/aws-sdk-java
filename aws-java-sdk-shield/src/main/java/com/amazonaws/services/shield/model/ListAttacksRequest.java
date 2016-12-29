@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks"/>AWS API Documentation</a>
  */
 public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

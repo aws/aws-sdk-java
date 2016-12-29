@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * CreateTapesInput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes"/>AWS API
+ *      Documentation</a>
  */
 public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A collection of one or more problems, grouped by their result.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UniqueProblem"/>AWS API Documentation</a>
  */
 public class UniqueProblem implements Serializable, Cloneable {
 

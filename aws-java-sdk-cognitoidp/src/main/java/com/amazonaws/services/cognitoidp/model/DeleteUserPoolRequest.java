@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to delete a user pool.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about each entry in the key list.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/KeyListEntry"/>AWS API Documentation</a>
  */
 public class KeyListEntry implements Serializable, Cloneable {
 

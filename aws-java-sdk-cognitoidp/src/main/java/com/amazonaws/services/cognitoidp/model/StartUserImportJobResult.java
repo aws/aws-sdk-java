@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server to the request to start the user import job.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob"/>AWS API
+ *      Documentation</a>
  */
 public class StartUserImportJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

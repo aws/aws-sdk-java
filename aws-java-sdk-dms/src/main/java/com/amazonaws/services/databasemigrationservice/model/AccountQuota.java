@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a quota for an AWS account, for example, the number of replication instances allowed.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AccountQuota"/>AWS API Documentation</a>
  */
 public class AccountQuota implements Serializable, Cloneable {
 

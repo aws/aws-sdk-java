@@ -81,6 +81,7 @@
     "syncClient" : "AWSBudgetsClient",
     "syncClientBuilderClassName" : "AWSBudgetsClientBuilder",
     "syncInterface" : "AWSBudgets",
+    "uid" : "budgets-2016-10-20",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

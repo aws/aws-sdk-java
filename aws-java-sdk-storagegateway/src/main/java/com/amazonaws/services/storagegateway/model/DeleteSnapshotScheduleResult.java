@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteSnapshotScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A summary of an invalidation request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/InvalidationSummary"/>AWS API
+ *      Documentation</a>
  */
 public class InvalidationSummary implements Serializable, Cloneable {
 

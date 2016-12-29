@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "kinesis",
     "targetPrefix" : "Kinesis_20131202",
+    "uid" : "kinesis-2013-12-02",
     "xmlNamespace" : null
   },
   "operations" : {

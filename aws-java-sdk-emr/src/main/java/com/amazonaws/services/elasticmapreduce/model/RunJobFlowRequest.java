@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Input to the <a>RunJobFlow</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow"/>AWS API
+ *      Documentation</a>
  */
 public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

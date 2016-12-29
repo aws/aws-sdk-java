@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the destination for a delivery stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DestinationDescription"/>AWS API
+ *      Documentation</a>
  */
 public class DestinationDescription implements Serializable, Cloneable {
 

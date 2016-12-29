@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the results of the <a>UpdateRadius</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius"/>AWS API Documentation</a>
  */
 public class UpdateRadiusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

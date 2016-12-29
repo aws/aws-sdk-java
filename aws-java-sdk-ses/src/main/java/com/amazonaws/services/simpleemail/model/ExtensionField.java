@@ -23,6 +23,8 @@ import java.io.Serializable;
  * For information about receiving email through Amazon SES, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ExtensionField"/>AWS API Documentation</a>
  */
 public class ExtensionField implements Serializable, Cloneable {
 

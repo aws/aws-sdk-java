@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The details of the fleet error.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/FleetError"/>AWS API Documentation</a>
  */
 public class FleetError implements Serializable, Cloneable {
 

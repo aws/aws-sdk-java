@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationSummary"/>AWS API
+ *      Documentation</a>
  */
 public class ApplicationSummary implements Serializable, Cloneable {
 

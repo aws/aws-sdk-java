@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs"/>AWS API
+ *      Documentation</a>
  */
 public class SwapEnvironmentCNAMEsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

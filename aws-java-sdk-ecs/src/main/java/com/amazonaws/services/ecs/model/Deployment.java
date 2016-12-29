@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The details of an Amazon ECS service deployment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Deployment"/>AWS API Documentation</a>
  */
 public class Deployment implements Serializable, Cloneable {
 

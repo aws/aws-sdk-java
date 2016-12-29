@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information collected from managed instances based on your inventory policy document
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryItem"/>AWS API Documentation</a>
  */
 public class InventoryItem implements Serializable, Cloneable {
 

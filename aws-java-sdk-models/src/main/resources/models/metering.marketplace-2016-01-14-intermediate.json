@@ -70,6 +70,7 @@
     "syncClient" : "AWSMarketplaceMeteringClient",
     "syncClientBuilderClassName" : "AWSMarketplaceMeteringClientBuilder",
     "syncInterface" : "AWSMarketplaceMetering",
+    "uid" : "meteringmarketplace-2016-01-14",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

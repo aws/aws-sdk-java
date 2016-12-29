@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The type of code delivery details being returned from the server.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CodeDeliveryDetailsType"/>AWS API
+ *      Documentation</a>
  */
 public class CodeDeliveryDetailsType implements Serializable, Cloneable {
 

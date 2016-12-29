@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Response statistics for a service.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ServiceStatistics"/>AWS API Documentation</a>
  */
 public class ServiceStatistics implements Serializable, Cloneable {
 

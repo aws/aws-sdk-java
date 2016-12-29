@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion"/>AWS API
+ *      Documentation</a>
  */
 public class DownloadDBLogFilePortionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

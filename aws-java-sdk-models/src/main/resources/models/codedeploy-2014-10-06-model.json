@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "codedeploy",
     "targetPrefix" : "CodeDeploy_20141006",
+    "uid" : "codedeploy-2014-10-06",
     "xmlNamespace" : null
   },
   "operations" : {

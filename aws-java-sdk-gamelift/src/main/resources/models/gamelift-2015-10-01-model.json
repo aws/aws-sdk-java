@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "gamelift",
     "targetPrefix" : "GameLift",
+    "uid" : "gamelift-2015-10-01",
     "xmlNamespace" : null
   },
   "operations" : {

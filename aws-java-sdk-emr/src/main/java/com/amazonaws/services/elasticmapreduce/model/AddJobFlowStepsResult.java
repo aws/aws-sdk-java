@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for the <a>AddJobFlowSteps</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps"/>AWS API
+ *      Documentation</a>
  */
 public class AddJobFlowStepsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

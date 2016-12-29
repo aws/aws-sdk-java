@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition"/>AWS API
+ *      Documentation</a>
  */
 public class EnableStageTransitionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeDatasetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the of the gateway whose bandwidth rate information was deleted.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteBandwidthRateLimitResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

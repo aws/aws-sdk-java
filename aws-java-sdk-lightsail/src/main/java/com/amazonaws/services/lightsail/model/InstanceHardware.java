@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the hardware for the instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceHardware"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceHardware implements Serializable, Cloneable {
 

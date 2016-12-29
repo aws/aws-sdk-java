@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents a global secondary index to be deleted from an existing table.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteGlobalSecondaryIndexAction"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteGlobalSecondaryIndexAction implements Serializable, Cloneable {
 

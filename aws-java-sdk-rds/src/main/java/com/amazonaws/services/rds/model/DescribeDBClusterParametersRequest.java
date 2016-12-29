@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

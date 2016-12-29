@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * IP address block. This is often the address block of the DNS server used for your on-premises domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRoute"/>AWS API Documentation</a>
  */
 public class IpRoute implements Serializable, Cloneable {
 

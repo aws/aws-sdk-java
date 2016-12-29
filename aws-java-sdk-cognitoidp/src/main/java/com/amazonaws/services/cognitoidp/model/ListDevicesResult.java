@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the response to list devices.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices"/>AWS API Documentation</a>
  */
 public class ListDevicesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -70,6 +70,7 @@
     "syncClient" : "AWSHealthClient",
     "syncClientBuilderClassName" : "AWSHealthClientBuilder",
     "syncInterface" : "AWSHealth",
+    "uid" : "health-2016-08-04",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

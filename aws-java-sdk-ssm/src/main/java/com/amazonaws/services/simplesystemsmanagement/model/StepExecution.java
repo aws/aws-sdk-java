@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Detailed information about an the execution state of an Automation step.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StepExecution"/>AWS API Documentation</a>
  */
 public class StepExecution implements Serializable, Cloneable {
 

@@ -24,6 +24,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
  * DynamoDB Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughput"/>AWS API
+ *      Documentation</a>
  */
 public class ProvisionedThroughput implements Serializable, Cloneable {
 

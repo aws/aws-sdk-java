@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The constraints that the administrator has put on the parameter.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ParameterConstraints"/>AWS API
+ *      Documentation</a>
  */
 public class ParameterConstraints implements Serializable, Cloneable {
 

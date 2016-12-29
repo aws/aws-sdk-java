@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an app's SSL configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SslConfiguration"/>AWS API Documentation</a>
  */
 public class SslConfiguration implements Serializable, Cloneable {
 

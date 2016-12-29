@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Provides code size usage and function count associated with the current account and region.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountUsage"/>AWS API Documentation</a>
  */
 public class AccountUsage implements Serializable, Cloneable {
 

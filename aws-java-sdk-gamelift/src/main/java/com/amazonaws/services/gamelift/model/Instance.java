@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Properties that describe an instance of a virtual computing resource that hosts one or more game servers. A fleet
  * contains zero or more instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance"/>AWS API Documentation</a>
  */
 public class Instance implements Serializable, Cloneable {
 

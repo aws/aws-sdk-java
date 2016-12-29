@@ -86,6 +86,7 @@
     "syncClient" : "AmazonDirectConnectClient",
     "syncClientBuilderClassName" : "AmazonDirectConnectClientBuilder",
     "syncInterface" : "AmazonDirectConnect",
+    "uid" : "directconnect-2012-10-25",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

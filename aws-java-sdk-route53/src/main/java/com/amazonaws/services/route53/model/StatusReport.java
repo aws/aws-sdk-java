@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health
  * check.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/StatusReport"/>AWS API Documentation</a>
  */
 public class StatusReport implements Serializable, Cloneable {
 

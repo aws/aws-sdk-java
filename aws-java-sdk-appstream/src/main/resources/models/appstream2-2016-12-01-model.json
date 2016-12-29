@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "appstream",
     "targetPrefix" : "PhotonAdminProxyService",
+    "uid" : "appstream-2016-12-01",
     "xmlNamespace" : null
   },
   "operations" : {

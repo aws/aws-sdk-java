@@ -24,6 +24,9 @@ import java.io.Serializable;
  * an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.
  * </p>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/InstanceIdentity"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceIdentity implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Identifiers for the federated user that is associated with the credentials.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/FederatedUser"/>AWS API Documentation</a>
  */
 public class FederatedUser implements Serializable, Cloneable {
 

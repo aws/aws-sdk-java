@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the limit price of a Reserved Instance offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstanceLimitPrice"/>AWS API
+ *      Documentation</a>
  */
 public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
 

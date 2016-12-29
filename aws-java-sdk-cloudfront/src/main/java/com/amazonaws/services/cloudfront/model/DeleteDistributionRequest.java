@@ -80,6 +80,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a
  * Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteDistributionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

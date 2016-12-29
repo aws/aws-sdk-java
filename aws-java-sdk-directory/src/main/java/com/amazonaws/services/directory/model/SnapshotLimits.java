@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains manual snapshot limit information for a directory.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SnapshotLimits"/>AWS API Documentation</a>
  */
 public class SnapshotLimits implements Serializable, Cloneable {
 

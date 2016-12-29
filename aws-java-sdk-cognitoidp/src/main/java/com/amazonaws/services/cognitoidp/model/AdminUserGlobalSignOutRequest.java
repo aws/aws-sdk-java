@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The request to sign out of all devices, as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut"/>AWS API
+ *      Documentation</a>
  */
 public class AdminUserGlobalSignOutRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Value of a segment annotation. Has one of three value types: Number, Boolean or String.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/AnnotationValue"/>AWS API Documentation</a>
  */
 public class AnnotationValue implements Serializable, Cloneable {
 

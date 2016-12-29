@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain"/>AWS API Documentation</a>
  */
 public class GetDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

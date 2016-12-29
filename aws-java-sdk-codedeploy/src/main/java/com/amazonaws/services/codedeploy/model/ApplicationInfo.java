@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about an application.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ApplicationInfo"/>AWS API
+ *      Documentation</a>
  */
 public class ApplicationInfo implements Serializable, Cloneable {
 

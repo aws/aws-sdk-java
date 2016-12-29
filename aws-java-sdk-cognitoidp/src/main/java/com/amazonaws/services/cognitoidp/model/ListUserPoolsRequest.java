@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to list user pools.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools"/>AWS API Documentation</a>
  */
 public class ListUserPoolsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

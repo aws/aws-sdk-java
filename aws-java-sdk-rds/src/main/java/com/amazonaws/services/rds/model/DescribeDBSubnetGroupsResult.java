@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeDBSubnetGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

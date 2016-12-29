@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes
  * consumed by all children.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceMinutes"/>AWS API Documentation</a>
  */
 public class DeviceMinutes implements Serializable, Cloneable {
 

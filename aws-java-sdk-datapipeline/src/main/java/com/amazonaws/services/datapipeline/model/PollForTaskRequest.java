@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for PollForTask.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask"/>AWS API Documentation</a>
  */
 public class PollForTaskRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

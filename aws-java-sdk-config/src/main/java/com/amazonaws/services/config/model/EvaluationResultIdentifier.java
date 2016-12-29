@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Uniquely identifies an evaluation result.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResultIdentifier"/>AWS API
+ *      Documentation</a>
  */
 public class EvaluationResultIdentifier implements Serializable, Cloneable {
 

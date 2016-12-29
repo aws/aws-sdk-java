@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provides information about a pending maintenance action for a resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingMaintenanceAction"/>AWS API
+ *      Documentation</a>
  */
 public class PendingMaintenanceAction implements Serializable, Cloneable {
 

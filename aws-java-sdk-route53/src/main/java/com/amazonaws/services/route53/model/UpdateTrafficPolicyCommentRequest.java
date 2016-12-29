@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A complex type that contains information about the traffic policy for which you want to update the comment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

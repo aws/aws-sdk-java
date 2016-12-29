@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class EndpointResponse implements Serializable, Cloneable {
 
     /** The address or token of the endpoint. */

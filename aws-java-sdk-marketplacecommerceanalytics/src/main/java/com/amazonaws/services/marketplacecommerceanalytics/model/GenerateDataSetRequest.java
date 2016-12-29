@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the GenerateDataSet operation.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"/>AWS
+ *      API Documentation</a>
  */
 public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

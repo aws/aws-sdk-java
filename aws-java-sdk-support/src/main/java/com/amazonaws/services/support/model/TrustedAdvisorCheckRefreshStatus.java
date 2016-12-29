@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The refresh status of a Trusted Advisor check.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCheckRefreshStatus"/>AWS API
+ *      Documentation</a>
  */
 public class TrustedAdvisorCheckRefreshStatus implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage"/>AWS API
+ *      Documentation</a>
  */
 public class BatchMeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

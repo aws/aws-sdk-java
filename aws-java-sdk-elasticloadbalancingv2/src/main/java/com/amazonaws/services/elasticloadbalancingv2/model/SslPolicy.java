@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a policy used for SSL negotiation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SslPolicy"/>AWS API
+ *      Documentation</a>
  */
 public class SslPolicy implements Serializable, Cloneable {
 

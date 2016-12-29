@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationSubnetGroup"/>AWS API
+ *      Documentation</a>
  */
 public class ReplicationSubnetGroup implements Serializable, Cloneable {
 

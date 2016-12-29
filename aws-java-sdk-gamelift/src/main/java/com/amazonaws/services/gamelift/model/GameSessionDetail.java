@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A game session's properties and the protection policy currently in force.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionDetail"/>AWS API
+ *      Documentation</a>
  */
 public class GameSessionDetail implements Serializable, Cloneable {
 

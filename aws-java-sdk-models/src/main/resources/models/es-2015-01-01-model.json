@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "es",
     "targetPrefix" : null,
+    "uid" : "es-2015-01-01",
     "xmlNamespace" : null
   },
   "operations" : {

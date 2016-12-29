@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is
  * in progress or will be applied.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PendingModifiedValues"/>AWS API
+ *      Documentation</a>
  */
 public class PendingModifiedValues implements Serializable, Cloneable {
 

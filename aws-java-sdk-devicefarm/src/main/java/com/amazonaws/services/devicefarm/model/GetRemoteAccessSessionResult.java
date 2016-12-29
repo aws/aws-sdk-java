@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server that lists detailed information about the remote access session.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession"/>AWS API
+ *      Documentation</a>
  */
 public class GetRemoteAccessSessionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

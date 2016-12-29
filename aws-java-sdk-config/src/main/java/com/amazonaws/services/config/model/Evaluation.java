@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Evaluation"/>AWS API Documentation</a>
  */
 public class Evaluation implements Serializable, Cloneable {
 

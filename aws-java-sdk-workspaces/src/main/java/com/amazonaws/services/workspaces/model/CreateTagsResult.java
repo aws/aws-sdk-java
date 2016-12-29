@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The result of the <a>CreateTags</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags"/>AWS API Documentation</a>
  */
 public class CreateTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -21,6 +21,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a member of the <code> <a>Statement</a> </code> type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Position"/>AWS API Documentation</a>
  */
 public class Position implements Serializable, Cloneable {
 

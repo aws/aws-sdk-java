@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the storage parameters for S3 and S3 buckets for an instance store-backed AMI.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/S3Storage"/>AWS API Documentation</a>
  */
 public class S3Storage implements Serializable, Cloneable {
 

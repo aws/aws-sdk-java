@@ -19,6 +19,8 @@ import java.io.Serializable;
  * For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one
  * dimension.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Dimension"/>AWS API Documentation</a>
  */
 public class Dimension implements Serializable, Cloneable {
 

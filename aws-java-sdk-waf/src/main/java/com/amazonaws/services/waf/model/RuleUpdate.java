@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and indicates whether you want to add it to a
  * <code>Rule</code> or delete it from a <code>Rule</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RuleUpdate"/>AWS API Documentation</a>
  */
 public class RuleUpdate implements Serializable, Cloneable {
 

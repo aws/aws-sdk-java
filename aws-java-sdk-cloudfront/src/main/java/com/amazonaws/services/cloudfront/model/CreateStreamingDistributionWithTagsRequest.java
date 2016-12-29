@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The request to create a new streaming distribution with tags.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags"/>AWS
+ *      API Documentation</a>
  */
 public class CreateStreamingDistributionWithTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

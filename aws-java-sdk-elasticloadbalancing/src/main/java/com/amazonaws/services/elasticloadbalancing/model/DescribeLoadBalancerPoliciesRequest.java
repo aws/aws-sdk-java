@@ -19,6 +19,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DescribeLoadBalancerPolicies.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeLoadBalancerPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

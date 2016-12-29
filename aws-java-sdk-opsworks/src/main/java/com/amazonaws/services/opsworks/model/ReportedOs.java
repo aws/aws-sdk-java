@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A registered instance's reported operating system.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ReportedOs"/>AWS API Documentation</a>
  */
 public class ReportedOs implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media
  * files for distribution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/S3Origin"/>AWS API Documentation</a>
  */
 public class S3Origin implements Serializable, Cloneable {
 

@@ -328,6 +328,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.DeleteScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
@@ -387,6 +389,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.DeregisterScalableTarget
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeregisterScalableTargetResult deregisterScalableTarget(DeregisterScalableTargetRequest deregisterScalableTargetRequest) {
@@ -444,6 +449,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.DescribeScalableTargets
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeScalableTargetsResult describeScalableTargets(DescribeScalableTargetsRequest describeScalableTargetsRequest) {
@@ -503,6 +511,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.DescribeScalingActivities
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
@@ -568,6 +579,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.DescribeScalingPolicies
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
@@ -640,6 +654,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.PutScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
@@ -699,6 +715,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.RegisterScalableTarget
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public RegisterScalableTargetResult registerScalableTarget(RegisterScalableTargetRequest registerScalableTargetRequest) {

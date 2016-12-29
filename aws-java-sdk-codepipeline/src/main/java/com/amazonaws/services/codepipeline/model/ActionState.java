@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents information about the state of an action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionState"/>AWS API Documentation</a>
  */
 public class ActionState implements Serializable, Cloneable {
 

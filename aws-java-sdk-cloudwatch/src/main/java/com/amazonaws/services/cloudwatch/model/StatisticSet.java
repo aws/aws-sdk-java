@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a set of statistics that describes a specific metric.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StatisticSet"/>AWS API Documentation</a>
  */
 public class StatisticSet implements Serializable, Cloneable {
 

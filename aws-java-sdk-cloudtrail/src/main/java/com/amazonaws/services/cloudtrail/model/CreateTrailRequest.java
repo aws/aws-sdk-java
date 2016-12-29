@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Specifies the settings for each trail.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail"/>AWS API Documentation</a>
  */
 public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

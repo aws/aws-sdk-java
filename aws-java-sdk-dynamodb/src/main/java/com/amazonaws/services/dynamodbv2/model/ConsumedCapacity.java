@@ -22,6 +22,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
  * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ConsumedCapacity"/>AWS API Documentation</a>
  */
 public class ConsumedCapacity implements Serializable, Cloneable {
 

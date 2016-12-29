@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the verification attributes of a single identity.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityVerificationAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class IdentityVerificationAttributes implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the result of a delete upload request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload"/>AWS API Documentation</a>
  */
 public class DeleteUploadResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

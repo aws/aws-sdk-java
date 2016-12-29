@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a get pipeline action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline"/>AWS API Documentation</a>
  */
 public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

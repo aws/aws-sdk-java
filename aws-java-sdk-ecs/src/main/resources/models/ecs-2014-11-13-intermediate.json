@@ -101,6 +101,7 @@
     "syncClient" : "AmazonECSClient",
     "syncClientBuilderClassName" : "AmazonECSClientBuilder",
     "syncInterface" : "AmazonECS",
+    "uid" : "ecs-2014-11-13",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

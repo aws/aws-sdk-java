@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics"/>AWS API Documentation</a>
  */
 public class ListTopicsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

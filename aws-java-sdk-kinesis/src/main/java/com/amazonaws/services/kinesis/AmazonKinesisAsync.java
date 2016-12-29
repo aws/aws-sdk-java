@@ -43,6 +43,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>AddTagsToStream</code>.
      * @return A Java Future containing the result of the AddTagsToStream operation returned by the service.
      * @sample AmazonKinesisAsync.AddTagsToStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddTagsToStreamResult> addTagsToStreamAsync(AddTagsToStreamRequest addTagsToStreamRequest);
 
@@ -63,6 +65,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTagsToStream operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.AddTagsToStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddTagsToStreamResult> addTagsToStreamAsync(AddTagsToStreamRequest addTagsToStreamRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsToStreamRequest, AddTagsToStreamResult> asyncHandler);
@@ -124,6 +128,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>CreateStream</code>.
      * @return A Java Future containing the result of the CreateStream operation returned by the service.
      * @sample AmazonKinesisAsync.CreateStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest createStreamRequest);
 
@@ -188,6 +193,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStream operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.CreateStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest createStreamRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler);
@@ -222,6 +228,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @return A Java Future containing the result of the DecreaseStreamRetentionPeriod operation returned by the
      *         service.
      * @sample AmazonKinesisAsync.DecreaseStreamRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DecreaseStreamRetentionPeriodResult> decreaseStreamRetentionPeriodAsync(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest);
@@ -245,6 +253,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @return A Java Future containing the result of the DecreaseStreamRetentionPeriod operation returned by the
      *         service.
      * @sample AmazonKinesisAsyncHandler.DecreaseStreamRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DecreaseStreamRetentionPeriodResult> decreaseStreamRetentionPeriodAsync(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest,
@@ -281,6 +291,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <a>DeleteStream</a>.
      * @return A Java Future containing the result of the DeleteStream operation returned by the service.
      * @sample AmazonKinesisAsync.DeleteStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest deleteStreamRequest);
 
@@ -319,6 +330,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteStream operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.DeleteStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest deleteStreamRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler);
@@ -352,6 +364,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @param describeLimitsRequest
      * @return A Java Future containing the result of the DescribeLimits operation returned by the service.
      * @sample AmazonKinesisAsync.DescribeLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest describeLimitsRequest);
 
@@ -373,6 +387,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLimits operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.DescribeLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest describeLimitsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLimitsRequest, DescribeLimitsResult> asyncHandler);
@@ -405,6 +421,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>DescribeStream</code>.
      * @return A Java Future containing the result of the DescribeStream operation returned by the service.
      * @sample AmazonKinesisAsync.DescribeStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest describeStreamRequest);
 
@@ -440,6 +458,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStream operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.DescribeStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest describeStreamRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler);
@@ -498,6 +518,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <a>DisableEnhancedMonitoring</a>.
      * @return A Java Future containing the result of the DisableEnhancedMonitoring operation returned by the service.
      * @sample AmazonKinesisAsync.DisableEnhancedMonitoring
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableEnhancedMonitoringResult> disableEnhancedMonitoringAsync(
             DisableEnhancedMonitoringRequest disableEnhancedMonitoringRequest);
@@ -515,6 +537,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableEnhancedMonitoring operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.DisableEnhancedMonitoring
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableEnhancedMonitoringResult> disableEnhancedMonitoringAsync(
             DisableEnhancedMonitoringRequest disableEnhancedMonitoringRequest,
@@ -529,6 +553,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <a>EnableEnhancedMonitoring</a>.
      * @return A Java Future containing the result of the EnableEnhancedMonitoring operation returned by the service.
      * @sample AmazonKinesisAsync.EnableEnhancedMonitoring
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableEnhancedMonitoringResult> enableEnhancedMonitoringAsync(EnableEnhancedMonitoringRequest enableEnhancedMonitoringRequest);
 
@@ -545,6 +571,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableEnhancedMonitoring operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.EnableEnhancedMonitoring
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableEnhancedMonitoringResult> enableEnhancedMonitoringAsync(EnableEnhancedMonitoringRequest enableEnhancedMonitoringRequest,
             com.amazonaws.handlers.AsyncHandler<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResult> asyncHandler);
@@ -605,6 +633,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <a>GetRecords</a>.
      * @return A Java Future containing the result of the GetRecords operation returned by the service.
      * @sample AmazonKinesisAsync.GetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(GetRecordsRequest getRecordsRequest);
 
@@ -668,6 +697,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRecords operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.GetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(GetRecordsRequest getRecordsRequest,
             com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult> asyncHandler);
@@ -720,6 +750,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>GetShardIterator</code>.
      * @return A Java Future containing the result of the GetShardIterator operation returned by the service.
      * @sample AmazonKinesisAsync.GetShardIterator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(GetShardIteratorRequest getShardIteratorRequest);
 
@@ -775,6 +807,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetShardIterator operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.GetShardIterator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(GetShardIteratorRequest getShardIteratorRequest,
             com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult> asyncHandler);
@@ -828,6 +862,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @return A Java Future containing the result of the IncreaseStreamRetentionPeriod operation returned by the
      *         service.
      * @sample AmazonKinesisAsync.IncreaseStreamRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult> increaseStreamRetentionPeriodAsync(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest);
@@ -854,6 +890,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @return A Java Future containing the result of the IncreaseStreamRetentionPeriod operation returned by the
      *         service.
      * @sample AmazonKinesisAsyncHandler.IncreaseStreamRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult> increaseStreamRetentionPeriodAsync(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest,
@@ -883,6 +921,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>ListStreams</code>.
      * @return A Java Future containing the result of the ListStreams operation returned by the service.
      * @sample AmazonKinesisAsync.ListStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest listStreamsRequest);
 
@@ -914,6 +953,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStreams operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.ListStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest listStreamsRequest,
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler);
@@ -971,6 +1011,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>ListTagsForStream</code>.
      * @return A Java Future containing the result of the ListTagsForStream operation returned by the service.
      * @sample AmazonKinesisAsync.ListTagsForStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForStreamResult> listTagsForStreamAsync(ListTagsForStreamRequest listTagsForStreamRequest);
 
@@ -987,6 +1029,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForStream operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.ListTagsForStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForStreamResult> listTagsForStreamAsync(ListTagsForStreamRequest listTagsForStreamRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForStreamRequest, ListTagsForStreamResult> asyncHandler);
@@ -1039,6 +1083,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>MergeShards</code>.
      * @return A Java Future containing the result of the MergeShards operation returned by the service.
      * @sample AmazonKinesisAsync.MergeShards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(MergeShardsRequest mergeShardsRequest);
 
@@ -1094,6 +1139,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the MergeShards operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.MergeShards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(MergeShardsRequest mergeShardsRequest,
             com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, MergeShardsResult> asyncHandler);
@@ -1164,6 +1210,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>PutRecord</code>.
      * @return A Java Future containing the result of the PutRecord operation returned by the service.
      * @sample AmazonKinesisAsync.PutRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutRecordResult> putRecordAsync(PutRecordRequest putRecordRequest);
 
@@ -1222,6 +1269,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRecord operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.PutRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutRecordResult> putRecordAsync(PutRecordRequest putRecordRequest,
             com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult> asyncHandler);
@@ -1329,6 +1377,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        A <code>PutRecords</code> request.
      * @return A Java Future containing the result of the PutRecords operation returned by the service.
      * @sample AmazonKinesisAsync.PutRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutRecordsResult> putRecordsAsync(PutRecordsRequest putRecordsRequest);
 
@@ -1408,6 +1457,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRecords operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.PutRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutRecordsResult> putRecordsAsync(PutRecordsRequest putRecordsRequest,
             com.amazonaws.handlers.AsyncHandler<PutRecordsRequest, PutRecordsResult> asyncHandler);
@@ -1425,6 +1475,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>RemoveTagsFromStream</code>.
      * @return A Java Future containing the result of the RemoveTagsFromStream operation returned by the service.
      * @sample AmazonKinesisAsync.RemoveTagsFromStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsFromStreamResult> removeTagsFromStreamAsync(RemoveTagsFromStreamRequest removeTagsFromStreamRequest);
 
@@ -1445,6 +1497,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTagsFromStream operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.RemoveTagsFromStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsFromStreamResult> removeTagsFromStreamAsync(RemoveTagsFromStreamRequest removeTagsFromStreamRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromStreamRequest, RemoveTagsFromStreamResult> asyncHandler);
@@ -1508,6 +1562,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>SplitShard</code>.
      * @return A Java Future containing the result of the SplitShard operation returned by the service.
      * @sample AmazonKinesisAsync.SplitShard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<SplitShardResult> splitShardAsync(SplitShardRequest splitShardRequest);
 
@@ -1574,6 +1629,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SplitShard operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.SplitShard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<SplitShardResult> splitShardAsync(SplitShardRequest splitShardRequest,
             com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult> asyncHandler);
@@ -1623,6 +1679,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @param updateShardCountRequest
      * @return A Java Future containing the result of the UpdateShardCount operation returned by the service.
      * @sample AmazonKinesisAsync.UpdateShardCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateShardCountResult> updateShardCountAsync(UpdateShardCountRequest updateShardCountRequest);
 
@@ -1660,6 +1718,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateShardCount operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.UpdateShardCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateShardCountResult> updateShardCountAsync(UpdateShardCountRequest updateShardCountRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateShardCountRequest, UpdateShardCountResult> asyncHandler);

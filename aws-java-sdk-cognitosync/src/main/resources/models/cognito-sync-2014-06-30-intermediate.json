@@ -70,6 +70,7 @@
     "syncClient" : "AmazonCognitoSyncClient",
     "syncClientBuilderClassName" : "AmazonCognitoSyncClientBuilder",
     "syncInterface" : "AmazonCognitoSync",
+    "uid" : "cognito-sync-2014-06-30",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

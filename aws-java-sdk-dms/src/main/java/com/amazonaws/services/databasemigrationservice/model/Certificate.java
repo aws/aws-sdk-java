@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Certificate"/>AWS API Documentation</a>
  */
 public class Certificate implements Serializable, Cloneable {
 

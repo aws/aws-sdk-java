@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server to set user settings as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings"/>AWS API
+ *      Documentation</a>
  */
 public class AdminSetUserSettingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

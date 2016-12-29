@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a linked EC2-Classic instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClassicLinkInstance"/>AWS API Documentation</a>
  */
 public class ClassicLinkInstance implements Serializable, Cloneable {
 

@@ -20,6 +20,8 @@ import java.io.Serializable;
  * <code>issue</code>, the service (for example, <code>EC2</code>), and the event type code (for example,
  * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventType"/>AWS API Documentation</a>
  */
 public class EventType implements Serializable, Cloneable {
 

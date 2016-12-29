@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage"/>AWS API
+ *      Documentation</a>
  */
 public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

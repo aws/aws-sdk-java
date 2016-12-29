@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A collection of attributes of the host from which the finding is generated.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssetAttributes"/>AWS API Documentation</a>
  */
 public class AssetAttributes implements Serializable, Cloneable {
 

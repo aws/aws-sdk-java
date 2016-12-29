@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains all of the attributes of a specific Redis replication group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroup"/>AWS API
+ *      Documentation</a>
  */
 public class ReplicationGroup implements Serializable, Cloneable {
 

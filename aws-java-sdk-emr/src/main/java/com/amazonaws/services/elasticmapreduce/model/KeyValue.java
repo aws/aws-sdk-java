@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A key value pair.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/KeyValue"/>AWS API Documentation</a>
  */
 public class KeyValue implements Serializable, Cloneable {
 

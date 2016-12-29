@@ -150,6 +150,7 @@
     "syncClient" : "AWSElasticBeanstalkClient",
     "syncClientBuilderClassName" : "AWSElasticBeanstalkClientBuilder",
     "syncInterface" : "AWSElasticBeanstalk",
+    "uid" : "elasticbeanstalk-2010-12-01",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

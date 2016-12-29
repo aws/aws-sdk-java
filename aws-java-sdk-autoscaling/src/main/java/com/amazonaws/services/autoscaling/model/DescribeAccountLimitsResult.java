@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the parameters for DescribeAccountLimits.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeAccountLimitsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -20,6 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters are are
  * provided, such as directory ID or trust ID, this request describes all the trust relationships.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts"/>AWS API Documentation</a>
  */
 public class DescribeTrustsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

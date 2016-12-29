@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the ICMP type and code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IcmpTypeCode"/>AWS API Documentation</a>
  */
 public class IcmpTypeCode implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the name of an SSM document.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentIdentifier"/>AWS API Documentation</a>
  */
 public class DocumentIdentifier implements Serializable, Cloneable {
 

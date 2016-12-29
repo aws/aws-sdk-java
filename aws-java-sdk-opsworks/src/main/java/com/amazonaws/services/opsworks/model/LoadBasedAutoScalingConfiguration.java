@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a layer's load-based auto scaling configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/LoadBasedAutoScalingConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneable {
 

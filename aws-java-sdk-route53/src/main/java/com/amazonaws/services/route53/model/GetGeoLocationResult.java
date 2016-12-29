@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains the response information for the specified geolocation code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation"/>AWS API Documentation</a>
  */
 public class GetGeoLocationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

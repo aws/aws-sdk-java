@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio"/>AWS API
+ *      Documentation</a>
  */
 public class ListPrincipalsForPortfolioRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

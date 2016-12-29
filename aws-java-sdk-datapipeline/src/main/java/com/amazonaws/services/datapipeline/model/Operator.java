@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains a logical operation for comparing the value of a field with a specified value.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Operator"/>AWS API Documentation</a>
  */
 public class Operator implements Serializable, Cloneable {
 

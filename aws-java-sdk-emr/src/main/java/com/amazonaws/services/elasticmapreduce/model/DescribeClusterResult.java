@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This output contains the description of the cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeClusterResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

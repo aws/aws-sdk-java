@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Option group option settings are used to display settings available for each option with their default values and
  * other information. These values are used with the DescribeOptionGroupOptions action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroupOptionSetting"/>AWS API
+ *      Documentation</a>
  */
 public class OptionGroupOptionSetting implements Serializable, Cloneable {
 

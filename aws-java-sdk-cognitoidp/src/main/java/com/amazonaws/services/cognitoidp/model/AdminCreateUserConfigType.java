@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The type of configuration for creating a new user profile.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserConfigType"/>AWS API
+ *      Documentation</a>
  */
 public class AdminCreateUserConfigType implements Serializable, Cloneable {
 

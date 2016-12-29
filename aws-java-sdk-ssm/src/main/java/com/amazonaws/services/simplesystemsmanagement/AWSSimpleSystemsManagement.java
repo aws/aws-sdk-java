@@ -131,6 +131,7 @@ public interface AWSSimpleSystemsManagement {
      *         The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command
      *         again.
      * @sample AWSSimpleSystemsManagement.AddTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource"/>AWS API Documentation</a>
      */
     AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest);
 
@@ -164,6 +165,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws DuplicateInstanceIdException
      *         You cannot specify an instance ID in more than one association.
      * @sample AWSSimpleSystemsManagement.CancelCommand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand"/>AWS API Documentation</a>
      */
     CancelCommandResult cancelCommand(CancelCommandRequest cancelCommandRequest);
 
@@ -182,6 +184,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreateActivation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation"/>AWS API Documentation</a>
      */
     CreateActivationResult createActivation(CreateActivationRequest createActivationRequest);
 
@@ -240,6 +243,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidScheduleException
      *         The schedule is invalid. Verify your cron or rate expression and try again.
      * @sample AWSSimpleSystemsManagement.CreateAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation"/>AWS API Documentation</a>
      */
     CreateAssociationResult createAssociation(CreateAssociationRequest createAssociationRequest);
 
@@ -298,6 +302,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidScheduleException
      *         The schedule is invalid. Verify your cron or rate expression and try again.
      * @sample AWSSimpleSystemsManagement.CreateAssociationBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch"/>AWS API
+     *      Documentation</a>
      */
     CreateAssociationBatchResult createAssociationBatch(CreateAssociationBatchRequest createAssociationBatchRequest);
 
@@ -325,6 +331,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentSchemaVersionException
      *         The version of the document schema is not supported.
      * @sample AWSSimpleSystemsManagement.CreateDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument"/>AWS API Documentation</a>
      */
     CreateDocumentResult createDocument(CreateDocumentRequest createDocumentRequest);
 
@@ -344,6 +351,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreateMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow"/>AWS API
+     *      Documentation</a>
      */
     CreateMaintenanceWindowResult createMaintenanceWindow(CreateMaintenanceWindowRequest createMaintenanceWindowRequest);
 
@@ -363,6 +372,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreatePatchBaseline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline"/>AWS API
+     *      Documentation</a>
      */
     CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest createPatchBaselineRequest);
 
@@ -384,6 +395,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeleteActivation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation"/>AWS API Documentation</a>
      */
     DeleteActivationResult deleteActivation(DeleteActivationRequest deleteActivationRequest);
 
@@ -424,6 +436,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one update at a time.
      * @sample AWSSimpleSystemsManagement.DeleteAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation"/>AWS API Documentation</a>
      */
     DeleteAssociationResult deleteAssociation(DeleteAssociationRequest deleteAssociationRequest);
 
@@ -448,6 +461,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws AssociatedInstancesException
      *         You must disassociate an SSM document from all instances before you can delete it.
      * @sample AWSSimpleSystemsManagement.DeleteDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument"/>AWS API Documentation</a>
      */
     DeleteDocumentResult deleteDocument(DeleteDocumentRequest deleteDocumentRequest);
 
@@ -461,6 +475,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeleteMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow"/>AWS API
+     *      Documentation</a>
      */
     DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest);
 
@@ -476,6 +492,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws ParameterNotFoundException
      *         The parameter could not be found. Verify the name and try again.
      * @sample AWSSimpleSystemsManagement.DeleteParameter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter"/>AWS API Documentation</a>
      */
     DeleteParameterResult deleteParameter(DeleteParameterRequest deleteParameterRequest);
 
@@ -491,6 +508,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeletePatchBaseline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline"/>AWS API
+     *      Documentation</a>
      */
     DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest deletePatchBaselineRequest);
 
@@ -521,6 +540,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeregisterManagedInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance"/>AWS API
+     *      Documentation</a>
      */
     DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest deregisterManagedInstanceRequest);
 
@@ -536,6 +557,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeregisterPatchBaselineForPatchGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup"/>AWS
+     *      API Documentation</a>
      */
     DeregisterPatchBaselineForPatchGroupResult deregisterPatchBaselineForPatchGroup(
             DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest);
@@ -552,6 +575,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeregisterTargetFromMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow"/>AWS
+     *      API Documentation</a>
      */
     DeregisterTargetFromMaintenanceWindowResult deregisterTargetFromMaintenanceWindow(
             DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest);
@@ -568,6 +593,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeregisterTaskFromMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow"/>AWS API
+     *      Documentation</a>
      */
     DeregisterTaskFromMaintenanceWindowResult deregisterTaskFromMaintenanceWindow(
             DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest);
@@ -587,6 +614,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeActivations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations"/>AWS API
+     *      Documentation</a>
      */
     DescribeActivationsResult describeActivations(DescribeActivationsRequest describeActivationsRequest);
 
@@ -620,6 +649,8 @@ public interface AWSSimpleSystemsManagement {
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @sample AWSSimpleSystemsManagement.DescribeAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation"/>AWS API
+     *      Documentation</a>
      */
     DescribeAssociationResult describeAssociation(DescribeAssociationRequest describeAssociationRequest);
 
@@ -635,6 +666,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeAutomationExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions"/>AWS API
+     *      Documentation</a>
      */
     DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest);
 
@@ -648,6 +681,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeAvailablePatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches"/>AWS API
+     *      Documentation</a>
      */
     DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest describeAvailablePatchesRequest);
 
@@ -665,6 +700,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentVersionException
      *         The document version is not valid or does not exist.
      * @sample AWSSimpleSystemsManagement.DescribeDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument"/>AWS API Documentation</a>
      */
     DescribeDocumentResult describeDocument(DescribeDocumentRequest describeDocumentRequest);
 
@@ -683,6 +719,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidPermissionTypeException
      *         The permission type is not supported. <i>Share</i> is the only supported permission type.
      * @sample AWSSimpleSystemsManagement.DescribeDocumentPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission"/>AWS API
+     *      Documentation</a>
      */
     DescribeDocumentPermissionResult describeDocumentPermission(DescribeDocumentPermissionRequest describeDocumentPermissionRequest);
 
@@ -714,6 +752,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.DescribeEffectiveInstanceAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations"/>AWS
+     *      API Documentation</a>
      */
     DescribeEffectiveInstanceAssociationsResult describeEffectiveInstanceAssociations(
             DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest);
@@ -732,6 +772,9 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeEffectivePatchesForPatchBaseline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline"/>AWS
+     *      API Documentation</a>
      */
     DescribeEffectivePatchesForPatchBaselineResult describeEffectivePatchesForPatchBaseline(
             DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest);
@@ -764,6 +807,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.DescribeInstanceAssociationsStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus"/>AWS API
+     *      Documentation</a>
      */
     DescribeInstanceAssociationsStatusResult describeInstanceAssociationsStatus(
             DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest);
@@ -804,6 +849,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidFilterKeyException
      *         The specified key is not valid.
      * @sample AWSSimpleSystemsManagement.DescribeInstanceInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation"/>AWS API
+     *      Documentation</a>
      */
     DescribeInstanceInformationResult describeInstanceInformation(DescribeInstanceInformationRequest describeInstanceInformationRequest);
 
@@ -819,6 +866,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.DescribeInstancePatchStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates"/>AWS API
+     *      Documentation</a>
      */
     DescribeInstancePatchStatesResult describeInstancePatchStates(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest);
 
@@ -836,6 +885,9 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.DescribeInstancePatchStatesForPatchGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup"/>AWS
+     *      API Documentation</a>
      */
     DescribeInstancePatchStatesForPatchGroupResult describeInstancePatchStatesForPatchGroup(
             DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest);
@@ -871,6 +923,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.DescribeInstancePatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches"/>AWS API
+     *      Documentation</a>
      */
     DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest);
 
@@ -887,6 +941,9 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTaskInvocations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations"/>AWS
+     *      API Documentation</a>
      */
     DescribeMaintenanceWindowExecutionTaskInvocationsResult describeMaintenanceWindowExecutionTaskInvocations(
             DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest);
@@ -903,6 +960,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks"/>AWS
+     *      API Documentation</a>
      */
     DescribeMaintenanceWindowExecutionTasksResult describeMaintenanceWindowExecutionTasks(
             DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest);
@@ -918,6 +977,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions"/>AWS API
+     *      Documentation</a>
      */
     DescribeMaintenanceWindowExecutionsResult describeMaintenanceWindowExecutions(
             DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest);
@@ -934,6 +995,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets"/>AWS API
+     *      Documentation</a>
      */
     DescribeMaintenanceWindowTargetsResult describeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest);
 
@@ -949,6 +1012,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks"/>AWS API
+     *      Documentation</a>
      */
     DescribeMaintenanceWindowTasksResult describeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest);
 
@@ -962,6 +1027,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows"/>AWS API
+     *      Documentation</a>
      */
     DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest);
 
@@ -979,6 +1046,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.DescribeParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters"/>AWS API
+     *      Documentation</a>
      */
     DescribeParametersResult describeParameters(DescribeParametersRequest describeParametersRequest);
 
@@ -992,6 +1061,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribePatchBaselines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines"/>AWS API
+     *      Documentation</a>
      */
     DescribePatchBaselinesResult describePatchBaselines(DescribePatchBaselinesRequest describePatchBaselinesRequest);
 
@@ -1007,6 +1078,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.DescribePatchGroupState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState"/>AWS API
+     *      Documentation</a>
      */
     DescribePatchGroupStateResult describePatchGroupState(DescribePatchGroupStateRequest describePatchGroupStateRequest);
 
@@ -1020,6 +1093,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribePatchGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups"/>AWS API
+     *      Documentation</a>
      */
     DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest describePatchGroupsRequest);
 
@@ -1035,6 +1110,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetAutomationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution"/>AWS API
+     *      Documentation</a>
      */
     GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest getAutomationExecutionRequest);
 
@@ -1070,6 +1147,8 @@ public interface AWSSimpleSystemsManagement {
      *         The command ID and instance ID you specified did not match any invocations. Verify the command ID adn the
      *         instance ID and try again.
      * @sample AWSSimpleSystemsManagement.GetCommandInvocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation"/>AWS API
+     *      Documentation</a>
      */
     GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest);
 
@@ -1083,6 +1162,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetDefaultPatchBaseline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline"/>AWS API
+     *      Documentation</a>
      */
     GetDefaultPatchBaselineResult getDefaultPatchBaseline(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest);
 
@@ -1097,6 +1178,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetDeployablePatchSnapshotForInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"/>AWS
+     *      API Documentation</a>
      */
     GetDeployablePatchSnapshotForInstanceResult getDeployablePatchSnapshotForInstance(
             GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest);
@@ -1115,6 +1198,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentVersionException
      *         The document version is not valid or does not exist.
      * @sample AWSSimpleSystemsManagement.GetDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument"/>AWS API Documentation</a>
      */
     GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest);
 
@@ -1136,6 +1220,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidResultAttributeException
      *         The specified inventory item result attribute is not valid.
      * @sample AWSSimpleSystemsManagement.GetInventory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory"/>AWS API Documentation</a>
      */
     GetInventoryResult getInventory(GetInventoryRequest getInventoryRequest);
 
@@ -1154,6 +1239,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.GetInventorySchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema"/>AWS API
+     *      Documentation</a>
      */
     GetInventorySchemaResult getInventorySchema(GetInventorySchemaRequest getInventorySchemaRequest);
 
@@ -1169,6 +1256,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow"/>AWS API
+     *      Documentation</a>
      */
     GetMaintenanceWindowResult getMaintenanceWindow(GetMaintenanceWindowRequest getMaintenanceWindowRequest);
 
@@ -1184,6 +1273,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution"/>AWS API
+     *      Documentation</a>
      */
     GetMaintenanceWindowExecutionResult getMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest);
 
@@ -1199,6 +1290,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecutionTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask"/>AWS API
+     *      Documentation</a>
      */
     GetMaintenanceWindowExecutionTaskResult getMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest);
 
@@ -1216,6 +1309,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.GetParameterHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory"/>AWS API
+     *      Documentation</a>
      */
     GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest getParameterHistoryRequest);
 
@@ -1229,6 +1324,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters"/>AWS API Documentation</a>
      */
     GetParametersResult getParameters(GetParametersRequest getParametersRequest);
 
@@ -1246,6 +1342,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetPatchBaseline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline"/>AWS API Documentation</a>
      */
     GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest getPatchBaselineRequest);
 
@@ -1259,6 +1356,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetPatchBaselineForPatchGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup"/>AWS API
+     *      Documentation</a>
      */
     GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest);
 
@@ -1274,6 +1373,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.ListAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations"/>AWS API Documentation</a>
      */
     ListAssociationsResult listAssociations(ListAssociationsRequest listAssociationsRequest);
 
@@ -1311,6 +1411,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.ListCommandInvocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations"/>AWS API
+     *      Documentation</a>
      */
     ListCommandInvocationsResult listCommandInvocations(ListCommandInvocationsRequest listCommandInvocationsRequest);
 
@@ -1345,6 +1447,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.ListCommands
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands"/>AWS API Documentation</a>
      */
     ListCommandsResult listCommands(ListCommandsRequest listCommandsRequest);
 
@@ -1362,6 +1465,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentException
      *         The specified document does not exist.
      * @sample AWSSimpleSystemsManagement.ListDocumentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions"/>AWS API
+     *      Documentation</a>
      */
     ListDocumentVersionsResult listDocumentVersions(ListDocumentVersionsRequest listDocumentVersionsRequest);
 
@@ -1379,6 +1484,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidFilterKeyException
      *         The specified key is not valid.
      * @sample AWSSimpleSystemsManagement.ListDocuments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments"/>AWS API Documentation</a>
      */
     ListDocumentsResult listDocuments(ListDocumentsRequest listDocumentsRequest);
 
@@ -1421,6 +1527,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @sample AWSSimpleSystemsManagement.ListInventoryEntries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries"/>AWS API
+     *      Documentation</a>
      */
     ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest);
 
@@ -1439,6 +1547,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -1464,6 +1574,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws DocumentLimitExceededException
      *         You can have at most 200 active SSM documents.
      * @sample AWSSimpleSystemsManagement.ModifyDocumentPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission"/>AWS API
+     *      Documentation</a>
      */
     ModifyDocumentPermissionResult modifyDocumentPermission(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest);
 
@@ -1509,6 +1621,7 @@ public interface AWSSimpleSystemsManagement {
      *         Inventory item type schema version has to match supported versions in the service. Check output of
      *         <code>GetInventorySchema</code> to see the available schema version for each type.
      * @sample AWSSimpleSystemsManagement.PutInventory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory"/>AWS API Documentation</a>
      */
     PutInventoryResult putInventory(PutInventoryRequest putInventoryRequest);
 
@@ -1533,6 +1646,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws UnsupportedParameterTypeException
      *         The parameter type is not supported.
      * @sample AWSSimpleSystemsManagement.PutParameter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter"/>AWS API Documentation</a>
      */
     PutParameterResult putParameter(PutParameterRequest putParameterRequest);
 
@@ -1550,6 +1664,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterDefaultPatchBaseline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline"/>AWS API
+     *      Documentation</a>
      */
     RegisterDefaultPatchBaselineResult registerDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest);
 
@@ -1573,6 +1689,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterPatchBaselineForPatchGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup"/>AWS API
+     *      Documentation</a>
      */
     RegisterPatchBaselineForPatchGroupResult registerPatchBaselineForPatchGroup(
             RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest);
@@ -1595,6 +1713,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterTargetWithMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow"/>AWS API
+     *      Documentation</a>
      */
     RegisterTargetWithMaintenanceWindowResult registerTargetWithMaintenanceWindow(
             RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest);
@@ -1617,6 +1737,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterTaskWithMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow"/>AWS API
+     *      Documentation</a>
      */
     RegisterTaskWithMaintenanceWindowResult registerTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest);
 
@@ -1635,6 +1757,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RemoveTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource"/>AWS API
+     *      Documentation</a>
      */
     RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
 
@@ -1687,6 +1811,7 @@ public interface AWSSimpleSystemsManagement {
      *         One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided
      *         for an Amazon SNS topic.
      * @sample AWSSimpleSystemsManagement.SendCommand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand"/>AWS API Documentation</a>
      */
     SendCommandResult sendCommand(SendCommandRequest sendCommandRequest);
 
@@ -1709,6 +1834,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartAutomationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution"/>AWS API
+     *      Documentation</a>
      */
     StartAutomationExecutionResult startAutomationExecution(StartAutomationExecutionRequest startAutomationExecutionRequest);
 
@@ -1724,6 +1851,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StopAutomationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution"/>AWS API
+     *      Documentation</a>
      */
     StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest stopAutomationExecutionRequest);
 
@@ -1753,6 +1882,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one update at a time.
      * @sample AWSSimpleSystemsManagement.UpdateAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation"/>AWS API Documentation</a>
      */
     UpdateAssociationResult updateAssociation(UpdateAssociationRequest updateAssociationRequest);
 
@@ -1790,6 +1920,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one update at a time.
      * @sample AWSSimpleSystemsManagement.UpdateAssociationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus"/>AWS API
+     *      Documentation</a>
      */
     UpdateAssociationStatusResult updateAssociationStatus(UpdateAssociationStatusRequest updateAssociationStatusRequest);
 
@@ -1818,6 +1950,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentException
      *         The specified document does not exist.
      * @sample AWSSimpleSystemsManagement.UpdateDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument"/>AWS API Documentation</a>
      */
     UpdateDocumentResult updateDocument(UpdateDocumentRequest updateDocumentRequest);
 
@@ -1837,6 +1970,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentSchemaVersionException
      *         The version of the document schema is not supported.
      * @sample AWSSimpleSystemsManagement.UpdateDocumentDefaultVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion"/>AWS API
+     *      Documentation</a>
      */
     UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest);
 
@@ -1852,6 +1987,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow"/>AWS API
+     *      Documentation</a>
      */
     UpdateMaintenanceWindowResult updateMaintenanceWindow(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest);
 
@@ -1881,6 +2018,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateManagedInstanceRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole"/>AWS API
+     *      Documentation</a>
      */
     UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest);
 
@@ -1896,6 +2035,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdatePatchBaseline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline"/>AWS API
+     *      Documentation</a>
      */
     UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest updatePatchBaselineRequest);
 

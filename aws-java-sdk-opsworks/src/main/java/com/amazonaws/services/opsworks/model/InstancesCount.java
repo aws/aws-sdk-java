@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes how many instances a stack has for each status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/InstancesCount"/>AWS API Documentation</a>
  */
 public class InstancesCount implements Serializable, Cloneable {
 

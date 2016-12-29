@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "elasticbeanstalk",
     "targetPrefix" : null,
+    "uid" : "elasticbeanstalk-2010-12-01",
     "xmlNamespace" : "http://elasticbeanstalk.amazonaws.com/docs/2010-12-01/"
   },
   "operations" : {

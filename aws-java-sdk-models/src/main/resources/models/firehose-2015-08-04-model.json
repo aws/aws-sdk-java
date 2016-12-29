@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "firehose",
     "targetPrefix" : "Firehose_20150804",
+    "uid" : "firehose-2015-08-04",
     "xmlNamespace" : null
   },
   "operations" : {

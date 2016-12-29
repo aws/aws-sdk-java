@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output of PutLifecycleHook.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook"/>AWS API
+ *      Documentation</a>
  */
 public class PutLifecycleHookResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

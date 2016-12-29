@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Detailed constraint information.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ConstraintDetail"/>AWS API
+ *      Documentation</a>
  */
 public class ConstraintDetail implements Serializable, Cloneable {
 

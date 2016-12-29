@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the result of a list devices operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices"/>AWS API Documentation</a>
  */
 public class ListDevicesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

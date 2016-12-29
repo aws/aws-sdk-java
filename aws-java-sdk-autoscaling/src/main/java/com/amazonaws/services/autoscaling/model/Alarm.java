@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an alarm.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Alarm"/>AWS API Documentation</a>
  */
 public class Alarm implements Serializable, Cloneable {
 

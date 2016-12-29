@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response from the server to the change password request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword"/>AWS API
+ *      Documentation</a>
  */
 public class ChangePasswordResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

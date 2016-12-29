@@ -70,6 +70,7 @@
     "syncClient" : "AWSCognitoIdentityProviderClient",
     "syncClientBuilderClassName" : "AWSCognitoIdentityProviderClientBuilder",
     "syncInterface" : "AWSCognitoIdentityProvider",
+    "uid" : "cognito-idp-2016-04-18",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

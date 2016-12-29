@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for the <a>GetTemplateSummary</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary"/>AWS API
+ *      Documentation</a>
  */
 public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

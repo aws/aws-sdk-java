@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity"/>AWS API
+ *      Documentation</a>
  */
 public class GetCredentialsForIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

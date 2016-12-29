@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode"/>AWS API
+ *      Documentation</a>
  */
 public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about an SSL server certificate deployed on a load balancer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Certificate"/>AWS API
+ *      Documentation</a>
  */
 public class Certificate implements Serializable, Cloneable {
 

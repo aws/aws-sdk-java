@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform
  * them into metric data in a CloudWatch metric.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricFilter"/>AWS API Documentation</a>
  */
 public class MetricFilter implements Serializable, Cloneable {
 

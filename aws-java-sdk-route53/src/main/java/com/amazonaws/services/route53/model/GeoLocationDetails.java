@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A complex type that contains the codes and full continent, country, and subdivision names for the specified
  * <code>geolocation</code> code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GeoLocationDetails"/>AWS API
+ *      Documentation</a>
  */
 public class GeoLocationDetails implements Serializable, Cloneable {
 

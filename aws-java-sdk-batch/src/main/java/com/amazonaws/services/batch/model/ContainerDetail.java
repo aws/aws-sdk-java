@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object representing the details of a container that is part of a job.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerDetail"/>AWS API Documentation</a>
  */
 public class ContainerDetail implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the screen resolution of a device in height and width, expressed in pixels.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Resolution"/>AWS API Documentation</a>
  */
 public class Resolution implements Serializable, Cloneable {
 

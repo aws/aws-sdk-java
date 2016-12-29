@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Specifies where in a web request to look for <code>TargetString</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/FieldToMatch"/>AWS API Documentation</a>
  */
 public class FieldToMatch implements Serializable, Cloneable {
 

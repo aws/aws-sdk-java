@@ -303,6 +303,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.AssociateNode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AssociateNode"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AssociateNodeResult associateNode(AssociateNodeRequest associateNodeRequest) {
@@ -367,6 +369,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.CreateBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateBackupResult createBackup(CreateBackupRequest createBackupRequest) {
@@ -438,6 +442,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.CreateServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateServerResult createServer(CreateServerRequest createServerRequest) {
@@ -492,6 +498,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteBackupResult deleteBackup(DeleteBackupRequest deleteBackupRequest) {
@@ -551,6 +559,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.DeleteServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteServerResult deleteServer(DeleteServerRequest deleteServerRequest) {
@@ -594,6 +604,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @param describeAccountAttributesRequest
      * @return Result of the DescribeAccountAttributes operation returned by the service.
      * @sample AWSOpsWorksCM.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
@@ -649,6 +661,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws InvalidNextTokenException
      *         This occurs when the provided nextToken is not valid.
      * @sample AWSOpsWorksCM.DescribeBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeBackupsResult describeBackups(DescribeBackupsRequest describeBackupsRequest) {
@@ -702,6 +716,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ResourceNotFoundException
      *         The requested resource does not exist, or access was denied.
      * @sample AWSOpsWorksCM.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
@@ -742,6 +758,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.DescribeNodeAssociationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeNodeAssociationStatus"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeNodeAssociationStatusResult describeNodeAssociationStatus(DescribeNodeAssociationStatusRequest describeNodeAssociationStatusRequest) {
@@ -798,6 +816,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws InvalidNextTokenException
      *         This occurs when the provided nextToken is not valid.
      * @sample AWSOpsWorksCM.DescribeServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeServersResult describeServers(DescribeServersRequest describeServersRequest) {
@@ -840,6 +860,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.DisassociateNode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DisassociateNodeResult disassociateNode(DisassociateNodeRequest disassociateNodeRequest) {
@@ -897,6 +919,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.RestoreServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RestoreServerResult restoreServer(RestoreServerRequest restoreServerRequest) {
@@ -951,6 +975,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.StartMaintenance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StartMaintenanceResult startMaintenance(StartMaintenanceRequest startMaintenanceRequest) {
@@ -1000,6 +1026,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.UpdateServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateServerResult updateServer(UpdateServerRequest updateServerRequest) {
@@ -1060,6 +1088,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @throws ValidationException
      *         One or more of the provided request parameters are not valid.
      * @sample AWSOpsWorksCM.UpdateServerEngineAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateServerEngineAttributesResult updateServerEngineAttributes(UpdateServerEngineAttributesRequest updateServerEngineAttributesRequest) {

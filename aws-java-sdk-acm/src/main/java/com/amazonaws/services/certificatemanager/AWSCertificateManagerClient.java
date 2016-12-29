@@ -293,6 +293,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @throws TooManyTagsException
      *         The request contains too many tags. Try the request again with fewer tags.
      * @sample AWSCertificateManager.AddTagsToCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AddTagsToCertificateResult addTagsToCertificate(AddTagsToCertificateRequest addTagsToCertificateRequest) {
@@ -350,6 +352,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.DeleteCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate"/>AWS API Documentation</a>
      */
     @Override
     public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
@@ -398,6 +401,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.DescribeCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeCertificateResult describeCertificate(DescribeCertificateRequest describeCertificateRequest) {
@@ -453,6 +458,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.GetCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate"/>AWS API Documentation</a>
      */
     @Override
     public GetCertificateResult getCertificate(GetCertificateRequest getCertificateRequest) {
@@ -534,6 +540,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *         which limit you have violated. For more information about ACM limits, see the <a
      *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a> topic.
      * @sample AWSCertificateManager.ImportCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate"/>AWS API Documentation</a>
      */
     @Override
     public ImportCertificateResult importCertificate(ImportCertificateRequest importCertificateRequest) {
@@ -575,6 +582,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @param listCertificatesRequest
      * @return Result of the ListCertificates operation returned by the service.
      * @sample AWSCertificateManager.ListCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates"/>AWS API Documentation</a>
      */
     @Override
     public ListCertificatesResult listCertificates(ListCertificatesRequest listCertificatesRequest) {
@@ -622,6 +630,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.ListTagsForCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsForCertificateResult listTagsForCertificate(ListTagsForCertificateRequest listTagsForCertificateRequest) {
@@ -677,6 +687,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *         One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a
      *         tag value that begins with <code>aws:</code>.
      * @sample AWSCertificateManager.RemoveTagsFromCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RemoveTagsFromCertificateResult removeTagsFromCertificate(RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest) {
@@ -730,6 +742,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @throws InvalidDomainValidationOptionsException
      *         One or more values in the <a>DomainValidationOption</a> structure is incorrect.
      * @sample AWSCertificateManager.RequestCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RequestCertificateResult requestCertificate(RequestCertificateRequest requestCertificateRequest) {
@@ -787,6 +801,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @throws InvalidDomainValidationOptionsException
      *         One or more values in the <a>DomainValidationOption</a> structure is incorrect.
      * @sample AWSCertificateManager.ResendValidationEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ResendValidationEmailResult resendValidationEmail(ResendValidationEmailRequest resendValidationEmailRequest) {

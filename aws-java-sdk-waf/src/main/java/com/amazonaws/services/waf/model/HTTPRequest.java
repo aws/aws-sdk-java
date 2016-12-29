@@ -20,6 +20,8 @@ import java.io.Serializable;
  * as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web
  * requests that were returned by <code>GetSampledRequests</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/HTTPRequest"/>AWS API Documentation</a>
  */
 public class HTTPRequest implements Serializable, Cloneable {
 

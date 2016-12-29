@@ -163,6 +163,8 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemLimitExceededException
      *         Returned if the AWS account has already created maximum number of file systems allowed per account.
      * @sample AmazonElasticFileSystem.CreateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem"/>AWS API
+     *      Documentation</a>
      */
     CreateFileSystemResult createFileSystem(CreateFileSystemRequest createFileSystemRequest);
 
@@ -356,6 +358,8 @@ public interface AmazonElasticFileSystem {
      *         Returned if one of the specified security groups does not exist in the subnet's VPC.
      * @throws UnsupportedAvailabilityZoneException
      * @sample AmazonElasticFileSystem.CreateMountTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget"/>AWS API
+     *      Documentation</a>
      */
     CreateMountTargetResult createMountTarget(CreateMountTargetRequest createMountTargetRequest);
 
@@ -380,6 +384,8 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags"/>AWS API
+     *      Documentation</a>
      */
     CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
 
@@ -416,6 +422,8 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemInUseException
      *         Returned if a file system has mount targets.
      * @sample AmazonElasticFileSystem.DeleteFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem"/>AWS API
+     *      Documentation</a>
      */
     DeleteFileSystemResult deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest);
 
@@ -472,6 +480,8 @@ public interface AmazonElasticFileSystem {
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found in the caller's account.
      * @sample AmazonElasticFileSystem.DeleteMountTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget"/>AWS API
+     *      Documentation</a>
      */
     DeleteMountTargetResult deleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest);
 
@@ -496,6 +506,8 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags"/>AWS API
+     *      Documentation</a>
      */
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
@@ -539,6 +551,8 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DescribeFileSystems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems"/>AWS API
+     *      Documentation</a>
      */
     DescribeFileSystemsResult describeFileSystems(DescribeFileSystemsRequest describeFileSystemsRequest);
 
@@ -583,6 +597,9 @@ public interface AmazonElasticFileSystem {
      * @throws IncorrectMountTargetStateException
      *         Returned if the mount target is not in the correct state for the operation.
      * @sample AmazonElasticFileSystem.DescribeMountTargetSecurityGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     DescribeMountTargetSecurityGroupsResult describeMountTargetSecurityGroups(DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest);
 
@@ -609,6 +626,8 @@ public interface AmazonElasticFileSystem {
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found in the caller's account.
      * @sample AmazonElasticFileSystem.DescribeMountTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets"/>AWS API
+     *      Documentation</a>
      */
     DescribeMountTargetsResult describeMountTargets(DescribeMountTargetsRequest describeMountTargetsRequest);
 
@@ -632,6 +651,8 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
 
@@ -678,6 +699,9 @@ public interface AmazonElasticFileSystem {
      * @throws SecurityGroupNotFoundException
      *         Returned if one of the specified security groups does not exist in the subnet's VPC.
      * @sample AmazonElasticFileSystem.ModifyMountTargetSecurityGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest);
 

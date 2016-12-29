@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a device object associated with a gateway-VTL.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VTLDevice"/>AWS API Documentation</a>
  */
 public class VTLDevice implements Serializable, Cloneable {
 

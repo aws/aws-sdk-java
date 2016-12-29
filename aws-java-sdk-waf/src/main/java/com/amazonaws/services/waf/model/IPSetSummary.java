@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the identifier and the name of the <code>IPSet</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSetSummary"/>AWS API Documentation</a>
  */
 public class IPSetSummary implements Serializable, Cloneable {
 

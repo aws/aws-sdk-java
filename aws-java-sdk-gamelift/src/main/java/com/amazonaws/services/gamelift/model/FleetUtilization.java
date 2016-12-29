@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Current status of fleet utilization, including the number of game and player sessions being hosted.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization"/>AWS API Documentation</a>
  */
 public class FleetUtilization implements Serializable, Cloneable {
 

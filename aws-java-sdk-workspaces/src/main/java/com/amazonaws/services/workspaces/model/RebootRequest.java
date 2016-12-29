@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information used with the <a>RebootWorkspaces</a> operation to reboot a WorkSpace.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootRequest"/>AWS API Documentation</a>
  */
 public class RebootRequest implements Serializable, Cloneable {
 

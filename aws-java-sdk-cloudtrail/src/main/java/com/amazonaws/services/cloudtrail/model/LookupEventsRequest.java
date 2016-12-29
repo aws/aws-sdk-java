@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains a request for LookupEvents.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents"/>AWS API Documentation</a>
  */
 public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

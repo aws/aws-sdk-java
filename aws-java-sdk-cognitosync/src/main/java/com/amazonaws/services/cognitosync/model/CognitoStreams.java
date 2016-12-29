@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * Configuration options for configure Cognito streams.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/CognitoStreams"/>AWS API
+ *      Documentation</a>
  */
 public class CognitoStreams implements Serializable, Cloneable {
 

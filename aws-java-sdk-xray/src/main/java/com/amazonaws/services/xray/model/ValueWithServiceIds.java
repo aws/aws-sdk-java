@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a segment annotation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ValueWithServiceIds"/>AWS API Documentation</a>
  */
 public class ValueWithServiceIds implements Serializable, Cloneable {
 

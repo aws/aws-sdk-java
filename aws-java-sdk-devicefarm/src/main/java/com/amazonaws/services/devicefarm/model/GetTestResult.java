@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the result of a get test request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest"/>AWS API Documentation</a>
  */
 public class GetTestResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

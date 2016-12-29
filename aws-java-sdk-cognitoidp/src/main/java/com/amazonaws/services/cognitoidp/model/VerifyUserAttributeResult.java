@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A container representing the response from the server from the request to verify user attributes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute"/>AWS API
+ *      Documentation</a>
  */
 public class VerifyUserAttributeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

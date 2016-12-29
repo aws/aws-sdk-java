@@ -30,6 +30,9 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSubnetGroup"/>AWS API
+ *      Documentation</a>
  */
 public class CacheSubnetGroup implements Serializable, Cloneable {
 

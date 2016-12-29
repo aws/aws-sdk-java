@@ -155,6 +155,8 @@ public interface AmazonKinesisFirehose {
      * @throws ResourceInUseException
      *         The resource is already in use and not available for this operation.
      * @sample AmazonKinesisFirehose.CreateDeliveryStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream"/>AWS API
+     *      Documentation</a>
      */
     CreateDeliveryStreamResult createDeliveryStream(CreateDeliveryStreamRequest createDeliveryStreamRequest);
 
@@ -183,6 +185,8 @@ public interface AmazonKinesisFirehose {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonKinesisFirehose.DeleteDeliveryStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream"/>AWS API
+     *      Documentation</a>
      */
     DeleteDeliveryStreamResult deleteDeliveryStream(DeleteDeliveryStreamRequest deleteDeliveryStreamRequest);
 
@@ -198,6 +202,8 @@ public interface AmazonKinesisFirehose {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonKinesisFirehose.DescribeDeliveryStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream"/>AWS API
+     *      Documentation</a>
      */
     DescribeDeliveryStreamResult describeDeliveryStream(DescribeDeliveryStreamRequest describeDeliveryStreamRequest);
 
@@ -216,6 +222,8 @@ public interface AmazonKinesisFirehose {
      * @param listDeliveryStreamsRequest
      * @return Result of the ListDeliveryStreams operation returned by the service.
      * @sample AmazonKinesisFirehose.ListDeliveryStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams"/>AWS API
+     *      Documentation</a>
      */
     ListDeliveryStreamsResult listDeliveryStreams(ListDeliveryStreamsRequest listDeliveryStreamsRequest);
 
@@ -268,6 +276,7 @@ public interface AmazonKinesisFirehose {
      *         how to request an increase, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Firehose Limits</a>.
      * @sample AmazonKinesisFirehose.PutRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord"/>AWS API Documentation</a>
      */
     PutRecordResult putRecord(PutRecordRequest putRecordRequest);
 
@@ -341,6 +350,8 @@ public interface AmazonKinesisFirehose {
      *         how to request an increase, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Firehose Limits</a>.
      * @sample AmazonKinesisFirehose.PutRecordBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch"/>AWS API
+     *      Documentation</a>
      */
     PutRecordBatchResult putRecordBatch(PutRecordBatchRequest putRecordBatchRequest);
 
@@ -389,6 +400,8 @@ public interface AmazonKinesisFirehose {
      *         Another modification has already happened. Fetch <b>VersionId</b> again and use it to update the
      *         destination.
      * @sample AmazonKinesisFirehose.UpdateDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination"/>AWS API
+     *      Documentation</a>
      */
     UpdateDestinationResult updateDestination(UpdateDestinationRequest updateDestinationRequest);
 

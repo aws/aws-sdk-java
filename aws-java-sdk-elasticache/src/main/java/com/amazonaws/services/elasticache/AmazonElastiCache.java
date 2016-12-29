@@ -122,6 +122,8 @@ public interface AmazonElastiCache {
      * @throws InvalidARNException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AmazonElastiCache.AddTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource"/>AWS API
+     *      Documentation</a>
      */
     AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest);
 
@@ -151,6 +153,9 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.AuthorizeCacheSecurityGroupIngress
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress"/>AWS
+     *      API Documentation</a>
      */
     CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest);
 
@@ -279,6 +284,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.CopySnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot"/>AWS API
+     *      Documentation</a>
      */
     Snapshot copySnapshot(CopySnapshotRequest copySnapshotRequest);
 
@@ -329,6 +336,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.CreateCacheCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster"/>AWS API
+     *      Documentation</a>
      */
     CacheCluster createCacheCluster(CreateCacheClusterRequest createCacheClusterRequest);
 
@@ -352,6 +361,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.CreateCacheParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest);
 
@@ -379,6 +390,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.CreateCacheSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup"/>AWS API
+     *      Documentation</a>
      */
     CacheSecurityGroup createCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest);
 
@@ -403,6 +416,8 @@ public interface AmazonElastiCache {
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
      * @sample AmazonElastiCache.CreateCacheSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     CacheSubnetGroup createCacheSubnetGroup(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest);
 
@@ -470,6 +485,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.CreateReplicationGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup"/>AWS API
+     *      Documentation</a>
      */
     ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest);
 
@@ -519,6 +536,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @sample AmazonElastiCache.CreateSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot"/>AWS API
+     *      Documentation</a>
      */
     Snapshot createSnapshot(CreateSnapshotRequest createSnapshotRequest);
 
@@ -572,6 +591,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DeleteCacheCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster"/>AWS API
+     *      Documentation</a>
      */
     CacheCluster deleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest);
 
@@ -593,6 +614,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DeleteCacheParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     DeleteCacheParameterGroupResult deleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest);
 
@@ -618,6 +641,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DeleteCacheSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup"/>AWS API
+     *      Documentation</a>
      */
     DeleteCacheSecurityGroupResult deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest);
 
@@ -639,6 +664,8 @@ public interface AmazonElastiCache {
      * @throws CacheSubnetGroupNotFoundException
      *         The requested cache subnet group name does not refer to an existing cache subnet group.
      * @sample AmazonElastiCache.DeleteCacheSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     DeleteCacheSubnetGroupResult deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest);
 
@@ -691,6 +718,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DeleteReplicationGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup"/>AWS API
+     *      Documentation</a>
      */
     ReplicationGroup deleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest);
 
@@ -717,6 +746,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DeleteSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot"/>AWS API
+     *      Documentation</a>
      */
     Snapshot deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest);
 
@@ -757,6 +788,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeCacheClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters"/>AWS API
+     *      Documentation</a>
      */
     DescribeCacheClustersResult describeCacheClusters(DescribeCacheClustersRequest describeCacheClustersRequest);
 
@@ -776,6 +809,8 @@ public interface AmazonElastiCache {
      *        Represents the input of a <code>DescribeCacheEngineVersions</code> operation.
      * @return Result of the DescribeCacheEngineVersions operation returned by the service.
      * @sample AmazonElastiCache.DescribeCacheEngineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions"/>AWS API
+     *      Documentation</a>
      */
     DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest);
 
@@ -802,6 +837,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeCacheParameterGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups"/>AWS
+     *      API Documentation</a>
      */
     DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest);
 
@@ -827,6 +864,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeCacheParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters"/>AWS API
+     *      Documentation</a>
      */
     DescribeCacheParametersResult describeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest);
 
@@ -846,6 +885,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeCacheSecurityGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups"/>AWS API
+     *      Documentation</a>
      */
     DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest);
 
@@ -868,6 +909,8 @@ public interface AmazonElastiCache {
      * @throws CacheSubnetGroupNotFoundException
      *         The requested cache subnet group name does not refer to an existing cache subnet group.
      * @sample AmazonElastiCache.DescribeCacheSubnetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups"/>AWS API
+     *      Documentation</a>
      */
     DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest);
 
@@ -891,6 +934,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeEngineDefaultParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters"/>AWS
+     *      API Documentation</a>
      */
     EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest);
 
@@ -913,6 +958,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents"/>AWS API
+     *      Documentation</a>
      */
     DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest);
 
@@ -944,6 +991,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeReplicationGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups"/>AWS API
+     *      Documentation</a>
      */
     DescribeReplicationGroupsResult describeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest);
 
@@ -969,6 +1018,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeReservedCacheNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes"/>AWS API
+     *      Documentation</a>
      */
     DescribeReservedCacheNodesResult describeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest);
 
@@ -994,6 +1045,9 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeReservedCacheNodesOfferings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings"/>AWS
+     *      API Documentation</a>
      */
     DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(
             DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest);
@@ -1029,6 +1083,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.DescribeSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots"/>AWS API
+     *      Documentation</a>
      */
     DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest);
 
@@ -1062,6 +1118,9 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @sample AmazonElastiCache.ListAllowedNodeTypeModifications
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications"/>AWS
+     *      API Documentation</a>
      */
     ListAllowedNodeTypeModificationsResult listAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest listAllowedNodeTypeModificationsRequest);
 
@@ -1094,6 +1153,8 @@ public interface AmazonElastiCache {
      * @throws InvalidARNException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AmazonElastiCache.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -1130,6 +1191,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.ModifyCacheCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster"/>AWS API
+     *      Documentation</a>
      */
     CacheCluster modifyCacheCluster(ModifyCacheClusterRequest modifyCacheClusterRequest);
 
@@ -1151,6 +1214,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.ModifyCacheParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest);
 
@@ -1172,6 +1237,8 @@ public interface AmazonElastiCache {
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
      * @sample AmazonElastiCache.ModifyCacheSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     CacheSubnetGroup modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest);
 
@@ -1221,6 +1288,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.ModifyReplicationGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup"/>AWS API
+     *      Documentation</a>
      */
     ReplicationGroup modifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest);
 
@@ -1243,6 +1312,9 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.PurchaseReservedCacheNodesOffering
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering"/>AWS
+     *      API Documentation</a>
      */
     ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest);
 
@@ -1267,6 +1339,8 @@ public interface AmazonElastiCache {
      * @throws CacheClusterNotFoundException
      *         The requested cache cluster ID does not refer to an existing cache cluster.
      * @sample AmazonElastiCache.RebootCacheCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster"/>AWS API
+     *      Documentation</a>
      */
     CacheCluster rebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest);
 
@@ -1287,6 +1361,8 @@ public interface AmazonElastiCache {
      * @throws TagNotFoundException
      *         The requested tag was not found on this resource.
      * @sample AmazonElastiCache.RemoveTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource"/>AWS API
+     *      Documentation</a>
      */
     RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
 
@@ -1309,6 +1385,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.ResetCacheParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest);
 
@@ -1332,6 +1410,8 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @sample AmazonElastiCache.RevokeCacheSecurityGroupIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress"/>AWS
+     *      API Documentation</a>
      */
     CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest);
 

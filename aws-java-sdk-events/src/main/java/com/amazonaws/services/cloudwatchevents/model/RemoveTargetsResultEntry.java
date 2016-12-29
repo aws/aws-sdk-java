@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The ID of the target requested to be removed from the rule by Amazon CloudWatch Events.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargetsResultEntry"/>AWS API
+ *      Documentation</a>
  */
 public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 

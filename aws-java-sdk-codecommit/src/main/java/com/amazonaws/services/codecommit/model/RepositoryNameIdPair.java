@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a repository name and ID.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryNameIdPair"/>AWS API
+ *      Documentation</a>
  */
 public class RepositoryNameIdPair implements Serializable, Cloneable {
 

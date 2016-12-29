@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provides additional mapping information when JSON is the record format on the streaming source.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/JSONMappingParameters"/>AWS API
+ *      Documentation</a>
  */
 public class JSONMappingParameters implements Serializable, Cloneable {
 

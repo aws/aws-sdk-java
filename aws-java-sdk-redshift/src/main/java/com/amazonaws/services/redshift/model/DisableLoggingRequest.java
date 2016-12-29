@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging"/>AWS API Documentation</a>
  */
 public class DisableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

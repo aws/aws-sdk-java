@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Describes the settings for a configuration set.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationSettingsDescription"/>AWS
+ *      API Documentation</a>
  */
 public class ConfigurationSettingsDescription implements Serializable, Cloneable {
 

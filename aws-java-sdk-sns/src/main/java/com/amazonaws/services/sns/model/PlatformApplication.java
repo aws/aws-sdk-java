@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Platform application object.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PlatformApplication"/>AWS API Documentation</a>
  */
 public class PlatformApplication implements Serializable, Cloneable {
 

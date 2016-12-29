@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A parameter used to successfully provision the product. This value includes a list of allowable values and additional
  * metadata.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactParameter"/>AWS
+ *      API Documentation</a>
  */
 public class ProvisioningArtifactParameter implements Serializable, Cloneable {
 

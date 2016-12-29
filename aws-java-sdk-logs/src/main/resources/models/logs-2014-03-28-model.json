@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "logs",
     "targetPrefix" : "Logs_20140328",
+    "uid" : "logs-2014-03-28",
     "xmlNamespace" : null
   },
   "operations" : {

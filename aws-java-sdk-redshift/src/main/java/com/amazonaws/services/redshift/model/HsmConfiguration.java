@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the
  * information they require to connect to an HSM where they can store database encryption keys.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/HsmConfiguration"/>AWS API Documentation</a>
  */
 public class HsmConfiguration implements Serializable, Cloneable {
 

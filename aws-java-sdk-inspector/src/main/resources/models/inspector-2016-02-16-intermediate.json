@@ -141,6 +141,7 @@
     "syncClient" : "AmazonInspectorClient",
     "syncClientBuilderClassName" : "AmazonInspectorClientBuilder",
     "syncInterface" : "AmazonInspector",
+    "uid" : "inspector-2016-02-16",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

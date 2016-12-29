@@ -15,9 +15,6 @@ package com.amazonaws.services.applicationdiscovery.model;
 import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
 public class ExportConfigurationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

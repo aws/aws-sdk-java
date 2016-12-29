@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents information about an error in AWS CodePipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ErrorDetails"/>AWS API Documentation</a>
  */
 public class ErrorDetails implements Serializable, Cloneable {
 

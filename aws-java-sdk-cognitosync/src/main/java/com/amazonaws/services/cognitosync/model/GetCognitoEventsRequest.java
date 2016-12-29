@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A request for a list of the configured Cognito Events
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents"/>AWS API
+ *      Documentation</a>
  */
 public class GetCognitoEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

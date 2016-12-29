@@ -30,6 +30,8 @@ import java.io.Serializable;
  * specified in the path is passed to the target (e.g. only the detail part of the event is passed).</li>
  * <li><b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this constant.</li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target"/>AWS API Documentation</a>
  */
 public class Target implements Serializable, Cloneable {
 

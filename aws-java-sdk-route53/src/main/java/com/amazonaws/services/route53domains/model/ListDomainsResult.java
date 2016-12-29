@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The ListDomains response includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains"/>AWS API
+ *      Documentation</a>
  */
 public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

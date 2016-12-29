@@ -139,6 +139,8 @@ public interface AmazonDynamoDBStreams {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDBStreams.DescribeStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream"/>AWS API
+     *      Documentation</a>
      */
     DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest);
 
@@ -195,6 +197,8 @@ public interface AmazonDynamoDBStreams {
      *         </p>
      *         </li>
      * @sample AmazonDynamoDBStreams.GetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords"/>AWS API
+     *      Documentation</a>
      */
     GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest);
 
@@ -238,6 +242,8 @@ public interface AmazonDynamoDBStreams {
      *         </p>
      *         </li>
      * @sample AmazonDynamoDBStreams.GetShardIterator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"/>AWS API
+     *      Documentation</a>
      */
     GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest);
 
@@ -260,6 +266,8 @@ public interface AmazonDynamoDBStreams {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDBStreams.ListStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams"/>AWS API
+     *      Documentation</a>
      */
     ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest);
 

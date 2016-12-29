@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a source security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SourceSecurityGroup"/>AWS API
+ *      Documentation</a>
  */
 public class SourceSecurityGroup implements Serializable, Cloneable {
 

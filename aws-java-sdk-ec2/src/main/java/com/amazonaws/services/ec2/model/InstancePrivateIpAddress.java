@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a private IPv4 address.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstancePrivateIpAddress"/>AWS API
+ *      Documentation</a>
  */
 public class InstancePrivateIpAddress implements Serializable, Cloneable {
 

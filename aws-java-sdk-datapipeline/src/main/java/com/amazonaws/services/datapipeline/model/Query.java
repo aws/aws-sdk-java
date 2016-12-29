@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Defines the query to run against an object.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Query"/>AWS API Documentation</a>
  */
 public class Query implements Serializable, Cloneable {
 

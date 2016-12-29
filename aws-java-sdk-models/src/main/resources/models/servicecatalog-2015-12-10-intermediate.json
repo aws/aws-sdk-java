@@ -70,6 +70,7 @@
     "syncClient" : "AWSServiceCatalogClient",
     "syncClientBuilderClassName" : "AWSServiceCatalogClientBuilder",
     "syncInterface" : "AWSServiceCatalog",
+    "uid" : "servicecatalog-2015-12-10",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

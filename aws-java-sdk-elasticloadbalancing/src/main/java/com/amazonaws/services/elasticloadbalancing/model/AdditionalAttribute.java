@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This data type is reserved.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AdditionalAttribute"/>AWS API
+ *      Documentation</a>
  */
 public class AdditionalAttribute implements Serializable, Cloneable {
 

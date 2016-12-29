@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about an on-premises instance tag filter.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagFilter"/>AWS API Documentation</a>
  */
 public class TagFilter implements Serializable, Cloneable {
 

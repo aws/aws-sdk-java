@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The inventory item result attribute.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResultAttribute"/>AWS API Documentation</a>
  */
 public class ResultAttribute implements Serializable, Cloneable {
 

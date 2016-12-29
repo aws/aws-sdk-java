@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an availability zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AvailabilityZone"/>AWS API Documentation</a>
  */
 public class AvailabilityZone implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about a virtual MFA device.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/VirtualMFADevice"/>AWS API Documentation</a>
  */
 public class VirtualMFADevice implements Serializable, Cloneable {
 

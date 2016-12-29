@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for PutScheduledUpdateGroupAction.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction"/>AWS API
+ *      Documentation</a>
  */
 public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

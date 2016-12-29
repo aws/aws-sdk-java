@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "aws-marketplace",
     "targetPrefix" : "AWSMPMeteringService",
+    "uid" : "meteringmarketplace-2016-01-14",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the new provisioned throughput settings to be applied to a global secondary index.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalSecondaryIndexAction"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable {
 

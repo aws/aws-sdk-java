@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The TranserDomain response includes the following element.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain"/>AWS API
+ *      Documentation</a>
  */
 public class TransferDomainResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "datapipeline",
     "targetPrefix" : "DataPipeline",
+    "uid" : "datapipeline-2012-10-29",
     "xmlNamespace" : null
   },
   "operations" : {

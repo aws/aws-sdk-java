@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a metric.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MetricCollectionType"/>AWS API
+ *      Documentation</a>
  */
 public class MetricCollectionType implements Serializable, Cloneable {
 

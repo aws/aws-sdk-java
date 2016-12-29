@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Returns information about the details of an action type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionType"/>AWS API Documentation</a>
  */
 public class ActionType implements Serializable, Cloneable {
 

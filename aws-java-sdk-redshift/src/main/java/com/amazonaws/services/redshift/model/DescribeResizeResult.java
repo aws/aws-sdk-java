@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the result of a cluster resize operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize"/>AWS API Documentation</a>
  */
 public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

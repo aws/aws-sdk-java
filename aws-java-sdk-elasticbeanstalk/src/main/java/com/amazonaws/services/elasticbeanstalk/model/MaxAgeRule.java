@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A lifecycle rule that deletes application versions after the specified number of days.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/MaxAgeRule"/>AWS API
+ *      Documentation</a>
  */
 public class MaxAgeRule implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a deployment group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentGroupInfo"/>AWS API
+ *      Documentation</a>
  */
 public class DeploymentGroupInfo implements Serializable, Cloneable {
 

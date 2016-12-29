@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for the <a>GetTemplateSummary</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary"/>AWS API
+ *      Documentation</a>
  */
 public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

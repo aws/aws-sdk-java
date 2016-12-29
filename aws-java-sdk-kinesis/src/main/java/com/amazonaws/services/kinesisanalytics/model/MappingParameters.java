@@ -20,6 +20,9 @@ import java.io.Serializable;
  * information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the
  * streaming source.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/MappingParameters"/>AWS API
+ *      Documentation</a>
  */
 public class MappingParameters implements Serializable, Cloneable {
 

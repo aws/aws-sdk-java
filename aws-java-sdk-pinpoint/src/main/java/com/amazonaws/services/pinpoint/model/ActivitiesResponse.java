@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class ActivitiesResponse implements Serializable, Cloneable {
 
     /** List of campaign activities */

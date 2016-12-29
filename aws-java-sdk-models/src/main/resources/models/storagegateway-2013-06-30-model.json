@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "storagegateway",
     "targetPrefix" : "StorageGateway_20130630",
+    "uid" : "storagegateway-2013-06-30",
     "xmlNamespace" : null
   },
   "operations" : {

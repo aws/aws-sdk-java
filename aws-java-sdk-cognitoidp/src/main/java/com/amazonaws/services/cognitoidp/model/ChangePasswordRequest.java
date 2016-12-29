@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to change a user password.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword"/>AWS API
+ *      Documentation</a>
  */
 public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

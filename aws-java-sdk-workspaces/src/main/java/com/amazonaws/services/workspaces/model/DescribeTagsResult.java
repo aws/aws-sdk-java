@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The result of the <a>DescribeTags</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags"/>AWS API Documentation</a>
  */
 public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

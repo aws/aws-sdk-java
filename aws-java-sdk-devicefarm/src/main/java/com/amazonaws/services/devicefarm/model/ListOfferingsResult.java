@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the return values of the list of offerings.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings"/>AWS API Documentation</a>
  */
 public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

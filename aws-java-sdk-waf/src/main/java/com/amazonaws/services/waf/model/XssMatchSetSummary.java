@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/XssMatchSetSummary"/>AWS API
+ *      Documentation</a>
  */
 public class XssMatchSetSummary implements Serializable, Cloneable {
 

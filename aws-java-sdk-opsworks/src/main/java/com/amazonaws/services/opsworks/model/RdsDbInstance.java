@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an Amazon RDS instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RdsDbInstance"/>AWS API Documentation</a>
  */
 public class RdsDbInstance implements Serializable, Cloneable {
 

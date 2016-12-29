@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The parent object returned that contains your environment's configuration settings or any error information
  * associated with your configuration settings.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentResponse"/>AWS API
+ *      Documentation</a>
  */
 public class EnvironmentResponse implements Serializable, Cloneable {
 

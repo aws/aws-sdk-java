@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Describes a conditional forwarder.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeConditionalForwardersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

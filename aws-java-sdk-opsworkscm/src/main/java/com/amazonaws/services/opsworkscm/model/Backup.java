@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a single backup.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/Backup"/>AWS API Documentation</a>
  */
 public class Backup implements Serializable, Cloneable {
 

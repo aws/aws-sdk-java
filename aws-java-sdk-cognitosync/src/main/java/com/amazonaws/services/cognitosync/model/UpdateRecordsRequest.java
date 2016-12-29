@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * A request to post updates to records or add and delete records for a dataset and user.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

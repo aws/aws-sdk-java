@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Detailed portfolio information.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/PortfolioDetail"/>AWS API
+ *      Documentation</a>
  */
 public class PortfolioDetail implements Serializable, Cloneable {
 

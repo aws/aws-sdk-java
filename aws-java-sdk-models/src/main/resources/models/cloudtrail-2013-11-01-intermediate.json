@@ -80,6 +80,7 @@
     "syncClient" : "AWSCloudTrailClient",
     "syncClientBuilderClassName" : "AWSCloudTrailClientBuilder",
     "syncInterface" : "AWSCloudTrail",
+    "uid" : "cloudtrail-2013-11-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

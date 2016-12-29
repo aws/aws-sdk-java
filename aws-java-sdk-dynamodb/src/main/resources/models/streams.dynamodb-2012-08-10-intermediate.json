@@ -113,6 +113,7 @@
     "syncClient" : "AmazonDynamoDBStreamsClient",
     "syncClientBuilderClassName" : "AmazonDynamoDBStreamsClientBuilder",
     "syncInterface" : "AmazonDynamoDBStreams",
+    "uid" : "streams-dynamodb-2012-08-10",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the structure of actions and stages to be performed in the pipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineDeclaration"/>AWS API
+ *      Documentation</a>
  */
 public class PipelineDeclaration implements Serializable, Cloneable {
 

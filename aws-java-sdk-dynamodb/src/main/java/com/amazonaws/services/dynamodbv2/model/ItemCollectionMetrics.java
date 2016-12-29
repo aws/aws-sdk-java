@@ -20,6 +20,9 @@ import java.io.Serializable;
  * returned if the request asked for it. If the table does not have any local secondary indexes, this information is not
  * returned in the response.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ItemCollectionMetrics"/>AWS API
+ *      Documentation</a>
  */
 public class ItemCollectionMetrics implements Serializable, Cloneable {
 

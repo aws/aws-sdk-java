@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a start pipeline execution action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution"/>AWS API
+ *      Documentation</a>
  */
 public class StartPipelineExecutionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

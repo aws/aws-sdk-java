@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut"/>AWS API
+ *      Documentation</a>
  */
 public class CheckIfPhoneNumberIsOptedOutResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics"/>AWS API Documentation</a>
  */
 public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

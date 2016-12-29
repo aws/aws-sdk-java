@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output for <code>PutRecords</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecordsRequestEntry"/>AWS API
+ *      Documentation</a>
  */
 public class PutRecordsRequestEntry implements Serializable, Cloneable {
 

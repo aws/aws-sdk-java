@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about the compute type of a WorkSpace bundle.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ComputeType"/>AWS API Documentation</a>
  */
 public class ComputeType implements Serializable, Cloneable {
 

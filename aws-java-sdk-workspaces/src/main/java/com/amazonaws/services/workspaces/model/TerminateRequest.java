@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information used with the <a>TerminateWorkspaces</a> operation to terminate a WorkSpace.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateRequest"/>AWS API
+ *      Documentation</a>
  */
 public class TerminateRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The ParameterDeclaration data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ParameterDeclaration"/>AWS API
+ *      Documentation</a>
  */
 public class ParameterDeclaration implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the Amazon Resource Name (ARN) for an IAM OpenID Connect provider.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/OpenIDConnectProviderListEntry"/>AWS API
+ *      Documentation</a>
  */
 public class OpenIDConnectProviderListEntry implements Serializable, Cloneable {
 

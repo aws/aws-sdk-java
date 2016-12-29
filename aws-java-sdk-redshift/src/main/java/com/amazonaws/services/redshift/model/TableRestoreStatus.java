@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/TableRestoreStatus"/>AWS API
+ *      Documentation</a>
  */
 public class TableRestoreStatus implements Serializable, Cloneable {
 

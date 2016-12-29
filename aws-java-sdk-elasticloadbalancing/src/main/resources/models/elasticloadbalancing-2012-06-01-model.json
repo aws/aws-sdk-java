@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "elasticloadbalancing",
     "targetPrefix" : null,
+    "uid" : "elasticloadbalancing-2012-06-01",
     "xmlNamespace" : "http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/"
   },
   "operations" : {

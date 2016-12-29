@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the placement of an instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Placement"/>AWS API Documentation</a>
  */
 public class Placement implements Serializable, Cloneable {
 

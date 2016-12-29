@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The result of the <a>RunJobFlow</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow"/>AWS API
+ *      Documentation</a>
  */
 public class RunJobFlowResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

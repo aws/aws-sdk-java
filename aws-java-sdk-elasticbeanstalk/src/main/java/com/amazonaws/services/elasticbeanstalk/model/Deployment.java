@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about an application version deployment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Deployment"/>AWS API
+ *      Documentation</a>
  */
 public class Deployment implements Serializable, Cloneable {
 

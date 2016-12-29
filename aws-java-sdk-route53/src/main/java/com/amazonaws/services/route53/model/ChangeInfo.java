@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that describes change information about changes made to your hosted zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeInfo"/>AWS API Documentation</a>
  */
 public class ChangeInfo implements Serializable, Cloneable {
 

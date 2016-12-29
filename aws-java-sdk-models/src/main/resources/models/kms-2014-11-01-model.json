@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "kms",
     "targetPrefix" : "TrentService",
+    "uid" : "kms-2014-11-01",
     "xmlNamespace" : null
   },
   "operations" : {

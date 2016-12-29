@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A list of your queues.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues"/>AWS API Documentation</a>
  */
 public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

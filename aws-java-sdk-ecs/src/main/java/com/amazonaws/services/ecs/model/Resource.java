@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the resources available for a container instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Resource"/>AWS API Documentation</a>
  */
 public class Resource implements Serializable, Cloneable {
 

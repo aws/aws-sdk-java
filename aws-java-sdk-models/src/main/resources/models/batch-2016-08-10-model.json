@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "batch",
     "targetPrefix" : null,
+    "uid" : "batch-2016-08-10",
     "xmlNamespace" : null
   },
   "operations" : {

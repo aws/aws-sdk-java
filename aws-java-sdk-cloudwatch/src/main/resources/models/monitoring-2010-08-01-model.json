@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "monitoring",
     "targetPrefix" : null,
+    "uid" : "monitoring-2010-08-01",
     "xmlNamespace" : "http://monitoring.amazonaws.com/doc/2010-08-01/"
   },
   "operations" : {

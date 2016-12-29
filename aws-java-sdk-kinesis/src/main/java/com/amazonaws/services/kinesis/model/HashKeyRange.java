@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/HashKeyRange"/>AWS API Documentation</a>
  */
 public class HashKeyRange implements Serializable, Cloneable {
 

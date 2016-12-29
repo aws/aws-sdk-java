@@ -41,6 +41,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
  * Connection to Access Your Objects</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ViewerCertificate"/>AWS API
+ *      Documentation</a>
  */
 public class ViewerCertificate implements Serializable, Cloneable {
 

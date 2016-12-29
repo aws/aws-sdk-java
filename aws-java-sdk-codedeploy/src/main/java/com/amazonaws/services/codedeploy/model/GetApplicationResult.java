@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a get application operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication"/>AWS API Documentation</a>
  */
 public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

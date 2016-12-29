@@ -25,6 +25,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.amazonaws.codegen.internal.Constants.REQUEST_CLASS_SUFFIX;
+import static com.amazonaws.codegen.internal.Constants.RESPONSE_CLASS_SUFFIX;
+import static com.amazonaws.codegen.internal.DocumentationUtils.removeFromEnd;
+
 public class ShapeModel extends DocumentationModel {
 
     private final String c2jName;
@@ -394,6 +398,18 @@ public class ShapeModel extends DocumentationModel {
             }
         }
         return null;
+    }
+
+    @JsonIgnore
+    public String getDocumentationShapeName() {
+        switch (getShapeType()) {
+            case Request:
+                return removeFromEnd(shapeName, REQUEST_CLASS_SUFFIX);
+            case Response:
+                return removeFromEnd(shapeName, RESPONSE_CLASS_SUFFIX);
+            default:
+                return c2jName;
+        }
     }
 
     @Override

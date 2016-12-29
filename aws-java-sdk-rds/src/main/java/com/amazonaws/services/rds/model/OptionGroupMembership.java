@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Provides information on the option groups the DB instance is a member of.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroupMembership"/>AWS API Documentation</a>
  */
 public class OptionGroupMembership implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The result of a DeregisterEventTopic request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic"/>AWS API Documentation</a>
  */
 public class DeregisterEventTopicResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

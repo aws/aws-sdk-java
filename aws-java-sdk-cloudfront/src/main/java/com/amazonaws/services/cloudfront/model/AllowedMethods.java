@@ -41,6 +41,8 @@ import java.io.Serializable;
  * users can't perform operations that you don't want them to. For example, you might not want users to have permissions
  * to delete objects from your origin.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/AllowedMethods"/>AWS API Documentation</a>
  */
 public class AllowedMethods implements Serializable, Cloneable {
 

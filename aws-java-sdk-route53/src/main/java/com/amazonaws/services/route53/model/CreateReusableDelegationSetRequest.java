@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet"/>AWS API
+ *      Documentation</a>
  */
 public class CreateReusableDelegationSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

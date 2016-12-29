@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the
  * <a>ListAssessmentRunAgents</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AgentFilter"/>AWS API Documentation</a>
  */
 public class AgentFilter implements Serializable, Cloneable {
 

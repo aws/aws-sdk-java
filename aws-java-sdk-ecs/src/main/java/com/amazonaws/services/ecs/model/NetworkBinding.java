@@ -20,6 +20,8 @@ import java.io.Serializable;
  * <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the
  * <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/NetworkBinding"/>AWS API Documentation</a>
  */
 public class NetworkBinding implements Serializable, Cloneable {
 

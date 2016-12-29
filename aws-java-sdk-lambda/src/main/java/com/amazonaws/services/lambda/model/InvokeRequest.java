@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke"/>AWS API Documentation</a>
  */
 public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an Availability Zone in which the cache cluster is launched.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AvailabilityZone"/>AWS API
+ *      Documentation</a>
  */
 public class AvailabilityZone implements Serializable, Cloneable {
 

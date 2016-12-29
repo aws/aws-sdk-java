@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a segment that failed processing.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UnprocessedTraceSegment"/>AWS API
+ *      Documentation</a>
  */
 public class UnprocessedTraceSegment implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Empty response for the request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource"/>AWS API
+ *      Documentation</a>
  */
 public class ChangeTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

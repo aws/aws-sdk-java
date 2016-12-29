@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * Container for the result of the GenerateDataSet operation.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"/>AWS
+ *      API Documentation</a>
  */
 public class GenerateDataSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

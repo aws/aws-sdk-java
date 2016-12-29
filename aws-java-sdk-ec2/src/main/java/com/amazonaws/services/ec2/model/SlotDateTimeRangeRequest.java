@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Describes the time period for a Scheduled Instance to start its first schedule. The time period must span less than
  * one day.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SlotDateTimeRangeRequest"/>AWS API
+ *      Documentation</a>
  */
 public class SlotDateTimeRangeRequest implements Serializable, Cloneable {
 

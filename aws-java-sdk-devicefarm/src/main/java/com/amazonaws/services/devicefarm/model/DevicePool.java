@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a collection of device types.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DevicePool"/>AWS API Documentation</a>
  */
 public class DevicePool implements Serializable, Cloneable {
 

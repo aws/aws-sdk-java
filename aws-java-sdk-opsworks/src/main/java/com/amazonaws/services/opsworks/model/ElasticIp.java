@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an Elastic IP address.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ElasticIp"/>AWS API Documentation</a>
  */
 public class ElasticIp implements Serializable, Cloneable {
 

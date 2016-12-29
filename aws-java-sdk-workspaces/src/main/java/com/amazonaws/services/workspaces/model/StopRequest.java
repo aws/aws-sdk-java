@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the stop request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopRequest"/>AWS API Documentation</a>
  */
 public class StopRequest implements Serializable, Cloneable {
 

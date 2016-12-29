@@ -322,6 +322,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws LimitsExceededException
      *         The limits specified for a resource have been exceeded.
      * @sample AmazonRoute53.AssociateVPCWithHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
@@ -522,6 +524,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @sample AmazonRoute53.ChangeResourceRecordSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
@@ -580,6 +584,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
      * @sample AmazonRoute53.ChangeTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest changeTagsForResourceRequest) {
@@ -672,6 +678,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.CreateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) {
@@ -791,6 +799,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws DelegationSetNotReusableException
      *         A reusable delegation set with the specified ID does not exist.
      * @sample AmazonRoute53.CreateHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
@@ -865,6 +875,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws DelegationSetAlreadyReusableException
      *         The specified delegation set has already been marked as reusable.
      * @sample AmazonRoute53.CreateReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest createReusableDelegationSetRequest) {
@@ -923,6 +935,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The format of the traffic policy document that you specified in the <code>Document</code> element is
      *         invalid.
      * @sample AmazonRoute53.CreateTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest createTrafficPolicyRequest) {
@@ -987,6 +1001,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws TrafficPolicyInstanceAlreadyExistsException
      *         Traffic policy instance with given Id already exists.
      * @sample AmazonRoute53.CreateTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest) {
@@ -1049,6 +1065,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The format of the traffic policy document that you specified in the <code>Document</code> element is
      *         invalid.
      * @sample AmazonRoute53.CreateTrafficPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest) {
@@ -1120,6 +1138,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.CreateVPCAssociationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(
@@ -1181,6 +1201,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DeleteHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
@@ -1245,6 +1267,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidDomainNameException
      *         The specified domain name is not valid.
      * @sample AmazonRoute53.DeleteHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
@@ -1305,6 +1329,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DeleteReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest) {
@@ -1358,6 +1384,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws ConcurrentModificationException
      *         Another user submitted a request to update the object at the same time that you did. Retry the request.
      * @sample AmazonRoute53.DeleteTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest) {
@@ -1418,6 +1446,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @sample AmazonRoute53.DeleteTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) {
@@ -1484,6 +1514,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DeleteVPCAssociationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteVPCAssociationAuthorizationResult deleteVPCAssociationAuthorization(
@@ -1556,6 +1588,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DisassociateVPCFromHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest) {
@@ -1614,6 +1648,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetChange
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange"/>AWS API Documentation</a>
      */
     @Override
     public GetChangeResult getChange(GetChangeRequest getChangeRequest) {
@@ -1657,6 +1692,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *        Empty request.
      * @return Result of the GetCheckerIpRanges operation returned by the service.
      * @sample AmazonRoute53.GetCheckerIpRanges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
@@ -1708,6 +1745,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetGeoLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetGeoLocationResult getGeoLocation(GetGeoLocationRequest getGeoLocationRequest) {
@@ -1773,6 +1812,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider
      *         using a newer endpoint or a tool that does so.
      * @sample AmazonRoute53.GetHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest) {
@@ -1816,6 +1857,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *        <code>/2013-04-01/healthcheckcount</code> resource.
      * @return Result of the GetHealthCheckCount operation returned by the service.
      * @sample AmazonRoute53.GetHealthCheckCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetHealthCheckCountResult getHealthCheckCount(GetHealthCheckCountRequest getHealthCheckCountRequest) {
@@ -1878,6 +1921,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetHealthCheckLastFailureReason
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest) {
@@ -1925,6 +1970,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetHealthCheckStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
@@ -1972,6 +2019,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone"/>AWS API Documentation</a>
      */
     @Override
     public GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest) {
@@ -2016,6 +2064,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetHostedZoneCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest getHostedZoneCountRequest) {
@@ -2069,6 +2119,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
@@ -2118,6 +2170,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest getTrafficPolicyRequest) {
@@ -2181,6 +2235,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest) {
@@ -2227,6 +2283,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *        <code>/2013-04-01/trafficpolicyinstancecount</code> resource.
      * @return Result of the GetTrafficPolicyInstanceCount operation returned by the service.
      * @sample AmazonRoute53.GetTrafficPolicyInstanceCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest) {
@@ -2289,6 +2347,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.ListGeoLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
@@ -2359,6 +2419,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider
      *         using a newer endpoint or a tool that does so.
      * @sample AmazonRoute53.ListHealthChecks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
@@ -2489,6 +2551,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws DelegationSetNotReusableException
      *         A reusable delegation set with the specified ID does not exist.
      * @sample AmazonRoute53.ListHostedZones
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
@@ -2672,6 +2736,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidDomainNameException
      *         The specified domain name is not valid.
      * @sample AmazonRoute53.ListHostedZonesByName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest listHostedZonesByNameRequest) {
@@ -2778,6 +2844,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.ListResourceRecordSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
@@ -2841,6 +2909,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.ListReusableDelegationSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest) {
@@ -2905,6 +2975,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
      * @sample AmazonRoute53.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
@@ -2964,6 +3036,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
      * @sample AmazonRoute53.ListTagsForResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsForResourcesResult listTagsForResources(ListTagsForResourcesRequest listTagsForResourcesRequest) {
@@ -3058,6 +3132,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.ListTrafficPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
@@ -3165,6 +3241,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws NoSuchTrafficPolicyInstanceException
      *         No traffic policy instance exists with the specified ID.
      * @sample AmazonRoute53.ListTrafficPolicyInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest) {
@@ -3274,6 +3352,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws NoSuchHostedZoneException
      *         No hosted zone exists with the ID that you specified.
      * @sample AmazonRoute53.ListTrafficPolicyInstancesByHostedZone
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(
@@ -3380,6 +3461,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws NoSuchTrafficPolicyException
      *         No traffic policy exists with the specified ID.
      * @sample AmazonRoute53.ListTrafficPolicyInstancesByPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(
@@ -3477,6 +3560,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws NoSuchTrafficPolicyException
      *         No traffic policy exists with the specified ID.
      * @sample AmazonRoute53.ListTrafficPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
@@ -3545,6 +3630,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The input is not valid.
      * @throws InvalidPaginationTokenException
      * @sample AmazonRoute53.ListVPCAssociationAuthorizations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListVPCAssociationAuthorizationsResult listVPCAssociationAuthorizations(
@@ -3642,6 +3729,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.TestDNSAnswer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer"/>AWS API Documentation</a>
      */
     @Override
     public TestDNSAnswerResult testDNSAnswer(TestDNSAnswerRequest testDNSAnswerRequest) {
@@ -3696,6 +3784,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The value of <code>HealthCheckVersion</code> in the request doesn't match the value of
      *         <code>HealthCheckVersion</code> in the health check.
      * @sample AmazonRoute53.UpdateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest) {
@@ -3742,6 +3832,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.UpdateHostedZoneComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) {
@@ -3796,6 +3888,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws ConcurrentModificationException
      *         Another user submitted a request to update the object at the same time that you did. Retry the request.
      * @sample AmazonRoute53.UpdateTrafficPolicyComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
@@ -3885,6 +3979,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         type than the current type for the instance. You specified the type in the JSON document in the
      *         <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.
      * @sample AmazonRoute53.UpdateTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest) {

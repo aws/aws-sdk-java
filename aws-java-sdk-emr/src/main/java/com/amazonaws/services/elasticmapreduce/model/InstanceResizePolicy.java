@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Custom policy for requesting termination protection or termination of specific instances when shrinking an instance
  * group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceResizePolicy"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceResizePolicy implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about an AWS Directory Service directory for use with Amazon WorkSpaces.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceDirectory"/>AWS API
+ *      Documentation</a>
  */
 public class WorkspaceDirectory implements Serializable, Cloneable {
 

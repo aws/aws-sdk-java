@@ -20,6 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type that contains information about the request to authorize associating a VPC with your private hosted
  * zone. Authorization is only required when a private hosted zone and a VPC were created by using different accounts.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization"/>AWS API
+ *      Documentation</a>
  */
 public class CreateVPCAssociationAuthorizationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

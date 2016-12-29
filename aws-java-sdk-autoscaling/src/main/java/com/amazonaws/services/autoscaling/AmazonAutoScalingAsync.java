@@ -56,6 +56,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for AttachInstances.
      * @return A Java Future containing the result of the AttachInstances operation returned by the service.
      * @sample AmazonAutoScalingAsync.AttachInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AttachInstancesResult> attachInstancesAsync(AttachInstancesRequest attachInstancesRequest);
 
@@ -87,6 +89,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachInstances operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.AttachInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AttachInstancesResult> attachInstancesAsync(AttachInstancesRequest attachInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<AttachInstancesRequest, AttachInstancesResult> asyncHandler);
@@ -110,6 +114,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the AttachLoadBalancerTargetGroups operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.AttachLoadBalancerTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachLoadBalancerTargetGroupsResult> attachLoadBalancerTargetGroupsAsync(
             AttachLoadBalancerTargetGroupsRequest attachLoadBalancerTargetGroupsRequest);
@@ -137,6 +143,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the AttachLoadBalancerTargetGroups operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.AttachLoadBalancerTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachLoadBalancerTargetGroupsResult> attachLoadBalancerTargetGroupsAsync(
             AttachLoadBalancerTargetGroupsRequest attachLoadBalancerTargetGroupsRequest,
@@ -163,6 +171,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for AttachLoadBalancers.
      * @return A Java Future containing the result of the AttachLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsync.AttachLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AttachLoadBalancersResult> attachLoadBalancersAsync(AttachLoadBalancersRequest attachLoadBalancersRequest);
 
@@ -191,6 +201,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.AttachLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AttachLoadBalancersResult> attachLoadBalancersAsync(AttachLoadBalancersRequest attachLoadBalancersRequest,
             com.amazonaws.handlers.AsyncHandler<AttachLoadBalancersRequest, AttachLoadBalancersResult> asyncHandler);
@@ -256,6 +268,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for CompleteLifecycleAction.
      * @return A Java Future containing the result of the CompleteLifecycleAction operation returned by the service.
      * @sample AmazonAutoScalingAsync.CompleteLifecycleAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CompleteLifecycleActionResult> completeLifecycleActionAsync(CompleteLifecycleActionRequest completeLifecycleActionRequest);
 
@@ -309,6 +323,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CompleteLifecycleAction operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.CompleteLifecycleAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CompleteLifecycleActionResult> completeLifecycleActionAsync(CompleteLifecycleActionRequest completeLifecycleActionRequest,
             com.amazonaws.handlers.AsyncHandler<CompleteLifecycleActionRequest, CompleteLifecycleActionResult> asyncHandler);
@@ -331,6 +347,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for CreateAutoScalingGroup.
      * @return A Java Future containing the result of the CreateAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsync.CreateAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAutoScalingGroupResult> createAutoScalingGroupAsync(CreateAutoScalingGroupRequest createAutoScalingGroupRequest);
 
@@ -356,6 +374,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.CreateAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAutoScalingGroupResult> createAutoScalingGroupAsync(CreateAutoScalingGroupRequest createAutoScalingGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAutoScalingGroupRequest, CreateAutoScalingGroupResult> asyncHandler);
@@ -378,6 +398,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for CreateLaunchConfiguration.
      * @return A Java Future containing the result of the CreateLaunchConfiguration operation returned by the service.
      * @sample AmazonAutoScalingAsync.CreateLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateLaunchConfigurationResult> createLaunchConfigurationAsync(
             CreateLaunchConfigurationRequest createLaunchConfigurationRequest);
@@ -404,6 +426,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateLaunchConfiguration operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.CreateLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateLaunchConfigurationResult> createLaunchConfigurationAsync(
             CreateLaunchConfigurationRequest createLaunchConfigurationRequest,
@@ -427,6 +451,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for CreateOrUpdateTags.
      * @return A Java Future containing the result of the CreateOrUpdateTags operation returned by the service.
      * @sample AmazonAutoScalingAsync.CreateOrUpdateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateOrUpdateTagsResult> createOrUpdateTagsAsync(CreateOrUpdateTagsRequest createOrUpdateTagsRequest);
 
@@ -452,6 +478,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateOrUpdateTags operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.CreateOrUpdateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateOrUpdateTagsResult> createOrUpdateTagsAsync(CreateOrUpdateTagsRequest createOrUpdateTagsRequest,
             com.amazonaws.handlers.AsyncHandler<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResult> asyncHandler);
@@ -482,6 +510,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DeleteAutoScalingGroup.
      * @return A Java Future containing the result of the DeleteAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAutoScalingGroupResult> deleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest);
 
@@ -515,6 +545,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DeleteAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAutoScalingGroupResult> deleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResult> asyncHandler);
@@ -532,6 +564,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DeleteLaunchConfiguration.
      * @return A Java Future containing the result of the DeleteLaunchConfiguration operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLaunchConfigurationResult> deleteLaunchConfigurationAsync(
             DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest);
@@ -553,6 +587,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteLaunchConfiguration operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DeleteLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLaunchConfigurationResult> deleteLaunchConfigurationAsync(
             DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest,
@@ -571,6 +607,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DeleteLifecycleHook.
      * @return A Java Future containing the result of the DeleteLifecycleHook operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteLifecycleHook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLifecycleHookResult> deleteLifecycleHookAsync(DeleteLifecycleHookRequest deleteLifecycleHookRequest);
 
@@ -591,6 +629,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteLifecycleHook operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DeleteLifecycleHook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLifecycleHookResult> deleteLifecycleHookAsync(DeleteLifecycleHookRequest deleteLifecycleHookRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLifecycleHookRequest, DeleteLifecycleHookResult> asyncHandler);
@@ -605,6 +645,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DeleteNotificationConfiguration operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DeleteNotificationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteNotificationConfigurationResult> deleteNotificationConfigurationAsync(
             DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest);
@@ -623,6 +665,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DeleteNotificationConfiguration operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DeleteNotificationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteNotificationConfigurationResult> deleteNotificationConfigurationAsync(
             DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest,
@@ -641,6 +685,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DeletePolicy.
      * @return A Java Future containing the result of the DeletePolicy operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeletePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(DeletePolicyRequest deletePolicyRequest);
 
@@ -661,6 +707,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePolicy operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DeletePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(DeletePolicyRequest deletePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler);
@@ -674,6 +722,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DeleteScheduledAction.
      * @return A Java Future containing the result of the DeleteScheduledAction operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest deleteScheduledActionRequest);
 
@@ -690,6 +740,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteScheduledAction operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest deleteScheduledActionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler);
@@ -703,6 +755,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DeleteTags.
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest);
 
@@ -719,6 +773,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
@@ -736,6 +792,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @param describeAccountLimitsRequest
      * @return A Java Future containing the result of the DescribeAccountLimits operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest describeAccountLimitsRequest);
 
@@ -756,6 +814,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAccountLimits operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest describeAccountLimitsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler);
@@ -783,6 +843,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @param describeAdjustmentTypesRequest
      * @return A Java Future containing the result of the DescribeAdjustmentTypes operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeAdjustmentTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAdjustmentTypesResult> describeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest);
 
@@ -798,6 +860,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAdjustmentTypes operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeAdjustmentTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAdjustmentTypesResult> describeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResult> asyncHandler);
@@ -826,6 +890,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DescribeAutoScalingGroups.
      * @return A Java Future containing the result of the DescribeAutoScalingGroups operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeAutoScalingGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAutoScalingGroupsResult> describeAutoScalingGroupsAsync(
             DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest);
@@ -843,6 +909,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAutoScalingGroups operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeAutoScalingGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAutoScalingGroupsResult> describeAutoScalingGroupsAsync(
             DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest,
@@ -873,6 +941,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeAutoScalingInstances operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeAutoScalingInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAutoScalingInstancesResult> describeAutoScalingInstancesAsync(
             DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest);
@@ -891,6 +961,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeAutoScalingInstances operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeAutoScalingInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAutoScalingInstancesResult> describeAutoScalingInstancesAsync(
             DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest,
@@ -920,6 +992,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeAutoScalingNotificationTypes operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeAutoScalingNotificationTypes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAutoScalingNotificationTypesResult> describeAutoScalingNotificationTypesAsync(
             DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest);
@@ -937,6 +1012,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeAutoScalingNotificationTypes operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeAutoScalingNotificationTypes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAutoScalingNotificationTypesResult> describeAutoScalingNotificationTypesAsync(
             DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest,
@@ -968,6 +1046,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeLaunchConfigurations operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeLaunchConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeLaunchConfigurationsResult> describeLaunchConfigurationsAsync(
             DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest);
@@ -986,6 +1066,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeLaunchConfigurations operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeLaunchConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeLaunchConfigurationsResult> describeLaunchConfigurationsAsync(
             DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest,
@@ -1014,6 +1096,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @param describeLifecycleHookTypesRequest
      * @return A Java Future containing the result of the DescribeLifecycleHookTypes operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeLifecycleHookTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLifecycleHookTypesResult> describeLifecycleHookTypesAsync(
             DescribeLifecycleHookTypesRequest describeLifecycleHookTypesRequest);
@@ -1030,6 +1114,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLifecycleHookTypes operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeLifecycleHookTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLifecycleHookTypesResult> describeLifecycleHookTypesAsync(
             DescribeLifecycleHookTypesRequest describeLifecycleHookTypesRequest,
@@ -1059,6 +1145,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DescribeLifecycleHooks.
      * @return A Java Future containing the result of the DescribeLifecycleHooks operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeLifecycleHooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLifecycleHooksResult> describeLifecycleHooksAsync(DescribeLifecycleHooksRequest describeLifecycleHooksRequest);
 
@@ -1075,6 +1163,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLifecycleHooks operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeLifecycleHooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLifecycleHooksResult> describeLifecycleHooksAsync(DescribeLifecycleHooksRequest describeLifecycleHooksRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLifecycleHooksRequest, DescribeLifecycleHooksResult> asyncHandler);
@@ -1089,6 +1179,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeLoadBalancerTargetGroups operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeLoadBalancerTargetGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeLoadBalancerTargetGroupsResult> describeLoadBalancerTargetGroupsAsync(
             DescribeLoadBalancerTargetGroupsRequest describeLoadBalancerTargetGroupsRequest);
@@ -1107,6 +1200,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeLoadBalancerTargetGroups operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeLoadBalancerTargetGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeLoadBalancerTargetGroupsResult> describeLoadBalancerTargetGroupsAsync(
             DescribeLoadBalancerTargetGroupsRequest describeLoadBalancerTargetGroupsRequest,
@@ -1125,6 +1221,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DescribeLoadBalancers.
      * @return A Java Future containing the result of the DescribeLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(DescribeLoadBalancersRequest describeLoadBalancersRequest);
 
@@ -1145,6 +1243,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(DescribeLoadBalancersRequest describeLoadBalancersRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult> asyncHandler);
@@ -1162,6 +1262,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeMetricCollectionTypes operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeMetricCollectionTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMetricCollectionTypesResult> describeMetricCollectionTypesAsync(
             DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest);
@@ -1183,6 +1285,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeMetricCollectionTypes operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeMetricCollectionTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMetricCollectionTypesResult> describeMetricCollectionTypesAsync(
             DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest,
@@ -1214,6 +1318,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeNotificationConfigurations operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeNotificationConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeNotificationConfigurationsResult> describeNotificationConfigurationsAsync(
             DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest);
@@ -1232,6 +1339,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeNotificationConfigurations operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeNotificationConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeNotificationConfigurationsResult> describeNotificationConfigurationsAsync(
             DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest,
@@ -1262,6 +1372,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DescribePolicies.
      * @return A Java Future containing the result of the DescribePolicies operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribePoliciesResult> describePoliciesAsync(DescribePoliciesRequest describePoliciesRequest);
 
@@ -1278,6 +1390,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePolicies operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribePoliciesResult> describePoliciesAsync(DescribePoliciesRequest describePoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePoliciesRequest, DescribePoliciesResult> asyncHandler);
@@ -1306,6 +1420,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DescribeScalingActivities.
      * @return A Java Future containing the result of the DescribeScalingActivities operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeScalingActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingActivitiesResult> describeScalingActivitiesAsync(
             DescribeScalingActivitiesRequest describeScalingActivitiesRequest);
@@ -1323,6 +1439,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeScalingActivities operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeScalingActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingActivitiesResult> describeScalingActivitiesAsync(
             DescribeScalingActivitiesRequest describeScalingActivitiesRequest,
@@ -1351,6 +1469,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @param describeScalingProcessTypesRequest
      * @return A Java Future containing the result of the DescribeScalingProcessTypes operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeScalingProcessTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingProcessTypesResult> describeScalingProcessTypesAsync(
             DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest);
@@ -1367,6 +1487,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeScalingProcessTypes operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeScalingProcessTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingProcessTypesResult> describeScalingProcessTypesAsync(
             DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest,
@@ -1397,6 +1519,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DescribeScheduledActions.
      * @return A Java Future containing the result of the DescribeScheduledActions operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest describeScheduledActionsRequest);
 
@@ -1414,6 +1538,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeScheduledActions operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest describeScheduledActionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeScheduledActionsRequest, DescribeScheduledActionsResult> asyncHandler);
@@ -1451,6 +1577,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DescribeTags.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest);
 
@@ -1476,6 +1604,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler);
@@ -1503,6 +1633,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeTerminationPolicyTypes operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeTerminationPolicyTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeTerminationPolicyTypesResult> describeTerminationPolicyTypesAsync(
             DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest);
@@ -1520,6 +1652,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DescribeTerminationPolicyTypes operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DescribeTerminationPolicyTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeTerminationPolicyTypesResult> describeTerminationPolicyTypesAsync(
             DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest,
@@ -1567,6 +1701,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DetachInstances.
      * @return A Java Future containing the result of the DetachInstances operation returned by the service.
      * @sample AmazonAutoScalingAsync.DetachInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DetachInstancesResult> detachInstancesAsync(DetachInstancesRequest detachInstancesRequest);
 
@@ -1600,6 +1736,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachInstances operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DetachInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DetachInstancesResult> detachInstancesAsync(DetachInstancesRequest detachInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<DetachInstancesRequest, DetachInstancesResult> asyncHandler);
@@ -1613,6 +1751,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DetachLoadBalancerTargetGroups operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DetachLoadBalancerTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachLoadBalancerTargetGroupsResult> detachLoadBalancerTargetGroupsAsync(
             DetachLoadBalancerTargetGroupsRequest detachLoadBalancerTargetGroupsRequest);
@@ -1630,6 +1770,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the DetachLoadBalancerTargetGroups operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.DetachLoadBalancerTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachLoadBalancerTargetGroupsResult> detachLoadBalancerTargetGroupsAsync(
             DetachLoadBalancerTargetGroupsRequest detachLoadBalancerTargetGroupsRequest,
@@ -1653,6 +1795,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DetachLoadBalancers.
      * @return A Java Future containing the result of the DetachLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsync.DetachLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DetachLoadBalancersResult> detachLoadBalancersAsync(DetachLoadBalancersRequest detachLoadBalancersRequest);
 
@@ -1678,6 +1822,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DetachLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DetachLoadBalancersResult> detachLoadBalancersAsync(DetachLoadBalancersRequest detachLoadBalancersRequest,
             com.amazonaws.handlers.AsyncHandler<DetachLoadBalancersRequest, DetachLoadBalancersResult> asyncHandler);
@@ -1706,6 +1852,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for DisableMetricsCollection.
      * @return A Java Future containing the result of the DisableMetricsCollection operation returned by the service.
      * @sample AmazonAutoScalingAsync.DisableMetricsCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableMetricsCollectionResult> disableMetricsCollectionAsync(DisableMetricsCollectionRequest disableMetricsCollectionRequest);
 
@@ -1722,6 +1870,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableMetricsCollection operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.DisableMetricsCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableMetricsCollectionResult> disableMetricsCollectionAsync(DisableMetricsCollectionRequest disableMetricsCollectionRequest,
             com.amazonaws.handlers.AsyncHandler<DisableMetricsCollectionRequest, DisableMetricsCollectionResult> asyncHandler);
@@ -1737,6 +1887,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for EnableMetricsCollection.
      * @return A Java Future containing the result of the EnableMetricsCollection operation returned by the service.
      * @sample AmazonAutoScalingAsync.EnableMetricsCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableMetricsCollectionResult> enableMetricsCollectionAsync(EnableMetricsCollectionRequest enableMetricsCollectionRequest);
 
@@ -1755,6 +1907,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableMetricsCollection operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.EnableMetricsCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableMetricsCollectionResult> enableMetricsCollectionAsync(EnableMetricsCollectionRequest enableMetricsCollectionRequest,
             com.amazonaws.handlers.AsyncHandler<EnableMetricsCollectionRequest, EnableMetricsCollectionResult> asyncHandler);
@@ -1773,6 +1927,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for EnteStandby.
      * @return A Java Future containing the result of the EnterStandby operation returned by the service.
      * @sample AmazonAutoScalingAsync.EnterStandby
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnterStandbyResult> enterStandbyAsync(EnterStandbyRequest enterStandbyRequest);
 
@@ -1794,6 +1950,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnterStandby operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.EnterStandby
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnterStandbyResult> enterStandbyAsync(EnterStandbyRequest enterStandbyRequest,
             com.amazonaws.handlers.AsyncHandler<EnterStandbyRequest, EnterStandbyResult> asyncHandler);
@@ -1807,6 +1965,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for ExecutePolicy.
      * @return A Java Future containing the result of the ExecutePolicy operation returned by the service.
      * @sample AmazonAutoScalingAsync.ExecutePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ExecutePolicyResult> executePolicyAsync(ExecutePolicyRequest executePolicyRequest);
 
@@ -1823,6 +1983,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ExecutePolicy operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.ExecutePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ExecutePolicyResult> executePolicyAsync(ExecutePolicyRequest executePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<ExecutePolicyRequest, ExecutePolicyResult> asyncHandler);
@@ -1841,6 +2003,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for ExitStandby.
      * @return A Java Future containing the result of the ExitStandby operation returned by the service.
      * @sample AmazonAutoScalingAsync.ExitStandby
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ExitStandbyResult> exitStandbyAsync(ExitStandbyRequest exitStandbyRequest);
 
@@ -1862,6 +2026,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ExitStandby operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.ExitStandby
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ExitStandbyResult> exitStandbyAsync(ExitStandbyRequest exitStandbyRequest,
             com.amazonaws.handlers.AsyncHandler<ExitStandbyRequest, ExitStandbyResult> asyncHandler);
@@ -1922,6 +2088,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for PutLifecycleHook.
      * @return A Java Future containing the result of the PutLifecycleHook operation returned by the service.
      * @sample AmazonAutoScalingAsync.PutLifecycleHook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutLifecycleHookResult> putLifecycleHookAsync(PutLifecycleHookRequest putLifecycleHookRequest);
 
@@ -1985,6 +2153,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutLifecycleHook operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.PutLifecycleHook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutLifecycleHookResult> putLifecycleHookAsync(PutLifecycleHookRequest putLifecycleHookRequest,
             com.amazonaws.handlers.AsyncHandler<PutLifecycleHookRequest, PutLifecycleHookResult> asyncHandler);
@@ -2008,6 +2178,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the PutNotificationConfiguration operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.PutNotificationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<PutNotificationConfigurationResult> putNotificationConfigurationAsync(
             PutNotificationConfigurationRequest putNotificationConfigurationRequest);
@@ -2035,6 +2207,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the PutNotificationConfiguration operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.PutNotificationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<PutNotificationConfigurationResult> putNotificationConfigurationAsync(
             PutNotificationConfigurationRequest putNotificationConfigurationRequest,
@@ -2057,6 +2231,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for PutScalingPolicy.
      * @return A Java Future containing the result of the PutScalingPolicy operation returned by the service.
      * @sample AmazonAutoScalingAsync.PutScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(PutScalingPolicyRequest putScalingPolicyRequest);
 
@@ -2081,6 +2257,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutScalingPolicy operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.PutScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(PutScalingPolicyRequest putScalingPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult> asyncHandler);
@@ -2101,6 +2279,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the PutScheduledUpdateGroupAction operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.PutScheduledUpdateGroupAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<PutScheduledUpdateGroupActionResult> putScheduledUpdateGroupActionAsync(
             PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest);
@@ -2125,6 +2305,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the PutScheduledUpdateGroupAction operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.PutScheduledUpdateGroupAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<PutScheduledUpdateGroupActionResult> putScheduledUpdateGroupActionAsync(
             PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest,
@@ -2178,6 +2360,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the RecordLifecycleActionHeartbeat operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.RecordLifecycleActionHeartbeat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<RecordLifecycleActionHeartbeatResult> recordLifecycleActionHeartbeatAsync(
             RecordLifecycleActionHeartbeatRequest recordLifecycleActionHeartbeatRequest);
@@ -2234,6 +2418,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the RecordLifecycleActionHeartbeat operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.RecordLifecycleActionHeartbeat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<RecordLifecycleActionHeartbeatResult> recordLifecycleActionHeartbeatAsync(
             RecordLifecycleActionHeartbeatRequest recordLifecycleActionHeartbeatRequest,
@@ -2254,6 +2440,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for SuspendProcesses and ResumeProcesses.
      * @return A Java Future containing the result of the ResumeProcesses operation returned by the service.
      * @sample AmazonAutoScalingAsync.ResumeProcesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResumeProcessesResult> resumeProcessesAsync(ResumeProcessesRequest resumeProcessesRequest);
 
@@ -2276,6 +2464,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ResumeProcesses operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.ResumeProcesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResumeProcessesResult> resumeProcessesAsync(ResumeProcessesRequest resumeProcessesRequest,
             com.amazonaws.handlers.AsyncHandler<ResumeProcessesRequest, ResumeProcessesResult> asyncHandler);
@@ -2294,6 +2484,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for SetDesiredCapacity.
      * @return A Java Future containing the result of the SetDesiredCapacity operation returned by the service.
      * @sample AmazonAutoScalingAsync.SetDesiredCapacity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetDesiredCapacityResult> setDesiredCapacityAsync(SetDesiredCapacityRequest setDesiredCapacityRequest);
 
@@ -2315,6 +2507,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetDesiredCapacity operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.SetDesiredCapacity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetDesiredCapacityResult> setDesiredCapacityAsync(SetDesiredCapacityRequest setDesiredCapacityRequest,
             com.amazonaws.handlers.AsyncHandler<SetDesiredCapacityRequest, SetDesiredCapacityResult> asyncHandler);
@@ -2333,6 +2527,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for SetInstanceHealth.
      * @return A Java Future containing the result of the SetInstanceHealth operation returned by the service.
      * @sample AmazonAutoScalingAsync.SetInstanceHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetInstanceHealthResult> setInstanceHealthAsync(SetInstanceHealthRequest setInstanceHealthRequest);
 
@@ -2354,6 +2550,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetInstanceHealth operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.SetInstanceHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetInstanceHealthResult> setInstanceHealthAsync(SetInstanceHealthRequest setInstanceHealthRequest,
             com.amazonaws.handlers.AsyncHandler<SetInstanceHealthRequest, SetInstanceHealthResult> asyncHandler);
@@ -2372,6 +2570,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for SetInstanceProtection.
      * @return A Java Future containing the result of the SetInstanceProtection operation returned by the service.
      * @sample AmazonAutoScalingAsync.SetInstanceProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetInstanceProtectionResult> setInstanceProtectionAsync(SetInstanceProtectionRequest setInstanceProtectionRequest);
 
@@ -2393,6 +2593,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetInstanceProtection operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.SetInstanceProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetInstanceProtectionResult> setInstanceProtectionAsync(SetInstanceProtectionRequest setInstanceProtectionRequest,
             com.amazonaws.handlers.AsyncHandler<SetInstanceProtectionRequest, SetInstanceProtectionResult> asyncHandler);
@@ -2418,6 +2620,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for SuspendProcesses and ResumeProcesses.
      * @return A Java Future containing the result of the SuspendProcesses operation returned by the service.
      * @sample AmazonAutoScalingAsync.SuspendProcesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SuspendProcessesResult> suspendProcessesAsync(SuspendProcessesRequest suspendProcessesRequest);
 
@@ -2446,6 +2650,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SuspendProcesses operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.SuspendProcesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SuspendProcessesResult> suspendProcessesAsync(SuspendProcessesRequest suspendProcessesRequest,
             com.amazonaws.handlers.AsyncHandler<SuspendProcessesRequest, SuspendProcessesResult> asyncHandler);
@@ -2463,6 +2669,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the TerminateInstanceInAutoScalingGroup operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.TerminateInstanceInAutoScalingGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<TerminateInstanceInAutoScalingGroupResult> terminateInstanceInAutoScalingGroupAsync(
             TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest);
@@ -2484,6 +2693,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * @return A Java Future containing the result of the TerminateInstanceInAutoScalingGroup operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsyncHandler.TerminateInstanceInAutoScalingGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<TerminateInstanceInAutoScalingGroupResult> terminateInstanceInAutoScalingGroupAsync(
             TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest,
@@ -2532,6 +2744,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        Contains the parameters for UpdateAutoScalingGroup.
      * @return A Java Future containing the result of the UpdateAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsync.UpdateAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAutoScalingGroupResult> updateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest);
 
@@ -2582,6 +2796,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsyncHandler.UpdateAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAutoScalingGroupResult> updateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResult> asyncHandler);

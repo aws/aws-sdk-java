@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Filter"/>AWS API Documentation</a>
  */
 public class Filter implements Serializable, Cloneable {
 

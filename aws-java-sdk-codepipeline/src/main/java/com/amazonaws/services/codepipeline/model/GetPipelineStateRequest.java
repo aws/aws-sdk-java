@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a get pipeline state action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState"/>AWS API
+ *      Documentation</a>
  */
 public class GetPipelineStateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

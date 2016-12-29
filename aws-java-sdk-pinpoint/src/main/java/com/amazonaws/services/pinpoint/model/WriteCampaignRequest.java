@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class WriteCampaignRequest implements Serializable, Cloneable {
 
     /** Treatments that are defined in addition to the default treatment. */

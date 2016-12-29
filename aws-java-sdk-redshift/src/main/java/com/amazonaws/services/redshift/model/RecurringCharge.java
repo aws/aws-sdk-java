@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a recurring charge.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RecurringCharge"/>AWS API Documentation</a>
  */
 public class RecurringCharge implements Serializable, Cloneable {
 

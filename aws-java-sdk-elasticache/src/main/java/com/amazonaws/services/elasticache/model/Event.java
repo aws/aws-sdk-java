@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents a single occurrence of something interesting within the system. Some examples of events are creating a
  * cache cluster, adding or removing a cache node, or rebooting a node.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Event"/>AWS API Documentation</a>
  */
 public class Event implements Serializable, Cloneable {
 

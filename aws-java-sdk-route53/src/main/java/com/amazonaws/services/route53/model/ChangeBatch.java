@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The information for a change request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeBatch"/>AWS API Documentation</a>
  */
 public class ChangeBatch implements Serializable, Cloneable {
 

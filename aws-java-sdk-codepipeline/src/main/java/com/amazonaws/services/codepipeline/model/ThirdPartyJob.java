@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A response to a PollForThirdPartyJobs request returned by AWS CodePipeline when there is a job to be worked upon by a
  * partner action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJob"/>AWS API
+ *      Documentation</a>
  */
 public class ThirdPartyJob implements Serializable, Cloneable {
 

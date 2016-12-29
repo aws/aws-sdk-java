@@ -20,6 +20,8 @@ import java.io.Serializable;
  * <a>CreateBuild</a>, and are valid for a limited time. If they expire before you upload your game build, get a new set
  * by calling <a>RequestUploadCredentials</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Credentials"/>AWS API Documentation</a>
  */
 public class Credentials implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The mitigation applied to a DDoS attack.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Mitigation"/>AWS API Documentation</a>
  */
 public class Mitigation implements Serializable, Cloneable {
 

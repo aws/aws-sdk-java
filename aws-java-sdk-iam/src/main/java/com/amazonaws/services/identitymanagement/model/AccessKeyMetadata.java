@@ -21,6 +21,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>ListAccessKeys</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKeyMetadata"/>AWS API Documentation</a>
  */
 public class AccessKeyMetadata implements Serializable, Cloneable {
 

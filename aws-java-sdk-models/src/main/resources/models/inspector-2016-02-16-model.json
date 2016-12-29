@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "inspector",
     "targetPrefix" : "InspectorService",
+    "uid" : "inspector-2016-02-16",
     "xmlNamespace" : null
   },
   "operations" : {

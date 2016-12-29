@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "ses",
     "targetPrefix" : null,
+    "uid" : "email-2010-12-01",
     "xmlNamespace" : "http://ses.amazonaws.com/doc/2010-12-01/"
   },
   "operations" : {

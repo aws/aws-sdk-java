@@ -98,6 +98,8 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
  * >Cache Node Type-Specific Parameters for Redis</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNode"/>AWS API Documentation</a>
  */
 public class CacheNode implements Serializable, Cloneable {
 

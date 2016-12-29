@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InternetGatewayAttachment"/>AWS API
+ *      Documentation</a>
  */
 public class InternetGatewayAttachment implements Serializable, Cloneable {
 

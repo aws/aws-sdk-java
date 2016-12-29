@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnprocessedIdentityId"/>AWS API
+ *      Documentation</a>
  */
 public class UnprocessedIdentityId implements Serializable, Cloneable {
 

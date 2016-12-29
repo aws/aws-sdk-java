@@ -20,6 +20,9 @@ import java.io.Serializable;
  * added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the
  * result includes an error code and an error message.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatchResponseEntry"/>AWS API
+ *      Documentation</a>
  */
 public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
 

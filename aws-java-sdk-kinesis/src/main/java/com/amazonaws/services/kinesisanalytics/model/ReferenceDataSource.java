@@ -20,6 +20,9 @@ import java.io.Serializable;
  * resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon
  * S3 object to the in-application table.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ReferenceDataSource"/>AWS API
+ *      Documentation</a>
  */
 public class ReferenceDataSource implements Serializable, Cloneable {
 

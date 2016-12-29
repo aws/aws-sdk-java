@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the information required for client programs to connect to a cache node.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Endpoint"/>AWS API Documentation</a>
  */
 public class Endpoint implements Serializable, Cloneable {
 

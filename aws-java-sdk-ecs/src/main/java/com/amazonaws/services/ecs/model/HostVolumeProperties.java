@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details on a container instance host volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HostVolumeProperties"/>AWS API Documentation</a>
  */
 public class HostVolumeProperties implements Serializable, Cloneable {
 

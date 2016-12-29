@@ -26,6 +26,9 @@ import java.io.Serializable;
  * sessions and a time period of 60 minutes, on receiving a <code>CreateGameSession</code> request, GameLift checks that
  * the player (identified by <code>CreatorId</code>) has created fewer than 10 game sessions in the past 60 minutes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResourceCreationLimitPolicy"/>AWS API
+ *      Documentation</a>
  */
 public class ResourceCreationLimitPolicy implements Serializable, Cloneable {
 

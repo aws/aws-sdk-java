@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A key-value pair that identifies or specifies metadata about an ACM resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

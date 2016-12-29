@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "directconnect",
     "targetPrefix" : "OvertureService",
+    "uid" : "directconnect-2012-10-25",
     "xmlNamespace" : null
   },
   "operations" : {

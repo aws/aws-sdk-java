@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReservedCacheNode"/>AWS API
+ *      Documentation</a>
  */
 public class ReservedCacheNode implements Serializable, Cloneable {
 

@@ -20,6 +20,9 @@ import java.io.Serializable;
  * must meet the requirements for AWS CodePipeline. For more information, see the <a
  * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactStore"/>AWS API
+ *      Documentation</a>
  */
 public class ArtifactStore implements Serializable, Cloneable {
 

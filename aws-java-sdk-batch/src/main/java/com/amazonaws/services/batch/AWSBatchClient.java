@@ -263,6 +263,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.CancelJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob"/>AWS API Documentation</a>
      */
     @Override
     public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
@@ -329,6 +330,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.CreateComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateComputeEnvironmentResult createComputeEnvironment(CreateComputeEnvironmentRequest createComputeEnvironmentRequest) {
@@ -383,6 +386,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.CreateJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue"/>AWS API Documentation</a>
      */
     @Override
     public CreateJobQueueResult createJobQueue(CreateJobQueueRequest createJobQueueRequest) {
@@ -434,6 +438,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DeleteComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteComputeEnvironmentResult deleteComputeEnvironment(DeleteComputeEnvironmentRequest deleteComputeEnvironmentRequest) {
@@ -486,6 +492,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DeleteJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue"/>AWS API Documentation</a>
      */
     @Override
     public DeleteJobQueueResult deleteJobQueue(DeleteJobQueueRequest deleteJobQueueRequest) {
@@ -532,6 +539,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DeregisterJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeregisterJobDefinitionResult deregisterJobDefinition(DeregisterJobDefinitionRequest deregisterJobDefinitionRequest) {
@@ -584,6 +593,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeComputeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeComputeEnvironmentsResult describeComputeEnvironments(DescribeComputeEnvironmentsRequest describeComputeEnvironmentsRequest) {
@@ -633,6 +644,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeJobDefinitionsResult describeJobDefinitions(DescribeJobDefinitionsRequest describeJobDefinitionsRequest) {
@@ -680,6 +693,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeJobQueues
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeJobQueuesResult describeJobQueues(DescribeJobQueuesRequest describeJobQueuesRequest) {
@@ -726,6 +741,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs"/>AWS API Documentation</a>
      */
     @Override
     public DescribeJobsResult describeJobs(DescribeJobsRequest describeJobsRequest) {
@@ -773,6 +789,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.ListJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs"/>AWS API Documentation</a>
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
@@ -819,6 +836,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.RegisterJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RegisterJobDefinitionResult registerJobDefinition(RegisterJobDefinitionRequest registerJobDefinitionRequest) {
@@ -867,6 +886,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.SubmitJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob"/>AWS API Documentation</a>
      */
     @Override
     public SubmitJobResult submitJob(SubmitJobRequest submitJobRequest) {
@@ -915,6 +935,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.TerminateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob"/>AWS API Documentation</a>
      */
     @Override
     public TerminateJobResult terminateJob(TerminateJobRequest terminateJobRequest) {
@@ -961,6 +982,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.UpdateComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateComputeEnvironmentResult updateComputeEnvironment(UpdateComputeEnvironmentRequest updateComputeEnvironmentRequest) {
@@ -1008,6 +1031,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.UpdateJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue"/>AWS API Documentation</a>
      */
     @Override
     public UpdateJobQueueResult updateJobQueue(UpdateJobQueueRequest updateJobQueueRequest) {

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Cluster"/>AWS API Documentation</a>
  */
 public class Cluster implements Serializable, Cloneable {
 

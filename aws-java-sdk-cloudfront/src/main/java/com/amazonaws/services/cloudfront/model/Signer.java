@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A complex type that lists the AWS accounts that were included in the <code>TrustedSigners</code> complex type, as
  * well as their active CloudFront key pair IDs, if any.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/Signer"/>AWS API Documentation</a>
  */
 public class Signer implements Serializable, Cloneable {
 

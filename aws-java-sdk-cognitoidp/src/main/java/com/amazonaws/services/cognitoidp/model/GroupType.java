@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The group type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GroupType"/>AWS API Documentation</a>
  */
 public class GroupType implements Serializable, Cloneable {
 

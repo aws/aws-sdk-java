@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a specific metric.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Metric"/>AWS API Documentation</a>
  */
 public class Metric implements Serializable, Cloneable {
 

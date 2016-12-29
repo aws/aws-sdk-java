@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the storage location for an instance store-backed AMI.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Storage"/>AWS API Documentation</a>
  */
 public class Storage implements Serializable, Cloneable {
 

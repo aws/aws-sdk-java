@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class EndpointDemographic implements Serializable, Cloneable {
 
     /** The version of the application associated with the endpoint. */

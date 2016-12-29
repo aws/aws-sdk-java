@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the output of the <a>DescribeHsm</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm"/>AWS API Documentation</a>
  */
 public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

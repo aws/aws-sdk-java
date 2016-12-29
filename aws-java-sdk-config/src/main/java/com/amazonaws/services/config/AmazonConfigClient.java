@@ -360,6 +360,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
      *         again later.
      * @sample AmazonConfig.DeleteConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteConfigRuleResult deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest) {
@@ -413,6 +415,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.DeleteConfigurationRecorder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteConfigurationRecorderResult deleteConfigurationRecorder(DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest) {
@@ -465,6 +469,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws LastDeliveryChannelDeleteFailedException
      *         You cannot delete the delivery channel you specified because the configuration recorder is running.
      * @sample AmazonConfig.DeleteDeliveryChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteDeliveryChannelResult deleteDeliveryChannel(DeleteDeliveryChannelRequest deleteDeliveryChannelRequest) {
@@ -514,6 +520,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
      *         again later.
      * @sample AmazonConfig.DeleteEvaluationResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteEvaluationResultsResult deleteEvaluationResults(DeleteEvaluationResultsRequest deleteEvaluationResultsRequest) {
@@ -582,6 +590,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoRunningConfigurationRecorderException
      *         There is no configuration recorder running.
      * @sample AmazonConfig.DeliverConfigSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeliverConfigSnapshotResult deliverConfigSnapshot(DeliverConfigSnapshotRequest deliverConfigSnapshotRequest) {
@@ -660,6 +670,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @sample AmazonConfig.DescribeComplianceByConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeComplianceByConfigRuleResult describeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest) {
@@ -744,6 +756,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeComplianceByResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeComplianceByResourceResult describeComplianceByResource(DescribeComplianceByResourceRequest describeComplianceByResourceRequest) {
@@ -798,6 +812,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeConfigRuleEvaluationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeConfigRuleEvaluationStatusResult describeConfigRuleEvaluationStatus(
@@ -849,6 +865,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @sample AmazonConfig.DescribeConfigRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeConfigRulesResult describeConfigRules(DescribeConfigRulesRequest describeConfigRulesRequest) {
@@ -903,6 +921,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.DescribeConfigurationRecorderStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeConfigurationRecorderStatusResult describeConfigurationRecorderStatus(
@@ -960,6 +980,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.DescribeConfigurationRecorders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeConfigurationRecordersResult describeConfigurationRecorders(DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest) {
@@ -1016,6 +1038,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchDeliveryChannelException
      *         You have specified a delivery channel that does not exist.
      * @sample AmazonConfig.DescribeDeliveryChannelStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest) {
@@ -1072,6 +1096,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchDeliveryChannelException
      *         You have specified a delivery channel that does not exist.
      * @sample AmazonConfig.DescribeDeliveryChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeDeliveryChannelsResult describeDeliveryChannels(DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest) {
@@ -1127,6 +1153,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @sample AmazonConfig.GetComplianceDetailsByConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(
@@ -1173,6 +1201,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.GetComplianceDetailsByResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetComplianceDetailsByResourceResult getComplianceDetailsByResource(GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest) {
@@ -1215,6 +1245,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getComplianceSummaryByConfigRuleRequest
      * @return Result of the GetComplianceSummaryByConfigRule operation returned by the service.
      * @sample AmazonConfig.GetComplianceSummaryByConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetComplianceSummaryByConfigRuleResult getComplianceSummaryByConfigRule(
@@ -1266,6 +1298,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.GetComplianceSummaryByResourceType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public GetComplianceSummaryByResourceTypeResult getComplianceSummaryByResourceType(
@@ -1343,6 +1377,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws ResourceNotDiscoveredException
      *         You have specified a resource that is either unknown or has not been discovered.
      * @sample AmazonConfig.GetResourceConfigHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetResourceConfigHistoryResult getResourceConfigHistory(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest) {
@@ -1408,6 +1444,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         There are no configuration recorders available to provide the role needed to describe your resources.
      *         Create a configuration recorder.
      * @sample AmazonConfig.ListDiscoveredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest) {
@@ -1515,6 +1553,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         There are no configuration recorders available to provide the role needed to describe your resources.
      *         Create a configuration recorder.
      * @sample AmazonConfig.PutConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule"/>AWS API Documentation</a>
      */
     @Override
     public PutConfigRuleResult putConfigRule(PutConfigRuleRequest putConfigRuleRequest) {
@@ -1578,6 +1617,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         AWS Config throws an exception if the recording group does not contain a valid list of resource types.
      *         Invalid values could also be incorrectly formatted.
      * @sample AmazonConfig.PutConfigurationRecorder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public PutConfigurationRecorderResult putConfigurationRecorder(PutConfigurationRecorderRequest putConfigurationRecorderRequest) {
@@ -1650,6 +1691,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InsufficientDeliveryPolicyException
      *         Your Amazon S3 bucket policy does not permit AWS Config to write to it.
      * @sample AmazonConfig.PutDeliveryChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public PutDeliveryChannelResult putDeliveryChannel(PutDeliveryChannelRequest putDeliveryChannelRequest) {
@@ -1698,6 +1741,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @sample AmazonConfig.PutEvaluations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations"/>AWS API Documentation</a>
      */
     @Override
     public PutEvaluationsResult putEvaluations(PutEvaluationsRequest putEvaluationsRequest) {
@@ -1797,6 +1841,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.StartConfigRulesEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StartConfigRulesEvaluationResult startConfigRulesEvaluation(StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest) {
@@ -1846,6 +1892,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoAvailableDeliveryChannelException
      *         There is no delivery channel available to record configurations.
      * @sample AmazonConfig.StartConfigurationRecorder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StartConfigurationRecorderResult startConfigurationRecorder(StartConfigurationRecorderRequest startConfigurationRecorderRequest) {
@@ -1890,6 +1938,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.StopConfigurationRecorder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StopConfigurationRecorderResult stopConfigurationRecorder(StopConfigurationRecorderRequest stopConfigurationRecorderRequest) {

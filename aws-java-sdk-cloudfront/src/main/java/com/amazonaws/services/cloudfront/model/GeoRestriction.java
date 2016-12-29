@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A complex type that controls the countries in which your content is distributed. CloudFront determines the location
  * of your users using <code>MaxMind</code> GeoIP databases.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GeoRestriction"/>AWS API Documentation</a>
  */
 public class GeoRestriction implements Serializable, Cloneable {
 

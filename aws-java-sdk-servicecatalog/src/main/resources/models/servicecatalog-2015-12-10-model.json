@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "servicecatalog",
     "targetPrefix" : "AWS242ServiceCatalogService",
+    "uid" : "servicecatalog-2015-12-10",
     "xmlNamespace" : null
   },
   "operations" : {

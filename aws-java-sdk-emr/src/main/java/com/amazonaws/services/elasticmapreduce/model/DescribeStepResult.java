@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This output contains the description of the cluster step.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeStepResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

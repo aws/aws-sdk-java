@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the launch specification for VM import.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstanceLaunchSpecification"/>AWS API
+ *      Documentation</a>
  */
 public class ImportInstanceLaunchSpecification implements Serializable, Cloneable {
 

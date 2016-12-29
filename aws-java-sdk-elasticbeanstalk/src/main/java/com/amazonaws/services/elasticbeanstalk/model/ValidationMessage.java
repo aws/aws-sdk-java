@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An error or warning for a desired configuration option value.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidationMessage"/>AWS API
+ *      Documentation</a>
  */
 public class ValidationMessage implements Serializable, Cloneable {
 

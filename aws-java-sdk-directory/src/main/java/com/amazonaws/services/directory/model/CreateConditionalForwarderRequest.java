@@ -20,6 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory.
  * Conditional forwarders are required in order to set up a trust relationship with another domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder"/>AWS API
+ *      Documentation</a>
  */
 public class CreateConditionalForwarderRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

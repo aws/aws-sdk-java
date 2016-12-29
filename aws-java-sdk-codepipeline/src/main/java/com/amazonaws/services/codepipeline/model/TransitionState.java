@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about the state of transitions between one stage and another stage.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TransitionState"/>AWS API
+ *      Documentation</a>
  */
 public class TransitionState implements Serializable, Cloneable {
 

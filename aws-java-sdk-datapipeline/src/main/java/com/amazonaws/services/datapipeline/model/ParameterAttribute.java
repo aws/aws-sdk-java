@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The attributes allowed or specified with a parameter object.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ParameterAttribute"/>AWS API
+ *      Documentation</a>
  */
 public class ParameterAttribute implements Serializable, Cloneable {
 

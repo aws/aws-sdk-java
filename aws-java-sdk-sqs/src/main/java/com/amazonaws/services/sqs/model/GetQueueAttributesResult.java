@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A list of returned queue attributes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes"/>AWS API Documentation</a>
  */
 public class GetQueueAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

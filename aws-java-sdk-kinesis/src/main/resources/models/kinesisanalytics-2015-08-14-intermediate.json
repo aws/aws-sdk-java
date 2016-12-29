@@ -70,6 +70,7 @@
     "syncClient" : "AmazonKinesisAnalyticsClient",
     "syncClientBuilderClassName" : "AmazonKinesisAnalyticsClientBuilder",
     "syncInterface" : "AmazonKinesisAnalytics",
+    "uid" : "kinesisanalytics-2015-08-14",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

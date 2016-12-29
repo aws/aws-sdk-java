@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a request to purchase Scheduled Instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseRequest"/>AWS API Documentation</a>
  */
 public class PurchaseRequest implements Serializable, Cloneable {
 

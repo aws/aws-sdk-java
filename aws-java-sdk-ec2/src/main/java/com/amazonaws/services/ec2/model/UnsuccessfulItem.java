@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about items that were not successfully processed in a batch call.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnsuccessfulItem"/>AWS API Documentation</a>
  */
 public class UnsuccessfulItem implements Serializable, Cloneable {
 

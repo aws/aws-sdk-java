@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the API operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Operation"/>AWS API Documentation</a>
  */
 public class Operation implements Serializable, Cloneable {
 

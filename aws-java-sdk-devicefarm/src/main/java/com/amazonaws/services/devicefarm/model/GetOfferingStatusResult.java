@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Returns the status result for a device offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus"/>AWS API
+ *      Documentation</a>
  */
 public class GetOfferingStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

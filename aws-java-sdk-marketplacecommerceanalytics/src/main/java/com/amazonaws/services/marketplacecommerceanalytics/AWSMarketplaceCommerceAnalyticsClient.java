@@ -246,6 +246,9 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      * @throws MarketplaceCommerceAnalyticsException
      *         This exception is thrown when an internal service error occurs.
      * @sample AWSMarketplaceCommerceAnalytics.GenerateDataSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public GenerateDataSetResult generateDataSet(GenerateDataSetRequest generateDataSetRequest) {
@@ -294,6 +297,9 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      * @throws MarketplaceCommerceAnalyticsException
      *         This exception is thrown when an internal service error occurs.
      * @sample AWSMarketplaceCommerceAnalytics.StartSupportDataExport
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest) {

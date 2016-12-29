@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The response to the request to sign out all devices.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut"/>AWS API Documentation</a>
  */
 public class GlobalSignOutResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

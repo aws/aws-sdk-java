@@ -114,6 +114,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule"/>AWS API Documentation</a>
      */
     DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
 
@@ -130,6 +131,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DescribeRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule"/>AWS API Documentation</a>
      */
     DescribeRuleResult describeRule(DescribeRuleRequest describeRuleRequest);
 
@@ -152,6 +154,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DisableRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule"/>AWS API Documentation</a>
      */
     DisableRuleResult disableRule(DisableRuleRequest disableRuleRequest);
 
@@ -174,6 +177,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.EnableRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule"/>AWS API Documentation</a>
      */
     EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest);
 
@@ -191,6 +195,8 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.ListRuleNamesByTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget"/>AWS API
+     *      Documentation</a>
      */
     ListRuleNamesByTargetResult listRuleNamesByTarget(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest);
 
@@ -208,6 +214,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules"/>AWS API Documentation</a>
      */
     ListRulesResult listRules(ListRulesRequest listRulesRequest);
 
@@ -224,6 +231,8 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.ListTargetsByRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule"/>AWS API
+     *      Documentation</a>
      */
     ListTargetsByRuleResult listTargetsByRule(ListTargetsByRuleRequest listTargetsByRuleRequest);
 
@@ -238,6 +247,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents"/>AWS API Documentation</a>
      */
     PutEventsResult putEvents(PutEventsRequest putEventsRequest);
 
@@ -275,6 +285,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule"/>AWS API Documentation</a>
      */
     PutRuleResult putRule(PutRuleRequest putRuleRequest);
 
@@ -322,6 +333,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets"/>AWS API Documentation</a>
      */
     PutTargetsResult putTargets(PutTargetsRequest putTargetsRequest);
 
@@ -344,6 +356,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.RemoveTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets"/>AWS API Documentation</a>
      */
     RemoveTargetsResult removeTargets(RemoveTargetsRequest removeTargetsRequest);
 
@@ -365,6 +378,8 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.TestEventPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern"/>AWS API
+     *      Documentation</a>
      */
     TestEventPatternResult testEventPattern(TestEventPatternRequest testEventPatternRequest);
 

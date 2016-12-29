@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an update for a destination in Amazon S3.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ExtendedS3DestinationUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class ExtendedS3DestinationUpdate implements Serializable, Cloneable {
 

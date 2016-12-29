@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the DynamoDB Streams configuration for a table in DynamoDB.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/StreamSpecification"/>AWS API
+ *      Documentation</a>
  */
 public class StreamSpecification implements Serializable, Cloneable {
 

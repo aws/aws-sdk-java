@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Result message containing a description of the requested environment info.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo"/>AWS API
+ *      Documentation</a>
  */
 public class RetrieveEnvironmentInfoResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

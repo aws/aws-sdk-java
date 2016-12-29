@@ -20,6 +20,9 @@ import java.io.Serializable;
  * (such as the source bucket name and object key name), the in-application table name that is created, and updated
  * mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ReferenceDataSourceUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class ReferenceDataSourceUpdate implements Serializable, Cloneable {
 

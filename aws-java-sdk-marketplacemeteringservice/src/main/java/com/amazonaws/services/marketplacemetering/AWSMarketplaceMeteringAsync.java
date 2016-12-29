@@ -83,6 +83,8 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      *        application.
      * @return A Java Future containing the result of the BatchMeterUsage operation returned by the service.
      * @sample AWSMarketplaceMeteringAsync.BatchMeterUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<BatchMeterUsageResult> batchMeterUsageAsync(BatchMeterUsageRequest batchMeterUsageRequest);
 
@@ -112,6 +114,8 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchMeterUsage operation returned by the service.
      * @sample AWSMarketplaceMeteringAsyncHandler.BatchMeterUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<BatchMeterUsageResult> batchMeterUsageAsync(BatchMeterUsageRequest batchMeterUsageRequest,
             com.amazonaws.handlers.AsyncHandler<BatchMeterUsageRequest, BatchMeterUsageResult> asyncHandler);
@@ -129,6 +133,8 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      * @param meterUsageRequest
      * @return A Java Future containing the result of the MeterUsage operation returned by the service.
      * @sample AWSMarketplaceMeteringAsync.MeterUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<MeterUsageResult> meterUsageAsync(MeterUsageRequest meterUsageRequest);
 
@@ -149,6 +155,8 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the MeterUsage operation returned by the service.
      * @sample AWSMarketplaceMeteringAsyncHandler.MeterUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<MeterUsageResult> meterUsageAsync(MeterUsageRequest meterUsageRequest,
             com.amazonaws.handlers.AsyncHandler<MeterUsageRequest, MeterUsageResult> asyncHandler);
@@ -164,6 +172,8 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      *        Contains input to the ResolveCustomer operation.
      * @return A Java Future containing the result of the ResolveCustomer operation returned by the service.
      * @sample AWSMarketplaceMeteringAsync.ResolveCustomer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResolveCustomerResult> resolveCustomerAsync(ResolveCustomerRequest resolveCustomerRequest);
 
@@ -182,6 +192,8 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ResolveCustomer operation returned by the service.
      * @sample AWSMarketplaceMeteringAsyncHandler.ResolveCustomer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResolveCustomerResult> resolveCustomerAsync(ResolveCustomerRequest resolveCustomerRequest,
             com.amazonaws.handlers.AsyncHandler<ResolveCustomerRequest, ResolveCustomerResult> asyncHandler);

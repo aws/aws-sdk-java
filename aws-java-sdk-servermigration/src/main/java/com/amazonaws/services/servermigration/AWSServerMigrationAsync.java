@@ -35,6 +35,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param createReplicationJobRequest
      * @return A Java Future containing the result of the CreateReplicationJob operation returned by the service.
      * @sample AWSServerMigrationAsync.CreateReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateReplicationJobResult> createReplicationJobAsync(CreateReplicationJobRequest createReplicationJobRequest);
 
@@ -50,6 +52,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateReplicationJob operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.CreateReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateReplicationJobResult> createReplicationJobAsync(CreateReplicationJobRequest createReplicationJobRequest,
             com.amazonaws.handlers.AsyncHandler<CreateReplicationJobRequest, CreateReplicationJobResult> asyncHandler);
@@ -62,6 +66,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param deleteReplicationJobRequest
      * @return A Java Future containing the result of the DeleteReplicationJob operation returned by the service.
      * @sample AWSServerMigrationAsync.DeleteReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteReplicationJobResult> deleteReplicationJobAsync(DeleteReplicationJobRequest deleteReplicationJobRequest);
 
@@ -77,6 +83,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteReplicationJob operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.DeleteReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteReplicationJobResult> deleteReplicationJobAsync(DeleteReplicationJobRequest deleteReplicationJobRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteReplicationJobRequest, DeleteReplicationJobResult> asyncHandler);
@@ -88,6 +96,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param deleteServerCatalogRequest
      * @return A Java Future containing the result of the DeleteServerCatalog operation returned by the service.
      * @sample AWSServerMigrationAsync.DeleteServerCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteServerCatalogResult> deleteServerCatalogAsync(DeleteServerCatalogRequest deleteServerCatalogRequest);
 
@@ -102,6 +112,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteServerCatalog operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.DeleteServerCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteServerCatalogResult> deleteServerCatalogAsync(DeleteServerCatalogRequest deleteServerCatalogRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteServerCatalogRequest, DeleteServerCatalogResult> asyncHandler);
@@ -113,6 +125,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param disassociateConnectorRequest
      * @return A Java Future containing the result of the DisassociateConnector operation returned by the service.
      * @sample AWSServerMigrationAsync.DisassociateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisassociateConnectorResult> disassociateConnectorAsync(DisassociateConnectorRequest disassociateConnectorRequest);
 
@@ -127,6 +141,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisassociateConnector operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.DisassociateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisassociateConnectorResult> disassociateConnectorAsync(DisassociateConnectorRequest disassociateConnectorRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateConnectorRequest, DisassociateConnectorResult> asyncHandler);
@@ -137,6 +153,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param getConnectorsRequest
      * @return A Java Future containing the result of the GetConnectors operation returned by the service.
      * @sample AWSServerMigrationAsync.GetConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetConnectorsResult> getConnectorsAsync(GetConnectorsRequest getConnectorsRequest);
 
@@ -150,6 +167,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetConnectors operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.GetConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetConnectorsResult> getConnectorsAsync(GetConnectorsRequest getConnectorsRequest,
             com.amazonaws.handlers.AsyncHandler<GetConnectorsRequest, GetConnectorsResult> asyncHandler);
@@ -161,6 +179,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param getReplicationJobsRequest
      * @return A Java Future containing the result of the GetReplicationJobs operation returned by the service.
      * @sample AWSServerMigrationAsync.GetReplicationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetReplicationJobsResult> getReplicationJobsAsync(GetReplicationJobsRequest getReplicationJobsRequest);
 
@@ -175,6 +195,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetReplicationJobs operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.GetReplicationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetReplicationJobsResult> getReplicationJobsAsync(GetReplicationJobsRequest getReplicationJobsRequest,
             com.amazonaws.handlers.AsyncHandler<GetReplicationJobsRequest, GetReplicationJobsResult> asyncHandler);
@@ -187,6 +209,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param getReplicationRunsRequest
      * @return A Java Future containing the result of the GetReplicationRuns operation returned by the service.
      * @sample AWSServerMigrationAsync.GetReplicationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetReplicationRunsResult> getReplicationRunsAsync(GetReplicationRunsRequest getReplicationRunsRequest);
 
@@ -202,6 +226,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetReplicationRuns operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.GetReplicationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetReplicationRunsResult> getReplicationRunsAsync(GetReplicationRunsRequest getReplicationRunsRequest,
             com.amazonaws.handlers.AsyncHandler<GetReplicationRunsRequest, GetReplicationRunsResult> asyncHandler);
@@ -213,6 +239,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param getServersRequest
      * @return A Java Future containing the result of the GetServers operation returned by the service.
      * @sample AWSServerMigrationAsync.GetServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetServersResult> getServersAsync(GetServersRequest getServersRequest);
 
@@ -227,6 +254,7 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetServers operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.GetServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetServersResult> getServersAsync(GetServersRequest getServersRequest,
             com.amazonaws.handlers.AsyncHandler<GetServersRequest, GetServersResult> asyncHandler);
@@ -239,6 +267,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param importServerCatalogRequest
      * @return A Java Future containing the result of the ImportServerCatalog operation returned by the service.
      * @sample AWSServerMigrationAsync.ImportServerCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ImportServerCatalogResult> importServerCatalogAsync(ImportServerCatalogRequest importServerCatalogRequest);
 
@@ -254,6 +284,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ImportServerCatalog operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.ImportServerCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ImportServerCatalogResult> importServerCatalogAsync(ImportServerCatalogRequest importServerCatalogRequest,
             com.amazonaws.handlers.AsyncHandler<ImportServerCatalogRequest, ImportServerCatalogResult> asyncHandler);
@@ -266,6 +298,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param startOnDemandReplicationRunRequest
      * @return A Java Future containing the result of the StartOnDemandReplicationRun operation returned by the service.
      * @sample AWSServerMigrationAsync.StartOnDemandReplicationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartOnDemandReplicationRunResult> startOnDemandReplicationRunAsync(
             StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest);
@@ -282,6 +316,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartOnDemandReplicationRun operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.StartOnDemandReplicationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartOnDemandReplicationRunResult> startOnDemandReplicationRunAsync(
             StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest,
@@ -294,6 +330,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      * @param updateReplicationJobRequest
      * @return A Java Future containing the result of the UpdateReplicationJob operation returned by the service.
      * @sample AWSServerMigrationAsync.UpdateReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateReplicationJobResult> updateReplicationJobAsync(UpdateReplicationJobRequest updateReplicationJobRequest);
 
@@ -308,6 +346,8 @@ public interface AWSServerMigrationAsync extends AWSServerMigration {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateReplicationJob operation returned by the service.
      * @sample AWSServerMigrationAsyncHandler.UpdateReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateReplicationJobResult> updateReplicationJobAsync(UpdateReplicationJobRequest updateReplicationJobRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateReplicationJobRequest, UpdateReplicationJobResult> asyncHandler);

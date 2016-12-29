@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An entity describing an executable that runs on a cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Command"/>AWS API Documentation</a>
  */
 public class Command implements Serializable, Cloneable {
 

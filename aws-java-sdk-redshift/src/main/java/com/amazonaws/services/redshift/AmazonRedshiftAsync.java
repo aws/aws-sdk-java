@@ -82,6 +82,9 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the AuthorizeClusterSecurityGroupIngress operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.AuthorizeClusterSecurityGroupIngress
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ClusterSecurityGroup> authorizeClusterSecurityGroupIngressAsync(
             AuthorizeClusterSecurityGroupIngressRequest authorizeClusterSecurityGroupIngressRequest);
@@ -118,6 +121,9 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the AuthorizeClusterSecurityGroupIngress operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.AuthorizeClusterSecurityGroupIngress
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ClusterSecurityGroup> authorizeClusterSecurityGroupIngressAsync(
             AuthorizeClusterSecurityGroupIngressRequest authorizeClusterSecurityGroupIngressRequest,
@@ -136,6 +142,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param authorizeSnapshotAccessRequest
      * @return A Java Future containing the result of the AuthorizeSnapshotAccess operation returned by the service.
      * @sample AmazonRedshiftAsync.AuthorizeSnapshotAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> authorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest);
 
@@ -156,6 +164,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AuthorizeSnapshotAccess operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.AuthorizeSnapshotAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> authorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest,
             com.amazonaws.handlers.AsyncHandler<AuthorizeSnapshotAccessRequest, Snapshot> asyncHandler);
@@ -180,6 +190,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param copyClusterSnapshotRequest
      * @return A Java Future containing the result of the CopyClusterSnapshot operation returned by the service.
      * @sample AmazonRedshiftAsync.CopyClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> copyClusterSnapshotAsync(CopyClusterSnapshotRequest copyClusterSnapshotRequest);
 
@@ -207,6 +219,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CopyClusterSnapshot operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CopyClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> copyClusterSnapshotAsync(CopyClusterSnapshotRequest copyClusterSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<CopyClusterSnapshotRequest, Snapshot> asyncHandler);
@@ -226,6 +240,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param createClusterRequest
      * @return A Java Future containing the result of the CreateCluster operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> createClusterAsync(CreateClusterRequest createClusterRequest);
 
@@ -248,6 +264,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateCluster operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> createClusterAsync(CreateClusterRequest createClusterRequest,
             com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, Cluster> asyncHandler);
@@ -271,6 +289,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param createClusterParameterGroupRequest
      * @return A Java Future containing the result of the CreateClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ClusterParameterGroup> createClusterParameterGroupAsync(CreateClusterParameterGroupRequest createClusterParameterGroupRequest);
 
@@ -297,6 +317,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ClusterParameterGroup> createClusterParameterGroupAsync(CreateClusterParameterGroupRequest createClusterParameterGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateClusterParameterGroupRequest, ClusterParameterGroup> asyncHandler);
@@ -314,6 +336,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param createClusterSecurityGroupRequest
      * @return A Java Future containing the result of the CreateClusterSecurityGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateClusterSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ClusterSecurityGroup> createClusterSecurityGroupAsync(CreateClusterSecurityGroupRequest createClusterSecurityGroupRequest);
 
@@ -334,6 +358,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateClusterSecurityGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateClusterSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ClusterSecurityGroup> createClusterSecurityGroupAsync(CreateClusterSecurityGroupRequest createClusterSecurityGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateClusterSecurityGroupRequest, ClusterSecurityGroup> asyncHandler);
@@ -351,6 +377,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param createClusterSnapshotRequest
      * @return A Java Future containing the result of the CreateClusterSnapshot operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> createClusterSnapshotAsync(CreateClusterSnapshotRequest createClusterSnapshotRequest);
 
@@ -371,6 +399,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateClusterSnapshot operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> createClusterSnapshotAsync(CreateClusterSnapshotRequest createClusterSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<CreateClusterSnapshotRequest, Snapshot> asyncHandler);
@@ -389,6 +419,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param createClusterSubnetGroupRequest
      * @return A Java Future containing the result of the CreateClusterSubnetGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ClusterSubnetGroup> createClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest);
 
@@ -410,6 +442,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateClusterSubnetGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ClusterSubnetGroup> createClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateClusterSubnetGroupRequest, ClusterSubnetGroup> asyncHandler);
@@ -440,6 +474,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param createEventSubscriptionRequest
      * @return A Java Future containing the result of the CreateEventSubscription operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EventSubscription> createEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest);
 
@@ -473,6 +509,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateEventSubscription operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EventSubscription> createEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateEventSubscriptionRequest, EventSubscription> asyncHandler);
@@ -493,6 +531,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param createHsmClientCertificateRequest
      * @return A Java Future containing the result of the CreateHsmClientCertificate operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateHsmClientCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<HsmClientCertificate> createHsmClientCertificateAsync(CreateHsmClientCertificateRequest createHsmClientCertificateRequest);
 
@@ -516,6 +556,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateHsmClientCertificate operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateHsmClientCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<HsmClientCertificate> createHsmClientCertificateAsync(CreateHsmClientCertificateRequest createHsmClientCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHsmClientCertificateRequest, HsmClientCertificate> asyncHandler);
@@ -535,6 +577,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param createHsmConfigurationRequest
      * @return A Java Future containing the result of the CreateHsmConfiguration operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateHsmConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<HsmConfiguration> createHsmConfigurationAsync(CreateHsmConfigurationRequest createHsmConfigurationRequest);
 
@@ -557,6 +601,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateHsmConfiguration operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateHsmConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<HsmConfiguration> createHsmConfigurationAsync(CreateHsmConfigurationRequest createHsmConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHsmConfigurationRequest, HsmConfiguration> asyncHandler);
@@ -576,6 +622,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        The result of the <code>CreateSnapshotCopyGrant</code> action.
      * @return A Java Future containing the result of the CreateSnapshotCopyGrant operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateSnapshotCopyGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SnapshotCopyGrant> createSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest createSnapshotCopyGrantRequest);
 
@@ -598,6 +646,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateSnapshotCopyGrant operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateSnapshotCopyGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SnapshotCopyGrant> createSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest createSnapshotCopyGrantRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSnapshotCopyGrantRequest, SnapshotCopyGrant> asyncHandler);
@@ -619,6 +669,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        Contains the output from the <code>CreateTags</code> action.
      * @return A Java Future containing the result of the CreateTags operation returned by the service.
      * @sample AmazonRedshiftAsync.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest createTagsRequest);
 
@@ -643,6 +694,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTags operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest createTagsRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler);
@@ -671,6 +723,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param deleteClusterRequest
      * @return A Java Future containing the result of the DeleteCluster operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest);
 
@@ -702,6 +756,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteCluster operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, Cluster> asyncHandler);
@@ -719,6 +775,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param deleteClusterParameterGroupRequest
      * @return A Java Future containing the result of the DeleteClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteClusterParameterGroupResult> deleteClusterParameterGroupAsync(
             DeleteClusterParameterGroupRequest deleteClusterParameterGroupRequest);
@@ -740,6 +798,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteClusterParameterGroupResult> deleteClusterParameterGroupAsync(
             DeleteClusterParameterGroupRequest deleteClusterParameterGroupRequest,
@@ -764,6 +824,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param deleteClusterSecurityGroupRequest
      * @return A Java Future containing the result of the DeleteClusterSecurityGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteClusterSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteClusterSecurityGroupResult> deleteClusterSecurityGroupAsync(
             DeleteClusterSecurityGroupRequest deleteClusterSecurityGroupRequest);
@@ -791,6 +853,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteClusterSecurityGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteClusterSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteClusterSecurityGroupResult> deleteClusterSecurityGroupAsync(
             DeleteClusterSecurityGroupRequest deleteClusterSecurityGroupRequest,
@@ -811,6 +875,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param deleteClusterSnapshotRequest
      * @return A Java Future containing the result of the DeleteClusterSnapshot operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> deleteClusterSnapshotAsync(DeleteClusterSnapshotRequest deleteClusterSnapshotRequest);
 
@@ -833,6 +899,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteClusterSnapshot operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> deleteClusterSnapshotAsync(DeleteClusterSnapshotRequest deleteClusterSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterSnapshotRequest, Snapshot> asyncHandler);
@@ -845,6 +913,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param deleteClusterSubnetGroupRequest
      * @return A Java Future containing the result of the DeleteClusterSubnetGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteClusterSubnetGroupResult> deleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest);
 
@@ -860,6 +930,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteClusterSubnetGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteClusterSubnetGroupResult> deleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterSubnetGroupRequest, DeleteClusterSubnetGroupResult> asyncHandler);
@@ -872,6 +944,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param deleteEventSubscriptionRequest
      * @return A Java Future containing the result of the DeleteEventSubscription operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteEventSubscriptionResult> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest);
 
@@ -887,6 +961,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteEventSubscription operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteEventSubscriptionResult> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, DeleteEventSubscriptionResult> asyncHandler);
@@ -899,6 +975,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param deleteHsmClientCertificateRequest
      * @return A Java Future containing the result of the DeleteHsmClientCertificate operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteHsmClientCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteHsmClientCertificateResult> deleteHsmClientCertificateAsync(
             DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest);
@@ -915,6 +993,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteHsmClientCertificate operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteHsmClientCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteHsmClientCertificateResult> deleteHsmClientCertificateAsync(
             DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest,
@@ -928,6 +1008,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param deleteHsmConfigurationRequest
      * @return A Java Future containing the result of the DeleteHsmConfiguration operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteHsmConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteHsmConfigurationResult> deleteHsmConfigurationAsync(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest);
 
@@ -943,6 +1025,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteHsmConfiguration operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteHsmConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteHsmConfigurationResult> deleteHsmConfigurationAsync(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHsmConfigurationRequest, DeleteHsmConfigurationResult> asyncHandler);
@@ -956,6 +1040,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        The result of the <code>DeleteSnapshotCopyGrant</code> action.
      * @return A Java Future containing the result of the DeleteSnapshotCopyGrant operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteSnapshotCopyGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSnapshotCopyGrantResult> deleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest);
 
@@ -972,6 +1058,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSnapshotCopyGrant operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteSnapshotCopyGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSnapshotCopyGrantResult> deleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSnapshotCopyGrantRequest, DeleteSnapshotCopyGrantResult> asyncHandler);
@@ -986,6 +1074,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        Contains the output from the <code>DeleteTags</code> action.
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonRedshiftAsync.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest);
 
@@ -1003,6 +1092,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
@@ -1034,6 +1124,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeClusterParameterGroups operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.DescribeClusterParameterGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterParameterGroupsResult> describeClusterParameterGroupsAsync(
             DescribeClusterParameterGroupsRequest describeClusterParameterGroupsRequest);
@@ -1069,6 +1161,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeClusterParameterGroups operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.DescribeClusterParameterGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterParameterGroupsResult> describeClusterParameterGroupsAsync(
             DescribeClusterParameterGroupsRequest describeClusterParameterGroupsRequest,
@@ -1110,6 +1204,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeClusterParametersRequest
      * @return A Java Future containing the result of the DescribeClusterParameters operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeClusterParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterParametersResult> describeClusterParametersAsync(
             DescribeClusterParametersRequest describeClusterParametersRequest);
@@ -1138,6 +1234,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeClusterParameters operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeClusterParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterParametersResult> describeClusterParametersAsync(
             DescribeClusterParametersRequest describeClusterParametersRequest,
@@ -1168,6 +1266,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeClusterSecurityGroups operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.DescribeClusterSecurityGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterSecurityGroupsResult> describeClusterSecurityGroupsAsync(
             DescribeClusterSecurityGroupsRequest describeClusterSecurityGroupsRequest);
@@ -1201,6 +1301,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeClusterSecurityGroups operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.DescribeClusterSecurityGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterSecurityGroupsResult> describeClusterSecurityGroupsAsync(
             DescribeClusterSecurityGroupsRequest describeClusterSecurityGroupsRequest,
@@ -1243,6 +1345,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeClusterSnapshotsRequest
      * @return A Java Future containing the result of the DescribeClusterSnapshots operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterSnapshotsResult> describeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest describeClusterSnapshotsRequest);
 
@@ -1271,6 +1375,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeClusterSnapshots operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterSnapshotsResult> describeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest describeClusterSnapshotsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterSnapshotsRequest, DescribeClusterSnapshotsResult> asyncHandler);
@@ -1309,6 +1415,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeClusterSubnetGroupsRequest
      * @return A Java Future containing the result of the DescribeClusterSubnetGroups operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeClusterSubnetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterSubnetGroupsResult> describeClusterSubnetGroupsAsync(
             DescribeClusterSubnetGroupsRequest describeClusterSubnetGroupsRequest);
@@ -1336,6 +1444,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeClusterSubnetGroups operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeClusterSubnetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterSubnetGroupsResult> describeClusterSubnetGroupsAsync(
             DescribeClusterSubnetGroupsRequest describeClusterSubnetGroupsRequest,
@@ -1367,6 +1477,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeClusterVersionsRequest
      * @return A Java Future containing the result of the DescribeClusterVersions operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeClusterVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterVersionsResult> describeClusterVersionsAsync(DescribeClusterVersionsRequest describeClusterVersionsRequest);
 
@@ -1385,6 +1497,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeClusterVersions operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeClusterVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClusterVersionsResult> describeClusterVersionsAsync(DescribeClusterVersionsRequest describeClusterVersionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterVersionsRequest, DescribeClusterVersionsResult> asyncHandler);
@@ -1426,6 +1540,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeClustersRequest
      * @return A Java Future containing the result of the DescribeClusters operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(DescribeClustersRequest describeClustersRequest);
 
@@ -1455,6 +1571,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeClusters operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(DescribeClustersRequest describeClustersRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler);
@@ -1488,6 +1606,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeDefaultClusterParameters operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.DescribeDefaultClusterParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DefaultClusterParameters> describeDefaultClusterParametersAsync(
             DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest);
@@ -1510,6 +1630,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeDefaultClusterParameters operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.DescribeDefaultClusterParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DefaultClusterParameters> describeDefaultClusterParametersAsync(
             DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest,
@@ -1526,6 +1648,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeEventCategoriesRequest
      * @return A Java Future containing the result of the DescribeEventCategories operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeEventCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventCategoriesResult> describeEventCategoriesAsync(DescribeEventCategoriesRequest describeEventCategoriesRequest);
 
@@ -1544,6 +1668,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEventCategories operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeEventCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventCategoriesResult> describeEventCategoriesAsync(DescribeEventCategoriesRequest describeEventCategoriesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEventCategoriesRequest, DescribeEventCategoriesResult> asyncHandler);
@@ -1572,6 +1698,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeEventSubscriptionsRequest
      * @return A Java Future containing the result of the DescribeEventSubscriptions operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
             DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest);
@@ -1589,6 +1717,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEventSubscriptions operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
             DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest,
@@ -1619,6 +1749,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeEventsRequest
      * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest);
 
@@ -1636,6 +1768,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler);
@@ -1675,6 +1809,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeHsmClientCertificates operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.DescribeHsmClientCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeHsmClientCertificatesResult> describeHsmClientCertificatesAsync(
             DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest);
@@ -1703,6 +1839,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeHsmClientCertificates operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.DescribeHsmClientCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeHsmClientCertificatesResult> describeHsmClientCertificatesAsync(
             DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest,
@@ -1743,6 +1881,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeHsmConfigurationsRequest
      * @return A Java Future containing the result of the DescribeHsmConfigurations operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeHsmConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeHsmConfigurationsResult> describeHsmConfigurationsAsync(
             DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest);
@@ -1770,6 +1910,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeHsmConfigurations operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeHsmConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeHsmConfigurationsResult> describeHsmConfigurationsAsync(
             DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest,
@@ -1799,6 +1941,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeLoggingStatusRequest
      * @return A Java Future containing the result of the DescribeLoggingStatus operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeLoggingStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLoggingStatusResult> describeLoggingStatusAsync(DescribeLoggingStatusRequest describeLoggingStatusRequest);
 
@@ -1815,6 +1959,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLoggingStatus operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeLoggingStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLoggingStatusResult> describeLoggingStatusAsync(DescribeLoggingStatusRequest describeLoggingStatusRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLoggingStatusRequest, DescribeLoggingStatusResult> asyncHandler);
@@ -1834,6 +1980,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeOrderableClusterOptions operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.DescribeOrderableClusterOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeOrderableClusterOptionsResult> describeOrderableClusterOptionsAsync(
             DescribeOrderableClusterOptionsRequest describeOrderableClusterOptionsRequest);
@@ -1857,6 +2005,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeOrderableClusterOptions operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.DescribeOrderableClusterOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeOrderableClusterOptionsResult> describeOrderableClusterOptionsAsync(
             DescribeOrderableClusterOptionsRequest describeOrderableClusterOptionsRequest,
@@ -1896,6 +2046,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeReservedNodeOfferings operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.DescribeReservedNodeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeReservedNodeOfferingsResult> describeReservedNodeOfferingsAsync(
             DescribeReservedNodeOfferingsRequest describeReservedNodeOfferingsRequest);
@@ -1922,6 +2074,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the DescribeReservedNodeOfferings operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.DescribeReservedNodeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeReservedNodeOfferingsResult> describeReservedNodeOfferingsAsync(
             DescribeReservedNodeOfferingsRequest describeReservedNodeOfferingsRequest,
@@ -1951,6 +2105,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeReservedNodesRequest
      * @return A Java Future containing the result of the DescribeReservedNodes operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeReservedNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(DescribeReservedNodesRequest describeReservedNodesRequest);
 
@@ -1966,6 +2122,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeReservedNodes operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeReservedNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(DescribeReservedNodesRequest describeReservedNodesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesRequest, DescribeReservedNodesResult> asyncHandler);
@@ -1999,6 +2157,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeResizeRequest
      * @return A Java Future containing the result of the DescribeResize operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeResize
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeResizeResult> describeResizeAsync(DescribeResizeRequest describeResizeRequest);
 
@@ -2020,6 +2180,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeResize operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeResize
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeResizeResult> describeResizeAsync(DescribeResizeRequest describeResizeRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeResizeRequest, DescribeResizeResult> asyncHandler);
@@ -2038,6 +2200,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        The result of the <code>DescribeSnapshotCopyGrants</code> action.
      * @return A Java Future containing the result of the DescribeSnapshotCopyGrants operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeSnapshotCopyGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeSnapshotCopyGrantsResult> describeSnapshotCopyGrantsAsync(
             DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest);
@@ -2060,6 +2224,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeSnapshotCopyGrants operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeSnapshotCopyGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeSnapshotCopyGrantsResult> describeSnapshotCopyGrantsAsync(
             DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest,
@@ -2092,6 +2258,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeTableRestoreStatusRequest
      * @return A Java Future containing the result of the DescribeTableRestoreStatus operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTableRestoreStatusResult> describeTableRestoreStatusAsync(
             DescribeTableRestoreStatusRequest describeTableRestoreStatusRequest);
@@ -2112,6 +2280,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTableRestoreStatus operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTableRestoreStatusResult> describeTableRestoreStatusAsync(
             DescribeTableRestoreStatusRequest describeTableRestoreStatusRequest,
@@ -2171,6 +2341,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param describeTagsRequest
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonRedshiftAsync.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest);
 
@@ -2217,6 +2388,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler);
@@ -2243,6 +2415,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param disableLoggingRequest
      * @return A Java Future containing the result of the DisableLogging operation returned by the service.
      * @sample AmazonRedshiftAsync.DisableLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableLoggingResult> disableLoggingAsync(DisableLoggingRequest disableLoggingRequest);
 
@@ -2258,6 +2432,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableLogging operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DisableLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableLoggingResult> disableLoggingAsync(DisableLoggingRequest disableLoggingRequest,
             com.amazonaws.handlers.AsyncHandler<DisableLoggingRequest, DisableLoggingResult> asyncHandler);
@@ -2275,6 +2451,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param disableSnapshotCopyRequest
      * @return A Java Future containing the result of the DisableSnapshotCopy operation returned by the service.
      * @sample AmazonRedshiftAsync.DisableSnapshotCopy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> disableSnapshotCopyAsync(DisableSnapshotCopyRequest disableSnapshotCopyRequest);
 
@@ -2295,6 +2473,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableSnapshotCopy operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.DisableSnapshotCopy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> disableSnapshotCopyAsync(DisableSnapshotCopyRequest disableSnapshotCopyRequest,
             com.amazonaws.handlers.AsyncHandler<DisableSnapshotCopyRequest, Cluster> asyncHandler);
@@ -2307,6 +2487,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param enableLoggingRequest
      * @return A Java Future containing the result of the EnableLogging operation returned by the service.
      * @sample AmazonRedshiftAsync.EnableLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableLoggingResult> enableLoggingAsync(EnableLoggingRequest enableLoggingRequest);
 
@@ -2322,6 +2504,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableLogging operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.EnableLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableLoggingResult> enableLoggingAsync(EnableLoggingRequest enableLoggingRequest,
             com.amazonaws.handlers.AsyncHandler<EnableLoggingRequest, EnableLoggingResult> asyncHandler);
@@ -2334,6 +2518,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param enableSnapshotCopyRequest
      * @return A Java Future containing the result of the EnableSnapshotCopy operation returned by the service.
      * @sample AmazonRedshiftAsync.EnableSnapshotCopy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> enableSnapshotCopyAsync(EnableSnapshotCopyRequest enableSnapshotCopyRequest);
 
@@ -2349,6 +2535,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableSnapshotCopy operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.EnableSnapshotCopy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> enableSnapshotCopyAsync(EnableSnapshotCopyRequest enableSnapshotCopyRequest,
             com.amazonaws.handlers.AsyncHandler<EnableSnapshotCopyRequest, Cluster> asyncHandler);
@@ -2370,6 +2558,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param modifyClusterRequest
      * @return A Java Future containing the result of the ModifyCluster operation returned by the service.
      * @sample AmazonRedshiftAsync.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> modifyClusterAsync(ModifyClusterRequest modifyClusterRequest);
 
@@ -2394,6 +2584,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyCluster operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> modifyClusterAsync(ModifyClusterRequest modifyClusterRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterRequest, Cluster> asyncHandler);
@@ -2410,6 +2602,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param modifyClusterIamRolesRequest
      * @return A Java Future containing the result of the ModifyClusterIamRoles operation returned by the service.
      * @sample AmazonRedshiftAsync.ModifyClusterIamRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> modifyClusterIamRolesAsync(ModifyClusterIamRolesRequest modifyClusterIamRolesRequest);
 
@@ -2429,6 +2623,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyClusterIamRoles operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.ModifyClusterIamRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> modifyClusterIamRolesAsync(ModifyClusterIamRolesRequest modifyClusterIamRolesRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterIamRolesRequest, Cluster> asyncHandler);
@@ -2446,6 +2642,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param modifyClusterParameterGroupRequest
      * @return A Java Future containing the result of the ModifyClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.ModifyClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ModifyClusterParameterGroupResult> modifyClusterParameterGroupAsync(
             ModifyClusterParameterGroupRequest modifyClusterParameterGroupRequest);
@@ -2467,6 +2665,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.ModifyClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ModifyClusterParameterGroupResult> modifyClusterParameterGroupAsync(
             ModifyClusterParameterGroupRequest modifyClusterParameterGroupRequest,
@@ -2481,6 +2681,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param modifyClusterSubnetGroupRequest
      * @return A Java Future containing the result of the ModifyClusterSubnetGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.ModifyClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ClusterSubnetGroup> modifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest modifyClusterSubnetGroupRequest);
 
@@ -2497,6 +2699,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyClusterSubnetGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.ModifyClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ClusterSubnetGroup> modifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest modifyClusterSubnetGroupRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterSubnetGroupRequest, ClusterSubnetGroup> asyncHandler);
@@ -2509,6 +2713,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param modifyEventSubscriptionRequest
      * @return A Java Future containing the result of the ModifyEventSubscription operation returned by the service.
      * @sample AmazonRedshiftAsync.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest);
 
@@ -2524,6 +2730,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyEventSubscription operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyEventSubscriptionRequest, EventSubscription> asyncHandler);
@@ -2538,6 +2746,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the ModifySnapshotCopyRetentionPeriod operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.ModifySnapshotCopyRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<Cluster> modifySnapshotCopyRetentionPeriodAsync(
             ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest);
@@ -2556,6 +2766,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the ModifySnapshotCopyRetentionPeriod operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.ModifySnapshotCopyRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<Cluster> modifySnapshotCopyRetentionPeriodAsync(
             ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest,
@@ -2578,6 +2790,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the PurchaseReservedNodeOffering operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.PurchaseReservedNodeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ReservedNode> purchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest);
 
@@ -2602,6 +2816,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the PurchaseReservedNodeOffering operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.PurchaseReservedNodeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ReservedNode> purchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest,
             com.amazonaws.handlers.AsyncHandler<PurchaseReservedNodeOfferingRequest, ReservedNode> asyncHandler);
@@ -2619,6 +2835,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param rebootClusterRequest
      * @return A Java Future containing the result of the RebootCluster operation returned by the service.
      * @sample AmazonRedshiftAsync.RebootCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> rebootClusterAsync(RebootClusterRequest rebootClusterRequest);
 
@@ -2639,6 +2857,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RebootCluster operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.RebootCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> rebootClusterAsync(RebootClusterRequest rebootClusterRequest,
             com.amazonaws.handlers.AsyncHandler<RebootClusterRequest, Cluster> asyncHandler);
@@ -2653,6 +2873,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param resetClusterParameterGroupRequest
      * @return A Java Future containing the result of the ResetClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.ResetClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResetClusterParameterGroupResult> resetClusterParameterGroupAsync(
             ResetClusterParameterGroupRequest resetClusterParameterGroupRequest);
@@ -2671,6 +2893,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ResetClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.ResetClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResetClusterParameterGroupResult> resetClusterParameterGroupAsync(
             ResetClusterParameterGroupRequest resetClusterParameterGroupRequest,
@@ -2697,6 +2921,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param restoreFromClusterSnapshotRequest
      * @return A Java Future containing the result of the RestoreFromClusterSnapshot operation returned by the service.
      * @sample AmazonRedshiftAsync.RestoreFromClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> restoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest);
 
@@ -2725,6 +2951,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RestoreFromClusterSnapshot operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.RestoreFromClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> restoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<RestoreFromClusterSnapshotRequest, Cluster> asyncHandler);
@@ -2748,6 +2976,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the RestoreTableFromClusterSnapshot operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.RestoreTableFromClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<TableRestoreStatus> restoreTableFromClusterSnapshotAsync(
             RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest);
@@ -2775,6 +3005,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the RestoreTableFromClusterSnapshot operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.RestoreTableFromClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<TableRestoreStatus> restoreTableFromClusterSnapshotAsync(
             RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest,
@@ -2793,6 +3025,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the RevokeClusterSecurityGroupIngress operation returned by the
      *         service.
      * @sample AmazonRedshiftAsync.RevokeClusterSecurityGroupIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(
             RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest);
@@ -2814,6 +3048,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @return A Java Future containing the result of the RevokeClusterSecurityGroupIngress operation returned by the
      *         service.
      * @sample AmazonRedshiftAsyncHandler.RevokeClusterSecurityGroupIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(
             RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest,
@@ -2833,6 +3069,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param revokeSnapshotAccessRequest
      * @return A Java Future containing the result of the RevokeSnapshotAccess operation returned by the service.
      * @sample AmazonRedshiftAsync.RevokeSnapshotAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> revokeSnapshotAccessAsync(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest);
 
@@ -2854,6 +3092,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RevokeSnapshotAccess operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.RevokeSnapshotAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Snapshot> revokeSnapshotAccessAsync(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest,
             com.amazonaws.handlers.AsyncHandler<RevokeSnapshotAccessRequest, Snapshot> asyncHandler);
@@ -2866,6 +3106,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * @param rotateEncryptionKeyRequest
      * @return A Java Future containing the result of the RotateEncryptionKey operation returned by the service.
      * @sample AmazonRedshiftAsync.RotateEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> rotateEncryptionKeyAsync(RotateEncryptionKeyRequest rotateEncryptionKeyRequest);
 
@@ -2881,6 +3123,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RotateEncryptionKey operation returned by the service.
      * @sample AmazonRedshiftAsyncHandler.RotateEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Cluster> rotateEncryptionKeyAsync(RotateEncryptionKeyRequest rotateEncryptionKeyRequest,
             com.amazonaws.handlers.AsyncHandler<RotateEncryptionKeyRequest, Cluster> asyncHandler);

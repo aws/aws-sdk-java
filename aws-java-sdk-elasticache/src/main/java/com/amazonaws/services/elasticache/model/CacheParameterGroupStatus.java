@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Status of the cache parameter group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheParameterGroupStatus"/>AWS API
+ *      Documentation</a>
  */
 public class CacheParameterGroupStatus implements Serializable, Cloneable {
 

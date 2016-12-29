@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an association between a route table and a subnet.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteTableAssociation"/>AWS API Documentation</a>
  */
 public class RouteTableAssociation implements Serializable, Cloneable {
 

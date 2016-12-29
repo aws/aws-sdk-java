@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A request to list the <a>SqlInjectionMatchSet</a> objects created by the current AWS account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets"/>AWS API
+ *      Documentation</a>
  */
 public class ListSqlInjectionMatchSetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

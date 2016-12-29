@@ -121,6 +121,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.AllocateStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp"/>AWS API
+     *      Documentation</a>
      */
     AllocateStaticIpResult allocateStaticIp(AllocateStaticIpRequest allocateStaticIpRequest);
 
@@ -148,6 +150,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.AttachStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp"/>AWS API
+     *      Documentation</a>
      */
     AttachStaticIpResult attachStaticIp(AttachStaticIpRequest attachStaticIpRequest);
 
@@ -175,6 +179,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CloseInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts"/>AWS API
+     *      Documentation</a>
      */
     CloseInstancePublicPortsResult closeInstancePublicPorts(CloseInstancePublicPortsRequest closeInstancePublicPortsRequest);
 
@@ -202,6 +208,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain"/>AWS API
+     *      Documentation</a>
      */
     CreateDomainResult createDomain(CreateDomainRequest createDomainRequest);
 
@@ -230,6 +238,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     CreateDomainEntryResult createDomainEntry(CreateDomainEntryRequest createDomainEntryRequest);
 
@@ -258,6 +268,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     CreateInstanceSnapshotResult createInstanceSnapshot(CreateInstanceSnapshotRequest createInstanceSnapshotRequest);
 
@@ -285,6 +297,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances"/>AWS API
+     *      Documentation</a>
      */
     CreateInstancesResult createInstances(CreateInstancesRequest createInstancesRequest);
 
@@ -313,6 +327,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateInstancesFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot"/>AWS API
+     *      Documentation</a>
      */
     CreateInstancesFromSnapshotResult createInstancesFromSnapshot(CreateInstancesFromSnapshotRequest createInstancesFromSnapshotRequest);
 
@@ -340,6 +356,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair"/>AWS API
+     *      Documentation</a>
      */
     CreateKeyPairResult createKeyPair(CreateKeyPairRequest createKeyPairRequest);
 
@@ -367,6 +385,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain"/>AWS API
+     *      Documentation</a>
      */
     DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest);
 
@@ -394,6 +414,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     DeleteDomainEntryResult deleteDomainEntry(DeleteDomainEntryRequest deleteDomainEntryRequest);
 
@@ -421,6 +443,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance"/>AWS API
+     *      Documentation</a>
      */
     DeleteInstanceResult deleteInstance(DeleteInstanceRequest deleteInstanceRequest);
 
@@ -448,6 +472,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     DeleteInstanceSnapshotResult deleteInstanceSnapshot(DeleteInstanceSnapshotRequest deleteInstanceSnapshotRequest);
 
@@ -475,6 +501,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair"/>AWS API
+     *      Documentation</a>
      */
     DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest);
 
@@ -502,6 +530,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DetachStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp"/>AWS API
+     *      Documentation</a>
      */
     DetachStaticIpResult detachStaticIp(DetachStaticIpRequest detachStaticIpRequest);
 
@@ -529,6 +559,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DownloadDefaultKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair"/>AWS API
+     *      Documentation</a>
      */
     DownloadDefaultKeyPairResult downloadDefaultKeyPair(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest);
 
@@ -556,6 +588,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetActiveNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames"/>AWS API
+     *      Documentation</a>
      */
     GetActiveNamesResult getActiveNames(GetActiveNamesRequest getActiveNamesRequest);
 
@@ -585,6 +619,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints"/>AWS API
+     *      Documentation</a>
      */
     GetBlueprintsResult getBlueprints(GetBlueprintsRequest getBlueprintsRequest);
 
@@ -613,6 +649,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles"/>AWS API Documentation</a>
      */
     GetBundlesResult getBundles(GetBundlesRequest getBundlesRequest);
 
@@ -640,6 +677,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain"/>AWS API Documentation</a>
      */
     GetDomainResult getDomain(GetDomainRequest getDomainRequest);
 
@@ -667,6 +705,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains"/>AWS API Documentation</a>
      */
     GetDomainsResult getDomains(GetDomainsRequest getDomainsRequest);
 
@@ -694,6 +733,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance"/>AWS API Documentation</a>
      */
     GetInstanceResult getInstance(GetInstanceRequest getInstanceRequest);
 
@@ -721,6 +761,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails"/>AWS API
+     *      Documentation</a>
      */
     GetInstanceAccessDetailsResult getInstanceAccessDetails(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest);
 
@@ -748,6 +790,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData"/>AWS API
+     *      Documentation</a>
      */
     GetInstanceMetricDataResult getInstanceMetricData(GetInstanceMetricDataRequest getInstanceMetricDataRequest);
 
@@ -775,6 +819,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstancePortStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates"/>AWS API
+     *      Documentation</a>
      */
     GetInstancePortStatesResult getInstancePortStates(GetInstancePortStatesRequest getInstancePortStatesRequest);
 
@@ -802,6 +848,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     GetInstanceSnapshotResult getInstanceSnapshot(GetInstanceSnapshotRequest getInstanceSnapshotRequest);
 
@@ -829,6 +877,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots"/>AWS API
+     *      Documentation</a>
      */
     GetInstanceSnapshotsResult getInstanceSnapshots(GetInstanceSnapshotsRequest getInstanceSnapshotsRequest);
 
@@ -856,6 +906,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState"/>AWS API
+     *      Documentation</a>
      */
     GetInstanceStateResult getInstanceState(GetInstanceStateRequest getInstanceStateRequest);
 
@@ -883,6 +935,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances"/>AWS API
+     *      Documentation</a>
      */
     GetInstancesResult getInstances(GetInstancesRequest getInstancesRequest);
 
@@ -910,6 +964,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair"/>AWS API Documentation</a>
      */
     GetKeyPairResult getKeyPair(GetKeyPairRequest getKeyPairRequest);
 
@@ -937,6 +992,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetKeyPairs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs"/>AWS API Documentation</a>
      */
     GetKeyPairsResult getKeyPairs(GetKeyPairsRequest getKeyPairsRequest);
 
@@ -965,6 +1021,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation"/>AWS API
+     *      Documentation</a>
      */
     GetOperationResult getOperation(GetOperationRequest getOperationRequest);
 
@@ -997,6 +1055,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetOperations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations"/>AWS API
+     *      Documentation</a>
      */
     GetOperationsResult getOperations(GetOperationsRequest getOperationsRequest);
 
@@ -1024,6 +1084,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetOperationsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource"/>AWS API
+     *      Documentation</a>
      */
     GetOperationsForResourceResult getOperationsForResource(GetOperationsForResourceRequest getOperationsForResourceRequest);
 
@@ -1051,6 +1113,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions"/>AWS API Documentation</a>
      */
     GetRegionsResult getRegions(GetRegionsRequest getRegionsRequest);
 
@@ -1078,6 +1141,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp"/>AWS API Documentation</a>
      */
     GetStaticIpResult getStaticIp(GetStaticIpRequest getStaticIpRequest);
 
@@ -1105,6 +1169,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetStaticIps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps"/>AWS API
+     *      Documentation</a>
      */
     GetStaticIpsResult getStaticIps(GetStaticIpsRequest getStaticIpsRequest);
 
@@ -1132,6 +1198,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.ImportKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair"/>AWS API
+     *      Documentation</a>
      */
     ImportKeyPairResult importKeyPair(ImportKeyPairRequest importKeyPairRequest);
 
@@ -1159,6 +1227,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.IsVpcPeered
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered"/>AWS API Documentation</a>
      */
     IsVpcPeeredResult isVpcPeered(IsVpcPeeredRequest isVpcPeeredRequest);
 
@@ -1186,6 +1255,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.OpenInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts"/>AWS API
+     *      Documentation</a>
      */
     OpenInstancePublicPortsResult openInstancePublicPorts(OpenInstancePublicPortsRequest openInstancePublicPortsRequest);
 
@@ -1213,6 +1284,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.PeerVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc"/>AWS API Documentation</a>
      */
     PeerVpcResult peerVpc(PeerVpcRequest peerVpcRequest);
 
@@ -1242,6 +1314,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.RebootInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance"/>AWS API
+     *      Documentation</a>
      */
     RebootInstanceResult rebootInstance(RebootInstanceRequest rebootInstanceRequest);
 
@@ -1269,6 +1343,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.ReleaseStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp"/>AWS API
+     *      Documentation</a>
      */
     ReleaseStaticIpResult releaseStaticIp(ReleaseStaticIpRequest releaseStaticIpRequest);
 
@@ -1297,6 +1373,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.StartInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance"/>AWS API
+     *      Documentation</a>
      */
     StartInstanceResult startInstance(StartInstanceRequest startInstanceRequest);
 
@@ -1324,6 +1402,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.StopInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance"/>AWS API
+     *      Documentation</a>
      */
     StopInstanceResult stopInstance(StopInstanceRequest stopInstanceRequest);
 
@@ -1351,6 +1431,7 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.UnpeerVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc"/>AWS API Documentation</a>
      */
     UnpeerVpcResult unpeerVpc(UnpeerVpcRequest unpeerVpcRequest);
 
@@ -1378,6 +1459,8 @@ public interface AmazonLightsail {
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.UpdateDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     UpdateDomainEntryResult updateDomainEntry(UpdateDomainEntryRequest updateDomainEntryRequest);
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a named directory attribute.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Attribute"/>AWS API Documentation</a>
  */
 public class Attribute implements Serializable, Cloneable {
 

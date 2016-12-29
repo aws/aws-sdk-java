@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request that enables the user as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser"/>AWS API
+ *      Documentation</a>
  */
 public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

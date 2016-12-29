@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS
  * OpsWorks starts or stops load-based instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AutoScalingThresholds"/>AWS API
+ *      Documentation</a>
  */
 public class AutoScalingThresholds implements Serializable, Cloneable {
 

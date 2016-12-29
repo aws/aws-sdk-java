@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The container for the <a>EventTriggerDefinition$EventResourceARN</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/EventTriggerDefinition"/>AWS API
+ *      Documentation</a>
  */
 public class EventTriggerDefinition implements Serializable, Cloneable {
 

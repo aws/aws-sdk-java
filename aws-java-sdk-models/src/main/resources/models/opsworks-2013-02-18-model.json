@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "opsworks",
     "targetPrefix" : "OpsWorks_20130218",
+    "uid" : "opsworks-2013-02-18",
     "xmlNamespace" : null
   },
   "operations" : {

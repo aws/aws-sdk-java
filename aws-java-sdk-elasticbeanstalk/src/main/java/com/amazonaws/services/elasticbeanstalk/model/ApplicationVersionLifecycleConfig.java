@@ -23,6 +23,10 @@ import java.io.Serializable;
  * When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an
  * environment. The source bundle remains in S3 unless you configure the rule to delete it.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationVersionLifecycleConfig"/>AWS
+ *      API Documentation</a>
  */
 public class ApplicationVersionLifecycleConfig implements Serializable, Cloneable {
 

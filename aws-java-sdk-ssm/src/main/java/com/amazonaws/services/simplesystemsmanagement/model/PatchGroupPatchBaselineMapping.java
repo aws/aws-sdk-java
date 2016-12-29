@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The mapping between a patch group and the patch baseline the patch group is registered with.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchGroupPatchBaselineMapping"/>AWS API
+ *      Documentation</a>
  */
 public class PatchGroupPatchBaselineMapping implements Serializable, Cloneable {
 

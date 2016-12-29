@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to disable any user as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser"/>AWS API
+ *      Documentation</a>
  */
 public class AdminDisableUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

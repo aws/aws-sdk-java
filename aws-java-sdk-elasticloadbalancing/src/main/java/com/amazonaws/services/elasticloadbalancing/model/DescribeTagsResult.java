@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output for DescribeTags.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

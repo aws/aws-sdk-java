@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about a delivery stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeliveryStreamDescription"/>AWS API
+ *      Documentation</a>
  */
 public class DeliveryStreamDescription implements Serializable, Cloneable {
 

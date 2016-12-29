@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An AWS Direct Connect location where connections and interconnects can be requested.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Location"/>AWS API Documentation</a>
  */
 public class Location implements Serializable, Cloneable {
 

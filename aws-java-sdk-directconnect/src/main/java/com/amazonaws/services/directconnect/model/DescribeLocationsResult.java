@@ -20,6 +20,9 @@ import java.io.Serializable;
  * colocation hubs where many network providers have equipment, and where cross connects can be delivered. Locations
  * include a name and facility code, and must be provided when creating a connection.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeLocationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

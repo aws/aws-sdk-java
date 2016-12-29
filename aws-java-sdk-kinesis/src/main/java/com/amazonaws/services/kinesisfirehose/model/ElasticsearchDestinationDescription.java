@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The destination description in Amazon ES.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationDescription"/>AWS
+ *      API Documentation</a>
  */
 public class ElasticsearchDestinationDescription implements Serializable, Cloneable {
 

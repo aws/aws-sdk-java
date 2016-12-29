@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for the <a>CancelSteps</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps"/>AWS API
+ *      Documentation</a>
  */
 public class CancelStepsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a target group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/TargetGroup"/>AWS API
+ *      Documentation</a>
  */
 public class TargetGroup implements Serializable, Cloneable {
 

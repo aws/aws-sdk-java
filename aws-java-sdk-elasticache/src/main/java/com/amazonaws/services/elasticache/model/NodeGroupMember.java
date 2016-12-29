@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents a single node within a node group (shard).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroupMember"/>AWS API
+ *      Documentation</a>
  */
 public class NodeGroupMember implements Serializable, Cloneable {
 

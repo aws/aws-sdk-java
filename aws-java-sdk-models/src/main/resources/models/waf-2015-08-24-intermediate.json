@@ -70,6 +70,7 @@
     "syncClient" : "AWSWAFClient",
     "syncClientBuilderClassName" : "AWSWAFClientBuilder",
     "syncInterface" : "AWSWAF",
+    "uid" : "waf-2015-08-24",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

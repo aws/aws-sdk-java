@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the raw data of the message.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/RawMessage"/>AWS API Documentation</a>
  */
 public class RawMessage implements Serializable, Cloneable {
 

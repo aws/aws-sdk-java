@@ -187,6 +187,7 @@
     "syncClient" : "AmazonSNSClient",
     "syncClientBuilderClassName" : "AmazonSNSClientBuilder",
     "syncInterface" : "AmazonSNS",
+    "uid" : "sns-2010-03-31",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

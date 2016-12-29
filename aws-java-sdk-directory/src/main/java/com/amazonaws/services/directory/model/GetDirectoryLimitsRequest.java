@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the inputs for the <a>GetDirectoryLimits</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits"/>AWS API Documentation</a>
  */
 public class GetDirectoryLimitsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

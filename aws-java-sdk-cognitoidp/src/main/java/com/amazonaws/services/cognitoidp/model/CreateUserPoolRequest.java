@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to create a user pool.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool"/>AWS API
+ *      Documentation</a>
  */
 public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

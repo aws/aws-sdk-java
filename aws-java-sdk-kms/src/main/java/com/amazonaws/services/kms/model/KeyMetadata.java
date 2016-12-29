@@ -21,6 +21,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/KeyMetadata"/>AWS API Documentation</a>
  */
 public class KeyMetadata implements Serializable, Cloneable {
 

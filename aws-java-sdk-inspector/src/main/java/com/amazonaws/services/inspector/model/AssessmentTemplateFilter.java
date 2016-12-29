@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Used as the request parameter in the <a>ListAssessmentTemplates</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentTemplateFilter"/>AWS API
+ *      Documentation</a>
  */
 public class AssessmentTemplateFilter implements Serializable, Cloneable {
 

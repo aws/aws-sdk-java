@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "dynamodb",
     "targetPrefix" : "DynamoDB_20120810",
+    "uid" : "dynamodb-2012-08-10",
     "xmlNamespace" : null
   },
   "operations" : {

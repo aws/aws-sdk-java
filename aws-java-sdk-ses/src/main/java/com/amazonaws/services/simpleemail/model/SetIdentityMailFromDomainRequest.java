@@ -21,6 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * information about using a custom MAIL FROM domain, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain"/>AWS API
+ *      Documentation</a>
  */
 public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

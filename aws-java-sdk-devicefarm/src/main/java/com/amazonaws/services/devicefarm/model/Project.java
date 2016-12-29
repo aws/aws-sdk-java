@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents an operating-system neutral workspace for running and managing tests.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Project"/>AWS API Documentation</a>
  */
 public class Project implements Serializable, Cloneable {
 

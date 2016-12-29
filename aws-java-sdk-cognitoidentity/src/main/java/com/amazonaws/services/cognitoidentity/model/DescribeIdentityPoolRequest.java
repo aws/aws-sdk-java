@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Input to the DescribeIdentityPool action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeIdentityPoolRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

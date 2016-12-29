@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Container for the parameters to the DeleteInterconnect operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteInterconnectRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

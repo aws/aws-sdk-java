@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server for the request to enable a user as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser"/>AWS API
+ *      Documentation</a>
  */
 public class AdminEnableUserResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

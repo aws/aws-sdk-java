@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents metadata about a patch.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Patch"/>AWS API Documentation</a>
  */
 public class Patch implements Serializable, Cloneable {
 

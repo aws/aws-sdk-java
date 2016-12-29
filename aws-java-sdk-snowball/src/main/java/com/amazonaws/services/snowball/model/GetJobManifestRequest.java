@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest"/>AWS API Documentation</a>
  */
 public class GetJobManifestRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

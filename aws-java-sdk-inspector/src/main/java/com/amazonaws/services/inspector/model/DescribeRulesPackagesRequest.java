@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeRulesPackagesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -22,6 +22,8 @@ import java.io.Serializable;
  * This data type is used as a response element in the <a>UploadSigningCertificate</a> and
  * <a>ListSigningCertificates</a> actions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SigningCertificate"/>AWS API Documentation</a>
  */
 public class SigningCertificate implements Serializable, Cloneable {
 

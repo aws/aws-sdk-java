@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This data type is used in the <a>Subscription</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/EventSubscription"/>AWS API
+ *      Documentation</a>
  */
 public class EventSubscription implements Serializable, Cloneable {
 

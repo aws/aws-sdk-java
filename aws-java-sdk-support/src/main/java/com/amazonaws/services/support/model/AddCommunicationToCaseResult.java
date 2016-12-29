@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The result of the <a>AddCommunicationToCase</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase"/>AWS API
+ *      Documentation</a>
  */
 public class AddCommunicationToCaseResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the result of a list runs request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns"/>AWS API Documentation</a>
  */
 public class ListRunsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

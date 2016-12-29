@@ -19,6 +19,9 @@ import java.io.Serializable;
  * When updating an output configuration using the <a>UpdateApplication</a> operation, provides information about an
  * Amazon Kinesis Firehose delivery stream configured as the destination.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisFirehoseOutputUpdate"/>AWS
+ *      API Documentation</a>
  */
 public class KinesisFirehoseOutputUpdate implements Serializable, Cloneable {
 

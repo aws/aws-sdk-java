@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate"/>AWS API Documentation</a>
  */
 public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

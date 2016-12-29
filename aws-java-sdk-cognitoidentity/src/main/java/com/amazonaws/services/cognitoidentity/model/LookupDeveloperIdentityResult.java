@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Returned in response to a successful <code>LookupDeveloperIdentity</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity"/>AWS API
+ *      Documentation</a>
  */
 public class LookupDeveloperIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

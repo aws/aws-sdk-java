@@ -20,6 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the external
  * domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust"/>AWS API Documentation</a>
  */
 public class DeleteTrustRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -21,6 +21,8 @@ import java.io.Serializable;
  * the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs
  * to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/XssMatchSet"/>AWS API Documentation</a>
  */
 public class XssMatchSet implements Serializable, Cloneable {
 

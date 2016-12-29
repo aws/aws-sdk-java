@@ -20,6 +20,8 @@ import java.io.Serializable;
  * <a>SizeConstraintSet</a> objects that you want to add to a <code>Rule</code> and, for each object, indicates whether
  * you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/Predicate"/>AWS API Documentation</a>
  */
 public class Predicate implements Serializable, Cloneable {
 

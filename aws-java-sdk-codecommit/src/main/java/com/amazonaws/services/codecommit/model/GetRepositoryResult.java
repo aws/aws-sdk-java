@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a get repository operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository"/>AWS API Documentation</a>
  */
 public class GetRepositoryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

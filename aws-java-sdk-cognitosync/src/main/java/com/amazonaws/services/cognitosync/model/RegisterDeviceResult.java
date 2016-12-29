@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Response to a RegisterDevice request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice"/>AWS API
+ *      Documentation</a>
  */
 public class RegisterDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

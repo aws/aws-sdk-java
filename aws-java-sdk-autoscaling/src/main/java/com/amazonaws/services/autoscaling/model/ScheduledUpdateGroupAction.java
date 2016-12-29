@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a scheduled update to an Auto Scaling group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupAction"/>AWS API
+ *      Documentation</a>
  */
 public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 

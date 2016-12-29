@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates"/>AWS API
+ *      Documentation</a>
  */
 public class GetInstancePortStatesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

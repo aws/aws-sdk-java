@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Returned in response to a GetId request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId"/>AWS API Documentation</a>
  */
 public class GetIdResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

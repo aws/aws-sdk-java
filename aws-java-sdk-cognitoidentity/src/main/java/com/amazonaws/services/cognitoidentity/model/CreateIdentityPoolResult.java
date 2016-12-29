@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An object representing an Amazon Cognito identity pool.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool"/>AWS API
+ *      Documentation</a>
  */
 public class CreateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

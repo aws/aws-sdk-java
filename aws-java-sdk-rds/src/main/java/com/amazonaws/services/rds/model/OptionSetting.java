@@ -20,6 +20,8 @@ import java.io.Serializable;
  * option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called
  * SQLNET.ENCRYPTION_SERVER that can have several different values.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionSetting"/>AWS API Documentation</a>
  */
 public class OptionSetting implements Serializable, Cloneable {
 

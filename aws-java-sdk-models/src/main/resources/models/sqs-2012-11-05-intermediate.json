@@ -177,6 +177,7 @@
     "syncClient" : "AmazonSQSClient",
     "syncClientBuilderClassName" : "AmazonSQSClientBuilder",
     "syncInterface" : "AmazonSQS",
+    "uid" : "sqs-2012-11-05",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

@@ -20,6 +20,10 @@ import java.io.Serializable;
  * application, and the service role that Elastic Beanstalk assumes in order to apply lifecycle settings. The version
  * lifecycle configuration defines lifecycle settings for application versions.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationResourceLifecycleConfig"/>AWS
+ *      API Documentation</a>
  */
 public class ApplicationResourceLifecycleConfig implements Serializable, Cloneable {
 

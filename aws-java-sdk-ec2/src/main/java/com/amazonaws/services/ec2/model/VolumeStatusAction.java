@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a volume status operation code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VolumeStatusAction"/>AWS API Documentation</a>
  */
 public class VolumeStatusAction implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * One or more filters. Use a filter to return a more specific list of results.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryFilter"/>AWS API Documentation</a>
  */
 public class InventoryFilter implements Serializable, Cloneable {
 

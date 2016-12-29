@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to resend the confirmation code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode"/>AWS API
+ *      Documentation</a>
  */
 public class ResendConfirmationCodeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

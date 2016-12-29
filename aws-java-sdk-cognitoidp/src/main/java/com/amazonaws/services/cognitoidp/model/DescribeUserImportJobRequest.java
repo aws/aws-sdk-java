@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to describe the user import job.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeUserImportJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

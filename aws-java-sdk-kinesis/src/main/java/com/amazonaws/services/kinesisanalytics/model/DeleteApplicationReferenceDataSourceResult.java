@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource"/>AWS
+ *      API Documentation</a>
  */
 public class DeleteApplicationReferenceDataSourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response received from the server for a request to delete user attributes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class AdminDeleteUserAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

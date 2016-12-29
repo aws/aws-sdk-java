@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A user pool of the client type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolClientType"/>AWS API
+ *      Documentation</a>
  */
 public class UserPoolClientType implements Serializable, Cloneable {
 

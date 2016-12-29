@@ -14,9 +14,6 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class UpdateCACertificateResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

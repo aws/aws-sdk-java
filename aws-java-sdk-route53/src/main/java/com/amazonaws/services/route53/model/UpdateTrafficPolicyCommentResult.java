@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains the response information for the traffic policy.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateTrafficPolicyCommentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

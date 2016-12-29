@@ -362,6 +362,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws FileSystemLimitExceededException
      *         Returned if the AWS account has already created maximum number of file systems allowed per account.
      * @sample AmazonElasticFileSystem.CreateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateFileSystemResult createFileSystem(CreateFileSystemRequest createFileSystemRequest) {
@@ -584,6 +586,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *         Returned if one of the specified security groups does not exist in the subnet's VPC.
      * @throws UnsupportedAvailabilityZoneException
      * @sample AmazonElasticFileSystem.CreateMountTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateMountTargetResult createMountTarget(CreateMountTargetRequest createMountTargetRequest) {
@@ -637,6 +641,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
@@ -702,6 +708,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws FileSystemInUseException
      *         Returned if a file system has mount targets.
      * @sample AmazonElasticFileSystem.DeleteFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteFileSystemResult deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest) {
@@ -787,6 +795,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found in the caller's account.
      * @sample AmazonElasticFileSystem.DeleteMountTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteMountTargetResult deleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest) {
@@ -840,6 +850,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
@@ -912,6 +924,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DescribeFileSystems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeFileSystemsResult describeFileSystems(DescribeFileSystemsRequest describeFileSystemsRequest) {
@@ -983,6 +997,9 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws IncorrectMountTargetStateException
      *         Returned if the mount target is not in the correct state for the operation.
      * @sample AmazonElasticFileSystem.DescribeMountTargetSecurityGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeMountTargetSecurityGroupsResult describeMountTargetSecurityGroups(
@@ -1041,6 +1058,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found in the caller's account.
      * @sample AmazonElasticFileSystem.DescribeMountTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeMountTargetsResult describeMountTargets(DescribeMountTargetsRequest describeMountTargetsRequest) {
@@ -1093,6 +1112,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
@@ -1168,6 +1189,9 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws SecurityGroupNotFoundException
      *         Returned if one of the specified security groups does not exist in the subnet's VPC.
      * @sample AmazonElasticFileSystem.ModifyMountTargetSecurityGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {

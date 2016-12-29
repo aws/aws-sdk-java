@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a list branches operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches"/>AWS API Documentation</a>
  */
 public class ListBranchesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

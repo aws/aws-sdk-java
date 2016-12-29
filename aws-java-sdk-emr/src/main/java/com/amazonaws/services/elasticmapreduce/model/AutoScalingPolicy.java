@@ -20,6 +20,9 @@ import java.io.Serializable;
  * scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value
  * of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AutoScalingPolicy"/>AWS API
+ *      Documentation</a>
  */
 public class AutoScalingPolicy implements Serializable, Cloneable {
 

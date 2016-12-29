@@ -19,6 +19,8 @@ import java.io.Serializable;
  * For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a> </code> tag if the
  * message is deleted or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be deleted.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch"/>AWS API Documentation</a>
  */
 public class DeleteMessageBatchResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

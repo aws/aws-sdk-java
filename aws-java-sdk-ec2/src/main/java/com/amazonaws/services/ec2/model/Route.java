@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a route in a route table.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Route"/>AWS API Documentation</a>
  */
 public class Route implements Serializable, Cloneable {
 

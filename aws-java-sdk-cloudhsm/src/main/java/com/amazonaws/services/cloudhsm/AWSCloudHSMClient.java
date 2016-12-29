@@ -252,6 +252,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.AddTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
@@ -300,6 +302,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.CreateHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg"/>AWS API Documentation</a>
      */
     @Override
     public CreateHapgResult createHapg(CreateHapgRequest createHapgRequest) {
@@ -359,6 +362,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.CreateHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm"/>AWS API Documentation</a>
      */
     @Override
     public CreateHsmResult createHsm(CreateHsmRequest createHsmRequest) {
@@ -406,6 +410,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.CreateLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateLunaClientResult createLunaClient(CreateLunaClientRequest createLunaClientRequest) {
@@ -453,6 +459,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DeleteHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg"/>AWS API Documentation</a>
      */
     @Override
     public DeleteHapgResult deleteHapg(DeleteHapgRequest deleteHapgRequest) {
@@ -500,6 +507,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DeleteHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm"/>AWS API Documentation</a>
      */
     @Override
     public DeleteHsmResult deleteHsm(DeleteHsmRequest deleteHsmRequest) {
@@ -546,6 +554,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DeleteLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteLunaClientResult deleteLunaClient(DeleteLunaClientRequest deleteLunaClientRequest) {
@@ -593,6 +603,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DescribeHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg"/>AWS API Documentation</a>
      */
     @Override
     public DescribeHapgResult describeHapg(DescribeHapgRequest describeHapgRequest) {
@@ -640,6 +651,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DescribeHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm"/>AWS API Documentation</a>
      */
     @Override
     public DescribeHsmResult describeHsm(DescribeHsmRequest describeHsmRequest) {
@@ -691,6 +703,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DescribeLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeLunaClientResult describeLunaClient(DescribeLunaClientRequest describeLunaClientRequest) {
@@ -743,6 +757,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.GetConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig"/>AWS API Documentation</a>
      */
     @Override
     public GetConfigResult getConfig(GetConfigRequest getConfigRequest) {
@@ -790,6 +805,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListAvailableZones
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListAvailableZonesResult listAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest) {
@@ -846,6 +863,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListHapgs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs"/>AWS API Documentation</a>
      */
     @Override
     public ListHapgsResult listHapgs(ListHapgsRequest listHapgsRequest) {
@@ -902,6 +920,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListHsms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms"/>AWS API Documentation</a>
      */
     @Override
     public ListHsmsResult listHsms(ListHsmsRequest listHsmsRequest) {
@@ -958,6 +977,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListLunaClients
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListLunaClientsResult listLunaClients(ListLunaClientsRequest listLunaClientsRequest) {
@@ -1009,6 +1030,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
@@ -1055,6 +1078,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ModifyHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg"/>AWS API Documentation</a>
      */
     @Override
     public ModifyHapgResult modifyHapg(ModifyHapgRequest modifyHapgRequest) {
@@ -1109,6 +1133,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ModifyHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm"/>AWS API Documentation</a>
      */
     @Override
     public ModifyHsmResult modifyHsm(ModifyHsmRequest modifyHsmRequest) {
@@ -1154,6 +1179,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
      * @sample AWSCloudHSM.ModifyLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ModifyLunaClientResult modifyLunaClient(ModifyLunaClientRequest modifyLunaClientRequest) {
@@ -1204,6 +1231,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.RemoveTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {

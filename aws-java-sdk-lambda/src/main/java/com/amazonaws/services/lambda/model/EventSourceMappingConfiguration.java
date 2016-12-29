@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes mapping between an Amazon Kinesis stream and a Lambda function.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EventSourceMappingConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class EventSourceMappingConfiguration implements Serializable, Cloneable {
 

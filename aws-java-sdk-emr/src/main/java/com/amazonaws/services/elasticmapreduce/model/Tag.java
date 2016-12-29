@@ -22,6 +22,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR
  * Resources</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

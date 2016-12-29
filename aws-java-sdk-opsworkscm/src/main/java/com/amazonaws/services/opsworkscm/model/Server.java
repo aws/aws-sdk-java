@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a configuration management server.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/Server"/>AWS API Documentation</a>
  */
 public class Server implements Serializable, Cloneable {
 

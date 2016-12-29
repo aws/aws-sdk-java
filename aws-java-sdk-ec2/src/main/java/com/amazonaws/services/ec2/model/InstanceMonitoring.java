@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the monitoring of an instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceMonitoring"/>AWS API Documentation</a>
  */
 public class InstanceMonitoring implements Serializable, Cloneable {
 

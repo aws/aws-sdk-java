@@ -25,6 +25,9 @@ import java.io.Serializable;
  * passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code>
  * state.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadBalancerTargetGroupState"/>AWS API
+ *      Documentation</a>
  */
 public class LoadBalancerTargetGroupState implements Serializable, Cloneable {
 

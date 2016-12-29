@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The detailed status of the cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ClusterStatus"/>AWS API
+ *      Documentation</a>
  */
 public class ClusterStatus implements Serializable, Cloneable {
 

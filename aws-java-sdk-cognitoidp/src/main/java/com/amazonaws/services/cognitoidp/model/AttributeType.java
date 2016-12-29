@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Specifies whether the attribute is standard or custom.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AttributeType"/>AWS API Documentation</a>
  */
 public class AttributeType implements Serializable, Cloneable {
 

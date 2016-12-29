@@ -19,6 +19,8 @@ import java.io.Serializable;
  * The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change
  * set.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Change"/>AWS API Documentation</a>
  */
 public class Change implements Serializable, Cloneable {
 

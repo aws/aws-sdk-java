@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the AWS Region.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Region"/>AWS API Documentation</a>
  */
 public class Region implements Serializable, Cloneable {
 

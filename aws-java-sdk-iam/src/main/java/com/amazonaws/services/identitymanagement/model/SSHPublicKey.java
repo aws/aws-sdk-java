@@ -21,6 +21,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> actions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SSHPublicKey"/>AWS API Documentation</a>
  */
 public class SSHPublicKey implements Serializable, Cloneable {
 

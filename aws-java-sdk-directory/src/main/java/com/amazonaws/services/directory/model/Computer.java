@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about a computer account in a directory.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Computer"/>AWS API Documentation</a>
  */
 public class Computer implements Serializable, Cloneable {
 

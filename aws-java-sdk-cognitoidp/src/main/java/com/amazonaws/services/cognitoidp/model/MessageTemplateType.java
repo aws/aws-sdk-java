@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The message template structure.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/MessageTemplateType"/>AWS API
+ *      Documentation</a>
  */
 public class MessageTemplateType implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A communication associated with an AWS Support case. The communication consists of the case ID, the message body,
  * attachment information, the account email address, and the date and time of the communication.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Communication"/>AWS API Documentation</a>
  */
 public class Communication implements Serializable, Cloneable {
 

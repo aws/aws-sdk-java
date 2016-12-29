@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Metadata generated from the segment documents in a trace.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TraceSummary"/>AWS API Documentation</a>
  */
 public class TraceSummary implements Serializable, Cloneable {
 

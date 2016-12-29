@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeRefreshSchemasStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

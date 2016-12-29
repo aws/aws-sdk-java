@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an Amazon EC2 security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EC2SecurityGroup"/>AWS API Documentation</a>
  */
 public class EC2SecurityGroup implements Serializable, Cloneable {
 

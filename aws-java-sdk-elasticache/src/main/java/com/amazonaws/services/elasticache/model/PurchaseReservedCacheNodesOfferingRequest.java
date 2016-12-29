@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering"/>AWS
+ *      API Documentation</a>
  */
 public class PurchaseReservedCacheNodesOfferingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

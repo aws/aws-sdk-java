@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the start request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartRequest"/>AWS API Documentation</a>
  */
 public class StartRequest implements Serializable, Cloneable {
 

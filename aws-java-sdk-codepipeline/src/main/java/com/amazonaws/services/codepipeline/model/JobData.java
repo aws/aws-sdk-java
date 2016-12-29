@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents additional information about a job required for a job worker to complete the job.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/JobData"/>AWS API Documentation</a>
  */
 public class JobData implements Serializable, Cloneable {
 

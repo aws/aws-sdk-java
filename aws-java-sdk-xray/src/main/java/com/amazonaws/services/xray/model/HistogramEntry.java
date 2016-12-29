@@ -19,6 +19,8 @@ import java.io.Serializable;
  * An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the
  * prevalence of each value on the Y axis.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/HistogramEntry"/>AWS API Documentation</a>
  */
 public class HistogramEntry implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The UpdateDomainContactPrivacy response includes the following element.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateDomainContactPrivacyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

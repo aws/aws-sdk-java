@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Detailed information about an instance group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupDetail"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceGroupDetail implements Serializable, Cloneable {
 

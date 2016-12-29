@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents a single cache security group and its status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/SecurityGroupMembership"/>AWS API
+ *      Documentation</a>
  */
 public class SecurityGroupMembership implements Serializable, Cloneable {
 

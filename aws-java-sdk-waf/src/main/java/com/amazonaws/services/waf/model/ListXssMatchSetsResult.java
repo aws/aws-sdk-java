@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response to a <a>ListXssMatchSets</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSets"/>AWS API
+ *      Documentation</a>
  */
 public class ListXssMatchSetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

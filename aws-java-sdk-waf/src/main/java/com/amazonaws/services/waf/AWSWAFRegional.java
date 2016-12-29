@@ -155,6 +155,8 @@ public interface AWSWAFRegional {
      * @throws WAFUnavailableEntityException
      *         The operation failed because the entity referenced is temporarily unavailable. Retry your request.
      * @sample AWSWAFRegional.AssociateWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/AssociateWebACL"/>AWS API
+     *      Documentation</a>
      */
     AssociateWebACLResult associateWebACL(AssociateWebACLRequest associateWebACLRequest);
 
@@ -265,6 +267,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.CreateByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     CreateByteMatchSetResult createByteMatchSet(CreateByteMatchSetRequest createByteMatchSetRequest);
 
@@ -374,6 +378,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.CreateIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateIPSet"/>AWS API
+     *      Documentation</a>
      */
     CreateIPSetResult createIPSet(CreateIPSetRequest createIPSetRequest);
 
@@ -510,6 +516,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.CreateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRule"/>AWS API
+     *      Documentation</a>
      */
     CreateRuleResult createRule(CreateRuleRequest createRuleRequest);
 
@@ -621,6 +629,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.CreateSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     CreateSizeConstraintSetResult createSizeConstraintSet(CreateSizeConstraintSetRequest createSizeConstraintSetRequest);
 
@@ -731,6 +741,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.CreateSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest);
 
@@ -859,6 +871,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.CreateWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateWebACL"/>AWS API
+     *      Documentation</a>
      */
     CreateWebACLResult createWebACL(CreateWebACLRequest createWebACLRequest);
 
@@ -969,6 +983,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.CreateXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateXssMatchSet"/>AWS API
+     *      Documentation</a>
      */
     CreateXssMatchSetResult createXssMatchSet(CreateXssMatchSetRequest createXssMatchSetRequest);
 
@@ -1054,6 +1070,8 @@ public interface AWSWAFRegional {
      *         </p>
      *         </li>
      * @sample AWSWAFRegional.DeleteByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     DeleteByteMatchSetResult deleteByteMatchSet(DeleteByteMatchSetRequest deleteByteMatchSetRequest);
 
@@ -1138,6 +1156,8 @@ public interface AWSWAFRegional {
      *         </p>
      *         </li>
      * @sample AWSWAFRegional.DeleteIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteIPSet"/>AWS API
+     *      Documentation</a>
      */
     DeleteIPSetResult deleteIPSet(DeleteIPSetRequest deleteIPSetRequest);
 
@@ -1222,6 +1242,8 @@ public interface AWSWAFRegional {
      *         </p>
      *         </li>
      * @sample AWSWAFRegional.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRule"/>AWS API
+     *      Documentation</a>
      */
     DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
 
@@ -1307,6 +1329,8 @@ public interface AWSWAFRegional {
      *         </p>
      *         </li>
      * @sample AWSWAFRegional.DeleteSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     DeleteSizeConstraintSetResult deleteSizeConstraintSet(DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest);
 
@@ -1393,6 +1417,8 @@ public interface AWSWAFRegional {
      *         </p>
      *         </li>
      * @sample AWSWAFRegional.DeleteSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest);
 
@@ -1475,6 +1501,8 @@ public interface AWSWAFRegional {
      *         </p>
      *         </li>
      * @sample AWSWAFRegional.DeleteWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteWebACL"/>AWS API
+     *      Documentation</a>
      */
     DeleteWebACLResult deleteWebACL(DeleteWebACLRequest deleteWebACLRequest);
 
@@ -1561,6 +1589,8 @@ public interface AWSWAFRegional {
      *         </p>
      *         </li>
      * @sample AWSWAFRegional.DeleteXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteXssMatchSet"/>AWS API
+     *      Documentation</a>
      */
     DeleteXssMatchSetResult deleteXssMatchSet(DeleteXssMatchSetRequest deleteXssMatchSetRequest);
 
@@ -1628,6 +1658,8 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.DisassociateWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DisassociateWebACL"/>AWS API
+     *      Documentation</a>
      */
     DisassociateWebACLResult disassociateWebACL(DisassociateWebACLRequest disassociateWebACLRequest);
 
@@ -1646,6 +1678,8 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.GetByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     GetByteMatchSetResult getByteMatchSet(GetByteMatchSetRequest getByteMatchSetRequest);
 
@@ -1672,6 +1706,8 @@ public interface AWSWAFRegional {
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSWAFRegional.GetChangeToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetChangeToken"/>AWS API
+     *      Documentation</a>
      */
     GetChangeTokenResult getChangeToken(GetChangeTokenRequest getChangeTokenRequest);
 
@@ -1706,6 +1742,8 @@ public interface AWSWAFRegional {
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSWAFRegional.GetChangeTokenStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetChangeTokenStatus"/>AWS API
+     *      Documentation</a>
      */
     GetChangeTokenStatusResult getChangeTokenStatus(GetChangeTokenStatusRequest getChangeTokenStatusRequest);
 
@@ -1724,6 +1762,7 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.GetIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetIPSet"/>AWS API Documentation</a>
      */
     GetIPSetResult getIPSet(GetIPSetRequest getIPSetRequest);
 
@@ -1743,6 +1782,7 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.GetRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRule"/>AWS API Documentation</a>
      */
     GetRuleResult getRule(GetRuleRequest getRuleRequest);
 
@@ -1766,6 +1806,8 @@ public interface AWSWAFRegional {
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSWAFRegional.GetSampledRequests
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSampledRequests"/>AWS API
+     *      Documentation</a>
      */
     GetSampledRequestsResult getSampledRequests(GetSampledRequestsRequest getSampledRequestsRequest);
 
@@ -1784,6 +1826,8 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.GetSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     GetSizeConstraintSetResult getSizeConstraintSet(GetSizeConstraintSetRequest getSizeConstraintSetRequest);
 
@@ -1803,6 +1847,8 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.GetSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest);
 
@@ -1821,6 +1867,8 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.GetWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACL"/>AWS API
+     *      Documentation</a>
      */
     GetWebACLResult getWebACL(GetWebACLRequest getWebACLRequest);
 
@@ -1890,6 +1938,8 @@ public interface AWSWAFRegional {
      * @throws WAFUnavailableEntityException
      *         The operation failed because the entity referenced is temporarily unavailable. Retry your request.
      * @sample AWSWAFRegional.GetWebACLForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACLForResource"/>AWS API
+     *      Documentation</a>
      */
     GetWebACLForResourceResult getWebACLForResource(GetWebACLForResourceRequest getWebACLForResourceRequest);
 
@@ -1909,6 +1959,8 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.GetXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetXssMatchSet"/>AWS API
+     *      Documentation</a>
      */
     GetXssMatchSetResult getXssMatchSet(GetXssMatchSetRequest getXssMatchSetRequest);
 
@@ -1925,6 +1977,8 @@ public interface AWSWAFRegional {
      *         The operation failed because you tried to create, update, or delete an object by using an invalid account
      *         identifier.
      * @sample AWSWAFRegional.ListByteMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListByteMatchSets"/>AWS API
+     *      Documentation</a>
      */
     ListByteMatchSetsResult listByteMatchSets(ListByteMatchSetsRequest listByteMatchSetsRequest);
 
@@ -1941,6 +1995,8 @@ public interface AWSWAFRegional {
      *         The operation failed because you tried to create, update, or delete an object by using an invalid account
      *         identifier.
      * @sample AWSWAFRegional.ListIPSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListIPSets"/>AWS API
+     *      Documentation</a>
      */
     ListIPSetsResult listIPSets(ListIPSetsRequest listIPSetsRequest);
 
@@ -1959,6 +2015,8 @@ public interface AWSWAFRegional {
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
      * @sample AWSWAFRegional.ListResourcesForWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListResourcesForWebACL"/>AWS API
+     *      Documentation</a>
      */
     ListResourcesForWebACLResult listResourcesForWebACL(ListResourcesForWebACLRequest listResourcesForWebACLRequest);
 
@@ -1975,6 +2033,8 @@ public interface AWSWAFRegional {
      *         The operation failed because you tried to create, update, or delete an object by using an invalid account
      *         identifier.
      * @sample AWSWAFRegional.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRules"/>AWS API
+     *      Documentation</a>
      */
     ListRulesResult listRules(ListRulesRequest listRulesRequest);
 
@@ -1991,6 +2051,8 @@ public interface AWSWAFRegional {
      *         The operation failed because you tried to create, update, or delete an object by using an invalid account
      *         identifier.
      * @sample AWSWAFRegional.ListSizeConstraintSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSizeConstraintSets"/>AWS API
+     *      Documentation</a>
      */
     ListSizeConstraintSetsResult listSizeConstraintSets(ListSizeConstraintSetsRequest listSizeConstraintSetsRequest);
 
@@ -2008,6 +2070,8 @@ public interface AWSWAFRegional {
      *         The operation failed because you tried to create, update, or delete an object by using an invalid account
      *         identifier.
      * @sample AWSWAFRegional.ListSqlInjectionMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets"/>AWS API
+     *      Documentation</a>
      */
     ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest);
 
@@ -2024,6 +2088,8 @@ public interface AWSWAFRegional {
      *         The operation failed because you tried to create, update, or delete an object by using an invalid account
      *         identifier.
      * @sample AWSWAFRegional.ListWebACLs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListWebACLs"/>AWS API
+     *      Documentation</a>
      */
     ListWebACLsResult listWebACLs(ListWebACLsRequest listWebACLsRequest);
 
@@ -2041,6 +2107,8 @@ public interface AWSWAFRegional {
      *         The operation failed because you tried to create, update, or delete an object by using an invalid account
      *         identifier.
      * @sample AWSWAFRegional.ListXssMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSets"/>AWS API
+     *      Documentation</a>
      */
     ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest listXssMatchSetsRequest);
 
@@ -2246,6 +2314,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.UpdateByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     UpdateByteMatchSetResult updateByteMatchSet(UpdateByteMatchSetRequest updateByteMatchSetRequest);
 
@@ -2487,6 +2557,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.UpdateIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateIPSet"/>AWS API
+     *      Documentation</a>
      */
     UpdateIPSetResult updateIPSet(UpdateIPSetRequest updateIPSetRequest);
 
@@ -2701,6 +2773,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.UpdateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRule"/>AWS API
+     *      Documentation</a>
      */
     UpdateRuleResult updateRule(UpdateRuleRequest updateRuleRequest);
 
@@ -2920,6 +2994,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.UpdateSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     UpdateSizeConstraintSetResult updateSizeConstraintSet(UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest);
 
@@ -3115,6 +3191,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.UpdateSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest);
 
@@ -3348,6 +3426,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.UpdateWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateWebACL"/>AWS API
+     *      Documentation</a>
      */
     UpdateWebACLResult updateWebACL(UpdateWebACLRequest updateWebACLRequest);
 
@@ -3543,6 +3623,8 @@ public interface AWSWAFRegional {
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAFRegional.UpdateXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateXssMatchSet"/>AWS API
+     *      Documentation</a>
      */
     UpdateXssMatchSetResult updateXssMatchSet(UpdateXssMatchSetRequest updateXssMatchSetRequest);
 

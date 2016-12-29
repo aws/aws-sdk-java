@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "route53domains",
     "targetPrefix" : "Route53Domains_v20140515",
+    "uid" : "route53domains-2014-05-15",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes association information for an Elastic IP address (IPv4).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceNetworkInterfaceAssociation"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceNetworkInterfaceAssociation implements Serializable, Cloneable {
 

@@ -35,6 +35,9 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GlobalSecondaryIndexUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
 

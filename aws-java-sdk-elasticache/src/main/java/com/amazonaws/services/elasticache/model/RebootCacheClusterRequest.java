@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a <code>RebootCacheCluster</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster"/>AWS API
+ *      Documentation</a>
  */
 public class RebootCacheClusterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

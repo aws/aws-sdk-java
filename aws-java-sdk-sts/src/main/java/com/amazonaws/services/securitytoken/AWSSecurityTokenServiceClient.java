@@ -395,6 +395,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole"/>AWS API Documentation</a>
      */
     @Override
     public AssumeRoleResult assumeRole(AssumeRoleRequest assumeRoleRequest) {
@@ -540,6 +541,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithSAML
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AssumeRoleWithSAMLResult assumeRoleWithSAML(AssumeRoleWithSAMLRequest assumeRoleWithSAMLRequest) {
@@ -715,6 +718,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithWebIdentity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest) {
@@ -809,6 +814,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *         The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can
      *         happen if the token contains invalid characters, such as linebreaks.
      * @sample AWSSecurityTokenService.DecodeAuthorizationMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DecodeAuthorizationMessageResult decodeAuthorizationMessage(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest) {
@@ -849,6 +856,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * @param getCallerIdentityRequest
      * @return Result of the GetCallerIdentity operation returned by the service.
      * @sample AWSSecurityTokenService.GetCallerIdentity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity"/>AWS API Documentation</a>
      */
     @Override
     public GetCallerIdentityResult getCallerIdentity(GetCallerIdentityRequest getCallerIdentityRequest) {
@@ -999,6 +1007,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.GetFederationToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetFederationTokenResult getFederationToken(GetFederationTokenRequest getFederationTokenRequest) {
@@ -1098,6 +1108,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.GetSessionToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken"/>AWS API Documentation</a>
      */
     @Override
     public GetSessionTokenResult getSessionToken(GetSessionTokenRequest getSessionTokenRequest) {

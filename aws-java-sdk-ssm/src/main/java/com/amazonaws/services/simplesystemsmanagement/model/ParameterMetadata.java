@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Metada includes information like the ARN of the last user and the date/time the parameter was last used.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterMetadata"/>AWS API Documentation</a>
  */
 public class ParameterMetadata implements Serializable, Cloneable {
 

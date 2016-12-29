@@ -14,9 +14,6 @@ package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class Limits implements Serializable, Cloneable {
 
     private Integer maximumReplicationCount;

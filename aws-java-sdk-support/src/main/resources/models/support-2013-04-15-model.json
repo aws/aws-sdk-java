@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "support",
     "targetPrefix" : "AWSSupport_20130415",
+    "uid" : "support-2013-04-15",
     "xmlNamespace" : null
   },
   "operations" : {

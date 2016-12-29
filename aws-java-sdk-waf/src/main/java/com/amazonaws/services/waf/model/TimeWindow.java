@@ -26,6 +26,8 @@ import java.io.Serializable;
  * resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In
  * that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/TimeWindow"/>AWS API Documentation</a>
  */
 public class TimeWindow implements Serializable, Cloneable {
 

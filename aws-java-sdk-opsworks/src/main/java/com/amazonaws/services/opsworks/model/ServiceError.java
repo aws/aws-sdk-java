@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an AWS OpsWorks service error.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ServiceError"/>AWS API Documentation</a>
  */
 public class ServiceError implements Serializable, Cloneable {
 

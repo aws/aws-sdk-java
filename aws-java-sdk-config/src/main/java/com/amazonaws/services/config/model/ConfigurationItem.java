@@ -24,6 +24,8 @@ import java.io.Serializable;
  * EC2 instances).
  * </p>
  * </note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationItem"/>AWS API Documentation</a>
  */
 public class ConfigurationItem implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This data type is used as one of the elements of the <a>ResourceGroup</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ResourceGroupTag"/>AWS API
+ *      Documentation</a>
  */
 public class ResourceGroupTag implements Serializable, Cloneable {
 

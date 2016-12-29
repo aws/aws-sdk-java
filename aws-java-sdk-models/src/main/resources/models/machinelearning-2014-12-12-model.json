@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "machinelearning",
     "targetPrefix" : "AmazonML_20141212",
+    "uid" : "machinelearning-2014-12-12",
     "xmlNamespace" : null
   },
   "operations" : {

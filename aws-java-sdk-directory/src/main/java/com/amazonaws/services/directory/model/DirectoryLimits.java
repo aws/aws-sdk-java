@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains directory limit information for a region.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryLimits"/>AWS API Documentation</a>
  */
 public class DirectoryLimits implements Serializable, Cloneable {
 

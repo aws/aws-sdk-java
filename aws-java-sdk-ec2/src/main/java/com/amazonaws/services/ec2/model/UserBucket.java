@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the S3 bucket for the disk image.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserBucket"/>AWS API Documentation</a>
  */
 public class UserBucket implements Serializable, Cloneable {
 

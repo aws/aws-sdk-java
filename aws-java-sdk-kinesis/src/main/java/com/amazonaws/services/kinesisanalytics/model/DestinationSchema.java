@@ -20,6 +20,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
  * Output</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DestinationSchema"/>AWS API
+ *      Documentation</a>
  */
 public class DestinationSchema implements Serializable, Cloneable {
 

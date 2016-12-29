@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Detailed provisioning artifact information.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactDetail"/>AWS API
+ *      Documentation</a>
  */
 public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 

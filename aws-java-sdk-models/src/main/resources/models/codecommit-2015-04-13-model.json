@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "codecommit",
     "targetPrefix" : "CodeCommit_20150413",
+    "uid" : "codecommit-2015-04-13",
     "xmlNamespace" : null
   },
   "operations" : {

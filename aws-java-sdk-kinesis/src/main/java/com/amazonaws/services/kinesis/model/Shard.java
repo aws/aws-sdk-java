@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A uniquely identified group of data records in an Amazon Kinesis stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Shard"/>AWS API Documentation</a>
  */
 public class Shard implements Serializable, Cloneable {
 

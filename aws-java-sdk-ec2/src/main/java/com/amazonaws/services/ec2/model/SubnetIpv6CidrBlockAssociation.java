@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an IPv6 CIDR block associated with a subnet.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SubnetIpv6CidrBlockAssociation"/>AWS API
+ *      Documentation</a>
  */
 public class SubnetIpv6CidrBlockAssociation implements Serializable, Cloneable {
 

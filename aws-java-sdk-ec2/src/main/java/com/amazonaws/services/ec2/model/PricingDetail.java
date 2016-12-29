@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a Reserved Instance offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PricingDetail"/>AWS API Documentation</a>
  */
 public class PricingDetail implements Serializable, Cloneable {
 

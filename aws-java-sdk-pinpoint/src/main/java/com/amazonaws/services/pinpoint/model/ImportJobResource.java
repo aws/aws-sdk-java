@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class ImportJobResource implements Serializable, Cloneable {
 
     /** Sets whether the endpoints create a segment when they are imported. */

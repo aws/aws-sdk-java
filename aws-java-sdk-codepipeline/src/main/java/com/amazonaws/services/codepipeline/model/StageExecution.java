@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about the run of a stage.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageExecution"/>AWS API
+ *      Documentation</a>
  */
 public class StageExecution implements Serializable, Cloneable {
 

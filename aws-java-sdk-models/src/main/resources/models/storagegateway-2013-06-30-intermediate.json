@@ -96,6 +96,7 @@
     "syncClient" : "AWSStorageGatewayClient",
     "syncClientBuilderClassName" : "AWSStorageGatewayClientBuilder",
     "syncInterface" : "AWSStorageGateway",
+    "uid" : "storagegateway-2013-06-30",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

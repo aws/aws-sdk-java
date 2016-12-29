@@ -20,6 +20,9 @@ import java.io.Serializable;
  * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
  * store artifact for the pipeline in AWS CodePipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AWSSessionCredentials"/>AWS API
+ *      Documentation</a>
  */
 public class AWSSessionCredentials implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A default version of a document.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentDefaultVersionDescription"/>AWS API
+ *      Documentation</a>
  */
 public class DocumentDefaultVersionDescription implements Serializable, Cloneable {
 

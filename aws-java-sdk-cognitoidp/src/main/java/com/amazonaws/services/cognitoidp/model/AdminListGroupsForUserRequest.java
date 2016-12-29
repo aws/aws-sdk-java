@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser"/>AWS API
+ *      Documentation</a>
  */
 public class AdminListGroupsForUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

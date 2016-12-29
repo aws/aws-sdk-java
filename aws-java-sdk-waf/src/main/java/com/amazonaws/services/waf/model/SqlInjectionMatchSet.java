@@ -22,6 +22,9 @@ import java.io.Serializable;
  * object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be
  * considered a match.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchSet"/>AWS API
+ *      Documentation</a>
  */
 public class SqlInjectionMatchSet implements Serializable, Cloneable {
 

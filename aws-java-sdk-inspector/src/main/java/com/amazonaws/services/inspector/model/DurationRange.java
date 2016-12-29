@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used in the <a>AssessmentTemplateFilter</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DurationRange"/>AWS API Documentation</a>
  */
 public class DurationRange implements Serializable, Cloneable {
 

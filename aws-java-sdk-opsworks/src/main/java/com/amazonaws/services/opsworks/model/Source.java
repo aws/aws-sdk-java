@@ -20,6 +20,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
  * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Source"/>AWS API Documentation</a>
  */
 public class Source implements Serializable, Cloneable {
 

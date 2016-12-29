@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A data volume used in a job's container properties.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Volume"/>AWS API Documentation</a>
  */
 public class Volume implements Serializable, Cloneable {
 

@@ -70,6 +70,7 @@
     "syncClient" : "AWSBatchClient",
     "syncClientBuilderClassName" : "AWSBatchClientBuilder",
     "syncInterface" : "AWSBatch",
+    "uid" : "batch-2016-08-10",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

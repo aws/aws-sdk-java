@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeAttachmentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

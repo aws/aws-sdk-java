@@ -21,6 +21,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKeyLastUsed"/>AWS API Documentation</a>
  */
 public class AccessKeyLastUsed implements Serializable, Cloneable {
 

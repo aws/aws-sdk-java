@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a data processor.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Processor"/>AWS API Documentation</a>
  */
 public class Processor implements Serializable, Cloneable {
 

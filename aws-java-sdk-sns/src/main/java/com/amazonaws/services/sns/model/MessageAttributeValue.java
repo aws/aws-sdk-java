@@ -26,6 +26,8 @@ import java.io.Serializable;
  * currently 256 KB (262,144 bytes). For more information, see <a
  * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/MessageAttributeValue"/>AWS API Documentation</a>
  */
 public class MessageAttributeValue implements Serializable, Cloneable {
 

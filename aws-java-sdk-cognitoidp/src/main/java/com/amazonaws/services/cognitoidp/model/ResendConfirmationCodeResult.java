@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a
  * confirmation code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode"/>AWS API
+ *      Documentation</a>
  */
 public class ResendConfirmationCodeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

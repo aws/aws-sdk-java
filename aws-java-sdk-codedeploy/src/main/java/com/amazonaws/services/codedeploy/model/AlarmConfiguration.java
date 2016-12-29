@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about alarms associated with the deployment group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AlarmConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class AlarmConfiguration implements Serializable, Cloneable {
 

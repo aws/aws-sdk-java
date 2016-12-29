@@ -20,6 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type that contains information about the resource record sets that you want to update based on a specified
  * traffic policy instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the results of the <a>RebootWorkspaces</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces"/>AWS API
+ *      Documentation</a>
  */
 public class RebootWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

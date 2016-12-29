@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a tag for an Auto Scaling group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

@@ -21,6 +21,8 @@ import java.io.Serializable;
  * <p>
  * Used as the response element in the <a>DescribeAssessmentRuns</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentRun"/>AWS API Documentation</a>
  */
 public class AssessmentRun implements Serializable, Cloneable {
 

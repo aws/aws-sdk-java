@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains information about the health checks or hosted zones for which you want to list tags.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource"/>AWS API
+ *      Documentation</a>
  */
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

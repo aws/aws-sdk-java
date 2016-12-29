@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility"/>AWS API
+ *      Documentation</a>
  */
 public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

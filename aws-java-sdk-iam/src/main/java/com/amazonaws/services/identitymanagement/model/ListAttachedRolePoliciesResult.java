@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the response to a successful <a>ListAttachedRolePolicies</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies"/>AWS API
+ *      Documentation</a>
  */
 public class ListAttachedRolePoliciesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

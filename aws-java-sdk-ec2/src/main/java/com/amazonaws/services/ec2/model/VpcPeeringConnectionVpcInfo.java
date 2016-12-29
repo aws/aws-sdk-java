@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a VPC in a VPC peering connection.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcPeeringConnectionVpcInfo"/>AWS API
+ *      Documentation</a>
  */
 public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 

@@ -271,6 +271,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.AbortEnvironmentUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AbortEnvironmentUpdateResult abortEnvironmentUpdate(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) {
@@ -323,6 +325,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws ManagedActionInvalidStateException
      *         Cannot modify the managed action in its current state.
      * @sample AWSElasticBeanstalk.ApplyEnvironmentManagedAction
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest) {
@@ -364,6 +369,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Results message indicating whether a CNAME is available.
      * @return Result of the CheckDNSAvailability operation returned by the service.
      * @sample AWSElasticBeanstalk.CheckDNSAvailability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CheckDNSAvailabilityResult checkDNSAvailability(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) {
@@ -414,6 +421,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.ComposeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ComposeEnvironmentsResult composeEnvironments(ComposeEnvironmentsRequest composeEnvironmentsRequest) {
@@ -458,6 +467,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyApplicationsException
      *         The specified account has reached its limit of applications.
      * @sample AWSElasticBeanstalk.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
@@ -546,6 +557,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws CodeBuildNotInServiceRegionException
      *         AWS CodeBuild is not available in the specified region.
      * @sample AWSElasticBeanstalk.CreateApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateApplicationVersionResult createApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest) {
@@ -614,6 +627,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyConfigurationTemplatesException
      *         The specified account has reached its limit of configuration templates.
      * @sample AWSElasticBeanstalk.CreateConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateConfigurationTemplateResult createConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) {
@@ -658,6 +674,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.CreateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateEnvironmentResult createEnvironment(CreateEnvironmentRequest createEnvironmentRequest) {
@@ -707,6 +725,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.CreateStorageLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateStorageLocationResult createStorageLocation(CreateStorageLocationRequest createStorageLocationRequest) {
@@ -762,6 +782,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *         Unable to perform the specified operation because another operation that effects an element in this
      *         activity is already in progress.
      * @sample AWSElasticBeanstalk.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
@@ -835,6 +857,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *         </p>
      *         </li>
      * @sample AWSElasticBeanstalk.DeleteApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteApplicationVersionResult deleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest) {
@@ -885,6 +909,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *         Unable to perform the specified operation because another operation that effects an element in this
      *         activity is already in progress.
      * @sample AWSElasticBeanstalk.DeleteConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteConfigurationTemplateResult deleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
@@ -932,6 +959,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to delete a draft environment configuration.
      * @return Result of the DeleteEnvironmentConfiguration operation returned by the service.
      * @sample AWSElasticBeanstalk.DeleteEnvironmentConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
@@ -973,6 +1003,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to describe application versions.
      * @return Result of the DescribeApplicationVersions operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeApplicationVersions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeApplicationVersionsResult describeApplicationVersions(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) {
@@ -1019,6 +1052,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to describe one or more applications.
      * @return Result of the DescribeApplications operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeApplicationsResult describeApplications(DescribeApplicationsRequest describeApplicationsRequest) {
@@ -1069,6 +1104,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationOptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeConfigurationOptionsResult describeConfigurationOptions(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) {
@@ -1129,6 +1167,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeConfigurationSettingsResult describeConfigurationSettings(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) {
@@ -1176,6 +1217,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws ElasticBeanstalkServiceException
      *         A generic service exception has occurred.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeEnvironmentHealthResult describeEnvironmentHealth(DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest) {
@@ -1219,6 +1262,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws ElasticBeanstalkServiceException
      *         A generic service exception has occurred.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActionHistory
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
@@ -1264,6 +1310,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws ElasticBeanstalkServiceException
      *         A generic service exception has occurred.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
@@ -1308,6 +1357,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentResources
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeEnvironmentResourcesResult describeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) {
@@ -1349,6 +1401,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to describe one or more environments.
      * @return Result of the DescribeEnvironments operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEnvironmentsResult describeEnvironments(DescribeEnvironmentsRequest describeEnvironmentsRequest) {
@@ -1400,6 +1454,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to retrieve a list of events for an environment.
      * @return Result of the DescribeEvents operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
@@ -1453,6 +1509,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws ElasticBeanstalkServiceException
      *         A generic service exception has occurred.
      * @sample AWSElasticBeanstalk.DescribeInstancesHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeInstancesHealthResult describeInstancesHealth(DescribeInstancesHealthRequest describeInstancesHealthRequest) {
@@ -1493,6 +1551,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param listAvailableSolutionStacksRequest
      * @return Result of the ListAvailableSolutionStacks operation returned by the service.
      * @sample AWSElasticBeanstalk.ListAvailableSolutionStacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListAvailableSolutionStacksResult listAvailableSolutionStacks(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) {
@@ -1541,6 +1602,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.RebuildEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RebuildEnvironmentResult rebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest) {
@@ -1603,6 +1666,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.
      * @return Result of the RequestEnvironmentInfo operation returned by the service.
      * @sample AWSElasticBeanstalk.RequestEnvironmentInfo
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RequestEnvironmentInfoResult requestEnvironmentInfo(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) {
@@ -1643,6 +1708,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param restartAppServerRequest
      * @return Result of the RestartAppServer operation returned by the service.
      * @sample AWSElasticBeanstalk.RestartAppServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RestartAppServerResult restartAppServer(RestartAppServerRequest restartAppServerRequest) {
@@ -1694,6 +1761,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
      * @return Result of the RetrieveEnvironmentInfo operation returned by the service.
      * @sample AWSElasticBeanstalk.RetrieveEnvironmentInfo
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public RetrieveEnvironmentInfoResult retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) {
@@ -1735,6 +1804,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Swaps the CNAMEs of two environments.
      * @return Result of the SwapEnvironmentCNAMEs operation returned by the service.
      * @sample AWSElasticBeanstalk.SwapEnvironmentCNAMEs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
@@ -1783,6 +1854,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.TerminateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public TerminateEnvironmentResult terminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest) {
@@ -1830,6 +1903,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to update an application.
      * @return Result of the UpdateApplication operation returned by the service.
      * @sample AWSElasticBeanstalk.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
@@ -1872,6 +1947,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.UpdateApplicationResourceLifecycle
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(
@@ -1920,6 +1998,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param updateApplicationVersionRequest
      * @return Result of the UpdateApplicationVersion operation returned by the service.
      * @sample AWSElasticBeanstalk.UpdateApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateApplicationVersionResult updateApplicationVersion(UpdateApplicationVersionRequest updateApplicationVersionRequest) {
@@ -1981,6 +2061,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateConfigurationTemplateResult updateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) {
@@ -2036,6 +2119,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest) {
@@ -2086,6 +2171,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.ValidateConfigurationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ValidateConfigurationSettingsResult validateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) {

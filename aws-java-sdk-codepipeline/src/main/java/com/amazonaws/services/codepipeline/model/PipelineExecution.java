@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about an execution of a pipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineExecution"/>AWS API
+ *      Documentation</a>
  */
 public class PipelineExecution implements Serializable, Cloneable {
 

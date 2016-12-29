@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes whether instance monitoring is enabled.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceMonitoring"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceMonitoring implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Detailed information about the current state of an individual Automation execution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AutomationExecution"/>AWS API Documentation</a>
  */
 public class AutomationExecution implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the result of describe device pool compatibility request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility"/>AWS API
+ *      Documentation</a>
  */
 public class GetDevicePoolCompatibilityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

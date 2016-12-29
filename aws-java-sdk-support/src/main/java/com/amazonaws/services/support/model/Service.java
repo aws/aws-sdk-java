@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about an AWS service returned by the <a>DescribeServices</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Service"/>AWS API Documentation</a>
  */
 public class Service implements Serializable, Cloneable {
 

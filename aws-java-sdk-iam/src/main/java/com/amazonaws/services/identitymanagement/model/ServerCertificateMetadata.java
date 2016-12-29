@@ -22,6 +22,9 @@ import java.io.Serializable;
  * This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a>
  * actions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ServerCertificateMetadata"/>AWS API
+ *      Documentation</a>
  */
 public class ServerCertificateMetadata implements Serializable, Cloneable {
 

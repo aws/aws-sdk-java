@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftRetryOptions"/>AWS API
+ *      Documentation</a>
  */
 public class RedshiftRetryOptions implements Serializable, Cloneable {
 

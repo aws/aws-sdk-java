@@ -25,6 +25,9 @@ import java.io.Serializable;
  * To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the
  * <a>WebACLUpdate</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ActivatedRule"/>AWS API
+ *      Documentation</a>
  */
 public class ActivatedRule implements Serializable, Cloneable {
 

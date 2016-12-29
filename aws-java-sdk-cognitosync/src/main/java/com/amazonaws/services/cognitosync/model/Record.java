@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * The basic data structure of a dataset.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/Record"/>AWS API Documentation</a>
  */
 public class Record implements Serializable, Cloneable {
 

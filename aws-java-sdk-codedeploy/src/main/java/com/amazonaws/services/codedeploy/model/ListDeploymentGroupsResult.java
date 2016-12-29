@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a list deployment groups operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"/>AWS API
+ *      Documentation</a>
  */
 public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

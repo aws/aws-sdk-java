@@ -74,6 +74,7 @@
     "syncClient" : "DataPipelineClient",
     "syncClientBuilderClassName" : "DataPipelineClientBuilder",
     "syncInterface" : "DataPipeline",
+    "uid" : "datapipeline-2012-10-29",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

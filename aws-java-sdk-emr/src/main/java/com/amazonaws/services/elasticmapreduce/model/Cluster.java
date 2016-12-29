@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The detailed description of the cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Cluster"/>AWS API Documentation</a>
  */
 public class Cluster implements Serializable, Cloneable {
 

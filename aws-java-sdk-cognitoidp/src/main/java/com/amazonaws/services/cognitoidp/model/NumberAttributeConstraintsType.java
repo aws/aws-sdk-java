@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The minimum and maximum value of an attribute that is of the number data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NumberAttributeConstraintsType"/>AWS API
+ *      Documentation</a>
  */
 public class NumberAttributeConstraintsType implements Serializable, Cloneable {
 

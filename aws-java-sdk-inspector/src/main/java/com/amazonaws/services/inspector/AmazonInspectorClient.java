@@ -274,6 +274,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.AddAttributesToFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AddAttributesToFindingsResult addAttributesToFindings(AddAttributesToFindingsRequest addAttributesToFindingsRequest) {
@@ -331,6 +333,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.CreateAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateAssessmentTargetResult createAssessmentTarget(CreateAssessmentTargetRequest createAssessmentTargetRequest) {
@@ -384,6 +388,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.CreateAssessmentTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateAssessmentTemplateResult createAssessmentTemplate(CreateAssessmentTemplateRequest createAssessmentTemplateRequest) {
@@ -436,6 +442,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws AccessDeniedException
      *         You do not have required permissions to access the requested resource.
      * @sample AmazonInspector.CreateResourceGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateResourceGroupResult createResourceGroup(CreateResourceGroupRequest createResourceGroupRequest) {
@@ -487,6 +495,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.DeleteAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteAssessmentRunResult deleteAssessmentRun(DeleteAssessmentRunRequest deleteAssessmentRunRequest) {
@@ -538,6 +548,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.DeleteAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteAssessmentTargetResult deleteAssessmentTarget(DeleteAssessmentTargetRequest deleteAssessmentTargetRequest) {
@@ -590,6 +602,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.DeleteAssessmentTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteAssessmentTemplateResult deleteAssessmentTemplate(DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest) {
@@ -635,6 +649,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonInspector.DescribeAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeAssessmentRunsResult describeAssessmentRuns(DescribeAssessmentRunsRequest describeAssessmentRunsRequest) {
@@ -680,6 +696,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonInspector.DescribeAssessmentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeAssessmentTargetsResult describeAssessmentTargets(DescribeAssessmentTargetsRequest describeAssessmentTargetsRequest) {
@@ -725,6 +743,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonInspector.DescribeAssessmentTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeAssessmentTemplatesResult describeAssessmentTemplates(DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest) {
@@ -769,6 +789,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws InternalException
      *         Internal server error.
      * @sample AmazonInspector.DescribeCrossAccountAccessRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeCrossAccountAccessRoleResult describeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest) {
@@ -815,6 +837,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonInspector.DescribeFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeFindingsResult describeFindings(DescribeFindingsRequest describeFindingsRequest) {
@@ -859,6 +883,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonInspector.DescribeResourceGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeResourceGroupsResult describeResourceGroups(DescribeResourceGroupsRequest describeResourceGroupsRequest) {
@@ -904,6 +930,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonInspector.DescribeRulesPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeRulesPackagesResult describeRulesPackages(DescribeRulesPackagesRequest describeRulesPackagesRequest) {
@@ -954,6 +982,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.GetTelemetryMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetTelemetryMetadataResult getTelemetryMetadata(GetTelemetryMetadataRequest getTelemetryMetadataRequest) {
@@ -1003,6 +1033,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.ListAssessmentRunAgents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListAssessmentRunAgentsResult listAssessmentRunAgents(ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest) {
@@ -1054,6 +1086,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.ListAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListAssessmentRunsResult listAssessmentRuns(ListAssessmentRunsRequest listAssessmentRunsRequest) {
@@ -1102,6 +1136,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws AccessDeniedException
      *         You do not have required permissions to access the requested resource.
      * @sample AmazonInspector.ListAssessmentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListAssessmentTargetsResult listAssessmentTargets(ListAssessmentTargetsRequest listAssessmentTargetsRequest) {
@@ -1153,6 +1189,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.ListAssessmentTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListAssessmentTemplatesResult listAssessmentTemplates(ListAssessmentTemplatesRequest listAssessmentTemplatesRequest) {
@@ -1204,6 +1242,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.ListEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListEventSubscriptionsResult listEventSubscriptions(ListEventSubscriptionsRequest listEventSubscriptionsRequest) {
@@ -1254,6 +1294,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.ListFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListFindingsResult listFindings(ListFindingsRequest listFindingsRequest) {
@@ -1300,6 +1342,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @throws AccessDeniedException
      *         You do not have required permissions to access the requested resource.
      * @sample AmazonInspector.ListRulesPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListRulesPackagesResult listRulesPackages(ListRulesPackagesRequest listRulesPackagesRequest) {
@@ -1349,6 +1393,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
@@ -1401,6 +1447,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the
      *         assessment run.
      * @sample AmazonInspector.PreviewAgents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public PreviewAgentsResult previewAgents(PreviewAgentsRequest previewAgentsRequest) {
@@ -1451,6 +1499,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the
      *         assessment run.
      * @sample AmazonInspector.RegisterCrossAccountAccessRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest) {
@@ -1503,6 +1553,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.RemoveAttributesFromFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RemoveAttributesFromFindingsResult removeAttributesFromFindings(RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest) {
@@ -1555,6 +1607,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.SetTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetTagsForResourceResult setTagsForResource(SetTagsForResourceRequest setTagsForResourceRequest) {
@@ -1614,6 +1668,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         You started an assessment run, but one of the instances is already participating in another assessment
      *         run.
      * @sample AmazonInspector.StartAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StartAssessmentRunResult startAssessmentRun(StartAssessmentRunRequest startAssessmentRunRequest) {
@@ -1663,6 +1719,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.StopAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StopAssessmentRunResult stopAssessmentRun(StopAssessmentRunRequest stopAssessmentRunRequest) {
@@ -1716,6 +1774,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.SubscribeToEvent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SubscribeToEventResult subscribeToEvent(SubscribeToEventRequest subscribeToEventRequest) {
@@ -1766,6 +1826,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.UnsubscribeFromEvent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UnsubscribeFromEventResult unsubscribeFromEvent(UnsubscribeFromEventRequest unsubscribeFromEventRequest) {
@@ -1815,6 +1877,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
      * @sample AmazonInspector.UpdateAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateAssessmentTargetResult updateAssessmentTarget(UpdateAssessmentTargetRequest updateAssessmentTargetRequest) {

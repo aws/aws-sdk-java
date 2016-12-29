@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class EndpointUser implements Serializable, Cloneable {
 
     /** Custom attributesd specific to the user. */

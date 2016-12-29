@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents information about a job.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/Job"/>AWS API Documentation</a>
  */
 public class Job implements Serializable, Cloneable {
 

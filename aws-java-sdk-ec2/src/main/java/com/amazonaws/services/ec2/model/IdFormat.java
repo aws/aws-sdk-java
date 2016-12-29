@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the ID format for a resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IdFormat"/>AWS API Documentation</a>
  */
 public class IdFormat implements Serializable, Cloneable {
 

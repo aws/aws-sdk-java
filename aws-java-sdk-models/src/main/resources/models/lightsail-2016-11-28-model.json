@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "lightsail",
     "targetPrefix" : "Lightsail_20161128",
+    "uid" : "lightsail-2016-11-28",
     "xmlNamespace" : null
   },
   "operations" : {

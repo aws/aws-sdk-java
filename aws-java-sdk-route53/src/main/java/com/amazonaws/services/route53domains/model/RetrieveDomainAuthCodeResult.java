@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The RetrieveDomainAuthCode response includes the following element.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode"/>AWS API
+ *      Documentation</a>
  */
 public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

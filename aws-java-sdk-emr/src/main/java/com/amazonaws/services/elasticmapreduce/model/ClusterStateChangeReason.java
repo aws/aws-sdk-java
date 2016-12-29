@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The reason that the cluster changed to its current state.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ClusterStateChangeReason"/>AWS API
+ *      Documentation</a>
  */
 public class ClusterStateChangeReason implements Serializable, Cloneable {
 

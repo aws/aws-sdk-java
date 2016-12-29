@@ -276,6 +276,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule"/>AWS API Documentation</a>
      */
     @Override
     public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
@@ -321,6 +322,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DescribeRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule"/>AWS API Documentation</a>
      */
     @Override
     public DescribeRuleResult describeRule(DescribeRuleRequest describeRuleRequest) {
@@ -372,6 +374,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DisableRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule"/>AWS API Documentation</a>
      */
     @Override
     public DisableRuleResult disableRule(DisableRuleRequest disableRuleRequest) {
@@ -423,6 +426,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.EnableRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule"/>AWS API Documentation</a>
      */
     @Override
     public EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest) {
@@ -469,6 +473,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.ListRuleNamesByTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListRuleNamesByTargetResult listRuleNamesByTarget(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest) {
@@ -516,6 +522,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules"/>AWS API Documentation</a>
      */
     @Override
     public ListRulesResult listRules(ListRulesRequest listRulesRequest) {
@@ -561,6 +568,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.ListTargetsByRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTargetsByRuleResult listTargetsByRule(ListTargetsByRuleRequest listTargetsByRuleRequest) {
@@ -604,6 +613,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents"/>AWS API Documentation</a>
      */
     @Override
     public PutEventsResult putEvents(PutEventsRequest putEventsRequest) {
@@ -670,6 +680,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule"/>AWS API Documentation</a>
      */
     @Override
     public PutRuleResult putRule(PutRuleRequest putRuleRequest) {
@@ -746,6 +757,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets"/>AWS API Documentation</a>
      */
     @Override
     public PutTargetsResult putTargets(PutTargetsRequest putTargetsRequest) {
@@ -797,6 +809,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.RemoveTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets"/>AWS API Documentation</a>
      */
     @Override
     public RemoveTargetsResult removeTargets(RemoveTargetsRequest removeTargetsRequest) {
@@ -847,6 +860,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.TestEventPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public TestEventPatternResult testEventPattern(TestEventPatternRequest testEventPatternRequest) {

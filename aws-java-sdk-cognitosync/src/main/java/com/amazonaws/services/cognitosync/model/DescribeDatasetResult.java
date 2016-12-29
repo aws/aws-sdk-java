@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * Response to a successful DescribeDataset request.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

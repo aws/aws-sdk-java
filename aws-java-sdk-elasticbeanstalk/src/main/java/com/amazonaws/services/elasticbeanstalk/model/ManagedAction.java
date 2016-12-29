@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The record of an upcoming or in-progress managed action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ManagedAction"/>AWS API
+ *      Documentation</a>
  */
 public class ManagedAction implements Serializable, Cloneable {
 

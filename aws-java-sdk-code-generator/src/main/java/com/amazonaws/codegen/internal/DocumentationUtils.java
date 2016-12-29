@@ -15,6 +15,18 @@
 
 package com.amazonaws.codegen.internal;
 
+import com.amazonaws.codegen.model.intermediate.Metadata;
+import com.amazonaws.codegen.model.intermediate.ShapeModel;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+import static com.amazonaws.codegen.internal.Constants.AWS_DOCS_HOST;
+import static com.amazonaws.codegen.model.intermediate.ShapeType.Model;
+import static com.amazonaws.codegen.model.intermediate.ShapeType.Request;
+import static com.amazonaws.codegen.model.intermediate.ShapeType.Response;
+
 public class DocumentationUtils {
 
     public static final String DEFAULT_ASYNC_RETURN = "A Java Future containing the result of the %s operation returned by the service.";
@@ -34,6 +46,13 @@ public class DocumentationUtils {
     public static final String CONSTRUCTOR_DOC = "Constructs a new %s object. Callers should use the setter or fluent setter (with...) methods to initialize any additional object members.";
 
     public static final String LIST_VARARG_ADDITIONAL_DOC = "<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #set%s(java.util.Collection)} or {@link #with%s(java.util.Collection)} if you want to override the existing values.</p>";
+
+    //TODO kylthoms@: probably should move this to a custom config in each service
+    private static final Set<String> SERVICES_EXCLUDED_FROM_CROSS_LINKING = new HashSet<>(Arrays.asList(
+            "apigateway", "budgets", "cloudsearch", "cloudsearchdomain",
+            "discovery", "elastictranscoder", "es", "glacier", "importexport",
+            "iot", "data.iot", "machinelearning", "rekognition", "s3", "sdb", "swf"
+    ));
 
     public static String generateSetterDocumentation() {
         return null;
@@ -98,5 +117,47 @@ public class DocumentationUtils {
         documentation = documentation.replaceAll("\\*\\/", "*&#47;");
 
         return documentation;
+    }
+
+    /**
+     * Create the HTML for a link to the operation/shape core AWS docs site
+     *
+     * @param metadata  the UID for the service from that services metadata
+     * @param name the name of the shape/request/operation
+     *
+     * @return a '@see also' HTML link to the doc
+     */
+    public static String createLinkToServiceDocumentation(Metadata metadata, String name) {
+        if (isCrossLinkingEnabledForService(metadata)) {
+            return String.format("@see <a href=\"http://%s/goto/WebAPI/%s/%s\"/>AWS API Documentation</a>",
+                    AWS_DOCS_HOST,
+                    metadata.getUid(),
+                    name);
+        }
+        return "";
+    }
+
+    /**
+     * Create the HTML for a link to the operation/shape core AWS docs site
+     *
+     * @param metadata  the UID for the service from that services metadata
+     * @param shapeModel the model of the shape
+     *
+     * @return a '@see also' HTML link to the doc
+     */
+    public static String createLinkToServiceDocumentation(Metadata metadata, ShapeModel shapeModel) {
+        return isRequestResponseOrModel(shapeModel) ? createLinkToServiceDocumentation(metadata, shapeModel.getDocumentationShapeName()) : "";
+    }
+
+    public static String removeFromEnd(String string, String stringToRemove) {
+        return string.endsWith(stringToRemove) ? string.substring(0, string.length() - stringToRemove.length()) : string;
+    }
+
+    private static boolean isRequestResponseOrModel(ShapeModel shapeModel) {
+        return shapeModel.getShapeType() == Model || shapeModel.getShapeType() == Request || shapeModel.getShapeType() == Response;
+    }
+
+    private static boolean isCrossLinkingEnabledForService(Metadata metadata) {
+        return metadata.getUid() != null && metadata.getEndpointPrefix() != null && !SERVICES_EXCLUDED_FROM_CROSS_LINKING.contains(metadata.getEndpointPrefix());
     }
 }

@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your
  * gateway and iSCSI initiators.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ChapInfo"/>AWS API Documentation</a>
  */
 public class ChapInfo implements Serializable, Cloneable {
 

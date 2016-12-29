@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * New streaming instances are booted from images. The image stores the application catalog and is connected to fleets.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Image"/>AWS API Documentation</a>
  */
 public class Image implements Serializable, Cloneable {
 

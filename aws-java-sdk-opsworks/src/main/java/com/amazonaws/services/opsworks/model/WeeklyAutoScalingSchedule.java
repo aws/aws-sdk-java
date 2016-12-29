@@ -43,6 +43,9 @@ import java.io.Serializable;
  * <p>
  * <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/WeeklyAutoScalingSchedule"/>AWS API
+ *      Documentation</a>
  */
 public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
 

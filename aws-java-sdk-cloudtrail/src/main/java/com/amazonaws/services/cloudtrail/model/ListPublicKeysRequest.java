@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Requests the public keys for a specified time range.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys"/>AWS API Documentation</a>
  */
 public class ListPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

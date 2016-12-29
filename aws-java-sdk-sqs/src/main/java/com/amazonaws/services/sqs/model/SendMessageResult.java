@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage"/>AWS API Documentation</a>
  */
 public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

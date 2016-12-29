@@ -14,9 +14,6 @@ package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class DeleteDomainResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata> implements Serializable,
         Cloneable {
 

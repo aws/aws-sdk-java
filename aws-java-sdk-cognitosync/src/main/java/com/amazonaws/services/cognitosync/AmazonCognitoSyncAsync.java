@@ -63,6 +63,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        The input for the BulkPublish operation.
      * @return A Java Future containing the result of the BulkPublish operation returned by the service.
      * @sample AmazonCognitoSyncAsync.BulkPublish
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<BulkPublishResult> bulkPublishAsync(BulkPublishRequest bulkPublishRequest);
 
@@ -85,6 +87,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BulkPublish operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.BulkPublish
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<BulkPublishResult> bulkPublishAsync(BulkPublishRequest bulkPublishRequest,
             com.amazonaws.handlers.AsyncHandler<BulkPublishRequest, BulkPublishResult> asyncHandler);
@@ -104,6 +108,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request to delete the specific dataset.
      * @return A Java Future containing the result of the DeleteDataset operation returned by the service.
      * @sample AmazonCognitoSyncAsync.DeleteDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(DeleteDatasetRequest deleteDatasetRequest);
 
@@ -126,6 +132,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDataset operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.DeleteDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(DeleteDatasetRequest deleteDatasetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDatasetRequest, DeleteDatasetResult> asyncHandler);
@@ -145,6 +153,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        name.
      * @return A Java Future containing the result of the DescribeDataset operation returned by the service.
      * @sample AmazonCognitoSyncAsync.DescribeDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeDatasetResult> describeDatasetAsync(DescribeDatasetRequest describeDatasetRequest);
 
@@ -167,6 +177,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDataset operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.DescribeDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeDatasetResult> describeDatasetAsync(DescribeDatasetRequest describeDatasetRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDatasetRequest, DescribeDatasetResult> asyncHandler);
@@ -184,6 +196,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request for usage information about the identity pool.
      * @return A Java Future containing the result of the DescribeIdentityPoolUsage operation returned by the service.
      * @sample AmazonCognitoSyncAsync.DescribeIdentityPoolUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeIdentityPoolUsageResult> describeIdentityPoolUsageAsync(
             DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest);
@@ -205,6 +219,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeIdentityPoolUsage operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.DescribeIdentityPoolUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeIdentityPoolUsageResult> describeIdentityPoolUsageAsync(
             DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest,
@@ -223,6 +239,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request for information about the usage of an identity pool.
      * @return A Java Future containing the result of the DescribeIdentityUsage operation returned by the service.
      * @sample AmazonCognitoSyncAsync.DescribeIdentityUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeIdentityUsageResult> describeIdentityUsageAsync(DescribeIdentityUsageRequest describeIdentityUsageRequest);
 
@@ -243,6 +261,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeIdentityUsage operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.DescribeIdentityUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeIdentityUsageResult> describeIdentityUsageAsync(DescribeIdentityUsageRequest describeIdentityUsageRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeIdentityUsageRequest, DescribeIdentityUsageResult> asyncHandler);
@@ -260,6 +280,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        The input for the GetBulkPublishDetails operation.
      * @return A Java Future containing the result of the GetBulkPublishDetails operation returned by the service.
      * @sample AmazonCognitoSyncAsync.GetBulkPublishDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetBulkPublishDetailsResult> getBulkPublishDetailsAsync(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest);
 
@@ -280,6 +302,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetBulkPublishDetails operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.GetBulkPublishDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetBulkPublishDetailsResult> getBulkPublishDetailsAsync(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest,
             com.amazonaws.handlers.AsyncHandler<GetBulkPublishDetailsRequest, GetBulkPublishDetailsResult> asyncHandler);
@@ -297,6 +321,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request for a list of the configured Cognito Events
      * @return A Java Future containing the result of the GetCognitoEvents operation returned by the service.
      * @sample AmazonCognitoSyncAsync.GetCognitoEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCognitoEventsResult> getCognitoEventsAsync(GetCognitoEventsRequest getCognitoEventsRequest);
 
@@ -317,6 +343,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCognitoEvents operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.GetCognitoEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCognitoEventsResult> getCognitoEventsAsync(GetCognitoEventsRequest getCognitoEventsRequest,
             com.amazonaws.handlers.AsyncHandler<GetCognitoEventsRequest, GetCognitoEventsResult> asyncHandler);
@@ -335,6 +363,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      * @return A Java Future containing the result of the GetIdentityPoolConfiguration operation returned by the
      *         service.
      * @sample AmazonCognitoSyncAsync.GetIdentityPoolConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetIdentityPoolConfigurationResult> getIdentityPoolConfigurationAsync(
             GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest);
@@ -357,6 +387,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      * @return A Java Future containing the result of the GetIdentityPoolConfiguration operation returned by the
      *         service.
      * @sample AmazonCognitoSyncAsyncHandler.GetIdentityPoolConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetIdentityPoolConfigurationResult> getIdentityPoolConfigurationAsync(
             GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest,
@@ -376,6 +408,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        Request for a list of datasets for an identity.
      * @return A Java Future containing the result of the ListDatasets operation returned by the service.
      * @sample AmazonCognitoSyncAsync.ListDatasets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(ListDatasetsRequest listDatasetsRequest);
 
@@ -397,6 +431,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDatasets operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.ListDatasets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(ListDatasetsRequest listDatasetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDatasetsRequest, ListDatasetsResult> asyncHandler);
@@ -414,6 +450,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request for usage information on an identity pool.
      * @return A Java Future containing the result of the ListIdentityPoolUsage operation returned by the service.
      * @sample AmazonCognitoSyncAsync.ListIdentityPoolUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListIdentityPoolUsageResult> listIdentityPoolUsageAsync(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest);
 
@@ -434,6 +472,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIdentityPoolUsage operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.ListIdentityPoolUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListIdentityPoolUsageResult> listIdentityPoolUsageAsync(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest,
             com.amazonaws.handlers.AsyncHandler<ListIdentityPoolUsageRequest, ListIdentityPoolUsageResult> asyncHandler);
@@ -453,6 +493,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request for a list of records.
      * @return A Java Future containing the result of the ListRecords operation returned by the service.
      * @sample AmazonCognitoSyncAsync.ListRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListRecordsResult> listRecordsAsync(ListRecordsRequest listRecordsRequest);
 
@@ -475,6 +517,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRecords operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.ListRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListRecordsResult> listRecordsAsync(ListRecordsRequest listRecordsRequest,
             com.amazonaws.handlers.AsyncHandler<ListRecordsRequest, ListRecordsResult> asyncHandler);
@@ -492,6 +536,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request to RegisterDevice.
      * @return A Java Future containing the result of the RegisterDevice operation returned by the service.
      * @sample AmazonCognitoSyncAsync.RegisterDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RegisterDeviceResult> registerDeviceAsync(RegisterDeviceRequest registerDeviceRequest);
 
@@ -512,6 +558,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterDevice operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.RegisterDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RegisterDeviceResult> registerDeviceAsync(RegisterDeviceRequest registerDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterDeviceRequest, RegisterDeviceResult> asyncHandler);
@@ -531,6 +579,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request to configure Cognito Events"
      * @return A Java Future containing the result of the SetCognitoEvents operation returned by the service.
      * @sample AmazonCognitoSyncAsync.SetCognitoEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetCognitoEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(SetCognitoEventsRequest setCognitoEventsRequest);
 
@@ -553,6 +603,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetCognitoEvents operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.SetCognitoEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetCognitoEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(SetCognitoEventsRequest setCognitoEventsRequest,
             com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, SetCognitoEventsResult> asyncHandler);
@@ -571,6 +623,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      * @return A Java Future containing the result of the SetIdentityPoolConfiguration operation returned by the
      *         service.
      * @sample AmazonCognitoSyncAsync.SetIdentityPoolConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<SetIdentityPoolConfigurationResult> setIdentityPoolConfigurationAsync(
             SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest);
@@ -593,6 +647,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      * @return A Java Future containing the result of the SetIdentityPoolConfiguration operation returned by the
      *         service.
      * @sample AmazonCognitoSyncAsyncHandler.SetIdentityPoolConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<SetIdentityPoolConfigurationResult> setIdentityPoolConfigurationAsync(
             SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest,
@@ -611,6 +667,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request to SubscribeToDatasetRequest.
      * @return A Java Future containing the result of the SubscribeToDataset operation returned by the service.
      * @sample AmazonCognitoSyncAsync.SubscribeToDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDataset"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SubscribeToDatasetResult> subscribeToDatasetAsync(SubscribeToDatasetRequest subscribeToDatasetRequest);
 
@@ -631,6 +689,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SubscribeToDataset operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.SubscribeToDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDataset"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SubscribeToDatasetResult> subscribeToDatasetAsync(SubscribeToDatasetRequest subscribeToDatasetRequest,
             com.amazonaws.handlers.AsyncHandler<SubscribeToDatasetRequest, SubscribeToDatasetResult> asyncHandler);
@@ -648,6 +708,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request to UnsubscribeFromDataset.
      * @return A Java Future containing the result of the UnsubscribeFromDataset operation returned by the service.
      * @sample AmazonCognitoSyncAsync.UnsubscribeFromDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UnsubscribeFromDatasetResult> unsubscribeFromDatasetAsync(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest);
 
@@ -668,6 +730,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UnsubscribeFromDataset operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.UnsubscribeFromDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UnsubscribeFromDatasetResult> unsubscribeFromDatasetAsync(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest,
             com.amazonaws.handlers.AsyncHandler<UnsubscribeFromDatasetRequest, UnsubscribeFromDatasetResult> asyncHandler);
@@ -697,6 +761,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        A request to post updates to records or add and delete records for a dataset and user.
      * @return A Java Future containing the result of the UpdateRecords operation returned by the service.
      * @sample AmazonCognitoSyncAsync.UpdateRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateRecordsResult> updateRecordsAsync(UpdateRecordsRequest updateRecordsRequest);
 
@@ -729,6 +795,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateRecords operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.UpdateRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateRecordsResult> updateRecordsAsync(UpdateRecordsRequest updateRecordsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRecordsRequest, UpdateRecordsResult> asyncHandler);

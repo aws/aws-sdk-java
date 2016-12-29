@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This output indicates the result of removing tags from a resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags"/>AWS API
+ *      Documentation</a>
  */
 public class RemoveTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about an entry in a list of grants.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantListEntry"/>AWS API Documentation</a>
  */
 public class GrantListEntry implements Serializable, Cloneable {
 

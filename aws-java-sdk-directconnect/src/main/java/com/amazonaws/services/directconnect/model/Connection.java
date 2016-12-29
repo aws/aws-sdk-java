@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A connection represents the physical network connection between the AWS Direct Connect location and the customer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Connection"/>AWS API Documentation</a>
  */
 public class Connection implements Serializable, Cloneable {
 

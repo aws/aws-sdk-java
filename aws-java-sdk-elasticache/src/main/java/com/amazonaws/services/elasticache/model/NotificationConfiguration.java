@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to
  * subscribers using Amazon Simple Notification Service (SNS).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NotificationConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class NotificationConfiguration implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents a scalable target.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalableTarget"/>AWS API
+ *      Documentation</a>
  */
 public class ScalableTarget implements Serializable, Cloneable {
 

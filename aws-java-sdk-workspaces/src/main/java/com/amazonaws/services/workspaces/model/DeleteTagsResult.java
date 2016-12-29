@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The result of the <a>DeleteTags</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags"/>AWS API Documentation</a>
  */
 public class DeleteTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

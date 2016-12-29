@@ -20,6 +20,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
  * Statuses</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/InstanceHealthSummary"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceHealthSummary implements Serializable, Cloneable {
 

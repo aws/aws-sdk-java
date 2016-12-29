@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint"/>AWS
+ *      API Documentation</a>
  */
 public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

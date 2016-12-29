@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The user import job type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserImportJobType"/>AWS API
+ *      Documentation</a>
  */
 public class UserImportJobType implements Serializable, Cloneable {
 

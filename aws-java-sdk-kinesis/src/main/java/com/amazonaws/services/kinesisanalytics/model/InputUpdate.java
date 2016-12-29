@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class InputUpdate implements Serializable, Cloneable {
 

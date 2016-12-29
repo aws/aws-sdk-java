@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * AddTagsToResourceOutput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource"/>AWS API
+ *      Documentation</a>
  */
 public class AddTagsToResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

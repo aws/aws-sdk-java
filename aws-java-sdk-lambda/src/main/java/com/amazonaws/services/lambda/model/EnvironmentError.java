@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The parent object that contains error information associated with your configuration settings.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentError"/>AWS API Documentation</a>
  */
 public class EnvironmentError implements Serializable, Cloneable {
 

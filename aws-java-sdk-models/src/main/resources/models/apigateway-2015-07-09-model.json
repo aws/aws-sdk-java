@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "apigateway",
     "targetPrefix" : null,
+    "uid" : "apigateway-2015-07-09",
     "xmlNamespace" : null
   },
   "operations" : {

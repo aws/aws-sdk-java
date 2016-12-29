@@ -272,6 +272,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.AllocateConnectionOnInterconnect
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(
@@ -331,6 +334,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.AllocatePrivateVirtualInterface
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest) {
@@ -393,6 +399,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.AllocatePublicVirtualInterface
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest) {
@@ -446,6 +455,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.ConfirmConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ConfirmConnectionResult confirmConnection(ConfirmConnectionRequest confirmConnectionRequest) {
@@ -497,6 +508,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.ConfirmPrivateVirtualInterface
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ConfirmPrivateVirtualInterfaceResult confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest) {
@@ -550,6 +564,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.ConfirmPublicVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest) {
@@ -612,6 +628,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.CreateBGPPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateBGPPeerResult createBGPPeer(CreateBGPPeerRequest createBGPPeerRequest) {
@@ -666,6 +684,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest) {
@@ -731,6 +751,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.CreateInterconnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateInterconnectResult createInterconnect(CreateInterconnectRequest createInterconnectRequest) {
@@ -779,6 +801,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.CreatePrivateVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest) {
@@ -834,6 +858,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.CreatePublicVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest) {
@@ -884,6 +910,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DeleteBGPPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteBGPPeerResult deleteBGPPeer(DeleteBGPPeerRequest deleteBGPPeerRequest) {
@@ -936,6 +964,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest) {
@@ -988,6 +1018,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DeleteInterconnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest deleteInterconnectRequest) {
@@ -1035,6 +1067,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DeleteVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteVirtualInterfaceResult deleteVirtualInterface(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest) {
@@ -1089,6 +1123,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeConnectionLoa
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeConnectionLoaResult describeConnectionLoa(DescribeConnectionLoaRequest describeConnectionLoaRequest) {
@@ -1140,6 +1176,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest describeConnectionsRequest) {
@@ -1197,6 +1235,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeConnectionsOnInterconnect
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(
@@ -1253,6 +1294,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeInterconnectLoa
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest describeInterconnectLoaRequest) {
@@ -1304,6 +1347,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeInterconnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeInterconnectsResult describeInterconnects(DescribeInterconnectsRequest describeInterconnectsRequest) {
@@ -1357,6 +1402,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeLocationsResult describeLocations(DescribeLocationsRequest describeLocationsRequest) {
@@ -1409,6 +1456,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
@@ -1461,6 +1510,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeVirtualGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeVirtualGatewaysResult describeVirtualGateways(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest) {
@@ -1524,6 +1575,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.DescribeVirtualInterfaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeVirtualInterfacesResult describeVirtualInterfaces(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest) {
@@ -1586,6 +1639,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
@@ -1633,6 +1688,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *         The API was called with invalid parameters. The error message will contain additional details about the
      *         cause.
      * @sample AmazonDirectConnect.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {

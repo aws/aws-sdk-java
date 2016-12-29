@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the output of QueryObjects.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects"/>AWS API Documentation</a>
  */
 public class QueryObjectsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about the location of application artifacts stored in Amazon S3.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/S3Location"/>AWS API Documentation</a>
  */
 public class S3Location implements Serializable, Cloneable {
 

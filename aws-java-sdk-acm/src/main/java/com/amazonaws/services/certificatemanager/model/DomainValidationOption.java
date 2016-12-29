@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This structure is used in the request object of the <a>RequestCertificate</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DomainValidationOption"/>AWS API
+ *      Documentation</a>
  */
 public class DomainValidationOption implements Serializable, Cloneable {
 

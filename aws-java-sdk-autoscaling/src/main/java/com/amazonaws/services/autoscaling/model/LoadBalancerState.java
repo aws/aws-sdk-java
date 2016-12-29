@@ -29,6 +29,9 @@ import java.io.Serializable;
  * instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in
  * the <code>Added</code> state.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadBalancerState"/>AWS API
+ *      Documentation</a>
  */
 public class LoadBalancerState implements Serializable, Cloneable {
 

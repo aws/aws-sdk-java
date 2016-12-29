@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the AWS resources in use by this environment. This data is live.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentResourceDescription"/>AWS
+ *      API Documentation</a>
  */
 public class EnvironmentResourceDescription implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the results of the <a>DeleteSnapshot</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot"/>AWS API Documentation</a>
  */
 public class DeleteSnapshotResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the result of the <a>CreateWorkspaces</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces"/>AWS API
+ *      Documentation</a>
  */
 public class CreateWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

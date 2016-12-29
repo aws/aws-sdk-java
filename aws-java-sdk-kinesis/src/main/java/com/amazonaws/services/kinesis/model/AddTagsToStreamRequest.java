@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input for <code>AddTagsToStream</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream"/>AWS API Documentation</a>
  */
 public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

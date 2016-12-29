@@ -175,6 +175,8 @@ public interface AmazonCodeDeploy {
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.AddTagsToOnPremisesInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances"/>AWS API
+     *      Documentation</a>
      */
     AddTagsToOnPremisesInstancesResult addTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest);
 
@@ -199,6 +201,8 @@ public interface AmazonCodeDeploy {
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetApplicationRevisions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions"/>AWS API
+     *      Documentation</a>
      */
     BatchGetApplicationRevisionsResult batchGetApplicationRevisions(BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest);
 
@@ -219,6 +223,8 @@ public interface AmazonCodeDeploy {
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications"/>AWS API
+     *      Documentation</a>
      */
     BatchGetApplicationsResult batchGetApplications(BatchGetApplicationsRequest batchGetApplicationsRequest);
 
@@ -250,6 +256,8 @@ public interface AmazonCodeDeploy {
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetDeploymentGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"/>AWS API
+     *      Documentation</a>
      */
     BatchGetDeploymentGroupsResult batchGetDeploymentGroups(BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest);
 
@@ -274,6 +282,8 @@ public interface AmazonCodeDeploy {
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetDeploymentInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"/>AWS API
+     *      Documentation</a>
      */
     BatchGetDeploymentInstancesResult batchGetDeploymentInstances(BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest);
 
@@ -292,6 +302,8 @@ public interface AmazonCodeDeploy {
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments"/>AWS API
+     *      Documentation</a>
      */
     BatchGetDeploymentsResult batchGetDeployments(BatchGetDeploymentsRequest batchGetDeploymentsRequest);
 
@@ -317,6 +329,8 @@ public interface AmazonCodeDeploy {
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetOnPremisesInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"/>AWS API
+     *      Documentation</a>
      */
     BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest);
 
@@ -344,6 +358,8 @@ public interface AmazonCodeDeploy {
      * @throws ApplicationLimitExceededException
      *         More applications were attempted to be created than are allowed.
      * @sample AmazonCodeDeploy.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication"/>AWS API
+     *      Documentation</a>
      */
     CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
 
@@ -385,6 +401,8 @@ public interface AmazonCodeDeploy {
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.CreateDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment"/>AWS API
+     *      Documentation</a>
      */
     CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest);
 
@@ -408,6 +426,8 @@ public interface AmazonCodeDeploy {
      * @throws DeploymentConfigLimitExceededException
      *         The deployment configurations limit was exceeded.
      * @sample AmazonCodeDeploy.CreateDeploymentConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"/>AWS API
+     *      Documentation</a>
      */
     CreateDeploymentConfigResult createDeploymentConfig(CreateDeploymentConfigRequest createDeploymentConfigRequest);
 
@@ -488,6 +508,8 @@ public interface AmazonCodeDeploy {
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"/>AWS API
+     *      Documentation</a>
      */
     CreateDeploymentGroupResult createDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest);
 
@@ -504,6 +526,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @sample AmazonCodeDeploy.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication"/>AWS API
+     *      Documentation</a>
      */
     DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
 
@@ -530,6 +554,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidOperationException
      *         An invalid operation was detected.
      * @sample AmazonCodeDeploy.DeleteDeploymentConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig"/>AWS API
+     *      Documentation</a>
      */
     DeleteDeploymentConfigResult deleteDeploymentConfig(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest);
 
@@ -553,6 +579,8 @@ public interface AmazonCodeDeploy {
      *         The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the
      *         specified service role does not grant the appropriate permissions to Auto Scaling.
      * @sample AmazonCodeDeploy.DeleteDeploymentGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup"/>AWS API
+     *      Documentation</a>
      */
     DeleteDeploymentGroupResult deleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest);
 
@@ -569,6 +597,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an invalid format.
      * @sample AmazonCodeDeploy.DeregisterOnPremisesInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance"/>AWS API
+     *      Documentation</a>
      */
     DeregisterOnPremisesInstanceResult deregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest);
 
@@ -587,6 +617,8 @@ public interface AmazonCodeDeploy {
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication"/>AWS API
+     *      Documentation</a>
      */
     GetApplicationResult getApplication(GetApplicationRequest getApplicationRequest);
 
@@ -611,6 +643,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
      * @sample AmazonCodeDeploy.GetApplicationRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision"/>AWS API
+     *      Documentation</a>
      */
     GetApplicationRevisionResult getApplicationRevision(GetApplicationRevisionRequest getApplicationRevisionRequest);
 
@@ -629,6 +663,8 @@ public interface AmazonCodeDeploy {
      * @throws DeploymentDoesNotExistException
      *         The deployment does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment"/>AWS API
+     *      Documentation</a>
      */
     GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest);
 
@@ -647,6 +683,8 @@ public interface AmazonCodeDeploy {
      * @throws DeploymentConfigDoesNotExistException
      *         The deployment configuration does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetDeploymentConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig"/>AWS API
+     *      Documentation</a>
      */
     GetDeploymentConfigResult getDeploymentConfig(GetDeploymentConfigRequest getDeploymentConfigRequest);
 
@@ -671,6 +709,8 @@ public interface AmazonCodeDeploy {
      * @throws DeploymentGroupDoesNotExistException
      *         The named deployment group does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetDeploymentGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup"/>AWS API
+     *      Documentation</a>
      */
     GetDeploymentGroupResult getDeploymentGroup(GetDeploymentGroupRequest getDeploymentGroupRequest);
 
@@ -695,6 +735,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an invalid format.
      * @sample AmazonCodeDeploy.GetDeploymentInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"/>AWS API
+     *      Documentation</a>
      */
     GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest getDeploymentInstanceRequest);
 
@@ -713,6 +755,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an invalid format.
      * @sample AmazonCodeDeploy.GetOnPremisesInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance"/>AWS API
+     *      Documentation</a>
      */
     GetOnPremisesInstanceResult getOnPremisesInstance(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest);
 
@@ -745,6 +789,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListApplicationRevisions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"/>AWS API
+     *      Documentation</a>
      */
     ListApplicationRevisionsResult listApplicationRevisions(ListApplicationRevisionsRequest listApplicationRevisionsRequest);
 
@@ -759,6 +805,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications"/>AWS API
+     *      Documentation</a>
      */
     ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest);
 
@@ -780,6 +828,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListDeploymentConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs"/>AWS API
+     *      Documentation</a>
      */
     ListDeploymentConfigsResult listDeploymentConfigs(ListDeploymentConfigsRequest listDeploymentConfigsRequest);
 
@@ -807,6 +857,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListDeploymentGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"/>AWS API
+     *      Documentation</a>
      */
     ListDeploymentGroupsResult listDeploymentGroups(ListDeploymentGroupsRequest listDeploymentGroupsRequest);
 
@@ -831,6 +883,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidInstanceStatusException
      *         The specified instance status does not exist.
      * @sample AmazonCodeDeploy.ListDeploymentInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"/>AWS API
+     *      Documentation</a>
      */
     ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest listDeploymentInstancesRequest);
 
@@ -862,6 +916,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments"/>AWS API
+     *      Documentation</a>
      */
     ListDeploymentsResult listDeployments(ListDeploymentsRequest listDeploymentsRequest);
 
@@ -891,6 +947,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListOnPremisesInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"/>AWS API
+     *      Documentation</a>
      */
     ListOnPremisesInstancesResult listOnPremisesInstances(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest);
 
@@ -922,6 +980,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
      * @sample AmazonCodeDeploy.RegisterApplicationRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision"/>AWS API
+     *      Documentation</a>
      */
     RegisterApplicationRevisionResult registerApplicationRevision(RegisterApplicationRevisionRequest registerApplicationRevisionRequest);
 
@@ -946,6 +1006,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidIamUserArnException
      *         The IAM user ARN was specified in an invalid format.
      * @sample AmazonCodeDeploy.RegisterOnPremisesInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"/>AWS API
+     *      Documentation</a>
      */
     RegisterOnPremisesInstanceResult registerOnPremisesInstance(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest);
 
@@ -970,6 +1032,9 @@ public interface AmazonCodeDeploy {
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.RemoveTagsFromOnPremisesInstances
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances"/>AWS
+     *      API Documentation</a>
      */
     RemoveTagsFromOnPremisesInstancesResult removeTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest);
 
@@ -990,6 +1055,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid format.
      * @sample AmazonCodeDeploy.StopDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment"/>AWS API
+     *      Documentation</a>
      */
     StopDeploymentResult stopDeployment(StopDeploymentRequest stopDeploymentRequest);
 
@@ -1010,6 +1077,8 @@ public interface AmazonCodeDeploy {
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication"/>AWS API
+     *      Documentation</a>
      */
     UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
 
@@ -1095,6 +1164,8 @@ public interface AmazonCodeDeploy {
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"/>AWS API
+     *      Documentation</a>
      */
     UpdateDeploymentGroupResult updateDeploymentGroup(UpdateDeploymentGroupRequest updateDeploymentGroupRequest);
 

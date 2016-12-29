@@ -99,6 +99,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param createFileSystemRequest
      * @return A Java Future containing the result of the CreateFileSystem operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.CreateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateFileSystemResult> createFileSystemAsync(CreateFileSystemRequest createFileSystemRequest);
 
@@ -172,6 +174,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateFileSystem operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.CreateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateFileSystemResult> createFileSystemAsync(CreateFileSystemRequest createFileSystemRequest,
             com.amazonaws.handlers.AsyncHandler<CreateFileSystemRequest, CreateFileSystemResult> asyncHandler);
@@ -336,6 +340,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param createMountTargetRequest
      * @return A Java Future containing the result of the CreateMountTarget operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.CreateMountTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateMountTargetResult> createMountTargetAsync(CreateMountTargetRequest createMountTargetRequest);
 
@@ -503,6 +509,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateMountTarget operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.CreateMountTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateMountTargetResult> createMountTargetAsync(CreateMountTargetRequest createMountTargetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateMountTargetRequest, CreateMountTargetResult> asyncHandler);
@@ -521,6 +529,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param createTagsRequest
      * @return A Java Future containing the result of the CreateTags operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest createTagsRequest);
 
@@ -542,6 +552,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTags operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest createTagsRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler);
@@ -570,6 +582,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param deleteFileSystemRequest
      * @return A Java Future containing the result of the DeleteFileSystem operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.DeleteFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteFileSystemResult> deleteFileSystemAsync(DeleteFileSystemRequest deleteFileSystemRequest);
 
@@ -601,6 +615,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteFileSystem operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.DeleteFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteFileSystemResult> deleteFileSystemAsync(DeleteFileSystemRequest deleteFileSystemRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFileSystemRequest, DeleteFileSystemResult> asyncHandler);
@@ -649,6 +665,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param deleteMountTargetRequest
      * @return A Java Future containing the result of the DeleteMountTarget operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.DeleteMountTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMountTargetResult> deleteMountTargetAsync(DeleteMountTargetRequest deleteMountTargetRequest);
 
@@ -700,6 +718,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteMountTarget operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.DeleteMountTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMountTargetResult> deleteMountTargetAsync(DeleteMountTargetRequest deleteMountTargetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMountTargetRequest, DeleteMountTargetResult> asyncHandler);
@@ -718,6 +738,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param deleteTagsRequest
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest);
 
@@ -739,6 +761,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
@@ -776,6 +800,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param describeFileSystemsRequest
      * @return A Java Future containing the result of the DescribeFileSystems operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.DescribeFileSystems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeFileSystemsResult> describeFileSystemsAsync(DescribeFileSystemsRequest describeFileSystemsRequest);
 
@@ -816,6 +842,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeFileSystems operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.DescribeFileSystems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeFileSystemsResult> describeFileSystemsAsync(DescribeFileSystemsRequest describeFileSystemsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFileSystemsRequest, DescribeFileSystemsResult> asyncHandler);
@@ -861,6 +889,9 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @return A Java Future containing the result of the DescribeMountTargetSecurityGroups operation returned by the
      *         service.
      * @sample AmazonElasticFileSystemAsync.DescribeMountTargetSecurityGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMountTargetSecurityGroupsResult> describeMountTargetSecurityGroupsAsync(
             DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest);
@@ -895,6 +926,9 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @return A Java Future containing the result of the DescribeMountTargetSecurityGroups operation returned by the
      *         service.
      * @sample AmazonElasticFileSystemAsyncHandler.DescribeMountTargetSecurityGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMountTargetSecurityGroupsResult> describeMountTargetSecurityGroupsAsync(
             DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest,
@@ -914,6 +948,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param describeMountTargetsRequest
      * @return A Java Future containing the result of the DescribeMountTargets operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.DescribeMountTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeMountTargetsResult> describeMountTargetsAsync(DescribeMountTargetsRequest describeMountTargetsRequest);
 
@@ -935,6 +971,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeMountTargets operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.DescribeMountTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeMountTargetsResult> describeMountTargetsAsync(DescribeMountTargetsRequest describeMountTargetsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeMountTargetsRequest, DescribeMountTargetsResult> asyncHandler);
@@ -952,6 +990,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @param describeTagsRequest
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonElasticFileSystemAsync.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest);
 
@@ -972,6 +1012,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonElasticFileSystemAsyncHandler.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler);
@@ -1007,6 +1049,9 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @return A Java Future containing the result of the ModifyMountTargetSecurityGroups operation returned by the
      *         service.
      * @sample AmazonElasticFileSystemAsync.ModifyMountTargetSecurityGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult> modifyMountTargetSecurityGroupsAsync(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest);
@@ -1046,6 +1091,9 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @return A Java Future containing the result of the ModifyMountTargetSecurityGroups operation returned by the
      *         service.
      * @sample AmazonElasticFileSystemAsyncHandler.ModifyMountTargetSecurityGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult> modifyMountTargetSecurityGroupsAsync(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest,

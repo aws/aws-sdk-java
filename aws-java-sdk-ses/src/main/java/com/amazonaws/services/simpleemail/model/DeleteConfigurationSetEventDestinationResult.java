@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An empty element returned on a successful request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination"/>AWS
+ *      API Documentation</a>
  */
 public class DeleteConfigurationSetEventDestinationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

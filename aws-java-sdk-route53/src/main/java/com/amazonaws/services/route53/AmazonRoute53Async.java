@@ -54,6 +54,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains information about the request to associate a VPC with a private hosted zone.
      * @return A Java Future containing the result of the AssociateVPCWithHostedZone operation returned by the service.
      * @sample AmazonRoute53Async.AssociateVPCWithHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AssociateVPCWithHostedZoneResult> associateVPCWithHostedZoneAsync(
             AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest);
@@ -91,6 +93,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AssociateVPCWithHostedZone operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.AssociateVPCWithHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AssociateVPCWithHostedZoneResult> associateVPCWithHostedZoneAsync(
             AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest,
@@ -250,6 +254,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains change information for the resource record set.
      * @return A Java Future containing the result of the ChangeResourceRecordSets operation returned by the service.
      * @sample AmazonRoute53Async.ChangeResourceRecordSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ChangeResourceRecordSetsResult> changeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest);
 
@@ -411,6 +417,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ChangeResourceRecordSets operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ChangeResourceRecordSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ChangeResourceRecordSetsResult> changeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResult> asyncHandler);
@@ -429,6 +437,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains information about the tags that you want to add, edit, or delete.
      * @return A Java Future containing the result of the ChangeTagsForResource operation returned by the service.
      * @sample AmazonRoute53Async.ChangeTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ChangeTagsForResourceResult> changeTagsForResourceAsync(ChangeTagsForResourceRequest changeTagsForResourceRequest);
 
@@ -450,6 +460,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ChangeTagsForResource operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ChangeTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ChangeTagsForResourceResult> changeTagsForResourceAsync(ChangeTagsForResourceRequest changeTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ChangeTagsForResourceRequest, ChangeTagsForResourceResult> asyncHandler);
@@ -503,6 +515,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains the health check request information.
      * @return A Java Future containing the result of the CreateHealthCheck operation returned by the service.
      * @sample AmazonRoute53Async.CreateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateHealthCheckResult> createHealthCheckAsync(CreateHealthCheckRequest createHealthCheckRequest);
 
@@ -559,6 +573,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateHealthCheck operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.CreateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateHealthCheckResult> createHealthCheckAsync(CreateHealthCheckRequest createHealthCheckRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHealthCheckRequest, CreateHealthCheckResult> asyncHandler);
@@ -623,6 +639,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type containing the hosted zone request information.
      * @return A Java Future containing the result of the CreateHostedZone operation returned by the service.
      * @sample AmazonRoute53Async.CreateHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateHostedZoneResult> createHostedZoneAsync(CreateHostedZoneRequest createHostedZoneRequest);
 
@@ -690,6 +708,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateHostedZone operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.CreateHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateHostedZoneResult> createHostedZoneAsync(CreateHostedZoneRequest createHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHostedZoneRequest, CreateHostedZoneResult> asyncHandler);
@@ -719,6 +739,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @param createReusableDelegationSetRequest
      * @return A Java Future containing the result of the CreateReusableDelegationSet operation returned by the service.
      * @sample AmazonRoute53Async.CreateReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateReusableDelegationSetResult> createReusableDelegationSetAsync(
             CreateReusableDelegationSetRequest createReusableDelegationSetRequest);
@@ -752,6 +774,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateReusableDelegationSet operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.CreateReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateReusableDelegationSetResult> createReusableDelegationSetAsync(
             CreateReusableDelegationSetRequest createReusableDelegationSetRequest,
@@ -772,6 +796,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains information about the traffic policy that you want to create.
      * @return A Java Future containing the result of the CreateTrafficPolicy operation returned by the service.
      * @sample AmazonRoute53Async.CreateTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTrafficPolicyResult> createTrafficPolicyAsync(CreateTrafficPolicyRequest createTrafficPolicyRequest);
 
@@ -794,6 +820,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTrafficPolicy operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.CreateTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTrafficPolicyResult> createTrafficPolicyAsync(CreateTrafficPolicyRequest createTrafficPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyRequest, CreateTrafficPolicyResult> asyncHandler);
@@ -818,6 +846,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        specified traffic policy.
      * @return A Java Future containing the result of the CreateTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53Async.CreateTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTrafficPolicyInstanceResult> createTrafficPolicyInstanceAsync(
             CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest);
@@ -846,6 +876,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.CreateTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTrafficPolicyInstanceResult> createTrafficPolicyInstanceAsync(
             CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest,
@@ -872,6 +904,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        version.
      * @return A Java Future containing the result of the CreateTrafficPolicyVersion operation returned by the service.
      * @sample AmazonRoute53Async.CreateTrafficPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTrafficPolicyVersionResult> createTrafficPolicyVersionAsync(
             CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest);
@@ -901,6 +935,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTrafficPolicyVersion operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.CreateTrafficPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTrafficPolicyVersionResult> createTrafficPolicyVersionAsync(
             CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest,
@@ -934,6 +970,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the CreateVPCAssociationAuthorization operation returned by the
      *         service.
      * @sample AmazonRoute53Async.CreateVPCAssociationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateVPCAssociationAuthorizationResult> createVPCAssociationAuthorizationAsync(
             CreateVPCAssociationAuthorizationRequest createVPCAssociationAuthorizationRequest);
@@ -970,6 +1008,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the CreateVPCAssociationAuthorization operation returned by the
      *         service.
      * @sample AmazonRoute53AsyncHandler.CreateVPCAssociationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateVPCAssociationAuthorizationResult> createVPCAssociationAuthorizationAsync(
             CreateVPCAssociationAuthorizationRequest createVPCAssociationAuthorizationRequest,
@@ -996,6 +1036,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.
      * @return A Java Future containing the result of the DeleteHealthCheck operation returned by the service.
      * @sample AmazonRoute53Async.DeleteHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteHealthCheckResult> deleteHealthCheckAsync(DeleteHealthCheckRequest deleteHealthCheckRequest);
 
@@ -1024,6 +1066,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteHealthCheck operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.DeleteHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteHealthCheckResult> deleteHealthCheckAsync(DeleteHealthCheckRequest deleteHealthCheckRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHealthCheckRequest, DeleteHealthCheckResult> asyncHandler);
@@ -1047,6 +1091,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains information about the hosted zone that you want to delete.
      * @return A Java Future containing the result of the DeleteHostedZone operation returned by the service.
      * @sample AmazonRoute53Async.DeleteHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteHostedZoneResult> deleteHostedZoneAsync(DeleteHostedZoneRequest deleteHostedZoneRequest);
 
@@ -1073,6 +1119,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteHostedZone operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.DeleteHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteHostedZoneResult> deleteHostedZoneAsync(DeleteHostedZoneRequest deleteHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHostedZoneRequest, DeleteHostedZoneResult> asyncHandler);
@@ -1096,6 +1144,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type containing the information for the delete request.
      * @return A Java Future containing the result of the DeleteReusableDelegationSet operation returned by the service.
      * @sample AmazonRoute53Async.DeleteReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteReusableDelegationSetResult> deleteReusableDelegationSetAsync(
             DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest);
@@ -1123,6 +1173,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteReusableDelegationSet operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.DeleteReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteReusableDelegationSetResult> deleteReusableDelegationSetAsync(
             DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest,
@@ -1141,6 +1193,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A request to delete a specified traffic policy version.
      * @return A Java Future containing the result of the DeleteTrafficPolicy operation returned by the service.
      * @sample AmazonRoute53Async.DeleteTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTrafficPolicyResult> deleteTrafficPolicyAsync(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest);
 
@@ -1161,6 +1215,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTrafficPolicy operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.DeleteTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTrafficPolicyResult> deleteTrafficPolicyAsync(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyRequest, DeleteTrafficPolicyResult> asyncHandler);
@@ -1184,6 +1240,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains information about the traffic policy instance that you want to delete.
      * @return A Java Future containing the result of the DeleteTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53Async.DeleteTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTrafficPolicyInstanceResult> deleteTrafficPolicyInstanceAsync(
             DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest);
@@ -1211,6 +1269,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.DeleteTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTrafficPolicyInstanceResult> deleteTrafficPolicyInstanceAsync(
             DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest,
@@ -1242,6 +1302,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the DeleteVPCAssociationAuthorization operation returned by the
      *         service.
      * @sample AmazonRoute53Async.DeleteVPCAssociationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteVPCAssociationAuthorizationResult> deleteVPCAssociationAuthorizationAsync(
             DeleteVPCAssociationAuthorizationRequest deleteVPCAssociationAuthorizationRequest);
@@ -1276,6 +1338,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the DeleteVPCAssociationAuthorization operation returned by the
      *         service.
      * @sample AmazonRoute53AsyncHandler.DeleteVPCAssociationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteVPCAssociationAuthorizationResult> deleteVPCAssociationAuthorizationAsync(
             DeleteVPCAssociationAuthorizationRequest deleteVPCAssociationAuthorizationRequest,
@@ -1308,6 +1372,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the DisassociateVPCFromHostedZone operation returned by the
      *         service.
      * @sample AmazonRoute53Async.DisassociateVPCFromHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(
             DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest);
@@ -1343,6 +1409,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the DisassociateVPCFromHostedZone operation returned by the
      *         service.
      * @sample AmazonRoute53AsyncHandler.DisassociateVPCFromHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(
             DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest,
@@ -1370,6 +1438,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        The input for a GetChange request.
      * @return A Java Future containing the result of the GetChange operation returned by the service.
      * @sample AmazonRoute53Async.GetChange
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetChangeResult> getChangeAsync(GetChangeRequest getChangeRequest);
 
@@ -1399,6 +1468,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetChange operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetChange
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetChangeResult> getChangeAsync(GetChangeRequest getChangeRequest,
             com.amazonaws.handlers.AsyncHandler<GetChangeRequest, GetChangeResult> asyncHandler);
@@ -1415,6 +1485,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        Empty request.
      * @return A Java Future containing the result of the GetCheckerIpRanges operation returned by the service.
      * @sample AmazonRoute53Async.GetCheckerIpRanges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(GetCheckerIpRangesRequest getCheckerIpRangesRequest);
 
@@ -1434,6 +1506,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCheckerIpRanges operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetCheckerIpRanges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(GetCheckerIpRangesRequest getCheckerIpRangesRequest,
             com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler);
@@ -1463,6 +1537,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains information about the request to get a geo location.
      * @return A Java Future containing the result of the GetGeoLocation operation returned by the service.
      * @sample AmazonRoute53Async.GetGeoLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetGeoLocationResult> getGeoLocationAsync(GetGeoLocationRequest getGeoLocationRequest);
 
@@ -1480,6 +1556,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetGeoLocation operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetGeoLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetGeoLocationResult> getGeoLocationAsync(GetGeoLocationRequest getGeoLocationRequest,
             com.amazonaws.handlers.AsyncHandler<GetGeoLocationRequest, GetGeoLocationResult> asyncHandler);
@@ -1520,6 +1598,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return A Java Future containing the result of the GetHealthCheck operation returned by the service.
      * @sample AmazonRoute53Async.GetHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHealthCheckResult> getHealthCheckAsync(GetHealthCheckRequest getHealthCheckRequest);
 
@@ -1548,6 +1628,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetHealthCheck operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHealthCheckResult> getHealthCheckAsync(GetHealthCheckRequest getHealthCheckRequest,
             com.amazonaws.handlers.AsyncHandler<GetHealthCheckRequest, GetHealthCheckResult> asyncHandler);
@@ -1563,6 +1645,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        <code>/2013-04-01/healthcheckcount</code> resource.
      * @return A Java Future containing the result of the GetHealthCheckCount operation returned by the service.
      * @sample AmazonRoute53Async.GetHealthCheckCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHealthCheckCountResult> getHealthCheckCountAsync(GetHealthCheckCountRequest getHealthCheckCountRequest);
 
@@ -1581,6 +1665,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetHealthCheckCount operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetHealthCheckCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHealthCheckCountResult> getHealthCheckCountAsync(GetHealthCheckCountRequest getHealthCheckCountRequest,
             com.amazonaws.handlers.AsyncHandler<GetHealthCheckCountRequest, GetHealthCheckCountResult> asyncHandler);
@@ -1622,6 +1708,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the GetHealthCheckLastFailureReason operation returned by the
      *         service.
      * @sample AmazonRoute53Async.GetHealthCheckLastFailureReason
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHealthCheckLastFailureReasonResult> getHealthCheckLastFailureReasonAsync(
             GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest);
@@ -1652,6 +1740,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the GetHealthCheckLastFailureReason operation returned by the
      *         service.
      * @sample AmazonRoute53AsyncHandler.GetHealthCheckLastFailureReason
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHealthCheckLastFailureReasonResult> getHealthCheckLastFailureReasonAsync(
             GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest,
@@ -1668,6 +1758,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains information about the request to get health check status for a health check.
      * @return A Java Future containing the result of the GetHealthCheckStatus operation returned by the service.
      * @sample AmazonRoute53Async.GetHealthCheckStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHealthCheckStatusResult> getHealthCheckStatusAsync(GetHealthCheckStatusRequest getHealthCheckStatusRequest);
 
@@ -1686,6 +1778,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetHealthCheckStatus operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetHealthCheckStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHealthCheckStatusResult> getHealthCheckStatusAsync(GetHealthCheckStatusRequest getHealthCheckStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetHealthCheckStatusRequest, GetHealthCheckStatusResult> asyncHandler);
@@ -1701,6 +1795,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        The input for a GetHostedZone request.
      * @return A Java Future containing the result of the GetHostedZone operation returned by the service.
      * @sample AmazonRoute53Async.GetHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetHostedZoneResult> getHostedZoneAsync(GetHostedZoneRequest getHostedZoneRequest);
 
@@ -1719,6 +1814,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetHostedZone operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetHostedZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetHostedZoneResult> getHostedZoneAsync(GetHostedZoneRequest getHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<GetHostedZoneRequest, GetHostedZoneResult> asyncHandler);
@@ -1734,6 +1830,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        <code>/2013-04-01/hostedzonecount</code> resource.
      * @return A Java Future containing the result of the GetHostedZoneCount operation returned by the service.
      * @sample AmazonRoute53Async.GetHostedZoneCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHostedZoneCountResult> getHostedZoneCountAsync(GetHostedZoneCountRequest getHostedZoneCountRequest);
 
@@ -1752,6 +1850,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetHostedZoneCount operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetHostedZoneCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetHostedZoneCountResult> getHostedZoneCountAsync(GetHostedZoneCountRequest getHostedZoneCountRequest,
             com.amazonaws.handlers.AsyncHandler<GetHostedZoneCountRequest, GetHostedZoneCountResult> asyncHandler);
@@ -1781,6 +1881,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        The input for a <code>GetReusableDelegationSet</code> request.
      * @return A Java Future containing the result of the GetReusableDelegationSet operation returned by the service.
      * @sample AmazonRoute53Async.GetReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(GetReusableDelegationSetRequest getReusableDelegationSetRequest);
 
@@ -1798,6 +1900,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetReusableDelegationSet operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetReusableDelegationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(GetReusableDelegationSetRequest getReusableDelegationSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult> asyncHandler);
@@ -1815,6 +1919,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        the /2013-04-01/trafficpolicy resource, and specify the ID and the version of the traffic policy.
      * @return A Java Future containing the result of the GetTrafficPolicy operation returned by the service.
      * @sample AmazonRoute53Async.GetTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTrafficPolicyResult> getTrafficPolicyAsync(GetTrafficPolicyRequest getTrafficPolicyRequest);
 
@@ -1835,6 +1941,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTrafficPolicy operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetTrafficPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTrafficPolicyResult> getTrafficPolicyAsync(GetTrafficPolicyRequest getTrafficPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyRequest, GetTrafficPolicyResult> asyncHandler);
@@ -1866,6 +1974,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance/<i>Id</i> </code> resource.
      * @return A Java Future containing the result of the GetTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53Async.GetTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTrafficPolicyInstanceResult> getTrafficPolicyInstanceAsync(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest);
 
@@ -1900,6 +2010,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTrafficPolicyInstanceResult> getTrafficPolicyInstanceAsync(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceRequest, GetTrafficPolicyInstanceResult> asyncHandler);
@@ -1919,6 +2031,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the GetTrafficPolicyInstanceCount operation returned by the
      *         service.
      * @sample AmazonRoute53Async.GetTrafficPolicyInstanceCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTrafficPolicyInstanceCountResult> getTrafficPolicyInstanceCountAsync(
             GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest);
@@ -1942,6 +2056,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the GetTrafficPolicyInstanceCount operation returned by the
      *         service.
      * @sample AmazonRoute53AsyncHandler.GetTrafficPolicyInstanceCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTrafficPolicyInstanceCountResult> getTrafficPolicyInstanceCountAsync(
             GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest,
@@ -1986,6 +2102,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        order immediately after the corresponding country.
      * @return A Java Future containing the result of the ListGeoLocations operation returned by the service.
      * @sample AmazonRoute53Async.ListGeoLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListGeoLocationsResult> listGeoLocationsAsync(ListGeoLocationsRequest listGeoLocationsRequest);
 
@@ -2016,6 +2134,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListGeoLocations operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListGeoLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListGeoLocationsResult> listGeoLocationsAsync(ListGeoLocationsRequest listGeoLocationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult> asyncHandler);
@@ -2063,6 +2183,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        </p>
      * @return A Java Future containing the result of the ListHealthChecks operation returned by the service.
      * @sample AmazonRoute53Async.ListHealthChecks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListHealthChecksResult> listHealthChecksAsync(ListHealthChecksRequest listHealthChecksRequest);
 
@@ -2098,6 +2220,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListHealthChecks operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListHealthChecks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListHealthChecksResult> listHealthChecksAsync(ListHealthChecksRequest listHealthChecksRequest,
             com.amazonaws.handlers.AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult> asyncHandler);
@@ -2204,6 +2328,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        </li>
      * @return A Java Future containing the result of the ListHostedZones operation returned by the service.
      * @sample AmazonRoute53Async.ListHostedZones
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListHostedZonesResult> listHostedZonesAsync(ListHostedZonesRequest listHostedZonesRequest);
 
@@ -2298,6 +2424,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListHostedZones operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListHostedZones
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListHostedZonesResult> listHostedZonesAsync(ListHostedZonesRequest listHostedZonesRequest,
             com.amazonaws.handlers.AsyncHandler<ListHostedZonesRequest, ListHostedZonesResult> asyncHandler);
@@ -2459,6 +2587,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        </li>
      * @return A Java Future containing the result of the ListHostedZonesByName operation returned by the service.
      * @sample AmazonRoute53Async.ListHostedZonesByName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListHostedZonesByNameResult> listHostedZonesByNameAsync(ListHostedZonesByNameRequest listHostedZonesByNameRequest);
 
@@ -2608,6 +2738,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListHostedZonesByName operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListHostedZonesByName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListHostedZonesByNameResult> listHostedZonesByNameAsync(ListHostedZonesByNameRequest listHostedZonesByNameRequest,
             com.amazonaws.handlers.AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult> asyncHandler);
@@ -2692,6 +2824,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        The input for a ListResourceRecordSets request.
      * @return A Java Future containing the result of the ListResourceRecordSets operation returned by the service.
      * @sample AmazonRoute53Async.ListResourceRecordSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListResourceRecordSetsResult> listResourceRecordSetsAsync(ListResourceRecordSetsRequest listResourceRecordSetsRequest);
 
@@ -2764,6 +2898,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListResourceRecordSets operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListResourceRecordSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListResourceRecordSetsResult> listResourceRecordSetsAsync(ListResourceRecordSetsRequest listResourceRecordSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListResourceRecordSetsRequest, ListResourceRecordSetsResult> asyncHandler);
@@ -2797,6 +2933,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        </p>
      * @return A Java Future containing the result of the ListReusableDelegationSets operation returned by the service.
      * @sample AmazonRoute53Async.ListReusableDelegationSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListReusableDelegationSetsResult> listReusableDelegationSetsAsync(
             ListReusableDelegationSetsRequest listReusableDelegationSetsRequest);
@@ -2834,6 +2972,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListReusableDelegationSets operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListReusableDelegationSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListReusableDelegationSetsResult> listReusableDelegationSetsAsync(
             ListReusableDelegationSetsRequest listReusableDelegationSetsRequest,
@@ -2869,6 +3009,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        individual resource.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonRoute53Async.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -2891,6 +3033,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
@@ -2910,6 +3054,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        list tags.
      * @return A Java Future containing the result of the ListTagsForResources operation returned by the service.
      * @sample AmazonRoute53Async.ListTagsForResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourcesResult> listTagsForResourcesAsync(ListTagsForResourcesRequest listTagsForResourcesRequest);
 
@@ -2932,6 +3078,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResources operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListTagsForResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourcesResult> listTagsForResourcesAsync(ListTagsForResourcesRequest listTagsForResourcesRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourcesRequest, ListTagsForResourcesResult> asyncHandler);
@@ -2996,6 +3144,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        associated with the current AWS account.
      * @return A Java Future containing the result of the ListTrafficPolicies operation returned by the service.
      * @sample AmazonRoute53Async.ListTrafficPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPoliciesResult> listTrafficPoliciesAsync(ListTrafficPoliciesRequest listTrafficPoliciesRequest);
 
@@ -3063,6 +3213,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTrafficPolicies operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListTrafficPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPoliciesResult> listTrafficPoliciesAsync(ListTrafficPoliciesRequest listTrafficPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListTrafficPoliciesRequest, ListTrafficPoliciesResult> asyncHandler);
@@ -3148,6 +3300,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains the information about the request to list your traffic policy instances.
      * @return A Java Future containing the result of the ListTrafficPolicyInstances operation returned by the service.
      * @sample AmazonRoute53Async.ListTrafficPolicyInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPolicyInstancesResult> listTrafficPolicyInstancesAsync(
             ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest);
@@ -3222,6 +3376,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTrafficPolicyInstances operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListTrafficPolicyInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPolicyInstancesResult> listTrafficPolicyInstancesAsync(
             ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest,
@@ -3309,6 +3465,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the ListTrafficPolicyInstancesByHostedZone operation returned by
      *         the service.
      * @sample AmazonRoute53Async.ListTrafficPolicyInstancesByHostedZone
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPolicyInstancesByHostedZoneResult> listTrafficPolicyInstancesByHostedZoneAsync(
             ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest);
@@ -3384,6 +3543,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the ListTrafficPolicyInstancesByHostedZone operation returned by
      *         the service.
      * @sample AmazonRoute53AsyncHandler.ListTrafficPolicyInstancesByHostedZone
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPolicyInstancesByHostedZoneResult> listTrafficPolicyInstancesByHostedZoneAsync(
             ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest,
@@ -3456,6 +3618,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the ListTrafficPolicyInstancesByPolicy operation returned by the
      *         service.
      * @sample AmazonRoute53Async.ListTrafficPolicyInstancesByPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPolicyInstancesByPolicyResult> listTrafficPolicyInstancesByPolicyAsync(
             ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest);
@@ -3531,6 +3695,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the ListTrafficPolicyInstancesByPolicy operation returned by the
      *         service.
      * @sample AmazonRoute53AsyncHandler.ListTrafficPolicyInstancesByPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPolicyInstancesByPolicyResult> listTrafficPolicyInstancesByPolicyAsync(
             ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest,
@@ -3595,6 +3761,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains the information about the request to list your traffic policies.
      * @return A Java Future containing the result of the ListTrafficPolicyVersions operation returned by the service.
      * @sample AmazonRoute53Async.ListTrafficPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPolicyVersionsResult> listTrafficPolicyVersionsAsync(
             ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest);
@@ -3662,6 +3830,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTrafficPolicyVersions operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListTrafficPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTrafficPolicyVersionsResult> listTrafficPolicyVersionsAsync(
             ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest,
@@ -3699,6 +3869,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the ListVPCAssociationAuthorizations operation returned by the
      *         service.
      * @sample AmazonRoute53Async.ListVPCAssociationAuthorizations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListVPCAssociationAuthorizationsResult> listVPCAssociationAuthorizationsAsync(
             ListVPCAssociationAuthorizationsRequest listVPCAssociationAuthorizationsRequest);
@@ -3739,6 +3911,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @return A Java Future containing the result of the ListVPCAssociationAuthorizations operation returned by the
      *         service.
      * @sample AmazonRoute53AsyncHandler.ListVPCAssociationAuthorizations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListVPCAssociationAuthorizationsResult> listVPCAssociationAuthorizationsAsync(
             ListVPCAssociationAuthorizationsRequest listVPCAssociationAuthorizationsRequest,
@@ -3804,6 +3978,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        </dd>
      * @return A Java Future containing the result of the TestDNSAnswer operation returned by the service.
      * @sample AmazonRoute53Async.TestDNSAnswer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<TestDNSAnswerResult> testDNSAnswerAsync(TestDNSAnswerRequest testDNSAnswerRequest);
 
@@ -3871,6 +4046,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TestDNSAnswer operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.TestDNSAnswer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<TestDNSAnswerResult> testDNSAnswerAsync(TestDNSAnswerRequest testDNSAnswerRequest,
             com.amazonaws.handlers.AsyncHandler<TestDNSAnswerRequest, TestDNSAnswerResult> asyncHandler);
@@ -3891,6 +4067,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains the health check request information.
      * @return A Java Future containing the result of the UpdateHealthCheck operation returned by the service.
      * @sample AmazonRoute53Async.UpdateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateHealthCheckResult> updateHealthCheckAsync(UpdateHealthCheckRequest updateHealthCheckRequest);
 
@@ -3914,6 +4092,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateHealthCheck operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.UpdateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateHealthCheckResult> updateHealthCheckAsync(UpdateHealthCheckRequest updateHealthCheckRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateHealthCheckRequest, UpdateHealthCheckResult> asyncHandler);
@@ -3928,6 +4108,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        A complex type that contains the hosted zone request information.
      * @return A Java Future containing the result of the UpdateHostedZoneComment operation returned by the service.
      * @sample AmazonRoute53Async.UpdateHostedZoneComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateHostedZoneCommentResult> updateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest);
 
@@ -3945,6 +4127,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateHostedZoneComment operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.UpdateHostedZoneComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateHostedZoneCommentResult> updateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateHostedZoneCommentRequest, UpdateHostedZoneCommentResult> asyncHandler);
@@ -3965,6 +4149,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        comment.
      * @return A Java Future containing the result of the UpdateTrafficPolicyComment operation returned by the service.
      * @sample AmazonRoute53Async.UpdateTrafficPolicyComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateTrafficPolicyCommentResult> updateTrafficPolicyCommentAsync(
             UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest);
@@ -3989,6 +4175,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateTrafficPolicyComment operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.UpdateTrafficPolicyComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateTrafficPolicyCommentResult> updateTrafficPolicyCommentAsync(
             UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest,
@@ -4036,6 +4224,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        specified traffic policy instance.
      * @return A Java Future containing the result of the UpdateTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53Async.UpdateTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateTrafficPolicyInstanceResult> updateTrafficPolicyInstanceAsync(
             UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest);
@@ -4086,6 +4276,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.UpdateTrafficPolicyInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateTrafficPolicyInstanceResult> updateTrafficPolicyInstanceAsync(
             UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest,

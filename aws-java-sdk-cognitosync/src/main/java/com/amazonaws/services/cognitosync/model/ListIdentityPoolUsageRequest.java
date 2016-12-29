@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * A request for usage information on an identity pool.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage"/>AWS API
+ *      Documentation</a>
  */
 public class ListIdentityPoolUsageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection"/>AWS API Documentation</a>
  */
 public class DeleteProtectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

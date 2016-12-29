@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object representing authorization data for an Amazon ECR registry.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/AuthorizationData"/>AWS API Documentation</a>
  */
 public class AuthorizationData implements Serializable, Cloneable {
 

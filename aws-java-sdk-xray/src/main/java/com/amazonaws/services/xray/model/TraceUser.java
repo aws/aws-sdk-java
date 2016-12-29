@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a user recorded in segment documents.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TraceUser"/>AWS API Documentation</a>
  */
 public class TraceUser implements Serializable, Cloneable {
 

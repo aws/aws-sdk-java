@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * [EC2-VPC only] Describes an IPv6 range.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipv6Range"/>AWS API Documentation</a>
  */
 public class Ipv6Range implements Serializable, Cloneable {
 

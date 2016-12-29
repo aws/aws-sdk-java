@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Credentials for the provided identity ID.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/Credentials"/>AWS API
+ *      Documentation</a>
  */
 public class Credentials implements Serializable, Cloneable {
 

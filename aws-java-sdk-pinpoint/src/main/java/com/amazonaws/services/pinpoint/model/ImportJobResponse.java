@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class ImportJobResponse implements Serializable, Cloneable {
 
     /** The unique ID of the application to which the import job applies. */

@@ -35,6 +35,8 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Endpoint"/>AWS API Documentation</a>
  */
 public class Endpoint implements Serializable, Cloneable {
 

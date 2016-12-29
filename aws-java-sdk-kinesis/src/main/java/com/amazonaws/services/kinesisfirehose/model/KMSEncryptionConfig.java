@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an encryption key for a destination in Amazon S3.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/KMSEncryptionConfig"/>AWS API
+ *      Documentation</a>
  */
 public class KMSEncryptionConfig implements Serializable, Cloneable {
 

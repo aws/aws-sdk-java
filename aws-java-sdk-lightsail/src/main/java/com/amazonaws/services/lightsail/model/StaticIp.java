@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the static IP.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StaticIp"/>AWS API Documentation</a>
  */
 public class StaticIp implements Serializable, Cloneable {
 

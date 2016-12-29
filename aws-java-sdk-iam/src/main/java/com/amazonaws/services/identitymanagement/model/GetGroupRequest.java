@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup"/>AWS API Documentation</a>
  */
 public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

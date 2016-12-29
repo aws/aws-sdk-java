@@ -248,6 +248,7 @@
     "syncClient" : "AmazonGlacierClient",
     "syncClientBuilderClassName" : "AmazonGlacierClientBuilder",
     "syncInterface" : "AmazonGlacier",
+    "uid" : "glacier-2012-06-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

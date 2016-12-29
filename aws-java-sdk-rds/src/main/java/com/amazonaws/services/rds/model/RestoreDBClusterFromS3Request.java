@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3"/>AWS API
+ *      Documentation</a>
  */
 public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

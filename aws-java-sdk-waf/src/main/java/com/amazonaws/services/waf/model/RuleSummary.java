@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the identifier and the friendly name or description of the <code>Rule</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RuleSummary"/>AWS API Documentation</a>
  */
 public class RuleSummary implements Serializable, Cloneable {
 

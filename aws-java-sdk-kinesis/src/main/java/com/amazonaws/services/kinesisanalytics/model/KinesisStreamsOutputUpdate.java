@@ -19,6 +19,9 @@ import java.io.Serializable;
  * When updating an output configuration using the <a>UpdateApplication</a> operation, provides information about an
  * Amazon Kinesis stream configured as the destination.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisStreamsOutputUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class KinesisStreamsOutputUpdate implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DescribePipelines.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines"/>AWS API
+ *      Documentation</a>
  */
 public class DescribePipelinesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

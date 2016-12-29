@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a subscription filter.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/SubscriptionFilter"/>AWS API Documentation</a>
  */
 public class SubscriptionFilter implements Serializable, Cloneable {
 

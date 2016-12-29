@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a <i>GetShardIterator</i> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"/>AWS API
+ *      Documentation</a>
  */
 public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

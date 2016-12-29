@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Description of the voice.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/Voice"/>AWS API Documentation</a>
  */
 public class Voice implements Serializable, Cloneable {
 

@@ -20,6 +20,9 @@ import java.io.Serializable;
  * you want to add the specification to a <a>SqlInjectionMatchSet</a> or delete it from a
  * <code>SqlInjectionMatchSet</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchSetUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
 

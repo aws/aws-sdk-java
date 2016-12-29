@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the possible values for a configuration option.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationOptionDescription"/>AWS
+ *      API Documentation</a>
  */
 public class ConfigurationOptionDescription implements Serializable, Cloneable {
 

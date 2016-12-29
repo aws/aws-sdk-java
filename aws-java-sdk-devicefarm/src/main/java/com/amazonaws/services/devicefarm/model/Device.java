@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a device type that an app is tested against.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Device"/>AWS API Documentation</a>
  */
 public class Device implements Serializable, Cloneable {
 

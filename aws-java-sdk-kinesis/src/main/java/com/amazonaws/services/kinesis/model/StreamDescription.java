@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output for <a>DescribeStream</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StreamDescription"/>AWS API Documentation</a>
  */
 public class StreamDescription implements Serializable, Cloneable {
 

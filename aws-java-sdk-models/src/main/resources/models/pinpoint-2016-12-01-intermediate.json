@@ -66,6 +66,7 @@
     "syncClient" : "AmazonPinpointClient",
     "syncClientBuilderClassName" : "AmazonPinpointClientBuilder",
     "syncInterface" : "AmazonPinpoint",
+    "uid" : null,
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

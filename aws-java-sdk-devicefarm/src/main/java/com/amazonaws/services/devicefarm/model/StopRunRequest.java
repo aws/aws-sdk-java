@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to stop a specific run.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun"/>AWS API Documentation</a>
  */
 public class StopRunRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

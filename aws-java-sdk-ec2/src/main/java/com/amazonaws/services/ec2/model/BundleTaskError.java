@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an error for <a>BundleInstance</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleTaskError"/>AWS API Documentation</a>
  */
 public class BundleTaskError implements Serializable, Cloneable {
 

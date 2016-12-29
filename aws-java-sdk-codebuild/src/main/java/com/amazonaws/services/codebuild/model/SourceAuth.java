@@ -22,6 +22,8 @@ import java.io.Serializable;
  * This information is only for the AWS CodeBuild console's use. Your code should not get or set this information
  * directly.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth"/>AWS API Documentation</a>
  */
 public class SourceAuth implements Serializable, Cloneable {
 

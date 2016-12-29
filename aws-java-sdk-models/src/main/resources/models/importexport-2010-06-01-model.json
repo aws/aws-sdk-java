@@ -11,6 +11,7 @@
     "signatureVersion" : "v2",
     "signingName" : "importexport",
     "targetPrefix" : null,
+    "uid" : "importexport-2010-06-01",
     "xmlNamespace" : "http://importexport.amazonaws.com/doc/2010-06-01/"
   },
   "operations" : {

@@ -20,6 +20,9 @@ import java.io.Serializable;
  * (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped
  * (<a>StopWorkspaces</a>).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedWorkspaceChangeRequest"/>AWS API
+ *      Documentation</a>
  */
 public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
 

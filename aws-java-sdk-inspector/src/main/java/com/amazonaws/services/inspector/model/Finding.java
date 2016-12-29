@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Contains information about an Amazon Inspector finding. This data type is used as the response element in the
  * <a>DescribeFindings</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Finding"/>AWS API Documentation</a>
  */
 public class Finding implements Serializable, Cloneable {
 

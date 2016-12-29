@@ -253,6 +253,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and that the request was not completed.
      * @sample AmazonElasticMapReduce.AddInstanceGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AddInstanceGroupsResult addInstanceGroups(AddInstanceGroupsRequest addInstanceGroupsRequest) {
@@ -318,6 +320,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and that the request was not completed.
      * @sample AmazonElasticMapReduce.AddJobFlowSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AddJobFlowStepsResult addJobFlowSteps(AddJobFlowStepsRequest addJobFlowStepsRequest) {
@@ -366,6 +370,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.AddTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
@@ -414,6 +420,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.CancelSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CancelStepsResult cancelSteps(CancelStepsRequest cancelStepsRequest) {
@@ -458,6 +466,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.CreateSecurityConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest createSecurityConfigurationRequest) {
@@ -504,6 +515,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.DeleteSecurityConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest) {
@@ -552,6 +566,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.DescribeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClusterResult describeCluster(DescribeClusterRequest describeClusterRequest) {
@@ -622,6 +638,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and that the request was not completed.
      * @sample AmazonElasticMapReduce.DescribeJobFlows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows"/>AWS API
+     *      Documentation</a>
      */
     @Override
     @Deprecated
@@ -673,6 +691,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.DescribeSecurityConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeSecurityConfigurationResult describeSecurityConfiguration(DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest) {
@@ -720,6 +741,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.DescribeStep
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeStepResult describeStep(DescribeStepRequest describeStepRequest) {
@@ -765,6 +788,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListBootstrapActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListBootstrapActionsResult listBootstrapActions(ListBootstrapActionsRequest listBootstrapActionsRequest) {
@@ -813,6 +838,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
@@ -863,6 +890,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListInstanceGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListInstanceGroupsResult listInstanceGroups(ListInstanceGroupsRequest listInstanceGroupsRequest) {
@@ -910,6 +939,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest) {
@@ -956,6 +987,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListSecurityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListSecurityConfigurationsResult listSecurityConfigurations(ListSecurityConfigurationsRequest listSecurityConfigurationsRequest) {
@@ -1002,6 +1035,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListStepsResult listSteps(ListStepsRequest listStepsRequest) {
@@ -1047,6 +1082,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and that the request was not completed.
      * @sample AmazonElasticMapReduce.ModifyInstanceGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ModifyInstanceGroupsResult modifyInstanceGroups(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) {
@@ -1094,6 +1131,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @param putAutoScalingPolicyRequest
      * @return Result of the PutAutoScalingPolicy operation returned by the service.
      * @sample AmazonElasticMapReduce.PutAutoScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public PutAutoScalingPolicyResult putAutoScalingPolicy(PutAutoScalingPolicyRequest putAutoScalingPolicyRequest) {
@@ -1134,6 +1173,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @param removeAutoScalingPolicyRequest
      * @return Result of the RemoveAutoScalingPolicy operation returned by the service.
      * @sample AmazonElasticMapReduce.RemoveAutoScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public RemoveAutoScalingPolicyResult removeAutoScalingPolicy(RemoveAutoScalingPolicyRequest removeAutoScalingPolicyRequest) {
@@ -1186,6 +1227,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.RemoveTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
@@ -1252,6 +1295,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and that the request was not completed.
      * @sample AmazonElasticMapReduce.RunJobFlow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RunJobFlowResult runJobFlow(RunJobFlowRequest runJobFlowRequest) {
@@ -1312,6 +1357,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and that the request was not completed.
      * @sample AmazonElasticMapReduce.SetTerminationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public SetTerminationProtectionResult setTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest) {
@@ -1359,6 +1406,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and that the request was not completed.
      * @sample AmazonElasticMapReduce.SetVisibleToAllUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetVisibleToAllUsersResult setVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) {
@@ -1409,6 +1458,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and that the request was not completed.
      * @sample AmazonElasticMapReduce.TerminateJobFlows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public TerminateJobFlowsResult terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest) {

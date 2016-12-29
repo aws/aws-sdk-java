@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Identifies an AWS Config rule that evaluated an AWS resource, and provides the type and ID of the resource that the
  * rule evaluated.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResultQualifier"/>AWS API
+ *      Documentation</a>
  */
 public class EvaluationResultQualifier implements Serializable, Cloneable {
 

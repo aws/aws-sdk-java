@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about a WorkSpace bundle.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceBundle"/>AWS API
+ *      Documentation</a>
  */
 public class WorkspaceBundle implements Serializable, Cloneable {
 

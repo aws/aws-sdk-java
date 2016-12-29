@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about an artifact to be worked on, such as a test or build artifact.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/InputArtifact"/>AWS API
+ *      Documentation</a>
  */
 public class InputArtifact implements Serializable, Cloneable {
 

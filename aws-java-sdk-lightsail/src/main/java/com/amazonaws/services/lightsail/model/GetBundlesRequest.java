@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles"/>AWS API Documentation</a>
  */
 public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

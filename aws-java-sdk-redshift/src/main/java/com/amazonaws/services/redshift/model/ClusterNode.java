@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The identifier of a node in a cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterNode"/>AWS API Documentation</a>
  */
 public class ClusterNode implements Serializable, Cloneable {
 

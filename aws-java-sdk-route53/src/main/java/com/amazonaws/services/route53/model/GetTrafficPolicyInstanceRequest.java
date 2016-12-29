@@ -23,6 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * To get information about a traffic policy instance, send a <code>GET</code> request to the
  * <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance/<i>Id</i> </code> resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance"/>AWS API
+ *      Documentation</a>
  */
 public class GetTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

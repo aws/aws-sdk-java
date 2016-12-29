@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a trigger for a repository.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryTrigger"/>AWS API
+ *      Documentation</a>
  */
 public class RepositoryTrigger implements Serializable, Cloneable {
 

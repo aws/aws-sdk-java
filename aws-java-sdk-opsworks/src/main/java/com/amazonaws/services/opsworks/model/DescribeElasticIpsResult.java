@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the response to a <code>DescribeElasticIps</code> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeElasticIpsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

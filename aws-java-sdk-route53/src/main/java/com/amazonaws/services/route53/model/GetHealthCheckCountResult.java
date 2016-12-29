@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains the response to a <code>healthcheckcount</code> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount"/>AWS API
+ *      Documentation</a>
  */
 public class GetHealthCheckCountResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

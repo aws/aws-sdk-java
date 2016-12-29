@@ -155,6 +155,7 @@
     "syncClient" : "AmazonElasticLoadBalancingClient",
     "syncClientBuilderClassName" : "AmazonElasticLoadBalancingClientBuilder",
     "syncInterface" : "AmazonElasticLoadBalancing",
+    "uid" : "elasticloadbalancing-2012-06-01",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

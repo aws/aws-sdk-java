@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web
  * requests, the location in requests that you want AWS WAF to search, and other settings.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchTuple"/>AWS API
+ *      Documentation</a>
  */
 public class ByteMatchTuple implements Serializable, Cloneable {
 

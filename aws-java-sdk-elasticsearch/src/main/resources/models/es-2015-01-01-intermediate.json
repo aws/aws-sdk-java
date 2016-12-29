@@ -70,6 +70,7 @@
     "syncClient" : "AWSElasticsearchClient",
     "syncClientBuilderClassName" : "AWSElasticsearchClientBuilder",
     "syncInterface" : "AWSElasticsearch",
+    "uid" : "es-2015-01-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

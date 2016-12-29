@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The five most recent communications associated with the case.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RecentCaseCommunications"/>AWS API
+ *      Documentation</a>
  */
 public class RecentCaseCommunications implements Serializable, Cloneable {
 

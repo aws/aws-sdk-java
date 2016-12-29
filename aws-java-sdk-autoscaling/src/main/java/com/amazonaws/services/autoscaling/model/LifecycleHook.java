@@ -36,6 +36,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
  * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook"/>AWS API Documentation</a>
  */
 public class LifecycleHook implements Serializable, Cloneable {
 

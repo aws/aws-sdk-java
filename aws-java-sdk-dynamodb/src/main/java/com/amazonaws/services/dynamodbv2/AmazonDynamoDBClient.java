@@ -494,6 +494,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchGetItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem"/>AWS API Documentation</a>
      */
     @Override
     public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) {
@@ -648,6 +649,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchWriteItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest) {
@@ -724,6 +727,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.CreateTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable"/>AWS API Documentation</a>
      */
     @Override
     public CreateTableResult createTable(CreateTableRequest createTableRequest) {
@@ -801,6 +805,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem"/>AWS API Documentation</a>
      */
     @Override
     public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) {
@@ -890,6 +895,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable"/>AWS API Documentation</a>
      */
     @Override
     public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) {
@@ -1026,6 +1032,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DescribeLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
@@ -1081,6 +1089,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DescribeTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) {
@@ -1144,6 +1154,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.GetItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem"/>AWS API Documentation</a>
      */
     @Override
     public GetItemResult getItem(GetItemRequest getItemRequest) {
@@ -1198,6 +1209,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.ListTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables"/>AWS API Documentation</a>
      */
     @Override
     public ListTablesResult listTables(ListTablesRequest listTablesRequest) {
@@ -1304,6 +1316,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.PutItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem"/>AWS API Documentation</a>
      */
     @Override
     public PutItemResult putItem(PutItemRequest putItemRequest) {
@@ -1391,6 +1404,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Query
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query"/>AWS API Documentation</a>
      */
     @Override
     public QueryResult query(QueryRequest queryRequest) {
@@ -1463,6 +1477,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Scan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan"/>AWS API Documentation</a>
      */
     @Override
     public ScanResult scan(ScanRequest scanRequest) {
@@ -1542,6 +1557,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem"/>AWS API Documentation</a>
      */
     @Override
     public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) {
@@ -1644,6 +1660,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable"/>AWS API Documentation</a>
      */
     @Override
     public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) {

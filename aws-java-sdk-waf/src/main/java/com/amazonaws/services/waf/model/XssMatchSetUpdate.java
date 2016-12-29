@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether
  * you want to add the specification to an <a>XssMatchSet</a> or delete it from an <code>XssMatchSet</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/XssMatchSetUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class XssMatchSetUpdate implements Serializable, Cloneable {
 

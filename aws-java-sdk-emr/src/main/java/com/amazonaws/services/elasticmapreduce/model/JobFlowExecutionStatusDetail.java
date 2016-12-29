@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the status of the job flow.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowExecutionStatusDetail"/>AWS
+ *      API Documentation</a>
  */
 public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
 

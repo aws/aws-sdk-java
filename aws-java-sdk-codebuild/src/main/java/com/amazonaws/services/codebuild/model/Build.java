@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a build.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Build"/>AWS API Documentation</a>
  */
 public class Build implements Serializable, Cloneable {
 

@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "cloudtrail",
     "targetPrefix" : "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101",
+    "uid" : "cloudtrail-2013-11-01",
     "xmlNamespace" : null
   },
   "operations" : {

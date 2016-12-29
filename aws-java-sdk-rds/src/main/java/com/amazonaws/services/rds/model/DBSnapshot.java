@@ -33,6 +33,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshot"/>AWS API Documentation</a>
  */
 public class DBSnapshot implements Serializable, Cloneable {
 

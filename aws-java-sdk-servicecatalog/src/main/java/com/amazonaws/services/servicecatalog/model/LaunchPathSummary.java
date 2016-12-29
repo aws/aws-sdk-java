@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Summary information about a path for a user to have access to a specified product.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/LaunchPathSummary"/>AWS API
+ *      Documentation</a>
  */
 public class LaunchPathSummary implements Serializable, Cloneable {
 

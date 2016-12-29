@@ -74,6 +74,7 @@
     "syncClient" : "AmazonElasticFileSystemClient",
     "syncClientBuilderClassName" : "AmazonElasticFileSystemClientBuilder",
     "syncInterface" : "AmazonElasticFileSystem",
+    "uid" : "elasticfilesystem-2015-02-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

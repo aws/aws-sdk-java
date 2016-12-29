@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeMaintenanceWindowExecutionTaskInvocationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements
         Serializable, Cloneable {

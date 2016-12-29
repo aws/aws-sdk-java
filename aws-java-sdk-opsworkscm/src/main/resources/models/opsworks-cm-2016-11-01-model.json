@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "opsworks-cm",
     "targetPrefix" : "OpsWorksCM_V2016_11_01",
+    "uid" : "opsworkscm-2016-11-01",
     "xmlNamespace" : null
   },
   "operations" : {

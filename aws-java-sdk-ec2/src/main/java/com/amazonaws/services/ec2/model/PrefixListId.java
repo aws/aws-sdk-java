@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The ID of the prefix.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrefixListId"/>AWS API Documentation</a>
  */
 public class PrefixListId implements Serializable, Cloneable {
 

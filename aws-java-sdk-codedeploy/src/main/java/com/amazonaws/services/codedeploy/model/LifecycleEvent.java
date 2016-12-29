@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a deployment lifecycle event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LifecycleEvent"/>AWS API Documentation</a>
  */
 public class LifecycleEvent implements Serializable, Cloneable {
 

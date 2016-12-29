@@ -20,6 +20,9 @@ import java.io.Serializable;
  * have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that
  * represent files and folders are assigned these default Unix permissions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareDefaults"/>AWS API
+ *      Documentation</a>
  */
 public class NFSFileShareDefaults implements Serializable, Cloneable {
 

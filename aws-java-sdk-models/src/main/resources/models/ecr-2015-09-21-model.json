@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "ecr",
     "targetPrefix" : "AmazonEC2ContainerRegistry_V20150921",
+    "uid" : "ecr-2015-09-21",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A wrapper type for the attributes of an Amazon SNS subscription.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscription"/>AWS API Documentation</a>
  */
 public class Subscription implements Serializable, Cloneable {
 

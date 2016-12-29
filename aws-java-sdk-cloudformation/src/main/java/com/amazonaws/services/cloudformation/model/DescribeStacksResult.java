@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for a <a>DescribeStacks</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeStacksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

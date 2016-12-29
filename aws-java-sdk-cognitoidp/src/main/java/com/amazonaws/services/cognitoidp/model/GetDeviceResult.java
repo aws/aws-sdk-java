@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Gets the device response.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice"/>AWS API Documentation</a>
  */
 public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

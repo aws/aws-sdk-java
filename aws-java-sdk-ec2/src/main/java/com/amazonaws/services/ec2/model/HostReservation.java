@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details about the Dedicated Host Reservation and associated Dedicated Hosts.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HostReservation"/>AWS API Documentation</a>
  */
 public class HostReservation implements Serializable, Cloneable {
 

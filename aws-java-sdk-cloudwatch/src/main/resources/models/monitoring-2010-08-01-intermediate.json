@@ -80,6 +80,7 @@
     "syncClient" : "AmazonCloudWatchClient",
     "syncClientBuilderClassName" : "AmazonCloudWatchClientBuilder",
     "syncInterface" : "AmazonCloudWatch",
+    "uid" : "monitoring-2010-08-01",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

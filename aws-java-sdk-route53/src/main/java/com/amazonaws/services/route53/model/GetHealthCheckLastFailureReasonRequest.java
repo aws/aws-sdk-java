@@ -28,6 +28,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html">Viewing Health
  * Check Status and the Reason for Health Check Failures</a> in the <i>Amazon Route 53 Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason"/>AWS API
+ *      Documentation</a>
  */
 public class GetHealthCheckLastFailureReasonRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

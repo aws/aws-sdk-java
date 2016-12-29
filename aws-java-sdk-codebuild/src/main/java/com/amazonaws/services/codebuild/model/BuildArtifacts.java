@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about build output artifacts.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildArtifacts"/>AWS API Documentation</a>
  */
 public class BuildArtifacts implements Serializable, Cloneable {
 

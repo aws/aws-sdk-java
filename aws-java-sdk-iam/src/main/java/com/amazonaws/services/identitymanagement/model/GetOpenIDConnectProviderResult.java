@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the response to a successful <a>GetOpenIDConnectProvider</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider"/>AWS API
+ *      Documentation</a>
  */
 public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

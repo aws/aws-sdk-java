@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as
  * the response element in the <a>GetTelemetryMetadata</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/TelemetryMetadata"/>AWS API
+ *      Documentation</a>
  */
 public class TelemetryMetadata implements Serializable, Cloneable {
 

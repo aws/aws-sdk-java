@@ -84,6 +84,7 @@
     "syncClient" : "AWSSecurityTokenServiceClient",
     "syncClientBuilderClassName" : "AWSSecurityTokenServiceClientBuilder",
     "syncInterface" : "AWSSecurityTokenService",
+    "uid" : "sts-2011-06-15",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

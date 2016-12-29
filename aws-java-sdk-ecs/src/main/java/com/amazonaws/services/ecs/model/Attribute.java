@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The attributes applicable to a container instance when it is registered.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Attribute"/>AWS API Documentation</a>
  */
 public class Attribute implements Serializable, Cloneable {
 

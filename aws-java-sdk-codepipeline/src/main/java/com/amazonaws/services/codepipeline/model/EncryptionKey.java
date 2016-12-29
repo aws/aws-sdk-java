@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
  * Service (AWS KMS) key.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EncryptionKey"/>AWS API
+ *      Documentation</a>
  */
 public class EncryptionKey implements Serializable, Cloneable {
 

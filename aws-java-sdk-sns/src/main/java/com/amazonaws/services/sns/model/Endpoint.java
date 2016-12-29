@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Endpoint for mobile app and device.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Endpoint"/>AWS API Documentation</a>
  */
 public class Endpoint implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that describes the name servers for this hosted zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DelegationSet"/>AWS API Documentation</a>
  */
 public class DelegationSet implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about build logs in Amazon CloudWatch Logs.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/LogsLocation"/>AWS API Documentation</a>
  */
 public class LogsLocation implements Serializable, Cloneable {
 

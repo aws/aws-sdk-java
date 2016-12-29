@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Information about a policy attribute type.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/PolicyAttributeTypeDescription"/>AWS
+ *      API Documentation</a>
  */
 public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
 

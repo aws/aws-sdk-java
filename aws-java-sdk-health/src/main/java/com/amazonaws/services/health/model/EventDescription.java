@@ -19,6 +19,8 @@ import java.io.Serializable;
  * The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a>
  * operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventDescription"/>AWS API Documentation</a>
  */
 public class EventDescription implements Serializable, Cloneable {
 

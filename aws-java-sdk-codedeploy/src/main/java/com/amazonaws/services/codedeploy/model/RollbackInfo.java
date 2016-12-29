@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a deployment rollback.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RollbackInfo"/>AWS API Documentation</a>
  */
 public class RollbackInfo implements Serializable, Cloneable {
 

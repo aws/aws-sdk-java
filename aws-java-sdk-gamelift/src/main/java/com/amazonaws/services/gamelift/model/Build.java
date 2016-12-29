@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Properties describing a game build.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Build"/>AWS API Documentation</a>
  */
 public class Build implements Serializable, Cloneable {
 

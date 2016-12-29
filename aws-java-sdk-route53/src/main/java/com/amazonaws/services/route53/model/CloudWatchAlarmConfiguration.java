@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this
  * health check.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CloudWatchAlarmConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use
  * <code>GetTopicAttributes</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Topic"/>AWS API Documentation</a>
  */
 public class Topic implements Serializable, Cloneable {
 

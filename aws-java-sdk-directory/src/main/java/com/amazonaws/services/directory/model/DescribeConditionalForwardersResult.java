@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The result of a DescribeConditionalForwarder request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeConditionalForwardersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

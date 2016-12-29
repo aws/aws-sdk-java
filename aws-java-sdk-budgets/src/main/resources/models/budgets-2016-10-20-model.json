@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "budgets",
     "targetPrefix" : "AWSBudgetServiceGateway",
+    "uid" : "budgets-2016-10-20",
     "xmlNamespace" : null
   },
   "operations" : {

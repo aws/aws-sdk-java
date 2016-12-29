@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about a pipeline task that is assigned to a task runner.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/TaskObject"/>AWS API Documentation</a>
  */
 public class TaskObject implements Serializable, Cloneable {
 

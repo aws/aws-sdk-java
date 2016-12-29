@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes monthly data transfer rates and port information for an instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceNetworking"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceNetworking implements Serializable, Cloneable {
 

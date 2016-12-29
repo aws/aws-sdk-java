@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The list of severity levels returned by the <a>DescribeSeverityLevels</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeSeverityLevelsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

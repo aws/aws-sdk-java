@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output of SetTaskStatus.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus"/>AWS API
+ *      Documentation</a>
  */
 public class SetTaskStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

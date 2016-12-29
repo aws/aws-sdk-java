@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * Object representing a Replication Run
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ReplicationRun"/>AWS API Documentation</a>
  */
 public class ReplicationRun implements Serializable, Cloneable {
 

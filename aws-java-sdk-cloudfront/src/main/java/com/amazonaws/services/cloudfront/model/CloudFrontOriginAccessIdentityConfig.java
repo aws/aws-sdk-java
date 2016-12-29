@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Origin access identity configuration. Send a <code>GET</code> request to the
  * <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CloudFrontOriginAccessIdentityConfig"/>AWS
+ *      API Documentation</a>
  */
 public class CloudFrontOriginAccessIdentityConfig implements Serializable, Cloneable {
 

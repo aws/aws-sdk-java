@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an instance export task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportToS3TaskSpecification"/>AWS API
+ *      Documentation</a>
  */
 public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 

@@ -35,6 +35,8 @@ import java.io.Serializable;
  * If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method,
  * Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CachedMethods"/>AWS API Documentation</a>
  */
 public class CachedMethods implements Serializable, Cloneable {
 

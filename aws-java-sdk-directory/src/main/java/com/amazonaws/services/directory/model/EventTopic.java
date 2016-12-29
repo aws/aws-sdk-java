@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about SNS topic and AWS Directory Service directory associations.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EventTopic"/>AWS API Documentation</a>
  */
 public class EventTopic implements Serializable, Cloneable {
 

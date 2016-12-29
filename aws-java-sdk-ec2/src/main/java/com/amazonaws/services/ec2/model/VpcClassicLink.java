@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes whether a VPC is enabled for ClassicLink.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcClassicLink"/>AWS API Documentation</a>
  */
 public class VpcClassicLink implements Serializable, Cloneable {
 

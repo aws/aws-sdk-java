@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The name of a trail about which you want the current status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus"/>AWS API Documentation</a>
  */
 public class GetTrailStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

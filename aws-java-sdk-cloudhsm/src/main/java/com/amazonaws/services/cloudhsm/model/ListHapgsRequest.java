@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs"/>AWS API Documentation</a>
  */
 public class ListHapgsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

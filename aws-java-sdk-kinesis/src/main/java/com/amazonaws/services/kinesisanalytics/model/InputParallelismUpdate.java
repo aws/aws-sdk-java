@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provides updates to the parallelism count.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputParallelismUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class InputParallelismUpdate implements Serializable, Cloneable {
 

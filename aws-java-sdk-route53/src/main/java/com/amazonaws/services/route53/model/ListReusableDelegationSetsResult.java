@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A complex type that contains information about the reusable delegation sets that are associated with the current AWS
  * account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets"/>AWS API
+ *      Documentation</a>
  */
 public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

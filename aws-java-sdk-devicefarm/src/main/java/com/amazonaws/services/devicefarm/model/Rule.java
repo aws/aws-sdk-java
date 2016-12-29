@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a condition for a device pool.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Rule"/>AWS API Documentation</a>
  */
 public class Rule implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the configuration manager.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StackConfigurationManager"/>AWS API
+ *      Documentation</a>
  */
 public class StackConfigurationManager implements Serializable, Cloneable {
 

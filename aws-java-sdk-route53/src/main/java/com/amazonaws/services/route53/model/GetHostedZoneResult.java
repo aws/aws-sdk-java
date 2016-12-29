@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type containing the response information for the hosted zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone"/>AWS API Documentation</a>
  */
 public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

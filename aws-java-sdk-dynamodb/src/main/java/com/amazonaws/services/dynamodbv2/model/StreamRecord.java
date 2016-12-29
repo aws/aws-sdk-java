@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A description of a single data modification that was performed on an item in a DynamoDB table.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/StreamRecord"/>AWS API
+ *      Documentation</a>
  */
 public class StreamRecord implements Serializable, Cloneable {
 

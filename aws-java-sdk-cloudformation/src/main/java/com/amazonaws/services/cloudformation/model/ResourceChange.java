@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform
  * on it if you execute this change set.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceChange"/>AWS API
+ *      Documentation</a>
  */
 public class ResourceChange implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a policy for duration-based session stickiness.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/LBCookieStickinessPolicy"/>AWS
+ *      API Documentation</a>
  */
 public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 

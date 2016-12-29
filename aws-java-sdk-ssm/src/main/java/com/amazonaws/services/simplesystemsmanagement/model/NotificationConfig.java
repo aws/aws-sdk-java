@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Configurations for sending notifications.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/NotificationConfig"/>AWS API Documentation</a>
  */
 public class NotificationConfig implements Serializable, Cloneable {
 

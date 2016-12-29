@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains pipeline metadata.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PipelineDescription"/>AWS API
+ *      Documentation</a>
  */
 public class PipelineDescription implements Serializable, Cloneable {
 

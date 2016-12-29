@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes information used to set up an EBS volume specified in a block device mapping.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EbsInstanceBlockDeviceSpecification"/>AWS API
+ *      Documentation</a>
  */
 public class EbsInstanceBlockDeviceSpecification implements Serializable, Cloneable {
 

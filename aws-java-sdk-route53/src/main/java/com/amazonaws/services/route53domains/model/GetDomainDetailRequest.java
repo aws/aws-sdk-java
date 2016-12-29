@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The GetDomainDetail request includes the following element.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail"/>AWS API
+ *      Documentation</a>
  */
 public class GetDomainDetailRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

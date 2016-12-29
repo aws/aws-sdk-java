@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about an action configuration property.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionConfigurationProperty"/>AWS API
+ *      Documentation</a>
  */
 public class ActionConfigurationProperty implements Serializable, Cloneable {
 

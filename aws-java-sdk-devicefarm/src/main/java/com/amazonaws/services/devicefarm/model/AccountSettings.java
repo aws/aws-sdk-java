@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A container for account-level settings within AWS Device Farm.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/AccountSettings"/>AWS API
+ *      Documentation</a>
  */
 public class AccountSettings implements Serializable, Cloneable {
 

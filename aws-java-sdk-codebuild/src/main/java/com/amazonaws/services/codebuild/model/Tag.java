@@ -21,6 +21,8 @@ import java.io.Serializable;
  * <p>
  * This tag is available for use by AWS services that support tags in AWS CodeBuild.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The device type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceType"/>AWS API Documentation</a>
  */
 public class DeviceType implements Serializable, Cloneable {
 

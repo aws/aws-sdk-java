@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of an <i>UpdateItem</i> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem"/>AWS API Documentation</a>
  */
 public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

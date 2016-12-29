@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials
  * that can be used to make AWS requests.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity"/>AWS API
+ *      Documentation</a>
  */
 public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

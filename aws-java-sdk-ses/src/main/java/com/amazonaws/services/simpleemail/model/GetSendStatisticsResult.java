@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents a list of data points. This list contains aggregated data from the previous two weeks of your sending
  * activity with Amazon SES.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics"/>AWS API Documentation</a>
  */
 public class GetSendStatisticsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

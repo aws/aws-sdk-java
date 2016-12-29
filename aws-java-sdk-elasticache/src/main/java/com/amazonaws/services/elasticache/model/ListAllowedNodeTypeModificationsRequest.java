@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications"/>AWS
+ *      API Documentation</a>
  */
 public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

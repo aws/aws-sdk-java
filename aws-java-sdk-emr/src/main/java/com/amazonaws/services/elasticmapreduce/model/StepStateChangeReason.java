@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The details of the step state change reason.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepStateChangeReason"/>AWS API
+ *      Documentation</a>
  */
 public class StepStateChangeReason implements Serializable, Cloneable {
 

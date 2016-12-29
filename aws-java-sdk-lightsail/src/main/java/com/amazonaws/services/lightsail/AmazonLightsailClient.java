@@ -287,6 +287,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.AllocateStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AllocateStaticIpResult allocateStaticIp(AllocateStaticIpRequest allocateStaticIpRequest) {
@@ -343,6 +345,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.AttachStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AttachStaticIpResult attachStaticIp(AttachStaticIpRequest attachStaticIpRequest) {
@@ -399,6 +403,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CloseInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CloseInstancePublicPortsResult closeInstancePublicPorts(CloseInstancePublicPortsRequest closeInstancePublicPortsRequest) {
@@ -456,6 +462,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) {
@@ -513,6 +521,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateDomainEntryResult createDomainEntry(CreateDomainEntryRequest createDomainEntryRequest) {
@@ -570,6 +580,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateInstanceSnapshotResult createInstanceSnapshot(CreateInstanceSnapshotRequest createInstanceSnapshotRequest) {
@@ -627,6 +639,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateInstancesResult createInstances(CreateInstancesRequest createInstancesRequest) {
@@ -684,6 +698,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateInstancesFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateInstancesFromSnapshotResult createInstancesFromSnapshot(CreateInstancesFromSnapshotRequest createInstancesFromSnapshotRequest) {
@@ -742,6 +758,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.CreateKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateKeyPairResult createKeyPair(CreateKeyPairRequest createKeyPairRequest) {
@@ -798,6 +816,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) {
@@ -854,6 +874,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteDomainEntryResult deleteDomainEntry(DeleteDomainEntryRequest deleteDomainEntryRequest) {
@@ -910,6 +932,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteInstanceResult deleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
@@ -966,6 +990,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteInstanceSnapshotResult deleteInstanceSnapshot(DeleteInstanceSnapshotRequest deleteInstanceSnapshotRequest) {
@@ -1023,6 +1049,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DeleteKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest) {
@@ -1079,6 +1107,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DetachStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DetachStaticIpResult detachStaticIp(DetachStaticIpRequest detachStaticIpRequest) {
@@ -1135,6 +1165,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.DownloadDefaultKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DownloadDefaultKeyPairResult downloadDefaultKeyPair(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest) {
@@ -1192,6 +1224,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetActiveNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetActiveNamesResult getActiveNames(GetActiveNamesRequest getActiveNamesRequest) {
@@ -1250,6 +1284,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetBlueprintsResult getBlueprints(GetBlueprintsRequest getBlueprintsRequest) {
@@ -1307,6 +1343,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles"/>AWS API Documentation</a>
      */
     @Override
     public GetBundlesResult getBundles(GetBundlesRequest getBundlesRequest) {
@@ -1363,6 +1400,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain"/>AWS API Documentation</a>
      */
     @Override
     public GetDomainResult getDomain(GetDomainRequest getDomainRequest) {
@@ -1419,6 +1457,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains"/>AWS API Documentation</a>
      */
     @Override
     public GetDomainsResult getDomains(GetDomainsRequest getDomainsRequest) {
@@ -1475,6 +1514,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance"/>AWS API Documentation</a>
      */
     @Override
     public GetInstanceResult getInstance(GetInstanceRequest getInstanceRequest) {
@@ -1531,6 +1571,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetInstanceAccessDetailsResult getInstanceAccessDetails(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest) {
@@ -1588,6 +1630,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetInstanceMetricDataResult getInstanceMetricData(GetInstanceMetricDataRequest getInstanceMetricDataRequest) {
@@ -1645,6 +1689,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstancePortStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetInstancePortStatesResult getInstancePortStates(GetInstancePortStatesRequest getInstancePortStatesRequest) {
@@ -1702,6 +1748,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetInstanceSnapshotResult getInstanceSnapshot(GetInstanceSnapshotRequest getInstanceSnapshotRequest) {
@@ -1758,6 +1806,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetInstanceSnapshotsResult getInstanceSnapshots(GetInstanceSnapshotsRequest getInstanceSnapshotsRequest) {
@@ -1814,6 +1864,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstanceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetInstanceStateResult getInstanceState(GetInstanceStateRequest getInstanceStateRequest) {
@@ -1870,6 +1922,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetInstancesResult getInstances(GetInstancesRequest getInstancesRequest) {
@@ -1926,6 +1980,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair"/>AWS API Documentation</a>
      */
     @Override
     public GetKeyPairResult getKeyPair(GetKeyPairRequest getKeyPairRequest) {
@@ -1982,6 +2037,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetKeyPairs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs"/>AWS API Documentation</a>
      */
     @Override
     public GetKeyPairsResult getKeyPairs(GetKeyPairsRequest getKeyPairsRequest) {
@@ -2039,6 +2095,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetOperationResult getOperation(GetOperationRequest getOperationRequest) {
@@ -2100,6 +2158,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetOperations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetOperationsResult getOperations(GetOperationsRequest getOperationsRequest) {
@@ -2156,6 +2216,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetOperationsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetOperationsForResourceResult getOperationsForResource(GetOperationsForResourceRequest getOperationsForResourceRequest) {
@@ -2213,6 +2275,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions"/>AWS API Documentation</a>
      */
     @Override
     public GetRegionsResult getRegions(GetRegionsRequest getRegionsRequest) {
@@ -2269,6 +2332,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp"/>AWS API Documentation</a>
      */
     @Override
     public GetStaticIpResult getStaticIp(GetStaticIpRequest getStaticIpRequest) {
@@ -2325,6 +2389,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.GetStaticIps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetStaticIpsResult getStaticIps(GetStaticIpsRequest getStaticIpsRequest) {
@@ -2381,6 +2447,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.ImportKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ImportKeyPairResult importKeyPair(ImportKeyPairRequest importKeyPairRequest) {
@@ -2437,6 +2505,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.IsVpcPeered
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered"/>AWS API Documentation</a>
      */
     @Override
     public IsVpcPeeredResult isVpcPeered(IsVpcPeeredRequest isVpcPeeredRequest) {
@@ -2493,6 +2562,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.OpenInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public OpenInstancePublicPortsResult openInstancePublicPorts(OpenInstancePublicPortsRequest openInstancePublicPortsRequest) {
@@ -2550,6 +2621,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.PeerVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc"/>AWS API Documentation</a>
      */
     @Override
     public PeerVpcResult peerVpc(PeerVpcRequest peerVpcRequest) {
@@ -2608,6 +2680,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.RebootInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RebootInstanceResult rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
@@ -2664,6 +2738,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.ReleaseStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ReleaseStaticIpResult releaseStaticIp(ReleaseStaticIpRequest releaseStaticIpRequest) {
@@ -2721,6 +2797,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.StartInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StartInstanceResult startInstance(StartInstanceRequest startInstanceRequest) {
@@ -2777,6 +2855,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.StopInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StopInstanceResult stopInstance(StopInstanceRequest stopInstanceRequest) {
@@ -2833,6 +2913,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.UnpeerVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc"/>AWS API Documentation</a>
      */
     @Override
     public UnpeerVpcResult unpeerVpc(UnpeerVpcRequest unpeerVpcRequest) {
@@ -2889,6 +2970,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * @throws UnauthenticatedException
      *         Lightsail throws this exception when the user has not been authenticated.
      * @sample AmazonLightsail.UpdateDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateDomainEntryResult updateDomainEntry(UpdateDomainEntryRequest updateDomainEntryRequest) {

@@ -66,6 +66,7 @@
     "syncClient" : "AmazonPollyClient",
     "syncClientBuilderClassName" : "AmazonPollyClientBuilder",
     "syncInterface" : "AmazonPolly",
+    "uid" : "polly-2016-06-10",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

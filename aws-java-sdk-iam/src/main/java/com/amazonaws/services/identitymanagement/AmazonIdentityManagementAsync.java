@@ -105,6 +105,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the AddClientIDToOpenIDConnectProvider operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.AddClientIDToOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddClientIDToOpenIDConnectProviderResult> addClientIDToOpenIDConnectProviderAsync(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest);
@@ -126,6 +128,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the AddClientIDToOpenIDConnectProvider operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.AddClientIDToOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddClientIDToOpenIDConnectProviderResult> addClientIDToOpenIDConnectProviderAsync(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest,
@@ -151,6 +155,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param addRoleToInstanceProfileRequest
      * @return A Java Future containing the result of the AddRoleToInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AddRoleToInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddRoleToInstanceProfileResult> addRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest);
 
@@ -178,6 +184,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddRoleToInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AddRoleToInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddRoleToInstanceProfileResult> addRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest,
             com.amazonaws.handlers.AsyncHandler<AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResult> asyncHandler);
@@ -190,6 +198,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param addUserToGroupRequest
      * @return A Java Future containing the result of the AddUserToGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AddUserToGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddUserToGroupResult> addUserToGroupAsync(AddUserToGroupRequest addUserToGroupRequest);
 
@@ -205,6 +214,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddUserToGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AddUserToGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddUserToGroupResult> addUserToGroupAsync(AddUserToGroupRequest addUserToGroupRequest,
             com.amazonaws.handlers.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResult> asyncHandler);
@@ -226,6 +236,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param attachGroupPolicyRequest
      * @return A Java Future containing the result of the AttachGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AttachGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AttachGroupPolicyResult> attachGroupPolicyAsync(AttachGroupPolicyRequest attachGroupPolicyRequest);
 
@@ -250,6 +261,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AttachGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AttachGroupPolicyResult> attachGroupPolicyAsync(AttachGroupPolicyRequest attachGroupPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<AttachGroupPolicyRequest, AttachGroupPolicyResult> asyncHandler);
@@ -274,6 +286,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param attachRolePolicyRequest
      * @return A Java Future containing the result of the AttachRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AttachRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AttachRolePolicyResult> attachRolePolicyAsync(AttachRolePolicyRequest attachRolePolicyRequest);
 
@@ -301,6 +314,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AttachRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AttachRolePolicyResult> attachRolePolicyAsync(AttachRolePolicyRequest attachRolePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<AttachRolePolicyRequest, AttachRolePolicyResult> asyncHandler);
@@ -322,6 +336,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param attachUserPolicyRequest
      * @return A Java Future containing the result of the AttachUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AttachUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AttachUserPolicyResult> attachUserPolicyAsync(AttachUserPolicyRequest attachUserPolicyRequest);
 
@@ -346,6 +361,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AttachUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AttachUserPolicyResult> attachUserPolicyAsync(AttachUserPolicyRequest attachUserPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<AttachUserPolicyRequest, AttachUserPolicyResult> asyncHandler);
@@ -364,6 +380,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param changePasswordRequest
      * @return A Java Future containing the result of the ChangePassword operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ChangePassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(ChangePasswordRequest changePasswordRequest);
 
@@ -385,6 +402,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ChangePassword operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ChangePassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(ChangePasswordRequest changePasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult> asyncHandler);
@@ -415,6 +433,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createAccessKeyRequest
      * @return A Java Future containing the result of the CreateAccessKey operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateAccessKeyResult> createAccessKeyAsync(CreateAccessKeyRequest createAccessKeyRequest);
 
@@ -448,6 +467,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAccessKey operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateAccessKeyResult> createAccessKeyAsync(CreateAccessKeyRequest createAccessKeyRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAccessKeyRequest, CreateAccessKeyResult> asyncHandler);
@@ -477,6 +497,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createAccountAliasRequest
      * @return A Java Future containing the result of the CreateAccountAlias operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateAccountAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAccountAliasResult> createAccountAliasAsync(CreateAccountAliasRequest createAccountAliasRequest);
 
@@ -494,6 +516,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAccountAlias operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateAccountAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAccountAliasResult> createAccountAliasAsync(CreateAccountAliasRequest createAccountAliasRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAccountAliasRequest, CreateAccountAliasResult> asyncHandler);
@@ -511,6 +535,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createGroupRequest
      * @return A Java Future containing the result of the CreateGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest);
 
@@ -531,6 +556,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler);
@@ -549,6 +575,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createInstanceProfileRequest
      * @return A Java Future containing the result of the CreateInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInstanceProfileResult> createInstanceProfileAsync(CreateInstanceProfileRequest createInstanceProfileRequest);
 
@@ -570,6 +598,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInstanceProfileResult> createInstanceProfileAsync(CreateInstanceProfileRequest createInstanceProfileRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInstanceProfileRequest, CreateInstanceProfileResult> asyncHandler);
@@ -585,6 +615,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createLoginProfileRequest
      * @return A Java Future containing the result of the CreateLoginProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateLoginProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateLoginProfileResult> createLoginProfileAsync(CreateLoginProfileRequest createLoginProfileRequest);
 
@@ -603,6 +635,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateLoginProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateLoginProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateLoginProfileResult> createLoginProfileAsync(CreateLoginProfileRequest createLoginProfileRequest,
             com.amazonaws.handlers.AsyncHandler<CreateLoginProfileRequest, CreateLoginProfileResult> asyncHandler);
@@ -632,6 +666,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createOpenIDConnectProviderRequest
      * @return A Java Future containing the result of the CreateOpenIDConnectProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateOpenIDConnectProviderResult> createOpenIDConnectProviderAsync(
             CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest);
@@ -665,6 +701,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateOpenIDConnectProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateOpenIDConnectProviderResult> createOpenIDConnectProviderAsync(
             CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest,
@@ -689,6 +727,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createPolicyRequest
      * @return A Java Future containing the result of the CreatePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreatePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreatePolicyResult> createPolicyAsync(CreatePolicyRequest createPolicyRequest);
 
@@ -715,6 +754,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreatePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreatePolicyResult> createPolicyAsync(CreatePolicyRequest createPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePolicyRequest, CreatePolicyResult> asyncHandler);
@@ -738,6 +778,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createPolicyVersionRequest
      * @return A Java Future containing the result of the CreatePolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreatePolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreatePolicyVersionResult> createPolicyVersionAsync(CreatePolicyVersionRequest createPolicyVersionRequest);
 
@@ -764,6 +806,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreatePolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreatePolicyVersionResult> createPolicyVersionAsync(CreatePolicyVersionRequest createPolicyVersionRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePolicyVersionRequest, CreatePolicyVersionResult> asyncHandler);
@@ -780,6 +824,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createRoleRequest
      * @return A Java Future containing the result of the CreateRole operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateRoleResult> createRoleAsync(CreateRoleRequest createRoleRequest);
 
@@ -799,6 +844,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateRole operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateRoleResult> createRoleAsync(CreateRoleRequest createRoleRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRoleRequest, CreateRoleResult> asyncHandler);
@@ -836,6 +882,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createSAMLProviderRequest
      * @return A Java Future containing the result of the CreateSAMLProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateSAMLProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSAMLProviderResult> createSAMLProviderAsync(CreateSAMLProviderRequest createSAMLProviderRequest);
 
@@ -876,6 +924,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateSAMLProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateSAMLProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSAMLProviderResult> createSAMLProviderAsync(CreateSAMLProviderRequest createSAMLProviderRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSAMLProviderRequest, CreateSAMLProviderResult> asyncHandler);
@@ -904,6 +954,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the CreateServiceSpecificCredential operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.CreateServiceSpecificCredential
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateServiceSpecificCredentialResult> createServiceSpecificCredentialAsync(
             CreateServiceSpecificCredentialRequest createServiceSpecificCredentialRequest);
@@ -936,6 +988,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the CreateServiceSpecificCredential operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateServiceSpecificCredential
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateServiceSpecificCredentialResult> createServiceSpecificCredentialAsync(
             CreateServiceSpecificCredentialRequest createServiceSpecificCredentialRequest,
@@ -954,6 +1008,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createUserRequest
      * @return A Java Future containing the result of the CreateUser operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest);
 
@@ -974,6 +1029,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateUser operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler);
@@ -1001,6 +1057,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param createVirtualMFADeviceRequest
      * @return A Java Future containing the result of the CreateVirtualMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateVirtualMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateVirtualMFADeviceResult> createVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest);
 
@@ -1031,6 +1089,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateVirtualMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateVirtualMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateVirtualMFADeviceResult> createVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest,
             com.amazonaws.handlers.AsyncHandler<CreateVirtualMFADeviceRequest, CreateVirtualMFADeviceResult> asyncHandler);
@@ -1049,6 +1109,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deactivateMFADeviceRequest
      * @return A Java Future containing the result of the DeactivateMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeactivateMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeactivateMFADeviceResult> deactivateMFADeviceAsync(DeactivateMFADeviceRequest deactivateMFADeviceRequest);
 
@@ -1070,6 +1132,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeactivateMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeactivateMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeactivateMFADeviceResult> deactivateMFADeviceAsync(DeactivateMFADeviceRequest deactivateMFADeviceRequest,
             com.amazonaws.handlers.AsyncHandler<DeactivateMFADeviceRequest, DeactivateMFADeviceResult> asyncHandler);
@@ -1087,6 +1151,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteAccessKeyRequest
      * @return A Java Future containing the result of the DeleteAccessKey operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteAccessKeyResult> deleteAccessKeyAsync(DeleteAccessKeyRequest deleteAccessKeyRequest);
 
@@ -1107,6 +1172,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAccessKey operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteAccessKeyResult> deleteAccessKeyAsync(DeleteAccessKeyRequest deleteAccessKeyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccessKeyRequest, DeleteAccessKeyResult> asyncHandler);
@@ -1121,6 +1187,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteAccountAliasRequest
      * @return A Java Future containing the result of the DeleteAccountAlias operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteAccountAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAccountAliasResult> deleteAccountAliasAsync(DeleteAccountAliasRequest deleteAccountAliasRequest);
 
@@ -1138,6 +1206,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAccountAlias operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteAccountAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAccountAliasResult> deleteAccountAliasAsync(DeleteAccountAliasRequest deleteAccountAliasRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountAliasRequest, DeleteAccountAliasResult> asyncHandler);
@@ -1150,6 +1220,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteAccountPasswordPolicyRequest
      * @return A Java Future containing the result of the DeleteAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteAccountPasswordPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
             DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest);
@@ -1166,6 +1238,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteAccountPasswordPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
             DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest,
@@ -1194,6 +1268,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteGroupRequest
      * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest);
 
@@ -1209,6 +1284,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler);
@@ -1227,6 +1303,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteGroupPolicyRequest
      * @return A Java Future containing the result of the DeleteGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteGroupPolicyResult> deleteGroupPolicyAsync(DeleteGroupPolicyRequest deleteGroupPolicyRequest);
 
@@ -1248,6 +1325,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteGroupPolicyResult> deleteGroupPolicyAsync(DeleteGroupPolicyRequest deleteGroupPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteGroupPolicyRequest, DeleteGroupPolicyResult> asyncHandler);
@@ -1271,6 +1349,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteInstanceProfileRequest
      * @return A Java Future containing the result of the DeleteInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(DeleteInstanceProfileRequest deleteInstanceProfileRequest);
 
@@ -1297,6 +1377,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(DeleteInstanceProfileRequest deleteInstanceProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInstanceProfileRequest, DeleteInstanceProfileResult> asyncHandler);
@@ -1317,6 +1399,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteLoginProfileRequest
      * @return A Java Future containing the result of the DeleteLoginProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteLoginProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLoginProfileResult> deleteLoginProfileAsync(DeleteLoginProfileRequest deleteLoginProfileRequest);
 
@@ -1340,6 +1424,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteLoginProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteLoginProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLoginProfileResult> deleteLoginProfileAsync(DeleteLoginProfileRequest deleteLoginProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLoginProfileRequest, DeleteLoginProfileResult> asyncHandler);
@@ -1360,6 +1446,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteOpenIDConnectProviderRequest
      * @return A Java Future containing the result of the DeleteOpenIDConnectProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteOpenIDConnectProviderResult> deleteOpenIDConnectProviderAsync(
             DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest);
@@ -1384,6 +1472,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteOpenIDConnectProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteOpenIDConnectProviderResult> deleteOpenIDConnectProviderAsync(
             DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest,
@@ -1428,6 +1518,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deletePolicyRequest
      * @return A Java Future containing the result of the DeletePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeletePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(DeletePolicyRequest deletePolicyRequest);
 
@@ -1474,6 +1565,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeletePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(DeletePolicyRequest deletePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler);
@@ -1496,6 +1588,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deletePolicyVersionRequest
      * @return A Java Future containing the result of the DeletePolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeletePolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(DeletePolicyVersionRequest deletePolicyVersionRequest);
 
@@ -1521,6 +1615,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeletePolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(DeletePolicyVersionRequest deletePolicyVersionRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler);
@@ -1541,6 +1637,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteRoleRequest
      * @return A Java Future containing the result of the DeleteRole operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteRoleResult> deleteRoleAsync(DeleteRoleRequest deleteRoleRequest);
 
@@ -1564,6 +1661,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRole operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteRoleResult> deleteRoleAsync(DeleteRoleRequest deleteRoleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRoleRequest, DeleteRoleResult> asyncHandler);
@@ -1582,6 +1680,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteRolePolicyRequest
      * @return A Java Future containing the result of the DeleteRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(DeleteRolePolicyRequest deleteRolePolicyRequest);
 
@@ -1603,6 +1702,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(DeleteRolePolicyRequest deleteRolePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRolePolicyRequest, DeleteRolePolicyResult> asyncHandler);
@@ -1626,6 +1726,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteSAMLProviderRequest
      * @return A Java Future containing the result of the DeleteSAMLProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteSAMLProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSAMLProviderResult> deleteSAMLProviderAsync(DeleteSAMLProviderRequest deleteSAMLProviderRequest);
 
@@ -1652,6 +1754,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSAMLProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteSAMLProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSAMLProviderResult> deleteSAMLProviderAsync(DeleteSAMLProviderRequest deleteSAMLProviderRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSAMLProviderRequest, DeleteSAMLProviderResult> asyncHandler);
@@ -1670,6 +1774,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteSSHPublicKeyRequest
      * @return A Java Future containing the result of the DeleteSSHPublicKey operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteSSHPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSSHPublicKeyResult> deleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest);
 
@@ -1691,6 +1797,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSSHPublicKey operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteSSHPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSSHPublicKeyResult> deleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSSHPublicKeyRequest, DeleteSSHPublicKeyResult> asyncHandler);
@@ -1720,6 +1828,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteServerCertificateRequest
      * @return A Java Future containing the result of the DeleteServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteServerCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteServerCertificateResult> deleteServerCertificateAsync(DeleteServerCertificateRequest deleteServerCertificateRequest);
 
@@ -1752,6 +1862,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteServerCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteServerCertificateResult> deleteServerCertificateAsync(DeleteServerCertificateRequest deleteServerCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteServerCertificateRequest, DeleteServerCertificateResult> asyncHandler);
@@ -1765,6 +1877,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the DeleteServiceSpecificCredential operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.DeleteServiceSpecificCredential
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteServiceSpecificCredentialResult> deleteServiceSpecificCredentialAsync(
             DeleteServiceSpecificCredentialRequest deleteServiceSpecificCredentialRequest);
@@ -1782,6 +1896,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the DeleteServiceSpecificCredential operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteServiceSpecificCredential
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteServiceSpecificCredentialResult> deleteServiceSpecificCredentialAsync(
             DeleteServiceSpecificCredentialRequest deleteServiceSpecificCredentialRequest,
@@ -1800,6 +1916,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteSigningCertificateRequest
      * @return A Java Future containing the result of the DeleteSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSigningCertificateResult> deleteSigningCertificateAsync(DeleteSigningCertificateRequest deleteSigningCertificateRequest);
 
@@ -1820,6 +1938,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSigningCertificateResult> deleteSigningCertificateAsync(DeleteSigningCertificateRequest deleteSigningCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSigningCertificateRequest, DeleteSigningCertificateResult> asyncHandler);
@@ -1833,6 +1953,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteUserRequest
      * @return A Java Future containing the result of the DeleteUser operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest);
 
@@ -1849,6 +1970,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteUser operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
@@ -1867,6 +1989,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteUserPolicyRequest
      * @return A Java Future containing the result of the DeleteUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserPolicyResult> deleteUserPolicyAsync(DeleteUserPolicyRequest deleteUserPolicyRequest);
 
@@ -1888,6 +2011,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserPolicyResult> deleteUserPolicyAsync(DeleteUserPolicyRequest deleteUserPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserPolicyRequest, DeleteUserPolicyResult> asyncHandler);
@@ -1906,6 +2030,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param deleteVirtualMFADeviceRequest
      * @return A Java Future containing the result of the DeleteVirtualMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteVirtualMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteVirtualMFADeviceResult> deleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest);
 
@@ -1927,6 +2053,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteVirtualMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteVirtualMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteVirtualMFADeviceResult> deleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResult> asyncHandler);
@@ -1945,6 +2073,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param detachGroupPolicyRequest
      * @return A Java Future containing the result of the DetachGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DetachGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DetachGroupPolicyResult> detachGroupPolicyAsync(DetachGroupPolicyRequest detachGroupPolicyRequest);
 
@@ -1966,6 +2095,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DetachGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DetachGroupPolicyResult> detachGroupPolicyAsync(DetachGroupPolicyRequest detachGroupPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DetachGroupPolicyRequest, DetachGroupPolicyResult> asyncHandler);
@@ -1984,6 +2114,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param detachRolePolicyRequest
      * @return A Java Future containing the result of the DetachRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DetachRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DetachRolePolicyResult> detachRolePolicyAsync(DetachRolePolicyRequest detachRolePolicyRequest);
 
@@ -2005,6 +2136,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DetachRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DetachRolePolicyResult> detachRolePolicyAsync(DetachRolePolicyRequest detachRolePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DetachRolePolicyRequest, DetachRolePolicyResult> asyncHandler);
@@ -2023,6 +2155,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param detachUserPolicyRequest
      * @return A Java Future containing the result of the DetachUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DetachUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DetachUserPolicyResult> detachUserPolicyAsync(DetachUserPolicyRequest detachUserPolicyRequest);
 
@@ -2044,6 +2177,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DetachUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DetachUserPolicyResult> detachUserPolicyAsync(DetachUserPolicyRequest detachUserPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DetachUserPolicyRequest, DetachUserPolicyResult> asyncHandler);
@@ -2057,6 +2191,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param enableMFADeviceRequest
      * @return A Java Future containing the result of the EnableMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsync.EnableMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<EnableMFADeviceResult> enableMFADeviceAsync(EnableMFADeviceRequest enableMFADeviceRequest);
 
@@ -2073,6 +2208,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.EnableMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<EnableMFADeviceResult> enableMFADeviceAsync(EnableMFADeviceRequest enableMFADeviceRequest,
             com.amazonaws.handlers.AsyncHandler<EnableMFADeviceRequest, EnableMFADeviceResult> asyncHandler);
@@ -2087,6 +2223,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param generateCredentialReportRequest
      * @return A Java Future containing the result of the GenerateCredentialReport operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GenerateCredentialReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GenerateCredentialReportResult> generateCredentialReportAsync(GenerateCredentialReportRequest generateCredentialReportRequest);
 
@@ -2104,6 +2242,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GenerateCredentialReport operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GenerateCredentialReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GenerateCredentialReportResult> generateCredentialReportAsync(GenerateCredentialReportRequest generateCredentialReportRequest,
             com.amazonaws.handlers.AsyncHandler<GenerateCredentialReportRequest, GenerateCredentialReportResult> asyncHandler);
@@ -2133,6 +2273,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getAccessKeyLastUsedRequest
      * @return A Java Future containing the result of the GetAccessKeyLastUsed operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetAccessKeyLastUsed
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAccessKeyLastUsedResult> getAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest);
 
@@ -2150,6 +2292,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAccessKeyLastUsed operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetAccessKeyLastUsed
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAccessKeyLastUsedResult> getAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest,
             com.amazonaws.handlers.AsyncHandler<GetAccessKeyLastUsedRequest, GetAccessKeyLastUsedResult> asyncHandler);
@@ -2169,6 +2313,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the GetAccountAuthorizationDetails operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.GetAccountAuthorizationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAccountAuthorizationDetailsResult> getAccountAuthorizationDetailsAsync(
             GetAccountAuthorizationDetailsRequest getAccountAuthorizationDetailsRequest);
@@ -2192,6 +2338,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the GetAccountAuthorizationDetails operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.GetAccountAuthorizationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAccountAuthorizationDetailsResult> getAccountAuthorizationDetailsAsync(
             GetAccountAuthorizationDetailsRequest getAccountAuthorizationDetailsRequest,
@@ -2223,6 +2371,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getAccountPasswordPolicyRequest
      * @return A Java Future containing the result of the GetAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetAccountPasswordPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAccountPasswordPolicyResult> getAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest);
 
@@ -2240,6 +2390,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetAccountPasswordPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAccountPasswordPolicyResult> getAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResult> asyncHandler);
@@ -2272,6 +2424,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getAccountSummaryRequest
      * @return A Java Future containing the result of the GetAccountSummary operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetAccountSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetAccountSummaryResult> getAccountSummaryAsync(GetAccountSummaryRequest getAccountSummaryRequest);
 
@@ -2292,6 +2445,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAccountSummary operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetAccountSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetAccountSummaryResult> getAccountSummaryAsync(GetAccountSummaryRequest getAccountSummaryRequest,
             com.amazonaws.handlers.AsyncHandler<GetAccountSummaryRequest, GetAccountSummaryResult> asyncHandler);
@@ -2329,6 +2483,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the GetContextKeysForCustomPolicy operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.GetContextKeysForCustomPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetContextKeysForCustomPolicyResult> getContextKeysForCustomPolicyAsync(
             GetContextKeysForCustomPolicyRequest getContextKeysForCustomPolicyRequest);
@@ -2355,6 +2511,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the GetContextKeysForCustomPolicy operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.GetContextKeysForCustomPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetContextKeysForCustomPolicyResult> getContextKeysForCustomPolicyAsync(
             GetContextKeysForCustomPolicyRequest getContextKeysForCustomPolicyRequest,
@@ -2386,6 +2544,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the GetContextKeysForPrincipalPolicy operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.GetContextKeysForPrincipalPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetContextKeysForPrincipalPolicyResult> getContextKeysForPrincipalPolicyAsync(
             GetContextKeysForPrincipalPolicyRequest getContextKeysForPrincipalPolicyRequest);
@@ -2420,6 +2580,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the GetContextKeysForPrincipalPolicy operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.GetContextKeysForPrincipalPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetContextKeysForPrincipalPolicyResult> getContextKeysForPrincipalPolicyAsync(
             GetContextKeysForPrincipalPolicyRequest getContextKeysForPrincipalPolicyRequest,
@@ -2435,6 +2597,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getCredentialReportRequest
      * @return A Java Future containing the result of the GetCredentialReport operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetCredentialReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCredentialReportResult> getCredentialReportAsync(GetCredentialReportRequest getCredentialReportRequest);
 
@@ -2452,6 +2616,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCredentialReport operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetCredentialReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCredentialReportResult> getCredentialReportAsync(GetCredentialReportRequest getCredentialReportRequest,
             com.amazonaws.handlers.AsyncHandler<GetCredentialReportRequest, GetCredentialReportResult> asyncHandler);
@@ -2480,6 +2646,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getGroupRequest
      * @return A Java Future containing the result of the GetGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest);
 
@@ -2496,6 +2663,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler);
@@ -2526,6 +2694,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getGroupPolicyRequest
      * @return A Java Future containing the result of the GetGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetGroupPolicyResult> getGroupPolicyAsync(GetGroupPolicyRequest getGroupPolicyRequest);
 
@@ -2559,6 +2728,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetGroupPolicyResult> getGroupPolicyAsync(GetGroupPolicyRequest getGroupPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetGroupPolicyRequest, GetGroupPolicyResult> asyncHandler);
@@ -2574,6 +2744,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getInstanceProfileRequest
      * @return A Java Future containing the result of the GetInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceProfileResult> getInstanceProfileAsync(GetInstanceProfileRequest getInstanceProfileRequest);
 
@@ -2592,6 +2764,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceProfileResult> getInstanceProfileAsync(GetInstanceProfileRequest getInstanceProfileRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstanceProfileRequest, GetInstanceProfileResult> asyncHandler);
@@ -2605,6 +2779,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getLoginProfileRequest
      * @return A Java Future containing the result of the GetLoginProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetLoginProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetLoginProfileResult> getLoginProfileAsync(GetLoginProfileRequest getLoginProfileRequest);
 
@@ -2621,6 +2796,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetLoginProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetLoginProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetLoginProfileResult> getLoginProfileAsync(GetLoginProfileRequest getLoginProfileRequest,
             com.amazonaws.handlers.AsyncHandler<GetLoginProfileRequest, GetLoginProfileResult> asyncHandler);
@@ -2633,6 +2809,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getOpenIDConnectProviderRequest
      * @return A Java Future containing the result of the GetOpenIDConnectProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOpenIDConnectProviderResult> getOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest);
 
@@ -2648,6 +2826,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOpenIDConnectProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOpenIDConnectProviderResult> getOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest,
             com.amazonaws.handlers.AsyncHandler<GetOpenIDConnectProviderRequest, GetOpenIDConnectProviderResult> asyncHandler);
@@ -2674,6 +2854,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getPolicyRequest
      * @return A Java Future containing the result of the GetPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest);
 
@@ -2703,6 +2884,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler);
@@ -2741,6 +2923,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getPolicyVersionRequest
      * @return A Java Future containing the result of the GetPolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPolicyVersionResult> getPolicyVersionAsync(GetPolicyVersionRequest getPolicyVersionRequest);
 
@@ -2782,6 +2965,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPolicyVersionResult> getPolicyVersionAsync(GetPolicyVersionRequest getPolicyVersionRequest,
             com.amazonaws.handlers.AsyncHandler<GetPolicyVersionRequest, GetPolicyVersionResult> asyncHandler);
@@ -2804,6 +2988,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getRoleRequest
      * @return A Java Future containing the result of the GetRole operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRoleResult> getRoleAsync(GetRoleRequest getRoleRequest);
 
@@ -2829,6 +3014,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRole operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRoleResult> getRoleAsync(GetRoleRequest getRoleRequest,
             com.amazonaws.handlers.AsyncHandler<GetRoleRequest, GetRoleResult> asyncHandler);
@@ -2864,6 +3050,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getRolePolicyRequest
      * @return A Java Future containing the result of the GetRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRolePolicyResult> getRolePolicyAsync(GetRolePolicyRequest getRolePolicyRequest);
 
@@ -2902,6 +3089,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRolePolicyResult> getRolePolicyAsync(GetRolePolicyRequest getRolePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetRolePolicyRequest, GetRolePolicyResult> asyncHandler);
@@ -2921,6 +3109,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getSAMLProviderRequest
      * @return A Java Future containing the result of the GetSAMLProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetSAMLProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetSAMLProviderResult> getSAMLProviderAsync(GetSAMLProviderRequest getSAMLProviderRequest);
 
@@ -2943,6 +3132,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSAMLProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetSAMLProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetSAMLProviderResult> getSAMLProviderAsync(GetSAMLProviderRequest getSAMLProviderRequest,
             com.amazonaws.handlers.AsyncHandler<GetSAMLProviderRequest, GetSAMLProviderResult> asyncHandler);
@@ -2961,6 +3151,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getSSHPublicKeyRequest
      * @return A Java Future containing the result of the GetSSHPublicKey operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetSSHPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetSSHPublicKeyResult> getSSHPublicKeyAsync(GetSSHPublicKeyRequest getSSHPublicKeyRequest);
 
@@ -2982,6 +3173,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSSHPublicKey operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetSSHPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetSSHPublicKeyResult> getSSHPublicKeyAsync(GetSSHPublicKeyRequest getSSHPublicKeyRequest,
             com.amazonaws.handlers.AsyncHandler<GetSSHPublicKeyRequest, GetSSHPublicKeyResult> asyncHandler);
@@ -3000,6 +3192,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getServerCertificateRequest
      * @return A Java Future containing the result of the GetServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetServerCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetServerCertificateResult> getServerCertificateAsync(GetServerCertificateRequest getServerCertificateRequest);
 
@@ -3021,6 +3215,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetServerCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetServerCertificateResult> getServerCertificateAsync(GetServerCertificateRequest getServerCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<GetServerCertificateRequest, GetServerCertificateResult> asyncHandler);
@@ -3037,6 +3233,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getUserRequest
      * @return A Java Future containing the result of the GetUser operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest getUserRequest);
 
@@ -3056,6 +3253,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetUser operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest getUserRequest,
             com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult> asyncHandler);
@@ -3100,6 +3298,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param getUserPolicyRequest
      * @return A Java Future containing the result of the GetUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.GetUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetUserPolicyResult> getUserPolicyAsync(GetUserPolicyRequest getUserPolicyRequest);
 
@@ -3133,6 +3332,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.GetUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetUserPolicyResult> getUserPolicyAsync(GetUserPolicyRequest getUserPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetUserPolicyRequest, GetUserPolicyResult> asyncHandler);
@@ -3161,6 +3361,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listAccessKeysRequest
      * @return A Java Future containing the result of the ListAccessKeys operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListAccessKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAccessKeysResult> listAccessKeysAsync(ListAccessKeysRequest listAccessKeysRequest);
 
@@ -3192,6 +3393,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAccessKeys operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListAccessKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAccessKeysResult> listAccessKeysAsync(ListAccessKeysRequest listAccessKeysRequest,
             com.amazonaws.handlers.AsyncHandler<ListAccessKeysRequest, ListAccessKeysResult> asyncHandler);
@@ -3221,6 +3423,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listAccountAliasesRequest
      * @return A Java Future containing the result of the ListAccountAliases operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListAccountAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAccountAliasesResult> listAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest);
 
@@ -3238,6 +3442,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAccountAliases operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListAccountAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAccountAliasesResult> listAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAccountAliasesRequest, ListAccountAliasesResult> asyncHandler);
@@ -3277,6 +3483,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listAttachedGroupPoliciesRequest
      * @return A Java Future containing the result of the ListAttachedGroupPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListAttachedGroupPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAttachedGroupPoliciesResult> listAttachedGroupPoliciesAsync(
             ListAttachedGroupPoliciesRequest listAttachedGroupPoliciesRequest);
@@ -3305,6 +3513,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAttachedGroupPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListAttachedGroupPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAttachedGroupPoliciesResult> listAttachedGroupPoliciesAsync(
             ListAttachedGroupPoliciesRequest listAttachedGroupPoliciesRequest,
@@ -3330,6 +3540,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listAttachedRolePoliciesRequest
      * @return A Java Future containing the result of the ListAttachedRolePolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListAttachedRolePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAttachedRolePoliciesResult> listAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest listAttachedRolePoliciesRequest);
 
@@ -3357,6 +3569,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAttachedRolePolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListAttachedRolePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAttachedRolePoliciesResult> listAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest listAttachedRolePoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAttachedRolePoliciesRequest, ListAttachedRolePoliciesResult> asyncHandler);
@@ -3381,6 +3595,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listAttachedUserPoliciesRequest
      * @return A Java Future containing the result of the ListAttachedUserPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListAttachedUserPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAttachedUserPoliciesResult> listAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest listAttachedUserPoliciesRequest);
 
@@ -3408,6 +3624,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAttachedUserPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListAttachedUserPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAttachedUserPoliciesResult> listAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest listAttachedUserPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAttachedUserPoliciesRequest, ListAttachedUserPoliciesResult> asyncHandler);
@@ -3428,6 +3646,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listEntitiesForPolicyRequest
      * @return A Java Future containing the result of the ListEntitiesForPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListEntitiesForPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListEntitiesForPolicyResult> listEntitiesForPolicyAsync(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest);
 
@@ -3451,6 +3671,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListEntitiesForPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListEntitiesForPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListEntitiesForPolicyResult> listEntitiesForPolicyAsync(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResult> asyncHandler);
@@ -3473,6 +3695,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listGroupPoliciesRequest
      * @return A Java Future containing the result of the ListGroupPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListGroupPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListGroupPoliciesResult> listGroupPoliciesAsync(ListGroupPoliciesRequest listGroupPoliciesRequest);
 
@@ -3498,6 +3721,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListGroupPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListGroupPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListGroupPoliciesResult> listGroupPoliciesAsync(ListGroupPoliciesRequest listGroupPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListGroupPoliciesRequest, ListGroupPoliciesResult> asyncHandler);
@@ -3513,6 +3737,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listGroupsRequest
      * @return A Java Future containing the result of the ListGroups operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest listGroupsRequest);
 
@@ -3531,6 +3756,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListGroups operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest listGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler);
@@ -3560,6 +3786,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listGroupsForUserRequest
      * @return A Java Future containing the result of the ListGroupsForUser operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListGroupsForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListGroupsForUserResult> listGroupsForUserAsync(ListGroupsForUserRequest listGroupsForUserRequest);
 
@@ -3578,6 +3805,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListGroupsForUser operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListGroupsForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListGroupsForUserResult> listGroupsForUserAsync(ListGroupsForUserRequest listGroupsForUserRequest,
             com.amazonaws.handlers.AsyncHandler<ListGroupsForUserRequest, ListGroupsForUserResult> asyncHandler);
@@ -3595,6 +3823,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listInstanceProfilesRequest
      * @return A Java Future containing the result of the ListInstanceProfiles operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListInstanceProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(ListInstanceProfilesRequest listInstanceProfilesRequest);
 
@@ -3615,6 +3845,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListInstanceProfiles operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListInstanceProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(ListInstanceProfilesRequest listInstanceProfilesRequest,
             com.amazonaws.handlers.AsyncHandler<ListInstanceProfilesRequest, ListInstanceProfilesResult> asyncHandler);
@@ -3647,6 +3879,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listInstanceProfilesForRoleRequest
      * @return A Java Future containing the result of the ListInstanceProfilesForRole operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListInstanceProfilesForRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListInstanceProfilesForRoleResult> listInstanceProfilesForRoleAsync(
             ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest);
@@ -3668,6 +3902,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListInstanceProfilesForRole operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListInstanceProfilesForRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListInstanceProfilesForRoleResult> listInstanceProfilesForRoleAsync(
             ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest,
@@ -3686,6 +3922,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listMFADevicesRequest
      * @return A Java Future containing the result of the ListMFADevices operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListMFADevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListMFADevicesResult> listMFADevicesAsync(ListMFADevicesRequest listMFADevicesRequest);
 
@@ -3706,6 +3943,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListMFADevices operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListMFADevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListMFADevicesResult> listMFADevicesAsync(ListMFADevicesRequest listMFADevicesRequest,
             com.amazonaws.handlers.AsyncHandler<ListMFADevicesRequest, ListMFADevicesResult> asyncHandler);
@@ -3733,6 +3971,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listOpenIDConnectProvidersRequest
      * @return A Java Future containing the result of the ListOpenIDConnectProviders operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListOpenIDConnectProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListOpenIDConnectProvidersResult> listOpenIDConnectProvidersAsync(
             ListOpenIDConnectProvidersRequest listOpenIDConnectProvidersRequest);
@@ -3749,6 +3989,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListOpenIDConnectProviders operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListOpenIDConnectProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListOpenIDConnectProvidersResult> listOpenIDConnectProvidersAsync(
             ListOpenIDConnectProvidersRequest listOpenIDConnectProvidersRequest,
@@ -3792,6 +4034,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listPoliciesRequest
      * @return A Java Future containing the result of the ListPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(ListPoliciesRequest listPoliciesRequest);
 
@@ -3822,6 +4065,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(ListPoliciesRequest listPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult> asyncHandler);
@@ -3854,6 +4098,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listPolicyVersionsRequest
      * @return A Java Future containing the result of the ListPolicyVersions operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(ListPolicyVersionsRequest listPolicyVersionsRequest);
 
@@ -3875,6 +4121,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPolicyVersions operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListPolicyVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(ListPolicyVersionsRequest listPolicyVersionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPolicyVersionsRequest, ListPolicyVersionsResult> asyncHandler);
@@ -3897,6 +4145,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listRolePoliciesRequest
      * @return A Java Future containing the result of the ListRolePolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListRolePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListRolePoliciesResult> listRolePoliciesAsync(ListRolePoliciesRequest listRolePoliciesRequest);
 
@@ -3922,6 +4171,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRolePolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListRolePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListRolePoliciesResult> listRolePoliciesAsync(ListRolePoliciesRequest listRolePoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRolePoliciesRequest, ListRolePoliciesResult> asyncHandler);
@@ -3939,6 +4189,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listRolesRequest
      * @return A Java Future containing the result of the ListRoles operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListRolesResult> listRolesAsync(ListRolesRequest listRolesRequest);
 
@@ -3959,6 +4210,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRoles operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListRolesResult> listRolesAsync(ListRolesRequest listRolesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRolesRequest, ListRolesResult> asyncHandler);
@@ -3991,6 +4243,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listSAMLProvidersRequest
      * @return A Java Future containing the result of the ListSAMLProviders operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListSAMLProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListSAMLProvidersResult> listSAMLProvidersAsync(ListSAMLProvidersRequest listSAMLProvidersRequest);
 
@@ -4012,6 +4265,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListSAMLProviders operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListSAMLProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListSAMLProvidersResult> listSAMLProvidersAsync(ListSAMLProvidersRequest listSAMLProvidersRequest,
             com.amazonaws.handlers.AsyncHandler<ListSAMLProvidersRequest, ListSAMLProvidersResult> asyncHandler);
@@ -4050,6 +4304,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listSSHPublicKeysRequest
      * @return A Java Future containing the result of the ListSSHPublicKeys operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListSSHPublicKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListSSHPublicKeysResult> listSSHPublicKeysAsync(ListSSHPublicKeysRequest listSSHPublicKeysRequest);
 
@@ -4076,6 +4331,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListSSHPublicKeys operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListSSHPublicKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListSSHPublicKeysResult> listSSHPublicKeysAsync(ListSSHPublicKeysRequest listSSHPublicKeysRequest,
             com.amazonaws.handlers.AsyncHandler<ListSSHPublicKeysRequest, ListSSHPublicKeysResult> asyncHandler);
@@ -4113,6 +4369,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listServerCertificatesRequest
      * @return A Java Future containing the result of the ListServerCertificates operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListServerCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListServerCertificatesResult> listServerCertificatesAsync(ListServerCertificatesRequest listServerCertificatesRequest);
 
@@ -4138,6 +4396,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListServerCertificates operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListServerCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListServerCertificatesResult> listServerCertificatesAsync(ListServerCertificatesRequest listServerCertificatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListServerCertificatesRequest, ListServerCertificatesResult> asyncHandler);
@@ -4171,6 +4431,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the ListServiceSpecificCredentials operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.ListServiceSpecificCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListServiceSpecificCredentialsResult> listServiceSpecificCredentialsAsync(
             ListServiceSpecificCredentialsRequest listServiceSpecificCredentialsRequest);
@@ -4193,6 +4455,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the ListServiceSpecificCredentials operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.ListServiceSpecificCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListServiceSpecificCredentialsResult> listServiceSpecificCredentialsAsync(
             ListServiceSpecificCredentialsRequest listServiceSpecificCredentialsRequest,
@@ -4216,6 +4480,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listSigningCertificatesRequest
      * @return A Java Future containing the result of the ListSigningCertificates operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListSigningCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListSigningCertificatesResult> listSigningCertificatesAsync(ListSigningCertificatesRequest listSigningCertificatesRequest);
 
@@ -4241,6 +4507,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListSigningCertificates operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListSigningCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListSigningCertificatesResult> listSigningCertificatesAsync(ListSigningCertificatesRequest listSigningCertificatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListSigningCertificatesRequest, ListSigningCertificatesResult> asyncHandler);
@@ -4278,6 +4546,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listUserPoliciesRequest
      * @return A Java Future containing the result of the ListUserPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListUserPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListUserPoliciesResult> listUserPoliciesAsync(ListUserPoliciesRequest listUserPoliciesRequest);
 
@@ -4303,6 +4572,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUserPolicies operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListUserPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListUserPoliciesResult> listUserPoliciesAsync(ListUserPoliciesRequest listUserPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListUserPoliciesRequest, ListUserPoliciesResult> asyncHandler);
@@ -4319,6 +4589,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listUsersRequest
      * @return A Java Future containing the result of the ListUsers operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest);
 
@@ -4338,6 +4609,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUsers operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler);
@@ -4369,6 +4641,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param listVirtualMFADevicesRequest
      * @return A Java Future containing the result of the ListVirtualMFADevices operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ListVirtualMFADevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListVirtualMFADevicesResult> listVirtualMFADevicesAsync(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest);
 
@@ -4389,6 +4663,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListVirtualMFADevices operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ListVirtualMFADevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListVirtualMFADevicesResult> listVirtualMFADevicesAsync(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest,
             com.amazonaws.handlers.AsyncHandler<ListVirtualMFADevicesRequest, ListVirtualMFADevicesResult> asyncHandler);
@@ -4435,6 +4711,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param putGroupPolicyRequest
      * @return A Java Future containing the result of the PutGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.PutGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutGroupPolicyResult> putGroupPolicyAsync(PutGroupPolicyRequest putGroupPolicyRequest);
 
@@ -4469,6 +4746,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutGroupPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.PutGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutGroupPolicyResult> putGroupPolicyAsync(PutGroupPolicyRequest putGroupPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutGroupPolicyRequest, PutGroupPolicyResult> asyncHandler);
@@ -4507,6 +4785,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param putRolePolicyRequest
      * @return A Java Future containing the result of the PutRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.PutRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(PutRolePolicyRequest putRolePolicyRequest);
 
@@ -4548,6 +4827,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.PutRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(PutRolePolicyRequest putRolePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutRolePolicyRequest, PutRolePolicyResult> asyncHandler);
@@ -4579,6 +4859,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param putUserPolicyRequest
      * @return A Java Future containing the result of the PutUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.PutUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutUserPolicyResult> putUserPolicyAsync(PutUserPolicyRequest putUserPolicyRequest);
 
@@ -4613,6 +4894,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutUserPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.PutUserPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutUserPolicyResult> putUserPolicyAsync(PutUserPolicyRequest putUserPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutUserPolicyRequest, PutUserPolicyResult> asyncHandler);
@@ -4631,6 +4913,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the RemoveClientIDFromOpenIDConnectProvider operation returned by
      *         the service.
      * @sample AmazonIdentityManagementAsync.RemoveClientIDFromOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<RemoveClientIDFromOpenIDConnectProviderResult> removeClientIDFromOpenIDConnectProviderAsync(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest);
@@ -4653,6 +4937,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the RemoveClientIDFromOpenIDConnectProvider operation returned by
      *         the service.
      * @sample AmazonIdentityManagementAsyncHandler.RemoveClientIDFromOpenIDConnectProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<RemoveClientIDFromOpenIDConnectProviderResult> removeClientIDFromOpenIDConnectProviderAsync(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest,
@@ -4680,6 +4966,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the RemoveRoleFromInstanceProfile operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.RemoveRoleFromInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveRoleFromInstanceProfileResult> removeRoleFromInstanceProfileAsync(
             RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest);
@@ -4710,6 +4998,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the RemoveRoleFromInstanceProfile operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.RemoveRoleFromInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveRoleFromInstanceProfileResult> removeRoleFromInstanceProfileAsync(
             RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest,
@@ -4723,6 +5013,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param removeUserFromGroupRequest
      * @return A Java Future containing the result of the RemoveUserFromGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsync.RemoveUserFromGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveUserFromGroupResult> removeUserFromGroupAsync(RemoveUserFromGroupRequest removeUserFromGroupRequest);
 
@@ -4738,6 +5030,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveUserFromGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.RemoveUserFromGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveUserFromGroupResult> removeUserFromGroupAsync(RemoveUserFromGroupRequest removeUserFromGroupRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveUserFromGroupRequest, RemoveUserFromGroupResult> asyncHandler);
@@ -4753,6 +5047,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the ResetServiceSpecificCredential operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.ResetServiceSpecificCredential
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResetServiceSpecificCredentialResult> resetServiceSpecificCredentialAsync(
             ResetServiceSpecificCredentialRequest resetServiceSpecificCredentialRequest);
@@ -4772,6 +5068,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the ResetServiceSpecificCredential operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.ResetServiceSpecificCredential
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResetServiceSpecificCredentialResult> resetServiceSpecificCredentialAsync(
             ResetServiceSpecificCredentialRequest resetServiceSpecificCredentialRequest,
@@ -4790,6 +5088,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param resyncMFADeviceRequest
      * @return A Java Future containing the result of the ResyncMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ResyncMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ResyncMFADeviceResult> resyncMFADeviceAsync(ResyncMFADeviceRequest resyncMFADeviceRequest);
 
@@ -4810,6 +5109,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ResyncMFADevice operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ResyncMFADevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ResyncMFADeviceResult> resyncMFADeviceAsync(ResyncMFADeviceRequest resyncMFADeviceRequest,
             com.amazonaws.handlers.AsyncHandler<ResyncMFADeviceRequest, ResyncMFADeviceResult> asyncHandler);
@@ -4831,6 +5131,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param setDefaultPolicyVersionRequest
      * @return A Java Future containing the result of the SetDefaultPolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsync.SetDefaultPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
 
@@ -4855,6 +5157,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetDefaultPolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.SetDefaultPolicyVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest,
             com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult> asyncHandler);
@@ -4886,6 +5190,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param simulateCustomPolicyRequest
      * @return A Java Future containing the result of the SimulateCustomPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.SimulateCustomPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SimulateCustomPolicyResult> simulateCustomPolicyAsync(SimulateCustomPolicyRequest simulateCustomPolicyRequest);
 
@@ -4920,6 +5226,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SimulateCustomPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.SimulateCustomPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SimulateCustomPolicyResult> simulateCustomPolicyAsync(SimulateCustomPolicyRequest simulateCustomPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<SimulateCustomPolicyRequest, SimulateCustomPolicyResult> asyncHandler);
@@ -4961,6 +5269,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param simulatePrincipalPolicyRequest
      * @return A Java Future containing the result of the SimulatePrincipalPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.SimulatePrincipalPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SimulatePrincipalPolicyResult> simulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest simulatePrincipalPolicyRequest);
 
@@ -5005,6 +5315,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SimulatePrincipalPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.SimulatePrincipalPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SimulatePrincipalPolicyResult> simulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest simulatePrincipalPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<SimulatePrincipalPolicyRequest, SimulatePrincipalPolicyResult> asyncHandler);
@@ -5028,6 +5340,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateAccessKeyRequest
      * @return A Java Future containing the result of the UpdateAccessKey operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateAccessKeyResult> updateAccessKeyAsync(UpdateAccessKeyRequest updateAccessKeyRequest);
 
@@ -5054,6 +5367,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAccessKey operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateAccessKeyResult> updateAccessKeyAsync(UpdateAccessKeyRequest updateAccessKeyRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAccessKeyRequest, UpdateAccessKeyResult> asyncHandler);
@@ -5078,6 +5392,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateAccountPasswordPolicyRequest
      * @return A Java Future containing the result of the UpdateAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateAccountPasswordPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAccountPasswordPolicyResult> updateAccountPasswordPolicyAsync(
             UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest);
@@ -5106,6 +5422,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateAccountPasswordPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAccountPasswordPolicyResult> updateAccountPasswordPolicyAsync(
             UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest,
@@ -5122,6 +5440,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateAssumeRolePolicyRequest
      * @return A Java Future containing the result of the UpdateAssumeRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateAssumeRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAssumeRolePolicyResult> updateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest);
 
@@ -5140,6 +5460,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAssumeRolePolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateAssumeRolePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAssumeRolePolicyResult> updateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResult> asyncHandler);
@@ -5166,6 +5488,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateGroupRequest
      * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest);
 
@@ -5195,6 +5518,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler);
@@ -5212,6 +5536,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateLoginProfileRequest
      * @return A Java Future containing the result of the UpdateLoginProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateLoginProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateLoginProfileResult> updateLoginProfileAsync(UpdateLoginProfileRequest updateLoginProfileRequest);
 
@@ -5232,6 +5558,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateLoginProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateLoginProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateLoginProfileResult> updateLoginProfileAsync(UpdateLoginProfileRequest updateLoginProfileRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLoginProfileRequest, UpdateLoginProfileResult> asyncHandler);
@@ -5262,6 +5590,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the UpdateOpenIDConnectProviderThumbprint operation returned by
      *         the service.
      * @sample AmazonIdentityManagementAsync.UpdateOpenIDConnectProviderThumbprint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateOpenIDConnectProviderThumbprintResult> updateOpenIDConnectProviderThumbprintAsync(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest);
@@ -5296,6 +5626,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the UpdateOpenIDConnectProviderThumbprint operation returned by
      *         the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateOpenIDConnectProviderThumbprint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateOpenIDConnectProviderThumbprintResult> updateOpenIDConnectProviderThumbprintAsync(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest,
@@ -5315,6 +5647,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateSAMLProviderRequest
      * @return A Java Future containing the result of the UpdateSAMLProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateSAMLProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSAMLProviderResult> updateSAMLProviderAsync(UpdateSAMLProviderRequest updateSAMLProviderRequest);
 
@@ -5336,6 +5670,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSAMLProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateSAMLProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSAMLProviderResult> updateSAMLProviderAsync(UpdateSAMLProviderRequest updateSAMLProviderRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSAMLProviderRequest, UpdateSAMLProviderResult> asyncHandler);
@@ -5356,6 +5692,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateSSHPublicKeyRequest
      * @return A Java Future containing the result of the UpdateSSHPublicKey operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateSSHPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSSHPublicKeyResult> updateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest);
 
@@ -5379,6 +5717,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSSHPublicKey operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateSSHPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSSHPublicKeyResult> updateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSSHPublicKeyRequest, UpdateSSHPublicKeyResult> asyncHandler);
@@ -5413,6 +5753,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateServerCertificateRequest
      * @return A Java Future containing the result of the UpdateServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateServerCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateServerCertificateResult> updateServerCertificateAsync(UpdateServerCertificateRequest updateServerCertificateRequest);
 
@@ -5450,6 +5792,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateServerCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateServerCertificateResult> updateServerCertificateAsync(UpdateServerCertificateRequest updateServerCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateServerCertificateRequest, UpdateServerCertificateResult> asyncHandler);
@@ -5465,6 +5809,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the UpdateServiceSpecificCredential operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsync.UpdateServiceSpecificCredential
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateServiceSpecificCredentialResult> updateServiceSpecificCredentialAsync(
             UpdateServiceSpecificCredentialRequest updateServiceSpecificCredentialRequest);
@@ -5484,6 +5830,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @return A Java Future containing the result of the UpdateServiceSpecificCredential operation returned by the
      *         service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateServiceSpecificCredential
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateServiceSpecificCredentialResult> updateServiceSpecificCredentialAsync(
             UpdateServiceSpecificCredentialRequest updateServiceSpecificCredentialRequest,
@@ -5503,6 +5851,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateSigningCertificateRequest
      * @return A Java Future containing the result of the UpdateSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSigningCertificateResult> updateSigningCertificateAsync(UpdateSigningCertificateRequest updateSigningCertificateRequest);
 
@@ -5524,6 +5874,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSigningCertificateResult> updateSigningCertificateAsync(UpdateSigningCertificateRequest updateSigningCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSigningCertificateRequest, UpdateSigningCertificateResult> asyncHandler);
@@ -5551,6 +5903,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param updateUserRequest
      * @return A Java Future containing the result of the UpdateUser operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest updateUserRequest);
 
@@ -5581,6 +5934,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateUser operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest updateUserRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler);
@@ -5599,6 +5953,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param uploadSSHPublicKeyRequest
      * @return A Java Future containing the result of the UploadSSHPublicKey operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UploadSSHPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UploadSSHPublicKeyResult> uploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest);
 
@@ -5620,6 +5976,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UploadSSHPublicKey operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UploadSSHPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UploadSSHPublicKeyResult> uploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest,
             com.amazonaws.handlers.AsyncHandler<UploadSSHPublicKeyRequest, UploadSSHPublicKeyResult> asyncHandler);
@@ -5655,6 +6013,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param uploadServerCertificateRequest
      * @return A Java Future containing the result of the UploadServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UploadServerCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UploadServerCertificateResult> uploadServerCertificateAsync(UploadServerCertificateRequest uploadServerCertificateRequest);
 
@@ -5693,6 +6053,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UploadServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UploadServerCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UploadServerCertificateResult> uploadServerCertificateAsync(UploadServerCertificateRequest uploadServerCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<UploadServerCertificateRequest, UploadServerCertificateResult> asyncHandler);
@@ -5722,6 +6084,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @param uploadSigningCertificateRequest
      * @return A Java Future containing the result of the UploadSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UploadSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UploadSigningCertificateResult> uploadSigningCertificateAsync(UploadSigningCertificateRequest uploadSigningCertificateRequest);
 
@@ -5754,6 +6118,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UploadSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UploadSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UploadSigningCertificateResult> uploadSigningCertificateAsync(UploadSigningCertificateRequest uploadSigningCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<UploadSigningCertificateRequest, UploadSigningCertificateResult> asyncHandler);

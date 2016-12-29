@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a running instance in a Spot fleet.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ActiveInstance"/>AWS API Documentation</a>
  */
 public class ActiveInstance implements Serializable, Cloneable {
 

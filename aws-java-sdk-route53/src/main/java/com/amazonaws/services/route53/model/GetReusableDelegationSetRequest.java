@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for a <code>GetReusableDelegationSet</code> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet"/>AWS API
+ *      Documentation</a>
  */
 public class GetReusableDelegationSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

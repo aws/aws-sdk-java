@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the requested sending authorization policies.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies"/>AWS API Documentation</a>
  */
 public class GetIdentityPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

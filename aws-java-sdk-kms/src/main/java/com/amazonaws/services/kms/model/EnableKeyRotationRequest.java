@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation"/>AWS API Documentation</a>
  */
 public class EnableKeyRotationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

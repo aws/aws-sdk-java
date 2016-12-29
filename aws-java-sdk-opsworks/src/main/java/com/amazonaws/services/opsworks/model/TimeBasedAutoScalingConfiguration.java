@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an instance's time-based auto scaling configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TimeBasedAutoScalingConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class TimeBasedAutoScalingConfiguration implements Serializable, Cloneable {
 

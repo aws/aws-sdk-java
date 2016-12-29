@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Provides the bucket name and object key name that stores the reference data.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3ReferenceDataSourceDescription"/>AWS
+ *      API Documentation</a>
  */
 public class S3ReferenceDataSourceDescription implements Serializable, Cloneable {
 

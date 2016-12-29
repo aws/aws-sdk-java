@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object.
  * The complete set of components of a pipeline defines the pipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PipelineObject"/>AWS API
+ *      Documentation</a>
  */
 public class PipelineObject implements Serializable, Cloneable {
 

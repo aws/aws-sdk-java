@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Detailed information about a ProvisionedProduct object.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionedProductDetail"/>AWS API
+ *      Documentation</a>
  */
 public class ProvisionedProductDetail implements Serializable, Cloneable {
 

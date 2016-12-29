@@ -19,6 +19,10 @@ import java.io.Serializable;
  * Describes the information about a task invocation for a particular target as part of a task execution performed as
  * part of a Maintenance Window execution.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecutionTaskInvocationIdentity"/>AWS
+ *      API Documentation</a>
  */
 public class MaintenanceWindowExecutionTaskInvocationIdentity implements Serializable, Cloneable {
 

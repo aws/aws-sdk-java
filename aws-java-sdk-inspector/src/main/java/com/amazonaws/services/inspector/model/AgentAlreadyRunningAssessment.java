@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Used in the exception error that is thrown if you start an assessment run for an assessment target that includes an
  * EC2 instance that is already participating in another started assessment run.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AgentAlreadyRunningAssessment"/>AWS API
+ *      Documentation</a>
  */
 public class AgentAlreadyRunningAssessment implements Serializable, Cloneable {
 

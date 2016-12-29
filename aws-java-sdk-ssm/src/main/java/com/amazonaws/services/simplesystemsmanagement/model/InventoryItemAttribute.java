@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Attributes are the entries within the inventory item content. It contains name and value.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryItemAttribute"/>AWS API
+ *      Documentation</a>
  */
 public class InventoryItemAttribute implements Serializable, Cloneable {
 

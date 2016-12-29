@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The cost associated with the Reserved Instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservationValue"/>AWS API Documentation</a>
  */
 public class ReservationValue implements Serializable, Cloneable {
 

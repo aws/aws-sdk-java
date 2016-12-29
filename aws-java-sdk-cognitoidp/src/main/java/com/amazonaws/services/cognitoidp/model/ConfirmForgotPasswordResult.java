@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response from the server that results from a user's request to retrieve a forgotten password.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword"/>AWS API
+ *      Documentation</a>
  */
 public class ConfirmForgotPasswordResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

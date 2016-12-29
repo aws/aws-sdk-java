@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The location of the Amazon S3 bucket that contains a revision.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/S3ArtifactLocation"/>AWS API
+ *      Documentation</a>
  */
 public class S3ArtifactLocation implements Serializable, Cloneable {
 

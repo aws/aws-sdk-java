@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output from DescribeNotificationConfigurations.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeNotificationConfigurationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A structure containing information about a new private virtual interface.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPrivateVirtualInterface"/>AWS API
+ *      Documentation</a>
  */
 public class NewPrivateVirtualInterface implements Serializable, Cloneable {
 

@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "iotdata",
     "targetPrefix" : null,
+    "uid" : "iot-data-2015-05-28",
     "xmlNamespace" : null
   },
   "operations" : {

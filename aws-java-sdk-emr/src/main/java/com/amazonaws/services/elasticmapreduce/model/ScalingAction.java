@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingAction"/>AWS API
+ *      Documentation</a>
  */
 public class ScalingAction implements Serializable, Cloneable {
 

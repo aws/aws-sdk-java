@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecord"/>AWS API
+ *      Documentation</a>
  */
 public class UsageRecord implements Serializable, Cloneable {
 

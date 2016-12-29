@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static com.amazonaws.codegen.internal.DocumentationUtils.createLinkToServiceDocumentation;
 import static com.amazonaws.codegen.utils.FunctionalUtils.safeFunction;
 
 public class ModelClassGeneratorTasks extends BaseGeneratorTasks {
@@ -66,6 +67,7 @@ public class ModelClassGeneratorTasks extends BaseGeneratorTasks {
                 .put("baseClassFqcn", getModelBaseClassFqcn(shapeModel.getShapeType()))
                 .put("customConfig", model.getCustomizationConfig())
                 .put("shouldGenerateSdkRequestConfigSetter", shouldGenerateSdkRequestConfigSetter(shapeModel))
+                .put("awsDocsUrl", createLinkToServiceDocumentation(metadata, shapeModel))
                 .build();
 
         // Submit task for generating the

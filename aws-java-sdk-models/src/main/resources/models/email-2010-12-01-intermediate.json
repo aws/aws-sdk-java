@@ -105,6 +105,7 @@
     "syncClient" : "AmazonSimpleEmailServiceClient",
     "syncClientBuilderClassName" : "AmazonSimpleEmailServiceClientBuilder",
     "syncInterface" : "AmazonSimpleEmailService",
+    "uid" : "email-2010-12-01",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

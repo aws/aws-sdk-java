@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Description of the file system.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemDescription"/>AWS API
+ *      Documentation</a>
  */
 public class FileSystemDescription implements Serializable, Cloneable {
 

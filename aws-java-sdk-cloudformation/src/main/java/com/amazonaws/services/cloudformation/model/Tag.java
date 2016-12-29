@@ -19,6 +19,8 @@ import java.io.Serializable;
  * The Tag type enables you to specify a key-value pair that can be used to store information about an AWS
  * CloudFormation stack.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

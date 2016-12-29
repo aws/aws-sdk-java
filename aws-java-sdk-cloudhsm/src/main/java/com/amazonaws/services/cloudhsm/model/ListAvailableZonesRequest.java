@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the inputs for the <a>ListAvailableZones</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones"/>AWS API
+ *      Documentation</a>
  */
 public class ListAvailableZonesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

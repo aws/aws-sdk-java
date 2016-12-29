@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the parameters for a document.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociationDescription"/>AWS API
+ *      Documentation</a>
  */
 public class AssociationDescription implements Serializable, Cloneable {
 

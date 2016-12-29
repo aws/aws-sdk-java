@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A structure containing the Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Loa"/>AWS API Documentation</a>
  */
 public class Loa implements Serializable, Cloneable {
 

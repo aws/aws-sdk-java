@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/StreamingDistributionConfigWithTags"/>AWS
+ *      API Documentation</a>
  */
 public class StreamingDistributionConfigWithTags implements Serializable, Cloneable {
 

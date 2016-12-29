@@ -28,6 +28,8 @@ import java.io.Serializable;
  * secret access key, you must create a new access key.
  * </p>
  * </note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKey"/>AWS API Documentation</a>
  */
 public class AccessKey implements Serializable, Cloneable {
 

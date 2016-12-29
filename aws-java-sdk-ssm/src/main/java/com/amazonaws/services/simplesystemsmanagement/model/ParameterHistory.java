@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about parameter usage.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterHistory"/>AWS API Documentation</a>
  */
 public class ParameterHistory implements Serializable, Cloneable {
 

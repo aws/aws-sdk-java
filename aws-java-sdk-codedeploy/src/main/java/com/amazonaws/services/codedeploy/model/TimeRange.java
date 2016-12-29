@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a time range.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TimeRange"/>AWS API Documentation</a>
  */
 public class TimeRange implements Serializable, Cloneable {
 

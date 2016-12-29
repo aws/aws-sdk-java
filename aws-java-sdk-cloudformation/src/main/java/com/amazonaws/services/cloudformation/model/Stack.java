@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The Stack data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Stack"/>AWS API Documentation</a>
  */
 public class Stack implements Serializable, Cloneable {
 

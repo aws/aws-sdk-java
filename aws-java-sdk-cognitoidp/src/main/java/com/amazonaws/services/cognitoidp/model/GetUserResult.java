@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server from the request to get information about the user.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser"/>AWS API Documentation</a>
  */
 public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

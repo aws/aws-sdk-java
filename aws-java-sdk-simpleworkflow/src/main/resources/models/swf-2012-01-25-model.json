@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "swf",
     "targetPrefix" : "SimpleWorkflowService",
+    "uid" : "swf-2012-01-25",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -323,6 +323,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.BatchGetBuilds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public BatchGetBuildsResult batchGetBuilds(BatchGetBuildsRequest batchGetBuildsRequest) {
@@ -365,6 +367,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.BatchGetProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public BatchGetProjectsResult batchGetProjects(BatchGetProjectsRequest batchGetProjectsRequest) {
@@ -412,6 +416,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws AccountLimitExceededException
      *         An AWS service limit was exceeded for the calling AWS account.
      * @sample AWSCodeBuild.CreateProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateProjectResult createProject(CreateProjectRequest createProjectRequest) {
@@ -454,6 +460,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.DeleteProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest) {
@@ -496,6 +504,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.ListBuilds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds"/>AWS API Documentation</a>
      */
     @Override
     public ListBuildsResult listBuilds(ListBuildsRequest listBuildsRequest) {
@@ -540,6 +549,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws ResourceNotFoundException
      *         The specified AWS resource cannot be found.
      * @sample AWSCodeBuild.ListBuildsForProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListBuildsForProjectResult listBuildsForProject(ListBuildsForProjectRequest listBuildsForProjectRequest) {
@@ -580,6 +591,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @param listCuratedEnvironmentImagesRequest
      * @return Result of the ListCuratedEnvironmentImages operation returned by the service.
      * @sample AWSCodeBuild.ListCuratedEnvironmentImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListCuratedEnvironmentImagesResult listCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest listCuratedEnvironmentImagesRequest) {
@@ -624,6 +637,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.ListProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest) {
@@ -670,6 +685,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws AccountLimitExceededException
      *         An AWS service limit was exceeded for the calling AWS account.
      * @sample AWSCodeBuild.StartBuild
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild"/>AWS API Documentation</a>
      */
     @Override
     public StartBuildResult startBuild(StartBuildRequest startBuildRequest) {
@@ -719,6 +735,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws ResourceNotFoundException
      *         The specified AWS resource cannot be found.
      * @sample AWSCodeBuild.StopBuild
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild"/>AWS API Documentation</a>
      */
     @Override
     public StopBuildResult stopBuild(StopBuildRequest stopBuildRequest) {
@@ -763,6 +780,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws ResourceNotFoundException
      *         The specified AWS resource cannot be found.
      * @sample AWSCodeBuild.UpdateProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest) {

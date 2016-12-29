@@ -157,6 +157,7 @@
     "syncClient" : "AmazonSimpleDBClient",
     "syncClientBuilderClassName" : "AmazonSimpleDBClientBuilder",
     "syncInterface" : "AmazonSimpleDB",
+    "uid" : "sdb-2009-04-15",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

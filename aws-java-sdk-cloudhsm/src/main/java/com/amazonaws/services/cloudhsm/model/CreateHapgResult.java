@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the output of the <a>CreateHAPartitionGroup</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg"/>AWS API Documentation</a>
  */
 public class CreateHapgResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

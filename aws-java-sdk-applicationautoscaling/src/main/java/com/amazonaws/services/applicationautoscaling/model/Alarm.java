@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents a CloudWatch alarm associated with a scaling policy.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/Alarm"/>AWS API
+ *      Documentation</a>
  */
 public class Alarm implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Contains information about an Amazon Inspector rules package. This data type is used as the response element in the
  * <a>DescribeRulesPackages</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RulesPackage"/>AWS API Documentation</a>
  */
 public class RulesPackage implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for the <a>DescribeConfigurationRecorderStatus</a> action in JSON format.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeConfigurationRecorderStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

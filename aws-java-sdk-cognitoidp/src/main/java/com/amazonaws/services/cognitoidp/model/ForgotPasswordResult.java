@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Respresents the response from the server regarding the request to reset a password.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword"/>AWS API
+ *      Documentation</a>
  */
 public class ForgotPasswordResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

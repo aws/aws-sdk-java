@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input to the SetVisibleToAllUsers action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers"/>AWS API
+ *      Documentation</a>
  */
 public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -274,6 +274,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.AddTagsToStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AddTagsToStreamResult addTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest) {
@@ -372,6 +374,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
      *         see the returned message.
      * @sample AmazonKinesis.CreateStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream"/>AWS API Documentation</a>
      */
     @Override
     public CreateStreamResult createStream(CreateStreamRequest createStreamRequest) {
@@ -431,6 +434,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
      *         see the returned message.
      * @sample AmazonKinesis.DecreaseStreamRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest) {
@@ -501,6 +506,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.DeleteStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream"/>AWS API Documentation</a>
      */
     @Override
     public DeleteStreamResult deleteStream(DeleteStreamRequest deleteStreamRequest) {
@@ -555,6 +561,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.DescribeLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
@@ -620,6 +628,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.DescribeStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest) {
@@ -687,6 +697,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
      * @sample AmazonKinesis.DisableEnhancedMonitoring
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DisableEnhancedMonitoringResult disableEnhancedMonitoring(DisableEnhancedMonitoringRequest disableEnhancedMonitoringRequest) {
@@ -740,6 +752,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
      * @sample AmazonKinesis.EnableEnhancedMonitoring
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public EnableEnhancedMonitoringResult enableEnhancedMonitoring(EnableEnhancedMonitoringRequest enableEnhancedMonitoringRequest) {
@@ -843,6 +857,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws ExpiredIteratorException
      *         The provided iterator exceeds the maximum age allowed.
      * @sample AmazonKinesis.GetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords"/>AWS API Documentation</a>
      */
     @Override
     public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
@@ -935,6 +950,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
      * @sample AmazonKinesis.GetShardIterator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
@@ -1003,6 +1020,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
      *         see the returned message.
      * @sample AmazonKinesis.IncreaseStreamRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest) {
@@ -1064,6 +1083,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.ListStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams"/>AWS API Documentation</a>
      */
     @Override
     public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {
@@ -1128,6 +1148,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.ListTagsForStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest listTagsForStreamRequest) {
@@ -1219,6 +1241,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.MergeShards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards"/>AWS API Documentation</a>
      */
     @Override
     public MergeShardsResult mergeShards(MergeShardsRequest mergeShardsRequest) {
@@ -1319,6 +1342,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
      * @sample AmazonKinesis.PutRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord"/>AWS API Documentation</a>
      */
     @Override
     public PutRecordResult putRecord(PutRecordRequest putRecordRequest) {
@@ -1446,6 +1470,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
      * @sample AmazonKinesis.PutRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords"/>AWS API Documentation</a>
      */
     @Override
     public PutRecordsResult putRecords(PutRecordsRequest putRecordsRequest) {
@@ -1502,6 +1527,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.RemoveTagsFromStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RemoveTagsFromStreamResult removeTagsFromStream(RemoveTagsFromStreamRequest removeTagsFromStreamRequest) {
@@ -1604,6 +1631,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.SplitShard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard"/>AWS API Documentation</a>
      */
     @Override
     public SplitShardResult splitShard(SplitShardRequest splitShardRequest) {
@@ -1682,6 +1710,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
      * @sample AmazonKinesis.UpdateShardCount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateShardCountResult updateShardCount(UpdateShardCountRequest updateShardCountRequest) {

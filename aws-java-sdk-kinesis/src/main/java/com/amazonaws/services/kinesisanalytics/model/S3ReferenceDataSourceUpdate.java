@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the
  * Amazon S3 object on your behalf and populate the in-application reference table.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3ReferenceDataSourceUpdate"/>AWS
+ *      API Documentation</a>
  */
 public class S3ReferenceDataSourceUpdate implements Serializable, Cloneable {
 

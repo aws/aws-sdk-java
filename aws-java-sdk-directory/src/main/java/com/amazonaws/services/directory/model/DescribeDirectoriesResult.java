@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the results of the <a>DescribeDirectories</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories"/>AWS API Documentation</a>
  */
 public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata"/>AWS API
+ *      Documentation</a>
  */
 public class GetTelemetryMetadataRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

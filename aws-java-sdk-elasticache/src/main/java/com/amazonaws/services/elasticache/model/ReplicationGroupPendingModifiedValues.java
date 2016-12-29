@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroupPendingModifiedValues"/>AWS
+ *      API Documentation</a>
  */
 public class ReplicationGroupPendingModifiedValues implements Serializable, Cloneable {
 

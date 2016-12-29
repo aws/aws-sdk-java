@@ -20,6 +20,9 @@ import java.io.Serializable;
  * Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and whether feedback forwarding
  * is enabled for bounce and complaint notifications.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityNotificationAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class IdentityNotificationAttributes implements Serializable, Cloneable {
 

@@ -20,6 +20,8 @@ import java.io.Serializable;
  * the AWS resources that make up the assessment target. This data type is used as the response element in the
  * <a>DescribeResourceGroups</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ResourceGroup"/>AWS API Documentation</a>
  */
 public class ResourceGroup implements Serializable, Cloneable {
 

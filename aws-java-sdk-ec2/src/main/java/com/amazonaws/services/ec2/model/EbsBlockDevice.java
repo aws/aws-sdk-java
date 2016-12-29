@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a block device for an EBS volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EbsBlockDevice"/>AWS API Documentation</a>
  */
 public class EbsBlockDevice implements Serializable, Cloneable {
 

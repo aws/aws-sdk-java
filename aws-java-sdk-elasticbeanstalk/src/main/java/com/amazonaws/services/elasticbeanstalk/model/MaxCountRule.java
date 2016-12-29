@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/MaxCountRule"/>AWS API
+ *      Documentation</a>
  */
 public class MaxCountRule implements Serializable, Cloneable {
 

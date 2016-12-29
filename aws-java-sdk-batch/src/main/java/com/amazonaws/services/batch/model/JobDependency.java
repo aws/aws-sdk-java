@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object representing an AWS Batch job dependency.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDependency"/>AWS API Documentation</a>
  */
 public class JobDependency implements Serializable, Cloneable {
 

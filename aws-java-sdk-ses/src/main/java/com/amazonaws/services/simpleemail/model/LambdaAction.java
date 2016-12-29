@@ -30,6 +30,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer
  * Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/LambdaAction"/>AWS API Documentation</a>
  */
 public class LambdaAction implements Serializable, Cloneable {
 

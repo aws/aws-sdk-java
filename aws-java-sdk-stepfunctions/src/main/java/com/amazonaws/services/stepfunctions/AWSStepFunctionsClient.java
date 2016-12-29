@@ -307,6 +307,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidNameException
      *         The provided name is invalid.
      * @sample AWSStepFunctions.CreateActivity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity"/>AWS API Documentation</a>
      */
     @Override
     public CreateActivityResult createActivity(CreateActivityRequest createActivityRequest) {
@@ -360,6 +361,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *         The maximum number of state machines has been reached. Existing state machines must be deleted before a
      *         new state machine can be created.
      * @sample AWSStepFunctions.CreateStateMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateStateMachineResult createStateMachine(CreateStateMachineRequest createStateMachineRequest) {
@@ -402,6 +405,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.DeleteActivity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity"/>AWS API Documentation</a>
      */
     @Override
     public DeleteActivityResult deleteActivity(DeleteActivityRequest deleteActivityRequest) {
@@ -445,6 +449,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.DeleteStateMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteStateMachineResult deleteStateMachine(DeleteStateMachineRequest deleteStateMachineRequest) {
@@ -489,6 +495,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.DescribeActivity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeActivityResult describeActivity(DescribeActivityRequest describeActivityRequest) {
@@ -533,6 +541,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.DescribeExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeExecutionResult describeExecution(DescribeExecutionRequest describeExecutionRequest) {
@@ -577,6 +587,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
      * @sample AWSStepFunctions.DescribeStateMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeStateMachineResult describeStateMachine(DescribeStateMachineRequest describeStateMachineRequest) {
@@ -633,6 +645,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.GetActivityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetActivityTaskResult getActivityTask(GetActivityTaskRequest getActivityTaskRequest) {
@@ -682,6 +696,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidTokenException
      *         The provided token is invalid.
      * @sample AWSStepFunctions.GetExecutionHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetExecutionHistoryResult getExecutionHistory(GetExecutionHistoryRequest getExecutionHistoryRequest) {
@@ -725,6 +741,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidTokenException
      *         The provided token is invalid.
      * @sample AWSStepFunctions.ListActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities"/>AWS API Documentation</a>
      */
     @Override
     public ListActivitiesResult listActivities(ListActivitiesRequest listActivitiesRequest) {
@@ -773,6 +790,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
      * @sample AWSStepFunctions.ListExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions"/>AWS API Documentation</a>
      */
     @Override
     public ListExecutionsResult listExecutions(ListExecutionsRequest listExecutionsRequest) {
@@ -816,6 +834,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidTokenException
      *         The provided token is invalid.
      * @sample AWSStepFunctions.ListStateMachines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListStateMachinesResult listStateMachines(ListStateMachinesRequest listStateMachinesRequest) {
@@ -860,6 +880,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *         The provided token is invalid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskFailure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SendTaskFailureResult sendTaskFailure(SendTaskFailureRequest sendTaskFailureRequest) {
@@ -918,6 +940,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *         The provided token is invalid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskHeartbeat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SendTaskHeartbeatResult sendTaskHeartbeat(SendTaskHeartbeatRequest sendTaskHeartbeatRequest) {
@@ -964,6 +988,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *         The provided token is invalid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskSuccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SendTaskSuccessResult sendTaskSuccess(SendTaskSuccessRequest sendTaskSuccessRequest) {
@@ -1019,6 +1045,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws StateMachineDeletingException
      *         The specified state machine is being deleted.
      * @sample AWSStepFunctions.StartExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution"/>AWS API Documentation</a>
      */
     @Override
     public StartExecutionResult startExecution(StartExecutionRequest startExecutionRequest) {
@@ -1063,6 +1090,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.StopExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution"/>AWS API Documentation</a>
      */
     @Override
     public StopExecutionResult stopExecution(StopExecutionRequest stopExecutionRequest) {

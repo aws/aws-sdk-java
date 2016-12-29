@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the placement for a Scheduled Instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesPlacement"/>AWS API
+ *      Documentation</a>
  */
 public class ScheduledInstancesPlacement implements Serializable, Cloneable {
 

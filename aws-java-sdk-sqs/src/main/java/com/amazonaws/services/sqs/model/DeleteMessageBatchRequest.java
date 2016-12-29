@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch"/>AWS API Documentation</a>
  */
 public class DeleteMessageBatchRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

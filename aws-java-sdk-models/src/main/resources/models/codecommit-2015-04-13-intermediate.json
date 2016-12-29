@@ -70,6 +70,7 @@
     "syncClient" : "AWSCodeCommitClient",
     "syncClientBuilderClassName" : "AWSCodeCommitClientBuilder",
     "syncInterface" : "AWSCodeCommit",
+    "uid" : "codecommit-2015-04-13",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

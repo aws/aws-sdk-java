@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a tag filter.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/EC2TagFilter"/>AWS API Documentation</a>
  */
 public class EC2TagFilter implements Serializable, Cloneable {
 

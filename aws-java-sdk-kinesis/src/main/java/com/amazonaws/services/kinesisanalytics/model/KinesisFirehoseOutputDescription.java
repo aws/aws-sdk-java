@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * For an application output, describes the Amazon Kinesis Firehose delivery stream configured as its destination.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisFirehoseOutputDescription"/>AWS
+ *      API Documentation</a>
  */
 public class KinesisFirehoseOutputDescription implements Serializable, Cloneable {
 

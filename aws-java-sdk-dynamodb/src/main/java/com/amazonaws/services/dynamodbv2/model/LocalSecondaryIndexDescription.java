@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the properties of a local secondary index.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/LocalSecondaryIndexDescription"/>AWS API
+ *      Documentation</a>
  */
 public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
 

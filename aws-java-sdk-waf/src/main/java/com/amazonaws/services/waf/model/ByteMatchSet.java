@@ -26,6 +26,8 @@ import java.io.Serializable;
  * more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one
  * <code>ByteMatchTuple</code> to be considered a match.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchSet"/>AWS API Documentation</a>
  */
 public class ByteMatchSet implements Serializable, Cloneable {
 

@@ -15,9 +15,6 @@ package com.amazonaws.services.glacier.model;
 import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
 public class PurchaseProvisionedCapacityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

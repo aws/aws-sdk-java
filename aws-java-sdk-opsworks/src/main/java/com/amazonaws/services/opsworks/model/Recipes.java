@@ -27,6 +27,8 @@ import java.io.Serializable;
  * which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
  * recipe in the repository's phpapp2 folder.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Recipes"/>AWS API Documentation</a>
  */
 public class Recipes implements Serializable, Cloneable {
 

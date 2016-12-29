@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A set of Docker images that are related by programming language and are managed by AWS CodeBuild.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentLanguage"/>AWS API
+ *      Documentation</a>
  */
 public class EnvironmentLanguage implements Serializable, Cloneable {
 

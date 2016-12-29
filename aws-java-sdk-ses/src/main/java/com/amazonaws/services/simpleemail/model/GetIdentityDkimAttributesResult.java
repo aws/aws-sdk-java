@@ -20,6 +20,9 @@ import java.io.Serializable;
  * contains the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that
  * these tokens were published.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class GetIdentityDkimAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

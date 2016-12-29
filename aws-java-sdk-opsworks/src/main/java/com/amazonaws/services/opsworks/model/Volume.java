@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an instance's Amazon EBS volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Volume"/>AWS API Documentation</a>
  */
 public class Volume implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryVpcSettings"/>AWS API Documentation</a>
  */
 public class DirectoryVpcSettings implements Serializable, Cloneable {
 

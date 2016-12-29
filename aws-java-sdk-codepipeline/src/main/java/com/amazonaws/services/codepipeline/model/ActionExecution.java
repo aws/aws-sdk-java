@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about the run of an action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionExecution"/>AWS API
+ *      Documentation</a>
  */
 public class ActionExecution implements Serializable, Cloneable {
 

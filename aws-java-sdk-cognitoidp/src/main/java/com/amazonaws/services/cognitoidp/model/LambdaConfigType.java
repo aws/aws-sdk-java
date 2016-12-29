@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Specifies the type of configuration for AWS Lambda triggers.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LambdaConfigType"/>AWS API
+ *      Documentation</a>
  */
 public class LambdaConfigType implements Serializable, Cloneable {
 

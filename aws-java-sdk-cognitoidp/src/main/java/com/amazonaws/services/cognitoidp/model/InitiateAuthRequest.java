@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Initiates the authentication request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth"/>AWS API Documentation</a>
  */
 public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

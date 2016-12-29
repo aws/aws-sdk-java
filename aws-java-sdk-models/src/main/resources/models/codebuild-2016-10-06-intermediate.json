@@ -66,6 +66,7 @@
     "syncClient" : "AWSCodeBuildClient",
     "syncClientBuilderClassName" : "AWSCodeBuildClientBuilder",
     "syncInterface" : "AWSCodeBuild",
+    "uid" : "codebuild-2016-10-06",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

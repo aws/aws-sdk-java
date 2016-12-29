@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The total value of the new Convertible Reserved Instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetReservationValue"/>AWS API
+ *      Documentation</a>
  */
 public class TargetReservationValue implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the name and identifier of a pipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PipelineIdName"/>AWS API
+ *      Documentation</a>
  */
 public class PipelineIdName implements Serializable, Cloneable {
 

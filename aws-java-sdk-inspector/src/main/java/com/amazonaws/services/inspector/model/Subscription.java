@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>ListEventSubscriptions</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Subscription"/>AWS API Documentation</a>
  */
 public class Subscription implements Serializable, Cloneable {
 

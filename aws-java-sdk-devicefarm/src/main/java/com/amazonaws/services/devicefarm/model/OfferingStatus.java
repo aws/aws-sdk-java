@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The status of the offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/OfferingStatus"/>AWS API Documentation</a>
  */
 public class OfferingStatus implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * DeleteTapeOutput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape"/>AWS API Documentation</a>
  */
 public class DeleteTapeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

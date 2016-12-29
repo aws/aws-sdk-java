@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An app or a set of one or more tests to upload or that have been uploaded.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Upload"/>AWS API Documentation</a>
  */
 public class Upload implements Serializable, Cloneable {
 

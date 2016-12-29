@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Lists iSCSI information about a volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeiSCSIAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class VolumeiSCSIAttributes implements Serializable, Cloneable {
 

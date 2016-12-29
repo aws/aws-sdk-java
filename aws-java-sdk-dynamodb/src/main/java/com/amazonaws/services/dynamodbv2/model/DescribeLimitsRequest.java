@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a <i>DescribeLimits</i> operation. Has no content.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits"/>AWS API Documentation</a>
  */
 public class DescribeLimitsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

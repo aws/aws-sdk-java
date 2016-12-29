@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a matched event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilteredLogEvent"/>AWS API Documentation</a>
  */
 public class FilteredLogEvent implements Serializable, Cloneable {
 

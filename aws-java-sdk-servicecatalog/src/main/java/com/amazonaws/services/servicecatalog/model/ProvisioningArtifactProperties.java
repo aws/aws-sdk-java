@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provisioning artifact properties.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactProperties"/>AWS
+ *      API Documentation</a>
  */
 public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 

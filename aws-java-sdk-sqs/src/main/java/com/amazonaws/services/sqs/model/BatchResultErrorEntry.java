@@ -19,6 +19,8 @@ import java.io.Serializable;
  * This is used in the responses of batch API to give a detailed description of the result of an action on each entry in
  * the request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/BatchResultErrorEntry"/>AWS API Documentation</a>
  */
 public class BatchResultErrorEntry implements Serializable, Cloneable {
 

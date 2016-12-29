@@ -20,6 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to return a list of all identities (email addresses and domains) that you have attempted to
  * verify under your AWS account, regardless of verification status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities"/>AWS API Documentation</a>
  */
 public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

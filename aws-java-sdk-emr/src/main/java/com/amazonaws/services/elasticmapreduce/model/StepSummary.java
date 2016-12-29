@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The summary of the cluster step.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepSummary"/>AWS API
+ *      Documentation</a>
  */
 public class StepSummary implements Serializable, Cloneable {
 

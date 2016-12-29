@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheckObservation"/>AWS API
+ *      Documentation</a>
  */
 public class HealthCheckObservation implements Serializable, Cloneable {
 

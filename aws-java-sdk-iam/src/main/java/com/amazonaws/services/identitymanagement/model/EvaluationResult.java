@@ -22,6 +22,8 @@ import java.io.Serializable;
  * This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and
  * <code> <a>SimulatePrincipalPolicy</a> </code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EvaluationResult"/>AWS API Documentation</a>
  */
 public class EvaluationResult implements Serializable, Cloneable {
 

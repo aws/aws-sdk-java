@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Returns CNAME records that you must publish to the DNS server of your domain to set up Easy DKIM with Amazon SES.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim"/>AWS API Documentation</a>
  */
 public class VerifyDomainDkimResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

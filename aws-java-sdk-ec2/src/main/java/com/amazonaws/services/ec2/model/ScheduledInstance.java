@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a Scheduled Instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstance"/>AWS API Documentation</a>
  */
 public class ScheduledInstance implements Serializable, Cloneable {
 

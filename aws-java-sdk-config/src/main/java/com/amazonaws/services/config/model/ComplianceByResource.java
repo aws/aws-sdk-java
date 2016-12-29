@@ -20,6 +20,9 @@ import java.io.Serializable;
  * resource is compliant if it complies with all of the rules that evaluate it, and it is noncompliant if it does not
  * comply with one or more of these rules.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceByResource"/>AWS API
+ *      Documentation</a>
  */
 public class ComplianceByResource implements Serializable, Cloneable {
 

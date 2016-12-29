@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The tags associated with a Direct Connect resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ResourceTag"/>AWS API Documentation</a>
  */
 public class ResourceTag implements Serializable, Cloneable {
 

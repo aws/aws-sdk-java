@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server from a request to describe the user pool client.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeUserPoolClientResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

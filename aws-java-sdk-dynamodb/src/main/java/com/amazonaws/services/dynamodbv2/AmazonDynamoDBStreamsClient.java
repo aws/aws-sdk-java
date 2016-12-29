@@ -300,6 +300,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDBStreams.DescribeStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest) {
@@ -385,6 +387,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *         </p>
      *         </li>
      * @sample AmazonDynamoDBStreams.GetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
@@ -457,6 +461,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *         </p>
      *         </li>
      * @sample AmazonDynamoDBStreams.GetShardIterator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
@@ -508,6 +514,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDBStreams.ListStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {

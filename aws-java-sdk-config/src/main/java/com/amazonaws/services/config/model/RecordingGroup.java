@@ -53,6 +53,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources AWS
  * Config Records</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RecordingGroup"/>AWS API Documentation</a>
  */
 public class RecordingGroup implements Serializable, Cloneable {
 

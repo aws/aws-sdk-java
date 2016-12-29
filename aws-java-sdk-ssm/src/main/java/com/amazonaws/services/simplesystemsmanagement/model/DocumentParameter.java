@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Parameters specified in the SSM document that execute on the server when the command is run.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentParameter"/>AWS API Documentation</a>
  */
 public class DocumentParameter implements Serializable, Cloneable {
 

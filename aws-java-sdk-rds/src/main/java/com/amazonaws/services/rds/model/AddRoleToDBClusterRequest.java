@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster"/>AWS API Documentation</a>
  */
 public class AddRoleToDBClusterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

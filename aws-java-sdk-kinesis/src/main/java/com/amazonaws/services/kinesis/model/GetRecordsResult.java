@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output for <a>GetRecords</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords"/>AWS API Documentation</a>
  */
 public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

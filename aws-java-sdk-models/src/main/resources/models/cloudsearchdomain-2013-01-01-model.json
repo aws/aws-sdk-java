@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "cloudsearch",
     "targetPrefix" : null,
+    "uid" : "cloudsearchdomain-2013-01-01",
     "xmlNamespace" : null
   },
   "operations" : {

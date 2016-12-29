@@ -22,6 +22,9 @@ import java.io.Serializable;
  * If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the
  * subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesLaunchSpecification"/>AWS API
+ *      Documentation</a>
  */
 public class ScheduledInstancesLaunchSpecification implements Serializable, Cloneable {
 

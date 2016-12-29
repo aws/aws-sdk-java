@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the output of RemoveTags.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags"/>AWS API Documentation</a>
  */
 public class RemoveTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

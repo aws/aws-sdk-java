@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeCacheRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

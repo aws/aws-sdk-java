@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the metric data point.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/MetricDatapoint"/>AWS API Documentation</a>
  */
 public class MetricDatapoint implements Serializable, Cloneable {
 

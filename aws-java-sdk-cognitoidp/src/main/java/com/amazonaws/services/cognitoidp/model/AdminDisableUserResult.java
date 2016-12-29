@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response received from the server to disable the user as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser"/>AWS API
+ *      Documentation</a>
  */
 public class AdminDisableUserResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

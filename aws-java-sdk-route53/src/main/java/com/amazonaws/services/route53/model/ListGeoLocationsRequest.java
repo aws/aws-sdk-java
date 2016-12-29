@@ -26,6 +26,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * (for example, states or provinces), the subdivisions for that country are listed in alphabetical order immediately
  * after the corresponding country.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations"/>AWS API Documentation</a>
  */
 public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

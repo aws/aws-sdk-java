@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a registered Amazon ECS cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EcsCluster"/>AWS API Documentation</a>
  */
 public class EcsCluster implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * DeleteTapeInput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape"/>AWS API Documentation</a>
  */
 public class DeleteTapeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

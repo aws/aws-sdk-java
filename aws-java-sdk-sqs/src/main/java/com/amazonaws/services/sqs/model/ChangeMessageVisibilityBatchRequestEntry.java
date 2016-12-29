@@ -34,6 +34,9 @@ import java.io.Serializable;
  * <p>
  * <code>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatchRequestEntry"/>AWS
+ *      API Documentation</a>
  */
 public class ChangeMessageVisibilityBatchRequestEntry implements Serializable, Cloneable {
 

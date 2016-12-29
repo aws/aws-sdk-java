@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Summary of the information about a CloudFront origin access identity.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CloudFrontOriginAccessIdentitySummary"/>AWS
+ *      API Documentation</a>
  */
 public class CloudFrontOriginAccessIdentitySummary implements Serializable, Cloneable {
 

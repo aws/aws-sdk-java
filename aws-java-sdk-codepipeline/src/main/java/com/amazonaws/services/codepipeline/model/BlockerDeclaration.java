@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Reserved for future use.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/BlockerDeclaration"/>AWS API
+ *      Documentation</a>
  */
 public class BlockerDeclaration implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DeregisterTargets.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets"/>AWS API
+ *      Documentation</a>
  */
 public class DeregisterTargetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

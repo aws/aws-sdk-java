@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The version of the database engine that a DB instance can be upgraded to.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/UpgradeTarget"/>AWS API Documentation</a>
  */
 public class UpgradeTarget implements Serializable, Cloneable {
 

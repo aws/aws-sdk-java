@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The beginning and ending sequence numbers for the stream records contained within a shard.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/SequenceNumberRange"/>AWS API
+ *      Documentation</a>
  */
 public class SequenceNumberRange implements Serializable, Cloneable {
 

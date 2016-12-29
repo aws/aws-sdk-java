@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The timeline of the instance group lifecycle.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupTimeline"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceGroupTimeline implements Serializable, Cloneable {
 

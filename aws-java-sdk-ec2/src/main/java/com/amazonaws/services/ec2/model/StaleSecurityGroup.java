@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a stale security group (a security group that contains stale rules).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StaleSecurityGroup"/>AWS API Documentation</a>
  */
 public class StaleSecurityGroup implements Serializable, Cloneable {
 

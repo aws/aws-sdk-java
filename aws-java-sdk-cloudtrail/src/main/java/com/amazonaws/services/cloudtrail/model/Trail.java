@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The settings for a trail.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Trail"/>AWS API Documentation</a>
  */
 public class Trail implements Serializable, Cloneable {
 

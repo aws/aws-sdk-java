@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an AWS customer account authorized to restore a snapshot.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AccountWithRestoreAccess"/>AWS API
+ *      Documentation</a>
  */
 public class AccountWithRestoreAccess implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The result type of the authentication result.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AuthenticationResultType"/>AWS API
+ *      Documentation</a>
  */
 public class AuthenticationResultType implements Serializable, Cloneable {
 

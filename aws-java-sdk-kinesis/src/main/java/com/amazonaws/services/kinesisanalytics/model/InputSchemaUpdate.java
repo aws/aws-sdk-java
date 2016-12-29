@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes updates for the application's input schema.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputSchemaUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class InputSchemaUpdate implements Serializable, Cloneable {
 

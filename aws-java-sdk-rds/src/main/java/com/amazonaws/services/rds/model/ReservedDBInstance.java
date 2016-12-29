@@ -19,6 +19,8 @@ import java.io.Serializable;
  * This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and
  * <a>PurchaseReservedDBInstancesOffering</a> actions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ReservedDBInstance"/>AWS API Documentation</a>
  */
 public class ReservedDBInstance implements Serializable, Cloneable {
 

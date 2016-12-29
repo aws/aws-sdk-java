@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo"/>AWS API
+ *      Documentation</a>
  */
 public class RequestEnvironmentInfoRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

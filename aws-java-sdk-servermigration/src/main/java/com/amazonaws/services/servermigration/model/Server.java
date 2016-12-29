@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * Object representing a server
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Server"/>AWS API Documentation</a>
  */
 public class Server implements Serializable, Cloneable {
 

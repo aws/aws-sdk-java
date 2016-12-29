@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the output of AddTags.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags"/>AWS API Documentation</a>
  */
 public class AddTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

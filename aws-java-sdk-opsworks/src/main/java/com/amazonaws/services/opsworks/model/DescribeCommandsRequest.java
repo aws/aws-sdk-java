@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands"/>AWS API Documentation</a>
  */
 public class DescribeCommandsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "ec2",
     "targetPrefix" : null,
+    "uid" : "ec2-2016-11-15",
     "xmlNamespace" : "http://ec2.amazonaws.com/doc/2016-11-15"
   },
   "operations" : {

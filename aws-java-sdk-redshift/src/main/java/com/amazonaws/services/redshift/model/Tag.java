@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A tag consisting of a name/value pair for a resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

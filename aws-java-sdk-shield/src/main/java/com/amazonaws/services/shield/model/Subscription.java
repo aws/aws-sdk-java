@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about the AWS Shield Advanced subscription for an account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Subscription"/>AWS API Documentation</a>
  */
 public class Subscription implements Serializable, Cloneable {
 

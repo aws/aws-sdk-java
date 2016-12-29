@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an EC2 instance associated with an Auto Scaling group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AutoScalingInstanceDetails"/>AWS API
+ *      Documentation</a>
  */
 public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 

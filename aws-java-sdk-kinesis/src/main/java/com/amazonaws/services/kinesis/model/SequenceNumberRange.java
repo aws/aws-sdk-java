@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The range of possible sequence numbers for the shard.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SequenceNumberRange"/>AWS API
+ *      Documentation</a>
  */
 public class SequenceNumberRange implements Serializable, Cloneable {
 

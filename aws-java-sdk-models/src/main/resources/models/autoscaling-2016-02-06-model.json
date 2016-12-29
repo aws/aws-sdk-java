@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "application-autoscaling",
     "targetPrefix" : "AnyScaleFrontendService",
+    "uid" : "application-autoscaling-2016-02-06",
     "xmlNamespace" : null
   },
   "operations" : {

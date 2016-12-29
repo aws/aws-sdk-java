@@ -70,6 +70,7 @@
     "syncClient" : "AWSDatabaseMigrationServiceClient",
     "syncClientBuilderClassName" : "AWSDatabaseMigrationServiceClientBuilder",
     "syncInterface" : "AWSDatabaseMigrationService",
+    "uid" : "dms-2016-01-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

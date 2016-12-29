@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains information about the health check.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheckConfig"/>AWS API Documentation</a>
  */
 public class HealthCheckConfig implements Serializable, Cloneable {
 

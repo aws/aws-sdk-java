@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains default WorkSpace creation information.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultWorkspaceCreationProperties"/>AWS
+ *      API Documentation</a>
  */
 public class DefaultWorkspaceCreationProperties implements Serializable, Cloneable {
 

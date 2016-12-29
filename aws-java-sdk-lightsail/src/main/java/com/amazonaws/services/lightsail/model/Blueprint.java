@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a blueprint (a virtual private server image).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Blueprint"/>AWS API Documentation</a>
  */
 public class Blueprint implements Serializable, Cloneable {
 

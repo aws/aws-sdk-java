@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The results from a request to change the configuration settings of an environment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeConfigurationSettingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

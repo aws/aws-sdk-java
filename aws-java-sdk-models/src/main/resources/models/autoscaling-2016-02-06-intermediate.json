@@ -66,6 +66,7 @@
     "syncClient" : "AWSApplicationAutoScalingClient",
     "syncClientBuilderClassName" : "AWSApplicationAutoScalingClientBuilder",
     "syncInterface" : "AWSApplicationAutoScaling",
+    "uid" : "application-autoscaling-2016-02-06",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

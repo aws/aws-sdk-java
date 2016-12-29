@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains <code>Tag</code> key and <code>Tag</code> value.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

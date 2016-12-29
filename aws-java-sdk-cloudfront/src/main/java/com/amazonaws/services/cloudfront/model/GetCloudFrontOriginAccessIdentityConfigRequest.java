@@ -20,6 +20,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The origin access identity's configuration information. For more information, see
  * <a>CloudFrontOriginAccessIdentityConfigComplexType</a>.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig"/>AWS
+ *      API Documentation</a>
  */
 public class GetCloudFrontOriginAccessIdentityConfigRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

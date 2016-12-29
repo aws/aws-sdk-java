@@ -21,6 +21,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access
  * to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

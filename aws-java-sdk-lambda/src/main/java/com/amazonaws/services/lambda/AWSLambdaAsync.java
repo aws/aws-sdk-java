@@ -61,6 +61,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param addPermissionRequest
      * @return A Java Future containing the result of the AddPermission operation returned by the service.
      * @sample AWSLambdaAsync.AddPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest addPermissionRequest);
 
@@ -92,6 +93,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddPermission operation returned by the service.
      * @sample AWSLambdaAsyncHandler.AddPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest addPermissionRequest,
             com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler);
@@ -108,6 +110,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param createAliasRequest
      * @return A Java Future containing the result of the CreateAlias operation returned by the service.
      * @sample AWSLambdaAsync.CreateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest createAliasRequest);
 
@@ -127,6 +130,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAlias operation returned by the service.
      * @sample AWSLambdaAsyncHandler.CreateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest createAliasRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler);
@@ -167,6 +171,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param createEventSourceMappingRequest
      * @return A Java Future containing the result of the CreateEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsync.CreateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(CreateEventSourceMappingRequest createEventSourceMappingRequest);
 
@@ -210,6 +216,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsyncHandler.CreateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(CreateEventSourceMappingRequest createEventSourceMappingRequest,
             com.amazonaws.handlers.AsyncHandler<CreateEventSourceMappingRequest, CreateEventSourceMappingResult> asyncHandler);
@@ -233,6 +241,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param createFunctionRequest
      * @return A Java Future containing the result of the CreateFunction operation returned by the service.
      * @sample AWSLambdaAsync.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest createFunctionRequest);
 
@@ -259,6 +268,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateFunction operation returned by the service.
      * @sample AWSLambdaAsyncHandler.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest createFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult> asyncHandler);
@@ -275,6 +285,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param deleteAliasRequest
      * @return A Java Future containing the result of the DeleteAlias operation returned by the service.
      * @sample AWSLambdaAsync.DeleteAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest deleteAliasRequest);
 
@@ -294,6 +305,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAlias operation returned by the service.
      * @sample AWSLambdaAsyncHandler.DeleteAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest deleteAliasRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler);
@@ -310,6 +322,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param deleteEventSourceMappingRequest
      * @return A Java Future containing the result of the DeleteEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsync.DeleteEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest);
 
@@ -329,6 +343,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsyncHandler.DeleteEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSourceMappingRequest, DeleteEventSourceMappingResult> asyncHandler);
@@ -356,6 +372,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param deleteFunctionRequest
      * @return A Java Future containing the result of the DeleteFunction operation returned by the service.
      * @sample AWSLambdaAsync.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest);
 
@@ -386,6 +403,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteFunction operation returned by the service.
      * @sample AWSLambdaAsyncHandler.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler);
@@ -403,6 +421,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param getAccountSettingsRequest
      * @return A Java Future containing the result of the GetAccountSettings operation returned by the service.
      * @sample AWSLambdaAsync.GetAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest getAccountSettingsRequest);
 
@@ -423,6 +443,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAccountSettings operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest getAccountSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult> asyncHandler);
@@ -440,6 +462,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param getAliasRequest
      * @return A Java Future containing the result of the GetAlias operation returned by the service.
      * @sample AWSLambdaAsync.GetAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetAliasResult> getAliasAsync(GetAliasRequest getAliasRequest);
 
@@ -460,6 +483,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAlias operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetAliasResult> getAliasAsync(GetAliasRequest getAliasRequest,
             com.amazonaws.handlers.AsyncHandler<GetAliasRequest, GetAliasResult> asyncHandler);
@@ -475,6 +499,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param getEventSourceMappingRequest
      * @return A Java Future containing the result of the GetEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsync.GetEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEventSourceMappingResult> getEventSourceMappingAsync(GetEventSourceMappingRequest getEventSourceMappingRequest);
 
@@ -493,6 +519,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEventSourceMappingResult> getEventSourceMappingAsync(GetEventSourceMappingRequest getEventSourceMappingRequest,
             com.amazonaws.handlers.AsyncHandler<GetEventSourceMappingRequest, GetEventSourceMappingResult> asyncHandler);
@@ -518,6 +546,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param getFunctionRequest
      * @return A Java Future containing the result of the GetFunction operation returned by the service.
      * @sample AWSLambdaAsync.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest);
 
@@ -546,6 +575,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetFunction operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler);
@@ -570,6 +600,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param getFunctionConfigurationRequest
      * @return A Java Future containing the result of the GetFunctionConfiguration operation returned by the service.
      * @sample AWSLambdaAsync.GetFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(GetFunctionConfigurationRequest getFunctionConfigurationRequest);
 
@@ -597,6 +629,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetFunctionConfiguration operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(GetFunctionConfigurationRequest getFunctionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetFunctionConfigurationRequest, GetFunctionConfigurationResult> asyncHandler);
@@ -622,6 +656,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param getPolicyRequest
      * @return A Java Future containing the result of the GetPolicy operation returned by the service.
      * @sample AWSLambdaAsync.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest);
 
@@ -650,6 +685,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPolicy operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler);
@@ -676,6 +712,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param invokeRequest
      * @return A Java Future containing the result of the Invoke operation returned by the service.
      * @sample AWSLambdaAsync.Invoke
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<InvokeResult> invokeAsync(InvokeRequest invokeRequest);
 
@@ -705,6 +742,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the Invoke operation returned by the service.
      * @sample AWSLambdaAsyncHandler.Invoke
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<InvokeResult> invokeAsync(InvokeRequest invokeRequest,
             com.amazonaws.handlers.AsyncHandler<InvokeRequest, InvokeResult> asyncHandler);
@@ -726,6 +764,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param invokeAsyncRequest
      * @return A Java Future containing the result of the InvokeAsync operation returned by the service.
      * @sample AWSLambdaAsync.InvokeAsync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync"/>AWS API Documentation</a>
      */
     @Deprecated
     java.util.concurrent.Future<InvokeAsyncResult> invokeAsyncAsync(InvokeAsyncRequest invokeAsyncRequest);
@@ -751,6 +790,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the InvokeAsync operation returned by the service.
      * @sample AWSLambdaAsyncHandler.InvokeAsync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync"/>AWS API Documentation</a>
      */
     @Deprecated
     java.util.concurrent.Future<InvokeAsyncResult> invokeAsyncAsync(InvokeAsyncRequest invokeAsyncRequest,
@@ -769,6 +809,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param listAliasesRequest
      * @return A Java Future containing the result of the ListAliases operation returned by the service.
      * @sample AWSLambdaAsync.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest listAliasesRequest);
 
@@ -789,6 +830,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAliases operation returned by the service.
      * @sample AWSLambdaAsyncHandler.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest listAliasesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler);
@@ -815,6 +857,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param listEventSourceMappingsRequest
      * @return A Java Future containing the result of the ListEventSourceMappings operation returned by the service.
      * @sample AWSLambdaAsync.ListEventSourceMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(ListEventSourceMappingsRequest listEventSourceMappingsRequest);
 
@@ -844,6 +888,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListEventSourceMappings operation returned by the service.
      * @sample AWSLambdaAsyncHandler.ListEventSourceMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(ListEventSourceMappingsRequest listEventSourceMappingsRequest,
             com.amazonaws.handlers.AsyncHandler<ListEventSourceMappingsRequest, ListEventSourceMappingsResult> asyncHandler);
@@ -881,6 +927,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param listFunctionsRequest
      * @return A Java Future containing the result of the ListFunctions operation returned by the service.
      * @sample AWSLambdaAsync.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest listFunctionsRequest);
 
@@ -906,6 +953,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListFunctions operation returned by the service.
      * @sample AWSLambdaAsyncHandler.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest listFunctionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler);
@@ -935,6 +983,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param listVersionsByFunctionRequest
      * @return A Java Future containing the result of the ListVersionsByFunction operation returned by the service.
      * @sample AWSLambdaAsync.ListVersionsByFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(ListVersionsByFunctionRequest listVersionsByFunctionRequest);
 
@@ -952,6 +1002,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListVersionsByFunction operation returned by the service.
      * @sample AWSLambdaAsyncHandler.ListVersionsByFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(ListVersionsByFunctionRequest listVersionsByFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<ListVersionsByFunctionRequest, ListVersionsByFunctionResult> asyncHandler);
@@ -968,6 +1020,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param publishVersionRequest
      * @return A Java Future containing the result of the PublishVersion operation returned by the service.
      * @sample AWSLambdaAsync.PublishVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(PublishVersionRequest publishVersionRequest);
 
@@ -987,6 +1040,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PublishVersion operation returned by the service.
      * @sample AWSLambdaAsyncHandler.PublishVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(PublishVersionRequest publishVersionRequest,
             com.amazonaws.handlers.AsyncHandler<PublishVersionRequest, PublishVersionResult> asyncHandler);
@@ -1012,6 +1066,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param removePermissionRequest
      * @return A Java Future containing the result of the RemovePermission operation returned by the service.
      * @sample AWSLambdaAsync.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest);
 
@@ -1040,6 +1096,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemovePermission operation returned by the service.
      * @sample AWSLambdaAsyncHandler.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
@@ -1057,6 +1115,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param updateAliasRequest
      * @return A Java Future containing the result of the UpdateAlias operation returned by the service.
      * @sample AWSLambdaAsync.UpdateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(UpdateAliasRequest updateAliasRequest);
 
@@ -1077,6 +1136,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAlias operation returned by the service.
      * @sample AWSLambdaAsyncHandler.UpdateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(UpdateAliasRequest updateAliasRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult> asyncHandler);
@@ -1105,6 +1165,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param updateEventSourceMappingRequest
      * @return A Java Future containing the result of the UpdateEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsync.UpdateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateEventSourceMappingResult> updateEventSourceMappingAsync(UpdateEventSourceMappingRequest updateEventSourceMappingRequest);
 
@@ -1136,6 +1198,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsyncHandler.UpdateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateEventSourceMappingResult> updateEventSourceMappingAsync(UpdateEventSourceMappingRequest updateEventSourceMappingRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEventSourceMappingRequest, UpdateEventSourceMappingResult> asyncHandler);
@@ -1158,6 +1222,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param updateFunctionCodeRequest
      * @return A Java Future containing the result of the UpdateFunctionCode operation returned by the service.
      * @sample AWSLambdaAsync.UpdateFunctionCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateFunctionCodeResult> updateFunctionCodeAsync(UpdateFunctionCodeRequest updateFunctionCodeRequest);
 
@@ -1183,6 +1249,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateFunctionCode operation returned by the service.
      * @sample AWSLambdaAsyncHandler.UpdateFunctionCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateFunctionCodeResult> updateFunctionCodeAsync(UpdateFunctionCodeRequest updateFunctionCodeRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFunctionCodeRequest, UpdateFunctionCodeResult> asyncHandler);
@@ -1206,6 +1274,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * @param updateFunctionConfigurationRequest
      * @return A Java Future containing the result of the UpdateFunctionConfiguration operation returned by the service.
      * @sample AWSLambdaAsync.UpdateFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateFunctionConfigurationResult> updateFunctionConfigurationAsync(
             UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest);
@@ -1233,6 +1303,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateFunctionConfiguration operation returned by the service.
      * @sample AWSLambdaAsyncHandler.UpdateFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateFunctionConfigurationResult> updateFunctionConfigurationAsync(
             UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest,

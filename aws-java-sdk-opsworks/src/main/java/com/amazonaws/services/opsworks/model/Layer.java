@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a layer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Layer"/>AWS API Documentation</a>
  */
 public class Layer implements Serializable, Cloneable {
 

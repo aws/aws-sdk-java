@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The timeline of the instance lifecycle.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTimeline"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceTimeline implements Serializable, Cloneable {
 

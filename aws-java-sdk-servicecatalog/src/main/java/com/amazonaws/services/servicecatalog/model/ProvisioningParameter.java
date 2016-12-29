@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The arameter key/value pairs used to provision a product.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningParameter"/>AWS API
+ *      Documentation</a>
  */
 public class ProvisioningParameter implements Serializable, Cloneable {
 

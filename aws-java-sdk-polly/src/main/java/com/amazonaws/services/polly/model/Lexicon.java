@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Provides lexicon name and lexicon content in string format. For more information, see <a
  * href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/Lexicon"/>AWS API Documentation</a>
  */
 public class Lexicon implements Serializable, Cloneable {
 

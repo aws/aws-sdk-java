@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "elasticache",
     "targetPrefix" : null,
+    "uid" : "elasticache-2015-02-02",
     "xmlNamespace" : "http://elasticache.amazonaws.com/doc/2015-02-02/"
   },
   "operations" : {

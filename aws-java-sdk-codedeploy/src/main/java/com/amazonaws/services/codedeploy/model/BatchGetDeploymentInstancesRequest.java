@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a batch get deployment instances operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"/>AWS API
+ *      Documentation</a>
  */
 public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

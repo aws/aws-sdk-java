@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The information for each resource record set that you want to change.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Change"/>AWS API Documentation</a>
  */
 public class Change implements Serializable, Cloneable {
 

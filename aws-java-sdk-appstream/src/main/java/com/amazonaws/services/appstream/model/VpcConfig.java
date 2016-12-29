@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The VPC in which the fleet is launched.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/VpcConfig"/>AWS API Documentation</a>
  */
 public class VpcConfig implements Serializable, Cloneable {
 

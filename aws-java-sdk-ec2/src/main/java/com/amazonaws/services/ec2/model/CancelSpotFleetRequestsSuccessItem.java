@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a Spot fleet request that was successfully canceled.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequestsSuccessItem"/>AWS API
+ *      Documentation</a>
  */
 public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneable {
 

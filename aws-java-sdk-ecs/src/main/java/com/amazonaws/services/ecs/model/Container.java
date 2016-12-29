@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A Docker container that is part of a task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Container"/>AWS API Documentation</a>
  */
 public class Container implements Serializable, Cloneable {
 

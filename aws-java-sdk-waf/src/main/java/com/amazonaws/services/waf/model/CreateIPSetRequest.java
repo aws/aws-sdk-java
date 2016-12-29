@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateIPSet"/>AWS API Documentation</a>
  */
 public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

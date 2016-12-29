@@ -11,6 +11,7 @@
     "signatureVersion" : "v2",
     "signingName" : "sdb",
     "targetPrefix" : null,
+    "uid" : "sdb-2009-04-15",
     "xmlNamespace" : "http://sdb.amazonaws.com/doc/2009-04-15/"
   },
   "operations" : {

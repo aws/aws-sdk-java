@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Specifies the type and name of a resource referenced by an event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Resource"/>AWS API Documentation</a>
  */
 public class Resource implements Serializable, Cloneable {
 

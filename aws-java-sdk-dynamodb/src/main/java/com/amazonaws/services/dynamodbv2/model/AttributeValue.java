@@ -23,6 +23,8 @@ import java.io.Serializable;
  * book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued
  * attribute is a set; duplicate values are not allowed.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeValue"/>AWS API Documentation</a>
  */
 public class AttributeValue implements Serializable, Cloneable {
 

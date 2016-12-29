@@ -20,6 +20,9 @@ import java.io.Serializable;
  * or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
  * must create exactly one default cache behavior.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DefaultCacheBehavior"/>AWS API
+ *      Documentation</a>
  */
 public class DefaultCacheBehavior implements Serializable, Cloneable {
 

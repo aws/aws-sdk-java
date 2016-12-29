@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to get user attribute verification.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode"/>AWS
+ *      API Documentation</a>
  */
 public class GetUserAttributeVerificationCodeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

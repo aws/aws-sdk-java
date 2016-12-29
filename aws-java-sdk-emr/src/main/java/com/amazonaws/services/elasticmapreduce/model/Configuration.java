@@ -25,6 +25,9 @@ import java.io.Serializable;
  * software bundled with Amazon EMR. The Configuration object is a JSON object which is defined by a classification and
  * a set of properties. Configurations can be nested, so a configuration may have its own Configuration objects listed.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Configuration"/>AWS API
+ *      Documentation</a>
  */
 public class Configuration implements Serializable, Cloneable {
 

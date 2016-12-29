@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces"/>AWS API
+ *      Documentation</a>
  */
 public class StartWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

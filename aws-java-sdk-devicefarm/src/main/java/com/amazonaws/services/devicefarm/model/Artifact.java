@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a test. Examples of artifacts include logs and screenshots.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Artifact"/>AWS API Documentation</a>
  */
 public class Artifact implements Serializable, Cloneable {
 

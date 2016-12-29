@@ -70,6 +70,7 @@
     "syncClient" : "AWSMarketplaceCommerceAnalyticsClient",
     "syncClientBuilderClassName" : "AWSMarketplaceCommerceAnalyticsClientBuilder",
     "syncInterface" : "AWSMarketplaceCommerceAnalytics",
+    "uid" : "marketplacecommerceanalytics-2015-07-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

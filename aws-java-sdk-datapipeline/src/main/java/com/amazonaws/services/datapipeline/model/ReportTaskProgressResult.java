@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output of ReportTaskProgress.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress"/>AWS API
+ *      Documentation</a>
  */
 public class ReportTaskProgressResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

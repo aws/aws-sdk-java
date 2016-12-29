@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for a GetHostedZone request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone"/>AWS API Documentation</a>
  */
 public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

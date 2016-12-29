@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A list of all available options
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionConfiguration"/>AWS API Documentation</a>
  */
 public class OptionConfiguration implements Serializable, Cloneable {
 

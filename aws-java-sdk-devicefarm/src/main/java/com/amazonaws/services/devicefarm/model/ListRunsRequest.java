@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to the list runs operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns"/>AWS API Documentation</a>
  */
 public class ListRunsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

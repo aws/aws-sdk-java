@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you
  * want AWS WAF to inspect a header, the name of the header.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchTuple"/>AWS API
+ *      Documentation</a>
  */
 public class SqlInjectionMatchTuple implements Serializable, Cloneable {
 

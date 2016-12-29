@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a disk image.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DiskImageDescription"/>AWS API Documentation</a>
  */
 public class DiskImageDescription implements Serializable, Cloneable {
 

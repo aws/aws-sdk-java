@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM
  * instance profile, and so on.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Ec2InstanceAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class Ec2InstanceAttributes implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Defines the basic information about a patch baseline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchBaselineIdentity"/>AWS API Documentation</a>
  */
 public class PatchBaselineIdentity implements Serializable, Cloneable {
 

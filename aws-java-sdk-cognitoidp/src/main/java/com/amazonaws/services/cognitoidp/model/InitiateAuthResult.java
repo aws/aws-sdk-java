@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Initiates the authentication response.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth"/>AWS API Documentation</a>
  */
 public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

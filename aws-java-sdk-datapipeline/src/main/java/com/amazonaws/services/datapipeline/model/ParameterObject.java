@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about a parameter object.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ParameterObject"/>AWS API
+ *      Documentation</a>
  */
 public class ParameterObject implements Serializable, Cloneable {
 

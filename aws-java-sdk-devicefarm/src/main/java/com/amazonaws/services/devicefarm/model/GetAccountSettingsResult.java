@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the account settings return values from the <code>GetAccountSettings</code> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings"/>AWS API
+ *      Documentation</a>
  */
 public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

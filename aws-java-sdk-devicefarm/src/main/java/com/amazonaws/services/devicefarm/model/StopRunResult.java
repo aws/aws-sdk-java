@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the results of your stop run attempt.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun"/>AWS API Documentation</a>
  */
 public class StopRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

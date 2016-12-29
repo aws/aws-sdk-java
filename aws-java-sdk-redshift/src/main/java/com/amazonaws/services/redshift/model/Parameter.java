@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a parameter in a cluster parameter group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Parameter"/>AWS API Documentation</a>
  */
 public class Parameter implements Serializable, Cloneable {
 

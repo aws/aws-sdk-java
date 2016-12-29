@@ -24,6 +24,8 @@ import java.io.Serializable;
  * <p>
  * You can configure your application to write output to up to five destinations.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/Output"/>AWS API Documentation</a>
  */
 public class Output implements Serializable, Cloneable {
 

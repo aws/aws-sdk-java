@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the output of EnterStandby.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby"/>AWS API Documentation</a>
  */
 public class EnterStandbyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * Returned for a successful UpdateRecordsRequest.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

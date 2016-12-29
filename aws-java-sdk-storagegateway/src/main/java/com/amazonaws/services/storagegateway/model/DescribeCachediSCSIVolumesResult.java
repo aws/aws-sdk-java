@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the following fields:
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeCachediSCSIVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

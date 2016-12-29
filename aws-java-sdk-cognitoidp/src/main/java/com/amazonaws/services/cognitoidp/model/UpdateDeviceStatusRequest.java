@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to update the device status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

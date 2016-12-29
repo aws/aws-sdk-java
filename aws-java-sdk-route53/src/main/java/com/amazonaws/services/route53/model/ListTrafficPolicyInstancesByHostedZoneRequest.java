@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A request for the traffic policy instances that you created in a specified hosted zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone"/>AWS
+ *      API Documentation</a>
  */
 public class ListTrafficPolicyInstancesByHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

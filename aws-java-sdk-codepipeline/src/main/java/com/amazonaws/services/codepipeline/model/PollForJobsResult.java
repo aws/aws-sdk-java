@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a poll for jobs action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs"/>AWS API Documentation</a>
  */
 public class PollForJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

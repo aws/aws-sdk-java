@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a connection endpoint.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Endpoint"/>AWS API Documentation</a>
  */
 public class Endpoint implements Serializable, Cloneable {
 

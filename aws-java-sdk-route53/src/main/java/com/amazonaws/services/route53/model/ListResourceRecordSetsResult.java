@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains list information for the resource record set.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets"/>AWS API
+ *      Documentation</a>
  */
 public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

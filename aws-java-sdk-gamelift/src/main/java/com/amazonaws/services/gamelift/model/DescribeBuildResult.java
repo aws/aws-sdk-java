@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the returned data in response to a request action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild"/>AWS API Documentation</a>
  */
 public class DescribeBuildResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

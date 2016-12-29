@@ -20,6 +20,9 @@ import java.io.Serializable;
  * For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code
  * Definitions</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/StatusCodes"/>AWS API
+ *      Documentation</a>
  */
 public class StatusCodes implements Serializable, Cloneable {
 

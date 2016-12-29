@@ -70,6 +70,7 @@
     "syncClient" : "AWSWAFRegionalClient",
     "syncClientBuilderClassName" : "AWSWAFRegionalClientBuilder",
     "syncInterface" : "AWSWAFRegional",
+    "uid" : "waf-regional-2016-11-28",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

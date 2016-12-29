@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used in the <a>AssessmentRunFilter</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/TimestampRange"/>AWS API Documentation</a>
  */
 public class TimestampRange implements Serializable, Cloneable {
 

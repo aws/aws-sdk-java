@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Metadata assigned to the stream, consisting of a key-value pair.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

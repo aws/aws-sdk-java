@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A tag is a key-value pair. Allowed characters: letters, whitespace, and numbers, representable in UTF-8, and the
  * following characters:<code> + - = . _ : /</code>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

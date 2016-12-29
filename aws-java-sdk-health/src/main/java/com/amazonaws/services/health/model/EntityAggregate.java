@@ -19,6 +19,8 @@ import java.io.Serializable;
  * The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a>
  * operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityAggregate"/>AWS API Documentation</a>
  */
 public class EntityAggregate implements Serializable, Cloneable {
 

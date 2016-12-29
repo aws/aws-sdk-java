@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Upon success, returns an empty response. Otherwise, throws an exception.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke"/>AWS API Documentation</a>
  */
 public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

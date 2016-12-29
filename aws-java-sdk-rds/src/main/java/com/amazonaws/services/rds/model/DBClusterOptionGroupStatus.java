@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains status information for a DB cluster option group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterOptionGroupStatus"/>AWS API
+ *      Documentation</a>
  */
 public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
 

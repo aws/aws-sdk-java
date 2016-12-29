@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * Object representing a Connector
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Connector"/>AWS API Documentation</a>
  */
 public class Connector implements Serializable, Cloneable {
 

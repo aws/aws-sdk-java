@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about minimum healthy instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/MinimumHealthyHosts"/>AWS API
+ *      Documentation</a>
  */
 public class MinimumHealthyHosts implements Serializable, Cloneable {
 

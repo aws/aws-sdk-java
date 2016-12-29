@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a list action types action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes"/>AWS API
+ *      Documentation</a>
  */
 public class ListActionTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

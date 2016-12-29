@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The current status of the configuration recorder.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationRecorderStatus"/>AWS API
+ *      Documentation</a>
  */
 public class ConfigurationRecorderStatus implements Serializable, Cloneable {
 

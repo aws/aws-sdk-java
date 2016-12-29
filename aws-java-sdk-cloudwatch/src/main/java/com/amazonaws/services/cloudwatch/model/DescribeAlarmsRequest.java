@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms"/>AWS API Documentation</a>
  */
 public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

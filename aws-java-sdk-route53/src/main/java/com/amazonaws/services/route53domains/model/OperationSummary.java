@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * OperationSummary includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/OperationSummary"/>AWS API
+ *      Documentation</a>
  */
 public class OperationSummary implements Serializable, Cloneable {
 

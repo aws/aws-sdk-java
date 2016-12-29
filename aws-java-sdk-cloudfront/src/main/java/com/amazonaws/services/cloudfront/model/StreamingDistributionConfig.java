@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The RTMP distribution's configuration information.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/StreamingDistributionConfig"/>AWS API
+ *      Documentation</a>
  */
 public class StreamingDistributionConfig implements Serializable, Cloneable {
 

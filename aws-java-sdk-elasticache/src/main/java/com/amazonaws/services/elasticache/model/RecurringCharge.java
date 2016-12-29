@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache
  * node offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RecurringCharge"/>AWS API
+ *      Documentation</a>
  */
 public class RecurringCharge implements Serializable, Cloneable {
 

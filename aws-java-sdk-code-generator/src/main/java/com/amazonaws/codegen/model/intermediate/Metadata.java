@@ -70,6 +70,8 @@ public class Metadata {
 
     private boolean requiresApiKey;
 
+    private String uid;
+
     public String getApiVersion() {
         return apiVersion;
     }
@@ -451,4 +453,16 @@ public class Metadata {
         return this;
     }
 
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public Metadata withUid(String uid) {
+        setUid(uid);
+        return this;
+    }
 }

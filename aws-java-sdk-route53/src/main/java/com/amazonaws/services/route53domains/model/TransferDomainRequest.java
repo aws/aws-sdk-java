@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The TransferDomain request includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain"/>AWS API
+ *      Documentation</a>
  */
 public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

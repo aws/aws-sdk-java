@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The request that specifies the name of a trail to delete.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail"/>AWS API Documentation</a>
  */
 public class DeleteTrailRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

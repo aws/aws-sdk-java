@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about an AWS Directory Service directory.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryDescription"/>AWS API Documentation</a>
  */
 public class DirectoryDescription implements Serializable, Cloneable {
 

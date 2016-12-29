@@ -14,9 +14,6 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class DomainInfo implements Serializable, Cloneable {
 
     /**

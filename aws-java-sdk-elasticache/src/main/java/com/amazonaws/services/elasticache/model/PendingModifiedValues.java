@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A group of settings that are applied to the cache cluster in the future, or that are currently being applied.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PendingModifiedValues"/>AWS API
+ *      Documentation</a>
  */
 public class PendingModifiedValues implements Serializable, Cloneable {
 

@@ -21,6 +21,8 @@ import java.io.Serializable;
  * configuration to maintain concurrently on the instance. Server process configurations make up a fleet's
  * <code> <a>RuntimeConfiguration</a> </code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess"/>AWS API Documentation</a>
  */
 public class ServerProcess implements Serializable, Cloneable {
 

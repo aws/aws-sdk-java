@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about an instance in a deployment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceSummary"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceSummary implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the ID of a Reserved Instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstancesId"/>AWS API Documentation</a>
  */
 public class ReservedInstancesId implements Serializable, Cloneable {
 

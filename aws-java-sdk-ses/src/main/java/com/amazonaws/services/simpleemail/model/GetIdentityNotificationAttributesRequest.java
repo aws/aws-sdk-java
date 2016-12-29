@@ -21,6 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * information about Amazon SES notifications, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class GetIdentityNotificationAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

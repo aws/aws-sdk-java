@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Expands the identity of a metric.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Dimension"/>AWS API Documentation</a>
  */
 public class Dimension implements Serializable, Cloneable {
 

@@ -292,6 +292,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.DeleteLexicon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon"/>AWS API Documentation</a>
      */
     @Override
     public DeleteLexiconResult deleteLexicon(DeleteLexiconRequest deleteLexiconRequest) {
@@ -354,6 +355,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.DescribeVoices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices"/>AWS API Documentation</a>
      */
     @Override
     public DescribeVoicesResult describeVoices(DescribeVoicesRequest describeVoicesRequest) {
@@ -403,6 +405,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.GetLexicon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon"/>AWS API Documentation</a>
      */
     @Override
     public GetLexiconResult getLexicon(GetLexiconRequest getLexiconRequest) {
@@ -448,6 +451,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.ListLexicons
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons"/>AWS API Documentation</a>
      */
     @Override
     public ListLexiconsResult listLexicons(ListLexiconsRequest listLexiconsRequest) {
@@ -511,6 +515,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.PutLexicon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon"/>AWS API Documentation</a>
      */
     @Override
     public PutLexiconResult putLexicon(PutLexiconRequest putLexiconRequest) {
@@ -571,6 +576,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.SynthesizeSpeech
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SynthesizeSpeechResult synthesizeSpeech(SynthesizeSpeechRequest synthesizeSpeechRequest) {

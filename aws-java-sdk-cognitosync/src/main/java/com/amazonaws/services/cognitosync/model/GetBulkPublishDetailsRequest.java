@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * The input for the GetBulkPublishDetails operation.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails"/>AWS API
+ *      Documentation</a>
  */
 public class GetBulkPublishDetailsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

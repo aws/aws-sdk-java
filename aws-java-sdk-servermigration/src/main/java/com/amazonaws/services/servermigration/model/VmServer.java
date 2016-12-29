@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * Object representing a VM server
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/VmServer"/>AWS API Documentation</a>
  */
 public class VmServer implements Serializable, Cloneable {
 

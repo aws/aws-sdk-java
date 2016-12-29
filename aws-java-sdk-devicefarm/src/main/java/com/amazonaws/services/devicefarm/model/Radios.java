@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Radios"/>AWS API Documentation</a>
  */
 public class Radios implements Serializable, Cloneable {
 

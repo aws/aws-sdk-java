@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Defines the values for a task parameter.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowTaskParameterValueExpression"/>AWS
+ *      API Documentation</a>
  */
 public class MaintenanceWindowTaskParameterValueExpression implements Serializable, Cloneable {
 

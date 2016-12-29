@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeadLetterConfig"/>AWS API Documentation</a>
  */
 public class DeadLetterConfig implements Serializable, Cloneable {
 

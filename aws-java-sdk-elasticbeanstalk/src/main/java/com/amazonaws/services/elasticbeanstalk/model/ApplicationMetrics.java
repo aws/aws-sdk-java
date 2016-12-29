@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Application request metrics for an AWS Elastic Beanstalk environment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationMetrics"/>AWS API
+ *      Documentation</a>
  */
 public class ApplicationMetrics implements Serializable, Cloneable {
 

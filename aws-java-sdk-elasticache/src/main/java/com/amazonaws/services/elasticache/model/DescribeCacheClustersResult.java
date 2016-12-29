@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a <code>DescribeCacheClusters</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An attachment to a case communication. The attachment consists of the file name and the content of the file.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Attachment"/>AWS API Documentation</a>
  */
 public class Attachment implements Serializable, Cloneable {
 

@@ -24,6 +24,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer
  * Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptAction"/>AWS API Documentation</a>
  */
 public class ReceiptAction implements Serializable, Cloneable {
 

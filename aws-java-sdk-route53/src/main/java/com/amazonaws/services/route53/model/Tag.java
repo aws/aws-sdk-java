@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A complex type that contains information about a tag that you want to add or edit for the specified health check or
  * hosted zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

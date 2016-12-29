@@ -35,6 +35,9 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSecurityGroup"/>AWS API
+ *      Documentation</a>
  */
 public class CacheSecurityGroup implements Serializable, Cloneable {
 

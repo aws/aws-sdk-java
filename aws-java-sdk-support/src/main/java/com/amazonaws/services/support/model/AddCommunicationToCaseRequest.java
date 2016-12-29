@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * To be written.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase"/>AWS API
+ *      Documentation</a>
  */
 public class AddCommunicationToCaseRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

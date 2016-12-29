@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeMountTargetSecurityGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

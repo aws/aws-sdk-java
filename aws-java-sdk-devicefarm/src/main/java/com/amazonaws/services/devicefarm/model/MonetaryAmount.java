@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A number representing the monetary amount for an offering or transaction.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/MonetaryAmount"/>AWS API Documentation</a>
  */
 public class MonetaryAmount implements Serializable, Cloneable {
 

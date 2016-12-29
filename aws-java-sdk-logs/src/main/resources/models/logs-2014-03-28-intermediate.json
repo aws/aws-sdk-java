@@ -114,6 +114,7 @@
     "syncClient" : "AWSLogsClient",
     "syncClientBuilderClassName" : "AWSLogsClientBuilder",
     "syncInterface" : "AWSLogs",
+    "uid" : "logs-2014-03-28",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

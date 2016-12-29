@@ -20,6 +20,9 @@ import java.io.Serializable;
  * option values, go to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
  * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationOptionSetting"/>AWS API
+ *      Documentation</a>
  */
 public class ConfigurationOptionSetting implements Serializable, Cloneable {
 

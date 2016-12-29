@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * Response to a successful DeleteDataset request.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteDatasetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

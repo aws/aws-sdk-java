@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Returns a TXT record that you must publish to the DNS server of your domain to complete domain verification with
  * Amazon SES.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity"/>AWS API
+ *      Documentation</a>
  */
 public class VerifyDomainIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the inputs for the <a>CreateHsm</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm"/>AWS API Documentation</a>
  */
 public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

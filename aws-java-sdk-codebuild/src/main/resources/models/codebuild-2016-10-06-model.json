@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "codebuild",
     "targetPrefix" : "CodeBuild_20161006",
+    "uid" : "codebuild-2016-10-06",
     "xmlNamespace" : null
   },
   "operations" : {

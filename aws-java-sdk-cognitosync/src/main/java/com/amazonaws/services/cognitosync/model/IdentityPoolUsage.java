@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * Usage information for the identity pool.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/IdentityPoolUsage"/>AWS API
+ *      Documentation</a>
  */
 public class IdentityPoolUsage implements Serializable, Cloneable {
 

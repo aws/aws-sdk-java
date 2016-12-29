@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A single product view aggregation value/count pair, containing metadata about each product to which the calling user
  * has access.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewAggregationValue"/>AWS API
+ *      Documentation</a>
  */
 public class ProductViewAggregationValue implements Serializable, Cloneable {
 

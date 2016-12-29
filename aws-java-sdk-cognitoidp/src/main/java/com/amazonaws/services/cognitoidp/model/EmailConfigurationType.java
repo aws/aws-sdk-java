@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The email configuration type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EmailConfigurationType"/>AWS API
+ *      Documentation</a>
  */
 public class EmailConfigurationType implements Serializable, Cloneable {
 

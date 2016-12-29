@@ -20,6 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to delete an email address from the list of email addresses you have attempted to verify under
  * your AWS account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteVerifiedEmailAddressRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

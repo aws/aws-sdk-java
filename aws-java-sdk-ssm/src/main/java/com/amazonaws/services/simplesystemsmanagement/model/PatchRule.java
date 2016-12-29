@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Defines an approval rule for a patch baseline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchRule"/>AWS API Documentation</a>
  */
 public class PatchRule implements Serializable, Cloneable {
 

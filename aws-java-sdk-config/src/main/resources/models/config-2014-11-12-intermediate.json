@@ -101,6 +101,7 @@
     "syncClient" : "AmazonConfigClient",
     "syncClientBuilderClassName" : "AmazonConfigClientBuilder",
     "syncInterface" : "AmazonConfig",
+    "uid" : "config-2014-11-12",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

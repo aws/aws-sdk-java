@@ -114,6 +114,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.AttachInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances"/>AWS API
+     *      Documentation</a>
      */
     AttachInstancesResult attachInstances(AttachInstancesRequest attachInstancesRequest);
 
@@ -138,6 +140,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.AttachLoadBalancerTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     AttachLoadBalancerTargetGroupsResult attachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest attachLoadBalancerTargetGroupsRequest);
 
@@ -165,6 +169,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.AttachLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     AttachLoadBalancersResult attachLoadBalancers(AttachLoadBalancersRequest attachLoadBalancersRequest);
 
@@ -224,6 +230,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.CompleteLifecycleAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction"/>AWS API
+     *      Documentation</a>
      */
     CompleteLifecycleActionResult completeLifecycleAction(CompleteLifecycleActionRequest completeLifecycleActionRequest);
 
@@ -253,6 +261,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.CreateAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     CreateAutoScalingGroupResult createAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest);
 
@@ -282,6 +292,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.CreateLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration"/>AWS API
+     *      Documentation</a>
      */
     CreateLaunchConfigurationResult createLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest);
 
@@ -311,6 +323,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.CreateOrUpdateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags"/>AWS API
+     *      Documentation</a>
      */
     CreateOrUpdateTagsResult createOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest);
 
@@ -347,6 +361,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     DeleteAutoScalingGroupResult deleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest);
 
@@ -368,6 +384,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration"/>AWS API
+     *      Documentation</a>
      */
     DeleteLaunchConfigurationResult deleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest);
 
@@ -387,6 +405,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteLifecycleHook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook"/>AWS API
+     *      Documentation</a>
      */
     DeleteLifecycleHookResult deleteLifecycleHook(DeleteLifecycleHookRequest deleteLifecycleHookRequest);
 
@@ -402,6 +422,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteNotificationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration"/>AWS
+     *      API Documentation</a>
      */
     DeleteNotificationConfigurationResult deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest);
 
@@ -421,6 +443,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeletePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy"/>AWS API
+     *      Documentation</a>
      */
     DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
@@ -436,6 +460,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction"/>AWS API
+     *      Documentation</a>
      */
     DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest);
 
@@ -451,6 +477,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags"/>AWS API
+     *      Documentation</a>
      */
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
@@ -470,6 +498,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits"/>AWS API
+     *      Documentation</a>
      */
     DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest);
 
@@ -491,6 +521,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAdjustmentTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes"/>AWS API
+     *      Documentation</a>
      */
     DescribeAdjustmentTypesResult describeAdjustmentTypes(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest);
 
@@ -515,6 +547,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups"/>AWS API
+     *      Documentation</a>
      */
     DescribeAutoScalingGroupsResult describeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest);
 
@@ -539,6 +573,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances"/>AWS
+     *      API Documentation</a>
      */
     DescribeAutoScalingInstancesResult describeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest);
 
@@ -560,6 +596,9 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingNotificationTypes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes"/>AWS
+     *      API Documentation</a>
      */
     DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(
             DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest);
@@ -585,6 +624,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLaunchConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations"/>AWS
+     *      API Documentation</a>
      */
     DescribeLaunchConfigurationsResult describeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest);
 
@@ -606,6 +647,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLifecycleHookTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes"/>AWS API
+     *      Documentation</a>
      */
     DescribeLifecycleHookTypesResult describeLifecycleHookTypes(DescribeLifecycleHookTypesRequest describeLifecycleHookTypesRequest);
 
@@ -628,6 +671,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLifecycleHooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks"/>AWS API
+     *      Documentation</a>
      */
     DescribeLifecycleHooksResult describeLifecycleHooks(DescribeLifecycleHooksRequest describeLifecycleHooksRequest);
 
@@ -643,6 +688,9 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLoadBalancerTargetGroups
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     DescribeLoadBalancerTargetGroupsResult describeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest describeLoadBalancerTargetGroupsRequest);
 
@@ -662,6 +710,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest);
 
@@ -680,6 +730,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeMetricCollectionTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes"/>AWS
+     *      API Documentation</a>
      */
     DescribeMetricCollectionTypesResult describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest);
 
@@ -704,6 +756,9 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeNotificationConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"/>AWS
+     *      API Documentation</a>
      */
     DescribeNotificationConfigurationsResult describeNotificationConfigurations(
             DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest);
@@ -729,6 +784,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies"/>AWS API
+     *      Documentation</a>
      */
     DescribePoliciesResult describePolicies(DescribePoliciesRequest describePoliciesRequest);
 
@@ -753,6 +810,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeScalingActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities"/>AWS API
+     *      Documentation</a>
      */
     DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest);
 
@@ -774,6 +833,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeScalingProcessTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes"/>AWS API
+     *      Documentation</a>
      */
     DescribeScalingProcessTypesResult describeScalingProcessTypes(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest);
 
@@ -799,6 +860,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"/>AWS API
+     *      Documentation</a>
      */
     DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest);
 
@@ -832,6 +895,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
 
@@ -853,6 +918,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeTerminationPolicyTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes"/>AWS
+     *      API Documentation</a>
      */
     DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest);
 
@@ -892,6 +959,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DetachInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances"/>AWS API
+     *      Documentation</a>
      */
     DetachInstancesResult detachInstances(DetachInstancesRequest detachInstancesRequest);
 
@@ -906,6 +975,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DetachLoadBalancerTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     DetachLoadBalancerTargetGroupsResult detachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest detachLoadBalancerTargetGroupsRequest);
 
@@ -930,6 +1001,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DetachLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers"/>AWS API
+     *      Documentation</a>
      */
     DetachLoadBalancersResult detachLoadBalancers(DetachLoadBalancersRequest detachLoadBalancersRequest);
 
@@ -952,6 +1025,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DisableMetricsCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection"/>AWS API
+     *      Documentation</a>
      */
     DisableMetricsCollectionResult disableMetricsCollection(DisableMetricsCollectionRequest disableMetricsCollectionRequest);
 
@@ -969,6 +1044,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.EnableMetricsCollection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection"/>AWS API
+     *      Documentation</a>
      */
     EnableMetricsCollectionResult enableMetricsCollection(EnableMetricsCollectionRequest enableMetricsCollectionRequest);
 
@@ -989,6 +1066,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.EnterStandby
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby"/>AWS API
+     *      Documentation</a>
      */
     EnterStandbyResult enterStandby(EnterStandbyRequest enterStandbyRequest);
 
@@ -1006,6 +1085,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.ExecutePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy"/>AWS API
+     *      Documentation</a>
      */
     ExecutePolicyResult executePolicy(ExecutePolicyRequest executePolicyRequest);
 
@@ -1026,6 +1107,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.ExitStandby
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby"/>AWS API
+     *      Documentation</a>
      */
     ExitStandbyResult exitStandby(ExitStandbyRequest exitStandbyRequest);
 
@@ -1091,6 +1174,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.PutLifecycleHook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook"/>AWS API
+     *      Documentation</a>
      */
     PutLifecycleHookResult putLifecycleHook(PutLifecycleHookRequest putLifecycleHookRequest);
 
@@ -1118,6 +1203,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.PutNotificationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration"/>AWS
+     *      API Documentation</a>
      */
     PutNotificationConfigurationResult putNotificationConfiguration(PutNotificationConfigurationRequest putNotificationConfigurationRequest);
 
@@ -1144,6 +1231,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.PutScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy"/>AWS API
+     *      Documentation</a>
      */
     PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest);
 
@@ -1170,6 +1259,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.PutScheduledUpdateGroupAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction"/>AWS
+     *      API Documentation</a>
      */
     PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest);
 
@@ -1223,6 +1314,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.RecordLifecycleActionHeartbeat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat"/>AWS
+     *      API Documentation</a>
      */
     RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest recordLifecycleActionHeartbeatRequest);
 
@@ -1246,6 +1339,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.ResumeProcesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses"/>AWS API
+     *      Documentation</a>
      */
     ResumeProcessesResult resumeProcesses(ResumeProcessesRequest resumeProcessesRequest);
 
@@ -1268,6 +1363,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.SetDesiredCapacity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity"/>AWS API
+     *      Documentation</a>
      */
     SetDesiredCapacityResult setDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest);
 
@@ -1288,6 +1385,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.SetInstanceHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth"/>AWS API
+     *      Documentation</a>
      */
     SetInstanceHealthResult setInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest);
 
@@ -1311,6 +1410,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.SetInstanceProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection"/>AWS API
+     *      Documentation</a>
      */
     SetInstanceProtectionResult setInstanceProtection(SetInstanceProtectionRequest setInstanceProtectionRequest);
 
@@ -1340,6 +1441,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.SuspendProcesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses"/>AWS API
+     *      Documentation</a>
      */
     SuspendProcessesResult suspendProcesses(SuspendProcessesRequest suspendProcessesRequest);
 
@@ -1360,6 +1463,9 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.TerminateInstanceInAutoScalingGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup"/>AWS
+     *      API Documentation</a>
      */
     TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(
             TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest);
@@ -1412,6 +1518,8 @@ public interface AmazonAutoScaling {
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.UpdateAutoScalingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup"/>AWS API
+     *      Documentation</a>
      */
     UpdateAutoScalingGroupResult updateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest);
 

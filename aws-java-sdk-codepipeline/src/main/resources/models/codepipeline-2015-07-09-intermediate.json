@@ -66,6 +66,7 @@
     "syncClient" : "AWSCodePipelineClient",
     "syncClientBuilderClassName" : "AWSCodePipelineClientBuilder",
     "syncInterface" : "AWSCodePipeline",
+    "uid" : "codepipeline-2015-07-09",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

@@ -118,6 +118,7 @@
     "syncClient" : "AWSCloudHSMClient",
     "syncClientBuilderClassName" : "AWSCloudHSMClientBuilder",
     "syncInterface" : "AWSCloudHSM",
+    "uid" : "cloudhsm-2014-05-30",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

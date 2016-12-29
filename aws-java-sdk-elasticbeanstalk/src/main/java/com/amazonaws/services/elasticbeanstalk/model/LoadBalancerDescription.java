@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the details of a LoadBalancer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/LoadBalancerDescription"/>AWS API
+ *      Documentation</a>
  */
 public class LoadBalancerDescription implements Serializable, Cloneable {
 

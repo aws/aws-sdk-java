@@ -23,6 +23,9 @@ import java.io.Serializable;
  * only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key
  * and the sort key.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/KeysAndAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class KeysAndAttributes implements Serializable, Cloneable {
 

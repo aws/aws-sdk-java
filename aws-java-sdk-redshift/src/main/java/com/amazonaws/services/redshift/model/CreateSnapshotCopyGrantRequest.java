@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The result of the <code>CreateSnapshotCopyGrant</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant"/>AWS API
+ *      Documentation</a>
  */
 public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes"/>AWS API Documentation</a>
  */
 public class AddIpRoutesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

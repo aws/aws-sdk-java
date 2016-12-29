@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to the delete run operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun"/>AWS API Documentation</a>
  */
 public class DeleteRunRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

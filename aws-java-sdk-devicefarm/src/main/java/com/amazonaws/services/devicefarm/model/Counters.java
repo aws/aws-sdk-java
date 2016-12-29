@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents entity counters.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Counters"/>AWS API Documentation</a>
  */
 public class Counters implements Serializable, Cloneable {
 

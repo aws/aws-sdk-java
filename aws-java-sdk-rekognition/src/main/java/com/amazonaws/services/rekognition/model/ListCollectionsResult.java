@@ -14,9 +14,6 @@ package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class ListCollectionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

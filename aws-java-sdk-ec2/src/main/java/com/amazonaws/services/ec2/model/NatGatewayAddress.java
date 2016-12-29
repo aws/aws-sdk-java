@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the IP addresses and network interface associated with a NAT gateway.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NatGatewayAddress"/>AWS API Documentation</a>
  */
 public class NatGatewayAddress implements Serializable, Cloneable {
 

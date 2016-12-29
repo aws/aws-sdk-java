@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a Spot fleet request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetRequestConfig"/>AWS API
+ *      Documentation</a>
  */
 public class SpotFleetRequestConfig implements Serializable, Cloneable {
 

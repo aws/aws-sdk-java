@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to list the offering transaction history.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions"/>AWS API
+ *      Documentation</a>
  */
 public class ListOfferingTransactionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A name/value pair that is specific to the engine of the server.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/EngineAttribute"/>AWS API
+ *      Documentation</a>
  */
 public class EngineAttribute implements Serializable, Cloneable {
 

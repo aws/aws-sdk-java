@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Response for Subscribe action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe"/>AWS API Documentation</a>
  */
 public class SubscribeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

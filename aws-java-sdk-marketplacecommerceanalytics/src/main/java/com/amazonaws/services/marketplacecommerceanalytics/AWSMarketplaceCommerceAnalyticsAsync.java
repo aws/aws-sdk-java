@@ -40,6 +40,9 @@ public interface AWSMarketplaceCommerceAnalyticsAsync extends AWSMarketplaceComm
      *        Container for the parameters to the GenerateDataSet operation.
      * @return A Java Future containing the result of the GenerateDataSet operation returned by the service.
      * @sample AWSMarketplaceCommerceAnalyticsAsync.GenerateDataSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GenerateDataSetResult> generateDataSetAsync(GenerateDataSetRequest generateDataSetRequest);
 
@@ -60,6 +63,9 @@ public interface AWSMarketplaceCommerceAnalyticsAsync extends AWSMarketplaceComm
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GenerateDataSet operation returned by the service.
      * @sample AWSMarketplaceCommerceAnalyticsAsyncHandler.GenerateDataSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GenerateDataSetResult> generateDataSetAsync(GenerateDataSetRequest generateDataSetRequest,
             com.amazonaws.handlers.AsyncHandler<GenerateDataSetRequest, GenerateDataSetResult> asyncHandler);
@@ -78,6 +84,9 @@ public interface AWSMarketplaceCommerceAnalyticsAsync extends AWSMarketplaceComm
      *        Container for the parameters to the StartSupportDataExport operation.
      * @return A Java Future containing the result of the StartSupportDataExport operation returned by the service.
      * @sample AWSMarketplaceCommerceAnalyticsAsync.StartSupportDataExport
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(StartSupportDataExportRequest startSupportDataExportRequest);
 
@@ -99,6 +108,9 @@ public interface AWSMarketplaceCommerceAnalyticsAsync extends AWSMarketplaceComm
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartSupportDataExport operation returned by the service.
      * @sample AWSMarketplaceCommerceAnalyticsAsyncHandler.StartSupportDataExport
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(StartSupportDataExportRequest startSupportDataExportRequest,
             com.amazonaws.handlers.AsyncHandler<StartSupportDataExportRequest, StartSupportDataExportResult> asyncHandler);

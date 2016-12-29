@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details of a task definition.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinition"/>AWS API Documentation</a>
  */
 public class TaskDefinition implements Serializable, Cloneable {
 

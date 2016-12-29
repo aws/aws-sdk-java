@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A collection of segment documents with matching trace IDs.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Trace"/>AWS API Documentation</a>
  */
 public class Trace implements Serializable, Cloneable {
 

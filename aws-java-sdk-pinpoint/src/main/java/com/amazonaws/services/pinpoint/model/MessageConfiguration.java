@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class MessageConfiguration implements Serializable, Cloneable {
 
     /** The message that the campaign delivers to APNS channels. Overrides the default message. */

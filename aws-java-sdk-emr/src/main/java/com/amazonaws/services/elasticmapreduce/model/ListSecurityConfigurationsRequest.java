@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations"/>AWS API
+ *      Documentation</a>
  */
 public class ListSecurityConfigurationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

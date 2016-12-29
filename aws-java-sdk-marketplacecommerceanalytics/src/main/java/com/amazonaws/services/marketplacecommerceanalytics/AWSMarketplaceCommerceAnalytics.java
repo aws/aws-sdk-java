@@ -97,6 +97,9 @@ public interface AWSMarketplaceCommerceAnalytics {
      * @throws MarketplaceCommerceAnalyticsException
      *         This exception is thrown when an internal service error occurs.
      * @sample AWSMarketplaceCommerceAnalytics.GenerateDataSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"/>AWS
+     *      API Documentation</a>
      */
     GenerateDataSetResult generateDataSet(GenerateDataSetRequest generateDataSetRequest);
 
@@ -116,6 +119,9 @@ public interface AWSMarketplaceCommerceAnalytics {
      * @throws MarketplaceCommerceAnalyticsException
      *         This exception is thrown when an internal service error occurs.
      * @sample AWSMarketplaceCommerceAnalytics.StartSupportDataExport
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"/>AWS
+     *      API Documentation</a>
      */
     StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest);
 

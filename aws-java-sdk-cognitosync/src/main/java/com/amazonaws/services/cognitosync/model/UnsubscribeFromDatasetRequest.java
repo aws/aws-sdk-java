@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A request to UnsubscribeFromDataset.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset"/>AWS API
+ *      Documentation</a>
  */
 public class UnsubscribeFromDatasetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

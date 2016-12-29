@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class SegmentResponse implements Serializable, Cloneable {
 
     /** The ID of the application to which the segment applies. */

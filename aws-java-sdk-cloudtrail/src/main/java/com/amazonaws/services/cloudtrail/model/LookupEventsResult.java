@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains a response to a LookupEvents action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents"/>AWS API Documentation</a>
  */
 public class LookupEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

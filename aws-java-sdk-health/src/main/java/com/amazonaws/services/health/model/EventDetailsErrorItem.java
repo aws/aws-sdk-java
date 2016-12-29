@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventDetailsErrorItem"/>AWS API
+ *      Documentation</a>
  */
 public class EventDetailsErrorItem implements Serializable, Cloneable {
 

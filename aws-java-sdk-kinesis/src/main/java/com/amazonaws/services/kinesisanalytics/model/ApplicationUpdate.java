@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes updates to apply to an existing Kinesis Analytics application.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class ApplicationUpdate implements Serializable, Cloneable {
 

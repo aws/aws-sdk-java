@@ -83,6 +83,7 @@
     "syncClient" : "AWSSupportClient",
     "syncClientBuilderClassName" : "AWSSupportClientBuilder",
     "syncInterface" : "AWSSupport",
+    "uid" : "support-2013-04-15",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

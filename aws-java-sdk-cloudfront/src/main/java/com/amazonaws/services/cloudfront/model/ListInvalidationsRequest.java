@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The request to list invalidations.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations"/>AWS API
+ *      Documentation</a>
  */
 public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

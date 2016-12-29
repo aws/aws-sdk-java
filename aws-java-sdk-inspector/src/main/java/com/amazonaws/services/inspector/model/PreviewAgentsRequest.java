@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents"/>AWS API Documentation</a>
  */
 public class PreviewAgentsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

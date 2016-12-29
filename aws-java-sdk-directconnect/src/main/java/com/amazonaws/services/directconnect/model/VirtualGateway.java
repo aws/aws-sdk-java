@@ -23,6 +23,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">Amazon EC2
  * CreateVpnGateway action</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualGateway"/>AWS API
+ *      Documentation</a>
  */
 public class VirtualGateway implements Serializable, Cloneable {
 

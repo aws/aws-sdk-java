@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivityStartedEventDetails"/>AWS API
+ *      Documentation</a>
  */
 public class ActivityStartedEventDetails implements Serializable, Cloneable {
 

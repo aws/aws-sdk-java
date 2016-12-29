@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An Active Directory Domain membership record associated with the DB instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DomainMembership"/>AWS API Documentation</a>
  */
 public class DomainMembership implements Serializable, Cloneable {
 

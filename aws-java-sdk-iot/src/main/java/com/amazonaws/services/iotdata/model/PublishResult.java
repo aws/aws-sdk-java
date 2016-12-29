@@ -14,9 +14,6 @@ package com.amazonaws.services.iotdata.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class PublishResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

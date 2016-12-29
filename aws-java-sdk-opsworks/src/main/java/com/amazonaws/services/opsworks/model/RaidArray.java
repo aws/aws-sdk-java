@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an instance's RAID array.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RaidArray"/>AWS API Documentation</a>
  */
 public class RaidArray implements Serializable, Cloneable {
 

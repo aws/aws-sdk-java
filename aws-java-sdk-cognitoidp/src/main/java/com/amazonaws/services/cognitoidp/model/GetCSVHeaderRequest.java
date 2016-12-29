@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to get the header information for the .csv file for the user import job.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader"/>AWS API Documentation</a>
  */
 public class GetCSVHeaderRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

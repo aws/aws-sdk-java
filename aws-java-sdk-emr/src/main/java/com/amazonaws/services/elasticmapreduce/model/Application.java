@@ -46,6 +46,9 @@ import java.io.Serializable;
  * applications, you supply a configuration for each application.
  * </p>
  * </note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Application"/>AWS API
+ *      Documentation</a>
  */
 public class Application implements Serializable, Cloneable {
 

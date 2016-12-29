@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the message to be sent, composed of a subject and a body.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Message"/>AWS API Documentation</a>
  */
 public class Message implements Serializable, Cloneable {
 

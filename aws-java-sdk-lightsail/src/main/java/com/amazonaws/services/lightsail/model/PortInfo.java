@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes information about the ports on your virtual private server (or <i>instance</i>).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PortInfo"/>AWS API Documentation</a>
  */
 public class PortInfo implements Serializable, Cloneable {
 

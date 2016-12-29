@@ -70,6 +70,7 @@
     "syncClient" : "AmazonLightsailClient",
     "syncClientBuilderClassName" : "AmazonLightsailClientBuilder",
     "syncInterface" : "AmazonLightsail",
+    "uid" : "lightsail-2016-11-28",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

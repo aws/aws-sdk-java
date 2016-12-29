@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy"/>AWS API
+ *      Documentation</a>
  */
 public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

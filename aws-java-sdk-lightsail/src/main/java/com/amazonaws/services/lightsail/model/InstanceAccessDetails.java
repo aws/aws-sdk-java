@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The parameters for gaining temporary access to one of your Amazon Lightsail instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceAccessDetails"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceAccessDetails implements Serializable, Cloneable {
 

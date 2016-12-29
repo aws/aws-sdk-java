@@ -22,6 +22,8 @@ import java.io.Serializable;
  * <p>
  * For more information, see <a>ActiveTrustedSigners</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/KeyPairIds"/>AWS API Documentation</a>
  */
 public class KeyPairIds implements Serializable, Cloneable {
 

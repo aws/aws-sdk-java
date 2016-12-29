@@ -266,6 +266,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.AddPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission"/>AWS API Documentation</a>
      */
     @Override
     public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
@@ -324,6 +325,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
      * @sample AmazonSNS.CheckIfPhoneNumberIsOptedOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CheckIfPhoneNumberIsOptedOutResult checkIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest checkIfPhoneNumberIsOptedOutRequest) {
@@ -378,6 +381,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.ConfirmSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ConfirmSubscriptionResult confirmSubscription(ConfirmSubscriptionRequest confirmSubscriptionRequest) {
@@ -460,6 +465,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.CreatePlatformApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreatePlatformApplicationResult createPlatformApplication(CreatePlatformApplicationRequest createPlatformApplicationRequest) {
@@ -523,6 +530,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.CreatePlatformEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreatePlatformEndpointResult createPlatformEndpoint(CreatePlatformEndpointRequest createPlatformEndpointRequest) {
@@ -575,6 +584,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.CreateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic"/>AWS API Documentation</a>
      */
     @Override
     public CreateTopicResult createTopic(CreateTopicRequest createTopicRequest) {
@@ -632,6 +642,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.DeleteEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint"/>AWS API Documentation</a>
      */
     @Override
     public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
@@ -681,6 +692,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.DeletePlatformApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeletePlatformApplicationResult deletePlatformApplication(DeletePlatformApplicationRequest deletePlatformApplicationRequest) {
@@ -731,6 +744,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.DeleteTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic"/>AWS API Documentation</a>
      */
     @Override
     public DeleteTopicResult deleteTopic(DeleteTopicRequest deleteTopicRequest) {
@@ -786,6 +800,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.GetEndpointAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetEndpointAttributesResult getEndpointAttributes(GetEndpointAttributesRequest getEndpointAttributesRequest) {
@@ -838,6 +854,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.GetPlatformApplicationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(
@@ -892,6 +910,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
      * @sample AmazonSNS.GetSMSAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes"/>AWS API Documentation</a>
      */
     @Override
     public GetSMSAttributesResult getSMSAttributes(GetSMSAttributesRequest getSMSAttributesRequest) {
@@ -941,6 +960,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.GetSubscriptionAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) {
@@ -996,6 +1017,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.GetTopicAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetTopicAttributesResult getTopicAttributes(GetTopicAttributesRequest getTopicAttributesRequest) {
@@ -1056,6 +1079,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.ListEndpointsByPlatformApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(
@@ -1115,6 +1140,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
      * @sample AmazonSNS.ListPhoneNumbersOptedOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListPhoneNumbersOptedOutResult listPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest listPhoneNumbersOptedOutRequest) {
@@ -1168,6 +1195,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.ListPlatformApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListPlatformApplicationsResult listPlatformApplications(ListPlatformApplicationsRequest listPlatformApplicationsRequest) {
@@ -1222,6 +1251,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.ListSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions"/>AWS API Documentation</a>
      */
     @Override
     public ListSubscriptionsResult listSubscriptions(ListSubscriptionsRequest listSubscriptionsRequest) {
@@ -1283,6 +1313,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.ListSubscriptionsByTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListSubscriptionsByTopicResult listSubscriptionsByTopic(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) {
@@ -1341,6 +1373,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.ListTopics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics"/>AWS API Documentation</a>
      */
     @Override
     public ListTopicsResult listTopics(ListTopicsRequest listTopicsRequest) {
@@ -1404,6 +1437,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
      * @sample AmazonSNS.OptInPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber"/>AWS API Documentation</a>
      */
     @Override
     public OptInPhoneNumberResult optInPhoneNumber(OptInPhoneNumberRequest optInPhoneNumberRequest) {
@@ -1471,6 +1505,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.Publish
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish"/>AWS API Documentation</a>
      */
     @Override
     public PublishResult publish(PublishRequest publishRequest) {
@@ -1529,6 +1564,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission"/>AWS API Documentation</a>
      */
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest) {
@@ -1585,6 +1621,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.SetEndpointAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetEndpointAttributesResult setEndpointAttributes(SetEndpointAttributesRequest setEndpointAttributesRequest) {
@@ -1638,6 +1676,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.SetPlatformApplicationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(
@@ -1695,6 +1735,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.SetSMSAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes"/>AWS API Documentation</a>
      */
     @Override
     public SetSMSAttributesResult setSMSAttributes(SetSMSAttributesRequest setSMSAttributesRequest) {
@@ -1744,6 +1785,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.SetSubscriptionAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetSubscriptionAttributesResult setSubscriptionAttributes(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) {
@@ -1799,6 +1842,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.SetTopicAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetTopicAttributesResult setTopicAttributes(SetTopicAttributesRequest setTopicAttributesRequest) {
@@ -1857,6 +1902,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @sample AmazonSNS.Subscribe
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe"/>AWS API Documentation</a>
      */
     @Override
     public SubscribeResult subscribe(SubscribeRequest subscribeRequest) {
@@ -1914,6 +1960,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.Unsubscribe
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe"/>AWS API Documentation</a>
      */
     @Override
     public UnsubscribeResult unsubscribe(UnsubscribeRequest unsubscribeRequest) {

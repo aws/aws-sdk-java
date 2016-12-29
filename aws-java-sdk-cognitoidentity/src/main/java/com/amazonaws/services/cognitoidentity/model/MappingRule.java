@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A rule that maps a claim name, a claim value, and a match type to a role ARN.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MappingRule"/>AWS API
+ *      Documentation</a>
  */
 public class MappingRule implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Provides limits of code size and concurrency associated with the current account and region.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit"/>AWS API Documentation</a>
  */
 public class AccountLimit implements Serializable, Cloneable {
 

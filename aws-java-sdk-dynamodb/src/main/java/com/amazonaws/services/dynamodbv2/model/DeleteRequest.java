@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a request to perform a <i>DeleteItem</i> operation on an item.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteRequest"/>AWS API Documentation</a>
  */
 public class DeleteRequest implements Serializable, Cloneable {
 

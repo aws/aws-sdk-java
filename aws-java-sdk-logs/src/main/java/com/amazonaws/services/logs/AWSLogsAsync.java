@@ -72,6 +72,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param cancelExportTaskRequest
      * @return A Java Future containing the result of the CancelExportTask operation returned by the service.
      * @sample AWSLogsAsync.CancelExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(CancelExportTaskRequest cancelExportTaskRequest);
 
@@ -90,6 +91,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CancelExportTask operation returned by the service.
      * @sample AWSLogsAsyncHandler.CancelExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(CancelExportTaskRequest cancelExportTaskRequest,
             com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler);
@@ -113,6 +115,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param createExportTaskRequest
      * @return A Java Future containing the result of the CreateExportTask operation returned by the service.
      * @sample AWSLogsAsync.CreateExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateExportTaskResult> createExportTaskAsync(CreateExportTaskRequest createExportTaskRequest);
 
@@ -139,6 +142,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateExportTask operation returned by the service.
      * @sample AWSLogsAsyncHandler.CreateExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateExportTaskResult> createExportTaskAsync(CreateExportTaskRequest createExportTaskRequest,
             com.amazonaws.handlers.AsyncHandler<CreateExportTaskRequest, CreateExportTaskResult> asyncHandler);
@@ -175,6 +179,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param createLogGroupRequest
      * @return A Java Future containing the result of the CreateLogGroup operation returned by the service.
      * @sample AWSLogsAsync.CreateLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(CreateLogGroupRequest createLogGroupRequest);
 
@@ -214,6 +219,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateLogGroup operation returned by the service.
      * @sample AWSLogsAsyncHandler.CreateLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(CreateLogGroupRequest createLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResult> asyncHandler);
@@ -249,6 +255,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param createLogStreamRequest
      * @return A Java Future containing the result of the CreateLogStream operation returned by the service.
      * @sample AWSLogsAsync.CreateLogStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(CreateLogStreamRequest createLogStreamRequest);
 
@@ -287,6 +294,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateLogStream operation returned by the service.
      * @sample AWSLogsAsyncHandler.CreateLogStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(CreateLogStreamRequest createLogStreamRequest,
             com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, CreateLogStreamResult> asyncHandler);
@@ -300,6 +308,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param deleteDestinationRequest
      * @return A Java Future containing the result of the DeleteDestination operation returned by the service.
      * @sample AWSLogsAsync.DeleteDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(DeleteDestinationRequest deleteDestinationRequest);
 
@@ -316,6 +326,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDestination operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(DeleteDestinationRequest deleteDestinationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, DeleteDestinationResult> asyncHandler);
@@ -329,6 +341,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param deleteLogGroupRequest
      * @return A Java Future containing the result of the DeleteLogGroup operation returned by the service.
      * @sample AWSLogsAsync.DeleteLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(DeleteLogGroupRequest deleteLogGroupRequest);
 
@@ -345,6 +358,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteLogGroup operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(DeleteLogGroupRequest deleteLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, DeleteLogGroupResult> asyncHandler);
@@ -358,6 +372,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param deleteLogStreamRequest
      * @return A Java Future containing the result of the DeleteLogStream operation returned by the service.
      * @sample AWSLogsAsync.DeleteLogStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(DeleteLogStreamRequest deleteLogStreamRequest);
 
@@ -374,6 +389,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteLogStream operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteLogStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(DeleteLogStreamRequest deleteLogStreamRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, DeleteLogStreamResult> asyncHandler);
@@ -386,6 +402,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param deleteMetricFilterRequest
      * @return A Java Future containing the result of the DeleteMetricFilter operation returned by the service.
      * @sample AWSLogsAsync.DeleteMetricFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(DeleteMetricFilterRequest deleteMetricFilterRequest);
 
@@ -401,6 +419,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteMetricFilter operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteMetricFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(DeleteMetricFilterRequest deleteMetricFilterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, DeleteMetricFilterResult> asyncHandler);
@@ -416,6 +436,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param deleteRetentionPolicyRequest
      * @return A Java Future containing the result of the DeleteRetentionPolicy operation returned by the service.
      * @sample AWSLogsAsync.DeleteRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(DeleteRetentionPolicyRequest deleteRetentionPolicyRequest);
 
@@ -434,6 +456,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRetentionPolicy operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(DeleteRetentionPolicyRequest deleteRetentionPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult> asyncHandler);
@@ -446,6 +470,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param deleteSubscriptionFilterRequest
      * @return A Java Future containing the result of the DeleteSubscriptionFilter operation returned by the service.
      * @sample AWSLogsAsync.DeleteSubscriptionFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest);
 
@@ -461,6 +487,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSubscriptionFilter operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteSubscriptionFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, DeleteSubscriptionFilterResult> asyncHandler);
@@ -473,6 +501,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param describeDestinationsRequest
      * @return A Java Future containing the result of the DescribeDestinations operation returned by the service.
      * @sample AWSLogsAsync.DescribeDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync(DescribeDestinationsRequest describeDestinationsRequest);
 
@@ -488,6 +518,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDestinations operation returned by the service.
      * @sample AWSLogsAsyncHandler.DescribeDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync(DescribeDestinationsRequest describeDestinationsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult> asyncHandler);
@@ -516,6 +548,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param describeExportTasksRequest
      * @return A Java Future containing the result of the DescribeExportTasks operation returned by the service.
      * @sample AWSLogsAsync.DescribeExportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest);
 
@@ -532,6 +566,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeExportTasks operation returned by the service.
      * @sample AWSLogsAsyncHandler.DescribeExportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler);
@@ -545,6 +581,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param describeLogGroupsRequest
      * @return A Java Future containing the result of the DescribeLogGroups operation returned by the service.
      * @sample AWSLogsAsync.DescribeLogGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync(DescribeLogGroupsRequest describeLogGroupsRequest);
 
@@ -561,6 +599,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLogGroups operation returned by the service.
      * @sample AWSLogsAsyncHandler.DescribeLogGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync(DescribeLogGroupsRequest describeLogGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult> asyncHandler);
@@ -592,6 +632,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param describeLogStreamsRequest
      * @return A Java Future containing the result of the DescribeLogStreams operation returned by the service.
      * @sample AWSLogsAsync.DescribeLogStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLogStreamsResult> describeLogStreamsAsync(DescribeLogStreamsRequest describeLogStreamsRequest);
 
@@ -611,6 +653,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLogStreams operation returned by the service.
      * @sample AWSLogsAsyncHandler.DescribeLogStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLogStreamsResult> describeLogStreamsAsync(DescribeLogStreamsRequest describeLogStreamsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLogStreamsRequest, DescribeLogStreamsResult> asyncHandler);
@@ -624,6 +668,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param describeMetricFiltersRequest
      * @return A Java Future containing the result of the DescribeMetricFilters operation returned by the service.
      * @sample AWSLogsAsync.DescribeMetricFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeMetricFiltersResult> describeMetricFiltersAsync(DescribeMetricFiltersRequest describeMetricFiltersRequest);
 
@@ -640,6 +686,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeMetricFilters operation returned by the service.
      * @sample AWSLogsAsyncHandler.DescribeMetricFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeMetricFiltersResult> describeMetricFiltersAsync(DescribeMetricFiltersRequest describeMetricFiltersRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeMetricFiltersRequest, DescribeMetricFiltersResult> asyncHandler);
@@ -653,6 +701,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param describeSubscriptionFiltersRequest
      * @return A Java Future containing the result of the DescribeSubscriptionFilters operation returned by the service.
      * @sample AWSLogsAsync.DescribeSubscriptionFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(
             DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest);
@@ -670,6 +720,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeSubscriptionFilters operation returned by the service.
      * @sample AWSLogsAsyncHandler.DescribeSubscriptionFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(
             DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest,
@@ -689,6 +741,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param filterLogEventsRequest
      * @return A Java Future containing the result of the FilterLogEvents operation returned by the service.
      * @sample AWSLogsAsync.FilterLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<FilterLogEventsResult> filterLogEventsAsync(FilterLogEventsRequest filterLogEventsRequest);
 
@@ -710,6 +763,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the FilterLogEvents operation returned by the service.
      * @sample AWSLogsAsyncHandler.FilterLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<FilterLogEventsResult> filterLogEventsAsync(FilterLogEventsRequest filterLogEventsRequest,
             com.amazonaws.handlers.AsyncHandler<FilterLogEventsRequest, FilterLogEventsResult> asyncHandler);
@@ -727,6 +781,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param getLogEventsRequest
      * @return A Java Future containing the result of the GetLogEvents operation returned by the service.
      * @sample AWSLogsAsync.GetLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetLogEventsResult> getLogEventsAsync(GetLogEventsRequest getLogEventsRequest);
 
@@ -747,6 +802,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetLogEvents operation returned by the service.
      * @sample AWSLogsAsyncHandler.GetLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetLogEventsResult> getLogEventsAsync(GetLogEventsRequest getLogEventsRequest,
             com.amazonaws.handlers.AsyncHandler<GetLogEventsRequest, GetLogEventsResult> asyncHandler);
@@ -762,6 +818,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param listTagsLogGroupRequest
      * @return A Java Future containing the result of the ListTagsLogGroup operation returned by the service.
      * @sample AWSLogsAsync.ListTagsLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest listTagsLogGroupRequest);
 
@@ -780,6 +837,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsLogGroup operation returned by the service.
      * @sample AWSLogsAsyncHandler.ListTagsLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest listTagsLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsLogGroupRequest, ListTagsLogGroupResult> asyncHandler);
@@ -801,6 +859,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param putDestinationRequest
      * @return A Java Future containing the result of the PutDestination operation returned by the service.
      * @sample AWSLogsAsync.PutDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutDestinationResult> putDestinationAsync(PutDestinationRequest putDestinationRequest);
 
@@ -825,6 +884,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutDestination operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutDestinationResult> putDestinationAsync(PutDestinationRequest putDestinationRequest,
             com.amazonaws.handlers.AsyncHandler<PutDestinationRequest, PutDestinationResult> asyncHandler);
@@ -839,6 +899,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param putDestinationPolicyRequest
      * @return A Java Future containing the result of the PutDestinationPolicy operation returned by the service.
      * @sample AWSLogsAsync.PutDestinationPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(PutDestinationPolicyRequest putDestinationPolicyRequest);
 
@@ -856,6 +918,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutDestinationPolicy operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutDestinationPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(PutDestinationPolicyRequest putDestinationPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, PutDestinationPolicyResult> asyncHandler);
@@ -910,6 +974,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param putLogEventsRequest
      * @return A Java Future containing the result of the PutLogEvents operation returned by the service.
      * @sample AWSLogsAsync.PutLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutLogEventsResult> putLogEventsAsync(PutLogEventsRequest putLogEventsRequest);
 
@@ -967,6 +1032,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutLogEvents operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutLogEventsResult> putLogEventsAsync(PutLogEventsRequest putLogEventsRequest,
             com.amazonaws.handlers.AsyncHandler<PutLogEventsRequest, PutLogEventsResult> asyncHandler);
@@ -983,6 +1049,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param putMetricFilterRequest
      * @return A Java Future containing the result of the PutMetricFilter operation returned by the service.
      * @sample AWSLogsAsync.PutMetricFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(PutMetricFilterRequest putMetricFilterRequest);
 
@@ -1002,6 +1069,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutMetricFilter operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutMetricFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(PutMetricFilterRequest putMetricFilterRequest,
             com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult> asyncHandler);
@@ -1015,6 +1083,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param putRetentionPolicyRequest
      * @return A Java Future containing the result of the PutRetentionPolicy operation returned by the service.
      * @sample AWSLogsAsync.PutRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(PutRetentionPolicyRequest putRetentionPolicyRequest);
 
@@ -1031,6 +1101,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRetentionPolicy operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(PutRetentionPolicyRequest putRetentionPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult> asyncHandler);
@@ -1071,6 +1143,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param putSubscriptionFilterRequest
      * @return A Java Future containing the result of the PutSubscriptionFilter operation returned by the service.
      * @sample AWSLogsAsync.PutSubscriptionFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(PutSubscriptionFilterRequest putSubscriptionFilterRequest);
 
@@ -1114,6 +1188,8 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutSubscriptionFilter operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutSubscriptionFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(PutSubscriptionFilterRequest putSubscriptionFilterRequest,
             com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, PutSubscriptionFilterResult> asyncHandler);
@@ -1134,6 +1210,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param tagLogGroupRequest
      * @return A Java Future containing the result of the TagLogGroup operation returned by the service.
      * @sample AWSLogsAsync.TagLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest tagLogGroupRequest);
 
@@ -1157,6 +1234,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TagLogGroup operation returned by the service.
      * @sample AWSLogsAsyncHandler.TagLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest tagLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<TagLogGroupRequest, TagLogGroupResult> asyncHandler);
@@ -1170,6 +1248,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param testMetricFilterRequest
      * @return A Java Future containing the result of the TestMetricFilter operation returned by the service.
      * @sample AWSLogsAsync.TestMetricFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<TestMetricFilterResult> testMetricFilterAsync(TestMetricFilterRequest testMetricFilterRequest);
 
@@ -1186,6 +1265,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TestMetricFilter operation returned by the service.
      * @sample AWSLogsAsyncHandler.TestMetricFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<TestMetricFilterResult> testMetricFilterAsync(TestMetricFilterRequest testMetricFilterRequest,
             com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler);
@@ -1201,6 +1281,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * @param untagLogGroupRequest
      * @return A Java Future containing the result of the UntagLogGroup operation returned by the service.
      * @sample AWSLogsAsync.UntagLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest untagLogGroupRequest);
 
@@ -1219,6 +1300,7 @@ public interface AWSLogsAsync extends AWSLogs {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UntagLogGroup operation returned by the service.
      * @sample AWSLogsAsyncHandler.UntagLogGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest untagLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UntagLogGroupRequest, UntagLogGroupResult> asyncHandler);

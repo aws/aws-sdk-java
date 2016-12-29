@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A principal's ARN and type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Principal"/>AWS API Documentation</a>
  */
 public class Principal implements Serializable, Cloneable {
 

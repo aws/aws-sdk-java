@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about an instance that is part of a DB cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterMember"/>AWS API Documentation</a>
  */
 public class DBClusterMember implements Serializable, Cloneable {
 

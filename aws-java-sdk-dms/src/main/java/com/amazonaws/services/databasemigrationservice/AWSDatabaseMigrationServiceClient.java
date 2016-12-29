@@ -286,6 +286,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.AddTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource"/>AWS API Documentation</a>
      */
     @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
@@ -338,6 +339,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws AccessDeniedException
      *         AWS DMS was denied access to the endpoint.
      * @sample AWSDatabaseMigrationService.CreateEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint"/>AWS API Documentation</a>
      */
     @Override
     public CreateEndpointResult createEndpoint(CreateEndpointRequest createEndpointRequest) {
@@ -399,6 +401,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws KMSKeyNotAccessibleException
      *         AWS DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.CreateReplicationInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateReplicationInstanceResult createReplicationInstance(CreateReplicationInstanceRequest createReplicationInstanceRequest) {
@@ -453,6 +457,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidSubnetException
      *         The subnet provided is invalid.
      * @sample AWSDatabaseMigrationService.CreateReplicationSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateReplicationSubnetGroupResult createReplicationSubnetGroup(CreateReplicationSubnetGroupRequest createReplicationSubnetGroupRequest) {
@@ -505,6 +511,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.CreateReplicationTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateReplicationTaskResult createReplicationTask(CreateReplicationTaskRequest createReplicationTaskRequest) {
@@ -550,6 +558,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @sample AWSDatabaseMigrationService.DeleteCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate"/>AWS API Documentation</a>
      */
     @Override
     public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
@@ -600,6 +609,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @sample AWSDatabaseMigrationService.DeleteEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint"/>AWS API Documentation</a>
      */
     @Override
     public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
@@ -650,6 +660,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DeleteReplicationInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteReplicationInstanceResult deleteReplicationInstance(DeleteReplicationInstanceRequest deleteReplicationInstanceRequest) {
@@ -695,6 +707,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DeleteReplicationSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteReplicationSubnetGroupResult deleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest deleteReplicationSubnetGroupRequest) {
@@ -741,6 +755,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @sample AWSDatabaseMigrationService.DeleteReplicationTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteReplicationTaskResult deleteReplicationTask(DeleteReplicationTaskRequest deleteReplicationTaskRequest) {
@@ -787,6 +803,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param describeAccountAttributesRequest
      * @return Result of the DescribeAccountAttributes operation returned by the service.
      * @sample AWSDatabaseMigrationService.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
@@ -830,6 +848,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest describeCertificatesRequest) {
@@ -873,6 +893,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest describeConnectionsRequest) {
@@ -913,6 +935,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param describeEndpointTypesRequest
      * @return Result of the DescribeEndpointTypes operation returned by the service.
      * @sample AWSDatabaseMigrationService.DescribeEndpointTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEndpointTypesResult describeEndpointTypes(DescribeEndpointTypesRequest describeEndpointTypesRequest) {
@@ -956,6 +980,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints"/>AWS API Documentation</a>
      */
     @Override
     public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest describeEndpointsRequest) {
@@ -996,6 +1021,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param describeOrderableReplicationInstancesRequest
      * @return Result of the DescribeOrderableReplicationInstances operation returned by the service.
      * @sample AWSDatabaseMigrationService.DescribeOrderableReplicationInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeOrderableReplicationInstancesResult describeOrderableReplicationInstances(
@@ -1043,6 +1070,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeRefreshSchemasStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeRefreshSchemasStatusResult describeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest describeRefreshSchemasStatusRequest) {
@@ -1087,6 +1116,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeReplicationInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeReplicationInstancesResult describeReplicationInstances(DescribeReplicationInstancesRequest describeReplicationInstancesRequest) {
@@ -1131,6 +1162,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeReplicationSubnetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeReplicationSubnetGroupsResult describeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest describeReplicationSubnetGroupsRequest) {
@@ -1175,6 +1208,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeReplicationTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeReplicationTasksResult describeReplicationTasks(DescribeReplicationTasksRequest describeReplicationTasksRequest) {
@@ -1221,6 +1256,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeSchemas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas"/>AWS API Documentation</a>
      */
     @Override
     public DescribeSchemasResult describeSchemas(DescribeSchemasRequest describeSchemasRequest) {
@@ -1266,6 +1302,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @sample AWSDatabaseMigrationService.DescribeTableStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeTableStatisticsResult describeTableStatistics(DescribeTableStatisticsRequest describeTableStatisticsRequest) {
@@ -1311,6 +1349,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidCertificateException
      *         The certificate was not valid.
      * @sample AWSDatabaseMigrationService.ImportCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate"/>AWS API Documentation</a>
      */
     @Override
     public ImportCertificateResult importCertificate(ImportCertificateRequest importCertificateRequest) {
@@ -1353,6 +1392,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
@@ -1401,6 +1442,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws KMSKeyNotAccessibleException
      *         AWS DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.ModifyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint"/>AWS API Documentation</a>
      */
     @Override
     public ModifyEndpointResult modifyEndpoint(ModifyEndpointRequest modifyEndpointRequest) {
@@ -1458,6 +1500,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws UpgradeDependencyFailureException
      *         An upgrade dependency is preventing the database migration.
      * @sample AWSDatabaseMigrationService.ModifyReplicationInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ModifyReplicationInstanceResult modifyReplicationInstance(ModifyReplicationInstanceRequest modifyReplicationInstanceRequest) {
@@ -1512,6 +1556,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidSubnetException
      *         The subnet provided is invalid.
      * @sample AWSDatabaseMigrationService.ModifyReplicationSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ModifyReplicationSubnetGroupResult modifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest modifyReplicationSubnetGroupRequest) {
@@ -1565,6 +1611,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws KMSKeyNotAccessibleException
      *         AWS DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.ModifyReplicationTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ModifyReplicationTaskResult modifyReplicationTask(ModifyReplicationTaskRequest modifyReplicationTaskRequest) {
@@ -1615,6 +1663,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.RefreshSchemas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas"/>AWS API Documentation</a>
      */
     @Override
     public RefreshSchemasResult refreshSchemas(RefreshSchemasRequest refreshSchemasRequest) {
@@ -1657,6 +1706,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.RemoveTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
@@ -1702,6 +1753,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @sample AWSDatabaseMigrationService.StartReplicationTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StartReplicationTaskResult startReplicationTask(StartReplicationTaskRequest startReplicationTaskRequest) {
@@ -1747,6 +1800,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @sample AWSDatabaseMigrationService.StopReplicationTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StopReplicationTaskResult stopReplicationTask(StopReplicationTaskRequest stopReplicationTaskRequest) {
@@ -1795,6 +1850,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.TestConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection"/>AWS API Documentation</a>
      */
     @Override
     public TestConnectionResult testConnection(TestConnectionRequest testConnectionRequest) {

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the result of a get upload request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload"/>AWS API Documentation</a>
  */
 public class GetUploadResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a collection of one or more tests.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Suite"/>AWS API Documentation</a>
  */
 public class Suite implements Serializable, Cloneable {
 

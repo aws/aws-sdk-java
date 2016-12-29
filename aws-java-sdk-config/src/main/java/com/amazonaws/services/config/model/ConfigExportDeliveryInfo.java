@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A list that contains the status of the delivery of either the snapshot or the configuration history to the specified
  * Amazon S3 bucket.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigExportDeliveryInfo"/>AWS API
+ *      Documentation</a>
  */
 public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
 

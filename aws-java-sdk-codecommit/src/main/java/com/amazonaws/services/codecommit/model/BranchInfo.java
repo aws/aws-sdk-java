@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Returns information about a branch.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BranchInfo"/>AWS API Documentation</a>
  */
 public class BranchInfo implements Serializable, Cloneable {
 

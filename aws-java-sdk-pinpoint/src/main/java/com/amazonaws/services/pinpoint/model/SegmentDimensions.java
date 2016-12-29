@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class SegmentDimensions implements Serializable, Cloneable {
 
     /** Custom segment attributes. */

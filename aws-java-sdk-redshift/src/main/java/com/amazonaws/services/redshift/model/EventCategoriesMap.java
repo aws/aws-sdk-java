@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes event categories.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EventCategoriesMap"/>AWS API
+ *      Documentation</a>
  */
 public class EventCategoriesMap implements Serializable, Cloneable {
 

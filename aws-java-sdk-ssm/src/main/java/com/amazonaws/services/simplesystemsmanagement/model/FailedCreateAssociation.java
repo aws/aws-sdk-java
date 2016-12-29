@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a failed association.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/FailedCreateAssociation"/>AWS API
+ *      Documentation</a>
  */
 public class FailedCreateAssociation implements Serializable, Cloneable {
 

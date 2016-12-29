@@ -22,6 +22,9 @@ import java.io.Serializable;
  * the rule to bootstrap when the cluster ID becomes available, and also enables a single automatic scaling policy to be
  * reused for multiple clusters and instance groups.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/MetricDimension"/>AWS API
+ *      Documentation</a>
  */
 public class MetricDimension implements Serializable, Cloneable {
 

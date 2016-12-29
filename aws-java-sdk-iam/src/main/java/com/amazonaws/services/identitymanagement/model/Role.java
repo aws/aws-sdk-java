@@ -38,6 +38,8 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Role"/>AWS API Documentation</a>
  */
 public class Role implements Serializable, Cloneable {
 

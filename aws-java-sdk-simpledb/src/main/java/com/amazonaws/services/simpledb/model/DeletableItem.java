@@ -14,9 +14,6 @@ package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class DeletableItem implements Serializable, Cloneable {
 
     private String name;

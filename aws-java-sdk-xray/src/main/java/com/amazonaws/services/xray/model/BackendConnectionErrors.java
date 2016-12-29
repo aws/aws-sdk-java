@@ -17,6 +17,9 @@ import java.io.Serializable;
 /**
  * <p>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BackendConnectionErrors"/>AWS API
+ *      Documentation</a>
  */
 public class BackendConnectionErrors implements Serializable, Cloneable {
 

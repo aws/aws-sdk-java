@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices"/>AWS API Documentation</a>
  */
 public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

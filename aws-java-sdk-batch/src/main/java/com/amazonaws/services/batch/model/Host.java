@@ -20,6 +20,8 @@ import java.io.Serializable;
  * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your
  * data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Host"/>AWS API Documentation</a>
  */
 public class Host implements Serializable, Cloneable {
 

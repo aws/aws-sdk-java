@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A distribution Configuration and a list of tags to be associated with the distribution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DistributionConfigWithTags"/>AWS API
+ *      Documentation</a>
  */
 public class DistributionConfigWithTags implements Serializable, Cloneable {
 

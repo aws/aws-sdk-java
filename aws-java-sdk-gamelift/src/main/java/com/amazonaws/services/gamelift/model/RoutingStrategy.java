@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Routing configuration for a fleet alias.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RoutingStrategy"/>AWS API Documentation</a>
  */
 public class RoutingStrategy implements Serializable, Cloneable {
 

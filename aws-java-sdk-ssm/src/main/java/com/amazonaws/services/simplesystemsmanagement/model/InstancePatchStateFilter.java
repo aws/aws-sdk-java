@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the
  * API.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstancePatchStateFilter"/>AWS API
+ *      Documentation</a>
  */
 public class InstancePatchStateFilter implements Serializable, Cloneable {
 

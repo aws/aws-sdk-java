@@ -70,6 +70,7 @@
     "syncClient" : "AWSXRayClient",
     "syncClientBuilderClassName" : "AWSXRayClientBuilder",
     "syncInterface" : "AWSXRay",
+    "uid" : "xray-2016-04-12",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about the location of application artifacts stored in GitHub.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GitHubLocation"/>AWS API Documentation</a>
  */
 public class GitHubLocation implements Serializable, Cloneable {
 

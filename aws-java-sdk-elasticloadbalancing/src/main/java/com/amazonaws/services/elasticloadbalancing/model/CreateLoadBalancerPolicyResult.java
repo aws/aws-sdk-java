@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output of CreateLoadBalancerPolicy.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy"/>AWS
+ *      API Documentation</a>
  */
 public class CreateLoadBalancerPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

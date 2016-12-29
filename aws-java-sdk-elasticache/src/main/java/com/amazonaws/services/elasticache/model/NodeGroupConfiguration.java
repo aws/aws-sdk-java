@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroupConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class NodeGroupConfiguration implements Serializable, Cloneable {
 

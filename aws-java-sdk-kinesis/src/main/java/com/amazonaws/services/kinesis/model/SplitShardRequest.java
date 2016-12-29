@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input for <code>SplitShard</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard"/>AWS API Documentation</a>
  */
 public class SplitShardRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

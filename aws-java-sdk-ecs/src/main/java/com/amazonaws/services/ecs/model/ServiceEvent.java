@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details on an event associated with a service.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceEvent"/>AWS API Documentation</a>
  */
 public class ServiceEvent implements Serializable, Cloneable {
 

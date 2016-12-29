@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the client-specific data.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientData"/>AWS API Documentation</a>
  */
 public class ClientData implements Serializable, Cloneable {
 

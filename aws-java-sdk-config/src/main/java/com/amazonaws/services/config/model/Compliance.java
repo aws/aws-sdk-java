@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect
  * the compliance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Compliance"/>AWS API Documentation</a>
  */
 public class Compliance implements Serializable, Cloneable {
 

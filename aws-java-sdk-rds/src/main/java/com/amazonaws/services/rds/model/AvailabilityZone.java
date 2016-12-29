@@ -28,6 +28,8 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AvailabilityZone"/>AWS API Documentation</a>
  */
 public class AvailabilityZone implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the of the gateway that was updated.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateGatewaySoftwareNowResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

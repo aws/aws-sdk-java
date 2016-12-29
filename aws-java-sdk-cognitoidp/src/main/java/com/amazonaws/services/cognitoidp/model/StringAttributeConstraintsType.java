@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The type of constraints associated with an attribute of the string type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StringAttributeConstraintsType"/>AWS API
+ *      Documentation</a>
  */
 public class StringAttributeConstraintsType implements Serializable, Cloneable {
 

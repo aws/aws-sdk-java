@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * ListFileShareInput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares"/>AWS API
+ *      Documentation</a>
  */
 public class ListFileSharesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

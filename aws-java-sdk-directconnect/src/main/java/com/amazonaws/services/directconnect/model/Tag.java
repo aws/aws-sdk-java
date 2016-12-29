@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a tag.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

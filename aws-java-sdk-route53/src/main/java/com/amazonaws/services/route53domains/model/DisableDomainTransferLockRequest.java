@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The DisableDomainTransferLock request includes the following element.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock"/>AWS API
+ *      Documentation</a>
  */
 public class DisableDomainTransferLockRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

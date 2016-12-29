@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The new device metadata type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NewDeviceMetadataType"/>AWS API
+ *      Documentation</a>
  */
 public class NewDeviceMetadataType implements Serializable, Cloneable {
 

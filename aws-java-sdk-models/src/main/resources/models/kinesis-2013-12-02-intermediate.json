@@ -98,6 +98,7 @@
     "syncClient" : "AmazonKinesisClient",
     "syncClientBuilderClassName" : "AmazonKinesisClientBuilder",
     "syncInterface" : "AmazonKinesis",
+    "uid" : "kinesis-2013-12-02",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

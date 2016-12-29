@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings
  * that can be returned are defined by AWS Data Pipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidationWarning"/>AWS API
+ *      Documentation</a>
  */
 public class ValidationWarning implements Serializable, Cloneable {
 

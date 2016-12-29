@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * EBS block device that's attached to an EC2 instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/EbsVolume"/>AWS API
+ *      Documentation</a>
  */
 public class EbsVolume implements Serializable, Cloneable {
 

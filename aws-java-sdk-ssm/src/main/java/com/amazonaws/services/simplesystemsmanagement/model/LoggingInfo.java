@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about an Amazon S3 bucket to write instance-level logs to.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LoggingInfo"/>AWS API Documentation</a>
  */
 public class LoggingInfo implements Serializable, Cloneable {
 

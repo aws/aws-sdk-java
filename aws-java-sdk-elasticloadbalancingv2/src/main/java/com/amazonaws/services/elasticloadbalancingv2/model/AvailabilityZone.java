@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about an Availability Zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AvailabilityZone"/>AWS API
+ *      Documentation</a>
  */
 public class AvailabilityZone implements Serializable, Cloneable {
 

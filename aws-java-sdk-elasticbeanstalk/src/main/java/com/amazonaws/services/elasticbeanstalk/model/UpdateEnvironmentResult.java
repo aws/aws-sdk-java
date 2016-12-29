@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the properties of an environment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

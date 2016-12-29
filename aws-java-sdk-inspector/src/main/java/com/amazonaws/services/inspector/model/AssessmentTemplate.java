@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Contains information about an Amazon Inspector assessment template. This data type is used as the response element in
  * the <a>DescribeAssessmentTemplates</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentTemplate"/>AWS API
+ *      Documentation</a>
  */
 public class AssessmentTemplate implements Serializable, Cloneable {
 

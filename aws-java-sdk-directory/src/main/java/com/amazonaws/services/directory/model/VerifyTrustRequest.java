@@ -20,6 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Initiates the verification of an existing trust relationship between a Microsoft AD in the AWS cloud and an external
  * domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust"/>AWS API Documentation</a>
  */
 public class VerifyTrustRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

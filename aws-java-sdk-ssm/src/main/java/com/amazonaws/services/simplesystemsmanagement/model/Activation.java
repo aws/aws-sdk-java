@@ -20,6 +20,8 @@ import java.io.Serializable;
  * those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed
  * instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Activation"/>AWS API Documentation</a>
  */
 public class Activation implements Serializable, Cloneable {
 

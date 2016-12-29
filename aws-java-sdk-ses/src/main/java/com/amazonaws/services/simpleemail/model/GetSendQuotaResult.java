@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents your Amazon SES daily sending quota, maximum send rate, and the number of emails you have sent in the last
  * 24 hours.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota"/>AWS API Documentation</a>
  */
 public class GetSendQuotaResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Configuration options to be applied to the identity pool.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/PushSync"/>AWS API Documentation</a>
  */
 public class PushSync implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Option details.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Option"/>AWS API Documentation</a>
  */
 public class Option implements Serializable, Cloneable {
 

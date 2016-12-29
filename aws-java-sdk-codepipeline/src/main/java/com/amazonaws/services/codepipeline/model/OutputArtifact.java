@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about the output of an action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/OutputArtifact"/>AWS API
+ *      Documentation</a>
  */
 public class OutputArtifact implements Serializable, Cloneable {
 

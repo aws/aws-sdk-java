@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon ES.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchRetryOptions"/>AWS API
+ *      Documentation</a>
  */
 public class ElasticsearchRetryOptions implements Serializable, Cloneable {
 

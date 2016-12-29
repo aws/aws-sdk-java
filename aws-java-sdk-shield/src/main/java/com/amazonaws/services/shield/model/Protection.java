@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object that represents a resource that is under DDoS protection.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Protection"/>AWS API Documentation</a>
  */
 public class Protection implements Serializable, Cloneable {
 

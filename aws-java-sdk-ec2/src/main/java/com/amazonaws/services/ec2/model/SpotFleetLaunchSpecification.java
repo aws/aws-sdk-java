@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the launch specification for one or more Spot instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification"/>AWS API
+ *      Documentation</a>
  */
 public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the data feed for a Spot instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotDatafeedSubscription"/>AWS API
+ *      Documentation</a>
  */
 public class SpotDatafeedSubscription implements Serializable, Cloneable {
 

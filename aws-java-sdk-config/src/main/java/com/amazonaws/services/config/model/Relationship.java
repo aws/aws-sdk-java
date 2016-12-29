@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The relationship of the related resource to the main resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Relationship"/>AWS API Documentation</a>
  */
 public class Relationship implements Serializable, Cloneable {
 

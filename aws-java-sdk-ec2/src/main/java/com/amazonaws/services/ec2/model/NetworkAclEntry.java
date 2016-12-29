@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an entry in a network ACL.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkAclEntry"/>AWS API Documentation</a>
  */
 public class NetworkAclEntry implements Serializable, Cloneable {
 

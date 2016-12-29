@@ -70,6 +70,7 @@
     "syncClient" : "AmazonKinesisFirehoseClient",
     "syncClientBuilderClassName" : "AmazonKinesisFirehoseClientBuilder",
     "syncInterface" : "AmazonKinesisFirehose",
+    "uid" : "firehose-2015-08-04",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

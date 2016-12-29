@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details on a data volume from another container.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/VolumeFrom"/>AWS API Documentation</a>
  */
 public class VolumeFrom implements Serializable, Cloneable {
 

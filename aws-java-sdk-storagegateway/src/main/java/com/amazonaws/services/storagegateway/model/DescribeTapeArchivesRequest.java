@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * DescribeTapeArchivesInput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeTapeArchivesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

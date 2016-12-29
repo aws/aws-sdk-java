@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DescribeAutoScalingInstances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

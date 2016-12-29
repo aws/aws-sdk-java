@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A CA certificate for an AWS account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Certificate"/>AWS API Documentation</a>
  */
 public class Certificate implements Serializable, Cloneable {
 

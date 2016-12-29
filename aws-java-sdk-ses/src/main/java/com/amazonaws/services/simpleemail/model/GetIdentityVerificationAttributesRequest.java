@@ -22,6 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
  * Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class GetIdentityVerificationAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

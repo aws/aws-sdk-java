@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes all of the attributes of a reserved cache node offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReservedCacheNodesOffering"/>AWS API
+ *      Documentation</a>
  */
 public class ReservedCacheNodesOffering implements Serializable, Cloneable {
 

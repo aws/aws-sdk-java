@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "events",
     "targetPrefix" : "AWSEvents",
+    "uid" : "events-2015-10-07",
     "xmlNamespace" : null
   },
   "operations" : {

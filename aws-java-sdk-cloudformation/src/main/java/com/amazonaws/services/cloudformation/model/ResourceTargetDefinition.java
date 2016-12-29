@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource
  * will be recreated.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceTargetDefinition"/>AWS API
+ *      Documentation</a>
  */
 public class ResourceTargetDefinition implements Serializable, Cloneable {
 

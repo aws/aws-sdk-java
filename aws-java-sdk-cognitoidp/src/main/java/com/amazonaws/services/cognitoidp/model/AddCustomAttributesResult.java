@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server for the request to add custom attributes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class AddCustomAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

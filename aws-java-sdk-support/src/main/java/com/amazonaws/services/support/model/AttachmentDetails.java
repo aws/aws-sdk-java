@@ -19,6 +19,8 @@ import java.io.Serializable;
  * The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the
  * <a>DescribeAttachment</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AttachmentDetails"/>AWS API Documentation</a>
  */
 public class AttachmentDetails implements Serializable, Cloneable {
 

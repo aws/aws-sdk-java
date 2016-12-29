@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a reserved node offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeOffering"/>AWS API
+ *      Documentation</a>
  */
 public class ReservedNodeOffering implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The result of a successful ListIdentityPools action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools"/>AWS API
+ *      Documentation</a>
  */
 public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

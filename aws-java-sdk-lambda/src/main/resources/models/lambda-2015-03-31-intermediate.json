@@ -87,6 +87,7 @@
     "syncClient" : "AWSLambdaClient",
     "syncClientBuilderClassName" : "AWSLambdaClientBuilder",
     "syncInterface" : "AWSLambda",
+    "uid" : "lambda-2015-03-31",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

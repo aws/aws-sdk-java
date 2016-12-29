@@ -19,6 +19,8 @@ import java.io.Serializable;
  * This data type is used as a request parameter in the <a>AddAttributesToFindings</a> and
  * <a>CreateAssessmentTemplate</a> actions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Attribute"/>AWS API Documentation</a>
  */
 public class Attribute implements Serializable, Cloneable {
 

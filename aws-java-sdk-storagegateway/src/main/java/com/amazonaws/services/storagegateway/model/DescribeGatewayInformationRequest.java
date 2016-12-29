@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A JSON object containing the id of the gateway.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeGatewayInformationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

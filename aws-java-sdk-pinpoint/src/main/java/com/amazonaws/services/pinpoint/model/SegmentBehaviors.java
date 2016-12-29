@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class SegmentBehaviors implements Serializable, Cloneable {
 
     /** The recency of use. */

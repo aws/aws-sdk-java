@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Indicates how to transform ingested log events into metric data in a CloudWatch metric.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricTransformation"/>AWS API Documentation</a>
  */
 public class MetricTransformation implements Serializable, Cloneable {
 

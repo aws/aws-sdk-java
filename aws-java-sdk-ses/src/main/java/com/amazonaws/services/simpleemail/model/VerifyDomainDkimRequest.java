@@ -21,6 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * about setting up Easy DKIM, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim"/>AWS API Documentation</a>
  */
 public class VerifyDomainDkimRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

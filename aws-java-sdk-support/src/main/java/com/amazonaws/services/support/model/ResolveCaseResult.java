@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The status of the case returned by the <a>ResolveCase</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase"/>AWS API Documentation</a>
  */
 public class ResolveCaseResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

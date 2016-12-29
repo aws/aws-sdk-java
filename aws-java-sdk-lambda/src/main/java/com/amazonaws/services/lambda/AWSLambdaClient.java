@@ -340,6 +340,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         Lambda function access policy is limited to 20 KB.
      * @throws TooManyRequestsException
      * @sample AWSLambda.AddPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission"/>AWS API Documentation</a>
      */
     @Override
     public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
@@ -396,6 +397,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.CreateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias"/>AWS API Documentation</a>
      */
     @Override
     public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
@@ -476,6 +478,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
      * @sample AWSLambda.CreateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateEventSourceMappingResult createEventSourceMapping(CreateEventSourceMappingRequest createEventSourceMappingRequest) {
@@ -543,6 +547,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
      * @sample AWSLambda.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction"/>AWS API Documentation</a>
      */
     @Override
     public CreateFunctionResult createFunction(CreateFunctionRequest createFunctionRequest) {
@@ -594,6 +599,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.DeleteAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias"/>AWS API Documentation</a>
      */
     @Override
     public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
@@ -648,6 +654,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.DeleteEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteEventSourceMappingResult deleteEventSourceMapping(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest) {
@@ -716,6 +724,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceConflictException
      *         The resource already exists.
      * @sample AWSLambda.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction"/>AWS API Documentation</a>
      */
     @Override
     public DeleteFunctionResult deleteFunction(DeleteFunctionRequest deleteFunctionRequest) {
@@ -764,6 +773,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @sample AWSLambda.GetAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
@@ -819,6 +830,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.GetAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias"/>AWS API Documentation</a>
      */
     @Override
     public GetAliasResult getAlias(GetAliasRequest getAliasRequest) {
@@ -872,6 +884,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.GetEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetEventSourceMappingResult getEventSourceMapping(GetEventSourceMappingRequest getEventSourceMappingRequest) {
@@ -936,6 +950,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction"/>AWS API Documentation</a>
      */
     @Override
     public GetFunctionResult getFunction(GetFunctionRequest getFunctionRequest) {
@@ -998,6 +1013,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest getFunctionConfigurationRequest) {
@@ -1062,6 +1079,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy"/>AWS API Documentation</a>
      */
     @Override
     public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
@@ -1163,6 +1181,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         Lambda was unable to decrypt the environment variables because the KMS key was not found. Please check
      *         the function's KMS key settings.
      * @sample AWSLambda.Invoke
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke"/>AWS API Documentation</a>
      */
     @Override
     public InvokeResult invoke(InvokeRequest invokeRequest) {
@@ -1219,6 +1238,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidRequestContentException
      *         The request body could not be parsed as JSON.
      * @sample AWSLambda.InvokeAsync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync"/>AWS API Documentation</a>
      */
     @Override
     @Deprecated
@@ -1275,6 +1295,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases"/>AWS API Documentation</a>
      */
     @Override
     public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
@@ -1339,6 +1360,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListEventSourceMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListEventSourceMappingsResult listEventSourceMappings(ListEventSourceMappingsRequest listEventSourceMappingsRequest) {
@@ -1398,6 +1421,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The AWS Lambda service encountered an internal error.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions"/>AWS API Documentation</a>
      */
     @Override
     public ListFunctionsResult listFunctions(ListFunctionsRequest listFunctionsRequest) {
@@ -1455,6 +1479,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListVersionsByFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListVersionsByFunctionResult listVersionsByFunction(ListVersionsByFunctionRequest listVersionsByFunctionRequest) {
@@ -1513,6 +1539,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
      * @sample AWSLambda.PublishVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion"/>AWS API Documentation</a>
      */
     @Override
     public PublishVersionResult publishVersion(PublishVersionRequest publishVersionRequest) {
@@ -1576,6 +1603,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest) {
@@ -1631,6 +1660,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.UpdateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias"/>AWS API Documentation</a>
      */
     @Override
     public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
@@ -1699,6 +1729,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceConflictException
      *         The resource already exists.
      * @sample AWSLambda.UpdateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateEventSourceMappingResult updateEventSourceMapping(UpdateEventSourceMappingRequest updateEventSourceMappingRequest) {
@@ -1763,6 +1795,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
      * @sample AWSLambda.UpdateFunctionCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateFunctionCodeResult updateFunctionCode(UpdateFunctionCodeRequest updateFunctionCodeRequest) {
@@ -1824,6 +1858,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.UpdateFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateFunctionConfigurationResult updateFunctionConfiguration(UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest) {

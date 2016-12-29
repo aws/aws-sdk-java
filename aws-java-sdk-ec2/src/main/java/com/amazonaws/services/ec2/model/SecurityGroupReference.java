@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a VPC with a security group that references your security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecurityGroupReference"/>AWS API
+ *      Documentation</a>
  */
 public class SecurityGroupReference implements Serializable, Cloneable {
 

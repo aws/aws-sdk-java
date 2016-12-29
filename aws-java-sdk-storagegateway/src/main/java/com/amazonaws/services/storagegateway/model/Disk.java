@@ -16,6 +16,7 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/Disk"/>AWS API Documentation</a>
  */
 public class Disk implements Serializable, Cloneable {
 

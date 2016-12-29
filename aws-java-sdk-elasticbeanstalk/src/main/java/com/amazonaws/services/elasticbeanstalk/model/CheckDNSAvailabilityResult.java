@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Indicates if the specified CNAME is available.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability"/>AWS API
+ *      Documentation</a>
  */
 public class CheckDNSAvailabilityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

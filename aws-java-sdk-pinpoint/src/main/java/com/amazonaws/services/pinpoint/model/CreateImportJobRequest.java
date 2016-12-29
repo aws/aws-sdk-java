@@ -15,9 +15,6 @@ package com.amazonaws.services.pinpoint.model;
 import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
 public class CreateImportJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String applicationId;

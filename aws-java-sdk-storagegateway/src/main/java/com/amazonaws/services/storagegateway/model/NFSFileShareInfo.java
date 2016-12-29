@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The Unix file permissions and ownership information assigned, by default, to native S3 objects when Storage Gateway
  * discovers them in S3 buckets.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareInfo"/>AWS API
+ *      Documentation</a>
  */
 public class NFSFileShareInfo implements Serializable, Cloneable {
 

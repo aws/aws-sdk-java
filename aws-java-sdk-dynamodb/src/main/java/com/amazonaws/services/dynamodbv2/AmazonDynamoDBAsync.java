@@ -256,6 +256,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>BatchGetItem</i> operation.
      * @return A Java Future containing the result of the BatchGetItem operation returned by the service.
      * @sample AmazonDynamoDBAsync.BatchGetItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(BatchGetItemRequest batchGetItemRequest);
 
@@ -330,6 +331,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetItem operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.BatchGetItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(BatchGetItemRequest batchGetItemRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetItemRequest, BatchGetItemResult> asyncHandler);
@@ -462,6 +464,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>BatchWriteItem</i> operation.
      * @return A Java Future containing the result of the BatchWriteItem operation returned by the service.
      * @sample AmazonDynamoDBAsync.BatchWriteItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<BatchWriteItemResult> batchWriteItemAsync(BatchWriteItemRequest batchWriteItemRequest);
 
@@ -567,6 +571,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchWriteItem operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.BatchWriteItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<BatchWriteItemResult> batchWriteItemAsync(BatchWriteItemRequest batchWriteItemRequest,
             com.amazonaws.handlers.AsyncHandler<BatchWriteItemRequest, BatchWriteItemResult> asyncHandler);
@@ -611,6 +617,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>CreateTable</i> operation.
      * @return A Java Future containing the result of the CreateTable operation returned by the service.
      * @sample AmazonDynamoDBAsync.CreateTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateTableResult> createTableAsync(CreateTableRequest createTableRequest);
 
@@ -643,6 +650,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTable operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.CreateTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateTableResult> createTableAsync(CreateTableRequest createTableRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTableRequest, CreateTableResult> asyncHandler);
@@ -686,6 +694,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>DeleteItem</i> operation.
      * @return A Java Future containing the result of the DeleteItem operation returned by the service.
      * @sample AmazonDynamoDBAsync.DeleteItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(DeleteItemRequest deleteItemRequest);
 
@@ -715,6 +724,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteItem operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.DeleteItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(DeleteItemRequest deleteItemRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteItemRequest, DeleteItemResult> asyncHandler);
@@ -779,6 +789,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>DeleteTable</i> operation.
      * @return A Java Future containing the result of the DeleteTable operation returned by the service.
      * @sample AmazonDynamoDBAsync.DeleteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(DeleteTableRequest deleteTableRequest);
 
@@ -816,6 +827,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTable operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.DeleteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(DeleteTableRequest deleteTableRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTableRequest, DeleteTableResult> asyncHandler);
@@ -932,6 +944,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>DescribeLimits</i> operation. Has no content.
      * @return A Java Future containing the result of the DescribeLimits operation returned by the service.
      * @sample AmazonDynamoDBAsync.DescribeLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest describeLimitsRequest);
 
@@ -1036,6 +1050,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLimits operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.DescribeLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest describeLimitsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLimitsRequest, DescribeLimitsResult> asyncHandler);
@@ -1058,6 +1074,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>DescribeTable</i> operation.
      * @return A Java Future containing the result of the DescribeTable operation returned by the service.
      * @sample AmazonDynamoDBAsync.DescribeTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTableResult> describeTableAsync(DescribeTableRequest describeTableRequest);
 
@@ -1083,6 +1101,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTable operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.DescribeTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTableResult> describeTableAsync(DescribeTableRequest describeTableRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTableRequest, DescribeTableResult> asyncHandler);
@@ -1117,6 +1137,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>GetItem</i> operation.
      * @return A Java Future containing the result of the GetItem operation returned by the service.
      * @sample AmazonDynamoDBAsync.GetItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetItemResult> getItemAsync(GetItemRequest getItemRequest);
 
@@ -1139,6 +1160,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetItem operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.GetItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetItemResult> getItemAsync(GetItemRequest getItemRequest,
             com.amazonaws.handlers.AsyncHandler<GetItemRequest, GetItemResult> asyncHandler);
@@ -1183,6 +1205,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>ListTables</i> operation.
      * @return A Java Future containing the result of the ListTables operation returned by the service.
      * @sample AmazonDynamoDBAsync.ListTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTablesResult> listTablesAsync(ListTablesRequest listTablesRequest);
 
@@ -1200,6 +1223,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTables operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.ListTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTablesResult> listTablesAsync(ListTablesRequest listTablesRequest,
             com.amazonaws.handlers.AsyncHandler<ListTablesRequest, ListTablesResult> asyncHandler);
@@ -1301,6 +1325,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>PutItem</i> operation.
      * @return A Java Future containing the result of the PutItem operation returned by the service.
      * @sample AmazonDynamoDBAsync.PutItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutItemResult> putItemAsync(PutItemRequest putItemRequest);
 
@@ -1346,6 +1371,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutItem operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.PutItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutItemResult> putItemAsync(PutItemRequest putItemRequest,
             com.amazonaws.handlers.AsyncHandler<PutItemRequest, PutItemResult> asyncHandler);
@@ -1414,6 +1440,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>Query</i> operation.
      * @return A Java Future containing the result of the Query operation returned by the service.
      * @sample AmazonDynamoDBAsync.Query
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<QueryResult> queryAsync(QueryRequest queryRequest);
 
@@ -1455,6 +1482,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the Query operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.Query
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<QueryResult> queryAsync(QueryRequest queryRequest, com.amazonaws.handlers.AsyncHandler<QueryRequest, QueryResult> asyncHandler);
 
@@ -1487,6 +1515,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of a <i>Scan</i> operation.
      * @return A Java Future containing the result of the Scan operation returned by the service.
      * @sample AmazonDynamoDBAsync.Scan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ScanResult> scanAsync(ScanRequest scanRequest);
 
@@ -1523,6 +1552,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the Scan operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.Scan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ScanResult> scanAsync(ScanRequest scanRequest, com.amazonaws.handlers.AsyncHandler<ScanRequest, ScanResult> asyncHandler);
 
@@ -1587,6 +1617,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of an <i>UpdateItem</i> operation.
      * @return A Java Future containing the result of the UpdateItem operation returned by the service.
      * @sample AmazonDynamoDBAsync.UpdateItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateItemResult> updateItemAsync(UpdateItemRequest updateItemRequest);
 
@@ -1610,6 +1641,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateItem operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.UpdateItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateItemResult> updateItemAsync(UpdateItemRequest updateItemRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateItemRequest, UpdateItemResult> asyncHandler);
@@ -1689,6 +1721,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        Represents the input of an <i>UpdateTable</i> operation.
      * @return A Java Future containing the result of the UpdateTable operation returned by the service.
      * @sample AmazonDynamoDBAsync.UpdateTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateTableResult> updateTableAsync(UpdateTableRequest updateTableRequest);
 
@@ -1738,6 +1771,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateTable operation returned by the service.
      * @sample AmazonDynamoDBAsyncHandler.UpdateTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateTableResult> updateTableAsync(UpdateTableRequest updateTableRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler);

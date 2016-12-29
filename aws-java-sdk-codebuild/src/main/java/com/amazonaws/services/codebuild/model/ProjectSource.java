@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about the build project's build input source code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectSource"/>AWS API Documentation</a>
  */
 public class ProjectSource implements Serializable, Cloneable {
 

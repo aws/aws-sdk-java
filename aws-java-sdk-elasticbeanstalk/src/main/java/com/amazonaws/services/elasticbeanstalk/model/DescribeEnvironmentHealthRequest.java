@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * See the example below to learn how to create a request body.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeEnvironmentHealthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

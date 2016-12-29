@@ -66,6 +66,7 @@
     "syncClient" : "AWSApplicationDiscoveryClient",
     "syncClientBuilderClassName" : "AWSApplicationDiscoveryClientBuilder",
     "syncInterface" : "AWSApplicationDiscovery",
+    "uid" : "discovery-2015-11-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

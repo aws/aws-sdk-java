@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Results of a <a>CreateStorageLocationResult</a> call.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation"/>AWS API
+ *      Documentation</a>
  */
 public class CreateStorageLocationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

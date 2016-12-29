@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response from a successful operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets"/>AWS API
+ *      Documentation</a>
  */
 public class ListAssociatedFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

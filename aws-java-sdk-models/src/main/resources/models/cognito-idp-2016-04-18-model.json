@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "cognito-idp",
     "targetPrefix" : "AWSCognitoIdentityProviderService",
+    "uid" : "cognito-idp-2016-04-18",
     "xmlNamespace" : null
   },
   "operations" : {

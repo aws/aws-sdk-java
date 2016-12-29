@@ -14,9 +14,6 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class AddTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

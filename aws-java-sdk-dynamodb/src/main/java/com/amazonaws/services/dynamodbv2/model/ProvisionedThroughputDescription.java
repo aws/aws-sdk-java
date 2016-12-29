@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with
  * data about increases and decreases.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughputDescription"/>AWS API
+ *      Documentation</a>
  */
 public class ProvisionedThroughputDescription implements Serializable, Cloneable {
 

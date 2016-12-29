@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the details of a single Amazon SQS message along with an <code>Id</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatchRequestEntry"/>AWS API
+ *      Documentation</a>
  */
 public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 

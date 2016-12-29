@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a list application revisions operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"/>AWS API
+ *      Documentation</a>
  */
 public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

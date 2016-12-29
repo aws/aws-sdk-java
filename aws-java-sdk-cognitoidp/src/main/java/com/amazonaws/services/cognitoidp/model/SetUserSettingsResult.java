@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response from the server for a set user settings request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings"/>AWS API
+ *      Documentation</a>
  */
 public class SetUserSettingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

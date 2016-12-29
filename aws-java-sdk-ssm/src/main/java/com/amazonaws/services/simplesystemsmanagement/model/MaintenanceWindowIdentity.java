@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about the Maintenance Window.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowIdentity"/>AWS API
+ *      Documentation</a>
  */
 public class MaintenanceWindowIdentity implements Serializable, Cloneable {
 

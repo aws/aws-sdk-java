@@ -27,6 +27,8 @@ import java.io.Serializable;
  * For more information about CIDR notation, see the Wikipedia entry <a
  * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSet"/>AWS API Documentation</a>
  */
 public class IPSet implements Serializable, Cloneable {
 

@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "ds",
     "targetPrefix" : "DirectoryService_20150416",
+    "uid" : "ds-2015-04-16",
     "xmlNamespace" : null
   },
   "operations" : {

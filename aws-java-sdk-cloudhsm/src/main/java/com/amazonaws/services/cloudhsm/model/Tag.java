@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the association of an SSM document and an instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatchRequestEntry"/>AWS API
+ *      Documentation</a>
  */
 public class CreateAssociationBatchRequestEntry implements Serializable, Cloneable {
 

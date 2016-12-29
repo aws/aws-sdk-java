@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a filter for a specific list of instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformation"/>AWS API Documentation</a>
  */
 public class InstanceInformation implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Container for the parameters to the DeleteBGPPeer operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

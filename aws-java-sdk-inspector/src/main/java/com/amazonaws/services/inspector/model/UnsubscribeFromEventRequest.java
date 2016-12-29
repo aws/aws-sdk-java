@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent"/>AWS API
+ *      Documentation</a>
  */
 public class UnsubscribeFromEventRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

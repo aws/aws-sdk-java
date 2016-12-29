@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Used as a response element in the <a>PreviewAgents</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AgentPreview"/>AWS API Documentation</a>
  */
 public class AgentPreview implements Serializable, Cloneable {
 

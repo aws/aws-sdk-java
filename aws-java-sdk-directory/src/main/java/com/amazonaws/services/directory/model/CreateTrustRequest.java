@@ -26,6 +26,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud
  * and an external domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust"/>AWS API Documentation</a>
  */
 public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

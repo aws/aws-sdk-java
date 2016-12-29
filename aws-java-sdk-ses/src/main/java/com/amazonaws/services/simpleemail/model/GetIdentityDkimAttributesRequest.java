@@ -22,6 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * verified that these tokens were published. For more information about Easy DKIM, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class GetIdentityDkimAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

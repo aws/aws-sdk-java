@@ -24,6 +24,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer
  * Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/BounceAction"/>AWS API Documentation</a>
  */
 public class BounceAction implements Serializable, Cloneable {
 

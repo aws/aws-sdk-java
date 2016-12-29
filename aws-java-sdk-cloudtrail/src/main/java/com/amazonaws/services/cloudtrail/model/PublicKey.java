@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about a returned public key.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PublicKey"/>AWS API Documentation</a>
  */
 public class PublicKey implements Serializable, Cloneable {
 

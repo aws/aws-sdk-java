@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This type is not currently supported.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Filter"/>AWS API Documentation</a>
  */
 public class Filter implements Serializable, Cloneable {
 

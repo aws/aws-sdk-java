@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an IP range used in a security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/IPRange"/>AWS API Documentation</a>
  */
 public class IPRange implements Serializable, Cloneable {
 

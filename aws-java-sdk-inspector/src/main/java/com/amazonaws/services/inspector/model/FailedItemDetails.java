@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Includes details about the failed items.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/FailedItemDetails"/>AWS API
+ *      Documentation</a>
  */
 public class FailedItemDetails implements Serializable, Cloneable {
 

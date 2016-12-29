@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the status of a Spot instance request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotInstanceStatus"/>AWS API Documentation</a>
  */
 public class SpotInstanceStatus implements Serializable, Cloneable {
 

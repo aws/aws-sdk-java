@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a <i>Scan</i> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan"/>AWS API Documentation</a>
  */
 public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

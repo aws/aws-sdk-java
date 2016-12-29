@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that controls whether access logs are written for the distribution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/LoggingConfig"/>AWS API Documentation</a>
  */
 public class LoggingConfig implements Serializable, Cloneable {
 

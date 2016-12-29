@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Input to the DeleteIdentityPool action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteIdentityPoolRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

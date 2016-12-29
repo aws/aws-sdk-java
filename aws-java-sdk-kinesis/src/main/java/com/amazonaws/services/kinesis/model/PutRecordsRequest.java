@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A <code>PutRecords</code> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords"/>AWS API Documentation</a>
  */
 public class PutRecordsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

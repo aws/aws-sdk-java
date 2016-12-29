@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents all of the data describing a particular stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/StreamDescription"/>AWS API
+ *      Documentation</a>
  */
 public class StreamDescription implements Serializable, Cloneable {
 

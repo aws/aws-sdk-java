@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Input for ListSubscriptionsByTopic action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic"/>AWS API
+ *      Documentation</a>
  */
 public class ListSubscriptionsByTopicRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

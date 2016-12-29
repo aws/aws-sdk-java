@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Result message wrapping a list of event descriptions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

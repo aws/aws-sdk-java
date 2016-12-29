@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about a Remote Authentication Dial In User Service (RADIUS) server.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RadiusSettings"/>AWS API Documentation</a>
  */
 public class RadiusSettings implements Serializable, Cloneable {
 

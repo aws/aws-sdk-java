@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A custom key-value pair associated with a resource such as a CloudTrail trail.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

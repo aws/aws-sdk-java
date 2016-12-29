@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Bundle"/>AWS API Documentation</a>
  */
 public class Bundle implements Serializable, Cloneable {
 

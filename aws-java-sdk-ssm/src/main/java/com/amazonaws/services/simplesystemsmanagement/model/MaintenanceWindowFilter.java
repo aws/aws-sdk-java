@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Filter used in the request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowFilter"/>AWS API
+ *      Documentation</a>
  */
 public class MaintenanceWindowFilter implements Serializable, Cloneable {
 

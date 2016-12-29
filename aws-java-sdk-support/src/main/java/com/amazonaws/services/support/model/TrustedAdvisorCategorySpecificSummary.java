@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The container for summary information that relates to the category of the Trusted Advisor check.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCategorySpecificSummary"/>AWS
+ *      API Documentation</a>
  */
 public class TrustedAdvisorCategorySpecificSummary implements Serializable, Cloneable {
 

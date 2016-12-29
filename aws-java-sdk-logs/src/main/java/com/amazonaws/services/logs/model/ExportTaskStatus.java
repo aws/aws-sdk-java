@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the status of an export task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ExportTaskStatus"/>AWS API Documentation</a>
  */
 public class ExportTaskStatus implements Serializable, Cloneable {
 

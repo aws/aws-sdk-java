@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the result of a list projects request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects"/>AWS API Documentation</a>
  */
 public class ListProjectsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

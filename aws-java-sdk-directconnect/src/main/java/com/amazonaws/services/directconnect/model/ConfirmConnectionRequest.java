@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Container for the parameters to the ConfirmConnection operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection"/>AWS API
+ *      Documentation</a>
  */
 public class ConfirmConnectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

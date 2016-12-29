@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the reference data source configured for an application.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ReferenceDataSourceDescription"/>AWS
+ *      API Documentation</a>
  */
 public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 

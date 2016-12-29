@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an Internet gateway.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InternetGateway"/>AWS API Documentation</a>
  */
 public class InternetGateway implements Serializable, Cloneable {
 

@@ -20,6 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type that contains the information about the request to list the traffic policies that are associated with
  * the current AWS account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies"/>AWS API
+ *      Documentation</a>
  */
 public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

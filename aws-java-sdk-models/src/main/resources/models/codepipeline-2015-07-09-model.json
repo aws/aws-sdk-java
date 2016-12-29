@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "codepipeline",
     "targetPrefix" : "CodePipeline_20150709",
+    "uid" : "codepipeline-2015-07-09",
     "xmlNamespace" : null
   },
   "operations" : {

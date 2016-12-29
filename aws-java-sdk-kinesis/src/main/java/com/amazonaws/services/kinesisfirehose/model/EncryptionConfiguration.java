@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the encryption for a destination in Amazon S3.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/EncryptionConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class EncryptionConfiguration implements Serializable, Cloneable {
 

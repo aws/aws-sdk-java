@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainSuggestion"/>AWS API
+ *      Documentation</a>
  */
 public class DomainSuggestion implements Serializable, Cloneable {
 

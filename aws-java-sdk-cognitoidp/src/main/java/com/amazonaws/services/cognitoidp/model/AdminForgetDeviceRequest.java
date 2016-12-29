@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Sends the forgot device request, as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice"/>AWS API
+ *      Documentation</a>
  */
 public class AdminForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

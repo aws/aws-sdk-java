@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information used with the <a>RebuildWorkspaces</a> operation to rebuild a WorkSpace.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildRequest"/>AWS API Documentation</a>
  */
 public class RebuildRequest implements Serializable, Cloneable {
 

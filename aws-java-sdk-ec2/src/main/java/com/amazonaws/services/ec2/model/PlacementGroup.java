@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a placement group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PlacementGroup"/>AWS API Documentation</a>
  */
 public class PlacementGroup implements Serializable, Cloneable {
 

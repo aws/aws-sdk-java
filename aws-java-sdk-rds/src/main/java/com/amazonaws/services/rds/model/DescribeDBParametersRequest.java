@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters"/>AWS API Documentation</a>
  */
 public class DescribeDBParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

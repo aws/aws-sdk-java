@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * <code>PutRecords</code> results.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords"/>AWS API Documentation</a>
  */
 public class PutRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

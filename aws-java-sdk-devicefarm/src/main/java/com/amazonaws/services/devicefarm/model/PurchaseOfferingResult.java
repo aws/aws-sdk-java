@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The result of the purchase offering (e.g., success or failure).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering"/>AWS API
+ *      Documentation</a>
  */
 public class PurchaseOfferingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

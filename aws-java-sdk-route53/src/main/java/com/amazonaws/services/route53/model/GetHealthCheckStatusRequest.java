@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A complex type that contains information about the request to get health check status for a health check.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus"/>AWS API
+ *      Documentation</a>
  */
 public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

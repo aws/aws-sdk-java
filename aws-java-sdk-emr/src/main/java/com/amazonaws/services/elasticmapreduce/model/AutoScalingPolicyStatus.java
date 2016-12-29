@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The status of an automatic scaling policy.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AutoScalingPolicyStatus"/>AWS API
+ *      Documentation</a>
  */
 public class AutoScalingPolicyStatus implements Serializable, Cloneable {
 

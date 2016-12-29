@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Contains information about a specific job including shipping information, job status, and other important metadata.
  * This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobMetadata"/>AWS API Documentation</a>
  */
 public class JobMetadata implements Serializable, Cloneable {
 

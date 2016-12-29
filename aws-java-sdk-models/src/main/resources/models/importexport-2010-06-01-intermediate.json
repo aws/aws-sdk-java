@@ -74,6 +74,7 @@
     "syncClient" : "AmazonImportExportClient",
     "syncClientBuilderClassName" : "AmazonImportExportClientBuilder",
     "syncInterface" : "AmazonImportExport",
+    "uid" : "importexport-2010-06-01",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

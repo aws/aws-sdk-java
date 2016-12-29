@@ -282,6 +282,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws InternalErrorException
      *         An internal error has occured.
      * @sample AWSServerMigration.CreateReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateReplicationJobResult createReplicationJob(CreateReplicationJobRequest createReplicationJobRequest) {
@@ -334,6 +336,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws ReplicationJobNotFoundException
      *         The specified Replication Job cannot be found.
      * @sample AWSServerMigration.DeleteReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteReplicationJobResult deleteReplicationJob(DeleteReplicationJobRequest deleteReplicationJobRequest) {
@@ -383,6 +387,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
      *         for the request.
      * @sample AWSServerMigration.DeleteServerCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteServerCatalogResult deleteServerCatalog(DeleteServerCatalogRequest deleteServerCatalogRequest) {
@@ -432,6 +438,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws InvalidParameterException
      *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
      * @sample AWSServerMigration.DisassociateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DisassociateConnectorResult disassociateConnector(DisassociateConnectorRequest disassociateConnectorRequest) {
@@ -473,6 +481,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws UnauthorizedOperationException
      *         This user does not have permissions to perform this operation.
      * @sample AWSServerMigration.GetConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors"/>AWS API Documentation</a>
      */
     @Override
     public GetConnectorsResult getConnectors(GetConnectorsRequest getConnectorsRequest) {
@@ -519,6 +528,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws UnauthorizedOperationException
      *         This user does not have permissions to perform this operation.
      * @sample AWSServerMigration.GetReplicationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetReplicationJobsResult getReplicationJobs(GetReplicationJobsRequest getReplicationJobsRequest) {
@@ -566,6 +577,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws UnauthorizedOperationException
      *         This user does not have permissions to perform this operation.
      * @sample AWSServerMigration.GetReplicationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetReplicationRunsResult getReplicationRuns(GetReplicationRunsRequest getReplicationRunsRequest) {
@@ -607,6 +620,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws UnauthorizedOperationException
      *         This user does not have permissions to perform this operation.
      * @sample AWSServerMigration.GetServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers"/>AWS API Documentation</a>
      */
     @Override
     public GetServersResult getServers(GetServersRequest getServersRequest) {
@@ -660,6 +674,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *         No connectors are available to handle this request. Please associate connector(s) and verify any existing
      *         connectors are healthy and can respond to requests.
      * @sample AWSServerMigration.ImportServerCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ImportServerCatalogResult importServerCatalog(ImportServerCatalogRequest importServerCatalogRequest) {
@@ -712,6 +728,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws ReplicationRunLimitExceededException
      *         This user has exceeded the maximum allowed Replication Run limit.
      * @sample AWSServerMigration.StartOnDemandReplicationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public StartOnDemandReplicationRunResult startOnDemandReplicationRun(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest) {
@@ -769,6 +787,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws InternalErrorException
      *         An internal error has occured.
      * @sample AWSServerMigration.UpdateReplicationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateReplicationJobResult updateReplicationJob(UpdateReplicationJobRequest updateReplicationJobRequest) {

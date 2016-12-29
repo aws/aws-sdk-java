@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for the <a>DeleteChangeSet</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

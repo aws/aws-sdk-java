@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Returns information about the details of an artifact.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactDetails"/>AWS API
+ *      Documentation</a>
  */
 public class ArtifactDetails implements Serializable, Cloneable {
 

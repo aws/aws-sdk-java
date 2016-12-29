@@ -17,6 +17,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the StartSupportDataExport operation.
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"/>AWS
+ *      API Documentation</a>
  */
 public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

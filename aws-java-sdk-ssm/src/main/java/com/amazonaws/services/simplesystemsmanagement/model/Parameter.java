@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An Amazon EC2 Systems Manager parameter in Parameter Store.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Parameter"/>AWS API Documentation</a>
  */
 public class Parameter implements Serializable, Cloneable {
 

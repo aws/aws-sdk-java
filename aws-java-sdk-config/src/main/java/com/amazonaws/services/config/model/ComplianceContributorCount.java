@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum
  * number.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceContributorCount"/>AWS API
+ *      Documentation</a>
  */
 public class ComplianceContributorCount implements Serializable, Cloneable {
 

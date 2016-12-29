@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains settings for the new traffic policy instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TrafficPolicyInstance"/>AWS API
+ *      Documentation</a>
  */
 public class TrafficPolicyInstance implements Serializable, Cloneable {
 

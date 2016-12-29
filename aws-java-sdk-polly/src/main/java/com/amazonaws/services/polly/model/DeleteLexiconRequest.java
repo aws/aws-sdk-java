@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon"/>AWS API Documentation</a>
  */
 public class DeleteLexiconRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

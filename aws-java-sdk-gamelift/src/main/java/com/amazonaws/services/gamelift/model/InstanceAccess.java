@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Information required to remotely connect to a fleet instance. Access is requested by calling
  * <a>GetInstanceAccess</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceAccess"/>AWS API Documentation</a>
  */
 public class InstanceAccess implements Serializable, Cloneable {
 

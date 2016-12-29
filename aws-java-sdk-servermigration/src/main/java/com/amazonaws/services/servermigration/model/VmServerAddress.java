@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * Object representing a server's location
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/VmServerAddress"/>AWS API Documentation</a>
  */
 public class VmServerAddress implements Serializable, Cloneable {
 

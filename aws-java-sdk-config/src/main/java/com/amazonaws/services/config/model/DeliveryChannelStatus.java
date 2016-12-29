@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Valid values: <code>Success</code> | <code>Failure</code>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliveryChannelStatus"/>AWS API
+ *      Documentation</a>
  */
 public class DeliveryChannelStatus implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that identifies ways in which you want to restrict distribution of your content.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/Restrictions"/>AWS API Documentation</a>
  */
 public class Restrictions implements Serializable, Cloneable {
 

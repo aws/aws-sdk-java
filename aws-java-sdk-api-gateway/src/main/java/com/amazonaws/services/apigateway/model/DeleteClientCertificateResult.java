@@ -14,9 +14,6 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class DeleteClientCertificateResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

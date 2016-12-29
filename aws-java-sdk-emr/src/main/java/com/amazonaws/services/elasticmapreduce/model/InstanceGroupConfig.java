@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Configuration defining a new instance group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupConfig"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceGroupConfig implements Serializable, Cloneable {
 

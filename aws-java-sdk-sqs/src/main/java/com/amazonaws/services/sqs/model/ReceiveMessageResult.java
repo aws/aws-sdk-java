@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A list of received messages.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage"/>AWS API Documentation</a>
  */
 public class ReceiveMessageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

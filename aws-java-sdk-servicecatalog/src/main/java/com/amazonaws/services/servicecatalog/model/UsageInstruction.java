@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Additional information provided by the administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UsageInstruction"/>AWS API
+ *      Documentation</a>
  */
 public class UsageInstruction implements Serializable, Cloneable {
 

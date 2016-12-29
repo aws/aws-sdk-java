@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an IPv6 CIDR block associated with a VPC.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcIpv6CidrBlockAssociation"/>AWS API
+ *      Documentation</a>
  */
 public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
 

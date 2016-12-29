@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response from the server when a request is made to delete the remote access session.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteRemoteAccessSessionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about requests that failed with a 5xx Server Error status code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/FaultStatistics"/>AWS API Documentation</a>
  */
 public class FaultStatistics implements Serializable, Cloneable {
 

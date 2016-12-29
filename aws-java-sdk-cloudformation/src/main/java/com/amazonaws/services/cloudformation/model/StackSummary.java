@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The StackSummary Data Type
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSummary"/>AWS API
+ *      Documentation</a>
  */
 public class StackSummary implements Serializable, Cloneable {
 

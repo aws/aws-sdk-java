@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Metadata that you assign to your managed instances. Tags enable you to categorize your managed instances in different
  * ways, for example, by purpose, owner, or environment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

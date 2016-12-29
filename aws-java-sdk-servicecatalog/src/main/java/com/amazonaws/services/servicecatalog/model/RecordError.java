@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The error code and description resulting from an operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordError"/>AWS API
+ *      Documentation</a>
  */
 public class RecordError implements Serializable, Cloneable {
 

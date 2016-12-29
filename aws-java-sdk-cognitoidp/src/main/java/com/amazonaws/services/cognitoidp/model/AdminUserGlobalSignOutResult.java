@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The global sign-out response, as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut"/>AWS API
+ *      Documentation</a>
  */
 public class AdminUserGlobalSignOutResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

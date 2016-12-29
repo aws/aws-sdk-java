@@ -20,6 +20,9 @@ import java.io.Serializable;
  * number of desired instances. Pending and terminating counts are non-zero only if fleet capacity is adjusting to an
  * <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily affected.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts"/>AWS API
+ *      Documentation</a>
  */
 public class EC2InstanceCounts implements Serializable, Cloneable {
 

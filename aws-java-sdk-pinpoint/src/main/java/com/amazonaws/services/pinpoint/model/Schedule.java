@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class Schedule implements Serializable, Cloneable {
 
     /** The scheduled time that the campaign ends in ISO 8601 format. */

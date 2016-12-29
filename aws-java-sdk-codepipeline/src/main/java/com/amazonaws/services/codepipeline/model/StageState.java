@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents information about the state of the stage.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageState"/>AWS API Documentation</a>
  */
 public class StageState implements Serializable, Cloneable {
 

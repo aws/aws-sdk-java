@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The disk container object for the import snapshot request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotDiskContainer"/>AWS API Documentation</a>
  */
 public class SnapshotDiskContainer implements Serializable, Cloneable {
 

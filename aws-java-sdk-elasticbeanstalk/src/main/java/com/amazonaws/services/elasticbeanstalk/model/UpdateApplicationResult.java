@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Result message containing a single description of an application.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateApplicationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

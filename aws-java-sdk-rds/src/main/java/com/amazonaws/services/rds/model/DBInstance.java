@@ -38,6 +38,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>DescribeDBInstances</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstance"/>AWS API Documentation</a>
  */
 public class DBInstance implements Serializable, Cloneable {
 

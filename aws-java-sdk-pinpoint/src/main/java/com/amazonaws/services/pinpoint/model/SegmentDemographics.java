@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class SegmentDemographics implements Serializable, Cloneable {
 
     /** The app version criteria for the segment. */

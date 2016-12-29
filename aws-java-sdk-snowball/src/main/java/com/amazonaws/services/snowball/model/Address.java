@@ -21,6 +21,8 @@ import java.io.Serializable;
  * region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or
  * unsupported, then an exception is thrown.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Address"/>AWS API Documentation</a>
  */
 public class Address implements Serializable, Cloneable {
 

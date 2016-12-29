@@ -65,4 +65,6 @@ public class Constants {
 
     public static final String SMOKE_TESTS_DIR_NAME = "smoketests";
 
+    public static final String AWS_DOCS_HOST = "docs.aws.amazon.com";
+
 }

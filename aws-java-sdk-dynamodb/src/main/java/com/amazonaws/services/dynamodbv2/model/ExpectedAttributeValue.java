@@ -41,6 +41,9 @@ import java.io.Serializable;
  * <i>Value</i> and <i>Exists</i> are incompatible with <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note
  * that if you use both sets of parameters at once, DynamoDB will return a <i>ValidationException</i> exception.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExpectedAttributeValue"/>AWS API
+ *      Documentation</a>
  */
 public class ExpectedAttributeValue implements Serializable, Cloneable {
 

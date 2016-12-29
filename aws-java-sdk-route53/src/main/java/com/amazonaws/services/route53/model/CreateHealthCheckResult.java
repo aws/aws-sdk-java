@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type containing the response information for the new health check.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck"/>AWS API Documentation</a>
  */
 public class CreateHealthCheckResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

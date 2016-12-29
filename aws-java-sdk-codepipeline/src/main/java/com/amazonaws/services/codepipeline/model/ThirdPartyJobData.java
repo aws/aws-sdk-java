@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about the job data for a partner action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJobData"/>AWS API
+ *      Documentation</a>
  */
 public class ThirdPartyJobData implements Serializable, Cloneable {
 

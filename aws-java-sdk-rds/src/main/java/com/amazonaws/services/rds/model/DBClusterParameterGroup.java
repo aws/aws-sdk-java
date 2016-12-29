@@ -23,6 +23,9 @@ import java.io.Serializable;
  * This data type is used as a request parameter in the <a>DeleteDBClusterParameterGroup</a> action, and as a response
  * element in the <a>DescribeDBClusterParameterGroups</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterParameterGroup"/>AWS API
+ *      Documentation</a>
  */
 public class DBClusterParameterGroup implements Serializable, Cloneable {
 

@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * A result message containing a list of completed and failed managed actions.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeEnvironmentManagedActionHistoryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements
         Serializable, Cloneable {

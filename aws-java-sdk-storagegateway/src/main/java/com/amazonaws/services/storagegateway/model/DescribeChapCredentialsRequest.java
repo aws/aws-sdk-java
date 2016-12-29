@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeChapCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

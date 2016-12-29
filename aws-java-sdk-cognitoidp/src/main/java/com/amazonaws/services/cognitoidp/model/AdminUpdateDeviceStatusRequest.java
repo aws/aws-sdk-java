@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The request to update the device status, as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus"/>AWS API
+ *      Documentation</a>
  */
 public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

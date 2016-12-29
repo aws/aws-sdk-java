@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A resource tag.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ResourceTag"/>AWS API Documentation</a>
  */
 public class ResourceTag implements Serializable, Cloneable {
 

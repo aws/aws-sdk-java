@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A tag associated with the record, stored as a key-value pair.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordTag"/>AWS API Documentation</a>
  */
 public class RecordTag implements Serializable, Cloneable {
 

@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Request for a list of datasets for an identity.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets"/>AWS API Documentation</a>
  */
 public class ListDatasetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

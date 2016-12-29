@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Result message containig a list of application version descriptions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeConfigurationOptionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

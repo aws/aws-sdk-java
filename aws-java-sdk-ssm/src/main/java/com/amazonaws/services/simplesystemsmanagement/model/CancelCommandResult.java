@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand"/>AWS API Documentation</a>
  */
 public class CancelCommandResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

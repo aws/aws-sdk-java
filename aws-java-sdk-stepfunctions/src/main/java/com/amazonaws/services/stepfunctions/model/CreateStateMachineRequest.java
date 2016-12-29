@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine"/>AWS API Documentation</a>
  */
 public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

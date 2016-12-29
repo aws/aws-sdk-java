@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A role mapping.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/RoleMapping"/>AWS API
+ *      Documentation</a>
  */
 public class RoleMapping implements Serializable, Cloneable {
 

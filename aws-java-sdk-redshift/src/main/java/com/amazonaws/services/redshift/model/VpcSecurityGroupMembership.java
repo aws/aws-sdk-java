@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the members of a VPC security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/VpcSecurityGroupMembership"/>AWS API
+ *      Documentation</a>
  */
 public class VpcSecurityGroupMembership implements Serializable, Cloneable {
 

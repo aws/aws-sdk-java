@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity"/>AWS API Documentation</a>
  */
 public class DescribeActivityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

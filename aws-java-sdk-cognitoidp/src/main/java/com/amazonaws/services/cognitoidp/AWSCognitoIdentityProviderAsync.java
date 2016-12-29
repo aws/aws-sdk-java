@@ -45,6 +45,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to add custom attributes.
      * @return A Java Future containing the result of the AddCustomAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AddCustomAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddCustomAttributesResult> addCustomAttributesAsync(AddCustomAttributesRequest addCustomAttributesRequest);
 
@@ -61,6 +63,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddCustomAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AddCustomAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddCustomAttributesResult> addCustomAttributesAsync(AddCustomAttributesRequest addCustomAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<AddCustomAttributesRequest, AddCustomAttributesResult> asyncHandler);
@@ -76,6 +80,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param adminAddUserToGroupRequest
      * @return A Java Future containing the result of the AdminAddUserToGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminAddUserToGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminAddUserToGroupResult> adminAddUserToGroupAsync(AdminAddUserToGroupRequest adminAddUserToGroupRequest);
 
@@ -94,6 +100,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminAddUserToGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminAddUserToGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminAddUserToGroupResult> adminAddUserToGroupAsync(AdminAddUserToGroupRequest adminAddUserToGroupRequest,
             com.amazonaws.handlers.AsyncHandler<AdminAddUserToGroupRequest, AdminAddUserToGroupResult> asyncHandler);
@@ -110,6 +118,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to confirm user registration.
      * @return A Java Future containing the result of the AdminConfirmSignUp operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminConfirmSignUp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminConfirmSignUpResult> adminConfirmSignUpAsync(AdminConfirmSignUpRequest adminConfirmSignUpRequest);
 
@@ -129,6 +139,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminConfirmSignUp operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminConfirmSignUp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminConfirmSignUpResult> adminConfirmSignUpAsync(AdminConfirmSignUpRequest adminConfirmSignUpRequest,
             com.amazonaws.handlers.AsyncHandler<AdminConfirmSignUpRequest, AdminConfirmSignUpResult> asyncHandler);
@@ -147,6 +159,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to create a user in the specified user pool.
      * @return A Java Future containing the result of the AdminCreateUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminCreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminCreateUserResult> adminCreateUserAsync(AdminCreateUserRequest adminCreateUserRequest);
 
@@ -168,6 +182,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminCreateUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminCreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminCreateUserResult> adminCreateUserAsync(AdminCreateUserRequest adminCreateUserRequest,
             com.amazonaws.handlers.AsyncHandler<AdminCreateUserRequest, AdminCreateUserResult> asyncHandler);
@@ -184,6 +200,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to delete a user as an administrator.
      * @return A Java Future containing the result of the AdminDeleteUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminDeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminDeleteUserResult> adminDeleteUserAsync(AdminDeleteUserRequest adminDeleteUserRequest);
 
@@ -203,6 +221,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminDeleteUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminDeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminDeleteUserResult> adminDeleteUserAsync(AdminDeleteUserRequest adminDeleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, AdminDeleteUserResult> asyncHandler);
@@ -219,6 +239,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to delete user attributes as an administrator.
      * @return A Java Future containing the result of the AdminDeleteUserAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminDeleteUserAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminDeleteUserAttributesResult> adminDeleteUserAttributesAsync(
             AdminDeleteUserAttributesRequest adminDeleteUserAttributesRequest);
@@ -239,6 +261,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminDeleteUserAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminDeleteUserAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminDeleteUserAttributesResult> adminDeleteUserAttributesAsync(
             AdminDeleteUserAttributesRequest adminDeleteUserAttributesRequest,
@@ -256,6 +280,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to disable any user as an administrator.
      * @return A Java Future containing the result of the AdminDisableUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminDisableUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminDisableUserResult> adminDisableUserAsync(AdminDisableUserRequest adminDisableUserRequest);
 
@@ -275,6 +301,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminDisableUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminDisableUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminDisableUserResult> adminDisableUserAsync(AdminDisableUserRequest adminDisableUserRequest,
             com.amazonaws.handlers.AsyncHandler<AdminDisableUserRequest, AdminDisableUserResult> asyncHandler);
@@ -291,6 +319,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request that enables the user as an administrator.
      * @return A Java Future containing the result of the AdminEnableUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminEnableUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminEnableUserResult> adminEnableUserAsync(AdminEnableUserRequest adminEnableUserRequest);
 
@@ -310,6 +340,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminEnableUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminEnableUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminEnableUserResult> adminEnableUserAsync(AdminEnableUserRequest adminEnableUserRequest,
             com.amazonaws.handlers.AsyncHandler<AdminEnableUserRequest, AdminEnableUserResult> asyncHandler);
@@ -326,6 +358,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Sends the forgot device request, as an administrator.
      * @return A Java Future containing the result of the AdminForgetDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminForgetDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminForgetDeviceResult> adminForgetDeviceAsync(AdminForgetDeviceRequest adminForgetDeviceRequest);
 
@@ -345,6 +379,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminForgetDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminForgetDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminForgetDeviceResult> adminForgetDeviceAsync(AdminForgetDeviceRequest adminForgetDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<AdminForgetDeviceRequest, AdminForgetDeviceResult> asyncHandler);
@@ -361,6 +397,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to get the device, as an administrator.
      * @return A Java Future containing the result of the AdminGetDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminGetDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminGetDeviceResult> adminGetDeviceAsync(AdminGetDeviceRequest adminGetDeviceRequest);
 
@@ -380,6 +418,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminGetDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminGetDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminGetDeviceResult> adminGetDeviceAsync(AdminGetDeviceRequest adminGetDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<AdminGetDeviceRequest, AdminGetDeviceResult> asyncHandler);
@@ -396,6 +436,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to get the specified user as an administrator.
      * @return A Java Future containing the result of the AdminGetUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminGetUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminGetUserResult> adminGetUserAsync(AdminGetUserRequest adminGetUserRequest);
 
@@ -415,6 +457,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminGetUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminGetUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminGetUserResult> adminGetUserAsync(AdminGetUserRequest adminGetUserRequest,
             com.amazonaws.handlers.AsyncHandler<AdminGetUserRequest, AdminGetUserResult> asyncHandler);
@@ -431,6 +475,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Initiates the authorization request, as an administrator.
      * @return A Java Future containing the result of the AdminInitiateAuth operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminInitiateAuth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(AdminInitiateAuthRequest adminInitiateAuthRequest);
 
@@ -450,6 +496,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminInitiateAuth operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminInitiateAuth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(AdminInitiateAuthRequest adminInitiateAuthRequest,
             com.amazonaws.handlers.AsyncHandler<AdminInitiateAuthRequest, AdminInitiateAuthResult> asyncHandler);
@@ -466,6 +514,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to list devices, as an administrator.
      * @return A Java Future containing the result of the AdminListDevices operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminListDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminListDevicesResult> adminListDevicesAsync(AdminListDevicesRequest adminListDevicesRequest);
 
@@ -485,6 +535,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminListDevices operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminListDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminListDevicesResult> adminListDevicesAsync(AdminListDevicesRequest adminListDevicesRequest,
             com.amazonaws.handlers.AsyncHandler<AdminListDevicesRequest, AdminListDevicesResult> asyncHandler);
@@ -500,6 +552,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param adminListGroupsForUserRequest
      * @return A Java Future containing the result of the AdminListGroupsForUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminListGroupsForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminListGroupsForUserResult> adminListGroupsForUserAsync(AdminListGroupsForUserRequest adminListGroupsForUserRequest);
 
@@ -518,6 +572,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminListGroupsForUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminListGroupsForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminListGroupsForUserResult> adminListGroupsForUserAsync(AdminListGroupsForUserRequest adminListGroupsForUserRequest,
             com.amazonaws.handlers.AsyncHandler<AdminListGroupsForUserRequest, AdminListGroupsForUserResult> asyncHandler);
@@ -533,6 +589,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param adminRemoveUserFromGroupRequest
      * @return A Java Future containing the result of the AdminRemoveUserFromGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminRemoveUserFromGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminRemoveUserFromGroupResult> adminRemoveUserFromGroupAsync(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest);
 
@@ -551,6 +609,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminRemoveUserFromGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminRemoveUserFromGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminRemoveUserFromGroupResult> adminRemoveUserFromGroupAsync(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest,
             com.amazonaws.handlers.AsyncHandler<AdminRemoveUserFromGroupRequest, AdminRemoveUserFromGroupResult> asyncHandler);
@@ -575,6 +635,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to reset a user's password as an administrator.
      * @return A Java Future containing the result of the AdminResetUserPassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminResetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminResetUserPasswordResult> adminResetUserPasswordAsync(AdminResetUserPasswordRequest adminResetUserPasswordRequest);
 
@@ -602,6 +664,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminResetUserPassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminResetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminResetUserPasswordResult> adminResetUserPasswordAsync(AdminResetUserPasswordRequest adminResetUserPasswordRequest,
             com.amazonaws.handlers.AsyncHandler<AdminResetUserPasswordRequest, AdminResetUserPasswordResult> asyncHandler);
@@ -618,6 +682,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        The request to respond to the authentication challenge, as an administrator.
      * @return A Java Future containing the result of the AdminRespondToAuthChallenge operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminRespondToAuthChallenge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminRespondToAuthChallengeResult> adminRespondToAuthChallengeAsync(
             AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest);
@@ -638,6 +704,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminRespondToAuthChallenge operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminRespondToAuthChallenge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminRespondToAuthChallengeResult> adminRespondToAuthChallengeAsync(
             AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest,
@@ -655,6 +723,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to set user settings as an administrator.
      * @return A Java Future containing the result of the AdminSetUserSettings operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminSetUserSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(AdminSetUserSettingsRequest adminSetUserSettingsRequest);
 
@@ -674,6 +744,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminSetUserSettings operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminSetUserSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(AdminSetUserSettingsRequest adminSetUserSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<AdminSetUserSettingsRequest, AdminSetUserSettingsResult> asyncHandler);
@@ -690,6 +762,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        The request to update the device status, as an administrator.
      * @return A Java Future containing the result of the AdminUpdateDeviceStatus operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminUpdateDeviceStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminUpdateDeviceStatusResult> adminUpdateDeviceStatusAsync(AdminUpdateDeviceStatusRequest adminUpdateDeviceStatusRequest);
 
@@ -709,6 +783,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminUpdateDeviceStatus operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminUpdateDeviceStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminUpdateDeviceStatusResult> adminUpdateDeviceStatusAsync(AdminUpdateDeviceStatusRequest adminUpdateDeviceStatusRequest,
             com.amazonaws.handlers.AsyncHandler<AdminUpdateDeviceStatusRequest, AdminUpdateDeviceStatusResult> asyncHandler);
@@ -725,6 +801,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to update the user's attributes as an administrator.
      * @return A Java Future containing the result of the AdminUpdateUserAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminUpdateUserAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminUpdateUserAttributesResult> adminUpdateUserAttributesAsync(
             AdminUpdateUserAttributesRequest adminUpdateUserAttributesRequest);
@@ -745,6 +823,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminUpdateUserAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminUpdateUserAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminUpdateUserAttributesResult> adminUpdateUserAttributesAsync(
             AdminUpdateUserAttributesRequest adminUpdateUserAttributesRequest,
@@ -762,6 +842,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        The request to sign out of all devices, as an administrator.
      * @return A Java Future containing the result of the AdminUserGlobalSignOut operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminUserGlobalSignOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest);
 
@@ -781,6 +863,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AdminUserGlobalSignOut operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminUserGlobalSignOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest,
             com.amazonaws.handlers.AsyncHandler<AdminUserGlobalSignOutRequest, AdminUserGlobalSignOutResult> asyncHandler);
@@ -794,6 +878,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to change a user password.
      * @return A Java Future containing the result of the ChangePassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ChangePassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(ChangePasswordRequest changePasswordRequest);
 
@@ -810,6 +896,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ChangePassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ChangePassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(ChangePasswordRequest changePasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult> asyncHandler);
@@ -823,6 +911,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Confirms the device request.
      * @return A Java Future containing the result of the ConfirmDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ConfirmDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ConfirmDeviceResult> confirmDeviceAsync(ConfirmDeviceRequest confirmDeviceRequest);
 
@@ -839,6 +929,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ConfirmDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ConfirmDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ConfirmDeviceResult> confirmDeviceAsync(ConfirmDeviceRequest confirmDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<ConfirmDeviceRequest, ConfirmDeviceResult> asyncHandler);
@@ -852,6 +944,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        The request representing the confirmation for a password reset.
      * @return A Java Future containing the result of the ConfirmForgotPassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ConfirmForgotPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ConfirmForgotPasswordResult> confirmForgotPasswordAsync(ConfirmForgotPasswordRequest confirmForgotPasswordRequest);
 
@@ -868,6 +962,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ConfirmForgotPassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ConfirmForgotPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ConfirmForgotPasswordResult> confirmForgotPasswordAsync(ConfirmForgotPasswordRequest confirmForgotPasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ConfirmForgotPasswordRequest, ConfirmForgotPasswordResult> asyncHandler);
@@ -881,6 +977,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to confirm registration of a user.
      * @return A Java Future containing the result of the ConfirmSignUp operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ConfirmSignUp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ConfirmSignUpResult> confirmSignUpAsync(ConfirmSignUpRequest confirmSignUpRequest);
 
@@ -897,6 +995,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ConfirmSignUp operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ConfirmSignUp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ConfirmSignUpResult> confirmSignUpAsync(ConfirmSignUpRequest confirmSignUpRequest,
             com.amazonaws.handlers.AsyncHandler<ConfirmSignUpRequest, ConfirmSignUpResult> asyncHandler);
@@ -912,6 +1012,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param createGroupRequest
      * @return A Java Future containing the result of the CreateGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest);
 
@@ -930,6 +1032,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler);
@@ -943,6 +1047,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to create the user import job.
      * @return A Java Future containing the result of the CreateUserImportJob operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.CreateUserImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(CreateUserImportJobRequest createUserImportJobRequest);
 
@@ -959,6 +1065,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateUserImportJob operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.CreateUserImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(CreateUserImportJobRequest createUserImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserImportJobRequest, CreateUserImportJobResult> asyncHandler);
@@ -972,6 +1080,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to create a user pool.
      * @return A Java Future containing the result of the CreateUserPool operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.CreateUserPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateUserPoolResult> createUserPoolAsync(CreateUserPoolRequest createUserPoolRequest);
 
@@ -988,6 +1098,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateUserPool operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.CreateUserPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateUserPoolResult> createUserPoolAsync(CreateUserPoolRequest createUserPoolRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserPoolRequest, CreateUserPoolResult> asyncHandler);
@@ -1001,6 +1113,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to create a user pool client.
      * @return A Java Future containing the result of the CreateUserPoolClient operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.CreateUserPoolClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateUserPoolClientResult> createUserPoolClientAsync(CreateUserPoolClientRequest createUserPoolClientRequest);
 
@@ -1017,6 +1131,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateUserPoolClient operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.CreateUserPoolClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateUserPoolClientResult> createUserPoolClientAsync(CreateUserPoolClientRequest createUserPoolClientRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserPoolClientRequest, CreateUserPoolClientResult> asyncHandler);
@@ -1032,6 +1148,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param deleteGroupRequest
      * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest);
 
@@ -1050,6 +1168,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler);
@@ -1063,6 +1183,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to delete a user.
      * @return A Java Future containing the result of the DeleteUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest);
 
@@ -1079,6 +1201,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
@@ -1092,6 +1216,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to delete user attributes.
      * @return A Java Future containing the result of the DeleteUserAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DeleteUserAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserAttributesResult> deleteUserAttributesAsync(DeleteUserAttributesRequest deleteUserAttributesRequest);
 
@@ -1108,6 +1234,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteUserAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteUserAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserAttributesResult> deleteUserAttributesAsync(DeleteUserAttributesRequest deleteUserAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserAttributesRequest, DeleteUserAttributesResult> asyncHandler);
@@ -1121,6 +1249,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to delete a user pool.
      * @return A Java Future containing the result of the DeleteUserPool operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DeleteUserPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserPoolResult> deleteUserPoolAsync(DeleteUserPoolRequest deleteUserPoolRequest);
 
@@ -1137,6 +1267,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteUserPool operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteUserPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserPoolResult> deleteUserPoolAsync(DeleteUserPoolRequest deleteUserPoolRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, DeleteUserPoolResult> asyncHandler);
@@ -1150,6 +1282,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to delete a user pool client.
      * @return A Java Future containing the result of the DeleteUserPoolClient operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DeleteUserPoolClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserPoolClientResult> deleteUserPoolClientAsync(DeleteUserPoolClientRequest deleteUserPoolClientRequest);
 
@@ -1166,6 +1300,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteUserPoolClient operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteUserPoolClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteUserPoolClientResult> deleteUserPoolClientAsync(DeleteUserPoolClientRequest deleteUserPoolClientRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, DeleteUserPoolClientResult> asyncHandler);
@@ -1179,6 +1315,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to describe the user import job.
      * @return A Java Future containing the result of the DescribeUserImportJob operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DescribeUserImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(DescribeUserImportJobRequest describeUserImportJobRequest);
 
@@ -1195,6 +1333,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeUserImportJob operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DescribeUserImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(DescribeUserImportJobRequest describeUserImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeUserImportJobRequest, DescribeUserImportJobResult> asyncHandler);
@@ -1208,6 +1348,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to describe the user pool.
      * @return A Java Future containing the result of the DescribeUserPool operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DescribeUserPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeUserPoolResult> describeUserPoolAsync(DescribeUserPoolRequest describeUserPoolRequest);
 
@@ -1224,6 +1366,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeUserPool operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DescribeUserPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeUserPoolResult> describeUserPoolAsync(DescribeUserPoolRequest describeUserPoolRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeUserPoolRequest, DescribeUserPoolResult> asyncHandler);
@@ -1237,6 +1381,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to describe a user pool client.
      * @return A Java Future containing the result of the DescribeUserPoolClient operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DescribeUserPoolClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeUserPoolClientResult> describeUserPoolClientAsync(DescribeUserPoolClientRequest describeUserPoolClientRequest);
 
@@ -1253,6 +1399,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeUserPoolClient operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DescribeUserPoolClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeUserPoolClientResult> describeUserPoolClientAsync(DescribeUserPoolClientRequest describeUserPoolClientRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeUserPoolClientRequest, DescribeUserPoolClientResult> asyncHandler);
@@ -1266,6 +1414,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to forget the device.
      * @return A Java Future containing the result of the ForgetDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ForgetDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ForgetDeviceResult> forgetDeviceAsync(ForgetDeviceRequest forgetDeviceRequest);
 
@@ -1282,6 +1432,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ForgetDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ForgetDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ForgetDeviceResult> forgetDeviceAsync(ForgetDeviceRequest forgetDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<ForgetDeviceRequest, ForgetDeviceResult> asyncHandler);
@@ -1295,6 +1447,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to reset a user's password.
      * @return A Java Future containing the result of the ForgotPassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ForgotPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ForgotPasswordResult> forgotPasswordAsync(ForgotPasswordRequest forgotPasswordRequest);
 
@@ -1311,6 +1465,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ForgotPassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ForgotPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ForgotPasswordResult> forgotPasswordAsync(ForgotPasswordRequest forgotPasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult> asyncHandler);
@@ -1324,6 +1480,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to get the header information for the .csv file for the user import job.
      * @return A Java Future containing the result of the GetCSVHeader operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.GetCSVHeader
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCSVHeaderResult> getCSVHeaderAsync(GetCSVHeaderRequest getCSVHeaderRequest);
 
@@ -1340,6 +1498,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCSVHeader operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.GetCSVHeader
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCSVHeaderResult> getCSVHeaderAsync(GetCSVHeaderRequest getCSVHeaderRequest,
             com.amazonaws.handlers.AsyncHandler<GetCSVHeaderRequest, GetCSVHeaderResult> asyncHandler);
@@ -1353,6 +1513,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to get the device.
      * @return A Java Future containing the result of the GetDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.GetDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest getDeviceRequest);
 
@@ -1369,6 +1530,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDevice operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.GetDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest getDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler);
@@ -1384,6 +1546,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param getGroupRequest
      * @return A Java Future containing the result of the GetGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest);
 
@@ -1402,6 +1565,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler);
@@ -1415,6 +1579,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to get information about the user.
      * @return A Java Future containing the result of the GetUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.GetUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest getUserRequest);
 
@@ -1431,6 +1596,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.GetUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest getUserRequest,
             com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult> asyncHandler);
@@ -1445,6 +1611,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @return A Java Future containing the result of the GetUserAttributeVerificationCode operation returned by the
      *         service.
      * @sample AWSCognitoIdentityProviderAsync.GetUserAttributeVerificationCode
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetUserAttributeVerificationCodeResult> getUserAttributeVerificationCodeAsync(
             GetUserAttributeVerificationCodeRequest getUserAttributeVerificationCodeRequest);
@@ -1463,6 +1632,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @return A Java Future containing the result of the GetUserAttributeVerificationCode operation returned by the
      *         service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.GetUserAttributeVerificationCode
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetUserAttributeVerificationCodeResult> getUserAttributeVerificationCodeAsync(
             GetUserAttributeVerificationCodeRequest getUserAttributeVerificationCodeRequest,
@@ -1477,6 +1649,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to sign out all devices.
      * @return A Java Future containing the result of the GlobalSignOut operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.GlobalSignOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GlobalSignOutResult> globalSignOutAsync(GlobalSignOutRequest globalSignOutRequest);
 
@@ -1493,6 +1667,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GlobalSignOut operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.GlobalSignOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GlobalSignOutResult> globalSignOutAsync(GlobalSignOutRequest globalSignOutRequest,
             com.amazonaws.handlers.AsyncHandler<GlobalSignOutRequest, GlobalSignOutResult> asyncHandler);
@@ -1506,6 +1682,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Initiates the authentication request.
      * @return A Java Future containing the result of the InitiateAuth operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.InitiateAuth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<InitiateAuthResult> initiateAuthAsync(InitiateAuthRequest initiateAuthRequest);
 
@@ -1522,6 +1700,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the InitiateAuth operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.InitiateAuth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<InitiateAuthResult> initiateAuthAsync(InitiateAuthRequest initiateAuthRequest,
             com.amazonaws.handlers.AsyncHandler<InitiateAuthRequest, InitiateAuthResult> asyncHandler);
@@ -1535,6 +1715,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to list the devices.
      * @return A Java Future containing the result of the ListDevices operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ListDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(ListDevicesRequest listDevicesRequest);
 
@@ -1551,6 +1733,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDevices operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ListDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(ListDevicesRequest listDevicesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler);
@@ -1566,6 +1750,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param listGroupsRequest
      * @return A Java Future containing the result of the ListGroups operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ListGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest listGroupsRequest);
 
@@ -1584,6 +1770,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListGroups operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ListGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest listGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler);
@@ -1597,6 +1785,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to list the user import jobs.
      * @return A Java Future containing the result of the ListUserImportJobs operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ListUserImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(ListUserImportJobsRequest listUserImportJobsRequest);
 
@@ -1613,6 +1803,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUserImportJobs operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ListUserImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(ListUserImportJobsRequest listUserImportJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListUserImportJobsRequest, ListUserImportJobsResult> asyncHandler);
@@ -1626,6 +1818,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to list the user pool clients.
      * @return A Java Future containing the result of the ListUserPoolClients operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ListUserPoolClients
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListUserPoolClientsResult> listUserPoolClientsAsync(ListUserPoolClientsRequest listUserPoolClientsRequest);
 
@@ -1642,6 +1836,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUserPoolClients operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ListUserPoolClients
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListUserPoolClientsResult> listUserPoolClientsAsync(ListUserPoolClientsRequest listUserPoolClientsRequest,
             com.amazonaws.handlers.AsyncHandler<ListUserPoolClientsRequest, ListUserPoolClientsResult> asyncHandler);
@@ -1655,6 +1851,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to list user pools.
      * @return A Java Future containing the result of the ListUserPools operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ListUserPools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListUserPoolsResult> listUserPoolsAsync(ListUserPoolsRequest listUserPoolsRequest);
 
@@ -1671,6 +1869,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUserPools operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ListUserPools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListUserPoolsResult> listUserPoolsAsync(ListUserPoolsRequest listUserPoolsRequest,
             com.amazonaws.handlers.AsyncHandler<ListUserPoolsRequest, ListUserPoolsResult> asyncHandler);
@@ -1684,6 +1884,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to list users.
      * @return A Java Future containing the result of the ListUsers operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ListUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest);
 
@@ -1700,6 +1901,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUsers operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ListUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler);
@@ -1715,6 +1917,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param listUsersInGroupRequest
      * @return A Java Future containing the result of the ListUsersInGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ListUsersInGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListUsersInGroupResult> listUsersInGroupAsync(ListUsersInGroupRequest listUsersInGroupRequest);
 
@@ -1733,6 +1937,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUsersInGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ListUsersInGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListUsersInGroupResult> listUsersInGroupAsync(ListUsersInGroupRequest listUsersInGroupRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersInGroupRequest, ListUsersInGroupResult> asyncHandler);
@@ -1746,6 +1952,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to resend the confirmation code.
      * @return A Java Future containing the result of the ResendConfirmationCode operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.ResendConfirmationCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResendConfirmationCodeResult> resendConfirmationCodeAsync(ResendConfirmationCodeRequest resendConfirmationCodeRequest);
 
@@ -1762,6 +1970,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ResendConfirmationCode operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.ResendConfirmationCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResendConfirmationCodeResult> resendConfirmationCodeAsync(ResendConfirmationCodeRequest resendConfirmationCodeRequest,
             com.amazonaws.handlers.AsyncHandler<ResendConfirmationCodeRequest, ResendConfirmationCodeResult> asyncHandler);
@@ -1775,6 +1985,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        The request to respond to an authentication challenge.
      * @return A Java Future containing the result of the RespondToAuthChallenge operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.RespondToAuthChallenge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RespondToAuthChallengeResult> respondToAuthChallengeAsync(RespondToAuthChallengeRequest respondToAuthChallengeRequest);
 
@@ -1791,6 +2003,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RespondToAuthChallenge operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.RespondToAuthChallenge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RespondToAuthChallengeResult> respondToAuthChallengeAsync(RespondToAuthChallengeRequest respondToAuthChallengeRequest,
             com.amazonaws.handlers.AsyncHandler<RespondToAuthChallengeRequest, RespondToAuthChallengeResult> asyncHandler);
@@ -1805,6 +2019,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to set user settings.
      * @return A Java Future containing the result of the SetUserSettings operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.SetUserSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetUserSettingsResult> setUserSettingsAsync(SetUserSettingsRequest setUserSettingsRequest);
 
@@ -1822,6 +2038,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetUserSettings operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.SetUserSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SetUserSettingsResult> setUserSettingsAsync(SetUserSettingsRequest setUserSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<SetUserSettingsRequest, SetUserSettingsResult> asyncHandler);
@@ -1835,6 +2053,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to register a user.
      * @return A Java Future containing the result of the SignUp operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.SignUp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<SignUpResult> signUpAsync(SignUpRequest signUpRequest);
 
@@ -1851,6 +2070,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SignUp operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.SignUp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<SignUpResult> signUpAsync(SignUpRequest signUpRequest,
             com.amazonaws.handlers.AsyncHandler<SignUpRequest, SignUpResult> asyncHandler);
@@ -1864,6 +2084,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to start the user import job.
      * @return A Java Future containing the result of the StartUserImportJob operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.StartUserImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartUserImportJobResult> startUserImportJobAsync(StartUserImportJobRequest startUserImportJobRequest);
 
@@ -1880,6 +2102,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartUserImportJob operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.StartUserImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartUserImportJobResult> startUserImportJobAsync(StartUserImportJobRequest startUserImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<StartUserImportJobRequest, StartUserImportJobResult> asyncHandler);
@@ -1893,6 +2117,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to stop the user import job.
      * @return A Java Future containing the result of the StopUserImportJob operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.StopUserImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(StopUserImportJobRequest stopUserImportJobRequest);
 
@@ -1909,6 +2135,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopUserImportJob operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.StopUserImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(StopUserImportJobRequest stopUserImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopUserImportJobRequest, StopUserImportJobResult> asyncHandler);
@@ -1922,6 +2150,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to update the device status.
      * @return A Java Future containing the result of the UpdateDeviceStatus operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.UpdateDeviceStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(UpdateDeviceStatusRequest updateDeviceStatusRequest);
 
@@ -1938,6 +2168,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDeviceStatus operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateDeviceStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(UpdateDeviceStatusRequest updateDeviceStatusRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDeviceStatusRequest, UpdateDeviceStatusResult> asyncHandler);
@@ -1953,6 +2185,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * @param updateGroupRequest
      * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest);
 
@@ -1971,6 +2205,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler);
@@ -1984,6 +2220,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to update user attributes.
      * @return A Java Future containing the result of the UpdateUserAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.UpdateUserAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateUserAttributesResult> updateUserAttributesAsync(UpdateUserAttributesRequest updateUserAttributesRequest);
 
@@ -2000,6 +2238,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateUserAttributes operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateUserAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateUserAttributesResult> updateUserAttributesAsync(UpdateUserAttributesRequest updateUserAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserAttributesRequest, UpdateUserAttributesResult> asyncHandler);
@@ -2013,6 +2253,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to update the user pool.
      * @return A Java Future containing the result of the UpdateUserPool operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.UpdateUserPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateUserPoolResult> updateUserPoolAsync(UpdateUserPoolRequest updateUserPoolRequest);
 
@@ -2029,6 +2271,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateUserPool operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateUserPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateUserPoolResult> updateUserPoolAsync(UpdateUserPoolRequest updateUserPoolRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserPoolRequest, UpdateUserPoolResult> asyncHandler);
@@ -2042,6 +2286,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to update the user pool client.
      * @return A Java Future containing the result of the UpdateUserPoolClient operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.UpdateUserPoolClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateUserPoolClientResult> updateUserPoolClientAsync(UpdateUserPoolClientRequest updateUserPoolClientRequest);
 
@@ -2058,6 +2304,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateUserPoolClient operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateUserPoolClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateUserPoolClientResult> updateUserPoolClientAsync(UpdateUserPoolClientRequest updateUserPoolClientRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserPoolClientRequest, UpdateUserPoolClientResult> asyncHandler);
@@ -2071,6 +2319,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        Represents the request to verify user attributes.
      * @return A Java Future containing the result of the VerifyUserAttribute operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.VerifyUserAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<VerifyUserAttributeResult> verifyUserAttributeAsync(VerifyUserAttributeRequest verifyUserAttributeRequest);
 
@@ -2087,6 +2337,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the VerifyUserAttribute operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.VerifyUserAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<VerifyUserAttributeResult> verifyUserAttributeAsync(VerifyUserAttributeRequest verifyUserAttributeRequest,
             com.amazonaws.handlers.AsyncHandler<VerifyUserAttributeRequest, VerifyUserAttributeResult> asyncHandler);

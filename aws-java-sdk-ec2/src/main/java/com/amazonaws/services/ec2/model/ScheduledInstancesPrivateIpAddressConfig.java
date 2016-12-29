@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a private IPv4 address for a Scheduled Instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesPrivateIpAddressConfig"/>AWS
+ *      API Documentation</a>
  */
 public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, Cloneable {
 

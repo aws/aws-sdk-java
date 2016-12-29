@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The verification code response returned by the server response to get the user attribute verification code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode"/>AWS
+ *      API Documentation</a>
  */
 public class GetUserAttributeVerificationCodeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

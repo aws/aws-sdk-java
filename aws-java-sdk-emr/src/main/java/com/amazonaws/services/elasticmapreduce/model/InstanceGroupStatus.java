@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The details of the instance group status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupStatus"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceGroupStatus implements Serializable, Cloneable {
 

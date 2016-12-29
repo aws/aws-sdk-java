@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The request to list distributions that are associated with a specified AWS WAF web ACL.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId"/>AWS API
+ *      Documentation</a>
  */
 public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

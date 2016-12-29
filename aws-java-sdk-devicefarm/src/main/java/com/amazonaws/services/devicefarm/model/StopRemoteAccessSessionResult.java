@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Represents the response from the server that describes the remote access session when AWS Device Farm stops the
  * session.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession"/>AWS API
+ *      Documentation</a>
  */
 public class StopRemoteAccessSessionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

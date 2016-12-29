@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The creation date and time, and name, of a security configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SecurityConfigurationSummary"/>AWS
+ *      API Documentation</a>
  */
 public class SecurityConfigurationSummary implements Serializable, Cloneable {
 

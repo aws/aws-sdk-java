@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "rekognition",
     "targetPrefix" : "RekognitionService",
+    "uid" : "rekognition-2016-06-27",
     "xmlNamespace" : null
   },
   "operations" : {

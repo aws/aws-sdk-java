@@ -70,6 +70,7 @@
     "syncClient" : "AWSStepFunctionsClient",
     "syncClientBuilderClassName" : "AWSStepFunctionsClientBuilder",
     "syncInterface" : "AWSStepFunctions",
+    "uid" : "states-2016-11-23",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

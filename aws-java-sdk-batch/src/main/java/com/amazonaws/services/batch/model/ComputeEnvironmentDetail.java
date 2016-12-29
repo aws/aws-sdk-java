@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An object representing an AWS Batch compute environment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentDetail"/>AWS API
+ *      Documentation</a>
  */
 public class ComputeEnvironmentDetail implements Serializable, Cloneable {
 

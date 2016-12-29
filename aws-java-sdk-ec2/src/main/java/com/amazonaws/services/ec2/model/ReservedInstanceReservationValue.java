@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The total value of the Convertible Reserved Instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstanceReservationValue"/>AWS API
+ *      Documentation</a>
  */
 public class ReservedInstanceReservationValue implements Serializable, Cloneable {
 

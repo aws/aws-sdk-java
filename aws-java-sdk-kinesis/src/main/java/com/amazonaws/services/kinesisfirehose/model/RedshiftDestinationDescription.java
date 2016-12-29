@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a destination in Amazon Redshift.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftDestinationDescription"/>AWS API
+ *      Documentation</a>
  */
 public class RedshiftDestinationDescription implements Serializable, Cloneable {
 

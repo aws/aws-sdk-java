@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Properties describing a fleet alias.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias"/>AWS API Documentation</a>
  */
 public class Alias implements Serializable, Cloneable {
 

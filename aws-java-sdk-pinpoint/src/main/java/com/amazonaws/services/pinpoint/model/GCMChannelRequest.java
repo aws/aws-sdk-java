@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class GCMChannelRequest implements Serializable, Cloneable {
 
     /** Platform credential API key from Google. */

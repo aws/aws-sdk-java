@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An object representing the attributes of a compute environment that can be updated.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResourceUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class ComputeResourceUpdate implements Serializable, Cloneable {
 

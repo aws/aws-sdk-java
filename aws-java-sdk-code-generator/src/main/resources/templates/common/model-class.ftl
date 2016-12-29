@@ -3,9 +3,12 @@ package ${metadata.packageName}.model;
 
 import java.io.Serializable;
 
+<#if shape.documentation?has_content || awsDocsUrl?has_content>
 /**
- * <#if shape.documentation?has_content>${shape.documentation}</#if>
+<#if shape.documentation?has_content> * ${shape.documentation}</#if>
+<#if awsDocsUrl?has_content> * ${awsDocsUrl}</#if>
  */
+</#if>
 <#if shape.deprecated>
 @Deprecated
 </#if>

@@ -61,6 +61,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies the tags to add to a trail.
      * @return A Java Future containing the result of the AddTags operation returned by the service.
      * @sample AWSCloudTrailAsync.AddTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest);
 
@@ -80,6 +81,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTags operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.AddTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler);
@@ -94,6 +96,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies the settings for each trail.
      * @return A Java Future containing the result of the CreateTrail operation returned by the service.
      * @sample AWSCloudTrailAsync.CreateTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTrailResult> createTrailAsync(CreateTrailRequest createTrailRequest);
 
@@ -111,6 +115,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTrail operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.CreateTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateTrailResult> createTrailAsync(CreateTrailRequest createTrailRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult> asyncHandler);
@@ -126,6 +132,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        The request that specifies the name of a trail to delete.
      * @return A Java Future containing the result of the DeleteTrail operation returned by the service.
      * @sample AWSCloudTrailAsync.DeleteTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(DeleteTrailRequest deleteTrailRequest);
 
@@ -144,6 +152,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTrail operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.DeleteTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(DeleteTrailRequest deleteTrailRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult> asyncHandler);
@@ -157,6 +167,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Returns information about the trail.
      * @return A Java Future containing the result of the DescribeTrails operation returned by the service.
      * @sample AWSCloudTrailAsync.DescribeTrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTrailsResult> describeTrailsAsync(DescribeTrailsRequest describeTrailsRequest);
 
@@ -173,6 +185,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTrails operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.DescribeTrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTrailsResult> describeTrailsAsync(DescribeTrailsRequest describeTrailsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult> asyncHandler);
@@ -223,6 +237,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * @param getEventSelectorsRequest
      * @return A Java Future containing the result of the GetEventSelectors operation returned by the service.
      * @sample AWSCloudTrailAsync.GetEventSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEventSelectorsResult> getEventSelectorsAsync(GetEventSelectorsRequest getEventSelectorsRequest);
 
@@ -261,6 +277,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetEventSelectors operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.GetEventSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEventSelectorsResult> getEventSelectorsAsync(GetEventSelectorsRequest getEventSelectorsRequest,
             com.amazonaws.handlers.AsyncHandler<GetEventSelectorsRequest, GetEventSelectorsResult> asyncHandler);
@@ -277,6 +295,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        The name of a trail about which you want the current status.
      * @return A Java Future containing the result of the GetTrailStatus operation returned by the service.
      * @sample AWSCloudTrailAsync.GetTrailStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTrailStatusResult> getTrailStatusAsync(GetTrailStatusRequest getTrailStatusRequest);
 
@@ -296,6 +316,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTrailStatus operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.GetTrailStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTrailStatusResult> getTrailStatusAsync(GetTrailStatusRequest getTrailStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult> asyncHandler);
@@ -317,6 +339,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Requests the public keys for a specified time range.
      * @return A Java Future containing the result of the ListPublicKeys operation returned by the service.
      * @sample AWSCloudTrailAsync.ListPublicKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest listPublicKeysRequest);
 
@@ -341,6 +365,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPublicKeys operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.ListPublicKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest listPublicKeysRequest,
             com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult> asyncHandler);
@@ -369,6 +395,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies a list of trail tags to return.
      * @return A Java Future containing the result of the ListTags operation returned by the service.
      * @sample AWSCloudTrailAsync.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest);
 
@@ -385,6 +412,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTags operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
@@ -442,6 +470,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Contains a request for LookupEvents.
      * @return A Java Future containing the result of the LookupEvents operation returned by the service.
      * @sample AWSCloudTrailAsync.LookupEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<LookupEventsResult> lookupEventsAsync(LookupEventsRequest lookupEventsRequest);
 
@@ -502,6 +532,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the LookupEvents operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.LookupEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<LookupEventsResult> lookupEventsAsync(LookupEventsRequest lookupEventsRequest,
             com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult> asyncHandler);
@@ -571,6 +603,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * @param putEventSelectorsRequest
      * @return A Java Future containing the result of the PutEventSelectors operation returned by the service.
      * @sample AWSCloudTrailAsync.PutEventSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutEventSelectorsResult> putEventSelectorsAsync(PutEventSelectorsRequest putEventSelectorsRequest);
 
@@ -629,6 +663,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutEventSelectors operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.PutEventSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutEventSelectorsResult> putEventSelectorsAsync(PutEventSelectorsRequest putEventSelectorsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEventSelectorsRequest, PutEventSelectorsResult> asyncHandler);
@@ -642,6 +678,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies the tags to remove from a trail.
      * @return A Java Future containing the result of the RemoveTags operation returned by the service.
      * @sample AWSCloudTrailAsync.RemoveTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest removeTagsRequest);
 
@@ -658,6 +695,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTags operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.RemoveTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest removeTagsRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler);
@@ -673,6 +711,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        The request to CloudTrail to start logging AWS API calls for an account.
      * @return A Java Future containing the result of the StartLogging operation returned by the service.
      * @sample AWSCloudTrailAsync.StartLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartLoggingResult> startLoggingAsync(StartLoggingRequest startLoggingRequest);
 
@@ -691,6 +731,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartLogging operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.StartLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartLoggingResult> startLoggingAsync(StartLoggingRequest startLoggingRequest,
             com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult> asyncHandler);
@@ -708,6 +750,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Passes the request to CloudTrail to stop logging AWS API calls for the specified account.
      * @return A Java Future containing the result of the StopLogging operation returned by the service.
      * @sample AWSCloudTrailAsync.StopLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopLoggingResult> stopLoggingAsync(StopLoggingRequest stopLoggingRequest);
 
@@ -728,6 +772,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopLogging operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.StopLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopLoggingResult> stopLoggingAsync(StopLoggingRequest stopLoggingRequest,
             com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult> asyncHandler);
@@ -745,6 +791,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies settings to update for the trail.
      * @return A Java Future containing the result of the UpdateTrail operation returned by the service.
      * @sample AWSCloudTrailAsync.UpdateTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateTrailResult> updateTrailAsync(UpdateTrailRequest updateTrailRequest);
 
@@ -765,6 +813,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateTrail operation returned by the service.
      * @sample AWSCloudTrailAsyncHandler.UpdateTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateTrailResult> updateTrailAsync(UpdateTrailRequest updateTrailRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult> asyncHandler);

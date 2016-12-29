@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The <code>Id</code> and <code>Name</code> of a <code>SqlInjectionMatchSet</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchSetSummary"/>AWS API
+ *      Documentation</a>
  */
 public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
 

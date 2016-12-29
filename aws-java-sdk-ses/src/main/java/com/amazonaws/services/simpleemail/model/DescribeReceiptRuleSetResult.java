@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the details of the specified receipt rule set.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeReceiptRuleSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

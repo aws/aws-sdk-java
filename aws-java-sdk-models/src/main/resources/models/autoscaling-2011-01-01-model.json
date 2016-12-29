@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "autoscaling",
     "targetPrefix" : null,
+    "uid" : "autoscaling-2011-01-01",
     "xmlNamespace" : "http://autoscaling.amazonaws.com/doc/2011-01-01/"
   },
   "operations" : {

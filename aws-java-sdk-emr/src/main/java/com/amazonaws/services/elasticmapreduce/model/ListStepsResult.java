@@ -19,6 +19,9 @@ import java.io.Serializable;
  * This output contains the list of steps returned in reverse order. This means that the last step is the first element
  * in the list.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps"/>AWS API
+ *      Documentation</a>
  */
 public class ListStepsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

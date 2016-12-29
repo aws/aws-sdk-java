@@ -24,6 +24,8 @@ import java.io.Serializable;
  * <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For
  * more information, see <a>UpdateWebACL</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WebACL"/>AWS API Documentation</a>
  */
 public class WebACL implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The content and file name of the attachment returned by the <a>DescribeAttachment</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeAttachmentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -23,6 +23,9 @@ import java.io.Serializable;
  * identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code>
  * and <code>Marker</code> parameters.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CloudFrontOriginAccessIdentityList"/>AWS
+ *      API Documentation</a>
  */
 public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneable {
 

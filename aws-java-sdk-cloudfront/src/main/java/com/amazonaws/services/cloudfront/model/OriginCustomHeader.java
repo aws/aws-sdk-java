@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this
  * distribution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/OriginCustomHeader"/>AWS API
+ *      Documentation</a>
  */
 public class OriginCustomHeader implements Serializable, Cloneable {
 

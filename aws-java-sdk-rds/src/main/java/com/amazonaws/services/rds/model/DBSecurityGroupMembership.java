@@ -40,6 +40,9 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroupMembership"/>AWS API
+ *      Documentation</a>
  */
 public class DBSecurityGroupMembership implements Serializable, Cloneable {
 

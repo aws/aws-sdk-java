@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the
  * <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HostEntry"/>AWS API Documentation</a>
  */
 public class HostEntry implements Serializable, Cloneable {
 

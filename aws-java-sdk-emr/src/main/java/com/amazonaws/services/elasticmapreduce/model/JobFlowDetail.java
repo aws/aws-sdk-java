@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A description of a job flow.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowDetail"/>AWS API
+ *      Documentation</a>
  */
 public class JobFlowDetail implements Serializable, Cloneable {
 

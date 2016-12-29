@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a block device mapping.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BlockDeviceMapping"/>AWS API Documentation</a>
  */
 public class BlockDeviceMapping implements Serializable, Cloneable {
 

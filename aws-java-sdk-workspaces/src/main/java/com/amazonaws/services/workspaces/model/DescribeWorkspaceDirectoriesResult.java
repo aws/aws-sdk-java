@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the results of the <a>DescribeWorkspaceDirectories</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

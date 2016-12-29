@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of an update deployment group operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

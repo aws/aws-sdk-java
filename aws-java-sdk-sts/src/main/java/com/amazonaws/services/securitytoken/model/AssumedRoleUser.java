@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The identifiers for the temporary security credentials that the operation returns.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumedRoleUser"/>AWS API Documentation</a>
  */
 public class AssumedRoleUser implements Serializable, Cloneable {
 

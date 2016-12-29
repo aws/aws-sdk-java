@@ -19,6 +19,8 @@ import java.io.Serializable;
  * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that you
  * specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Target"/>AWS API Documentation</a>
  */
 public class Target implements Serializable, Cloneable {
 

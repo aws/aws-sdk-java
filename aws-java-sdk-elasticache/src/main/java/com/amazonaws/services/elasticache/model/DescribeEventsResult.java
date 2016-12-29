@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a <code>DescribeEvents</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

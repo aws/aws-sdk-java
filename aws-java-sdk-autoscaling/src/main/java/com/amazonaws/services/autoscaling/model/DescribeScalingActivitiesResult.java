@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output of DescribeScalingActivities.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeScalingActivitiesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

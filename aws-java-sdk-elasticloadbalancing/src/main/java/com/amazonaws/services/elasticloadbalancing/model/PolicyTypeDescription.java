@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a policy type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/PolicyTypeDescription"/>AWS API
+ *      Documentation</a>
  */
 public class PolicyTypeDescription implements Serializable, Cloneable {
 

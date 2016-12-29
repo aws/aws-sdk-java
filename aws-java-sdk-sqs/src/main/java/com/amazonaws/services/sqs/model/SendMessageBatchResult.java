@@ -19,6 +19,8 @@ import java.io.Serializable;
  * For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the
  * message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch"/>AWS API Documentation</a>
  */
 public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

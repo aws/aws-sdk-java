@@ -39,6 +39,7 @@ public interface AWSXRayAsync extends AWSXRay {
      * @param batchGetTracesRequest
      * @return A Java Future containing the result of the BatchGetTraces operation returned by the service.
      * @sample AWSXRayAsync.BatchGetTraces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetTracesResult> batchGetTracesAsync(BatchGetTracesRequest batchGetTracesRequest);
 
@@ -55,6 +56,7 @@ public interface AWSXRayAsync extends AWSXRay {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetTraces operation returned by the service.
      * @sample AWSXRayAsyncHandler.BatchGetTraces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetTracesResult> batchGetTracesAsync(BatchGetTracesRequest batchGetTracesRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetTracesRequest, BatchGetTracesResult> asyncHandler);
@@ -70,6 +72,7 @@ public interface AWSXRayAsync extends AWSXRay {
      * @param getServiceGraphRequest
      * @return A Java Future containing the result of the GetServiceGraph operation returned by the service.
      * @sample AWSXRayAsync.GetServiceGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetServiceGraphResult> getServiceGraphAsync(GetServiceGraphRequest getServiceGraphRequest);
 
@@ -88,6 +91,7 @@ public interface AWSXRayAsync extends AWSXRay {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetServiceGraph operation returned by the service.
      * @sample AWSXRayAsyncHandler.GetServiceGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetServiceGraphResult> getServiceGraphAsync(GetServiceGraphRequest getServiceGraphRequest,
             com.amazonaws.handlers.AsyncHandler<GetServiceGraphRequest, GetServiceGraphResult> asyncHandler);
@@ -100,6 +104,7 @@ public interface AWSXRayAsync extends AWSXRay {
      * @param getTraceGraphRequest
      * @return A Java Future containing the result of the GetTraceGraph operation returned by the service.
      * @sample AWSXRayAsync.GetTraceGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetTraceGraphResult> getTraceGraphAsync(GetTraceGraphRequest getTraceGraphRequest);
 
@@ -115,6 +120,7 @@ public interface AWSXRayAsync extends AWSXRay {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTraceGraph operation returned by the service.
      * @sample AWSXRayAsyncHandler.GetTraceGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetTraceGraphResult> getTraceGraphAsync(GetTraceGraphRequest getTraceGraphRequest,
             com.amazonaws.handlers.AsyncHandler<GetTraceGraphRequest, GetTraceGraphResult> asyncHandler);
@@ -128,6 +134,8 @@ public interface AWSXRayAsync extends AWSXRay {
      * @param getTraceSummariesRequest
      * @return A Java Future containing the result of the GetTraceSummaries operation returned by the service.
      * @sample AWSXRayAsync.GetTraceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTraceSummariesResult> getTraceSummariesAsync(GetTraceSummariesRequest getTraceSummariesRequest);
 
@@ -144,6 +152,8 @@ public interface AWSXRayAsync extends AWSXRay {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTraceSummaries operation returned by the service.
      * @sample AWSXRayAsyncHandler.GetTraceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetTraceSummariesResult> getTraceSummariesAsync(GetTraceSummariesRequest getTraceSummariesRequest,
             com.amazonaws.handlers.AsyncHandler<GetTraceSummariesRequest, GetTraceSummariesResult> asyncHandler);
@@ -156,6 +166,8 @@ public interface AWSXRayAsync extends AWSXRay {
      * @param putTelemetryRecordsRequest
      * @return A Java Future containing the result of the PutTelemetryRecords operation returned by the service.
      * @sample AWSXRayAsync.PutTelemetryRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutTelemetryRecordsResult> putTelemetryRecordsAsync(PutTelemetryRecordsRequest putTelemetryRecordsRequest);
 
@@ -171,6 +183,8 @@ public interface AWSXRayAsync extends AWSXRay {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutTelemetryRecords operation returned by the service.
      * @sample AWSXRayAsyncHandler.PutTelemetryRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutTelemetryRecordsResult> putTelemetryRecordsAsync(PutTelemetryRecordsRequest putTelemetryRecordsRequest,
             com.amazonaws.handlers.AsyncHandler<PutTelemetryRecordsRequest, PutTelemetryRecordsResult> asyncHandler);
@@ -185,6 +199,7 @@ public interface AWSXRayAsync extends AWSXRay {
      * @param putTraceSegmentsRequest
      * @return A Java Future containing the result of the PutTraceSegments operation returned by the service.
      * @sample AWSXRayAsync.PutTraceSegments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutTraceSegmentsResult> putTraceSegmentsAsync(PutTraceSegmentsRequest putTraceSegmentsRequest);
 
@@ -202,6 +217,7 @@ public interface AWSXRayAsync extends AWSXRay {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutTraceSegments operation returned by the service.
      * @sample AWSXRayAsyncHandler.PutTraceSegments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutTraceSegmentsResult> putTraceSegmentsAsync(PutTraceSegmentsRequest putTraceSegmentsRequest,
             com.amazonaws.handlers.AsyncHandler<PutTraceSegmentsRequest, PutTraceSegmentsResult> asyncHandler);

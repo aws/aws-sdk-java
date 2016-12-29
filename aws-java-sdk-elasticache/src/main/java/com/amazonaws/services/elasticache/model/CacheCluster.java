@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains all of the attributes of a specific cache cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheCluster"/>AWS API Documentation</a>
  */
 public class CacheCluster implements Serializable, Cloneable {
 

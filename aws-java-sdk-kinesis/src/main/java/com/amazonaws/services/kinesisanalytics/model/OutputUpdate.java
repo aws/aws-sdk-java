@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes updates to the output configuration identified by the <code>OutputId</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/OutputUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class OutputUpdate implements Serializable, Cloneable {
 

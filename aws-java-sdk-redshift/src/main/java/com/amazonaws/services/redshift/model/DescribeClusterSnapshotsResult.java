@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output from the <a>DescribeClusterSnapshots</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeClusterSnapshotsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

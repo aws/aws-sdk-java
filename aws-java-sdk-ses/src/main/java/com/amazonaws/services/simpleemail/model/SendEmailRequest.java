@@ -20,6 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to send a single formatted email using Amazon SES. For more information, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail"/>AWS API Documentation</a>
  */
 public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the of the updated storage volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateSnapshotScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

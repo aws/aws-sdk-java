@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server for the registration confirmation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp"/>AWS API Documentation</a>
  */
 public class ConfirmSignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

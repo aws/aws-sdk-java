@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The summary metadata about the specified product.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewSummary"/>AWS API
+ *      Documentation</a>
  */
 public class ProductViewSummary implements Serializable, Cloneable {
 

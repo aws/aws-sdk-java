@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Results message indicating whether a CNAME is available.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability"/>AWS API
+ *      Documentation</a>
  */
 public class CheckDNSAvailabilityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

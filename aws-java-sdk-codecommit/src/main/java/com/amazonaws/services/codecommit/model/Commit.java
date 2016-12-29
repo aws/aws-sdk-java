@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Returns information about a specific commit.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Commit"/>AWS API Documentation</a>
  */
 public class Commit implements Serializable, Cloneable {
 

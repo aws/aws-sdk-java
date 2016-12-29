@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a filter.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Filter"/>AWS API Documentation</a>
  */
 public class Filter implements Serializable, Cloneable {
 

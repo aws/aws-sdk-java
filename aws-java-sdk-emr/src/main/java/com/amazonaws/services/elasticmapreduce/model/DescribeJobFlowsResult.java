@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for the <a>DescribeJobFlows</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeJobFlowsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

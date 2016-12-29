@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The number of AWS Config rules or AWS resources that are compliant and noncompliant.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceSummary"/>AWS API Documentation</a>
  */
 public class ComplianceSummary implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A complex type that contains change information for the resource record set.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets"/>AWS API
+ *      Documentation</a>
  */
 public class ChangeResourceRecordSetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

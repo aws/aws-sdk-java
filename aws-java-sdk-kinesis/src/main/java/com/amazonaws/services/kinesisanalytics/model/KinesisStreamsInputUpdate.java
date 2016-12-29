@@ -19,6 +19,9 @@ import java.io.Serializable;
  * When updating application input configuration, provides information about an Amazon Kinesis stream as the streaming
  * source.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisStreamsInputUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class KinesisStreamsInputUpdate implements Serializable, Cloneable {
 

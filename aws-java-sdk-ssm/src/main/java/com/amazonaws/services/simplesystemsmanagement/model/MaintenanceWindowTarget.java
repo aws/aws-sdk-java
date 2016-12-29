@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The target registered with the Maintenance Window.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowTarget"/>AWS API
+ *      Documentation</a>
  */
 public class MaintenanceWindowTarget implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet"/>AWS API
+ *      Documentation</a>
  */
 public class AddAttachmentsToSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents an alarm.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricAlarm"/>AWS API Documentation</a>
  */
 public class MetricAlarm implements Serializable, Cloneable {
 

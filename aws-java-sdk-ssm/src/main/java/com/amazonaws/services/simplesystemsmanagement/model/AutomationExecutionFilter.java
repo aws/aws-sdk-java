@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A filter used to match specific automation executions. This is used to limit the scope of Automation execution
  * information returned.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AutomationExecutionFilter"/>AWS API
+ *      Documentation</a>
  */
 public class AutomationExecutionFilter implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Location of the source code for an application version.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SourceBuildInformation"/>AWS API
+ *      Documentation</a>
  */
 public class SourceBuildInformation implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about the deployment status of the instances in the deployment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentOverview"/>AWS API
+ *      Documentation</a>
  */
 public class DeploymentOverview implements Serializable, Cloneable {
 

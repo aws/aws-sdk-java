@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * General properties describing a fleet.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes"/>AWS API Documentation</a>
  */
 public class FleetAttributes implements Serializable, Cloneable {
 

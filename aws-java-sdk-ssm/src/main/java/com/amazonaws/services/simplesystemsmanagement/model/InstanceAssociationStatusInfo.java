@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Status information about the instance association.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociationStatusInfo"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceAssociationStatusInfo implements Serializable, Cloneable {
 

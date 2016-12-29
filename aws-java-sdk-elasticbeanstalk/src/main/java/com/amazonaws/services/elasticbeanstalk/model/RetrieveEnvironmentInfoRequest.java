@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo"/>AWS API
+ *      Documentation</a>
  */
 public class RetrieveEnvironmentInfoRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

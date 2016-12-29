@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about a rule in Amazon CloudWatch Events. A ListRulesResult contains a list of Rules.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Rule"/>AWS API Documentation</a>
  */
 public class Rule implements Serializable, Cloneable {
 

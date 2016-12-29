@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the search status of a log stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/SearchedLogStream"/>AWS API Documentation</a>
  */
 public class SearchedLogStream implements Serializable, Cloneable {
 

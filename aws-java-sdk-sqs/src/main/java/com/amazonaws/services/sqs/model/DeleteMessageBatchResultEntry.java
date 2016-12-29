@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a> </code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatchResultEntry"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
 

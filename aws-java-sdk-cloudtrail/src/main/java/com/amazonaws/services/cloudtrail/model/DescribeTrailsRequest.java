@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns information about the trail.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails"/>AWS API Documentation</a>
  */
 public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

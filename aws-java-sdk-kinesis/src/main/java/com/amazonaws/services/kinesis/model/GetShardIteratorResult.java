@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output for <code>GetShardIterator</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator"/>AWS API Documentation</a>
  */
 public class GetShardIteratorResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

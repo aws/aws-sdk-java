@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Initiates the authorization request, as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth"/>AWS API
+ *      Documentation</a>
  */
 public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

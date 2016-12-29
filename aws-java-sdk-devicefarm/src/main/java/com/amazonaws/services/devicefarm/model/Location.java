@@ -22,6 +22,8 @@ import java.io.Serializable;
  * <p>
  * Elevation is currently not supported.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Location"/>AWS API Documentation</a>
  */
 public class Location implements Serializable, Cloneable {
 

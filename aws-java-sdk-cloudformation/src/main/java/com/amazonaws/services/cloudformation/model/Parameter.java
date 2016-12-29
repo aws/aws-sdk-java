@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The Parameter data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Parameter"/>AWS API Documentation</a>
  */
 public class Parameter implements Serializable, Cloneable {
 

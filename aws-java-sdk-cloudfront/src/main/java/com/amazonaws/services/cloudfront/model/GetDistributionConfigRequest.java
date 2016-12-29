@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The request to get a distribution configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig"/>AWS API
+ *      Documentation</a>
  */
 public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "config",
     "targetPrefix" : "StarlingDoveService",
+    "uid" : "config-2014-11-12",
     "xmlNamespace" : null
   },
   "operations" : {

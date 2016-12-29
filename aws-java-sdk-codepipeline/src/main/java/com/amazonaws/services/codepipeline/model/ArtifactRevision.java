@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents revision details of an artifact.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactRevision"/>AWS API
+ *      Documentation</a>
  */
 public class ArtifactRevision implements Serializable, Cloneable {
 

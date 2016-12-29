@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the context of an action within the stage of a pipeline to a job worker.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionContext"/>AWS API
+ *      Documentation</a>
  */
 public class ActionContext implements Serializable, Cloneable {
 

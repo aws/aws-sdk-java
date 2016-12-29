@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Specifies settings to update for the trail.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail"/>AWS API Documentation</a>
  */
 public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a task execution performed as part of a Maintenance Window execution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecutionTaskIdentity"/>AWS API
+ *      Documentation</a>
  */
 public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Cloneable {
 

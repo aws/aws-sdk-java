@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the inputs for the <a>RebootWorkspaces</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces"/>AWS API
+ *      Documentation</a>
  */
 public class RebootWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A container with information about the user pool type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType"/>AWS API Documentation</a>
  */
 public class UserPoolType implements Serializable, Cloneable {
 

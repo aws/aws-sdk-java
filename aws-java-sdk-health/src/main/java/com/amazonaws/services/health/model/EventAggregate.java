@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventAggregate"/>AWS API Documentation</a>
  */
 public class EventAggregate implements Serializable, Cloneable {
 

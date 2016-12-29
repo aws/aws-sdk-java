@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCheckResult"/>AWS API
+ *      Documentation</a>
  */
 public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
 

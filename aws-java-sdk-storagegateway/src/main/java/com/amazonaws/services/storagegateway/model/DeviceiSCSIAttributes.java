@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Lists iSCSI information about a VTL device.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeviceiSCSIAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class DeviceiSCSIAttributes implements Serializable, Cloneable {
 

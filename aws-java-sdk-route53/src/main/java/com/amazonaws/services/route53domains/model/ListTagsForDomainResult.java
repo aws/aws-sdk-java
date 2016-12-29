@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The ListTagsForDomain response includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain"/>AWS API
+ *      Documentation</a>
  */
 public class ListTagsForDomainResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

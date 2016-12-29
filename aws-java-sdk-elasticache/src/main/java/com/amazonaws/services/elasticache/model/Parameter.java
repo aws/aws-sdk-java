@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an individual setting that controls some aspect of ElastiCache behavior.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Parameter"/>AWS API Documentation</a>
  */
 public class Parameter implements Serializable, Cloneable {
 

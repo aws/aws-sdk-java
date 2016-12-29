@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The result message containing information about the managed action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction"/>AWS
+ *      API Documentation</a>
  */
 public class ApplyEnvironmentManagedActionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

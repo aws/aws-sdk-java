@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output of DescribeScheduledActions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeScheduledActionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

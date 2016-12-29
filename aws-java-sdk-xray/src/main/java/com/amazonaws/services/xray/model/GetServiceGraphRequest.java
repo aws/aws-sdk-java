@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph"/>AWS API Documentation</a>
  */
 public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

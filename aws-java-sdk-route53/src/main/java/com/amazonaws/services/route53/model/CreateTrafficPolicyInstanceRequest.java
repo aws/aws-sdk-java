@@ -20,6 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type that contains information about the resource record sets that you want to create based on a specified
  * traffic policy.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance"/>AWS API
+ *      Documentation</a>
  */
 public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

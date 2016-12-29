@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about an entity that is affected by a Health event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/AffectedEntity"/>AWS API Documentation</a>
  */
 public class AffectedEntity implements Serializable, Cloneable {
 

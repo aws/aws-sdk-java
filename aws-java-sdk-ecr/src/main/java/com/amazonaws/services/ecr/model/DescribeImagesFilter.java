@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object representing a filter on a <a>DescribeImages</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImagesFilter"/>AWS API Documentation</a>
  */
 public class DescribeImagesFilter implements Serializable, Cloneable {
 

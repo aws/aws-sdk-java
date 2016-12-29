@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The filters to describe or get information about your managed instances.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformationStringFilter"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceInformationStringFilter implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DescribeScheduledActions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

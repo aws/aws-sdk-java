@@ -35,6 +35,8 @@ import java.io.Serializable;
  * log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes
  * the ID of the job or job part that the log describes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobLogs"/>AWS API Documentation</a>
  */
 public class JobLogs implements Serializable, Cloneable {
 

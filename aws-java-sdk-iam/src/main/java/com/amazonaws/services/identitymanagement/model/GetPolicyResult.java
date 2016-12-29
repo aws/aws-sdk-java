@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the response to a successful <a>GetPolicy</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy"/>AWS API Documentation</a>
  */
 public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

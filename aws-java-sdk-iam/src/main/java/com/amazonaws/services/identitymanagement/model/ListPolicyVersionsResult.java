@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the response to a successful <a>ListPolicyVersions</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions"/>AWS API Documentation</a>
  */
 public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

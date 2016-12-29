@@ -24,6 +24,8 @@ import java.io.Serializable;
  * This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and
  * <code> <a>SimulateCustomPolicy</a> </code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ContextEntry"/>AWS API Documentation</a>
  */
 public class ContextEntry implements Serializable, Cloneable {
 

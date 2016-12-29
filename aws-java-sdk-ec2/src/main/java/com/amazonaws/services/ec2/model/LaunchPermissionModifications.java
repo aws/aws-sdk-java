@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a launch permission modification.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchPermissionModifications"/>AWS API
+ *      Documentation</a>
  */
 public class LaunchPermissionModifications implements Serializable, Cloneable {
 

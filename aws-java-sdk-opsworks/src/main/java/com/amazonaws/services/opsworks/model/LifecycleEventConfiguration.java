@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Specifies the lifecycle event configuration
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/LifecycleEventConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class LifecycleEventConfiguration implements Serializable, Cloneable {
 

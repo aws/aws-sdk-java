@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Key/value pairs to associate with this provisioning. These tags are entirely discretionary and are propagated to the
  * resources created in the provisioning.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

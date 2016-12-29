@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The unit of data in a delivery stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Record"/>AWS API Documentation</a>
  */
 public class Record implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about a WorkSpace that could not be created.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedCreateWorkspaceRequest"/>AWS API
+ *      Documentation</a>
  */
 public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 

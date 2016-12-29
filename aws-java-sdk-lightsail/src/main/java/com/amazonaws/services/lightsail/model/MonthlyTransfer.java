@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/MonthlyTransfer"/>AWS API Documentation</a>
  */
 public class MonthlyTransfer implements Serializable, Cloneable {
 

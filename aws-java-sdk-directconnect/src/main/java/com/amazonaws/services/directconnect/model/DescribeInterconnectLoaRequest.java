@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Container for the parameters to the DescribeInterconnectLoa operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeInterconnectLoaRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

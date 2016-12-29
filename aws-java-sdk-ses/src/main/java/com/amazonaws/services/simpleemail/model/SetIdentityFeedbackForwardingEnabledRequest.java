@@ -22,6 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon SES Developer
  * Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled"/>AWS API
+ *      Documentation</a>
  */
 public class SetIdentityFeedbackForwardingEnabledRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

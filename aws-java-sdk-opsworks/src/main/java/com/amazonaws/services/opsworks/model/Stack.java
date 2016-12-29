@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a stack.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Stack"/>AWS API Documentation</a>
  */
 public class Stack implements Serializable, Cloneable {
 

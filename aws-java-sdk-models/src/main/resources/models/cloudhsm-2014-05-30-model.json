@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "cloudhsm",
     "targetPrefix" : "CloudHsmFrontendService",
+    "uid" : "cloudhsm-2014-05-30",
     "xmlNamespace" : null
   },
   "operations" : {

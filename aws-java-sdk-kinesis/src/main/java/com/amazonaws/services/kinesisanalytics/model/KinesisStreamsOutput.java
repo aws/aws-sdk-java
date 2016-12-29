@@ -20,6 +20,9 @@ import java.io.Serializable;
  * Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on
  * your behalf.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisStreamsOutput"/>AWS API
+ *      Documentation</a>
  */
 public class KinesisStreamsOutput implements Serializable, Cloneable {
 

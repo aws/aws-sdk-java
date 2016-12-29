@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about the current health of a target.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/TargetHealth"/>AWS API
+ *      Documentation</a>
  */
 public class TargetHealth implements Serializable, Cloneable {
 

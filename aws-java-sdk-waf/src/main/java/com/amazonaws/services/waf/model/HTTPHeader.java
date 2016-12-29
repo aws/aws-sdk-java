@@ -20,6 +20,8 @@ import java.io.Serializable;
  * as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the
  * headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/HTTPHeader"/>AWS API Documentation</a>
  */
 public class HTTPHeader implements Serializable, Cloneable {
 

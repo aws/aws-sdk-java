@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream"/>AWS API Documentation</a>
  */
 public class CreateLogStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

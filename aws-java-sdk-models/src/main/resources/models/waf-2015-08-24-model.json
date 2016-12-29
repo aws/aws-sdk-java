@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "waf",
     "targetPrefix" : "AWSWAF_20150824",
+    "uid" : "waf-2015-08-24",
     "xmlNamespace" : null
   },
   "operations" : {

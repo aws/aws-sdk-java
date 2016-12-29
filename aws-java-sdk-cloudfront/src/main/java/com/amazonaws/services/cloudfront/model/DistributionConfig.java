@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A distribution configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DistributionConfig"/>AWS API
+ *      Documentation</a>
  */
 public class DistributionConfig implements Serializable, Cloneable {
 

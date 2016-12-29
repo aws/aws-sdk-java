@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A URL for the Amazon S3 bucket where you want to store the results of this request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/S3OutputUrl"/>AWS API Documentation</a>
  */
 public class S3OutputUrl implements Serializable, Cloneable {
 

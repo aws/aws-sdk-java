@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the snapshot of the virtual private server, or <i>instance</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceSnapshot"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceSnapshot implements Serializable, Cloneable {
 

@@ -28,6 +28,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and
  * DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck"/>AWS API Documentation</a>
  */
 public class GetHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

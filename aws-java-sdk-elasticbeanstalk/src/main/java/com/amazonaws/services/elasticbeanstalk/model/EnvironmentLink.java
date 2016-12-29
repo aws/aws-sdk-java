@@ -21,6 +21,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
  * (env.yaml)</a> for details.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentLink"/>AWS API
+ *      Documentation</a>
  */
 public class EnvironmentLink implements Serializable, Cloneable {
 

@@ -66,6 +66,7 @@
     "syncClient" : "AWSDeviceFarmClient",
     "syncClientBuilderClassName" : "AWSDeviceFarmClientBuilder",
     "syncInterface" : "AWSDeviceFarm",
+    "uid" : "devicefarm-2015-06-23",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

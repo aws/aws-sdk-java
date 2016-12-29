@@ -23,6 +23,8 @@ import java.io.Serializable;
  * If you are creating an alias resource record set, omit <code>ResourceRecord</code>.
  * </p>
  * </note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceRecord"/>AWS API Documentation</a>
  */
 public class ResourceRecord implements Serializable, Cloneable {
 

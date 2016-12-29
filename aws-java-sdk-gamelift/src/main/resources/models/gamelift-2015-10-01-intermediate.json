@@ -68,6 +68,7 @@
     "syncClient" : "AmazonGameLiftClient",
     "syncClientBuilderClassName" : "AmazonGameLiftClientBuilder",
     "syncInterface" : "AmazonGameLift",
+    "uid" : "gamelift-2015-10-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

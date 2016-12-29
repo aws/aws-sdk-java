@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "shield",
     "targetPrefix" : "AWSShield_20160616",
+    "uid" : "shield-2016-06-02",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation"/>AWS API
+ *      Documentation</a>
  */
 public class CreateStorageLocationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

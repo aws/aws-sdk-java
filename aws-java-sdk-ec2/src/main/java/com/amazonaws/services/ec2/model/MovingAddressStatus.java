@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the status of a moving Elastic IP address.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MovingAddressStatus"/>AWS API Documentation</a>
  */
 public class MovingAddressStatus implements Serializable, Cloneable {
 

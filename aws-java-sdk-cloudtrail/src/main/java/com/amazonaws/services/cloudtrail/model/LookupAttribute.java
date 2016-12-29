@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Specifies an attribute and value that filter the events returned.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupAttribute"/>AWS API
+ *      Documentation</a>
  */
 public class LookupAttribute implements Serializable, Cloneable {
 

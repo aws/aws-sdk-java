@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Represents a step scaling policy configuration.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/StepScalingPolicyConfiguration"/>AWS
+ *      API Documentation</a>
  */
 public class StepScalingPolicyConfiguration implements Serializable, Cloneable {
 

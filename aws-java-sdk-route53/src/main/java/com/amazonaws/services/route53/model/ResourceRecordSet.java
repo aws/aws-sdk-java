@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about the resource record set to create or delete.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceRecordSet"/>AWS API Documentation</a>
  */
 public class ResourceRecordSet implements Serializable, Cloneable {
 

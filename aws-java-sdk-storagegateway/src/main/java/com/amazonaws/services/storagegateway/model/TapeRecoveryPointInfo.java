@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a recovery point.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeRecoveryPointInfo"/>AWS API
+ *      Documentation</a>
  */
 public class TapeRecoveryPointInfo implements Serializable, Cloneable {
 

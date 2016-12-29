@@ -24,6 +24,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
  * Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SnapshotCopyGrant"/>AWS API
+ *      Documentation</a>
  */
 public class SnapshotCopyGrant implements Serializable, Cloneable {
 

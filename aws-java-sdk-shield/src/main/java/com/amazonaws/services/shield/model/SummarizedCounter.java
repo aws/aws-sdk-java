@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The counter that describes a DDoS attack.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SummarizedCounter"/>AWS API Documentation</a>
  */
 public class SummarizedCounter implements Serializable, Cloneable {
 

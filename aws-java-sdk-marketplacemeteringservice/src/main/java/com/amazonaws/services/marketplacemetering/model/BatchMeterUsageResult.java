@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage"/>AWS API
+ *      Documentation</a>
  */
 public class BatchMeterUsageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

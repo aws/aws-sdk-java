@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The key of a tag.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/TagKeyOnly"/>AWS API
+ *      Documentation</a>
  */
 public class TagKeyOnly implements Serializable, Cloneable {
 

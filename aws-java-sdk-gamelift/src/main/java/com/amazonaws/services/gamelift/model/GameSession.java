@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Properties describing a game session.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSession"/>AWS API Documentation</a>
  */
 public class GameSession implements Serializable, Cloneable {
 

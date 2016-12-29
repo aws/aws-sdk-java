@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeLifecycleHookTypesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

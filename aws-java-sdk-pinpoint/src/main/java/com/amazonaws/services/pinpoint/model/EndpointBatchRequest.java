@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class EndpointBatchRequest implements Serializable, Cloneable {
 
     /** List of items to update. Maximum 100 items */

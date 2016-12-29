@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This structure is returned in the response object of <a>ListCertificates</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CertificateSummary"/>AWS API Documentation</a>
  */
 public class CertificateSummary implements Serializable, Cloneable {
 

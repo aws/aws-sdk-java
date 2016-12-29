@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Response to an UnsubscribeFromDataset request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset"/>AWS API
+ *      Documentation</a>
  */
 public class UnsubscribeFromDatasetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

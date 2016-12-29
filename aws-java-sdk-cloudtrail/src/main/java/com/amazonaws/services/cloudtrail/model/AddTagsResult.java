@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Returns the objects or data listed below if successful. Otherwise, returns an error.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags"/>AWS API Documentation</a>
  */
 public class AddTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

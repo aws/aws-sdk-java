@@ -80,6 +80,9 @@ import java.io.Serializable;
  * To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the
  * <code>PutDeliveryChannel</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigSnapshotDeliveryProperties"/>AWS API
+ *      Documentation</a>
  */
 public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains the list of Custom Headers for each origin.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CustomHeaders"/>AWS API Documentation</a>
  */
 public class CustomHeaders implements Serializable, Cloneable {
 

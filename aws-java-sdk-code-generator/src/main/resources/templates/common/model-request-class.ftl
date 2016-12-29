@@ -8,11 +8,14 @@ import com.amazonaws.auth.RequestSigner;
 import com.amazonaws.opensdk.protect.auth.RequestSignerAware;
 </#if>
 
+<#if shape.documentation?has_content || awsDocsUrl?has_content>
 /**
- * <#if shape.documentation?has_content>${shape.documentation}</#if>
+<#if shape.documentation?has_content> * ${shape.documentation}</#if>
+<#if awsDocsUrl?has_content> * ${awsDocsUrl}</#if>
  */
+</#if>
 public class ${shape.shapeName} extends ${baseClassFqcn} implements Serializable, Cloneable
-        <#if shape.requestSignerAware>, RequestSignerAware</#if>{
+        <#if shape.requestSignerAware>, RequestSignerAware</#if> {
 
     <@VariableDeclarationMacro.content shape/>
 

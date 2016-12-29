@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Returned in response to a successful <code>MergeDeveloperIdentities</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities"/>AWS API
+ *      Documentation</a>
  */
 public class MergeDeveloperIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the amount of provisioned throughput capacity consumed on a table or an index.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Capacity"/>AWS API Documentation</a>
  */
 public class Capacity implements Serializable, Cloneable {
 

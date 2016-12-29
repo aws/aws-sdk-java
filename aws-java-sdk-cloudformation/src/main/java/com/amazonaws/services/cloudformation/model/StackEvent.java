@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The StackEvent data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackEvent"/>AWS API Documentation</a>
  */
 public class StackEvent implements Serializable, Cloneable {
 

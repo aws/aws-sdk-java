@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes event information.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EventInfoMap"/>AWS API Documentation</a>
  */
 public class EventInfoMap implements Serializable, Cloneable {
 

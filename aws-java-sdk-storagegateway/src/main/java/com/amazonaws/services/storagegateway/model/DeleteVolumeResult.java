@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the of the storage volume that was deleted
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteVolumeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

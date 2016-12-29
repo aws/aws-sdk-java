@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server for the request to update user attributes as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes"/>AWS API
+ *      Documentation</a>
  */
 public class AdminUpdateUserAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

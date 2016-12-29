@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A PutTargetsResult contains a list of PutTargetsResultEntry.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargetsResultEntry"/>AWS API
+ *      Documentation</a>
  */
 public class PutTargetsResultEntry implements Serializable, Cloneable {
 

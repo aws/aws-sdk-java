@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for ModifyTargetGroup.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup"/>AWS API
+ *      Documentation</a>
  */
 public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

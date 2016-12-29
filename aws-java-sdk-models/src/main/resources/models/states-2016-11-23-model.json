@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "states",
     "targetPrefix" : "AWSStepFunctions",
+    "uid" : "states-2016-11-23",
     "xmlNamespace" : null
   },
   "operations" : {

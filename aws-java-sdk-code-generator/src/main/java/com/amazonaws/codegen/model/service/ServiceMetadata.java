@@ -40,6 +40,8 @@ public class ServiceMetadata {
 
     private String targetPrefix;
 
+    private String uid;
+
     public String getApiVersion() {
         return apiVersion;
     }
@@ -131,4 +133,11 @@ public class ServiceMetadata {
         this.targetPrefix = targetPrefix;
     }
 
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 }

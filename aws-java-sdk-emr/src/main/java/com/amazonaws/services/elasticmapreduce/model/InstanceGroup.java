@@ -19,6 +19,9 @@ import java.io.Serializable;
  * This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE
  * instance group is used for HDFS.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroup"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceGroup implements Serializable, Cloneable {
 

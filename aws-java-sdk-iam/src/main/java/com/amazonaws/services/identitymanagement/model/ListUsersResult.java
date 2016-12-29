@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the response to a successful <a>ListUsers</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers"/>AWS API Documentation</a>
  */
 public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

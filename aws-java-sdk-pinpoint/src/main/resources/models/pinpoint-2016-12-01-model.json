@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "mobiletargeting",
     "targetPrefix" : null,
+    "uid" : null,
     "xmlNamespace" : null
   },
   "operations" : {

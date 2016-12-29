@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Data returned from the <b>DescribePendingMaintenanceActions</b> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions"/>AWS API
+ *      Documentation</a>
  */
 public class DescribePendingMaintenanceActionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

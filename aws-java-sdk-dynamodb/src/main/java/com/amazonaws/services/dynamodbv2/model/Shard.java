@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A uniquely identified group of stream records within a stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/Shard"/>AWS API Documentation</a>
  */
 public class Shard implements Serializable, Cloneable {
 

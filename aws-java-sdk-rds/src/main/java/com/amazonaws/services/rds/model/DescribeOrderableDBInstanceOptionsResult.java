@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

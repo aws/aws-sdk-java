@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A list of all identities that you have attempted to verify under your AWS account, regardless of verification status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities"/>AWS API Documentation</a>
  */
 public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

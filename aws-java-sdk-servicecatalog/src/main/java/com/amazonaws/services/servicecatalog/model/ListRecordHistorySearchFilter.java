@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The search filter to limit results when listing request history records.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistorySearchFilter"/>AWS
+ *      API Documentation</a>
  */
 public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
 

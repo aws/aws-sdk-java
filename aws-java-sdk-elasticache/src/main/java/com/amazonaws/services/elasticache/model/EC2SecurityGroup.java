@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provides ownership and status information for an Amazon EC2 security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/EC2SecurityGroup"/>AWS API
+ *      Documentation</a>
  */
 public class EC2SecurityGroup implements Serializable, Cloneable {
 

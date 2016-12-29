@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a destination in Amazon S3.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/S3DestinationDescription"/>AWS API
+ *      Documentation</a>
  */
 public class S3DestinationDescription implements Serializable, Cloneable {
 

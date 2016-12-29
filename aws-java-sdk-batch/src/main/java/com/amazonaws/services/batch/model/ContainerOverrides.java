@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The overrides that should be sent to a container.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerOverrides"/>AWS API Documentation</a>
  */
 public class ContainerOverrides implements Serializable, Cloneable {
 

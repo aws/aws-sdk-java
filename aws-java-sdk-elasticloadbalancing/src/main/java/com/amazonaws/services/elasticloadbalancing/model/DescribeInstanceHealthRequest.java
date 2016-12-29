@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DescribeInstanceHealth.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeInstanceHealthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

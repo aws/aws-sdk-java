@@ -288,6 +288,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
      *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CloneReceiptRuleSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CloneReceiptRuleSetResult cloneReceiptRuleSet(CloneReceiptRuleSetRequest cloneReceiptRuleSetRequest) {
@@ -348,6 +350,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
      *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CreateConfigurationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest createConfigurationSetRequest) {
@@ -421,6 +425,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
      *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CreateConfigurationSetEventDestination
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateConfigurationSetEventDestinationResult createConfigurationSetEventDestination(
@@ -481,6 +488,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws AlreadyExistsException
      *         Indicates that a resource could not be created because of a naming conflict.
      * @sample AmazonSimpleEmailService.CreateReceiptFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateReceiptFilterResult createReceiptFilter(CreateReceiptFilterRequest createReceiptFilterRequest) {
@@ -559,6 +568,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
      *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CreateReceiptRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateReceiptRuleResult createReceiptRule(CreateReceiptRuleRequest createReceiptRuleRequest) {
@@ -617,6 +628,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
      *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CreateReceiptRuleSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateReceiptRuleSetResult createReceiptRuleSet(CreateReceiptRuleSetRequest createReceiptRuleSetRequest) {
@@ -671,6 +684,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
      * @sample AmazonSimpleEmailService.DeleteConfigurationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest deleteConfigurationSetRequest) {
@@ -729,6 +744,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws EventDestinationDoesNotExistException
      *         Indicates that the event destination does not exist.
      * @sample AmazonSimpleEmailService.DeleteConfigurationSetEventDestination
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(
@@ -775,6 +793,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Represents a request to delete one of your Amazon SES identities (an email address or domain).
      * @return Result of the DeleteIdentity operation returned by the service.
      * @sample AmazonSimpleEmailService.DeleteIdentity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity"/>AWS API Documentation</a>
      */
     @Override
     public DeleteIdentityResult deleteIdentity(DeleteIdentityRequest deleteIdentityRequest) {
@@ -834,6 +853,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        SES Developer Guide</a>.
      * @return Result of the DeleteIdentityPolicy operation returned by the service.
      * @sample AmazonSimpleEmailService.DeleteIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteIdentityPolicyResult deleteIdentityPolicy(DeleteIdentityPolicyRequest deleteIdentityPolicyRequest) {
@@ -886,6 +907,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the DeleteReceiptFilter operation returned by the service.
      * @sample AmazonSimpleEmailService.DeleteReceiptFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteReceiptFilterResult deleteReceiptFilter(DeleteReceiptFilterRequest deleteReceiptFilterRequest) {
@@ -940,6 +963,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws RuleSetDoesNotExistException
      *         Indicates that the provided receipt rule set does not exist.
      * @sample AmazonSimpleEmailService.DeleteReceiptRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteReceiptRuleResult deleteReceiptRule(DeleteReceiptRuleRequest deleteReceiptRuleRequest) {
@@ -999,6 +1024,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws CannotDeleteException
      *         Indicates that the delete operation could not be completed.
      * @sample AmazonSimpleEmailService.DeleteReceiptRuleSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteReceiptRuleSetResult deleteReceiptRuleSet(DeleteReceiptRuleSetRequest deleteReceiptRuleSetRequest) {
@@ -1050,6 +1077,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        verify under your AWS account.
      * @return Result of the DeleteVerifiedEmailAddress operation returned by the service.
      * @sample AmazonSimpleEmailService.DeleteVerifiedEmailAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) {
@@ -1102,6 +1131,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the DescribeActiveReceiptRuleSet operation returned by the service.
      * @sample AmazonSimpleEmailService.DescribeActiveReceiptRuleSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeActiveReceiptRuleSetResult describeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest describeActiveReceiptRuleSetRequest) {
@@ -1156,6 +1187,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
      * @sample AmazonSimpleEmailService.DescribeConfigurationSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeConfigurationSetResult describeConfigurationSet(DescribeConfigurationSetRequest describeConfigurationSetRequest) {
@@ -1212,6 +1245,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws RuleSetDoesNotExistException
      *         Indicates that the provided receipt rule set does not exist.
      * @sample AmazonSimpleEmailService.DescribeReceiptRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeReceiptRuleResult describeReceiptRule(DescribeReceiptRuleRequest describeReceiptRuleRequest) {
@@ -1266,6 +1301,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws RuleSetDoesNotExistException
      *         Indicates that the provided receipt rule set does not exist.
      * @sample AmazonSimpleEmailService.DescribeReceiptRuleSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeReceiptRuleSetResult describeReceiptRuleSet(DescribeReceiptRuleSetRequest describeReceiptRuleSetRequest) {
@@ -1344,6 +1381,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Guide</a>.
      * @return Result of the GetIdentityDkimAttributes operation returned by the service.
      * @sample AmazonSimpleEmailService.GetIdentityDkimAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetIdentityDkimAttributesResult getIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest) {
@@ -1391,6 +1430,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.
      * @return Result of the GetIdentityMailFromDomainAttributes operation returned by the service.
      * @sample AmazonSimpleEmailService.GetIdentityMailFromDomainAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public GetIdentityMailFromDomainAttributesResult getIdentityMailFromDomainAttributes(
@@ -1446,6 +1487,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Guide</a>.
      * @return Result of the GetIdentityNotificationAttributes operation returned by the service.
      * @sample AmazonSimpleEmailService.GetIdentityNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetIdentityNotificationAttributesResult getIdentityNotificationAttributes(
@@ -1508,6 +1551,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the GetIdentityPolicies operation returned by the service.
      * @sample AmazonSimpleEmailService.GetIdentityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetIdentityPoliciesResult getIdentityPolicies(GetIdentityPoliciesRequest getIdentityPoliciesRequest) {
@@ -1558,6 +1603,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the GetIdentityVerificationAttributes operation returned by the service.
      * @sample AmazonSimpleEmailService.GetIdentityVerificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetIdentityVerificationAttributesResult getIdentityVerificationAttributes(
@@ -1602,6 +1649,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @param getSendQuotaRequest
      * @return Result of the GetSendQuota operation returned by the service.
      * @sample AmazonSimpleEmailService.GetSendQuota
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota"/>AWS API Documentation</a>
      */
     @Override
     public GetSendQuotaResult getSendQuota(GetSendQuotaRequest getSendQuotaRequest) {
@@ -1653,6 +1701,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @param getSendStatisticsRequest
      * @return Result of the GetSendStatistics operation returned by the service.
      * @sample AmazonSimpleEmailService.GetSendStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetSendStatisticsResult getSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest) {
@@ -1710,6 +1760,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the ListConfigurationSets operation returned by the service.
      * @sample AmazonSimpleEmailService.ListConfigurationSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest) {
@@ -1756,6 +1808,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        attempted to verify under your AWS account, regardless of verification status.
      * @return Result of the ListIdentities operation returned by the service.
      * @sample AmazonSimpleEmailService.ListIdentities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities"/>AWS API Documentation</a>
      */
     @Override
     public ListIdentitiesResult listIdentities(ListIdentitiesRequest listIdentitiesRequest) {
@@ -1822,6 +1875,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the ListIdentityPolicies operation returned by the service.
      * @sample AmazonSimpleEmailService.ListIdentityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListIdentityPoliciesResult listIdentityPolicies(ListIdentityPoliciesRequest listIdentityPoliciesRequest) {
@@ -1874,6 +1929,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the ListReceiptFilters operation returned by the service.
      * @sample AmazonSimpleEmailService.ListReceiptFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListReceiptFiltersResult listReceiptFilters(ListReceiptFiltersRequest listReceiptFiltersRequest) {
@@ -1928,6 +1985,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the ListReceiptRuleSets operation returned by the service.
      * @sample AmazonSimpleEmailService.ListReceiptRuleSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListReceiptRuleSetsResult listReceiptRuleSets(ListReceiptRuleSetsRequest listReceiptRuleSetsRequest) {
@@ -1977,6 +2036,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @param listVerifiedEmailAddressesRequest
      * @return Result of the ListVerifiedEmailAddresses operation returned by the service.
      * @sample AmazonSimpleEmailService.ListVerifiedEmailAddresses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListVerifiedEmailAddressesResult listVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest) {
@@ -2044,6 +2105,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Indicates that the provided policy is invalid. Check the error stack for more information about what
      *         caused the error.
      * @sample AmazonSimpleEmailService.PutIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public PutIdentityPolicyResult putIdentityPolicy(PutIdentityPolicyRequest putIdentityPolicyRequest) {
@@ -2106,6 +2169,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws RuleDoesNotExistException
      *         Indicates that the provided receipt rule does not exist.
      * @sample AmazonSimpleEmailService.ReorderReceiptRuleSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ReorderReceiptRuleSetResult reorderReceiptRuleSet(ReorderReceiptRuleSetRequest reorderReceiptRuleSetRequest) {
@@ -2163,6 +2228,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Indicates that the action failed, and the message could not be sent. Check the error stack for more
      *         information about what caused the error.
      * @sample AmazonSimpleEmailService.SendBounce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce"/>AWS API Documentation</a>
      */
     @Override
     public SendBounceResult sendBounce(SendBounceRequest sendBounceRequest) {
@@ -2251,6 +2317,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
      * @sample AmazonSimpleEmailService.SendEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail"/>AWS API Documentation</a>
      */
     @Override
     public SendEmailResult sendEmail(SendEmailRequest sendEmailRequest) {
@@ -2393,6 +2460,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
      * @sample AmazonSimpleEmailService.SendRawEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail"/>AWS API Documentation</a>
      */
     @Override
     public SendRawEmailResult sendRawEmail(SendRawEmailRequest sendRawEmailRequest) {
@@ -2452,6 +2520,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws RuleSetDoesNotExistException
      *         Indicates that the provided receipt rule set does not exist.
      * @sample AmazonSimpleEmailService.SetActiveReceiptRuleSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetActiveReceiptRuleSetResult setActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest setActiveReceiptRuleSetRequest) {
@@ -2521,6 +2591,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
      * @return Result of the SetIdentityDkimEnabled operation returned by the service.
      * @sample AmazonSimpleEmailService.SetIdentityDkimEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetIdentityDkimEnabledResult setIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest) {
@@ -2580,6 +2652,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the SetIdentityFeedbackForwardingEnabled operation returned by the service.
      * @sample AmazonSimpleEmailService.SetIdentityFeedbackForwardingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public SetIdentityFeedbackForwardingEnabledResult setIdentityFeedbackForwardingEnabled(
@@ -2634,6 +2708,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the SetIdentityHeadersInNotificationsEnabled operation returned by the service.
      * @sample AmazonSimpleEmailService.SetIdentityHeadersInNotificationsEnabled
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public SetIdentityHeadersInNotificationsEnabledResult setIdentityHeadersInNotificationsEnabled(
@@ -2690,6 +2767,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.
      * @return Result of the SetIdentityMailFromDomain operation returned by the service.
      * @sample AmazonSimpleEmailService.SetIdentityMailFromDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetIdentityMailFromDomainResult setIdentityMailFromDomain(SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest) {
@@ -2750,6 +2829,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the SetIdentityNotificationTopic operation returned by the service.
      * @sample AmazonSimpleEmailService.SetIdentityNotificationTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetIdentityNotificationTopicResult setIdentityNotificationTopic(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest) {
@@ -2806,6 +2887,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws RuleDoesNotExistException
      *         Indicates that the provided receipt rule does not exist.
      * @sample AmazonSimpleEmailService.SetReceiptRulePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetReceiptRulePositionResult setReceiptRulePosition(SetReceiptRulePositionRequest setReceiptRulePositionRequest) {
@@ -2873,6 +2956,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws InvalidFirehoseDestinationException
      *         Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.
      * @sample AmazonSimpleEmailService.UpdateConfigurationSetEventDestination
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(
@@ -2951,6 +3037,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
      *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.UpdateReceiptRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateReceiptRuleResult updateReceiptRule(UpdateReceiptRuleRequest updateReceiptRuleRequest) {
@@ -3009,6 +3097,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
      * @return Result of the VerifyDomainDkim operation returned by the service.
      * @sample AmazonSimpleEmailService.VerifyDomainDkim
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public VerifyDomainDkimResult verifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest) {
@@ -3057,6 +3147,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Guide</a>.
      * @return Result of the VerifyDomainIdentity operation returned by the service.
      * @sample AmazonSimpleEmailService.VerifyDomainIdentity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public VerifyDomainIdentityResult verifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest) {
@@ -3110,6 +3202,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the VerifyEmailAddress operation returned by the service.
      * @sample AmazonSimpleEmailService.VerifyEmailAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public VerifyEmailAddressResult verifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest) {
@@ -3157,6 +3251,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the VerifyEmailIdentity operation returned by the service.
      * @sample AmazonSimpleEmailService.VerifyEmailIdentity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public VerifyEmailIdentityResult verifyEmailIdentity(VerifyEmailIdentityRequest verifyEmailIdentityRequest) {

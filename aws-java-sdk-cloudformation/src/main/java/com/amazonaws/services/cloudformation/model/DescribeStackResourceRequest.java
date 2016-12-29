@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for <a>DescribeStackResource</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeStackResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

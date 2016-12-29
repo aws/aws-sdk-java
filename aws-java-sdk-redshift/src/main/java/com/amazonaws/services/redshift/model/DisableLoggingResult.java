@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the status of logging for a cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging"/>AWS API Documentation</a>
  */
 public class DisableLoggingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

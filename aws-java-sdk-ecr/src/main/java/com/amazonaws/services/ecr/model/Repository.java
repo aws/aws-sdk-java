@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object representing a repository.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Repository"/>AWS API Documentation</a>
  */
 public class Repository implements Serializable, Cloneable {
 

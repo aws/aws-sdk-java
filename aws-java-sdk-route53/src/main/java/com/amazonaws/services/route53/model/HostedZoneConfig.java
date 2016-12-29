@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit
  * both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZoneConfig"/>AWS API Documentation</a>
  */
 public class HostedZoneConfig implements Serializable, Cloneable {
 

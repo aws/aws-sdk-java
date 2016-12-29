@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the results for the <a>CreateComputer</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer"/>AWS API Documentation</a>
  */
 public class CreateComputerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -24,6 +24,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
  * Limits</a> in the <i>AWS General Reference</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/Origin"/>AWS API Documentation</a>
  */
 public class Origin implements Serializable, Cloneable {
 

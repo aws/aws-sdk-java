@@ -21,6 +21,8 @@ import java.io.Serializable;
  * specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of
  * the rules in a <code>WebACL</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WafAction"/>AWS API Documentation</a>
  */
 public class WafAction implements Serializable, Cloneable {
 

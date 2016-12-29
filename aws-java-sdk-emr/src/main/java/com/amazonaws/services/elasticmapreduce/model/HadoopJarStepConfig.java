@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for
  * Hadoop to execute and waits for the job to finish or fail.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/HadoopJarStepConfig"/>AWS API
+ *      Documentation</a>
  */
 public class HadoopJarStepConfig implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a trigger.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Trigger"/>AWS API Documentation</a>
  */
 public class Trigger implements Serializable, Cloneable {
 

@@ -20,6 +20,9 @@ import java.io.Serializable;
  * activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy
  * for an instance group can comprise one or more automatic scaling rules.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingRule"/>AWS API
+ *      Documentation</a>
  */
 public class ScalingRule implements Serializable, Cloneable {
 

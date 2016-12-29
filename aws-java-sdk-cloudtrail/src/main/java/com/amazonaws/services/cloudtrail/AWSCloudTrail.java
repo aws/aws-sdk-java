@@ -164,6 +164,7 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.AddTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags"/>AWS API Documentation</a>
      */
     AddTagsResult addTags(AddTagsRequest addTagsRequest);
 
@@ -249,6 +250,8 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.CreateTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail"/>AWS API
+     *      Documentation</a>
      */
     CreateTrailResult createTrail(CreateTrailRequest createTrailRequest);
 
@@ -298,6 +301,8 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @sample AWSCloudTrail.DeleteTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail"/>AWS API
+     *      Documentation</a>
      */
     DeleteTrailResult deleteTrail(DeleteTrailRequest deleteTrailRequest);
 
@@ -314,6 +319,8 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.DescribeTrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails"/>AWS API
+     *      Documentation</a>
      */
     DescribeTrailsResult describeTrails(DescribeTrailsRequest describeTrailsRequest);
 
@@ -391,6 +398,8 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.GetEventSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors"/>AWS API
+     *      Documentation</a>
      */
     GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest);
 
@@ -438,6 +447,8 @@ public interface AWSCloudTrail {
      *         </p>
      *         </li>
      * @sample AWSCloudTrail.GetTrailStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus"/>AWS API
+     *      Documentation</a>
      */
     GetTrailStatusResult getTrailStatus(GetTrailStatusRequest getTrailStatusRequest);
 
@@ -467,6 +478,8 @@ public interface AWSCloudTrail {
      * @throws InvalidTokenException
      *         Reserved for future use.
      * @sample AWSCloudTrail.ListPublicKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys"/>AWS API
+     *      Documentation</a>
      */
     ListPublicKeysResult listPublicKeys(ListPublicKeysRequest listPublicKeysRequest);
 
@@ -532,6 +545,7 @@ public interface AWSCloudTrail {
      * @throws InvalidTokenException
      *         Reserved for future use.
      * @sample AWSCloudTrail.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags"/>AWS API Documentation</a>
      */
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
 
@@ -598,6 +612,8 @@ public interface AWSCloudTrail {
      *         Invalid token or token that was previously used in a request with different parameters. This exception is
      *         thrown if the token is invalid.
      * @sample AWSCloudTrail.LookupEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents"/>AWS API
+     *      Documentation</a>
      */
     LookupEventsResult lookupEvents(LookupEventsRequest lookupEventsRequest);
 
@@ -718,6 +734,8 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.PutEventSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors"/>AWS API
+     *      Documentation</a>
      */
     PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest putEventSelectorsRequest);
 
@@ -777,6 +795,7 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.RemoveTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags"/>AWS API Documentation</a>
      */
     RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest);
 
@@ -826,6 +845,8 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @sample AWSCloudTrail.StartLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging"/>AWS API
+     *      Documentation</a>
      */
     StartLoggingResult startLogging(StartLoggingRequest startLoggingRequest);
 
@@ -877,6 +898,8 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @sample AWSCloudTrail.StopLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging"/>AWS API
+     *      Documentation</a>
      */
     StopLoggingResult stopLogging(StopLoggingRequest stopLoggingRequest);
 
@@ -966,6 +989,8 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.UpdateTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail"/>AWS API
+     *      Documentation</a>
      */
     UpdateTrailResult updateTrail(UpdateTrailRequest updateTrailRequest);
 

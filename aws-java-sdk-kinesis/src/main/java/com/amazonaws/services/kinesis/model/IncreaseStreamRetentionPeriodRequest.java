@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod"/>AWS API
+ *      Documentation</a>
  */
 public class IncreaseStreamRetentionPeriodRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

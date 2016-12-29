@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "iam",
     "targetPrefix" : null,
+    "uid" : "iam-2010-05-08",
     "xmlNamespace" : "https://iam.amazonaws.com/doc/2010-05-08/"
   },
   "operations" : {

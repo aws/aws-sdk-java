@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeRecoveryPointInfo"/>AWS API
+ *      Documentation</a>
  */
 public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
 

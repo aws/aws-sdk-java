@@ -23,6 +23,9 @@ import java.io.Serializable;
  * longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any
  * instant in time.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemSize"/>AWS API
+ *      Documentation</a>
  */
 public class FileSystemSize implements Serializable, Cloneable {
 

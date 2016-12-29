@@ -70,6 +70,7 @@
     "syncClient" : "AmazonECRClient",
     "syncClientBuilderClassName" : "AmazonECRClientBuilder",
     "syncInterface" : "AmazonECR",
+    "uid" : "ecr-2015-09-21",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

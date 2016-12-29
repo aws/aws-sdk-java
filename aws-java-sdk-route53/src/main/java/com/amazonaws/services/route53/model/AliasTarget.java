@@ -43,6 +43,8 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AliasTarget"/>AWS API Documentation</a>
  */
 public class AliasTarget implements Serializable, Cloneable {
 

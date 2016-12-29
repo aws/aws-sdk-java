@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EventCategoriesMap"/>AWS API Documentation</a>
  */
 public class EventCategoriesMap implements Serializable, Cloneable {
 

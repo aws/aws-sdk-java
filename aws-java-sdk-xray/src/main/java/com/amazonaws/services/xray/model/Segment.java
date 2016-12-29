@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a segment
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Segment"/>AWS API Documentation</a>
  */
 public class Segment implements Serializable, Cloneable {
 

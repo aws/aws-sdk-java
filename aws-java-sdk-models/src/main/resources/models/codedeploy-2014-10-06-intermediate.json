@@ -95,6 +95,7 @@
     "syncClient" : "AmazonCodeDeployClient",
     "syncClientBuilderClassName" : "AmazonCodeDeployClientBuilder",
     "syncInterface" : "AmazonCodeDeploy",
+    "uid" : "codedeploy-2014-10-06",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

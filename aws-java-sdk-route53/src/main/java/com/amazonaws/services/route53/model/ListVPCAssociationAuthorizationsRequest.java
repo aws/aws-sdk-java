@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A complex type that contains information about that can be associated with your hosted zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations"/>AWS API
+ *      Documentation</a>
  */
 public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

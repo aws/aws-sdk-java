@@ -70,6 +70,7 @@
     "syncClient" : "AWSServerMigrationClient",
     "syncClientBuilderClassName" : "AWSServerMigrationClientBuilder",
     "syncInterface" : "AWSServerMigration",
+    "uid" : "sms-2016-10-24",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

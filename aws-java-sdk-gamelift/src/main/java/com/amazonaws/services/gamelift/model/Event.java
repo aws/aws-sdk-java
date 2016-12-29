@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Log entry describing an event involving Amazon GameLift resources (such as a fleet). In addition to tracking
  * activity, event codes and messages can provide additional information for troubleshooting and debugging problems.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Event"/>AWS API Documentation</a>
  */
 public class Event implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Result message containing a list of environment resource descriptions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeEnvironmentResourcesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

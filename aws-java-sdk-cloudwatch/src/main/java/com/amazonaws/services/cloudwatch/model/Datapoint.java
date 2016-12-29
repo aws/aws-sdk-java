@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Encapsulates the statistical data that Amazon CloudWatch computes from metric data.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Datapoint"/>AWS API Documentation</a>
  */
 public class Datapoint implements Serializable, Cloneable {
 

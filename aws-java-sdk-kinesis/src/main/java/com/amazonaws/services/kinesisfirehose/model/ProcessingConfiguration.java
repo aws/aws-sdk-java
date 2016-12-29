@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a data processing configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ProcessingConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class ProcessingConfiguration implements Serializable, Cloneable {
 

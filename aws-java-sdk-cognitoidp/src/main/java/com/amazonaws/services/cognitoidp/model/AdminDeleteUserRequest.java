@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the request to delete a user as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser"/>AWS API
+ *      Documentation</a>
  */
 public class AdminDeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Details about a specific Automation execution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AutomationExecutionMetadata"/>AWS API
+ *      Documentation</a>
  */
 public class AutomationExecutionMetadata implements Serializable, Cloneable {
 

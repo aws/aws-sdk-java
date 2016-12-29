@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityFilter"/>AWS API Documentation</a>
  */
 public class EntityFilter implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Response from GetEndpointAttributes of the EndpointArn.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes"/>AWS API Documentation</a>
  */
 public class GetEndpointAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

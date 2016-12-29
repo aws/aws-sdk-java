@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Each tag includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

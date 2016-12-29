@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object representing an Amazon ECR image layer failure.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/LayerFailure"/>AWS API Documentation</a>
  */
 public class LayerFailure implements Serializable, Cloneable {
 

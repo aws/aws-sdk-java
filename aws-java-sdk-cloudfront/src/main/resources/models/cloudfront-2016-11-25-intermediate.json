@@ -161,6 +161,7 @@
     "syncClient" : "AmazonCloudFrontClient",
     "syncClientBuilderClassName" : "AmazonCloudFrontClientBuilder",
     "syncInterface" : "AmazonCloudFront",
+    "uid" : "cloudfront-2016-11-25",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

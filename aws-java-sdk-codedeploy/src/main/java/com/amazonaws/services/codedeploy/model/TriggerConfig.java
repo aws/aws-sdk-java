@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about notification triggers for the deployment group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TriggerConfig"/>AWS API Documentation</a>
  */
 public class TriggerConfig implements Serializable, Cloneable {
 

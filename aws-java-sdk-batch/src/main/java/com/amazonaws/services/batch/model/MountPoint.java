@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details on a volume mount point that is used in a job's container properties.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/MountPoint"/>AWS API Documentation</a>
  */
 public class MountPoint implements Serializable, Cloneable {
 

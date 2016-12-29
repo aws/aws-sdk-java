@@ -20,6 +20,8 @@ import java.io.Serializable;
  * capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by
  * the fleet's instance type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetCapacity"/>AWS API Documentation</a>
  */
 public class FleetCapacity implements Serializable, Cloneable {
 

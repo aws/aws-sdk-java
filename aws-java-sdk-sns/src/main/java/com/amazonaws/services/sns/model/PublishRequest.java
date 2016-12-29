@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Input for Publish action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish"/>AWS API Documentation</a>
  */
 public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

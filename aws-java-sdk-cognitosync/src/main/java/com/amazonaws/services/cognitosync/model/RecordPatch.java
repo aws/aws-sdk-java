@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * An update operation for a record.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RecordPatch"/>AWS API Documentation</a>
  */
 public class RecordPatch implements Serializable, Cloneable {
 

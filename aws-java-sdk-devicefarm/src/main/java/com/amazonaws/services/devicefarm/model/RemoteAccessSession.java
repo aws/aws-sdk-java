@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about the remote access session.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RemoteAccessSession"/>AWS API
+ *      Documentation</a>
  */
 public class RemoteAccessSession implements Serializable, Cloneable {
 

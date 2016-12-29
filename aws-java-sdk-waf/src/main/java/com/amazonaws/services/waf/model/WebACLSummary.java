@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the identifier and the name or description of the <a>WebACL</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WebACLSummary"/>AWS API
+ *      Documentation</a>
  */
 public class WebACLSummary implements Serializable, Cloneable {
 

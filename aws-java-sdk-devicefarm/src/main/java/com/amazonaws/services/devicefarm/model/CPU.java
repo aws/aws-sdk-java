@@ -21,6 +21,8 @@ import java.io.Serializable;
  * <p>
  * Note that this does not represent system-wide CPU usage.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CPU"/>AWS API Documentation</a>
  */
 public class CPU implements Serializable, Cloneable {
 

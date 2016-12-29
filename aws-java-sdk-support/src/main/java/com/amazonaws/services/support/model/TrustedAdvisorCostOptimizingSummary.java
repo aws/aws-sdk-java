@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The estimated cost savings that might be realized if the recommended actions are taken.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCostOptimizingSummary"/>AWS API
+ *      Documentation</a>
  */
 public class TrustedAdvisorCostOptimizingSummary implements Serializable, Cloneable {
 

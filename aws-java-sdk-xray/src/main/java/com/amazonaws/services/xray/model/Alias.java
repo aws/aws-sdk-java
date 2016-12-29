@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An alias for an edge.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Alias"/>AWS API Documentation</a>
  */
 public class Alias implements Serializable, Cloneable {
 

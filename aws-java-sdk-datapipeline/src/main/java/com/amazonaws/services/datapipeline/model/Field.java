@@ -19,6 +19,8 @@ import java.io.Serializable;
  * A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (
  * <code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Field"/>AWS API Documentation</a>
  */
 public class Field implements Serializable, Cloneable {
 

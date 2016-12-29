@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Summarizes all DDoS attacks for a specified time period.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackSummary"/>AWS API Documentation</a>
  */
 public class AttackSummary implements Serializable, Cloneable {
 

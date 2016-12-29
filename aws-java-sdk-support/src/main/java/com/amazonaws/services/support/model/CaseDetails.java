@@ -88,6 +88,8 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails"/>AWS API Documentation</a>
  */
 public class CaseDetails implements Serializable, Cloneable {
 

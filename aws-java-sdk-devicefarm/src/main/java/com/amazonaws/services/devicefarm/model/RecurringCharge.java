@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Specifies whether charges for devices will be recurring.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RecurringCharge"/>AWS API
+ *      Documentation</a>
  */
 public class RecurringCharge implements Serializable, Cloneable {
 

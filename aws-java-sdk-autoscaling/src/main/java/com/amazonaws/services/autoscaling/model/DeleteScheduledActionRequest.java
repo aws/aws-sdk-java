@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DeleteScheduledAction.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteScheduledActionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

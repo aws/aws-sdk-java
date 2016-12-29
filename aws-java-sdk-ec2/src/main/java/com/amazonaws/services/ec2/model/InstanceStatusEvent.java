@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a scheduled event for an instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStatusEvent"/>AWS API Documentation</a>
  */
 public class InstanceStatusEvent implements Serializable, Cloneable {
 

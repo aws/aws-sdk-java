@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Configuration of requested EBS block device associated with the instance group with count of volumes that will be
  * associated to every instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/EbsBlockDeviceConfig"/>AWS API
+ *      Documentation</a>
  */
 public class EbsBlockDeviceConfig implements Serializable, Cloneable {
 

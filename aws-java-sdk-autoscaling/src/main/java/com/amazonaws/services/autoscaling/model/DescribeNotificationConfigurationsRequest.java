@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DescribeNotificationConfigurations.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeNotificationConfigurationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

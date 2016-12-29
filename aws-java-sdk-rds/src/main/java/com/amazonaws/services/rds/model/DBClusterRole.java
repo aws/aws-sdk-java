@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterRole"/>AWS API Documentation</a>
  */
 public class DBClusterRole implements Serializable, Cloneable {
 

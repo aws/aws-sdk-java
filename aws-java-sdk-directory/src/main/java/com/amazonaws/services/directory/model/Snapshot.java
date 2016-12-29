@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a directory snapshot.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Snapshot"/>AWS API Documentation</a>
  */
 public class Snapshot implements Serializable, Cloneable {
 

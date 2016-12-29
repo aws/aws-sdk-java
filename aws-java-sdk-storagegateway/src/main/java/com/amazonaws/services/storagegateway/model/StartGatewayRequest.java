@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A JSON object containing the of the gateway to start.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway"/>AWS API
+ *      Documentation</a>
  */
 public class StartGatewayRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

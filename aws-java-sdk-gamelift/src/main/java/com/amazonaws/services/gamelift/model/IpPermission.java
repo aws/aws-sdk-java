@@ -20,6 +20,8 @@ import java.io.Serializable;
  * game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into
  * the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission"/>AWS API Documentation</a>
  */
 public class IpPermission implements Serializable, Cloneable {
 

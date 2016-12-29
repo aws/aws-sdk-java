@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The attack information for the specified SubResource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SubResourceSummary"/>AWS API Documentation</a>
  */
 public class SubResourceSummary implements Serializable, Cloneable {
 

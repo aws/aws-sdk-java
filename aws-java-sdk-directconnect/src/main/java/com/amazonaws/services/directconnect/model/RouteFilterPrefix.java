@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual
  * interface.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/RouteFilterPrefix"/>AWS API
+ *      Documentation</a>
  */
 public class RouteFilterPrefix implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains a cluster's state, a cluster's ID, and other important information.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ClusterListEntry"/>AWS API Documentation</a>
  */
 public class ClusterListEntry implements Serializable, Cloneable {
 

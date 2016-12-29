@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Specifies the different settings for multi-factor authentication (MFA).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/MFAOptionType"/>AWS API Documentation</a>
  */
 public class MFAOptionType implements Serializable, Cloneable {
 

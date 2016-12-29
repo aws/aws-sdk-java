@@ -70,6 +70,7 @@
     "syncClient" : "AWSIotClient",
     "syncClientBuilderClassName" : "AWSIotClientBuilder",
     "syncInterface" : "AWSIot",
+    "uid" : "iot-2015-05-28",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

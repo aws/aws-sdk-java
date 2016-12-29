@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole"/>AWS API Documentation</a>
  */
 public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

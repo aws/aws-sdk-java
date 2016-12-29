@@ -130,6 +130,8 @@ public interface AmazonCognitoSync {
      *         An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk
      *         publish operation completed successfully.
      * @sample AmazonCognitoSync.BulkPublish
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish"/>AWS API
+     *      Documentation</a>
      */
     BulkPublishResult bulkPublish(BulkPublishRequest bulkPublishRequest);
 
@@ -161,6 +163,8 @@ public interface AmazonCognitoSync {
      *         Thrown if an update can't be applied because the resource was changed by another call and this would
      *         result in a conflict.
      * @sample AmazonCognitoSync.DeleteDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset"/>AWS API
+     *      Documentation</a>
      */
     DeleteDatasetResult deleteDataset(DeleteDatasetRequest deleteDatasetRequest);
 
@@ -189,6 +193,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.DescribeDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset"/>AWS API
+     *      Documentation</a>
      */
     DescribeDatasetResult describeDataset(DescribeDatasetRequest describeDatasetRequest);
 
@@ -215,6 +221,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.DescribeIdentityPoolUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage"/>AWS API
+     *      Documentation</a>
      */
     DescribeIdentityPoolUsageResult describeIdentityPoolUsage(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest);
 
@@ -241,6 +249,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.DescribeIdentityUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage"/>AWS API
+     *      Documentation</a>
      */
     DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest);
 
@@ -265,6 +275,8 @@ public interface AmazonCognitoSync {
      * @throws InternalErrorException
      *         Indicates an internal service error.
      * @sample AmazonCognitoSync.GetBulkPublishDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails"/>AWS API
+     *      Documentation</a>
      */
     GetBulkPublishDetailsResult getBulkPublishDetails(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest);
 
@@ -291,6 +303,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.GetCognitoEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents"/>AWS API
+     *      Documentation</a>
      */
     GetCognitoEventsResult getCognitoEvents(GetCognitoEventsRequest getCognitoEventsRequest);
 
@@ -317,6 +331,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.GetIdentityPoolConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration"/>AWS
+     *      API Documentation</a>
      */
     GetIdentityPoolConfigurationResult getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest);
 
@@ -342,6 +358,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.ListDatasets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets"/>AWS API
+     *      Documentation</a>
      */
     ListDatasetsResult listDatasets(ListDatasetsRequest listDatasetsRequest);
 
@@ -366,6 +384,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.ListIdentityPoolUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage"/>AWS API
+     *      Documentation</a>
      */
     ListIdentityPoolUsageResult listIdentityPoolUsage(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest);
 
@@ -392,6 +412,8 @@ public interface AmazonCognitoSync {
      * @throws InternalErrorException
      *         Indicates an internal service error.
      * @sample AmazonCognitoSync.ListRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords"/>AWS API
+     *      Documentation</a>
      */
     ListRecordsResult listRecords(ListRecordsRequest listRecordsRequest);
 
@@ -419,6 +441,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.RegisterDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice"/>AWS API
+     *      Documentation</a>
      */
     RegisterDeviceResult registerDevice(RegisterDeviceRequest registerDeviceRequest);
 
@@ -447,6 +471,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.SetCognitoEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetCognitoEvents"/>AWS API
+     *      Documentation</a>
      */
     SetCognitoEventsResult setCognitoEvents(SetCognitoEventsRequest setCognitoEventsRequest);
 
@@ -475,6 +501,8 @@ public interface AmazonCognitoSync {
      * @throws ConcurrentModificationException
      *         Thrown if there are parallel requests to modify a resource.
      * @sample AmazonCognitoSync.SetIdentityPoolConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration"/>AWS
+     *      API Documentation</a>
      */
     SetIdentityPoolConfigurationResult setIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest);
 
@@ -502,6 +530,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.SubscribeToDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDataset"/>AWS API
+     *      Documentation</a>
      */
     SubscribeToDatasetResult subscribeToDataset(SubscribeToDatasetRequest subscribeToDatasetRequest);
 
@@ -529,6 +559,8 @@ public interface AmazonCognitoSync {
      * @throws TooManyRequestsException
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.UnsubscribeFromDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset"/>AWS API
+     *      Documentation</a>
      */
     UnsubscribeFromDatasetResult unsubscribeFromDataset(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest);
 
@@ -576,6 +608,8 @@ public interface AmazonCognitoSync {
      * @throws InternalErrorException
      *         Indicates an internal service error.
      * @sample AmazonCognitoSync.UpdateRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords"/>AWS API
+     *      Documentation</a>
      */
     UpdateRecordsResult updateRecords(UpdateRecordsRequest updateRecordsRequest);
 

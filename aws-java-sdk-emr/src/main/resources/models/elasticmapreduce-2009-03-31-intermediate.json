@@ -168,6 +168,7 @@
     "syncClient" : "AmazonElasticMapReduceClient",
     "syncClientBuilderClassName" : "AmazonElasticMapReduceClientBuilder",
     "syncInterface" : "AmazonElasticMapReduce",
+    "uid" : "elasticmapreduce-2009-03-31",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

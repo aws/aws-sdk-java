@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Information about a configuration for automatically rolling back to a previous version of an application revision
  * when a deployment doesn't complete successfully.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AutoRollbackConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class AutoRollbackConfiguration implements Serializable, Cloneable {
 

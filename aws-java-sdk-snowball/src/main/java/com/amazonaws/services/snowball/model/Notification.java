@@ -25,6 +25,8 @@ import java.io.Serializable;
  * job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon
  * SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Notification"/>AWS API Documentation</a>
  */
 public class Notification implements Serializable, Cloneable {
 

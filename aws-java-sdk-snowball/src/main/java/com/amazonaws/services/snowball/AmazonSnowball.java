@@ -105,6 +105,8 @@ public interface AmazonSnowball {
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.CancelCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster"/>AWS API
+     *      Documentation</a>
      */
     CancelClusterResult cancelCluster(CancelClusterRequest cancelClusterRequest);
 
@@ -126,6 +128,7 @@ public interface AmazonSnowball {
      *         The provided AWS Key Management Service key lacks the permissions to perform the specified
      *         <a>CreateJob</a> or <a>UpdateJob</a> action.
      * @sample AmazonSnowball.CancelJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob"/>AWS API Documentation</a>
      */
     CancelJobResult cancelJob(CancelJobRequest cancelJobRequest);
 
@@ -146,6 +149,8 @@ public interface AmazonSnowball {
      *         The address is either outside the serviceable area for your region, or an error occurred. Check the
      *         address with your region's carrier and try again. If the issue persists, contact AWS Support.
      * @sample AmazonSnowball.CreateAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress"/>AWS API
+     *      Documentation</a>
      */
     CreateAddressResult createAddress(CreateAddressRequest createAddressRequest);
 
@@ -168,6 +173,8 @@ public interface AmazonSnowball {
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @sample AmazonSnowball.CreateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster"/>AWS API
+     *      Documentation</a>
      */
     CreateClusterResult createCluster(CreateClusterRequest createClusterRequest);
 
@@ -196,6 +203,7 @@ public interface AmazonSnowball {
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five notes.
      * @sample AmazonSnowball.CreateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob"/>AWS API Documentation</a>
      */
     CreateJobResult createJob(CreateJobRequest createJobRequest);
 
@@ -211,6 +219,8 @@ public interface AmazonSnowball {
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.DescribeAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress"/>AWS API
+     *      Documentation</a>
      */
     DescribeAddressResult describeAddress(DescribeAddressRequest describeAddressRequest);
 
@@ -226,6 +236,8 @@ public interface AmazonSnowball {
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.DescribeAddresses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses"/>AWS API
+     *      Documentation</a>
      */
     DescribeAddressesResult describeAddresses(DescribeAddressesRequest describeAddressesRequest);
 
@@ -241,6 +253,8 @@ public interface AmazonSnowball {
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.DescribeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster"/>AWS API
+     *      Documentation</a>
      */
     DescribeClusterResult describeCluster(DescribeClusterRequest describeClusterRequest);
 
@@ -256,6 +270,7 @@ public interface AmazonSnowball {
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.DescribeJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob"/>AWS API Documentation</a>
      */
     DescribeJobResult describeJob(DescribeJobRequest describeJobRequest);
 
@@ -289,6 +304,8 @@ public interface AmazonSnowball {
      * @throws InvalidJobStateException
      *         The action can't be performed because the job's current state doesn't allow that action to be performed.
      * @sample AmazonSnowball.GetJobManifest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest"/>AWS API
+     *      Documentation</a>
      */
     GetJobManifestResult getJobManifest(GetJobManifestRequest getJobManifestRequest);
 
@@ -316,6 +333,8 @@ public interface AmazonSnowball {
      * @throws InvalidJobStateException
      *         The action can't be performed because the job's current state doesn't allow that action to be performed.
      * @sample AmazonSnowball.GetJobUnlockCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode"/>AWS API
+     *      Documentation</a>
      */
     GetJobUnlockCodeResult getJobUnlockCode(GetJobUnlockCodeRequest getJobUnlockCodeRequest);
 
@@ -332,6 +351,8 @@ public interface AmazonSnowball {
      * @param getSnowballUsageRequest
      * @return Result of the GetSnowballUsage operation returned by the service.
      * @sample AmazonSnowball.GetSnowballUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage"/>AWS API
+     *      Documentation</a>
      */
     GetSnowballUsageResult getSnowballUsage(GetSnowballUsageRequest getSnowballUsageRequest);
 
@@ -347,6 +368,8 @@ public interface AmazonSnowball {
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.ListClusterJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs"/>AWS API
+     *      Documentation</a>
      */
     ListClusterJobsResult listClusterJobs(ListClusterJobsRequest listClusterJobsRequest);
 
@@ -360,6 +383,7 @@ public interface AmazonSnowball {
      * @param listClustersRequest
      * @return Result of the ListClusters operation returned by the service.
      * @sample AmazonSnowball.ListClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters"/>AWS API Documentation</a>
      */
     ListClustersResult listClusters(ListClustersRequest listClustersRequest);
 
@@ -374,6 +398,7 @@ public interface AmazonSnowball {
      * @param listJobsRequest
      * @return Result of the ListJobs operation returned by the service.
      * @sample AmazonSnowball.ListJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs"/>AWS API Documentation</a>
      */
     ListJobsResult listJobs(ListJobsRequest listJobsRequest);
 
@@ -399,6 +424,8 @@ public interface AmazonSnowball {
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @sample AmazonSnowball.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster"/>AWS API
+     *      Documentation</a>
      */
     UpdateClusterResult updateCluster(UpdateClusterRequest updateClusterRequest);
 
@@ -428,6 +455,7 @@ public interface AmazonSnowball {
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five notes.
      * @sample AmazonSnowball.UpdateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob"/>AWS API Documentation</a>
      */
     UpdateJobResult updateJob(UpdateJobRequest updateJobRequest);
 

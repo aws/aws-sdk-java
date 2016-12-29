@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An object that represents the recording of configuration changes of an AWS resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationRecorder"/>AWS API
+ *      Documentation</a>
  */
 public class ConfigurationRecorder implements Serializable, Cloneable {
 

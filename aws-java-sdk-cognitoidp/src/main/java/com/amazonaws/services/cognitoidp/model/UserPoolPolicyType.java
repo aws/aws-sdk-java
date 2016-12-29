@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The type of policy in a user pool.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolPolicyType"/>AWS API
+ *      Documentation</a>
  */
 public class UserPoolPolicyType implements Serializable, Cloneable {
 

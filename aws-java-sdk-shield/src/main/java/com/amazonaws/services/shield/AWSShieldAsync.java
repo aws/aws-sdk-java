@@ -42,6 +42,8 @@ public interface AWSShieldAsync extends AWSShield {
      * @param createProtectionRequest
      * @return A Java Future containing the result of the CreateProtection operation returned by the service.
      * @sample AWSShieldAsync.CreateProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(CreateProtectionRequest createProtectionRequest);
 
@@ -58,6 +60,8 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateProtection operation returned by the service.
      * @sample AWSShieldAsyncHandler.CreateProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(CreateProtectionRequest createProtectionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateProtectionRequest, CreateProtectionResult> asyncHandler);
@@ -70,6 +74,8 @@ public interface AWSShieldAsync extends AWSShield {
      * @param createSubscriptionRequest
      * @return A Java Future containing the result of the CreateSubscription operation returned by the service.
      * @sample AWSShieldAsync.CreateSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSubscriptionResult> createSubscriptionAsync(CreateSubscriptionRequest createSubscriptionRequest);
 
@@ -85,6 +91,8 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateSubscription operation returned by the service.
      * @sample AWSShieldAsyncHandler.CreateSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSubscriptionResult> createSubscriptionAsync(CreateSubscriptionRequest createSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSubscriptionRequest, CreateSubscriptionResult> asyncHandler);
@@ -97,6 +105,8 @@ public interface AWSShieldAsync extends AWSShield {
      * @param deleteProtectionRequest
      * @return A Java Future containing the result of the DeleteProtection operation returned by the service.
      * @sample AWSShieldAsync.DeleteProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteProtectionResult> deleteProtectionAsync(DeleteProtectionRequest deleteProtectionRequest);
 
@@ -112,6 +122,8 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteProtection operation returned by the service.
      * @sample AWSShieldAsyncHandler.DeleteProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteProtectionResult> deleteProtectionAsync(DeleteProtectionRequest deleteProtectionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProtectionRequest, DeleteProtectionResult> asyncHandler);
@@ -124,6 +136,8 @@ public interface AWSShieldAsync extends AWSShield {
      * @param deleteSubscriptionRequest
      * @return A Java Future containing the result of the DeleteSubscription operation returned by the service.
      * @sample AWSShieldAsync.DeleteSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSubscriptionResult> deleteSubscriptionAsync(DeleteSubscriptionRequest deleteSubscriptionRequest);
 
@@ -139,6 +153,8 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSubscription operation returned by the service.
      * @sample AWSShieldAsyncHandler.DeleteSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSubscriptionResult> deleteSubscriptionAsync(DeleteSubscriptionRequest deleteSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionRequest, DeleteSubscriptionResult> asyncHandler);
@@ -151,6 +167,7 @@ public interface AWSShieldAsync extends AWSShield {
      * @param describeAttackRequest
      * @return A Java Future containing the result of the DescribeAttack operation returned by the service.
      * @sample AWSShieldAsync.DescribeAttack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAttackResult> describeAttackAsync(DescribeAttackRequest describeAttackRequest);
 
@@ -166,6 +183,7 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAttack operation returned by the service.
      * @sample AWSShieldAsyncHandler.DescribeAttack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAttackResult> describeAttackAsync(DescribeAttackRequest describeAttackRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAttackRequest, DescribeAttackResult> asyncHandler);
@@ -178,6 +196,8 @@ public interface AWSShieldAsync extends AWSShield {
      * @param describeProtectionRequest
      * @return A Java Future containing the result of the DescribeProtection operation returned by the service.
      * @sample AWSShieldAsync.DescribeProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeProtectionResult> describeProtectionAsync(DescribeProtectionRequest describeProtectionRequest);
 
@@ -193,6 +213,8 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeProtection operation returned by the service.
      * @sample AWSShieldAsyncHandler.DescribeProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeProtectionResult> describeProtectionAsync(DescribeProtectionRequest describeProtectionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeProtectionRequest, DescribeProtectionResult> asyncHandler);
@@ -205,6 +227,8 @@ public interface AWSShieldAsync extends AWSShield {
      * @param describeSubscriptionRequest
      * @return A Java Future containing the result of the DescribeSubscription operation returned by the service.
      * @sample AWSShieldAsync.DescribeSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeSubscriptionResult> describeSubscriptionAsync(DescribeSubscriptionRequest describeSubscriptionRequest);
 
@@ -220,6 +244,8 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeSubscription operation returned by the service.
      * @sample AWSShieldAsyncHandler.DescribeSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeSubscriptionResult> describeSubscriptionAsync(DescribeSubscriptionRequest describeSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionRequest, DescribeSubscriptionResult> asyncHandler);
@@ -232,6 +258,7 @@ public interface AWSShieldAsync extends AWSShield {
      * @param listAttacksRequest
      * @return A Java Future containing the result of the ListAttacks operation returned by the service.
      * @sample AWSShieldAsync.ListAttacks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAttacksResult> listAttacksAsync(ListAttacksRequest listAttacksRequest);
 
@@ -247,6 +274,7 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAttacks operation returned by the service.
      * @sample AWSShieldAsyncHandler.ListAttacks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAttacksResult> listAttacksAsync(ListAttacksRequest listAttacksRequest,
             com.amazonaws.handlers.AsyncHandler<ListAttacksRequest, ListAttacksResult> asyncHandler);
@@ -259,6 +287,8 @@ public interface AWSShieldAsync extends AWSShield {
      * @param listProtectionsRequest
      * @return A Java Future containing the result of the ListProtections operation returned by the service.
      * @sample AWSShieldAsync.ListProtections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListProtectionsResult> listProtectionsAsync(ListProtectionsRequest listProtectionsRequest);
 
@@ -274,6 +304,8 @@ public interface AWSShieldAsync extends AWSShield {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListProtections operation returned by the service.
      * @sample AWSShieldAsyncHandler.ListProtections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListProtectionsResult> listProtectionsAsync(ListProtectionsRequest listProtectionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProtectionsRequest, ListProtectionsResult> asyncHandler);

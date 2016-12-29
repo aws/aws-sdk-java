@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Log configuration options to send to a custom log driver for the container.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LogConfiguration"/>AWS API Documentation</a>
  */
 public class LogConfiguration implements Serializable, Cloneable {
 

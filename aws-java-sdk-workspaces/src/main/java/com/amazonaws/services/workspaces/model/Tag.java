@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the tag of the WorkSpace.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

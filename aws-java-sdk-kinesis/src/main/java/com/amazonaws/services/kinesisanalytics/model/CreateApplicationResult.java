@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * TBD
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication"/>AWS API
+ *      Documentation</a>
  */
 public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

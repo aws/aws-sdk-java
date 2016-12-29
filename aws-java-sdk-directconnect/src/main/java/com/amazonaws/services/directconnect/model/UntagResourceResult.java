@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response received when UntagResource is called.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource"/>AWS API
+ *      Documentation</a>
  */
 public class UntagResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

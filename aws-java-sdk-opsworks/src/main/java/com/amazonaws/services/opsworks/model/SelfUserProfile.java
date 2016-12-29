@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a user's SSH information.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SelfUserProfile"/>AWS API Documentation</a>
  */
 public class SelfUserProfile implements Serializable, Cloneable {
 

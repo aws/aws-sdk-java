@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a> </code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatchResultEntry"/>AWS API
+ *      Documentation</a>
  */
 public class SendMessageBatchResultEntry implements Serializable, Cloneable {
 

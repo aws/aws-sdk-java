@@ -14,9 +14,6 @@ package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class AbortMultipartUploadResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

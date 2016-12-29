@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents an individual cache node in a snapshot of a cache cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeSnapshot"/>AWS API Documentation</a>
  */
 public class NodeSnapshot implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * VPC configuration associated with your Lambda function.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfigResponse"/>AWS API Documentation</a>
  */
 public class VpcConfigResponse implements Serializable, Cloneable {
 

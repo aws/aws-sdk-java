@@ -28,6 +28,9 @@ import java.io.Serializable;
  * The resources of the interconnect, including bandwidth and VLAN numbers, are shared by all of the hosted connections
  * on the interconnect, and the owner of the interconnect determines how these resources are assigned.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Interconnect"/>AWS API
+ *      Documentation</a>
  */
 public class Interconnect implements Serializable, Cloneable {
 

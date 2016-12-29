@@ -46,6 +46,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param addApplicationInputRequest
      * @return A Java Future containing the result of the AddApplicationInput operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.AddApplicationInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddApplicationInputResult> addApplicationInputAsync(AddApplicationInputRequest addApplicationInputRequest);
 
@@ -74,6 +76,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddApplicationInput operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.AddApplicationInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddApplicationInputResult> addApplicationInputAsync(AddApplicationInputRequest addApplicationInputRequest,
             com.amazonaws.handlers.AsyncHandler<AddApplicationInputRequest, AddApplicationInputResult> asyncHandler);
@@ -110,6 +114,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param addApplicationOutputRequest
      * @return A Java Future containing the result of the AddApplicationOutput operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.AddApplicationOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddApplicationOutputResult> addApplicationOutputAsync(AddApplicationOutputRequest addApplicationOutputRequest);
 
@@ -149,6 +155,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddApplicationOutput operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.AddApplicationOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddApplicationOutputResult> addApplicationOutputAsync(AddApplicationOutputRequest addApplicationOutputRequest,
             com.amazonaws.handlers.AsyncHandler<AddApplicationOutputRequest, AddApplicationOutputResult> asyncHandler);
@@ -177,6 +185,9 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @return A Java Future containing the result of the AddApplicationReferenceDataSource operation returned by the
      *         service.
      * @sample AmazonKinesisAnalyticsAsync.AddApplicationReferenceDataSource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<AddApplicationReferenceDataSourceResult> addApplicationReferenceDataSourceAsync(
             AddApplicationReferenceDataSourceRequest addApplicationReferenceDataSourceRequest);
@@ -209,6 +220,9 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @return A Java Future containing the result of the AddApplicationReferenceDataSource operation returned by the
      *         service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.AddApplicationReferenceDataSource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<AddApplicationReferenceDataSourceResult> addApplicationReferenceDataSourceAsync(
             AddApplicationReferenceDataSourceRequest addApplicationReferenceDataSourceRequest,
@@ -249,6 +263,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        TBD
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest);
 
@@ -291,6 +307,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
@@ -308,6 +326,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param deleteApplicationRequest
      * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest);
 
@@ -328,6 +348,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
@@ -344,6 +366,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param deleteApplicationOutputRequest
      * @return A Java Future containing the result of the DeleteApplicationOutput operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.DeleteApplicationOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationOutputResult> deleteApplicationOutputAsync(DeleteApplicationOutputRequest deleteApplicationOutputRequest);
 
@@ -363,6 +387,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApplicationOutput operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.DeleteApplicationOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationOutputResult> deleteApplicationOutputAsync(DeleteApplicationOutputRequest deleteApplicationOutputRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationOutputRequest, DeleteApplicationOutputResult> asyncHandler);
@@ -384,6 +410,9 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @return A Java Future containing the result of the DeleteApplicationReferenceDataSource operation returned by the
      *         service.
      * @sample AmazonKinesisAnalyticsAsync.DeleteApplicationReferenceDataSource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationReferenceDataSourceResult> deleteApplicationReferenceDataSourceAsync(
             DeleteApplicationReferenceDataSourceRequest deleteApplicationReferenceDataSourceRequest);
@@ -409,6 +438,9 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @return A Java Future containing the result of the DeleteApplicationReferenceDataSource operation returned by the
      *         service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.DeleteApplicationReferenceDataSource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationReferenceDataSourceResult> deleteApplicationReferenceDataSourceAsync(
             DeleteApplicationReferenceDataSourceRequest deleteApplicationReferenceDataSourceRequest,
@@ -430,6 +462,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param describeApplicationRequest
      * @return A Java Future containing the result of the DescribeApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.DescribeApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(DescribeApplicationRequest describeApplicationRequest);
 
@@ -453,6 +487,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.DescribeApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(DescribeApplicationRequest describeApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeApplicationRequest, DescribeApplicationResult> asyncHandler);
@@ -477,6 +513,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param discoverInputSchemaRequest
      * @return A Java Future containing the result of the DiscoverInputSchema operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.DiscoverInputSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DiscoverInputSchemaResult> discoverInputSchemaAsync(DiscoverInputSchemaRequest discoverInputSchemaRequest);
 
@@ -504,6 +542,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DiscoverInputSchema operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.DiscoverInputSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DiscoverInputSchemaResult> discoverInputSchemaAsync(DiscoverInputSchemaRequest discoverInputSchemaRequest,
             com.amazonaws.handlers.AsyncHandler<DiscoverInputSchemaRequest, DiscoverInputSchemaResult> asyncHandler);
@@ -526,6 +566,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param listApplicationsRequest
      * @return A Java Future containing the result of the ListApplications operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest);
 
@@ -551,6 +593,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListApplications operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler);
@@ -579,6 +623,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param startApplicationRequest
      * @return A Java Future containing the result of the StartApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.StartApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartApplicationResult> startApplicationAsync(StartApplicationRequest startApplicationRequest);
 
@@ -610,6 +656,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.StartApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartApplicationResult> startApplicationAsync(StartApplicationRequest startApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<StartApplicationRequest, StartApplicationResult> asyncHandler);
@@ -628,6 +676,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param stopApplicationRequest
      * @return A Java Future containing the result of the StopApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.StopApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopApplicationResult> stopApplicationAsync(StopApplicationRequest stopApplicationRequest);
 
@@ -649,6 +699,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.StopApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopApplicationResult> stopApplicationAsync(StopApplicationRequest stopApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<StopApplicationRequest, StopApplicationResult> asyncHandler);
@@ -669,6 +721,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * @param updateApplicationRequest
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsync.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
 
@@ -692,6 +746,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
      * @sample AmazonKinesisAnalyticsAsyncHandler.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);

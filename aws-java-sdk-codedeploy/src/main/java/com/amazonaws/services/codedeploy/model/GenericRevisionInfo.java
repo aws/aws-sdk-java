@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about an application revision.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GenericRevisionInfo"/>AWS API
+ *      Documentation</a>
  */
 public class GenericRevisionInfo implements Serializable, Cloneable {
 

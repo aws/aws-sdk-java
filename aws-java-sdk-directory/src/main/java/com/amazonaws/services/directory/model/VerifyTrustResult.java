@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Result of a VerifyTrust request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust"/>AWS API Documentation</a>
  */
 public class VerifyTrustResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

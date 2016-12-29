@@ -20,6 +20,9 @@ import java.io.Serializable;
  * ascending order. For example, if two compute environments are associated with a job queue, the compute environment
  * with a lower order integer value is tried for job placement first.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentOrder"/>AWS API
+ *      Documentation</a>
  */
 public class ComputeEnvironmentOrder implements Serializable, Cloneable {
 

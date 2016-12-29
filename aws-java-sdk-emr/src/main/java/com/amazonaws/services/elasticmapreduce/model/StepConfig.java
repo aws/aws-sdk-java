@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Specification of a job flow step.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepConfig"/>AWS API
+ *      Documentation</a>
  */
 public class StepConfig implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains information about an Amazon VPC that is associated with a private hosted zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/VPC"/>AWS API Documentation</a>
  */
 public class VPC implements Serializable, Cloneable {
 

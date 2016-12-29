@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about a stage and its definition.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageDeclaration"/>AWS API
+ *      Documentation</a>
  */
 public class StageDeclaration implements Serializable, Cloneable {
 

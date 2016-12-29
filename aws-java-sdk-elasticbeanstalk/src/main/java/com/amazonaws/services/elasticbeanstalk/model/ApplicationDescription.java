@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the properties of an application.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationDescription"/>AWS API
+ *      Documentation</a>
  */
 public class ApplicationDescription implements Serializable, Cloneable {
 

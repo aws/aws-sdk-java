@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a <i>DescribeLimits</i> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits"/>AWS API Documentation</a>
  */
 public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

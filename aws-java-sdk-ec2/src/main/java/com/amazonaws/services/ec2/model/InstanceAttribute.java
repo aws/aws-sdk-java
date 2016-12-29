@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an instance attribute.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceAttribute"/>AWS API Documentation</a>
  */
 public class InstanceAttribute implements Serializable, Cloneable {
 

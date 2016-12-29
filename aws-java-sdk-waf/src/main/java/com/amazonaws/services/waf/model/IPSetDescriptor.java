@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR format) that
  * web requests originate from.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSetDescriptor"/>AWS API
+ *      Documentation</a>
  */
 public class IPSetDescriptor implements Serializable, Cloneable {
 

@@ -36,6 +36,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error
  * Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CustomErrorResponses"/>AWS API
+ *      Documentation</a>
  */
 public class CustomErrorResponses implements Serializable, Cloneable {
 

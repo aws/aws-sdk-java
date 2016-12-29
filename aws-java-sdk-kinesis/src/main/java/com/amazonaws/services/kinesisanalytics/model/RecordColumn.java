@@ -22,6 +22,9 @@ import java.io.Serializable;
  * <p>
  * Also used to describe the format of the reference data source.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/RecordColumn"/>AWS API
+ *      Documentation</a>
  */
 public class RecordColumn implements Serializable, Cloneable {
 

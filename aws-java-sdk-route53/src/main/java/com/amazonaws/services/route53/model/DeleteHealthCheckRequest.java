@@ -20,6 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This action deletes a health check. Send a <code>DELETE</code> request to the
  * <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck"/>AWS API Documentation</a>
  */
 public class DeleteHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

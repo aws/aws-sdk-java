@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Confirms the device request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice"/>AWS API Documentation</a>
  */
 public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The result of a renewal offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering"/>AWS API Documentation</a>
  */
 public class RenewOfferingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

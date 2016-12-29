@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about the version (or revision) of an action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionRevision"/>AWS API
+ *      Documentation</a>
  */
 public class ActionRevision implements Serializable, Cloneable {
 

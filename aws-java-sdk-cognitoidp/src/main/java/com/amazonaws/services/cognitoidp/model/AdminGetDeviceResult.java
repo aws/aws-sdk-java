@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Gets the device response, as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice"/>AWS API
+ *      Documentation</a>
  */
 public class AdminGetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

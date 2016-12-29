@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation
  * of your AWS resources.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Source"/>AWS API Documentation</a>
  */
 public class Source implements Serializable, Cloneable {
 

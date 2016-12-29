@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "elastictranscoder",
     "targetPrefix" : null,
+    "uid" : "elastictranscoder-2012-09-25",
     "xmlNamespace" : null
   },
   "operations" : {

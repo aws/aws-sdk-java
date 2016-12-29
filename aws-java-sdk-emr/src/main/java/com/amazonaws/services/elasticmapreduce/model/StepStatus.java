@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The execution status details of the cluster step.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepStatus"/>AWS API
+ *      Documentation</a>
  */
 public class StepStatus implements Serializable, Cloneable {
 

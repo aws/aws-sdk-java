@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The parent object that contains your environment's configuration settings.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Environment"/>AWS API Documentation</a>
  */
 public class Environment implements Serializable, Cloneable {
 

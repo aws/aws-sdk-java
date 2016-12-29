@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Output from an AddInstanceGroups call.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups"/>AWS API
+ *      Documentation</a>
  */
 public class AddInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

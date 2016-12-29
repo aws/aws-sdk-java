@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a batch get deployment groups operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"/>AWS API
+ *      Documentation</a>
  */
 public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

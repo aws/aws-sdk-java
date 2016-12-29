@@ -38,6 +38,8 @@ import java.io.Serializable;
  * <p>
  * For more information about updating the distribution configuration, see <a>DistributionConfig</a> .
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TrustedSigners"/>AWS API Documentation</a>
  */
 public class TrustedSigners implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The record of a completed or failed managed action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ManagedActionHistoryItem"/>AWS API
+ *      Documentation</a>
  */
 public class ManagedActionHistoryItem implements Serializable, Cloneable {
 

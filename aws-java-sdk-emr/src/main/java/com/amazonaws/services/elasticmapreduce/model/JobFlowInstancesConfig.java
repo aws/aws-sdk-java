@@ -20,6 +20,9 @@ import java.io.Serializable;
  * InstanceGroups, which is the recommended configuration. However, a valid alternative is to have MasterInstanceType,
  * SlaveInstanceType, and InstanceCount (all three must be present).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowInstancesConfig"/>AWS API
+ *      Documentation</a>
  */
 public class JobFlowInstancesConfig implements Serializable, Cloneable {
 

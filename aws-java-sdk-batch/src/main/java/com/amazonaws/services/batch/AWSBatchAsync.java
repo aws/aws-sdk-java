@@ -52,6 +52,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param cancelJobRequest
      * @return A Java Future containing the result of the CancelJob operation returned by the service.
      * @sample AWSBatchAsync.CancelJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest);
 
@@ -70,6 +71,7 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CancelJob operation returned by the service.
      * @sample AWSBatchAsyncHandler.CancelJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest,
             com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler);
@@ -102,6 +104,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param createComputeEnvironmentRequest
      * @return A Java Future containing the result of the CreateComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsync.CreateComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateComputeEnvironmentResult> createComputeEnvironmentAsync(CreateComputeEnvironmentRequest createComputeEnvironmentRequest);
 
@@ -137,6 +141,8 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsyncHandler.CreateComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateComputeEnvironmentResult> createComputeEnvironmentAsync(CreateComputeEnvironmentRequest createComputeEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateComputeEnvironmentRequest, CreateComputeEnvironmentResult> asyncHandler);
@@ -156,6 +162,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param createJobQueueRequest
      * @return A Java Future containing the result of the CreateJobQueue operation returned by the service.
      * @sample AWSBatchAsync.CreateJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateJobQueueResult> createJobQueueAsync(CreateJobQueueRequest createJobQueueRequest);
 
@@ -178,6 +185,7 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateJobQueue operation returned by the service.
      * @sample AWSBatchAsyncHandler.CreateJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateJobQueueResult> createJobQueueAsync(CreateJobQueueRequest createJobQueueRequest,
             com.amazonaws.handlers.AsyncHandler<CreateJobQueueRequest, CreateJobQueueResult> asyncHandler);
@@ -195,6 +203,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param deleteComputeEnvironmentRequest
      * @return A Java Future containing the result of the DeleteComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsync.DeleteComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteComputeEnvironmentResult> deleteComputeEnvironmentAsync(DeleteComputeEnvironmentRequest deleteComputeEnvironmentRequest);
 
@@ -215,6 +225,8 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsyncHandler.DeleteComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteComputeEnvironmentResult> deleteComputeEnvironmentAsync(DeleteComputeEnvironmentRequest deleteComputeEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteComputeEnvironmentRequest, DeleteComputeEnvironmentResult> asyncHandler);
@@ -232,6 +244,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param deleteJobQueueRequest
      * @return A Java Future containing the result of the DeleteJobQueue operation returned by the service.
      * @sample AWSBatchAsync.DeleteJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteJobQueueResult> deleteJobQueueAsync(DeleteJobQueueRequest deleteJobQueueRequest);
 
@@ -252,6 +265,7 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteJobQueue operation returned by the service.
      * @sample AWSBatchAsyncHandler.DeleteJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteJobQueueResult> deleteJobQueueAsync(DeleteJobQueueRequest deleteJobQueueRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteJobQueueRequest, DeleteJobQueueResult> asyncHandler);
@@ -264,6 +278,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param deregisterJobDefinitionRequest
      * @return A Java Future containing the result of the DeregisterJobDefinition operation returned by the service.
      * @sample AWSBatchAsync.DeregisterJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeregisterJobDefinitionResult> deregisterJobDefinitionAsync(DeregisterJobDefinitionRequest deregisterJobDefinitionRequest);
 
@@ -279,6 +295,8 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeregisterJobDefinition operation returned by the service.
      * @sample AWSBatchAsyncHandler.DeregisterJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeregisterJobDefinitionResult> deregisterJobDefinitionAsync(DeregisterJobDefinitionRequest deregisterJobDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterJobDefinitionRequest, DeregisterJobDefinitionResult> asyncHandler);
@@ -296,6 +314,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param describeComputeEnvironmentsRequest
      * @return A Java Future containing the result of the DescribeComputeEnvironments operation returned by the service.
      * @sample AWSBatchAsync.DescribeComputeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeComputeEnvironmentsResult> describeComputeEnvironmentsAsync(
             DescribeComputeEnvironmentsRequest describeComputeEnvironmentsRequest);
@@ -317,6 +337,8 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeComputeEnvironments operation returned by the service.
      * @sample AWSBatchAsyncHandler.DescribeComputeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeComputeEnvironmentsResult> describeComputeEnvironmentsAsync(
             DescribeComputeEnvironmentsRequest describeComputeEnvironmentsRequest,
@@ -331,6 +353,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param describeJobDefinitionsRequest
      * @return A Java Future containing the result of the DescribeJobDefinitions operation returned by the service.
      * @sample AWSBatchAsync.DescribeJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeJobDefinitionsResult> describeJobDefinitionsAsync(DescribeJobDefinitionsRequest describeJobDefinitionsRequest);
 
@@ -347,6 +371,8 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeJobDefinitions operation returned by the service.
      * @sample AWSBatchAsyncHandler.DescribeJobDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeJobDefinitionsResult> describeJobDefinitionsAsync(DescribeJobDefinitionsRequest describeJobDefinitionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeJobDefinitionsRequest, DescribeJobDefinitionsResult> asyncHandler);
@@ -359,6 +385,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param describeJobQueuesRequest
      * @return A Java Future containing the result of the DescribeJobQueues operation returned by the service.
      * @sample AWSBatchAsync.DescribeJobQueues
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeJobQueuesResult> describeJobQueuesAsync(DescribeJobQueuesRequest describeJobQueuesRequest);
 
@@ -374,6 +402,8 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeJobQueues operation returned by the service.
      * @sample AWSBatchAsyncHandler.DescribeJobQueues
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeJobQueuesResult> describeJobQueuesAsync(DescribeJobQueuesRequest describeJobQueuesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeJobQueuesRequest, DescribeJobQueuesResult> asyncHandler);
@@ -386,6 +416,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param describeJobsRequest
      * @return A Java Future containing the result of the DescribeJobs operation returned by the service.
      * @sample AWSBatchAsync.DescribeJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeJobsResult> describeJobsAsync(DescribeJobsRequest describeJobsRequest);
 
@@ -401,6 +432,7 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeJobs operation returned by the service.
      * @sample AWSBatchAsyncHandler.DescribeJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeJobsResult> describeJobsAsync(DescribeJobsRequest describeJobsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeJobsRequest, DescribeJobsResult> asyncHandler);
@@ -414,6 +446,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param listJobsRequest
      * @return A Java Future containing the result of the ListJobs operation returned by the service.
      * @sample AWSBatchAsync.ListJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest listJobsRequest);
 
@@ -430,6 +463,7 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListJobs operation returned by the service.
      * @sample AWSBatchAsyncHandler.ListJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest listJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler);
@@ -442,6 +476,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param registerJobDefinitionRequest
      * @return A Java Future containing the result of the RegisterJobDefinition operation returned by the service.
      * @sample AWSBatchAsync.RegisterJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RegisterJobDefinitionResult> registerJobDefinitionAsync(RegisterJobDefinitionRequest registerJobDefinitionRequest);
 
@@ -457,6 +493,8 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterJobDefinition operation returned by the service.
      * @sample AWSBatchAsyncHandler.RegisterJobDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RegisterJobDefinitionResult> registerJobDefinitionAsync(RegisterJobDefinitionRequest registerJobDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterJobDefinitionRequest, RegisterJobDefinitionResult> asyncHandler);
@@ -470,6 +508,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param submitJobRequest
      * @return A Java Future containing the result of the SubmitJob operation returned by the service.
      * @sample AWSBatchAsync.SubmitJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<SubmitJobResult> submitJobAsync(SubmitJobRequest submitJobRequest);
 
@@ -486,6 +525,7 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SubmitJob operation returned by the service.
      * @sample AWSBatchAsyncHandler.SubmitJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<SubmitJobResult> submitJobAsync(SubmitJobRequest submitJobRequest,
             com.amazonaws.handlers.AsyncHandler<SubmitJobRequest, SubmitJobResult> asyncHandler);
@@ -500,6 +540,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param terminateJobRequest
      * @return A Java Future containing the result of the TerminateJob operation returned by the service.
      * @sample AWSBatchAsync.TerminateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<TerminateJobResult> terminateJobAsync(TerminateJobRequest terminateJobRequest);
 
@@ -517,6 +558,7 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TerminateJob operation returned by the service.
      * @sample AWSBatchAsyncHandler.TerminateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<TerminateJobResult> terminateJobAsync(TerminateJobRequest terminateJobRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateJobRequest, TerminateJobResult> asyncHandler);
@@ -529,6 +571,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param updateComputeEnvironmentRequest
      * @return A Java Future containing the result of the UpdateComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsync.UpdateComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateComputeEnvironmentResult> updateComputeEnvironmentAsync(UpdateComputeEnvironmentRequest updateComputeEnvironmentRequest);
 
@@ -544,6 +588,8 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateComputeEnvironment operation returned by the service.
      * @sample AWSBatchAsyncHandler.UpdateComputeEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateComputeEnvironmentResult> updateComputeEnvironmentAsync(UpdateComputeEnvironmentRequest updateComputeEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateComputeEnvironmentRequest, UpdateComputeEnvironmentResult> asyncHandler);
@@ -556,6 +602,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * @param updateJobQueueRequest
      * @return A Java Future containing the result of the UpdateJobQueue operation returned by the service.
      * @sample AWSBatchAsync.UpdateJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateJobQueueResult> updateJobQueueAsync(UpdateJobQueueRequest updateJobQueueRequest);
 
@@ -571,6 +618,7 @@ public interface AWSBatchAsync extends AWSBatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateJobQueue operation returned by the service.
      * @sample AWSBatchAsyncHandler.UpdateJobQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateJobQueueResult> updateJobQueueAsync(UpdateJobQueueRequest updateJobQueueRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateJobQueueRequest, UpdateJobQueueResult> asyncHandler);

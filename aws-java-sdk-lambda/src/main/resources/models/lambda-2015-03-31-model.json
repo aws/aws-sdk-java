@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "lambda",
     "targetPrefix" : null,
+    "uid" : "lambda-2015-03-31",
     "xmlNamespace" : null
   },
   "operations" : {

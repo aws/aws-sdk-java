@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelStepsInfo"/>AWS API
+ *      Documentation</a>
  */
 public class CancelStepsInfo implements Serializable, Cloneable {
 

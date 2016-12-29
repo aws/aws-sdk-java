@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information indicating the ways in which a product can be provisioned.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifact"/>AWS API
+ *      Documentation</a>
  */
 public class ProvisioningArtifact implements Serializable, Cloneable {
 

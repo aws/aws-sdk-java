@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * A request for a list of records.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords"/>AWS API Documentation</a>
  */
 public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

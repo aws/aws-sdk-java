@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When
  * the defined alarm conditions are satisfied, scaling activity begins.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CloudWatchAlarmDefinition"/>AWS API
+ *      Documentation</a>
  */
 public class CloudWatchAlarmDefinition implements Serializable, Cloneable {
 

@@ -20,6 +20,8 @@ import java.io.Serializable;
  * default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may
  * contain more than one instance type simultaneously.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Cluster"/>AWS API Documentation</a>
  */
 public class Cluster implements Serializable, Cloneable {
 

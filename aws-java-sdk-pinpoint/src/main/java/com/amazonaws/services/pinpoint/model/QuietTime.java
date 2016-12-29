@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class QuietTime implements Serializable, Cloneable {
 
     /** The default end time for quiet time in ISO 8601 format. */

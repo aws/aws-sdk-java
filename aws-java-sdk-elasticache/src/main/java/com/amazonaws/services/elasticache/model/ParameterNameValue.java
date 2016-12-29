@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a name-value pair that is used to update the value of a parameter.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ParameterNameValue"/>AWS API
+ *      Documentation</a>
  */
 public class ParameterNameValue implements Serializable, Cloneable {
 

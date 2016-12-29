@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeEventDetailsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

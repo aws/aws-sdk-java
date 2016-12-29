@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The reason why the last state change occurred.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageStateChangeReason"/>AWS API
+ *      Documentation</a>
  */
 public class ImageStateChangeReason implements Serializable, Cloneable {
 

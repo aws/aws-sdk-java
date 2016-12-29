@@ -20,6 +20,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data
  * type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/BlockDeviceMapping"/>AWS API
+ *      Documentation</a>
  */
 public class BlockDeviceMapping implements Serializable, Cloneable {
 

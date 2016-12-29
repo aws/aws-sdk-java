@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes modifications to the permissions for a volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolumePermissionModifications"/>AWS API
+ *      Documentation</a>
  */
 public class CreateVolumePermissionModifications implements Serializable, Cloneable {
 

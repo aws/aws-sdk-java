@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents information about incompatibility.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/IncompatibilityMessage"/>AWS API
+ *      Documentation</a>
  */
 public class IncompatibilityMessage implements Serializable, Cloneable {
 

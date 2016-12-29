@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a security group and AWS account ID pair.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserIdGroupPair"/>AWS API Documentation</a>
  */
 public class UserIdGroupPair implements Serializable, Cloneable {
 

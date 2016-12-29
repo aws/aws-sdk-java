@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Creates the configuration settings for a remote access session, including the device model and type.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSessionConfiguration"/>AWS
+ *      API Documentation</a>
  */
 public class CreateRemoteAccessSessionConfiguration implements Serializable, Cloneable {
 

@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/QueryStringCacheKeys"/>AWS API
+ *      Documentation</a>
  */
 public class QueryStringCacheKeys implements Serializable, Cloneable {
 

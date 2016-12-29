@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents an export task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ExportTask"/>AWS API Documentation</a>
  */
 public class ExportTask implements Serializable, Cloneable {
 

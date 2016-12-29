@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element to <a>DescribeDBLogFiles</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFilesDetails"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeDBLogFilesDetails implements Serializable, Cloneable {
 

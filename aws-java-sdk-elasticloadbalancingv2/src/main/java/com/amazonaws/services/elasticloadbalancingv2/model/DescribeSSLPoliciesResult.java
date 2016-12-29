@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output of DescribeSSLPolicies.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface"/>AWS
+ *      API Documentation</a>
  */
 public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

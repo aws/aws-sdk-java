@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the properties of a WorkSpace.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceProperties"/>AWS API
+ *      Documentation</a>
  */
 public class WorkspaceProperties implements Serializable, Cloneable {
 

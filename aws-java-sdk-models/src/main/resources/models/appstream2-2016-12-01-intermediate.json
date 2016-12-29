@@ -70,6 +70,7 @@
     "syncClient" : "AmazonAppStreamClient",
     "syncClientBuilderClassName" : "AmazonAppStreamClientBuilder",
     "syncInterface" : "AmazonAppStream",
+    "uid" : "appstream-2016-12-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the status of the elastic IP (EIP) address.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ElasticIpStatus"/>AWS API Documentation</a>
  */
 public class ElasticIpStatus implements Serializable, Cloneable {
 

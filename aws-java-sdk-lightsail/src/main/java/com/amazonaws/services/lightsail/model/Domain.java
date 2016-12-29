@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a domain where you are storing recordsets in Lightsail.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Domain"/>AWS API Documentation</a>
  */
 public class Domain implements Serializable, Cloneable {
 

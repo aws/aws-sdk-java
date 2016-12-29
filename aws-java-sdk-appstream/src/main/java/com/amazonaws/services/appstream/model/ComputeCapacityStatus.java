@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The capacity information for the fleet.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ComputeCapacityStatus"/>AWS API
+ *      Documentation</a>
  */
 public class ComputeCapacityStatus implements Serializable, Cloneable {
 

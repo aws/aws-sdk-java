@@ -46,6 +46,8 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
  * >Cache Behaviors</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CacheBehavior"/>AWS API Documentation</a>
  */
 public class CacheBehavior implements Serializable, Cloneable {
 

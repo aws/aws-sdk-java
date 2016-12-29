@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Provides configuration information about a Lambda function version alias.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AliasConfiguration"/>AWS API Documentation</a>
  */
 public class AliasConfiguration implements Serializable, Cloneable {
 

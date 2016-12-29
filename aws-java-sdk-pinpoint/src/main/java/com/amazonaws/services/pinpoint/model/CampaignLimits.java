@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class CampaignLimits implements Serializable, Cloneable {
 
     /** The maximum number of messages that the campaign can send daily. */

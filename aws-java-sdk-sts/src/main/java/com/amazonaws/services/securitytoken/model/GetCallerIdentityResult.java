@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making
  * the request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity"/>AWS API Documentation</a>
  */
 public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

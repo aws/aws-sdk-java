@@ -30,6 +30,9 @@ import java.io.Serializable;
  * attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i>
  * exception.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeValueUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class AttributeValueUpdate implements Serializable, Cloneable {
 

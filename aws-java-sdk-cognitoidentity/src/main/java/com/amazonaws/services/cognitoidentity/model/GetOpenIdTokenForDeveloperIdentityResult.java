@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity"/>AWS
+ *      API Documentation</a>
  */
 public class GetOpenIdTokenForDeveloperIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

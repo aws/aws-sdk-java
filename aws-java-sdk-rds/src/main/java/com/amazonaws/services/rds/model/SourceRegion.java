@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains an AWS Region name as the result of a successful call to the <a>DescribeSourceRegions</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SourceRegion"/>AWS API Documentation</a>
  */
 public class SourceRegion implements Serializable, Cloneable {
 

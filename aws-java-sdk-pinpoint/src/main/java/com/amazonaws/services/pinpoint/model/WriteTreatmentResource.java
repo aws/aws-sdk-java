@@ -14,9 +14,6 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class WriteTreatmentResource implements Serializable, Cloneable {
 
     /** The message configuration settings. */

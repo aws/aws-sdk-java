@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a command request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Command"/>AWS API Documentation</a>
  */
 public class Command implements Serializable, Cloneable {
 

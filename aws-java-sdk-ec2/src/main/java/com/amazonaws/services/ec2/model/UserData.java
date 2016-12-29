@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the user data for an instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserData"/>AWS API Documentation</a>
  */
 public class UserData implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an IPv6 address associated with a network interface.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceIpv6Address"/>AWS API
+ *      Documentation</a>
  */
 public class NetworkInterfaceIpv6Address implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Returned by <a>ListByteMatchSets</a>. Each <code>ByteMatchSetSummary</code> object includes the <code>Name</code> and
  * <code>ByteMatchSetId</code> for one <a>ByteMatchSet</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchSetSummary"/>AWS API
+ *      Documentation</a>
  */
 public class ByteMatchSetSummary implements Serializable, Cloneable {
 

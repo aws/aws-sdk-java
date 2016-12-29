@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary
  * node. All the other nodes are read-only Replica nodes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroup"/>AWS API Documentation</a>
  */
 public class NodeGroup implements Serializable, Cloneable {
 

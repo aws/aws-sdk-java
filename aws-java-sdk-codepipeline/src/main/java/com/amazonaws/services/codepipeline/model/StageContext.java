@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents information about a stage to a job worker.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageContext"/>AWS API Documentation</a>
  */
 public class StageContext implements Serializable, Cloneable {
 

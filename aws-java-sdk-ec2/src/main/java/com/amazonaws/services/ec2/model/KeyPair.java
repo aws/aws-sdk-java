@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a key pair.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/KeyPair"/>AWS API Documentation</a>
  */
 public class KeyPair implements Serializable, Cloneable {
 

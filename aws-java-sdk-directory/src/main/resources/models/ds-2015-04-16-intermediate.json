@@ -80,6 +80,7 @@
     "syncClient" : "AWSDirectoryServiceClient",
     "syncClientBuilderClassName" : "AWSDirectoryServiceClientBuilder",
     "syncInterface" : "AWSDirectoryService",
+    "uid" : "ds-2015-04-16",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

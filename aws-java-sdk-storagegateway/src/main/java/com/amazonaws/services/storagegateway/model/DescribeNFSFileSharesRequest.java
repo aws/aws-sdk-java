@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * DescribeNFSFileSharesInput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeNFSFileSharesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -14,9 +14,6 @@ package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

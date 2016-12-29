@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The access level to limit results.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AccessLevelFilter"/>AWS API
+ *      Documentation</a>
  */
 public class AccessLevelFilter implements Serializable, Cloneable {
 

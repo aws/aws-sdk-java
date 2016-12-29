@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a <i>GetShardIterator</i> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"/>AWS API
+ *      Documentation</a>
  */
 public class GetShardIteratorResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

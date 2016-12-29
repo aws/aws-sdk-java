@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a tag applied to a resource in an environment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

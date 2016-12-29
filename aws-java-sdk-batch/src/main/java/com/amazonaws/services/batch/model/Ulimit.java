@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The <code>ulimit</code> settings to pass to the container.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ulimit"/>AWS API Documentation</a>
  */
 public class Ulimit implements Serializable, Cloneable {
 

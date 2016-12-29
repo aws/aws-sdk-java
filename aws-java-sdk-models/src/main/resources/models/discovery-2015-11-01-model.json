@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "discovery",
     "targetPrefix" : "AWSPoseidonService_V2015_11_01",
+    "uid" : "discovery-2015-11-01",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -98,6 +98,7 @@
     "syncClient" : "AmazonCloudFormationClient",
     "syncClientBuilderClassName" : "AmazonCloudFormationClientBuilder",
     "syncInterface" : "AmazonCloudFormation",
+    "uid" : "cloudformation-2010-05-15",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

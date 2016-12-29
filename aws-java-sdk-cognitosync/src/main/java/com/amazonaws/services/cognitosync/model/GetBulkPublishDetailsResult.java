@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * The output for the GetBulkPublishDetails operation.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails"/>AWS API
+ *      Documentation</a>
  */
 public class GetBulkPublishDetailsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

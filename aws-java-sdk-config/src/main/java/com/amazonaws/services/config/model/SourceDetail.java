@@ -20,6 +20,8 @@ import java.io.Serializable;
  * also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is
  * periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SourceDetail"/>AWS API Documentation</a>
  */
 public class SourceDetail implements Serializable, Cloneable {
 

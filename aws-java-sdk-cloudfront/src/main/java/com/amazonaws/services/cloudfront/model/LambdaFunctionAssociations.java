@@ -28,6 +28,9 @@ import java.io.Serializable;
  * If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>, specify
  * <code>0</code> for <code>Quantity</code> and omit <code>Items</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/LambdaFunctionAssociations"/>AWS API
+ *      Documentation</a>
  */
 public class LambdaFunctionAssociations implements Serializable, Cloneable {
 

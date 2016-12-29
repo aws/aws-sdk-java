@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for SetInstanceHealth.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth"/>AWS API
+ *      Documentation</a>
  */
 public class SetInstanceHealthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

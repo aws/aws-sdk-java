@@ -23,6 +23,8 @@ import java.io.Serializable;
  * This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and
  * <a>DescribeDBParameters</a> actions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Parameter"/>AWS API Documentation</a>
  */
 public class Parameter implements Serializable, Cloneable {
 

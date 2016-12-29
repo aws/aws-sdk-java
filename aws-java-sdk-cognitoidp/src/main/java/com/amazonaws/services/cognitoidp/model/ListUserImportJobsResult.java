@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server to the request to list the user import jobs.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs"/>AWS API
+ *      Documentation</a>
  */
 public class ListUserImportJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

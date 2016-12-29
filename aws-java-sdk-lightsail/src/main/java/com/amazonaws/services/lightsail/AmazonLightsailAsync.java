@@ -50,6 +50,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param allocateStaticIpRequest
      * @return A Java Future containing the result of the AllocateStaticIp operation returned by the service.
      * @sample AmazonLightsailAsync.AllocateStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AllocateStaticIpResult> allocateStaticIpAsync(AllocateStaticIpRequest allocateStaticIpRequest);
 
@@ -65,6 +67,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AllocateStaticIp operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.AllocateStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AllocateStaticIpResult> allocateStaticIpAsync(AllocateStaticIpRequest allocateStaticIpRequest,
             com.amazonaws.handlers.AsyncHandler<AllocateStaticIpRequest, AllocateStaticIpResult> asyncHandler);
@@ -77,6 +81,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param attachStaticIpRequest
      * @return A Java Future containing the result of the AttachStaticIp operation returned by the service.
      * @sample AmazonLightsailAsync.AttachStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AttachStaticIpResult> attachStaticIpAsync(AttachStaticIpRequest attachStaticIpRequest);
 
@@ -92,6 +98,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachStaticIp operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.AttachStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AttachStaticIpResult> attachStaticIpAsync(AttachStaticIpRequest attachStaticIpRequest,
             com.amazonaws.handlers.AsyncHandler<AttachStaticIpRequest, AttachStaticIpResult> asyncHandler);
@@ -104,6 +112,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param closeInstancePublicPortsRequest
      * @return A Java Future containing the result of the CloseInstancePublicPorts operation returned by the service.
      * @sample AmazonLightsailAsync.CloseInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CloseInstancePublicPortsResult> closeInstancePublicPortsAsync(CloseInstancePublicPortsRequest closeInstancePublicPortsRequest);
 
@@ -119,6 +129,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CloseInstancePublicPorts operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.CloseInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CloseInstancePublicPortsResult> closeInstancePublicPortsAsync(CloseInstancePublicPortsRequest closeInstancePublicPortsRequest,
             com.amazonaws.handlers.AsyncHandler<CloseInstancePublicPortsRequest, CloseInstancePublicPortsResult> asyncHandler);
@@ -131,6 +143,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param createDomainRequest
      * @return A Java Future containing the result of the CreateDomain operation returned by the service.
      * @sample AmazonLightsailAsync.CreateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest createDomainRequest);
 
@@ -146,6 +160,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDomain operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.CreateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest createDomainRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler);
@@ -159,6 +175,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param createDomainEntryRequest
      * @return A Java Future containing the result of the CreateDomainEntry operation returned by the service.
      * @sample AmazonLightsailAsync.CreateDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDomainEntryResult> createDomainEntryAsync(CreateDomainEntryRequest createDomainEntryRequest);
 
@@ -175,6 +193,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDomainEntry operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.CreateDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDomainEntryResult> createDomainEntryAsync(CreateDomainEntryRequest createDomainEntryRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDomainEntryRequest, CreateDomainEntryResult> asyncHandler);
@@ -188,6 +208,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param createInstanceSnapshotRequest
      * @return A Java Future containing the result of the CreateInstanceSnapshot operation returned by the service.
      * @sample AmazonLightsailAsync.CreateInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInstanceSnapshotResult> createInstanceSnapshotAsync(CreateInstanceSnapshotRequest createInstanceSnapshotRequest);
 
@@ -204,6 +226,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInstanceSnapshot operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.CreateInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInstanceSnapshotResult> createInstanceSnapshotAsync(CreateInstanceSnapshotRequest createInstanceSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInstanceSnapshotRequest, CreateInstanceSnapshotResult> asyncHandler);
@@ -216,6 +240,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param createInstancesRequest
      * @return A Java Future containing the result of the CreateInstances operation returned by the service.
      * @sample AmazonLightsailAsync.CreateInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInstancesResult> createInstancesAsync(CreateInstancesRequest createInstancesRequest);
 
@@ -231,6 +257,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInstances operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.CreateInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInstancesResult> createInstancesAsync(CreateInstancesRequest createInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInstancesRequest, CreateInstancesResult> asyncHandler);
@@ -244,6 +272,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param createInstancesFromSnapshotRequest
      * @return A Java Future containing the result of the CreateInstancesFromSnapshot operation returned by the service.
      * @sample AmazonLightsailAsync.CreateInstancesFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInstancesFromSnapshotResult> createInstancesFromSnapshotAsync(
             CreateInstancesFromSnapshotRequest createInstancesFromSnapshotRequest);
@@ -261,6 +291,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInstancesFromSnapshot operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.CreateInstancesFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateInstancesFromSnapshotResult> createInstancesFromSnapshotAsync(
             CreateInstancesFromSnapshotRequest createInstancesFromSnapshotRequest,
@@ -274,6 +306,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param createKeyPairRequest
      * @return A Java Future containing the result of the CreateKeyPair operation returned by the service.
      * @sample AmazonLightsailAsync.CreateKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateKeyPairResult> createKeyPairAsync(CreateKeyPairRequest createKeyPairRequest);
 
@@ -289,6 +323,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateKeyPair operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.CreateKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateKeyPairResult> createKeyPairAsync(CreateKeyPairRequest createKeyPairRequest,
             com.amazonaws.handlers.AsyncHandler<CreateKeyPairRequest, CreateKeyPairResult> asyncHandler);
@@ -301,6 +337,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param deleteDomainRequest
      * @return A Java Future containing the result of the DeleteDomain operation returned by the service.
      * @sample AmazonLightsailAsync.DeleteDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest deleteDomainRequest);
 
@@ -316,6 +354,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDomain operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.DeleteDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest deleteDomainRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler);
@@ -328,6 +368,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param deleteDomainEntryRequest
      * @return A Java Future containing the result of the DeleteDomainEntry operation returned by the service.
      * @sample AmazonLightsailAsync.DeleteDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDomainEntryResult> deleteDomainEntryAsync(DeleteDomainEntryRequest deleteDomainEntryRequest);
 
@@ -343,6 +385,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDomainEntry operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.DeleteDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDomainEntryResult> deleteDomainEntryAsync(DeleteDomainEntryRequest deleteDomainEntryRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDomainEntryRequest, DeleteDomainEntryResult> asyncHandler);
@@ -355,6 +399,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param deleteInstanceRequest
      * @return A Java Future containing the result of the DeleteInstance operation returned by the service.
      * @sample AmazonLightsailAsync.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest);
 
@@ -370,6 +416,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteInstance operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler);
@@ -382,6 +430,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param deleteInstanceSnapshotRequest
      * @return A Java Future containing the result of the DeleteInstanceSnapshot operation returned by the service.
      * @sample AmazonLightsailAsync.DeleteInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteInstanceSnapshotResult> deleteInstanceSnapshotAsync(DeleteInstanceSnapshotRequest deleteInstanceSnapshotRequest);
 
@@ -397,6 +447,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteInstanceSnapshot operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.DeleteInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteInstanceSnapshotResult> deleteInstanceSnapshotAsync(DeleteInstanceSnapshotRequest deleteInstanceSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInstanceSnapshotRequest, DeleteInstanceSnapshotResult> asyncHandler);
@@ -409,6 +461,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param deleteKeyPairRequest
      * @return A Java Future containing the result of the DeleteKeyPair operation returned by the service.
      * @sample AmazonLightsailAsync.DeleteKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(DeleteKeyPairRequest deleteKeyPairRequest);
 
@@ -424,6 +478,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteKeyPair operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.DeleteKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(DeleteKeyPairRequest deleteKeyPairRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, DeleteKeyPairResult> asyncHandler);
@@ -436,6 +492,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param detachStaticIpRequest
      * @return A Java Future containing the result of the DetachStaticIp operation returned by the service.
      * @sample AmazonLightsailAsync.DetachStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DetachStaticIpResult> detachStaticIpAsync(DetachStaticIpRequest detachStaticIpRequest);
 
@@ -451,6 +509,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachStaticIp operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.DetachStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DetachStaticIpResult> detachStaticIpAsync(DetachStaticIpRequest detachStaticIpRequest,
             com.amazonaws.handlers.AsyncHandler<DetachStaticIpRequest, DetachStaticIpResult> asyncHandler);
@@ -463,6 +523,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param downloadDefaultKeyPairRequest
      * @return A Java Future containing the result of the DownloadDefaultKeyPair operation returned by the service.
      * @sample AmazonLightsailAsync.DownloadDefaultKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DownloadDefaultKeyPairResult> downloadDefaultKeyPairAsync(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest);
 
@@ -478,6 +540,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DownloadDefaultKeyPair operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.DownloadDefaultKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DownloadDefaultKeyPairResult> downloadDefaultKeyPairAsync(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest,
             com.amazonaws.handlers.AsyncHandler<DownloadDefaultKeyPairRequest, DownloadDefaultKeyPairResult> asyncHandler);
@@ -490,6 +554,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getActiveNamesRequest
      * @return A Java Future containing the result of the GetActiveNames operation returned by the service.
      * @sample AmazonLightsailAsync.GetActiveNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetActiveNamesResult> getActiveNamesAsync(GetActiveNamesRequest getActiveNamesRequest);
 
@@ -505,6 +571,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetActiveNames operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetActiveNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetActiveNamesResult> getActiveNamesAsync(GetActiveNamesRequest getActiveNamesRequest,
             com.amazonaws.handlers.AsyncHandler<GetActiveNamesRequest, GetActiveNamesResult> asyncHandler);
@@ -519,6 +587,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getBlueprintsRequest
      * @return A Java Future containing the result of the GetBlueprints operation returned by the service.
      * @sample AmazonLightsailAsync.GetBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetBlueprintsResult> getBlueprintsAsync(GetBlueprintsRequest getBlueprintsRequest);
 
@@ -536,6 +606,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetBlueprints operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetBlueprintsResult> getBlueprintsAsync(GetBlueprintsRequest getBlueprintsRequest,
             com.amazonaws.handlers.AsyncHandler<GetBlueprintsRequest, GetBlueprintsResult> asyncHandler);
@@ -549,6 +621,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getBundlesRequest
      * @return A Java Future containing the result of the GetBundles operation returned by the service.
      * @sample AmazonLightsailAsync.GetBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetBundlesResult> getBundlesAsync(GetBundlesRequest getBundlesRequest);
 
@@ -565,6 +638,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetBundles operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetBundlesResult> getBundlesAsync(GetBundlesRequest getBundlesRequest,
             com.amazonaws.handlers.AsyncHandler<GetBundlesRequest, GetBundlesResult> asyncHandler);
@@ -577,6 +651,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getDomainRequest
      * @return A Java Future containing the result of the GetDomain operation returned by the service.
      * @sample AmazonLightsailAsync.GetDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDomainResult> getDomainAsync(GetDomainRequest getDomainRequest);
 
@@ -592,6 +667,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDomain operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDomainResult> getDomainAsync(GetDomainRequest getDomainRequest,
             com.amazonaws.handlers.AsyncHandler<GetDomainRequest, GetDomainResult> asyncHandler);
@@ -604,6 +680,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getDomainsRequest
      * @return A Java Future containing the result of the GetDomains operation returned by the service.
      * @sample AmazonLightsailAsync.GetDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDomainsResult> getDomainsAsync(GetDomainsRequest getDomainsRequest);
 
@@ -619,6 +696,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDomains operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDomainsResult> getDomainsAsync(GetDomainsRequest getDomainsRequest,
             com.amazonaws.handlers.AsyncHandler<GetDomainsRequest, GetDomainsResult> asyncHandler);
@@ -631,6 +709,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getInstanceRequest
      * @return A Java Future containing the result of the GetInstance operation returned by the service.
      * @sample AmazonLightsailAsync.GetInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceResult> getInstanceAsync(GetInstanceRequest getInstanceRequest);
 
@@ -646,6 +725,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstance operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceResult> getInstanceAsync(GetInstanceRequest getInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstanceRequest, GetInstanceResult> asyncHandler);
@@ -658,6 +738,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getInstanceAccessDetailsRequest
      * @return A Java Future containing the result of the GetInstanceAccessDetails operation returned by the service.
      * @sample AmazonLightsailAsync.GetInstanceAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceAccessDetailsResult> getInstanceAccessDetailsAsync(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest);
 
@@ -673,6 +755,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstanceAccessDetails operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetInstanceAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceAccessDetailsResult> getInstanceAccessDetailsAsync(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstanceAccessDetailsRequest, GetInstanceAccessDetailsResult> asyncHandler);
@@ -685,6 +769,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getInstanceMetricDataRequest
      * @return A Java Future containing the result of the GetInstanceMetricData operation returned by the service.
      * @sample AmazonLightsailAsync.GetInstanceMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceMetricDataResult> getInstanceMetricDataAsync(GetInstanceMetricDataRequest getInstanceMetricDataRequest);
 
@@ -700,6 +786,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstanceMetricData operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetInstanceMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceMetricDataResult> getInstanceMetricDataAsync(GetInstanceMetricDataRequest getInstanceMetricDataRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstanceMetricDataRequest, GetInstanceMetricDataResult> asyncHandler);
@@ -712,6 +800,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getInstancePortStatesRequest
      * @return A Java Future containing the result of the GetInstancePortStates operation returned by the service.
      * @sample AmazonLightsailAsync.GetInstancePortStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstancePortStatesResult> getInstancePortStatesAsync(GetInstancePortStatesRequest getInstancePortStatesRequest);
 
@@ -727,6 +817,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstancePortStates operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetInstancePortStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstancePortStatesResult> getInstancePortStatesAsync(GetInstancePortStatesRequest getInstancePortStatesRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstancePortStatesRequest, GetInstancePortStatesResult> asyncHandler);
@@ -739,6 +831,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getInstanceSnapshotRequest
      * @return A Java Future containing the result of the GetInstanceSnapshot operation returned by the service.
      * @sample AmazonLightsailAsync.GetInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceSnapshotResult> getInstanceSnapshotAsync(GetInstanceSnapshotRequest getInstanceSnapshotRequest);
 
@@ -754,6 +848,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstanceSnapshot operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetInstanceSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceSnapshotResult> getInstanceSnapshotAsync(GetInstanceSnapshotRequest getInstanceSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstanceSnapshotRequest, GetInstanceSnapshotResult> asyncHandler);
@@ -766,6 +862,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getInstanceSnapshotsRequest
      * @return A Java Future containing the result of the GetInstanceSnapshots operation returned by the service.
      * @sample AmazonLightsailAsync.GetInstanceSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceSnapshotsResult> getInstanceSnapshotsAsync(GetInstanceSnapshotsRequest getInstanceSnapshotsRequest);
 
@@ -781,6 +879,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstanceSnapshots operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetInstanceSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceSnapshotsResult> getInstanceSnapshotsAsync(GetInstanceSnapshotsRequest getInstanceSnapshotsRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstanceSnapshotsRequest, GetInstanceSnapshotsResult> asyncHandler);
@@ -793,6 +893,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getInstanceStateRequest
      * @return A Java Future containing the result of the GetInstanceState operation returned by the service.
      * @sample AmazonLightsailAsync.GetInstanceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceStateResult> getInstanceStateAsync(GetInstanceStateRequest getInstanceStateRequest);
 
@@ -808,6 +910,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstanceState operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetInstanceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceStateResult> getInstanceStateAsync(GetInstanceStateRequest getInstanceStateRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstanceStateRequest, GetInstanceStateResult> asyncHandler);
@@ -820,6 +924,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getInstancesRequest
      * @return A Java Future containing the result of the GetInstances operation returned by the service.
      * @sample AmazonLightsailAsync.GetInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstancesResult> getInstancesAsync(GetInstancesRequest getInstancesRequest);
 
@@ -835,6 +941,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstances operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstancesResult> getInstancesAsync(GetInstancesRequest getInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<GetInstancesRequest, GetInstancesResult> asyncHandler);
@@ -847,6 +955,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getKeyPairRequest
      * @return A Java Future containing the result of the GetKeyPair operation returned by the service.
      * @sample AmazonLightsailAsync.GetKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetKeyPairResult> getKeyPairAsync(GetKeyPairRequest getKeyPairRequest);
 
@@ -862,6 +971,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetKeyPair operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetKeyPairResult> getKeyPairAsync(GetKeyPairRequest getKeyPairRequest,
             com.amazonaws.handlers.AsyncHandler<GetKeyPairRequest, GetKeyPairResult> asyncHandler);
@@ -874,6 +984,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getKeyPairsRequest
      * @return A Java Future containing the result of the GetKeyPairs operation returned by the service.
      * @sample AmazonLightsailAsync.GetKeyPairs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetKeyPairsResult> getKeyPairsAsync(GetKeyPairsRequest getKeyPairsRequest);
 
@@ -889,6 +1000,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetKeyPairs operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetKeyPairs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetKeyPairsResult> getKeyPairsAsync(GetKeyPairsRequest getKeyPairsRequest,
             com.amazonaws.handlers.AsyncHandler<GetKeyPairsRequest, GetKeyPairsResult> asyncHandler);
@@ -902,6 +1014,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getOperationRequest
      * @return A Java Future containing the result of the GetOperation operation returned by the service.
      * @sample AmazonLightsailAsync.GetOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOperationResult> getOperationAsync(GetOperationRequest getOperationRequest);
 
@@ -918,6 +1032,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOperation operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetOperation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOperationResult> getOperationAsync(GetOperationRequest getOperationRequest,
             com.amazonaws.handlers.AsyncHandler<GetOperationRequest, GetOperationResult> asyncHandler);
@@ -935,6 +1051,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getOperationsRequest
      * @return A Java Future containing the result of the GetOperations operation returned by the service.
      * @sample AmazonLightsailAsync.GetOperations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOperationsResult> getOperationsAsync(GetOperationsRequest getOperationsRequest);
 
@@ -955,6 +1073,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOperations operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetOperations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOperationsResult> getOperationsAsync(GetOperationsRequest getOperationsRequest,
             com.amazonaws.handlers.AsyncHandler<GetOperationsRequest, GetOperationsResult> asyncHandler);
@@ -967,6 +1087,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getOperationsForResourceRequest
      * @return A Java Future containing the result of the GetOperationsForResource operation returned by the service.
      * @sample AmazonLightsailAsync.GetOperationsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOperationsForResourceResult> getOperationsForResourceAsync(GetOperationsForResourceRequest getOperationsForResourceRequest);
 
@@ -982,6 +1104,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOperationsForResource operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetOperationsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOperationsForResourceResult> getOperationsForResourceAsync(GetOperationsForResourceRequest getOperationsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<GetOperationsForResourceRequest, GetOperationsForResourceResult> asyncHandler);
@@ -994,6 +1118,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getRegionsRequest
      * @return A Java Future containing the result of the GetRegions operation returned by the service.
      * @sample AmazonLightsailAsync.GetRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRegionsResult> getRegionsAsync(GetRegionsRequest getRegionsRequest);
 
@@ -1009,6 +1134,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRegions operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRegionsResult> getRegionsAsync(GetRegionsRequest getRegionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetRegionsRequest, GetRegionsResult> asyncHandler);
@@ -1021,6 +1147,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getStaticIpRequest
      * @return A Java Future containing the result of the GetStaticIp operation returned by the service.
      * @sample AmazonLightsailAsync.GetStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStaticIpResult> getStaticIpAsync(GetStaticIpRequest getStaticIpRequest);
 
@@ -1036,6 +1163,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetStaticIp operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStaticIpResult> getStaticIpAsync(GetStaticIpRequest getStaticIpRequest,
             com.amazonaws.handlers.AsyncHandler<GetStaticIpRequest, GetStaticIpResult> asyncHandler);
@@ -1048,6 +1176,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param getStaticIpsRequest
      * @return A Java Future containing the result of the GetStaticIps operation returned by the service.
      * @sample AmazonLightsailAsync.GetStaticIps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetStaticIpsResult> getStaticIpsAsync(GetStaticIpsRequest getStaticIpsRequest);
 
@@ -1063,6 +1193,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetStaticIps operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.GetStaticIps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetStaticIpsResult> getStaticIpsAsync(GetStaticIpsRequest getStaticIpsRequest,
             com.amazonaws.handlers.AsyncHandler<GetStaticIpsRequest, GetStaticIpsResult> asyncHandler);
@@ -1075,6 +1207,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param importKeyPairRequest
      * @return A Java Future containing the result of the ImportKeyPair operation returned by the service.
      * @sample AmazonLightsailAsync.ImportKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ImportKeyPairResult> importKeyPairAsync(ImportKeyPairRequest importKeyPairRequest);
 
@@ -1090,6 +1224,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ImportKeyPair operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.ImportKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ImportKeyPairResult> importKeyPairAsync(ImportKeyPairRequest importKeyPairRequest,
             com.amazonaws.handlers.AsyncHandler<ImportKeyPairRequest, ImportKeyPairResult> asyncHandler);
@@ -1102,6 +1238,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param isVpcPeeredRequest
      * @return A Java Future containing the result of the IsVpcPeered operation returned by the service.
      * @sample AmazonLightsailAsync.IsVpcPeered
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<IsVpcPeeredResult> isVpcPeeredAsync(IsVpcPeeredRequest isVpcPeeredRequest);
 
@@ -1117,6 +1254,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the IsVpcPeered operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.IsVpcPeered
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<IsVpcPeeredResult> isVpcPeeredAsync(IsVpcPeeredRequest isVpcPeeredRequest,
             com.amazonaws.handlers.AsyncHandler<IsVpcPeeredRequest, IsVpcPeeredResult> asyncHandler);
@@ -1129,6 +1267,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param openInstancePublicPortsRequest
      * @return A Java Future containing the result of the OpenInstancePublicPorts operation returned by the service.
      * @sample AmazonLightsailAsync.OpenInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<OpenInstancePublicPortsResult> openInstancePublicPortsAsync(OpenInstancePublicPortsRequest openInstancePublicPortsRequest);
 
@@ -1144,6 +1284,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the OpenInstancePublicPorts operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.OpenInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<OpenInstancePublicPortsResult> openInstancePublicPortsAsync(OpenInstancePublicPortsRequest openInstancePublicPortsRequest,
             com.amazonaws.handlers.AsyncHandler<OpenInstancePublicPortsRequest, OpenInstancePublicPortsResult> asyncHandler);
@@ -1156,6 +1298,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param peerVpcRequest
      * @return A Java Future containing the result of the PeerVpc operation returned by the service.
      * @sample AmazonLightsailAsync.PeerVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PeerVpcResult> peerVpcAsync(PeerVpcRequest peerVpcRequest);
 
@@ -1171,6 +1314,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PeerVpc operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.PeerVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<PeerVpcResult> peerVpcAsync(PeerVpcRequest peerVpcRequest,
             com.amazonaws.handlers.AsyncHandler<PeerVpcRequest, PeerVpcResult> asyncHandler);
@@ -1185,6 +1329,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param rebootInstanceRequest
      * @return A Java Future containing the result of the RebootInstance operation returned by the service.
      * @sample AmazonLightsailAsync.RebootInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(RebootInstanceRequest rebootInstanceRequest);
 
@@ -1202,6 +1348,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RebootInstance operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.RebootInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(RebootInstanceRequest rebootInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RebootInstanceRequest, RebootInstanceResult> asyncHandler);
@@ -1214,6 +1362,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param releaseStaticIpRequest
      * @return A Java Future containing the result of the ReleaseStaticIp operation returned by the service.
      * @sample AmazonLightsailAsync.ReleaseStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ReleaseStaticIpResult> releaseStaticIpAsync(ReleaseStaticIpRequest releaseStaticIpRequest);
 
@@ -1229,6 +1379,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ReleaseStaticIp operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.ReleaseStaticIp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ReleaseStaticIpResult> releaseStaticIpAsync(ReleaseStaticIpRequest releaseStaticIpRequest,
             com.amazonaws.handlers.AsyncHandler<ReleaseStaticIpRequest, ReleaseStaticIpResult> asyncHandler);
@@ -1242,6 +1394,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param startInstanceRequest
      * @return A Java Future containing the result of the StartInstance operation returned by the service.
      * @sample AmazonLightsailAsync.StartInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(StartInstanceRequest startInstanceRequest);
 
@@ -1258,6 +1412,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartInstance operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.StartInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(StartInstanceRequest startInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<StartInstanceRequest, StartInstanceResult> asyncHandler);
@@ -1270,6 +1426,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param stopInstanceRequest
      * @return A Java Future containing the result of the StopInstance operation returned by the service.
      * @sample AmazonLightsailAsync.StopInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(StopInstanceRequest stopInstanceRequest);
 
@@ -1285,6 +1443,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopInstance operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.StopInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(StopInstanceRequest stopInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, StopInstanceResult> asyncHandler);
@@ -1297,6 +1457,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param unpeerVpcRequest
      * @return A Java Future containing the result of the UnpeerVpc operation returned by the service.
      * @sample AmazonLightsailAsync.UnpeerVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UnpeerVpcResult> unpeerVpcAsync(UnpeerVpcRequest unpeerVpcRequest);
 
@@ -1312,6 +1473,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UnpeerVpc operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.UnpeerVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UnpeerVpcResult> unpeerVpcAsync(UnpeerVpcRequest unpeerVpcRequest,
             com.amazonaws.handlers.AsyncHandler<UnpeerVpcRequest, UnpeerVpcResult> asyncHandler);
@@ -1324,6 +1486,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * @param updateDomainEntryRequest
      * @return A Java Future containing the result of the UpdateDomainEntry operation returned by the service.
      * @sample AmazonLightsailAsync.UpdateDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDomainEntryResult> updateDomainEntryAsync(UpdateDomainEntryRequest updateDomainEntryRequest);
 
@@ -1339,6 +1503,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDomainEntry operation returned by the service.
      * @sample AmazonLightsailAsyncHandler.UpdateDomainEntry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDomainEntryResult> updateDomainEntryAsync(UpdateDomainEntryRequest updateDomainEntryRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainEntryRequest, UpdateDomainEntryResult> asyncHandler);

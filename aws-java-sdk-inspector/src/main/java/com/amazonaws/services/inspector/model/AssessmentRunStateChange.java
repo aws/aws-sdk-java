@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Used as one of the elements of the <a>AssessmentRun</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentRunStateChange"/>AWS API
+ *      Documentation</a>
  */
 public class AssessmentRunStateChange implements Serializable, Cloneable {
 

@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "health",
     "targetPrefix" : "AWSHealth_20160804",
+    "uid" : "health-2016-08-04",
     "xmlNamespace" : null
   },
   "operations" : {

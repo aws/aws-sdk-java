@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Maximum number of instances allowed based on the Amazon Elastic Compute Cloud (Amazon EC2) instance type. Instance
  * limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceLimit"/>AWS API Documentation</a>
  */
 public class EC2InstanceLimit implements Serializable, Cloneable {
 

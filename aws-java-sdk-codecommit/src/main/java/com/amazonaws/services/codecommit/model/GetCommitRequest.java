@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a get commit operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit"/>AWS API Documentation</a>
  */
 public class GetCommitRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

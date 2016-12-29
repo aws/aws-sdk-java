@@ -20,6 +20,9 @@ import java.io.Serializable;
  * cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a
  * <code>cache.m1.small</code> type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNodeTypeSpecificParameter"/>AWS API
+ *      Documentation</a>
  */
 public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A description of a unique event within a stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/Record"/>AWS API Documentation</a>
  */
 public class Record implements Serializable, Cloneable {
 

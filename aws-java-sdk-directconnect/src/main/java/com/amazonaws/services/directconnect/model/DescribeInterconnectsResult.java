@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A structure containing a list of interconnects.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeInterconnectsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

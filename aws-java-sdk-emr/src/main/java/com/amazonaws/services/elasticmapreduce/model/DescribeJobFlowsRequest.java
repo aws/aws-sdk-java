@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for the <a>DescribeJobFlows</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

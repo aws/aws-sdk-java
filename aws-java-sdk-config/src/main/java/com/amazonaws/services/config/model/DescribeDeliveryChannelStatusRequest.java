@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for the <a>DeliveryChannelStatus</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeDeliveryChannelStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

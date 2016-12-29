@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about an HTTP request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Http"/>AWS API Documentation</a>
  */
 public class Http implements Serializable, Cloneable {
 

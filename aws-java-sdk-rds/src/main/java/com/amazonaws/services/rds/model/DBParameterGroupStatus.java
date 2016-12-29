@@ -53,6 +53,9 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBParameterGroupStatus"/>AWS API
+ *      Documentation</a>
  */
 public class DBParameterGroupStatus implements Serializable, Cloneable {
 

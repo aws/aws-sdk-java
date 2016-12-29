@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Request to describe one or more applications.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeApplicationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

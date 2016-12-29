@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An invalidation batch.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/InvalidationBatch"/>AWS API
+ *      Documentation</a>
  */
 public class InvalidationBatch implements Serializable, Cloneable {
 

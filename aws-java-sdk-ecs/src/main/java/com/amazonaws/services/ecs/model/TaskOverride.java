@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The overrides associated with a task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskOverride"/>AWS API Documentation</a>
  */
 public class TaskOverride implements Serializable, Cloneable {
 

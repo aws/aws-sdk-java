@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "cloudsearch",
     "targetPrefix" : null,
+    "uid" : null,
     "xmlNamespace" : "http://cloudsearch.amazonaws.com/doc/2013-01-01/"
   },
   "operations" : {

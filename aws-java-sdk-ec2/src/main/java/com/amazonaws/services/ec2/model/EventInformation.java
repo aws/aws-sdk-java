@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a Spot fleet event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EventInformation"/>AWS API Documentation</a>
  */
 public class EventInformation implements Serializable, Cloneable {
 

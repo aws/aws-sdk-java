@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The Output data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Output"/>AWS API Documentation</a>
  */
 public class Output implements Serializable, Cloneable {
 

@@ -16,6 +16,8 @@ import java.io.Serializable;
 
 /**
  * The output for the BulkPublish operation.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish"/>AWS API Documentation</a>
  */
 public class BulkPublishResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

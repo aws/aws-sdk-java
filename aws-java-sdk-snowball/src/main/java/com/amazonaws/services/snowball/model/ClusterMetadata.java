@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains metadata about a specific cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ClusterMetadata"/>AWS API Documentation</a>
  */
 public class ClusterMetadata implements Serializable, Cloneable {
 

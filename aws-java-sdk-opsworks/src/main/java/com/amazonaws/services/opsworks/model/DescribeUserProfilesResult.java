@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the response to a <code>DescribeUserProfiles</code> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeUserProfilesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

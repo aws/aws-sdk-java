@@ -83,6 +83,7 @@
     "syncClient" : "AmazonMachineLearningClient",
     "syncClientBuilderClassName" : "AmazonMachineLearningClientBuilder",
     "syncInterface" : "AmazonMachineLearning",
+    "uid" : "machinelearning-2014-12-12",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

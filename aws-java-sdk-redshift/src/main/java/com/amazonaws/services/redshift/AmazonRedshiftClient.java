@@ -375,6 +375,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws AuthorizationQuotaExceededException
      *         The authorization quota for the cluster security group has been reached.
      * @sample AmazonRedshift.AuthorizeClusterSecurityGroupIngress
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ClusterSecurityGroup authorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest authorizeClusterSecurityGroupIngressRequest) {
@@ -436,6 +439,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws LimitExceededException
      *         The encryption key has exceeded its grant limit in AWS KMS.
      * @sample AmazonRedshift.AuthorizeSnapshotAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Snapshot authorizeSnapshotAccess(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest) {
@@ -496,6 +501,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @sample AmazonRedshift.CopyClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Snapshot copyClusterSnapshot(CopyClusterSnapshotRequest copyClusterSnapshotRequest) {
@@ -587,6 +594,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
      * @sample AmazonRedshift.CreateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster createCluster(CreateClusterRequest createClusterRequest) {
@@ -648,6 +657,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ClusterParameterGroup createClusterParameterGroup(CreateClusterParameterGroupRequest createClusterParameterGroupRequest) {
@@ -704,6 +715,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ClusterSecurityGroup createClusterSecurityGroup(CreateClusterSecurityGroupRequest createClusterSecurityGroupRequest) {
@@ -761,6 +774,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Snapshot createClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest) {
@@ -829,6 +844,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
      * @sample AmazonRedshift.CreateClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ClusterSubnetGroup createClusterSubnetGroup(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest) {
@@ -914,6 +931,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public EventSubscription createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) {
@@ -971,6 +990,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmClientCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public HsmClientCertificate createHsmClientCertificate(CreateHsmClientCertificateRequest createHsmClientCertificateRequest) {
@@ -1028,6 +1049,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public HsmConfiguration createHsmConfiguration(CreateHsmConfigurationRequest createHsmConfigurationRequest) {
@@ -1087,6 +1110,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
      * @sample AmazonRedshift.CreateSnapshotCopyGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SnapshotCopyGrant createSnapshotCopyGrant(CreateSnapshotCopyGrantRequest createSnapshotCopyGrantRequest) {
@@ -1141,6 +1166,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags"/>AWS API Documentation</a>
      */
     @Override
     public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
@@ -1204,6 +1230,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @sample AmazonRedshift.DeleteCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster deleteCluster(DeleteClusterRequest deleteClusterRequest) {
@@ -1253,6 +1281,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterParameterGroupNotFoundException
      *         The parameter group name does not refer to an existing parameter group.
      * @sample AmazonRedshift.DeleteClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteClusterParameterGroupResult deleteClusterParameterGroup(DeleteClusterParameterGroupRequest deleteClusterParameterGroupRequest) {
@@ -1308,6 +1338,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSecurityGroupNotFoundException
      *         The cluster security group name does not refer to an existing cluster security group.
      * @sample AmazonRedshift.DeleteClusterSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteClusterSecurityGroupResult deleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest deleteClusterSecurityGroupRequest) {
@@ -1360,6 +1392,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotNotFoundException
      *         The snapshot identifier does not refer to an existing cluster snapshot.
      * @sample AmazonRedshift.DeleteClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Snapshot deleteClusterSnapshot(DeleteClusterSnapshotRequest deleteClusterSnapshotRequest) {
@@ -1405,6 +1439,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSubnetGroupNotFoundException
      *         The cluster subnet group name does not refer to an existing cluster subnet group.
      * @sample AmazonRedshift.DeleteClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteClusterSubnetGroupResult deleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest) {
@@ -1450,6 +1486,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The subscription request is invalid because it is a duplicate request. This subscription request is
      *         already in progress.
      * @sample AmazonRedshift.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteEventSubscriptionResult deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) {
@@ -1495,6 +1533,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws HsmClientCertificateNotFoundException
      *         There is no Amazon Redshift HSM client certificate with the specified identifier.
      * @sample AmazonRedshift.DeleteHsmClientCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteHsmClientCertificateResult deleteHsmClientCertificate(DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest) {
@@ -1540,6 +1580,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws HsmConfigurationNotFoundException
      *         There is no Amazon Redshift HSM configuration with the specified identifier.
      * @sample AmazonRedshift.DeleteHsmConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteHsmConfigurationResult deleteHsmConfiguration(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest) {
@@ -1586,6 +1628,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the
      *         grant exists in the destination region.
      * @sample AmazonRedshift.DeleteSnapshotCopyGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteSnapshotCopyGrantResult deleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest) {
@@ -1632,6 +1676,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags"/>AWS API Documentation</a>
      */
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
@@ -1693,6 +1738,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeClusterParameterGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClusterParameterGroupsResult describeClusterParameterGroups(DescribeClusterParameterGroupsRequest describeClusterParameterGroupsRequest) {
@@ -1752,6 +1799,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterParameterGroupNotFoundException
      *         The parameter group name does not refer to an existing parameter group.
      * @sample AmazonRedshift.DescribeClusterParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClusterParametersResult describeClusterParameters(DescribeClusterParametersRequest describeClusterParametersRequest) {
@@ -1812,6 +1861,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeClusterSecurityGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClusterSecurityGroupsResult describeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest describeClusterSecurityGroupsRequest) {
@@ -1874,6 +1925,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClusterSnapshotsResult describeClusterSnapshots(DescribeClusterSnapshotsRequest describeClusterSnapshotsRequest) {
@@ -1934,6 +1987,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeClusterSubnetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClusterSubnetGroupsResult describeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest describeClusterSubnetGroupsRequest) {
@@ -1982,6 +2037,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @param describeClusterVersionsRequest
      * @return Result of the DescribeClusterVersions operation returned by the service.
      * @sample AmazonRedshift.DescribeClusterVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClusterVersionsResult describeClusterVersions(DescribeClusterVersionsRequest describeClusterVersionsRequest) {
@@ -2045,6 +2102,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClustersResult describeClusters(DescribeClustersRequest describeClustersRequest) {
@@ -2095,6 +2154,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @param describeDefaultClusterParametersRequest
      * @return Result of the DescribeDefaultClusterParameters operation returned by the service.
      * @sample AmazonRedshift.DescribeDefaultClusterParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DefaultClusterParameters describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest) {
@@ -2138,6 +2199,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @param describeEventCategoriesRequest
      * @return Result of the DescribeEventCategories operation returned by the service.
      * @sample AmazonRedshift.DescribeEventCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest) {
@@ -2186,6 +2249,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws SubscriptionNotFoundException
      *         An Amazon Redshift event notification subscription with the specified name does not exist.
      * @sample AmazonRedshift.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) {
@@ -2233,6 +2298,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @param describeEventsRequest
      * @return Result of the DescribeEvents operation returned by the service.
      * @sample AmazonRedshift.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
@@ -2293,6 +2360,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeHsmClientCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeHsmClientCertificatesResult describeHsmClientCertificates(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest) {
@@ -2353,6 +2422,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeHsmConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeHsmConfigurationsResult describeHsmConfigurations(DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest) {
@@ -2401,6 +2472,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
      * @sample AmazonRedshift.DescribeLoggingStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeLoggingStatusResult describeLoggingStatus(DescribeLoggingStatusRequest describeLoggingStatusRequest) {
@@ -2447,6 +2520,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @param describeOrderableClusterOptionsRequest
      * @return Result of the DescribeOrderableClusterOptions operation returned by the service.
      * @sample AmazonRedshift.DescribeOrderableClusterOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeOrderableClusterOptionsResult describeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest describeOrderableClusterOptionsRequest) {
@@ -2505,6 +2580,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnsupportedOperationException
      *         The requested operation isn't supported.
      * @sample AmazonRedshift.DescribeReservedNodeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeReservedNodeOfferingsResult describeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest describeReservedNodeOfferingsRequest) {
@@ -2552,6 +2629,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ReservedNodeNotFoundException
      *         The specified reserved compute node not found.
      * @sample AmazonRedshift.DescribeReservedNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeReservedNodesResult describeReservedNodes(DescribeReservedNodesRequest describeReservedNodesRequest) {
@@ -2607,6 +2686,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ResizeNotFoundException
      *         A resize operation for the specified cluster is not found.
      * @sample AmazonRedshift.DescribeResize
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeResizeResult describeResize(DescribeResizeRequest describeResizeRequest) {
@@ -2658,6 +2739,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeSnapshotCopyGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeSnapshotCopyGrantsResult describeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest) {
@@ -2711,6 +2794,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
      * @sample AmazonRedshift.DescribeTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeTableRestoreStatusResult describeTableRestoreStatus(DescribeTableRestoreStatusRequest describeTableRestoreStatusRequest) {
@@ -2791,6 +2876,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags"/>AWS API Documentation</a>
      */
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
@@ -2837,6 +2923,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
      * @sample AmazonRedshift.DisableLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DisableLoggingResult disableLogging(DisableLoggingRequest disableLoggingRequest) {
@@ -2890,6 +2978,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedOperationException
      *         Your account is not authorized to perform the requested operation.
      * @sample AmazonRedshift.DisableSnapshotCopy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster disableSnapshotCopy(DisableSnapshotCopyRequest disableSnapshotCopyRequest) {
@@ -2942,6 +3032,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
      *         Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.
      * @sample AmazonRedshift.EnableLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public EnableLoggingResult enableLogging(EnableLoggingRequest enableLoggingRequest) {
@@ -3003,6 +3095,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
      * @sample AmazonRedshift.EnableSnapshotCopy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster enableSnapshotCopy(EnableSnapshotCopyRequest enableSnapshotCopyRequest) {
@@ -3085,6 +3179,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
      * @sample AmazonRedshift.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster modifyCluster(ModifyClusterRequest modifyClusterRequest) {
@@ -3132,6 +3228,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
      * @sample AmazonRedshift.ModifyClusterIamRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster modifyClusterIamRoles(ModifyClusterIamRolesRequest modifyClusterIamRolesRequest) {
@@ -3181,6 +3279,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The cluster parameter group action can not be completed because another task is in progress that involves
      *         the parameter group. Wait a few moments and try the operation again.
      * @sample AmazonRedshift.ModifyClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ModifyClusterParameterGroupResult modifyClusterParameterGroup(ModifyClusterParameterGroupRequest modifyClusterParameterGroupRequest) {
@@ -3238,6 +3338,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
      * @sample AmazonRedshift.ModifyClusterSubnetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ClusterSubnetGroup modifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest modifyClusterSubnetGroupRequest) {
@@ -3299,6 +3401,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The subscription request is invalid because it is a duplicate request. This subscription request is
      *         already in progress.
      * @sample AmazonRedshift.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) {
@@ -3347,6 +3451,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidClusterStateException
      *         The specified cluster is not in the <code>available</code> state.
      * @sample AmazonRedshift.ModifySnapshotCopyRetentionPeriod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public Cluster modifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest) {
@@ -3404,6 +3510,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnsupportedOperationException
      *         The requested operation isn't supported.
      * @sample AmazonRedshift.PurchaseReservedNodeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ReservedNode purchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest) {
@@ -3452,6 +3560,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
      * @sample AmazonRedshift.RebootCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster rebootCluster(RebootClusterRequest rebootClusterRequest) {
@@ -3498,6 +3608,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterParameterGroupNotFoundException
      *         The parameter group name does not refer to an existing parameter group.
      * @sample AmazonRedshift.ResetClusterParameterGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ResetClusterParameterGroupResult resetClusterParameterGroup(ResetClusterParameterGroupRequest resetClusterParameterGroupRequest) {
@@ -3601,6 +3713,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
      * @sample AmazonRedshift.RestoreFromClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest) {
@@ -3667,6 +3781,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnsupportedOperationException
      *         The requested operation isn't supported.
      * @sample AmazonRedshift.RestoreTableFromClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public TableRestoreStatus restoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest) {
@@ -3717,6 +3833,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidClusterSecurityGroupStateException
      *         The state of the cluster security group is not <code>available</code>.
      * @sample AmazonRedshift.RevokeClusterSecurityGroupIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ClusterSecurityGroup revokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest) {
@@ -3770,6 +3888,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotNotFoundException
      *         The snapshot identifier does not refer to an existing cluster snapshot.
      * @sample AmazonRedshift.RevokeSnapshotAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Snapshot revokeSnapshotAccess(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest) {
@@ -3816,6 +3936,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
      * @sample AmazonRedshift.RotateEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public Cluster rotateEncryptionKey(RotateEncryptionKeyRequest rotateEncryptionKeyRequest) {

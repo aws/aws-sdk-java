@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a virtual private gateway.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpnGateway"/>AWS API Documentation</a>
  */
 public class VpnGateway implements Serializable, Cloneable {
 

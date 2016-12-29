@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * CancelArchivalInput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival"/>AWS API
+ *      Documentation</a>
  */
 public class CancelArchivalRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

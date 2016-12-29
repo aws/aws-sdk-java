@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for the <a>DescribeDeliveryChannelStatus</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeDeliveryChannelStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

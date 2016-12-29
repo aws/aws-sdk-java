@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a
  * snapshot.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreStatus"/>AWS API Documentation</a>
  */
 public class RestoreStatus implements Serializable, Cloneable {
 

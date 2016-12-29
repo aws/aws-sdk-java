@@ -23,6 +23,8 @@ import java.io.Serializable;
  * <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value
  * is equal to or before <code>to</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DateTimeRange"/>AWS API Documentation</a>
  */
 public class DateTimeRange implements Serializable, Cloneable {
 

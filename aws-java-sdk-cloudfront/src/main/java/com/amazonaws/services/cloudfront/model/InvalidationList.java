@@ -21,6 +21,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web
  * Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/InvalidationList"/>AWS API
+ *      Documentation</a>
  */
 public class InvalidationList implements Serializable, Cloneable {
 

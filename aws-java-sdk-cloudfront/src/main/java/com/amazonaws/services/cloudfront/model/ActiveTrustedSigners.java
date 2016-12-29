@@ -30,6 +30,9 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content
  * through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ActiveTrustedSigners"/>AWS API
+ *      Documentation</a>
  */
 public class ActiveTrustedSigners implements Serializable, Cloneable {
 

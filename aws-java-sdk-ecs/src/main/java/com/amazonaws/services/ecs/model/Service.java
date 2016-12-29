@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details on a service within a cluster
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Service"/>AWS API Documentation</a>
  */
 public class Service implements Serializable, Cloneable {
 

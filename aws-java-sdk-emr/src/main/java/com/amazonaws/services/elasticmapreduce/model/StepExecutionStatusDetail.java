@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The execution state of a step.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepExecutionStatusDetail"/>AWS API
+ *      Documentation</a>
  */
 public class StepExecutionStatusDetail implements Serializable, Cloneable {
 

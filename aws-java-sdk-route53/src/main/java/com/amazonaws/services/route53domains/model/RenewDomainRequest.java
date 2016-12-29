@@ -20,6 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration
  * year.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain"/>AWS API
+ *      Documentation</a>
  */
 public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

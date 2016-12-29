@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for DescribeObjects.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeObjectsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

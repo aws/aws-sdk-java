@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to the get upload operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload"/>AWS API Documentation</a>
  */
 public class GetUploadRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

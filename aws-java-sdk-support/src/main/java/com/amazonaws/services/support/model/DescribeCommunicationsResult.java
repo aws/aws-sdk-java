@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The communications returned by the <a>DescribeCommunications</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeCommunicationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

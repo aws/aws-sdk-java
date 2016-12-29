@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains general information about the hosted zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZone"/>AWS API Documentation</a>
  */
 public class HostedZone implements Serializable, Cloneable {
 

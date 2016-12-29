@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A code and name pair that represent a severity level that can be applied to a support case.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/SeverityLevel"/>AWS API Documentation</a>
  */
 public class SeverityLevel implements Serializable, Cloneable {
 

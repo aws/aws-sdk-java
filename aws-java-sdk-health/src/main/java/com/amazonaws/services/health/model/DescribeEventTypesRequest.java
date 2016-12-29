@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes"/>AWS API Documentation</a>
  */
 public class DescribeEventTypesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

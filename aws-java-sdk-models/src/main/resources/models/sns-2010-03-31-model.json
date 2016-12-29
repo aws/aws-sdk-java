@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "sns",
     "targetPrefix" : null,
+    "uid" : "sns-2010-03-31",
     "xmlNamespace" : "http://sns.amazonaws.com/doc/2010-03-31/"
   },
   "operations" : {

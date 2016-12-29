@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Diagnostic information about executable scripts that are part of a deployment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/Diagnostics"/>AWS API Documentation</a>
  */
 public class Diagnostics implements Serializable, Cloneable {
 

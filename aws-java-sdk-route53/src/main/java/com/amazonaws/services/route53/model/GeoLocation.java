@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains information about a geo location.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GeoLocation"/>AWS API Documentation</a>
  */
 public class GeoLocation implements Serializable, Cloneable {
 

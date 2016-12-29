@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains a Lambda function association.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/LambdaFunctionAssociation"/>AWS API
+ *      Documentation</a>
  */
 public class LambdaFunctionAssociation implements Serializable, Cloneable {
 

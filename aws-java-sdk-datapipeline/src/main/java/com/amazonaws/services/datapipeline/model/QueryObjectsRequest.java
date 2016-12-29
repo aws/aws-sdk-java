@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the parameters for QueryObjects.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects"/>AWS API Documentation</a>
  */
 public class QueryObjectsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

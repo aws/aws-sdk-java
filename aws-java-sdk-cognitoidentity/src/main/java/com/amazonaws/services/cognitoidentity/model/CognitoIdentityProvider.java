@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A provider representing an Amazon Cognito Identity User Pool and its client ID.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CognitoIdentityProvider"/>AWS API
+ *      Documentation</a>
  */
 public class CognitoIdentityProvider implements Serializable, Cloneable {
 

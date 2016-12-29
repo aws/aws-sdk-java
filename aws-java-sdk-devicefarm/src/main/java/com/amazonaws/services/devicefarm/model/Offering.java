@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the metadata of a device offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Offering"/>AWS API Documentation</a>
  */
 public class Offering implements Serializable, Cloneable {
 

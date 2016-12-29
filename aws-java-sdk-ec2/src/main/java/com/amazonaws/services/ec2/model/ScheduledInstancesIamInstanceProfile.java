@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an IAM instance profile for a Scheduled Instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesIamInstanceProfile"/>AWS API
+ *      Documentation</a>
  */
 public class ScheduledInstancesIamInstanceProfile implements Serializable, Cloneable {
 

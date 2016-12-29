@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used
  * to make AWS requests.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole"/>AWS API Documentation</a>
  */
 public class AssumeRoleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

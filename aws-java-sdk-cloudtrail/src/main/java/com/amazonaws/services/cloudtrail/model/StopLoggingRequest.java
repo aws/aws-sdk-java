@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Passes the request to CloudTrail to stop logging AWS API calls for the specified account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging"/>AWS API Documentation</a>
  */
 public class StopLoggingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

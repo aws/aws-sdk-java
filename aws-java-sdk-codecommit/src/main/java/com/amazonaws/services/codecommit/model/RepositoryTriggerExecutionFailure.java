@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A trigger failed to run.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryTriggerExecutionFailure"/>AWS
+ *      API Documentation</a>
  */
 public class RepositoryTriggerExecutionFailure implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about the directory.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryVpcSettingsDescription"/>AWS API
+ *      Documentation</a>
  */
 public class DirectoryVpcSettingsDescription implements Serializable, Cloneable {
 

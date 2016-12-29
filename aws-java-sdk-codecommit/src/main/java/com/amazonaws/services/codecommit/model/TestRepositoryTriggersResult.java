@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a test repository triggers operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers"/>AWS API
+ *      Documentation</a>
  */
 public class TestRepositoryTriggersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

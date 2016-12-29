@@ -303,6 +303,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @sample AmazonECR.BatchCheckLayerAvailability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public BatchCheckLayerAvailabilityResult batchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest batchCheckLayerAvailabilityRequest) {
@@ -362,6 +364,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.BatchDeleteImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage"/>AWS API Documentation</a>
      */
     @Override
     public BatchDeleteImageResult batchDeleteImage(BatchDeleteImageRequest batchDeleteImageRequest) {
@@ -410,6 +413,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.BatchGetImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage"/>AWS API Documentation</a>
      */
     @Override
     public BatchGetImageResult batchGetImage(BatchGetImageRequest batchGetImageRequest) {
@@ -476,6 +480,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws EmptyUploadException
      *         The specified layer upload does not contain any layer parts.
      * @sample AmazonECR.CompleteLayerUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CompleteLayerUploadResult completeLayerUpload(CompleteLayerUploadRequest completeLayerUploadRequest) {
@@ -527,6 +533,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
      * @sample AmazonECR.CreateRepository
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository"/>AWS API Documentation</a>
      */
     @Override
     public CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest) {
@@ -578,6 +585,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository contains images. To delete a repository that contains images, you must force the
      *         deletion with the <code>force</code> parameter.
      * @sample AmazonECR.DeleteRepository
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository"/>AWS API Documentation</a>
      */
     @Override
     public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest deleteRepositoryRequest) {
@@ -627,6 +635,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws RepositoryPolicyNotFoundException
      *         The specified repository and registry combination does not have an associated repository policy.
      * @sample AmazonECR.DeleteRepositoryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteRepositoryPolicyResult deleteRepositoryPolicy(DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest) {
@@ -684,6 +694,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws ImageNotFoundException
      *         The image requested does not exist in the specified repository.
      * @sample AmazonECR.DescribeImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages"/>AWS API Documentation</a>
      */
     @Override
     public DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest) {
@@ -731,6 +742,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.DescribeRepositories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeRepositoriesResult describeRepositories(DescribeRepositoriesRequest describeRepositoriesRequest) {
@@ -782,6 +795,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECR.GetAuthorizationToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetAuthorizationTokenResult getAuthorizationToken(GetAuthorizationTokenRequest getAuthorizationTokenRequest) {
@@ -842,6 +857,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.GetDownloadUrlForLayer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetDownloadUrlForLayerResult getDownloadUrlForLayer(GetDownloadUrlForLayerRequest getDownloadUrlForLayerRequest) {
@@ -892,6 +909,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws RepositoryPolicyNotFoundException
      *         The specified repository and registry combination does not have an associated repository policy.
      * @sample AmazonECR.GetRepositoryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetRepositoryPolicyResult getRepositoryPolicy(GetRepositoryPolicyRequest getRepositoryPolicyRequest) {
@@ -945,6 +964,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.InitiateLayerUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public InitiateLayerUploadResult initiateLayerUpload(InitiateLayerUploadRequest initiateLayerUploadRequest) {
@@ -998,6 +1019,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.ListImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages"/>AWS API Documentation</a>
      */
     @Override
     public ListImagesResult listImages(ListImagesRequest listImagesRequest) {
@@ -1061,6 +1083,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
      * @sample AmazonECR.PutImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage"/>AWS API Documentation</a>
      */
     @Override
     public PutImageResult putImage(PutImageRequest putImageRequest) {
@@ -1108,6 +1131,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.SetRepositoryPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SetRepositoryPolicyResult setRepositoryPolicy(SetRepositoryPolicyRequest setRepositoryPolicyRequest) {
@@ -1171,6 +1196,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
      * @sample AmazonECR.UploadLayerPart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart"/>AWS API Documentation</a>
      */
     @Override
     public UploadLayerPartResult uploadLayerPart(UploadLayerPartRequest uploadLayerPartRequest) {

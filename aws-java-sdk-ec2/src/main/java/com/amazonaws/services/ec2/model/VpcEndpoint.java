@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a VPC endpoint.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcEndpoint"/>AWS API Documentation</a>
  */
 public class VpcEndpoint implements Serializable, Cloneable {
 

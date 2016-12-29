@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the content of the lexicon.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/LexiconDescription"/>AWS API Documentation</a>
  */
 public class LexiconDescription implements Serializable, Cloneable {
 

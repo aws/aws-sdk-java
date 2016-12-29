@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about the location of an application revision.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RevisionLocation"/>AWS API
+ *      Documentation</a>
  */
 public class RevisionLocation implements Serializable, Cloneable {
 

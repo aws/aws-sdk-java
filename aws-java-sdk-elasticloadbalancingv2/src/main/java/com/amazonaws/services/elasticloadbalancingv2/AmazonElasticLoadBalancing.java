@@ -179,6 +179,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
      * @sample AmazonElasticLoadBalancing.AddTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags"/>AWS API
+     *      Documentation</a>
      */
     AddTagsResult addTags(AddTagsRequest addTagsRequest);
 
@@ -228,6 +230,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TooManyRegistrationsForTargetIdException
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @sample AmazonElasticLoadBalancing.CreateListener
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener"/>AWS API
+     *      Documentation</a>
      */
     CreateListenerResult createListener(CreateListenerRequest createListenerRequest);
 
@@ -278,6 +282,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws DuplicateTagKeysException
      *         A tag key was specified more than once.
      * @sample AmazonElasticLoadBalancing.CreateLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer"/>AWS
+     *      API Documentation</a>
      */
     CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest);
 
@@ -317,6 +323,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TooManyRegistrationsForTargetIdException
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @sample AmazonElasticLoadBalancing.CreateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule"/>AWS API
+     *      Documentation</a>
      */
     CreateRuleResult createRule(CreateRuleRequest createRuleRequest);
 
@@ -350,6 +358,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TooManyTargetGroupsException
      *         You've reached the limit on the number of target groups for your AWS account.
      * @sample AmazonElasticLoadBalancing.CreateTargetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup"/>AWS
+     *      API Documentation</a>
      */
     CreateTargetGroupResult createTargetGroup(CreateTargetGroupRequest createTargetGroupRequest);
 
@@ -368,6 +378,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws ListenerNotFoundException
      *         The specified listener does not exist.
      * @sample AmazonElasticLoadBalancing.DeleteListener
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener"/>AWS API
+     *      Documentation</a>
      */
     DeleteListenerResult deleteListener(DeleteListenerRequest deleteListenerRequest);
 
@@ -393,6 +405,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws OperationNotPermittedException
      *         This operation is not allowed.
      * @sample AmazonElasticLoadBalancing.DeleteLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer"/>AWS
+     *      API Documentation</a>
      */
     DeleteLoadBalancerResult deleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest);
 
@@ -409,6 +423,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws OperationNotPermittedException
      *         This operation is not allowed.
      * @sample AmazonElasticLoadBalancing.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule"/>AWS API
+     *      Documentation</a>
      */
     DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
 
@@ -427,6 +443,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws ResourceInUseException
      *         A specified resource is in use.
      * @sample AmazonElasticLoadBalancing.DeleteTargetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup"/>AWS
+     *      API Documentation</a>
      */
     DeleteTargetGroupResult deleteTargetGroup(DeleteTargetGroupRequest deleteTargetGroupRequest);
 
@@ -444,6 +462,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws InvalidTargetException
      *         The specified target does not exist or is not in the same VPC as the target group.
      * @sample AmazonElasticLoadBalancing.DeregisterTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets"/>AWS
+     *      API Documentation</a>
      */
     DeregisterTargetsResult deregisterTargets(DeregisterTargetsRequest deregisterTargetsRequest);
 
@@ -461,6 +481,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeListeners
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners"/>AWS
+     *      API Documentation</a>
      */
     DescribeListenersResult describeListeners(DescribeListenersRequest describeListenersRequest);
 
@@ -475,6 +497,9 @@ public interface AmazonElasticLoadBalancing {
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeLoadBalancerAttributes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes"/>AWS
+     *      API Documentation</a>
      */
     DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest describeLoadBalancerAttributesRequest);
 
@@ -493,6 +518,9 @@ public interface AmazonElasticLoadBalancing {
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeLoadBalancers
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers"/>AWS
+     *      API Documentation</a>
      */
     DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest);
 
@@ -510,6 +538,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws RuleNotFoundException
      *         The specified rule does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules"/>AWS API
+     *      Documentation</a>
      */
     DescribeRulesResult describeRules(DescribeRulesRequest describeRulesRequest);
 
@@ -527,6 +557,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws SSLPolicyNotFoundException
      *         The specified SSL policy does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeSSLPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies"/>AWS
+     *      API Documentation</a>
      */
     DescribeSSLPoliciesResult describeSSLPolicies(DescribeSSLPoliciesRequest describeSSLPoliciesRequest);
 
@@ -547,6 +579,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws RuleNotFoundException
      *         The specified rule does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags"/>AWS API
+     *      Documentation</a>
      */
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
 
@@ -561,6 +595,9 @@ public interface AmazonElasticLoadBalancing {
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeTargetGroupAttributes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes"/>AWS
+     *      API Documentation</a>
      */
     DescribeTargetGroupAttributesResult describeTargetGroupAttributes(DescribeTargetGroupAttributesRequest describeTargetGroupAttributesRequest);
 
@@ -583,6 +620,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups"/>AWS
+     *      API Documentation</a>
      */
     DescribeTargetGroupsResult describeTargetGroups(DescribeTargetGroupsRequest describeTargetGroupsRequest);
 
@@ -601,6 +640,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws HealthUnavailableException
      *         The health of the specified targets could not be retrieved due to an internal error.
      * @sample AmazonElasticLoadBalancing.DescribeTargetHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth"/>AWS
+     *      API Documentation</a>
      */
     DescribeTargetHealthResult describeTargetHealth(DescribeTargetHealthRequest describeTargetHealthRequest);
 
@@ -642,6 +683,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TooManyRegistrationsForTargetIdException
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @sample AmazonElasticLoadBalancing.ModifyListener
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener"/>AWS API
+     *      Documentation</a>
      */
     ModifyListenerResult modifyListener(ModifyListenerRequest modifyListenerRequest);
 
@@ -662,6 +705,9 @@ public interface AmazonElasticLoadBalancing {
      * @throws InvalidConfigurationRequestException
      *         The requested configuration is not valid.
      * @sample AmazonElasticLoadBalancing.ModifyLoadBalancerAttributes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes"/>AWS
+     *      API Documentation</a>
      */
     ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest);
 
@@ -688,6 +734,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TooManyRegistrationsForTargetIdException
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @sample AmazonElasticLoadBalancing.ModifyRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule"/>AWS API
+     *      Documentation</a>
      */
     ModifyRuleResult modifyRule(ModifyRuleRequest modifyRuleRequest);
 
@@ -705,6 +753,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
      * @sample AmazonElasticLoadBalancing.ModifyTargetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup"/>AWS
+     *      API Documentation</a>
      */
     ModifyTargetGroupResult modifyTargetGroup(ModifyTargetGroupRequest modifyTargetGroupRequest);
 
@@ -719,6 +769,9 @@ public interface AmazonElasticLoadBalancing {
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
      * @sample AmazonElasticLoadBalancing.ModifyTargetGroupAttributes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes"/>AWS
+     *      API Documentation</a>
      */
     ModifyTargetGroupAttributesResult modifyTargetGroupAttributes(ModifyTargetGroupAttributesRequest modifyTargetGroupAttributesRequest);
 
@@ -750,6 +803,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TooManyRegistrationsForTargetIdException
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @sample AmazonElasticLoadBalancing.RegisterTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets"/>AWS API
+     *      Documentation</a>
      */
     RegisterTargetsResult registerTargets(RegisterTargetsRequest registerTargetsRequest);
 
@@ -775,6 +830,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws TooManyTagsException
      *         You've reached the limit on the number of tags per load balancer.
      * @sample AmazonElasticLoadBalancing.RemoveTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags"/>AWS API
+     *      Documentation</a>
      */
     RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest);
 
@@ -797,6 +854,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws OperationNotPermittedException
      *         This operation is not allowed.
      * @sample AmazonElasticLoadBalancing.SetRulePriorities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities"/>AWS
+     *      API Documentation</a>
      */
     SetRulePrioritiesResult setRulePriorities(SetRulePrioritiesRequest setRulePrioritiesRequest);
 
@@ -816,6 +875,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws InvalidSecurityGroupException
      *         The specified security group does not exist.
      * @sample AmazonElasticLoadBalancing.SetSecurityGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups"/>AWS
+     *      API Documentation</a>
      */
     SetSecurityGroupsResult setSecurityGroups(SetSecurityGroupsRequest setSecurityGroupsRequest);
 
@@ -837,6 +898,8 @@ public interface AmazonElasticLoadBalancing {
      * @throws InvalidSubnetException
      *         The specified subnet is out of available addresses.
      * @sample AmazonElasticLoadBalancing.SetSubnets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets"/>AWS API
+     *      Documentation</a>
      */
     SetSubnetsResult setSubnets(SetSubnetsRequest setSubnetsRequest);
 

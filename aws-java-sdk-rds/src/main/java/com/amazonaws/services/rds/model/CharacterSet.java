@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CharacterSet"/>AWS API Documentation</a>
  */
 public class CharacterSet implements Serializable, Cloneable {
 

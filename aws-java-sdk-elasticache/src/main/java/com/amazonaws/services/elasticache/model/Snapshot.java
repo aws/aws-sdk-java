@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a copy of an entire Redis cache cluster as of the time when the snapshot was taken.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Snapshot"/>AWS API Documentation</a>
  */
 public class Snapshot implements Serializable, Cloneable {
 

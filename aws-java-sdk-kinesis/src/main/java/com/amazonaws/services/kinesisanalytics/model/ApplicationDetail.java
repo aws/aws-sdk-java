@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest
  * version, and input and output configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationDetail"/>AWS API
+ *      Documentation</a>
  */
 public class ApplicationDetail implements Serializable, Cloneable {
 

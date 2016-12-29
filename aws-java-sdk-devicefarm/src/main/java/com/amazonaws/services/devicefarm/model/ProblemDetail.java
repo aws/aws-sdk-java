@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a problem detail.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ProblemDetail"/>AWS API Documentation</a>
  */
 public class ProblemDetail implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * An administrator-specified constraint to apply when provisioning a product.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ConstraintSummary"/>AWS API
+ *      Documentation</a>
  */
 public class ConstraintSummary implements Serializable, Cloneable {
 

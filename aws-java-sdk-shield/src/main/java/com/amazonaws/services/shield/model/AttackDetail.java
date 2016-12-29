@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The details of a DDoS attack.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackDetail"/>AWS API Documentation</a>
  */
 public class AttackDetail implements Serializable, Cloneable {
 

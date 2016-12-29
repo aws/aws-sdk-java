@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a connection between two services.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Edge"/>AWS API Documentation</a>
  */
 public class Edge implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the hard disk (an SSD).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Disk"/>AWS API Documentation</a>
  */
 public class Disk implements Serializable, Cloneable {
 

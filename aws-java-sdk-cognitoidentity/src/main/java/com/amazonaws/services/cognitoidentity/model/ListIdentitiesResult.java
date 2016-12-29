@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response to a ListIdentities request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities"/>AWS API
+ *      Documentation</a>
  */
 public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

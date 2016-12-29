@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about an environment variable for a build project or a build.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentVariable"/>AWS API
+ *      Documentation</a>
  */
 public class EnvironmentVariable implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * UpdateNFSFileShareOutput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateNFSFileShareResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

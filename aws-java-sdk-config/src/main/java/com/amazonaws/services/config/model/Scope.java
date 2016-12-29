@@ -21,6 +21,8 @@ import java.io.Serializable;
  * scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are
  * triggered when any resource in your recording group changes in configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Scope"/>AWS API Documentation</a>
  */
 public class Scope implements Serializable, Cloneable {
 

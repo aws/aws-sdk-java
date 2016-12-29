@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Encloses a receipt handle and an identifier for it.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatchRequestEntry"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 

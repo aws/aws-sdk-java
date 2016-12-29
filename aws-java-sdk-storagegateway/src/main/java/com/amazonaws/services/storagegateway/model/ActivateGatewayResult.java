@@ -26,6 +26,9 @@ import java.io.Serializable;
  * id. Changing the name of the gateway has no effect on the gateway ARN.
  * </p>
  * </note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway"/>AWS API
+ *      Documentation</a>
  */
 public class ActivateGatewayResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

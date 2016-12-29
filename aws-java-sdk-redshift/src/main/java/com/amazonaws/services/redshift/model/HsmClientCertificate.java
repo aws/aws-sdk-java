@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module
  * (HSM), and used by the Amazon Redshift cluster to encrypt data files.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/HsmClientCertificate"/>AWS API
+ *      Documentation</a>
  */
 public class HsmClientCertificate implements Serializable, Cloneable {
 

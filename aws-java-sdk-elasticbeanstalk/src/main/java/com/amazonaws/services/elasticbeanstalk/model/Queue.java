@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a queue.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Queue"/>AWS API Documentation</a>
  */
 public class Queue implements Serializable, Cloneable {
 

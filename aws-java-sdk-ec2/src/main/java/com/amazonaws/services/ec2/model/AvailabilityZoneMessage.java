@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a message about an Availability Zone.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailabilityZoneMessage"/>AWS API
+ *      Documentation</a>
  */
 public class AvailabilityZoneMessage implements Serializable, Cloneable {
 

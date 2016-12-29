@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The UpdateDomainContactPrivacy request includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

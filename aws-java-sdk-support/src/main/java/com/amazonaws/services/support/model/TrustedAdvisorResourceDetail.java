@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about a resource identified by a Trusted Advisor check.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorResourceDetail"/>AWS API
+ *      Documentation</a>
  */
 public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
 

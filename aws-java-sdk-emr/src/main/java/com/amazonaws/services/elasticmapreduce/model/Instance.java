@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents an EC2 instance provisioned as part of cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Instance"/>AWS API Documentation</a>
  */
 public class Instance implements Serializable, Cloneable {
 

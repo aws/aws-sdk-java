@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * A structure containing information about a private virtual interface that will be provisioned on a connection.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPrivateVirtualInterfaceAllocation"/>AWS
+ *      API Documentation</a>
  */
 public class NewPrivateVirtualInterfaceAllocation implements Serializable, Cloneable {
 

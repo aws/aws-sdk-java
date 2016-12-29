@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in
  * order to set up a trust relationship with another domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConditionalForwarder"/>AWS API Documentation</a>
  */
 public class ConditionalForwarder implements Serializable, Cloneable {
 

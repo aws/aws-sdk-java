@@ -19,6 +19,9 @@ import java.io.Serializable;
  * The parameter key/value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code> is set to
  * true, <code>Value</code> is ignored and the value for <code>Key</code> is kept as previously set (current value).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningParameter"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateProvisioningParameter implements Serializable, Cloneable {
 

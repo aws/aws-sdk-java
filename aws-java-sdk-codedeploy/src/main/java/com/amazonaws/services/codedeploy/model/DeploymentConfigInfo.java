@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about a deployment configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentConfigInfo"/>AWS API
+ *      Documentation</a>
  */
 public class DeploymentConfigInfo implements Serializable, Cloneable {
 

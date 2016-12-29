@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a deployment of a stack or app.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Deployment"/>AWS API Documentation</a>
  */
 public class Deployment implements Serializable, Cloneable {
 

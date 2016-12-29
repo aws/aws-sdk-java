@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an EC2 instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Instance"/>AWS API Documentation</a>
  */
 public class Instance implements Serializable, Cloneable {
 

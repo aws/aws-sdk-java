@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Initiates the authentication response, as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth"/>AWS API
+ *      Documentation</a>
  */
 public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

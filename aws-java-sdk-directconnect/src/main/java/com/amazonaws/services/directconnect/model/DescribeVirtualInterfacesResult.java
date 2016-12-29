@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A structure containing a list of virtual interfaces.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeVirtualInterfacesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

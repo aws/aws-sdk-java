@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an orderable cluster option.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/OrderableClusterOption"/>AWS API
+ *      Documentation</a>
  */
 public class OrderableClusterOption implements Serializable, Cloneable {
 

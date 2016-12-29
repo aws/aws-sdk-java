@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents the response from the server to the request to get the header information for the .csv file for the user
  * import job.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader"/>AWS API Documentation</a>
  */
 public class GetCSVHeaderResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

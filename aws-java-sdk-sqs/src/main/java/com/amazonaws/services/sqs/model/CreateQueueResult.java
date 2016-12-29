@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Returns the <code>QueueUrl</code> attribute of the created queue.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue"/>AWS API Documentation</a>
  */
 public class CreateQueueResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

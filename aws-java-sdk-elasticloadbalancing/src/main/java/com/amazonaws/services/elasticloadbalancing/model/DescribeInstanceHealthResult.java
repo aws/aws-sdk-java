@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains the output for DescribeInstanceHealth.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeInstanceHealthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

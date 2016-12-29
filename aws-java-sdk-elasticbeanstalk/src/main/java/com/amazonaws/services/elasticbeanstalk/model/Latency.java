@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the average latency for the slowest X percent of requests over the last 10 seconds.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Latency"/>AWS API Documentation</a>
  */
 public class Latency implements Serializable, Cloneable {
 

@@ -16,6 +16,9 @@ import java.io.Serializable;
 
 /**
  * Returned for a successful ListIdentityPoolUsage request.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage"/>AWS API
+ *      Documentation</a>
  */
 public class ListIdentityPoolUsageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

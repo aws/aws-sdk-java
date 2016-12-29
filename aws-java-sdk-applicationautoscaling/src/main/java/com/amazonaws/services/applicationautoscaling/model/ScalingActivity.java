@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents a scaling activity.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingActivity"/>AWS API
+ *      Documentation</a>
  */
 public class ScalingActivity implements Serializable, Cloneable {
 

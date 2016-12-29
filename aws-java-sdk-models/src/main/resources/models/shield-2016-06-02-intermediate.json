@@ -70,6 +70,7 @@
     "syncClient" : "AWSShieldClient",
     "syncClientBuilderClassName" : "AWSShieldClientBuilder",
     "syncInterface" : "AWSShield",
+    "uid" : "shield-2016-06-02",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A value that applies only to a certain cache node type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNodeTypeSpecificValue"/>AWS API
+ *      Documentation</a>
  */
 public class CacheNodeTypeSpecificValue implements Serializable, Cloneable {
 

@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * The reason for an <a>AutoScalingPolicyStatus</a> change.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AutoScalingPolicyStateChangeReason"/>AWS
+ *      API Documentation</a>
  */
 public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneable {
 

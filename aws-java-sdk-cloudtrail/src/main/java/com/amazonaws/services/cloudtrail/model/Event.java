@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Contains information about an event that was returned by a lookup request. The result includes a representation of a
  * CloudTrail event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Event"/>AWS API Documentation</a>
  */
 public class Event implements Serializable, Cloneable {
 

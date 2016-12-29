@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about the priorities for the rules for a listener.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RulePriorityPair"/>AWS API
+ *      Documentation</a>
  */
 public class RulePriorityPair implements Serializable, Cloneable {
 

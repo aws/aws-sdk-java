@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole"/>AWS API Documentation</a>
  */
 public class GetRoleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

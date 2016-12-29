@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary
  * key attributes and index key attributes, which are automatically projected.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Projection"/>AWS API Documentation</a>
  */
 public class Projection implements Serializable, Cloneable {
 

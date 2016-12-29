@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "sms",
     "targetPrefix" : "AWSServerMigrationService_V2016_10_24",
+    "uid" : "sms-2016-10-24",
     "xmlNamespace" : null
   },
   "operations" : {

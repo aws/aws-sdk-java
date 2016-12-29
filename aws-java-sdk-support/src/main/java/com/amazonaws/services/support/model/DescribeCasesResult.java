@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in
  * the result set.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases"/>AWS API Documentation</a>
  */
 public class DescribeCasesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

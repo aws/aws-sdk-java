@@ -16,6 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p/>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource"/>AWS
+ *      API Documentation</a>
  */
 public class AddApplicationReferenceDataSourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

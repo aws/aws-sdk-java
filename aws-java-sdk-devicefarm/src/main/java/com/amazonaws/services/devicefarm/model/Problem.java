@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents a specific warning or failure.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Problem"/>AWS API Documentation</a>
  */
 public class Problem implements Serializable, Cloneable {
 

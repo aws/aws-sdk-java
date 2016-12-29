@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * This input determines which bootstrap actions to retrieve.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions"/>AWS API
+ *      Documentation</a>
  */
 public class ListBootstrapActionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

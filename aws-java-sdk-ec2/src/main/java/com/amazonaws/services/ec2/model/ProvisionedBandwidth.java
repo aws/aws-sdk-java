@@ -20,6 +20,8 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact us
  * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionedBandwidth"/>AWS API Documentation</a>
  */
 public class ProvisionedBandwidth implements Serializable, Cloneable {
 

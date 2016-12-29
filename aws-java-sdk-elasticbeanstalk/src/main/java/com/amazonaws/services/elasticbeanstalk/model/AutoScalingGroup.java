@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an Auto Scaling launch configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AutoScalingGroup"/>AWS API
+ *      Documentation</a>
  */
 public class AutoScalingGroup implements Serializable, Cloneable {
 

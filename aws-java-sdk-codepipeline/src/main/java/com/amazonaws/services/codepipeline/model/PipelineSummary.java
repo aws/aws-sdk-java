@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Returns a summary of a pipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineSummary"/>AWS API
+ *      Documentation</a>
  */
 public class PipelineSummary implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Defines a patch filter.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter"/>AWS API Documentation</a>
  */
 public class PatchFilter implements Serializable, Cloneable {
 

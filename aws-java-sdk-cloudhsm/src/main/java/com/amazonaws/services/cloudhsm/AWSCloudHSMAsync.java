@@ -38,6 +38,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param addTagsToResourceRequest
      * @return A Java Future containing the result of the AddTagsToResource operation returned by the service.
      * @sample AWSCloudHSMAsync.AddTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest);
 
@@ -56,6 +58,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTagsToResource operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.AddTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler);
@@ -70,6 +74,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>CreateHapgRequest</a> action.
      * @return A Java Future containing the result of the CreateHapg operation returned by the service.
      * @sample AWSCloudHSMAsync.CreateHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateHapgResult> createHapgAsync(CreateHapgRequest createHapgRequest);
 
@@ -87,6 +92,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateHapg operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.CreateHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateHapgResult> createHapgAsync(CreateHapgRequest createHapgRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHapgRequest, CreateHapgResult> asyncHandler);
@@ -112,6 +118,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>CreateHsm</a> operation.
      * @return A Java Future containing the result of the CreateHsm operation returned by the service.
      * @sample AWSCloudHSMAsync.CreateHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateHsmResult> createHsmAsync(CreateHsmRequest createHsmRequest);
 
@@ -140,6 +147,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateHsm operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.CreateHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateHsmResult> createHsmAsync(CreateHsmRequest createHsmRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult> asyncHandler);
@@ -153,6 +161,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>CreateLunaClient</a> action.
      * @return A Java Future containing the result of the CreateLunaClient operation returned by the service.
      * @sample AWSCloudHSMAsync.CreateLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(CreateLunaClientRequest createLunaClientRequest);
 
@@ -169,6 +179,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateLunaClient operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.CreateLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(CreateLunaClientRequest createLunaClientRequest,
             com.amazonaws.handlers.AsyncHandler<CreateLunaClientRequest, CreateLunaClientResult> asyncHandler);
@@ -182,6 +194,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>DeleteHapg</a> action.
      * @return A Java Future containing the result of the DeleteHapg operation returned by the service.
      * @sample AWSCloudHSMAsync.DeleteHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(DeleteHapgRequest deleteHapgRequest);
 
@@ -198,6 +211,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteHapg operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.DeleteHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(DeleteHapgRequest deleteHapgRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHapgRequest, DeleteHapgResult> asyncHandler);
@@ -211,6 +225,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>DeleteHsm</a> operation.
      * @return A Java Future containing the result of the DeleteHsm operation returned by the service.
      * @sample AWSCloudHSMAsync.DeleteHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(DeleteHsmRequest deleteHsmRequest);
 
@@ -227,6 +242,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteHsm operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.DeleteHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(DeleteHsmRequest deleteHsmRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHsmRequest, DeleteHsmResult> asyncHandler);
@@ -239,6 +255,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param deleteLunaClientRequest
      * @return A Java Future containing the result of the DeleteLunaClient operation returned by the service.
      * @sample AWSCloudHSMAsync.DeleteLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(DeleteLunaClientRequest deleteLunaClientRequest);
 
@@ -254,6 +272,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteLunaClient operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.DeleteLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(DeleteLunaClientRequest deleteLunaClientRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLunaClientRequest, DeleteLunaClientResult> asyncHandler);
@@ -267,6 +287,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>DescribeHapg</a> action.
      * @return A Java Future containing the result of the DescribeHapg operation returned by the service.
      * @sample AWSCloudHSMAsync.DescribeHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(DescribeHapgRequest describeHapgRequest);
 
@@ -283,6 +304,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeHapg operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.DescribeHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(DescribeHapgRequest describeHapgRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeHapgRequest, DescribeHapgResult> asyncHandler);
@@ -296,6 +318,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>DescribeHsm</a> operation.
      * @return A Java Future containing the result of the DescribeHsm operation returned by the service.
      * @sample AWSCloudHSMAsync.DescribeHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(DescribeHsmRequest describeHsmRequest);
 
@@ -312,6 +335,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeHsm operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.DescribeHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(DescribeHsmRequest describeHsmRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler);
@@ -338,6 +362,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param describeLunaClientRequest
      * @return A Java Future containing the result of the DescribeLunaClient operation returned by the service.
      * @sample AWSCloudHSMAsync.DescribeLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(DescribeLunaClientRequest describeLunaClientRequest);
 
@@ -353,6 +379,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLunaClient operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.DescribeLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(DescribeLunaClientRequest describeLunaClientRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler);
@@ -381,6 +409,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param getConfigRequest
      * @return A Java Future containing the result of the GetConfig operation returned by the service.
      * @sample AWSCloudHSMAsync.GetConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetConfigResult> getConfigAsync(GetConfigRequest getConfigRequest);
 
@@ -397,6 +426,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetConfig operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.GetConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetConfigResult> getConfigAsync(GetConfigRequest getConfigRequest,
             com.amazonaws.handlers.AsyncHandler<GetConfigRequest, GetConfigResult> asyncHandler);
@@ -410,6 +440,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>ListAvailableZones</a> action.
      * @return A Java Future containing the result of the ListAvailableZones operation returned by the service.
      * @sample AWSCloudHSMAsync.ListAvailableZones
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(ListAvailableZonesRequest listAvailableZonesRequest);
 
@@ -426,6 +458,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAvailableZones operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.ListAvailableZones
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(ListAvailableZonesRequest listAvailableZonesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler);
@@ -458,6 +492,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param listHapgsRequest
      * @return A Java Future containing the result of the ListHapgs operation returned by the service.
      * @sample AWSCloudHSMAsync.ListHapgs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(ListHapgsRequest listHapgsRequest);
 
@@ -478,6 +513,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListHapgs operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.ListHapgs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(ListHapgsRequest listHapgsRequest,
             com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler);
@@ -509,6 +545,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param listHsmsRequest
      * @return A Java Future containing the result of the ListHsms operation returned by the service.
      * @sample AWSCloudHSMAsync.ListHsms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(ListHsmsRequest listHsmsRequest);
 
@@ -529,6 +566,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListHsms operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.ListHsms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(ListHsmsRequest listHsmsRequest,
             com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler);
@@ -560,6 +598,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param listLunaClientsRequest
      * @return A Java Future containing the result of the ListLunaClients operation returned by the service.
      * @sample AWSCloudHSMAsync.ListLunaClients
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(ListLunaClientsRequest listLunaClientsRequest);
 
@@ -580,6 +620,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListLunaClients operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.ListLunaClients
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(ListLunaClientsRequest listLunaClientsRequest,
             com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler);
@@ -607,6 +649,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AWSCloudHSMAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -622,6 +666,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
@@ -634,6 +680,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param modifyHapgRequest
      * @return A Java Future containing the result of the ModifyHapg operation returned by the service.
      * @sample AWSCloudHSMAsync.ModifyHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(ModifyHapgRequest modifyHapgRequest);
 
@@ -649,6 +696,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyHapg operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.ModifyHapg
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(ModifyHapgRequest modifyHapgRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyHapgRequest, ModifyHapgResult> asyncHandler);
@@ -669,6 +717,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        Contains the inputs for the <a>ModifyHsm</a> operation.
      * @return A Java Future containing the result of the ModifyHsm operation returned by the service.
      * @sample AWSCloudHSMAsync.ModifyHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(ModifyHsmRequest modifyHsmRequest);
 
@@ -692,6 +741,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyHsm operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.ModifyHsm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(ModifyHsmRequest modifyHsmRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyHsmRequest, ModifyHsmResult> asyncHandler);
@@ -707,6 +757,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param modifyLunaClientRequest
      * @return A Java Future containing the result of the ModifyLunaClient operation returned by the service.
      * @sample AWSCloudHSMAsync.ModifyLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(ModifyLunaClientRequest modifyLunaClientRequest);
 
@@ -725,6 +777,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyLunaClient operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.ModifyLunaClient
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(ModifyLunaClientRequest modifyLunaClientRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult> asyncHandler);
@@ -741,6 +795,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * @param removeTagsFromResourceRequest
      * @return A Java Future containing the result of the RemoveTagsFromResource operation returned by the service.
      * @sample AWSCloudHSMAsync.RemoveTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
 
@@ -760,6 +816,8 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTagsFromResource operation returned by the service.
      * @sample AWSCloudHSMAsyncHandler.RemoveTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest removeTagsFromResourceRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler);

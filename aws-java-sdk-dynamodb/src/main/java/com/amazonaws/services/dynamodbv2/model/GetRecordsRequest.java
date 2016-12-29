@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a <i>GetRecords</i> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords"/>AWS API
+ *      Documentation</a>
  */
 public class GetRecordsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The TemplateParameter data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TemplateParameter"/>AWS API
+ *      Documentation</a>
  */
 public class TemplateParameter implements Serializable, Cloneable {
 

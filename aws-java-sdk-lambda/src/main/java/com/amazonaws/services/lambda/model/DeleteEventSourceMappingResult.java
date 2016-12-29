@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes mapping between an Amazon Kinesis stream and a Lambda function.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

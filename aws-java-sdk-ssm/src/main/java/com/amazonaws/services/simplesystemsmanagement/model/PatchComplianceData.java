@@ -19,6 +19,8 @@ import java.io.Serializable;
  * Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the
  * instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchComplianceData"/>AWS API Documentation</a>
  */
 public class PatchComplianceData implements Serializable, Cloneable {
 

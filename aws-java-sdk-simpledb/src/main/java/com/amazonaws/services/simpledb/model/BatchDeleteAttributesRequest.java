@@ -15,9 +15,6 @@ package com.amazonaws.services.simpledb.model;
 import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
 public class BatchDeleteAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /** The name of the domain in which the attributes are being deleted. */

@@ -20,6 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type that contains information about the request to remove authorization to associate a VPC that was
  * created by one AWS account with a hosted zone that was created with a different AWS account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteVPCAssociationAuthorizationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

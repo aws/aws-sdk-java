@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the attack.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackVectorDescription"/>AWS API
+ *      Documentation</a>
  */
 public class AttackVectorDescription implements Serializable, Cloneable {
 

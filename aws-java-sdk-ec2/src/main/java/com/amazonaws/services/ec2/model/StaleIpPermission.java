@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a stale rule in a security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StaleIpPermission"/>AWS API Documentation</a>
  */
 public class StaleIpPermission implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Response for ListTopics action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics"/>AWS API Documentation</a>
  */
 public class ListTopicsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Stores account attributes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AccountAttribute"/>AWS API
+ *      Documentation</a>
  */
 public class AccountAttribute implements Serializable, Cloneable {
 

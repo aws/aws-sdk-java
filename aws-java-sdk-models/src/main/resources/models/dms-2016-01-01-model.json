@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "dms",
     "targetPrefix" : "AmazonDMSv20160101",
+    "uid" : "dms-2016-01-01",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Description of the file system.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem"/>AWS API
+ *      Documentation</a>
  */
 public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

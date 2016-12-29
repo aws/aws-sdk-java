@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about the configuration of an EC2 instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/BackendServerDescription"/>AWS
+ *      API Documentation</a>
  */
 public class BackendServerDescription implements Serializable, Cloneable {
 

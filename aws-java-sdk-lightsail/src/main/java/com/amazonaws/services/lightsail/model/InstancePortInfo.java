@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes information about the instance ports.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstancePortInfo"/>AWS API
+ *      Documentation</a>
  */
 public class InstancePortInfo implements Serializable, Cloneable {
 

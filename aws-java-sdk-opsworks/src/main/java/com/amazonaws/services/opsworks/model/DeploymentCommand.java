@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Used to specify a stack or deployment command.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeploymentCommand"/>AWS API
+ *      Documentation</a>
  */
 public class DeploymentCommand implements Serializable, Cloneable {
 

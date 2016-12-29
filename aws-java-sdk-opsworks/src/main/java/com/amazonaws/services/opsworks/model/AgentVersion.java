@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an agent version.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AgentVersion"/>AWS API Documentation</a>
  */
 public class AgentVersion implements Serializable, Cloneable {
 

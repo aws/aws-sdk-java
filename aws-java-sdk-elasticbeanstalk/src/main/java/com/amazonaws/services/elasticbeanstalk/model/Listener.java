@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the properties of a Listener for the LoadBalancer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Listener"/>AWS API Documentation</a>
  */
 public class Listener implements Serializable, Cloneable {
 

@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster"/>AWS API Documentation</a>
  */
 public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

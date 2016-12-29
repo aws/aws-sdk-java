@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The details of the step failure. The service attempts to detect the root cause for many common failures.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/FailureDetails"/>AWS API
+ *      Documentation</a>
  */
 public class FailureDetails implements Serializable, Cloneable {
 

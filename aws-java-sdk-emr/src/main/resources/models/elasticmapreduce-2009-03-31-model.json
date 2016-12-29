@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "elasticmapreduce",
     "targetPrefix" : "ElasticMapReduce",
+    "uid" : "elasticmapreduce-2009-03-31",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecordResult"/>AWS API
+ *      Documentation</a>
  */
 public class UsageRecordResult implements Serializable, Cloneable {
 

@@ -20,6 +20,8 @@ import java.io.Serializable;
  * group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one
  * subnet ID.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfig"/>AWS API Documentation</a>
  */
 public class VpcConfig implements Serializable, Cloneable {
 

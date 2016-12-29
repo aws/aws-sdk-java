@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a request parameter in the <a>ListFindings</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/FindingFilter"/>AWS API Documentation</a>
  */
 public class FindingFilter implements Serializable, Cloneable {
 

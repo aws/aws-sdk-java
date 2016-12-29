@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "acm",
     "targetPrefix" : "CertificateManager",
+    "uid" : "acm-2015-12-08",
     "xmlNamespace" : null
   },
   "operations" : {

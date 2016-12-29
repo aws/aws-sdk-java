@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Returns the transaction log of the specified offerings.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions"/>AWS API
+ *      Documentation</a>
  */
 public class ListOfferingTransactionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The code for the Lambda function.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode"/>AWS API Documentation</a>
  */
 public class FunctionCode implements Serializable, Cloneable {
 

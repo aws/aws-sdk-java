@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "cloudfront",
     "targetPrefix" : null,
+    "uid" : "cloudfront-2016-11-25",
     "xmlNamespace" : null
   },
   "operations" : {

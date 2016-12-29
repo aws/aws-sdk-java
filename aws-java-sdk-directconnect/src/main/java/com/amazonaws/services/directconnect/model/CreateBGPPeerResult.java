@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The response received when CreateBGPPeer is called.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer"/>AWS API
+ *      Documentation</a>
  */
 public class CreateBGPPeerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

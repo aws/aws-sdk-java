@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "ssm",
     "targetPrefix" : "AmazonSSM",
+    "uid" : "ssm-2014-11-06",
     "xmlNamespace" : null
   },
   "operations" : {

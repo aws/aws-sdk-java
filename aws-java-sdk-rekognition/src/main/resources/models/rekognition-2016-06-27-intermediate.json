@@ -70,6 +70,7 @@
     "syncClient" : "AmazonRekognitionClient",
     "syncClientBuilderClassName" : "AmazonRekognitionClientBuilder",
     "syncInterface" : "AmazonRekognition",
+    "uid" : "rekognition-2016-06-27",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

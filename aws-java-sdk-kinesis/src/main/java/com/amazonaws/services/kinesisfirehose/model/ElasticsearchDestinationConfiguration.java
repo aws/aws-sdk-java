@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the configuration of a destination in Amazon ES.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationConfiguration"/>AWS
+ *      API Documentation</a>
  */
 public class ElasticsearchDestinationConfiguration implements Serializable, Cloneable {
 

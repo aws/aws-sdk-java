@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for the <a>DescribeChangeSet</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

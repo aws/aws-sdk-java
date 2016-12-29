@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The result of the <a>DescribeRule</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule"/>AWS API Documentation</a>
  */
 public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

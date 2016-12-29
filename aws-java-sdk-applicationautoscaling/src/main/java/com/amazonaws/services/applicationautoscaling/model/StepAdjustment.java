@@ -64,6 +64,9 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/StepAdjustment"/>AWS API
+ *      Documentation</a>
  */
 public class StepAdjustment implements Serializable, Cloneable {
 

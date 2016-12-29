@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "sts",
     "targetPrefix" : null,
+    "uid" : "sts-2011-06-15",
     "xmlNamespace" : "https://sts.amazonaws.com/doc/2011-06-15/"
   },
   "operations" : {

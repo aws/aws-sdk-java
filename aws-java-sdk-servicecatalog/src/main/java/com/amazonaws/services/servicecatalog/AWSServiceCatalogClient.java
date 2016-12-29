@@ -284,6 +284,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
      * @sample AWSServiceCatalog.AcceptPortfolioShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public AcceptPortfolioShareResult acceptPortfolioShare(AcceptPortfolioShareRequest acceptPortfolioShareRequest) {
@@ -331,6 +333,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
      * @sample AWSServiceCatalog.AssociatePrincipalWithPortfolio
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public AssociatePrincipalWithPortfolioResult associatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest associatePrincipalWithPortfolioRequest) {
@@ -380,6 +385,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
      * @sample AWSServiceCatalog.AssociateProductWithPortfolio
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public AssociateProductWithPortfolioResult associateProductWithPortfolio(AssociateProductWithPortfolioRequest associateProductWithPortfolioRequest) {
@@ -431,6 +439,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws DuplicateResourceException
      *         The specified resource is a duplicate.
      * @sample AWSServiceCatalog.CreateConstraint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateConstraintResult createConstraint(CreateConstraintRequest createConstraintRequest) {
@@ -476,6 +486,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
      * @sample AWSServiceCatalog.CreatePortfolio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreatePortfolioResult createPortfolio(CreatePortfolioRequest createPortfolioRequest) {
@@ -523,6 +535,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.CreatePortfolioShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreatePortfolioShareResult createPortfolioShare(CreatePortfolioShareRequest createPortfolioShareRequest) {
@@ -568,6 +582,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
      * @sample AWSServiceCatalog.CreateProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateProductResult createProduct(CreateProductRequest createProductRequest) {
@@ -616,6 +632,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
      * @sample AWSServiceCatalog.CreateProvisioningArtifact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateProvisioningArtifactResult createProvisioningArtifact(CreateProvisioningArtifactRequest createProvisioningArtifactRequest) {
@@ -661,6 +679,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.DeleteConstraint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteConstraintResult deleteConstraint(DeleteConstraintRequest deleteConstraintRequest) {
@@ -709,6 +729,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The operation was requested against a resource that is currently in use. Free the resource from use and
      *         retry the operation.
      * @sample AWSServiceCatalog.DeletePortfolio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeletePortfolioResult deletePortfolio(DeletePortfolioRequest deletePortfolioRequest) {
@@ -751,6 +773,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DeletePortfolioShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeletePortfolioShareResult deletePortfolioShare(DeletePortfolioShareRequest deletePortfolioShareRequest) {
@@ -799,6 +823,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.DeleteProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteProductResult deleteProduct(DeleteProductRequest deleteProductRequest) {
@@ -848,6 +874,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.DeleteProvisioningArtifact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteProvisioningArtifactResult deleteProvisioningArtifact(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest) {
@@ -891,6 +919,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DescribeConstraint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeConstraintResult describeConstraint(DescribeConstraintRequest describeConstraintRequest) {
@@ -933,6 +963,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DescribePortfolio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribePortfolioResult describePortfolio(DescribePortfolioRequest describePortfolioRequest) {
@@ -981,6 +1013,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.DescribeProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeProductResult describeProduct(DescribeProductRequest describeProductRequest) {
@@ -1023,6 +1057,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DescribeProductAsAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeProductAsAdminResult describeProductAsAdmin(DescribeProductAsAdminRequest describeProductAsAdminRequest) {
@@ -1072,6 +1108,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.DescribeProductView
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeProductViewResult describeProductView(DescribeProductViewRequest describeProductViewRequest) {
@@ -1114,6 +1152,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DescribeProvisioningArtifact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeProvisioningArtifactResult describeProvisioningArtifact(DescribeProvisioningArtifactRequest describeProvisioningArtifactRequest) {
@@ -1162,6 +1202,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DescribeProvisioningParameters
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeProvisioningParametersResult describeProvisioningParameters(DescribeProvisioningParametersRequest describeProvisioningParametersRequest) {
@@ -1207,6 +1250,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DescribeRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeRecordResult describeRecord(DescribeRecordRequest describeRecordRequest) {
@@ -1251,6 +1296,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DisassociatePrincipalFromPortfolio
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DisassociatePrincipalFromPortfolioResult disassociatePrincipalFromPortfolio(
@@ -1298,6 +1346,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.DisassociateProductFromPortfolio
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public DisassociateProductFromPortfolioResult disassociateProductFromPortfolio(
@@ -1343,6 +1394,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.ListAcceptedPortfolioShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest) {
@@ -1389,6 +1442,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.ListConstraintsForPortfolio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListConstraintsForPortfolioResult listConstraintsForPortfolio(ListConstraintsForPortfolioRequest listConstraintsForPortfolioRequest) {
@@ -1436,6 +1491,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.ListLaunchPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListLaunchPathsResult listLaunchPaths(ListLaunchPathsRequest listLaunchPathsRequest) {
@@ -1478,6 +1535,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.ListPortfolioAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListPortfolioAccessResult listPortfolioAccess(ListPortfolioAccessRequest listPortfolioAccessRequest) {
@@ -1520,6 +1579,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.ListPortfolios
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListPortfoliosResult listPortfolios(ListPortfoliosRequest listPortfoliosRequest) {
@@ -1564,6 +1625,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.ListPortfoliosForProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListPortfoliosForProductResult listPortfoliosForProduct(ListPortfoliosForProductRequest listPortfoliosForProductRequest) {
@@ -1609,6 +1672,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.ListPrincipalsForPortfolio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListPrincipalsForPortfolioResult listPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest listPrincipalsForPortfolioRequest) {
@@ -1654,6 +1719,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.ListProvisioningArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public ListProvisioningArtifactsResult listProvisioningArtifacts(ListProvisioningArtifactsRequest listProvisioningArtifactsRequest) {
@@ -1698,6 +1765,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.ListRecordHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ListRecordHistoryResult listRecordHistory(ListRecordHistoryRequest listRecordHistoryRequest) {
@@ -1749,6 +1818,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws DuplicateResourceException
      *         The specified resource is a duplicate.
      * @sample AWSServiceCatalog.ProvisionProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ProvisionProductResult provisionProduct(ProvisionProductRequest provisionProductRequest) {
@@ -1791,6 +1862,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.RejectPortfolioShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public RejectPortfolioShareResult rejectPortfolioShare(RejectPortfolioShareRequest rejectPortfolioShareRequest) {
@@ -1833,6 +1906,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.ScanProvisionedProducts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public ScanProvisionedProductsResult scanProvisionedProducts(ScanProvisionedProductsRequest scanProvisionedProductsRequest) {
@@ -1879,6 +1954,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.SearchProducts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SearchProductsResult searchProducts(SearchProductsRequest searchProductsRequest) {
@@ -1925,6 +2002,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.SearchProductsAsAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public SearchProductsAsAdminResult searchProductsAsAdmin(SearchProductsAsAdminRequest searchProductsAsAdminRequest) {
@@ -1975,6 +2054,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.TerminateProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public TerminateProvisionedProductResult terminateProvisionedProduct(TerminateProvisionedProductRequest terminateProvisionedProductRequest) {
@@ -2021,6 +2102,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.UpdateConstraint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateConstraintResult updateConstraint(UpdateConstraintRequest updateConstraintRequest) {
@@ -2069,6 +2152,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
      * @sample AWSServiceCatalog.UpdatePortfolio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest updatePortfolioRequest) {
@@ -2113,6 +2198,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.UpdateProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateProductResult updateProduct(UpdateProductRequest updateProductRequest) {
@@ -2163,6 +2250,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.UpdateProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateProvisionedProductResult updateProvisionedProduct(UpdateProvisionedProductRequest updateProvisionedProductRequest) {
@@ -2209,6 +2298,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.UpdateProvisioningArtifact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact"/>AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest) {

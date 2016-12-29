@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the buffering to perform before delivering data to the Amazon ES destination.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchBufferingHints"/>AWS API
+ *      Documentation</a>
  */
 public class ElasticsearchBufferingHints implements Serializable, Cloneable {
 

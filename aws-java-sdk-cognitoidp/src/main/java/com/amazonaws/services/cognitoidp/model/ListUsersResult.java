@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The response from the request to list users.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers"/>AWS API Documentation</a>
  */
 public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

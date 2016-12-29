@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents an attribute for describing the key schema for the table and indexes.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeDefinition"/>AWS API
+ *      Documentation</a>
  */
 public class AttributeDefinition implements Serializable, Cloneable {
 

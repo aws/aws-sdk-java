@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The bucket and key of an item stored in Amazon S3.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/S3Location"/>AWS API
+ *      Documentation</a>
  */
 public class S3Location implements Serializable, Cloneable {
 

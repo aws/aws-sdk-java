@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Identifies
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/LambdaResource"/>AWS API Documentation</a>
  */
 public class LambdaResource implements Serializable, Cloneable {
 

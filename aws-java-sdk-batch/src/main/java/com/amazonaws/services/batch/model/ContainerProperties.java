@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Container properties are used in job definitions to describe the container that is launched as part of a job.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerProperties"/>AWS API Documentation</a>
  */
 public class ContainerProperties implements Serializable, Cloneable {
 

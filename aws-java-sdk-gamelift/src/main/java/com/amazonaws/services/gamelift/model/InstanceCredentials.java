@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Set of credentials required to remotely access a fleet instance. Access credentials are requested by calling
  * <a>GetInstanceAccess</a> and returned in an <a>InstanceAccess</a> object.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceCredentials"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceCredentials implements Serializable, Cloneable {
 

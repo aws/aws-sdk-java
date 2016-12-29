@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "devicefarm",
     "targetPrefix" : "DeviceFarm_20150623",
+    "uid" : "devicefarm-2015-06-23",
     "xmlNamespace" : null
   },
   "operations" : {

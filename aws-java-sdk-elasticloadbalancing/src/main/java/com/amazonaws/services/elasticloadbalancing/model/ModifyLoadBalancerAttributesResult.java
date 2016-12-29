@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Contains the output of ModifyLoadBalancerAttributes.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes"/>AWS
+ *      API Documentation</a>
  */
 public class ModifyLoadBalancerAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

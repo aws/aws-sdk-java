@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of list on-premises instances operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"/>AWS API
+ *      Documentation</a>
  */
 public class ListOnPremisesInstancesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

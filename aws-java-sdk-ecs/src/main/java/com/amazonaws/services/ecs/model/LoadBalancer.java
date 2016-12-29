@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details on a load balancer that is used with a service.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LoadBalancer"/>AWS API Documentation</a>
  */
 public class LoadBalancer implements Serializable, Cloneable {
 

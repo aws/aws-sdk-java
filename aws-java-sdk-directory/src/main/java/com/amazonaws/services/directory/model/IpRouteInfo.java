@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about one or more IP address blocks.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRouteInfo"/>AWS API Documentation</a>
  */
 public class IpRouteInfo implements Serializable, Cloneable {
 

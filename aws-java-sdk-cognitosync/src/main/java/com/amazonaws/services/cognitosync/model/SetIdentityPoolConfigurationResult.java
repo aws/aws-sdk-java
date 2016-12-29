@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The output for the SetIdentityPoolConfiguration operation
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class SetIdentityPoolConfigurationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

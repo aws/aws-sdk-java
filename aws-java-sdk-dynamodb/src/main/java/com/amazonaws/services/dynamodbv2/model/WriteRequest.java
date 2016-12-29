@@ -20,6 +20,8 @@ import java.io.Serializable;
  * operations, not both, in a single <i>WriteRequest</i>. If you do need to perform both of these operations, you will
  * need to provide two separate <i>WriteRequest</i> objects.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/WriteRequest"/>AWS API Documentation</a>
  */
 public class WriteRequest implements Serializable, Cloneable {
 

@@ -31,6 +31,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

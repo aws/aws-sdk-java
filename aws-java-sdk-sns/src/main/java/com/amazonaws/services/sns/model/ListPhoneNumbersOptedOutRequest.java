@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for the <code>ListPhoneNumbersOptedOut</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut"/>AWS API
+ *      Documentation</a>
  */
 public class ListPhoneNumbersOptedOutRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

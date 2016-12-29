@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "snowball",
     "targetPrefix" : "AWSIESnowballJobManagementService",
+    "uid" : "snowball-2016-06-30",
     "xmlNamespace" : null
   },
   "operations" : {

@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Contains the inputs for the <a>ModifyHsm</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm"/>AWS API Documentation</a>
  */
 public class ModifyHsmRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the parameters for a streaming session.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Session"/>AWS API Documentation</a>
  */
 public class Session implements Serializable, Cloneable {
 

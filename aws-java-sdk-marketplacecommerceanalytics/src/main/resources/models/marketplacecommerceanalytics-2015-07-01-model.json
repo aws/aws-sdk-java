@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "marketplacecommerceanalytics",
     "targetPrefix" : "MarketplaceCommerceAnalytics20150701",
+    "uid" : "marketplacecommerceanalytics-2015-07-01",
     "xmlNamespace" : null
   },
   "operations" : {

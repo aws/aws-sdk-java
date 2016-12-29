@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions"/>AWS API
+ *      Documentation</a>
  */
 public class DisableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

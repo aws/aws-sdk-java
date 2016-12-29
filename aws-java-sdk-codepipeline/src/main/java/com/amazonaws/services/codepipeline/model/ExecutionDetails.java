@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ExecutionDetails"/>AWS API
+ *      Documentation</a>
  */
 public class ExecutionDetails implements Serializable, Cloneable {
 

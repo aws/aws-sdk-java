@@ -19,6 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to send a bounce message to the sender of an email you received through Amazon SES.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce"/>AWS API Documentation</a>
  */
 public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

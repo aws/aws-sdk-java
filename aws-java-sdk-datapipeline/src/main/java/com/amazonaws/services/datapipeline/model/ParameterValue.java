@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A value or list of parameter values.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ParameterValue"/>AWS API
+ *      Documentation</a>
  */
 public class ParameterValue implements Serializable, Cloneable {
 

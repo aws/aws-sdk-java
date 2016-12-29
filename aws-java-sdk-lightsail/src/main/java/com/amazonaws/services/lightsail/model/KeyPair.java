@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the SSH key pair.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/KeyPair"/>AWS API Documentation</a>
  */
 public class KeyPair implements Serializable, Cloneable {
 

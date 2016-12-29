@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The returned result of the corresponding request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation"/>AWS API
+ *      Documentation</a>
  */
 public class CreateInvalidationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

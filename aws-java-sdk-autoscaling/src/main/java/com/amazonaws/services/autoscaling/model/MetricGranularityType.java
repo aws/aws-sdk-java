@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a granularity of a metric.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MetricGranularityType"/>AWS API
+ *      Documentation</a>
  */
 public class MetricGranularityType implements Serializable, Cloneable {
 

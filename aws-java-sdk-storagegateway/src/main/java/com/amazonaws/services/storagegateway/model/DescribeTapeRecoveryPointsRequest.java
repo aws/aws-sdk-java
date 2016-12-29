@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * DescribeTapeRecoveryPointsInput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeTapeRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

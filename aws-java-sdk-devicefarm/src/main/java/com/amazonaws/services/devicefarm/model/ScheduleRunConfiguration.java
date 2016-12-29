@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class ScheduleRunConfiguration implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import java.io.Serializable;
  * In an <a>UpdateByteMatchSet</a> request, <code>ByteMatchSetUpdate</code> specifies whether to insert or delete a
  * <a>ByteMatchTuple</a> and includes the settings for the <code>ByteMatchTuple</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchSetUpdate"/>AWS API
+ *      Documentation</a>
  */
 public class ByteMatchSetUpdate implements Serializable, Cloneable {
 

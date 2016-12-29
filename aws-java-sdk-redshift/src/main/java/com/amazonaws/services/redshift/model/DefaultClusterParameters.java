@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the default cluster parameters for a parameter group family.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DefaultClusterParameters"/>AWS API
+ *      Documentation</a>
  */
 public class DefaultClusterParameters implements Serializable, Cloneable {
 

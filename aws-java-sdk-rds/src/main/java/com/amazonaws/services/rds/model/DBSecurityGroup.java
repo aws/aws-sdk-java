@@ -43,6 +43,8 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroup"/>AWS API Documentation</a>
  */
 public class DBSecurityGroup implements Serializable, Cloneable {
 

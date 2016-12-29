@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a virtual tape.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeInfo"/>AWS API Documentation</a>
  */
 public class TapeInfo implements Serializable, Cloneable {
 

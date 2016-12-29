@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the history of a specific alarm.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/AlarmHistoryItem"/>AWS API
+ *      Documentation</a>
  */
 public class AlarmHistoryItem implements Serializable, Cloneable {
 

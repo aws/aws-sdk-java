@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An event that is related to the server, such as the start of maintenance or backup.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ServerEvent"/>AWS API Documentation</a>
  */
 public class ServerEvent implements Serializable, Cloneable {
 

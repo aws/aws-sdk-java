@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/Aliases"/>AWS API Documentation</a>
  */
 public class Aliases implements Serializable, Cloneable {
 

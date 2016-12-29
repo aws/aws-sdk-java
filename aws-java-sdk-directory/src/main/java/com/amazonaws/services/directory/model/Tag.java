@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Metadata assigned to a directory consisting of a key-value pair.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Tag"/>AWS API Documentation</a>
  */
 public class Tag implements Serializable, Cloneable {
 

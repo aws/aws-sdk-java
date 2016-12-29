@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the response from the server to the request to update the user pool client.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateUserPoolClientResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

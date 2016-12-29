@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a security group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GroupIdentifier"/>AWS API Documentation</a>
  */
 public class GroupIdentifier implements Serializable, Cloneable {
 

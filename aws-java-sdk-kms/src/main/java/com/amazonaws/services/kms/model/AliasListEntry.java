@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about an alias.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/AliasListEntry"/>AWS API Documentation</a>
  */
 public class AliasListEntry implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object representing the details of an AWS Batch job queue.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobQueueDetail"/>AWS API Documentation</a>
  */
 public class JobQueueDetail implements Serializable, Cloneable {
 

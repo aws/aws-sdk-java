@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about a WorkSpace creation request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceRequest"/>AWS API
+ *      Documentation</a>
  */
 public class WorkspaceRequest implements Serializable, Cloneable {
 

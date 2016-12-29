@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Describes the record format and relevant mapping information that should be applied to schematize the records on the
  * stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/RecordFormat"/>AWS API
+ *      Documentation</a>
  */
 public class RecordFormat implements Serializable, Cloneable {
 

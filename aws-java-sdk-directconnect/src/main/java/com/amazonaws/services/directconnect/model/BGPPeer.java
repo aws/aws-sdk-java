@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A structure containing information about a BGP peer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/BGPPeer"/>AWS API Documentation</a>
  */
 public class BGPPeer implements Serializable, Cloneable {
 

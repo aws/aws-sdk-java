@@ -21,6 +21,8 @@ import java.io.Serializable;
  * range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive
  * <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/S3Resource"/>AWS API Documentation</a>
  */
 public class S3Resource implements Serializable, Cloneable {
 

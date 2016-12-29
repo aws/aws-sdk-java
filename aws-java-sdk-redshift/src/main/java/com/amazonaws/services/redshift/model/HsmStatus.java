@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the status of changes to HSM settings.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/HsmStatus"/>AWS API Documentation</a>
  */
 public class HsmStatus implements Serializable, Cloneable {
 

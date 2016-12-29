@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains detailed information about the specified stack resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackResourceDetail"/>AWS API
+ *      Documentation</a>
  */
 public class StackResourceDetail implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Configuration of a bootstrap action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/BootstrapActionConfig"/>AWS API
+ *      Documentation</a>
  */
 public class BootstrapActionConfig implements Serializable, Cloneable {
 

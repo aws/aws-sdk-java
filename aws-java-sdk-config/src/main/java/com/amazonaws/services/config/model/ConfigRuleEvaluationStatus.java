@@ -22,6 +22,9 @@ import java.io.Serializable;
  * <p>
  * This action does not return status information about custom Config rules.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRuleEvaluationStatus"/>AWS API
+ *      Documentation</a>
  */
 public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
 

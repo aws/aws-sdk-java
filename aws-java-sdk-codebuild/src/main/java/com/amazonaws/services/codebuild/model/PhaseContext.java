@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Additional information about a build phase that has an error, which you can use to help troubleshoot a failed build.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PhaseContext"/>AWS API Documentation</a>
  */
 public class PhaseContext implements Serializable, Cloneable {
 

@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OrderableDBInstanceOption"/>AWS API
+ *      Documentation</a>
  */
 public class OrderableDBInstanceOption implements Serializable, Cloneable {
 

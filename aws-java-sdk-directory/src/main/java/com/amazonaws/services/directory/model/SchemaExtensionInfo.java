@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a schema extension.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SchemaExtensionInfo"/>AWS API Documentation</a>
  */
 public class SchemaExtensionInfo implements Serializable, Cloneable {
 

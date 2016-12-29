@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A description of the identity.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/IdentityDescription"/>AWS API
+ *      Documentation</a>
  */
 public class IdentityDescription implements Serializable, Cloneable {
 

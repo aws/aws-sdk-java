@@ -21,6 +21,8 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
  * >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/Paths"/>AWS API Documentation</a>
  */
 public class Paths implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Parameters for a call to <code>DescribeInstancesHealth</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth"/>AWS API
+ *      Documentation</a>
  */
 public class DescribeInstancesHealthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

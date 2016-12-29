@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The details of a job sent in response to a GetThirdPartyJobDetails request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJobDetails"/>AWS API
+ *      Documentation</a>
  */
 public class ThirdPartyJobDetails implements Serializable, Cloneable {
 

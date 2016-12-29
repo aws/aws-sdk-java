@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents an app on a set of devices with a specific test and configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Run"/>AWS API Documentation</a>
  */
 public class Run implements Serializable, Cloneable {
 

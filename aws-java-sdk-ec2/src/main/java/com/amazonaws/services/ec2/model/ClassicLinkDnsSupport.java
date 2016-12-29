@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the ClassicLink DNS support status of a VPC.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClassicLinkDnsSupport"/>AWS API Documentation</a>
  */
 public class ClassicLinkDnsSupport implements Serializable, Cloneable {
 

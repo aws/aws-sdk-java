@@ -20,6 +20,8 @@ import java.io.Serializable;
  * particular patch baseline. The approval state includes information about whether the patch is currently approved, due
  * to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/EffectivePatch"/>AWS API Documentation</a>
  */
 public class EffectivePatch implements Serializable, Cloneable {
 

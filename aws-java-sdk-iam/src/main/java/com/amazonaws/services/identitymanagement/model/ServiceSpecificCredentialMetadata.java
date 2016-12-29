@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains additional details about a service-specific credential.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ServiceSpecificCredentialMetadata"/>AWS API
+ *      Documentation</a>
  */
 public class ServiceSpecificCredentialMetadata implements Serializable, Cloneable {
 

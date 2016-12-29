@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a cluster version, including the parameter group family and description of the version.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterVersion"/>AWS API Documentation</a>
  */
 public class ClusterVersion implements Serializable, Cloneable {
 

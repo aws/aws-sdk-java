@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an import image task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImageTask"/>AWS API Documentation</a>
  */
 public class ImportImageTask implements Serializable, Cloneable {
 

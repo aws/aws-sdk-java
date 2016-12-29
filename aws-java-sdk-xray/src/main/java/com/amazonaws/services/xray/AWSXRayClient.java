@@ -248,6 +248,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @sample AWSXRay.BatchGetTraces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces"/>AWS API Documentation</a>
      */
     @Override
     public BatchGetTracesResult batchGetTraces(BatchGetTracesRequest batchGetTracesRequest) {
@@ -295,6 +296,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @sample AWSXRay.GetServiceGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph"/>AWS API Documentation</a>
      */
     @Override
     public GetServiceGraphResult getServiceGraph(GetServiceGraphRequest getServiceGraphRequest) {
@@ -339,6 +341,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @sample AWSXRay.GetTraceGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph"/>AWS API Documentation</a>
      */
     @Override
     public GetTraceGraphResult getTraceGraph(GetTraceGraphRequest getTraceGraphRequest) {
@@ -384,6 +387,8 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @sample AWSXRay.GetTraceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest getTraceSummariesRequest) {
@@ -428,6 +433,8 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @sample AWSXRay.PutTelemetryRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords"/>AWS API
+     *      Documentation</a>
      */
     @Override
     public PutTelemetryRecordsResult putTelemetryRecords(PutTelemetryRecordsRequest putTelemetryRecordsRequest) {
@@ -474,6 +481,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @sample AWSXRay.PutTraceSegments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments"/>AWS API Documentation</a>
      */
     @Override
     public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest) {

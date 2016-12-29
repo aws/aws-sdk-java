@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information about the state of an EC2 instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/InstanceState"/>AWS API
+ *      Documentation</a>
  */
 public class InstanceState implements Serializable, Cloneable {
 

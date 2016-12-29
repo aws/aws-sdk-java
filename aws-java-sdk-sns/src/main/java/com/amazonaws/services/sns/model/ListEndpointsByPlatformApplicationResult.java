@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Response for ListEndpointsByPlatformApplication action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication"/>AWS API
+ *      Documentation</a>
  */
 public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

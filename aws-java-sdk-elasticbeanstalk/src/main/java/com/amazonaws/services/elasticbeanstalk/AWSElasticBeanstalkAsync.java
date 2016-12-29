@@ -55,6 +55,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param abortEnvironmentUpdateRequest
      * @return A Java Future containing the result of the AbortEnvironmentUpdate operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.AbortEnvironmentUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest);
 
@@ -70,6 +72,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AbortEnvironmentUpdate operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.AbortEnvironmentUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest,
             com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult> asyncHandler);
@@ -101,6 +105,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the ApplyEnvironmentManagedAction operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.ApplyEnvironmentManagedAction
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
             ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest);
@@ -121,6 +128,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the ApplyEnvironmentManagedAction operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsyncHandler.ApplyEnvironmentManagedAction
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
             ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest,
@@ -135,6 +145,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Results message indicating whether a CNAME is available.
      * @return A Java Future containing the result of the CheckDNSAvailability operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.CheckDNSAvailability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest);
 
@@ -151,6 +163,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CheckDNSAvailability operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.CheckDNSAvailability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest,
             com.amazonaws.handlers.AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult> asyncHandler);
@@ -169,6 +183,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to create or update a group of environments.
      * @return A Java Future containing the result of the ComposeEnvironments operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.ComposeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(ComposeEnvironmentsRequest composeEnvironmentsRequest);
 
@@ -190,6 +206,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ComposeEnvironments operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.ComposeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(ComposeEnvironmentsRequest composeEnvironmentsRequest,
             com.amazonaws.handlers.AsyncHandler<ComposeEnvironmentsRequest, ComposeEnvironmentsResult> asyncHandler);
@@ -204,6 +222,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to create an application.
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest);
 
@@ -221,6 +241,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
@@ -254,6 +276,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param createApplicationVersionRequest
      * @return A Java Future containing the result of the CreateApplicationVersion operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.CreateApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(CreateApplicationVersionRequest createApplicationVersionRequest);
 
@@ -290,6 +314,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApplicationVersion operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.CreateApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(CreateApplicationVersionRequest createApplicationVersionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult> asyncHandler);
@@ -324,6 +350,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to create a configuration template.
      * @return A Java Future containing the result of the CreateConfigurationTemplate operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.CreateConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(
             CreateConfigurationTemplateRequest createConfigurationTemplateRequest);
@@ -362,6 +391,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateConfigurationTemplate operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.CreateConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(
             CreateConfigurationTemplateRequest createConfigurationTemplateRequest,
@@ -375,6 +407,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param createEnvironmentRequest
      * @return A Java Future containing the result of the CreateEnvironment operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.CreateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(CreateEnvironmentRequest createEnvironmentRequest);
 
@@ -390,6 +424,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateEnvironment operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.CreateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(CreateEnvironmentRequest createEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult> asyncHandler);
@@ -405,6 +441,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param createStorageLocationRequest
      * @return A Java Future containing the result of the CreateStorageLocation operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.CreateStorageLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(CreateStorageLocationRequest createStorageLocationRequest);
 
@@ -423,6 +461,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStorageLocation operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.CreateStorageLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(CreateStorageLocationRequest createStorageLocationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult> asyncHandler);
@@ -457,6 +497,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to delete an application.
      * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest);
 
@@ -479,6 +521,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
@@ -497,6 +541,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to delete an application version.
      * @return A Java Future containing the result of the DeleteApplicationVersion operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DeleteApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationVersionResult> deleteApplicationVersionAsync(DeleteApplicationVersionRequest deleteApplicationVersionRequest);
 
@@ -518,6 +564,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApplicationVersion operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DeleteApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationVersionResult> deleteApplicationVersionAsync(DeleteApplicationVersionRequest deleteApplicationVersionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, DeleteApplicationVersionResult> asyncHandler);
@@ -537,6 +585,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to delete a configuration template.
      * @return A Java Future containing the result of the DeleteConfigurationTemplate operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DeleteConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteConfigurationTemplateResult> deleteConfigurationTemplateAsync(
             DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest);
@@ -560,6 +611,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteConfigurationTemplate operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DeleteConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteConfigurationTemplateResult> deleteConfigurationTemplateAsync(
             DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest,
@@ -581,6 +635,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DeleteEnvironmentConfiguration operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.DeleteEnvironmentConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteEnvironmentConfigurationResult> deleteEnvironmentConfigurationAsync(
             DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest);
@@ -605,6 +662,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DeleteEnvironmentConfiguration operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsyncHandler.DeleteEnvironmentConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteEnvironmentConfigurationResult> deleteEnvironmentConfigurationAsync(
             DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest,
@@ -619,6 +679,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to describe application versions.
      * @return A Java Future containing the result of the DescribeApplicationVersions operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeApplicationVersions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(
             DescribeApplicationVersionsRequest describeApplicationVersionsRequest);
@@ -636,6 +699,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeApplicationVersions operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeApplicationVersions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(
             DescribeApplicationVersionsRequest describeApplicationVersionsRequest,
@@ -665,6 +731,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to describe one or more applications.
      * @return A Java Future containing the result of the DescribeApplications operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest describeApplicationsRequest);
 
@@ -681,6 +749,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeApplications operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest describeApplicationsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler);
@@ -712,6 +782,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeConfigurationOptions operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.DescribeConfigurationOptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(
             DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest);
@@ -732,6 +805,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeConfigurationOptions operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeConfigurationOptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(
             DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest,
@@ -764,6 +840,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeConfigurationSettings operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.DescribeConfigurationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(
             DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest);
@@ -799,6 +878,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeConfigurationSettings operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeConfigurationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(
             DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest,
@@ -814,6 +896,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        See the example below to learn how to create a request body.
      * @return A Java Future containing the result of the DescribeEnvironmentHealth operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeEnvironmentHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(
             DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest);
@@ -832,6 +916,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEnvironmentHealth operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironmentHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(
             DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest,
@@ -847,6 +933,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeEnvironmentManagedActionHistory operation returned by
      *         the service.
      * @sample AWSElasticBeanstalkAsync.DescribeEnvironmentManagedActionHistory
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult> describeEnvironmentManagedActionHistoryAsync(
             DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest);
@@ -865,6 +954,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeEnvironmentManagedActionHistory operation returned by
      *         the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironmentManagedActionHistory
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult> describeEnvironmentManagedActionHistoryAsync(
             DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest,
@@ -880,6 +972,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeEnvironmentManagedActions operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.DescribeEnvironmentManagedActions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult> describeEnvironmentManagedActionsAsync(
             DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest);
@@ -898,6 +993,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeEnvironmentManagedActions operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironmentManagedActions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult> describeEnvironmentManagedActionsAsync(
             DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest,
@@ -913,6 +1011,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeEnvironmentResources operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.DescribeEnvironmentResources
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(
             DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest);
@@ -931,6 +1032,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the DescribeEnvironmentResources operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironmentResources
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(
             DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest,
@@ -945,6 +1049,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to describe one or more environments.
      * @return A Java Future containing the result of the DescribeEnvironments operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(DescribeEnvironmentsRequest describeEnvironmentsRequest);
 
@@ -961,6 +1067,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEnvironments operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(DescribeEnvironmentsRequest describeEnvironmentsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult> asyncHandler);
@@ -994,6 +1102,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to retrieve a list of events for an environment.
      * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest);
 
@@ -1015,6 +1125,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler);
@@ -1045,6 +1157,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Parameters for a call to <code>DescribeInstancesHealth</code>.
      * @return A Java Future containing the result of the DescribeInstancesHealth operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeInstancesHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancesHealthResult> describeInstancesHealthAsync(DescribeInstancesHealthRequest describeInstancesHealthRequest);
 
@@ -1063,6 +1177,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInstancesHealth operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.DescribeInstancesHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancesHealthResult> describeInstancesHealthAsync(DescribeInstancesHealthRequest describeInstancesHealthRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstancesHealthRequest, DescribeInstancesHealthResult> asyncHandler);
@@ -1075,6 +1191,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param listAvailableSolutionStacksRequest
      * @return A Java Future containing the result of the ListAvailableSolutionStacks operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.ListAvailableSolutionStacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
             ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest);
@@ -1091,6 +1210,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAvailableSolutionStacks operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.ListAvailableSolutionStacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
             ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest,
@@ -1120,6 +1242,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param rebuildEnvironmentRequest
      * @return A Java Future containing the result of the RebuildEnvironment operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.RebuildEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(RebuildEnvironmentRequest rebuildEnvironmentRequest);
 
@@ -1136,6 +1260,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RebuildEnvironment operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.RebuildEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(RebuildEnvironmentRequest rebuildEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, RebuildEnvironmentResult> asyncHandler);
@@ -1170,6 +1296,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.
      * @return A Java Future containing the result of the RequestEnvironmentInfo operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.RequestEnvironmentInfo
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RequestEnvironmentInfoResult> requestEnvironmentInfoAsync(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest);
 
@@ -1207,6 +1335,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RequestEnvironmentInfo operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.RequestEnvironmentInfo
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RequestEnvironmentInfoResult> requestEnvironmentInfoAsync(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest,
             com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, RequestEnvironmentInfoResult> asyncHandler);
@@ -1219,6 +1349,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param restartAppServerRequest
      * @return A Java Future containing the result of the RestartAppServer operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.RestartAppServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RestartAppServerResult> restartAppServerAsync(RestartAppServerRequest restartAppServerRequest);
 
@@ -1234,6 +1366,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RestartAppServer operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.RestartAppServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RestartAppServerResult> restartAppServerAsync(RestartAppServerRequest restartAppServerRequest,
             com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, RestartAppServerResult> asyncHandler);
@@ -1257,6 +1391,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
      * @return A Java Future containing the result of the RetrieveEnvironmentInfo operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.RetrieveEnvironmentInfo
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest);
 
@@ -1283,6 +1419,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RetrieveEnvironmentInfo operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.RetrieveEnvironmentInfo
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest,
             com.amazonaws.handlers.AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult> asyncHandler);
@@ -1296,6 +1434,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Swaps the CNAMEs of two environments.
      * @return A Java Future containing the result of the SwapEnvironmentCNAMEs operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.SwapEnvironmentCNAMEs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
 
@@ -1312,6 +1452,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SwapEnvironmentCNAMEs operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.SwapEnvironmentCNAMEs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest,
             com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult> asyncHandler);
@@ -1340,6 +1482,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to terminate an environment.
      * @return A Java Future containing the result of the TerminateEnvironment operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.TerminateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<TerminateEnvironmentResult> terminateEnvironmentAsync(TerminateEnvironmentRequest terminateEnvironmentRequest);
 
@@ -1356,6 +1500,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TerminateEnvironment operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.TerminateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<TerminateEnvironmentResult> terminateEnvironmentAsync(TerminateEnvironmentRequest terminateEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult> asyncHandler);
@@ -1375,6 +1521,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to update an application.
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
 
@@ -1397,6 +1545,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
@@ -1410,6 +1560,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the UpdateApplicationResourceLifecycle operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.UpdateApplicationResourceLifecycle
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationResourceLifecycleResult> updateApplicationResourceLifecycleAsync(
             UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest);
@@ -1427,6 +1580,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the UpdateApplicationResourceLifecycle operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsyncHandler.UpdateApplicationResourceLifecycle
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationResourceLifecycleResult> updateApplicationResourceLifecycleAsync(
             UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest,
@@ -1446,6 +1602,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param updateApplicationVersionRequest
      * @return A Java Future containing the result of the UpdateApplicationVersion operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.UpdateApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(UpdateApplicationVersionRequest updateApplicationVersionRequest);
 
@@ -1467,6 +1625,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApplicationVersion operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.UpdateApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(UpdateApplicationVersionRequest updateApplicationVersionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult> asyncHandler);
@@ -1496,6 +1656,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        The result message containing the options for the specified solution stack.
      * @return A Java Future containing the result of the UpdateConfigurationTemplate operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.UpdateConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(
             UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest);
@@ -1529,6 +1692,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateConfigurationTemplate operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.UpdateConfigurationTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(
             UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest,
@@ -1553,6 +1719,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Request to update an environment.
      * @return A Java Future containing the result of the UpdateEnvironment operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.UpdateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest);
 
@@ -1579,6 +1747,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateEnvironment operation returned by the service.
      * @sample AWSElasticBeanstalkAsyncHandler.UpdateEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler);
@@ -1598,6 +1768,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the ValidateConfigurationSettings operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.ValidateConfigurationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(
             ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest);
@@ -1621,6 +1794,9 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @return A Java Future containing the result of the ValidateConfigurationSettings operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsyncHandler.ValidateConfigurationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(
             ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest,

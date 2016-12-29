@@ -20,6 +20,9 @@ import java.io.Serializable;
  * where the stream data is written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose
  * delivery stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/OutputDescription"/>AWS API
+ *      Documentation</a>
  */
 public class OutputDescription implements Serializable, Cloneable {
 

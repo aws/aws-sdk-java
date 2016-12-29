@@ -35,6 +35,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The CheckDomainAvailability request contains the following elements.
      * @return A Java Future containing the result of the CheckDomainAvailability operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.CheckDomainAvailability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest);
 
@@ -52,6 +54,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CheckDomainAvailability operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.CheckDomainAvailability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest,
             com.amazonaws.handlers.AsyncHandler<CheckDomainAvailabilityRequest, CheckDomainAvailabilityResult> asyncHandler);
@@ -69,6 +73,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The DeleteTagsForDomainRequest includes the following elements.
      * @return A Java Future containing the result of the DeleteTagsForDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.DeleteTagsForDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(DeleteTagsForDomainRequest deleteTagsForDomainRequest);
 
@@ -89,6 +95,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTagsForDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.DeleteTagsForDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(DeleteTagsForDomainRequest deleteTagsForDomainRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsForDomainRequest, DeleteTagsForDomainResult> asyncHandler);
@@ -101,6 +109,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * @param disableDomainAutoRenewRequest
      * @return A Java Future containing the result of the DisableDomainAutoRenew operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.DisableDomainAutoRenew
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest);
 
@@ -116,6 +126,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableDomainAutoRenew operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.DisableDomainAutoRenew
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest,
             com.amazonaws.handlers.AsyncHandler<DisableDomainAutoRenewRequest, DisableDomainAutoRenewResult> asyncHandler);
@@ -133,6 +145,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The DisableDomainTransferLock request includes the following element.
      * @return A Java Future containing the result of the DisableDomainTransferLock operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.DisableDomainTransferLock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DisableDomainTransferLockResult> disableDomainTransferLockAsync(
             DisableDomainTransferLockRequest disableDomainTransferLockRequest);
@@ -154,6 +168,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableDomainTransferLock operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.DisableDomainTransferLock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DisableDomainTransferLockResult> disableDomainTransferLockAsync(
             DisableDomainTransferLockRequest disableDomainTransferLockRequest,
@@ -175,6 +191,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * @param enableDomainAutoRenewRequest
      * @return A Java Future containing the result of the EnableDomainAutoRenew operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.EnableDomainAutoRenew
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest);
 
@@ -198,6 +216,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableDomainAutoRenew operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.EnableDomainAutoRenew
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest,
             com.amazonaws.handlers.AsyncHandler<EnableDomainAutoRenewRequest, EnableDomainAutoRenewResult> asyncHandler);
@@ -214,6 +234,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The EnableDomainTransferLock request includes the following element.
      * @return A Java Future containing the result of the EnableDomainTransferLock operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.EnableDomainTransferLock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(EnableDomainTransferLockRequest enableDomainTransferLockRequest);
 
@@ -233,6 +255,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableDomainTransferLock operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.EnableDomainTransferLock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(EnableDomainTransferLockRequest enableDomainTransferLockRequest,
             com.amazonaws.handlers.AsyncHandler<EnableDomainTransferLockRequest, EnableDomainTransferLockResult> asyncHandler);
@@ -250,6 +274,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * @return A Java Future containing the result of the GetContactReachabilityStatus operation returned by the
      *         service.
      * @sample AmazonRoute53DomainsAsync.GetContactReachabilityStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
             GetContactReachabilityStatusRequest getContactReachabilityStatusRequest);
@@ -271,6 +297,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * @return A Java Future containing the result of the GetContactReachabilityStatus operation returned by the
      *         service.
      * @sample AmazonRoute53DomainsAsyncHandler.GetContactReachabilityStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
             GetContactReachabilityStatusRequest getContactReachabilityStatusRequest,
@@ -286,6 +314,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The GetDomainDetail request includes the following element.
      * @return A Java Future containing the result of the GetDomainDetail operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.GetDomainDetail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDomainDetailResult> getDomainDetailAsync(GetDomainDetailRequest getDomainDetailRequest);
 
@@ -303,6 +333,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDomainDetail operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.GetDomainDetail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDomainDetailResult> getDomainDetailAsync(GetDomainDetailRequest getDomainDetailRequest,
             com.amazonaws.handlers.AsyncHandler<GetDomainDetailRequest, GetDomainDetailResult> asyncHandler);
@@ -328,6 +360,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * @param getDomainSuggestionsRequest
      * @return A Java Future containing the result of the GetDomainSuggestions operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.GetDomainSuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(GetDomainSuggestionsRequest getDomainSuggestionsRequest);
 
@@ -356,6 +390,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDomainSuggestions operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.GetDomainSuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(GetDomainSuggestionsRequest getDomainSuggestionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetDomainSuggestionsRequest, GetDomainSuggestionsResult> asyncHandler);
@@ -369,6 +405,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The GetOperationDetail request includes the following element.
      * @return A Java Future containing the result of the GetOperationDetail operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.GetOperationDetail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOperationDetailResult> getOperationDetailAsync(GetOperationDetailRequest getOperationDetailRequest);
 
@@ -385,6 +423,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOperationDetail operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.GetOperationDetail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetOperationDetailResult> getOperationDetailAsync(GetOperationDetailRequest getOperationDetailRequest,
             com.amazonaws.handlers.AsyncHandler<GetOperationDetailRequest, GetOperationDetailResult> asyncHandler);
@@ -398,6 +438,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The ListDomains request includes the following elements.
      * @return A Java Future containing the result of the ListDomains operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest listDomainsRequest);
 
@@ -414,6 +456,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDomains operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest listDomainsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler);
@@ -441,6 +485,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The ListOperations request includes the following elements.
      * @return A Java Future containing the result of the ListOperations operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.ListOperations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListOperationsResult> listOperationsAsync(ListOperationsRequest listOperationsRequest);
 
@@ -457,6 +503,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListOperations operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.ListOperations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListOperationsResult> listOperationsAsync(ListOperationsRequest listOperationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListOperationsRequest, ListOperationsResult> asyncHandler);
@@ -489,6 +537,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The ListTagsForDomainRequest includes the following elements.
      * @return A Java Future containing the result of the ListTagsForDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.ListTagsForDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForDomainResult> listTagsForDomainAsync(ListTagsForDomainRequest listTagsForDomainRequest);
 
@@ -509,6 +559,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.ListTagsForDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForDomainResult> listTagsForDomainAsync(ListTagsForDomainRequest listTagsForDomainRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForDomainRequest, ListTagsForDomainResult> asyncHandler);
@@ -539,6 +591,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The RegisterDomain request includes the following elements.
      * @return A Java Future containing the result of the RegisterDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.RegisterDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(RegisterDomainRequest registerDomainRequest);
 
@@ -572,6 +626,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.RegisterDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(RegisterDomainRequest registerDomainRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, RegisterDomainResult> asyncHandler);
@@ -593,6 +649,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        expiration year.
      * @return A Java Future containing the result of the RenewDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.RenewDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(RenewDomainRequest renewDomainRequest);
 
@@ -617,6 +675,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RenewDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.RenewDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(RenewDomainRequest renewDomainRequest,
             com.amazonaws.handlers.AsyncHandler<RenewDomainRequest, RenewDomainResult> asyncHandler);
@@ -632,6 +692,9 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * @return A Java Future containing the result of the ResendContactReachabilityEmail operation returned by the
      *         service.
      * @sample AmazonRoute53DomainsAsync.ResendContactReachabilityEmail
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
             ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest);
@@ -651,6 +714,9 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * @return A Java Future containing the result of the ResendContactReachabilityEmail operation returned by the
      *         service.
      * @sample AmazonRoute53DomainsAsyncHandler.ResendContactReachabilityEmail
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
             ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest,
@@ -666,6 +732,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The RetrieveDomainAuthCode request includes the following element.
      * @return A Java Future containing the result of the RetrieveDomainAuthCode operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.RetrieveDomainAuthCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RetrieveDomainAuthCodeResult> retrieveDomainAuthCodeAsync(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest);
 
@@ -683,6 +751,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RetrieveDomainAuthCode operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.RetrieveDomainAuthCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RetrieveDomainAuthCodeResult> retrieveDomainAuthCodeAsync(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest,
             com.amazonaws.handlers.AsyncHandler<RetrieveDomainAuthCodeRequest, RetrieveDomainAuthCodeResult> asyncHandler);
@@ -718,6 +788,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The TransferDomain request includes the following elements.
      * @return A Java Future containing the result of the TransferDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.TransferDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<TransferDomainResult> transferDomainAsync(TransferDomainRequest transferDomainRequest);
 
@@ -756,6 +828,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TransferDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.TransferDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<TransferDomainResult> transferDomainAsync(TransferDomainRequest transferDomainRequest,
             com.amazonaws.handlers.AsyncHandler<TransferDomainRequest, TransferDomainResult> asyncHandler);
@@ -775,6 +849,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The UpdateDomainContact request includes the following elements.
      * @return A Java Future containing the result of the UpdateDomainContact operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.UpdateDomainContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDomainContactResult> updateDomainContactAsync(UpdateDomainContactRequest updateDomainContactRequest);
 
@@ -797,6 +873,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDomainContact operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.UpdateDomainContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDomainContactResult> updateDomainContactAsync(UpdateDomainContactRequest updateDomainContactRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainContactRequest, UpdateDomainContactResult> asyncHandler);
@@ -819,6 +897,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The UpdateDomainContactPrivacy request includes the following elements.
      * @return A Java Future containing the result of the UpdateDomainContactPrivacy operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.UpdateDomainContactPrivacy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDomainContactPrivacyResult> updateDomainContactPrivacyAsync(
             UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest);
@@ -845,6 +925,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDomainContactPrivacy operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.UpdateDomainContactPrivacy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy"/>AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDomainContactPrivacyResult> updateDomainContactPrivacyAsync(
             UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest,
@@ -865,6 +947,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The UpdateDomainNameserver request includes the following elements.
      * @return A Java Future containing the result of the UpdateDomainNameservers operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.UpdateDomainNameservers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDomainNameserversResult> updateDomainNameserversAsync(UpdateDomainNameserversRequest updateDomainNameserversRequest);
 
@@ -887,6 +971,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDomainNameservers operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.UpdateDomainNameservers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDomainNameserversResult> updateDomainNameserversAsync(UpdateDomainNameserversRequest updateDomainNameserversRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainNameserversRequest, UpdateDomainNameserversResult> asyncHandler);
@@ -904,6 +990,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The UpdateTagsForDomainRequest includes the following elements.
      * @return A Java Future containing the result of the UpdateTagsForDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.UpdateTagsForDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(UpdateTagsForDomainRequest updateTagsForDomainRequest);
 
@@ -924,6 +1012,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateTagsForDomain operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.UpdateTagsForDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(UpdateTagsForDomainRequest updateTagsForDomainRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTagsForDomainRequest, UpdateTagsForDomainResult> asyncHandler);
@@ -937,6 +1027,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        The ViewBilling request includes the following elements.
      * @return A Java Future containing the result of the ViewBilling operation returned by the service.
      * @sample AmazonRoute53DomainsAsync.ViewBilling
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(ViewBillingRequest viewBillingRequest);
 
@@ -953,6 +1045,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ViewBilling operation returned by the service.
      * @sample AmazonRoute53DomainsAsyncHandler.ViewBilling
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(ViewBillingRequest viewBillingRequest,
             com.amazonaws.handlers.AsyncHandler<ViewBillingRequest, ViewBillingResult> asyncHandler);

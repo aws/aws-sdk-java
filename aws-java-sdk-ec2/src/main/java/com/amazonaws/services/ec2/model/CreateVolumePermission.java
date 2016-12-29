@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes the user or group to be added or removed from the permissions for a volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolumePermission"/>AWS API
+ *      Documentation</a>
  */
 public class CreateVolumePermission implements Serializable, Cloneable {
 

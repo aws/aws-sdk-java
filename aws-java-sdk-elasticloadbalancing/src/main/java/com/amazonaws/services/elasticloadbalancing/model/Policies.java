@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The policies for a load balancer.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/Policies"/>AWS API
+ *      Documentation</a>
  */
 public class Policies implements Serializable, Cloneable {
 

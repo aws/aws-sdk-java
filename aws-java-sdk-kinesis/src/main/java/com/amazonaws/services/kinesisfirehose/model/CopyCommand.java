@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a <code>COPY</code> command for Amazon Redshift.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CopyCommand"/>AWS API Documentation</a>
  */
 public class CopyCommand implements Serializable, Cloneable {
 

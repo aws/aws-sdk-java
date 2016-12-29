@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provides all of the details about a particular cache engine version.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheEngineVersion"/>AWS API
+ *      Documentation</a>
  */
 public class CacheEngineVersion implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * AWS credentials for API authentication.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/Credentials"/>AWS API Documentation</a>
  */
 public class Credentials implements Serializable, Cloneable {
 

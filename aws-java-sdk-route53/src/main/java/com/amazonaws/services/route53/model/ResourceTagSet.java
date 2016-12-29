@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A complex type containing a resource and its associated tags.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceTagSet"/>AWS API Documentation</a>
  */
 public class ResourceTagSet implements Serializable, Cloneable {
 

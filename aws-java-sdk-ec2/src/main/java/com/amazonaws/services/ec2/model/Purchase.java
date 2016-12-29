@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the result of the purchase.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Purchase"/>AWS API Documentation</a>
  */
 public class Purchase implements Serializable, Cloneable {
 

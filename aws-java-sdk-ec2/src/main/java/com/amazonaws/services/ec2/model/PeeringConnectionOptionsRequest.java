@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The VPC peering connection options.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PeeringConnectionOptionsRequest"/>AWS API
+ *      Documentation</a>
  */
 public class PeeringConnectionOptionsRequest implements Serializable, Cloneable {
 

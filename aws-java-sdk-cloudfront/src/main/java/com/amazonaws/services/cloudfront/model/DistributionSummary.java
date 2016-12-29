@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A summary of the information about a CloudFront distribution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DistributionSummary"/>AWS API
+ *      Documentation</a>
  */
 public class DistributionSummary implements Serializable, Cloneable {
 

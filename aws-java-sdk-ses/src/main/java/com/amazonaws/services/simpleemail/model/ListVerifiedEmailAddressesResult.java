@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A list of email addresses that you have verified with Amazon SES under your AWS account.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses"/>AWS API
+ *      Documentation</a>
  */
 public class ListVerifiedEmailAddressesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

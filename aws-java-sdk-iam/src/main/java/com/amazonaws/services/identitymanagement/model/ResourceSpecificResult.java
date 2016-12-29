@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * This data type is used by a member of the <a>EvaluationResult</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResourceSpecificResult"/>AWS API
+ *      Documentation</a>
  */
 public class ResourceSpecificResult implements Serializable, Cloneable {
 

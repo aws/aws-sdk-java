@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget"/>AWS API
+ *      Documentation</a>
  */
 public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

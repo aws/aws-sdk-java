@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "waf-regional",
     "targetPrefix" : "AWSWAF_Regional_20161128",
+    "uid" : "waf-regional-2016-11-28",
     "xmlNamespace" : null
   },
   "operations" : {

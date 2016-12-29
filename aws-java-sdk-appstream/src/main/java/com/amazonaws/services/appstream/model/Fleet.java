@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains the parameters for a fleet.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Fleet"/>AWS API Documentation</a>
  */
 public class Fleet implements Serializable, Cloneable {
 

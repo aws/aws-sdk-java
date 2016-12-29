@@ -20,6 +20,8 @@ import java.io.Serializable;
  * installed, missing, not applicable, and failed patches along with metadata about the operation when this information
  * was gathered for the instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstancePatchState"/>AWS API Documentation</a>
  */
 public class InstancePatchState implements Serializable, Cloneable {
 

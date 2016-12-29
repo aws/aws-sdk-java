@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The object for the Lambda function location.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCodeLocation"/>AWS API
+ *      Documentation</a>
  */
 public class FunctionCodeLocation implements Serializable, Cloneable {
 

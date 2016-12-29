@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ShippingDetails"/>AWS API Documentation</a>
  */
 public class ShippingDetails implements Serializable, Cloneable {
 

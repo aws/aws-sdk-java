@@ -80,6 +80,7 @@
     "syncClient" : "AmazonWorkspacesClient",
     "syncClientBuilderClassName" : "AmazonWorkspacesClientBuilder",
     "syncInterface" : "AmazonWorkspaces",
+    "uid" : "workspaces-2015-04-08",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

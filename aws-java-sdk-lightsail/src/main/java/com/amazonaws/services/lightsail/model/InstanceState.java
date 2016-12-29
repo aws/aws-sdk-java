@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes the virtual private server (or <i>instance</i>) status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceState"/>AWS API Documentation</a>
  */
 public class InstanceState implements Serializable, Cloneable {
 

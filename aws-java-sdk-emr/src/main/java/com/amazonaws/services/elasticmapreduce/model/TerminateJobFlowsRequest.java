@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Input to the <a>TerminateJobFlows</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows"/>AWS API
+ *      Documentation</a>
  */
 public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

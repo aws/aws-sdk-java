@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a put action revision action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision"/>AWS API
+ *      Documentation</a>
  */
 public class PutActionRevisionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A complex type that contains information about the resource record sets that Amazon Route 53 created based on a
  * specified traffic policy.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance"/>AWS API
+ *      Documentation</a>
  */
 public class GetTrafficPolicyInstanceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

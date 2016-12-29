@@ -17,6 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject"/>AWS API
+ *      Documentation</a>
  */
 public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents the metadata of an offering transaction.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/OfferingTransaction"/>AWS API
+ *      Documentation</a>
  */
 public class OfferingTransaction implements Serializable, Cloneable {
 

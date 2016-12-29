@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The Amazon EBS configuration of a cluster instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/EbsConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class EbsConfiguration implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes a file share.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/FileShareInfo"/>AWS API
+ *      Documentation</a>
  */
 public class FileShareInfo implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Nameserver includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/Nameserver"/>AWS API Documentation</a>
  */
 public class Nameserver implements Serializable, Cloneable {
 

@@ -17,6 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState"/>AWS API Documentation</a>
  */
 public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

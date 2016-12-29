@@ -11,6 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "ecs",
     "targetPrefix" : "AmazonEC2ContainerServiceV20141113",
+    "uid" : "ecs-2014-11-13",
     "xmlNamespace" : null
   },
   "operations" : {

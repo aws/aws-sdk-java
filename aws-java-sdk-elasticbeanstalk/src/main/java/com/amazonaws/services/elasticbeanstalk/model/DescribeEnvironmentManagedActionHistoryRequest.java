@@ -19,6 +19,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Request to list completed and failed managed actions.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory"/>AWS
+ *      API Documentation</a>
  */
 public class DescribeEnvironmentManagedActionHistoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

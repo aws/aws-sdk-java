@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The list of AWS services returned by the <a>DescribeServices</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices"/>AWS API Documentation</a>
  */
 public class DescribeServicesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

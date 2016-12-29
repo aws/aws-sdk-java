@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provides a list of validation messages.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings"/>AWS
+ *      API Documentation</a>
  */
 public class ValidateConfigurationSettingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents a virtual tape that is archived in the virtual tape shelf (VTS).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeArchive"/>AWS API
+ *      Documentation</a>
  */
 public class TapeArchive implements Serializable, Cloneable {
 

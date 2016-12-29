@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The request to create an invalidation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation"/>AWS API
+ *      Documentation</a>
  */
 public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

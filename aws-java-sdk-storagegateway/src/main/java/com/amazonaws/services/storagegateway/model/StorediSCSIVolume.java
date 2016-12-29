@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an iSCSI stored volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StorediSCSIVolume"/>AWS API
+ *      Documentation</a>
  */
 public class StorediSCSIVolume implements Serializable, Cloneable {
 

@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Represents the output of a get branch operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch"/>AWS API Documentation</a>
  */
 public class GetBranchResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

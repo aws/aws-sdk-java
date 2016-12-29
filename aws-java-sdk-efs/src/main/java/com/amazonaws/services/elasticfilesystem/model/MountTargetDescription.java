@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Provides a description of a mount target.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/MountTargetDescription"/>AWS API
+ *      Documentation</a>
  */
 public class MountTargetDescription implements Serializable, Cloneable {
 

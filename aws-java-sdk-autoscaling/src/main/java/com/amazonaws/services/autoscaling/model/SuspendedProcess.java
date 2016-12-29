@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Describes an Auto Scaling process that has been suspended. For more information, see <a>ProcessType</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendedProcess"/>AWS API
+ *      Documentation</a>
  */
 public class SuspendedProcess implements Serializable, Cloneable {
 

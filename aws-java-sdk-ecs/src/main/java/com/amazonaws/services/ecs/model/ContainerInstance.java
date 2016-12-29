@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerInstance"/>AWS API Documentation</a>
  */
 public class ContainerInstance implements Serializable, Cloneable {
 

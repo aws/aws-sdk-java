@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about an on-premises instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceInfo"/>AWS API Documentation</a>
  */
 public class InstanceInfo implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about an AD Connector directory.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryConnectSettingsDescription"/>AWS API
+ *      Documentation</a>
  */
 public class DirectoryConnectSettingsDescription implements Serializable, Cloneable {
 

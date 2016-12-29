@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Information to use when checking for a successful response from a target.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Matcher"/>AWS API
+ *      Documentation</a>
  */
 public class Matcher implements Serializable, Cloneable {
 

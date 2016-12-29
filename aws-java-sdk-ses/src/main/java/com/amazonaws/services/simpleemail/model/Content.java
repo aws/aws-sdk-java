@@ -22,6 +22,8 @@ import java.io.Serializable;
  * By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any
  * other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Content"/>AWS API Documentation</a>
  */
 public class Content implements Serializable, Cloneable {
 

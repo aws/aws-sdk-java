@@ -19,6 +19,9 @@ import java.io.Serializable;
  * A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources
  * examined.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCheckSummary"/>AWS API
+ *      Documentation</a>
  */
 public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
 

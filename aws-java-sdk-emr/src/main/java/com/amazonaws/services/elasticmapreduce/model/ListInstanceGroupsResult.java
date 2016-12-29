@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * This input determines which instance groups to retrieve.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups"/>AWS API
+ *      Documentation</a>
  */
 public class ListInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

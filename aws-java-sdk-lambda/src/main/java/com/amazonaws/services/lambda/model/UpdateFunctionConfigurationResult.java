@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A complex type that describes function metadata.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"/>AWS API
+ *      Documentation</a>
  */
 public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

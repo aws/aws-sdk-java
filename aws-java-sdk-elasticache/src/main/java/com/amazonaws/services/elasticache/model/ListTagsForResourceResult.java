@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsOnResource</code>, and
  * <code>RemoveTagsFromResource</code> operations.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource"/>AWS API
+ *      Documentation</a>
  */
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

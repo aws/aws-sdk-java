@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SingleInstanceHealth"/>AWS API
+ *      Documentation</a>
  */
 public class SingleInstanceHealth implements Serializable, Cloneable {
 

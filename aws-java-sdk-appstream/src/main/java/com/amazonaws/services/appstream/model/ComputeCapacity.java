@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * The capacity configuration for the fleet.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ComputeCapacity"/>AWS API Documentation</a>
  */
 public class ComputeCapacity implements Serializable, Cloneable {
 

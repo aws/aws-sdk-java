@@ -18,6 +18,10 @@ import java.io.Serializable;
  * <p>
  * Describes the point at which the application reads from the streaming source.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputStartingPositionConfiguration"/>AWS
+ *      API Documentation</a>
  */
 public class InputStartingPositionConfiguration implements Serializable, Cloneable {
 

@@ -122,6 +122,7 @@
     "syncClient" : "AmazonAutoScalingClient",
     "syncClientBuilderClassName" : "AmazonAutoScalingClientBuilder",
     "syncInterface" : "AmazonAutoScaling",
+    "uid" : "autoscaling-2011-01-01",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

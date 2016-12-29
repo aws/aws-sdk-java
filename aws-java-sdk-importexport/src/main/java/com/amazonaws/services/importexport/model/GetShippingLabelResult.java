@@ -14,9 +14,6 @@ package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
 
-/**
- * 
- */
 public class GetShippingLabelResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String shippingLabelURL;

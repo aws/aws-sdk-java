@@ -19,6 +19,9 @@ import java.io.Serializable;
  * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
  * created in the in-application stream.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/SourceSchema"/>AWS API
+ *      Documentation</a>
  */
 public class SourceSchema implements Serializable, Cloneable {
 

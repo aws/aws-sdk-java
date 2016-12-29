@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes an IAM instance profile.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IamInstanceProfile"/>AWS API Documentation</a>
  */
 public class IamInstanceProfile implements Serializable, Cloneable {
 

@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Represents a new global secondary index to be added to an existing table.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalSecondaryIndexAction"/>AWS API
+ *      Documentation</a>
  */
 public class CreateGlobalSecondaryIndexAction implements Serializable, Cloneable {
 

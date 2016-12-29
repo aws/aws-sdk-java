@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * An object that describes an image returned by a <a>DescribeImages</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageDetail"/>AWS API Documentation</a>
  */
 public class ImageDetail implements Serializable, Cloneable {
 

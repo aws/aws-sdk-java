@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Details on a task in a cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Task"/>AWS API Documentation</a>
  */
 public class Task implements Serializable, Cloneable {
 

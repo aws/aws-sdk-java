@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer"/>AWS API
+ *      Documentation</a>
  */
 public class ResolveCustomerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

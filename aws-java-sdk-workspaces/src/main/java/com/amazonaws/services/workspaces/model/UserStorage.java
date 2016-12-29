@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about the user storage for a WorkSpace bundle.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UserStorage"/>AWS API Documentation</a>
  */
 public class UserStorage implements Serializable, Cloneable {
 

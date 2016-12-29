@@ -77,6 +77,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createByteMatchSetRequest
      * @return A Java Future containing the result of the CreateByteMatchSet operation returned by the service.
      * @sample AWSWAFAsync.CreateByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateByteMatchSetResult> createByteMatchSetAsync(CreateByteMatchSetRequest createByteMatchSetRequest);
 
@@ -127,6 +129,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateByteMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.CreateByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateByteMatchSetResult> createByteMatchSetAsync(CreateByteMatchSetRequest createByteMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateByteMatchSetRequest, CreateByteMatchSetResult> asyncHandler);
@@ -173,6 +177,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createIPSetRequest
      * @return A Java Future containing the result of the CreateIPSet operation returned by the service.
      * @sample AWSWAFAsync.CreateIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest createIPSetRequest);
 
@@ -222,6 +227,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateIPSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.CreateIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest createIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateIPSetRequest, CreateIPSetResult> asyncHandler);
@@ -298,6 +304,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createRuleRequest
      * @return A Java Future containing the result of the CreateRule operation returned by the service.
      * @sample AWSWAFAsync.CreateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateRuleResult> createRuleAsync(CreateRuleRequest createRuleRequest);
 
@@ -377,6 +384,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateRule operation returned by the service.
      * @sample AWSWAFAsyncHandler.CreateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateRuleResult> createRuleAsync(CreateRuleRequest createRuleRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRuleRequest, CreateRuleResult> asyncHandler);
@@ -425,6 +433,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createSizeConstraintSetRequest
      * @return A Java Future containing the result of the CreateSizeConstraintSet operation returned by the service.
      * @sample AWSWAFAsync.CreateSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(CreateSizeConstraintSetRequest createSizeConstraintSetRequest);
 
@@ -476,6 +486,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateSizeConstraintSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.CreateSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(CreateSizeConstraintSetRequest createSizeConstraintSetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSizeConstraintSetRequest, CreateSizeConstraintSetResult> asyncHandler);
@@ -523,6 +535,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to create a <a>SqlInjectionMatchSet</a>.
      * @return A Java Future containing the result of the CreateSqlInjectionMatchSet operation returned by the service.
      * @sample AWSWAFAsync.CreateSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSqlInjectionMatchSetResult> createSqlInjectionMatchSetAsync(
             CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest);
@@ -574,6 +588,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateSqlInjectionMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.CreateSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSqlInjectionMatchSetResult> createSqlInjectionMatchSetAsync(
             CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest,
@@ -640,6 +656,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createWebACLRequest
      * @return A Java Future containing the result of the CreateWebACL operation returned by the service.
      * @sample AWSWAFAsync.CreateWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateWebACLResult> createWebACLAsync(CreateWebACLRequest createWebACLRequest);
 
@@ -708,6 +725,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateWebACL operation returned by the service.
      * @sample AWSWAFAsyncHandler.CreateWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateWebACLResult> createWebACLAsync(CreateWebACLRequest createWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<CreateWebACLRequest, CreateWebACLResult> asyncHandler);
@@ -755,6 +773,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to create an <a>XssMatchSet</a>.
      * @return A Java Future containing the result of the CreateXssMatchSet operation returned by the service.
      * @sample AWSWAFAsync.CreateXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(CreateXssMatchSetRequest createXssMatchSetRequest);
 
@@ -805,6 +824,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateXssMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.CreateXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(CreateXssMatchSetRequest createXssMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateXssMatchSetRequest, CreateXssMatchSetResult> asyncHandler);
@@ -843,6 +863,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteByteMatchSetRequest
      * @return A Java Future containing the result of the DeleteByteMatchSet operation returned by the service.
      * @sample AWSWAFAsync.DeleteByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteByteMatchSetResult> deleteByteMatchSetAsync(DeleteByteMatchSetRequest deleteByteMatchSetRequest);
 
@@ -884,6 +906,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteByteMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.DeleteByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteByteMatchSetResult> deleteByteMatchSetAsync(DeleteByteMatchSetRequest deleteByteMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteByteMatchSetRequest, DeleteByteMatchSetResult> asyncHandler);
@@ -921,6 +945,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteIPSetRequest
      * @return A Java Future containing the result of the DeleteIPSet operation returned by the service.
      * @sample AWSWAFAsync.DeleteIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest deleteIPSetRequest);
 
@@ -961,6 +986,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteIPSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.DeleteIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest deleteIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult> asyncHandler);
@@ -998,6 +1024,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteRuleRequest
      * @return A Java Future containing the result of the DeleteRule operation returned by the service.
      * @sample AWSWAFAsync.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest);
 
@@ -1038,6 +1065,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRule operation returned by the service.
      * @sample AWSWAFAsyncHandler.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
@@ -1076,6 +1104,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteSizeConstraintSetRequest
      * @return A Java Future containing the result of the DeleteSizeConstraintSet operation returned by the service.
      * @sample AWSWAFAsync.DeleteSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest);
 
@@ -1117,6 +1147,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSizeConstraintSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.DeleteSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSizeConstraintSetRequest, DeleteSizeConstraintSetResult> asyncHandler);
@@ -1156,6 +1188,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF.
      * @return A Java Future containing the result of the DeleteSqlInjectionMatchSet operation returned by the service.
      * @sample AWSWAFAsync.DeleteSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSqlInjectionMatchSetResult> deleteSqlInjectionMatchSetAsync(
             DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest);
@@ -1199,6 +1233,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSqlInjectionMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.DeleteSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSqlInjectionMatchSetResult> deleteSqlInjectionMatchSetAsync(
             DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest,
@@ -1235,6 +1271,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteWebACLRequest
      * @return A Java Future containing the result of the DeleteWebACL operation returned by the service.
      * @sample AWSWAFAsync.DeleteWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteWebACLResult> deleteWebACLAsync(DeleteWebACLRequest deleteWebACLRequest);
 
@@ -1273,6 +1310,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteWebACL operation returned by the service.
      * @sample AWSWAFAsyncHandler.DeleteWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteWebACLResult> deleteWebACLAsync(DeleteWebACLRequest deleteWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWebACLRequest, DeleteWebACLResult> asyncHandler);
@@ -1312,6 +1350,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to delete an <a>XssMatchSet</a> from AWS WAF.
      * @return A Java Future containing the result of the DeleteXssMatchSet operation returned by the service.
      * @sample AWSWAFAsync.DeleteXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(DeleteXssMatchSetRequest deleteXssMatchSetRequest);
 
@@ -1354,6 +1393,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteXssMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.DeleteXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(DeleteXssMatchSetRequest deleteXssMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteXssMatchSetRequest, DeleteXssMatchSetResult> asyncHandler);
@@ -1366,6 +1406,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getByteMatchSetRequest
      * @return A Java Future containing the result of the GetByteMatchSet operation returned by the service.
      * @sample AWSWAFAsync.GetByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetByteMatchSetResult> getByteMatchSetAsync(GetByteMatchSetRequest getByteMatchSetRequest);
 
@@ -1381,6 +1422,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetByteMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetByteMatchSetResult> getByteMatchSetAsync(GetByteMatchSetRequest getByteMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetByteMatchSetRequest, GetByteMatchSetResult> asyncHandler);
@@ -1406,6 +1448,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getChangeTokenRequest
      * @return A Java Future containing the result of the GetChangeToken operation returned by the service.
      * @sample AWSWAFAsync.GetChangeToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetChangeTokenResult> getChangeTokenAsync(GetChangeTokenRequest getChangeTokenRequest);
 
@@ -1434,6 +1477,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetChangeToken operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetChangeToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetChangeTokenResult> getChangeTokenAsync(GetChangeTokenRequest getChangeTokenRequest,
             com.amazonaws.handlers.AsyncHandler<GetChangeTokenRequest, GetChangeTokenResult> asyncHandler);
@@ -1465,6 +1509,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getChangeTokenStatusRequest
      * @return A Java Future containing the result of the GetChangeTokenStatus operation returned by the service.
      * @sample AWSWAFAsync.GetChangeTokenStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetChangeTokenStatusResult> getChangeTokenStatusAsync(GetChangeTokenStatusRequest getChangeTokenStatusRequest);
 
@@ -1499,6 +1545,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetChangeTokenStatus operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetChangeTokenStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetChangeTokenStatusResult> getChangeTokenStatusAsync(GetChangeTokenStatusRequest getChangeTokenStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetChangeTokenStatusRequest, GetChangeTokenStatusResult> asyncHandler);
@@ -1511,6 +1559,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getIPSetRequest
      * @return A Java Future containing the result of the GetIPSet operation returned by the service.
      * @sample AWSWAFAsync.GetIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest getIPSetRequest);
 
@@ -1526,6 +1575,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetIPSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest getIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult> asyncHandler);
@@ -1539,6 +1589,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getRuleRequest
      * @return A Java Future containing the result of the GetRule operation returned by the service.
      * @sample AWSWAFAsync.GetRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRuleResult> getRuleAsync(GetRuleRequest getRuleRequest);
 
@@ -1555,6 +1606,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRule operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetRuleResult> getRuleAsync(GetRuleRequest getRuleRequest,
             com.amazonaws.handlers.AsyncHandler<GetRuleRequest, GetRuleResult> asyncHandler);
@@ -1575,6 +1627,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getSampledRequestsRequest
      * @return A Java Future containing the result of the GetSampledRequests operation returned by the service.
      * @sample AWSWAFAsync.GetSampledRequests
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSampledRequestsResult> getSampledRequestsAsync(GetSampledRequestsRequest getSampledRequestsRequest);
 
@@ -1598,6 +1652,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSampledRequests operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetSampledRequests
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSampledRequestsResult> getSampledRequestsAsync(GetSampledRequestsRequest getSampledRequestsRequest,
             com.amazonaws.handlers.AsyncHandler<GetSampledRequestsRequest, GetSampledRequestsResult> asyncHandler);
@@ -1610,6 +1666,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getSizeConstraintSetRequest
      * @return A Java Future containing the result of the GetSizeConstraintSet operation returned by the service.
      * @sample AWSWAFAsync.GetSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(GetSizeConstraintSetRequest getSizeConstraintSetRequest);
 
@@ -1625,6 +1683,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSizeConstraintSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(GetSizeConstraintSetRequest getSizeConstraintSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetSizeConstraintSetRequest, GetSizeConstraintSetResult> asyncHandler);
@@ -1638,6 +1698,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to get a <a>SqlInjectionMatchSet</a>.
      * @return A Java Future containing the result of the GetSqlInjectionMatchSet operation returned by the service.
      * @sample AWSWAFAsync.GetSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSqlInjectionMatchSetResult> getSqlInjectionMatchSetAsync(GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest);
 
@@ -1654,6 +1716,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSqlInjectionMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSqlInjectionMatchSetResult> getSqlInjectionMatchSetAsync(GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetSqlInjectionMatchSetRequest, GetSqlInjectionMatchSetResult> asyncHandler);
@@ -1666,6 +1730,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getWebACLRequest
      * @return A Java Future containing the result of the GetWebACL operation returned by the service.
      * @sample AWSWAFAsync.GetWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetWebACLResult> getWebACLAsync(GetWebACLRequest getWebACLRequest);
 
@@ -1681,6 +1746,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetWebACL operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetWebACLResult> getWebACLAsync(GetWebACLRequest getWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<GetWebACLRequest, GetWebACLResult> asyncHandler);
@@ -1694,6 +1760,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to get an <a>XssMatchSet</a>.
      * @return A Java Future containing the result of the GetXssMatchSet operation returned by the service.
      * @sample AWSWAFAsync.GetXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(GetXssMatchSetRequest getXssMatchSetRequest);
 
@@ -1710,6 +1777,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetXssMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.GetXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(GetXssMatchSetRequest getXssMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult> asyncHandler);
@@ -1722,6 +1790,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listByteMatchSetsRequest
      * @return A Java Future containing the result of the ListByteMatchSets operation returned by the service.
      * @sample AWSWAFAsync.ListByteMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListByteMatchSetsResult> listByteMatchSetsAsync(ListByteMatchSetsRequest listByteMatchSetsRequest);
 
@@ -1737,6 +1806,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListByteMatchSets operation returned by the service.
      * @sample AWSWAFAsyncHandler.ListByteMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListByteMatchSetsResult> listByteMatchSetsAsync(ListByteMatchSetsRequest listByteMatchSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListByteMatchSetsRequest, ListByteMatchSetsResult> asyncHandler);
@@ -1749,6 +1819,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listIPSetsRequest
      * @return A Java Future containing the result of the ListIPSets operation returned by the service.
      * @sample AWSWAFAsync.ListIPSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest listIPSetsRequest);
 
@@ -1764,6 +1835,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIPSets operation returned by the service.
      * @sample AWSWAFAsyncHandler.ListIPSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest listIPSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult> asyncHandler);
@@ -1776,6 +1848,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listRulesRequest
      * @return A Java Future containing the result of the ListRules operation returned by the service.
      * @sample AWSWAFAsync.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest);
 
@@ -1791,6 +1864,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRules operation returned by the service.
      * @sample AWSWAFAsyncHandler.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult> asyncHandler);
@@ -1803,6 +1877,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listSizeConstraintSetsRequest
      * @return A Java Future containing the result of the ListSizeConstraintSets operation returned by the service.
      * @sample AWSWAFAsync.ListSizeConstraintSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(ListSizeConstraintSetsRequest listSizeConstraintSetsRequest);
 
@@ -1818,6 +1894,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListSizeConstraintSets operation returned by the service.
      * @sample AWSWAFAsyncHandler.ListSizeConstraintSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(ListSizeConstraintSetsRequest listSizeConstraintSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListSizeConstraintSetsRequest, ListSizeConstraintSetsResult> asyncHandler);
@@ -1831,6 +1909,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to list the <a>SqlInjectionMatchSet</a> objects created by the current AWS account.
      * @return A Java Future containing the result of the ListSqlInjectionMatchSets operation returned by the service.
      * @sample AWSWAFAsync.ListSqlInjectionMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListSqlInjectionMatchSetsResult> listSqlInjectionMatchSetsAsync(
             ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest);
@@ -1848,6 +1928,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListSqlInjectionMatchSets operation returned by the service.
      * @sample AWSWAFAsyncHandler.ListSqlInjectionMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListSqlInjectionMatchSetsResult> listSqlInjectionMatchSetsAsync(
             ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest,
@@ -1861,6 +1943,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listWebACLsRequest
      * @return A Java Future containing the result of the ListWebACLs operation returned by the service.
      * @sample AWSWAFAsync.ListWebACLs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(ListWebACLsRequest listWebACLsRequest);
 
@@ -1876,6 +1959,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListWebACLs operation returned by the service.
      * @sample AWSWAFAsyncHandler.ListWebACLs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(ListWebACLsRequest listWebACLsRequest,
             com.amazonaws.handlers.AsyncHandler<ListWebACLsRequest, ListWebACLsResult> asyncHandler);
@@ -1889,6 +1973,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to list the <a>XssMatchSet</a> objects created by the current AWS account.
      * @return A Java Future containing the result of the ListXssMatchSets operation returned by the service.
      * @sample AWSWAFAsync.ListXssMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(ListXssMatchSetsRequest listXssMatchSetsRequest);
 
@@ -1905,6 +1990,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListXssMatchSets operation returned by the service.
      * @sample AWSWAFAsyncHandler.ListXssMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(ListXssMatchSetsRequest listXssMatchSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult> asyncHandler);
@@ -1981,6 +2067,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateByteMatchSetRequest
      * @return A Java Future containing the result of the UpdateByteMatchSet operation returned by the service.
      * @sample AWSWAFAsync.UpdateByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateByteMatchSetResult> updateByteMatchSetAsync(UpdateByteMatchSetRequest updateByteMatchSetRequest);
 
@@ -2060,6 +2148,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateByteMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.UpdateByteMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateByteMatchSetResult> updateByteMatchSetAsync(UpdateByteMatchSetRequest updateByteMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateByteMatchSetRequest, UpdateByteMatchSetResult> asyncHandler);
@@ -2159,6 +2249,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateIPSetRequest
      * @return A Java Future containing the result of the UpdateIPSet operation returned by the service.
      * @sample AWSWAFAsync.UpdateIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest updateIPSetRequest);
 
@@ -2261,6 +2352,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateIPSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.UpdateIPSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest updateIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler);
@@ -2333,6 +2425,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateRuleRequest
      * @return A Java Future containing the result of the UpdateRule operation returned by the service.
      * @sample AWSWAFAsync.UpdateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(UpdateRuleRequest updateRuleRequest);
 
@@ -2408,6 +2501,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateRule operation returned by the service.
      * @sample AWSWAFAsyncHandler.UpdateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(UpdateRuleRequest updateRuleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult> asyncHandler);
@@ -2485,6 +2579,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateSizeConstraintSetRequest
      * @return A Java Future containing the result of the UpdateSizeConstraintSet operation returned by the service.
      * @sample AWSWAFAsync.UpdateSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest);
 
@@ -2565,6 +2661,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSizeConstraintSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.UpdateSizeConstraintSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSizeConstraintSetRequest, UpdateSizeConstraintSetResult> asyncHandler);
@@ -2631,6 +2729,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to update a <a>SqlInjectionMatchSet</a>.
      * @return A Java Future containing the result of the UpdateSqlInjectionMatchSet operation returned by the service.
      * @sample AWSWAFAsync.UpdateSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSqlInjectionMatchSetResult> updateSqlInjectionMatchSetAsync(
             UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest);
@@ -2701,6 +2801,8 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSqlInjectionMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.UpdateSqlInjectionMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet"/>AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSqlInjectionMatchSetResult> updateSqlInjectionMatchSetAsync(
             UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest,
@@ -2793,6 +2895,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateWebACLRequest
      * @return A Java Future containing the result of the UpdateWebACL operation returned by the service.
      * @sample AWSWAFAsync.UpdateWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(UpdateWebACLRequest updateWebACLRequest);
 
@@ -2887,6 +2990,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateWebACL operation returned by the service.
      * @sample AWSWAFAsyncHandler.UpdateWebACL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(UpdateWebACLRequest updateWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateWebACLRequest, UpdateWebACLResult> asyncHandler);
@@ -2953,6 +3057,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to update an <a>XssMatchSet</a>.
      * @return A Java Future containing the result of the UpdateXssMatchSet operation returned by the service.
      * @sample AWSWAFAsync.UpdateXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(UpdateXssMatchSetRequest updateXssMatchSetRequest);
 
@@ -3022,6 +3127,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateXssMatchSet operation returned by the service.
      * @sample AWSWAFAsyncHandler.UpdateXssMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet"/>AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(UpdateXssMatchSetRequest updateXssMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateXssMatchSetRequest, UpdateXssMatchSetResult> asyncHandler);

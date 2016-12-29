@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * Contains information about the event to be used in PutEvents.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEventsRequestEntry"/>AWS API
+ *      Documentation</a>
  */
 public class PutEventsRequestEntry implements Serializable, Cloneable {
 

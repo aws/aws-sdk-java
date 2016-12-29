@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Information about a task defined for a Maintenance Window.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowTask"/>AWS API Documentation</a>
  */
 public class MaintenanceWindowTask implements Serializable, Cloneable {
 

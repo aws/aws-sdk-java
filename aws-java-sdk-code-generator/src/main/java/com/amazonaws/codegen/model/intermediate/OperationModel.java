@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
+import static com.amazonaws.codegen.internal.DocumentationUtils.createLinkToServiceDocumentation;
 import static com.amazonaws.codegen.internal.DocumentationUtils.stripHTMLTags;
 
 public class OperationModel extends DocumentationModel {
@@ -175,6 +176,10 @@ public class OperationModel extends DocumentationModel {
         }
 
         docBuilder.append(getSampleTagForMethodType(methodType, md));
+        String crosslink = createLinkToServiceDocumentation(md, operationName);
+        if (!crosslink.isEmpty()) {
+            docBuilder.append(LINE_SEPARATOR).append(crosslink);
+        }
 
         docBuilder.append("*/");
         return docBuilder.toString();
@@ -192,7 +197,6 @@ public class OperationModel extends DocumentationModel {
         } else if (methodType == MethodType.ASYNC_WITH_HANDLER) {
             sb.append(md.getAsyncInterface() + "Handler");
         }
-
         sb.append(".").append(operationName);
         return sb.toString();
     }

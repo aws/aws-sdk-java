@@ -70,6 +70,7 @@
     "syncClient" : "AWSOpsWorksCMClient",
     "syncClientBuilderClassName" : "AWSOpsWorksCMClientBuilder",
     "syncInterface" : "AWSOpsWorksCM",
+    "uid" : "opsworkscm-2016-11-01",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "xmlProtocol" : false

@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The input for a ListResourceRecordSets request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets"/>AWS API
+ *      Documentation</a>
  */
 public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

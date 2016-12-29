@@ -38,6 +38,8 @@ import java.io.Serializable;
  * To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a
  * <code>User-Agent</code> header for which the value is <code>BadBot</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/Rule"/>AWS API Documentation</a>
  */
 public class Rule implements Serializable, Cloneable {
 

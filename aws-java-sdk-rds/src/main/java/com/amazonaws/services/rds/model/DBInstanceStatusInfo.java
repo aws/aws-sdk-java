@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Provides a list of status information for a DB instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceStatusInfo"/>AWS API Documentation</a>
  */
 public class DBInstanceStatusInfo implements Serializable, Cloneable {
 

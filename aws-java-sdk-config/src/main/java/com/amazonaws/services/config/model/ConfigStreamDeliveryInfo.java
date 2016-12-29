@@ -18,6 +18,9 @@ import java.io.Serializable;
  * <p>
  * A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigStreamDeliveryInfo"/>AWS API
+ *      Documentation</a>
  */
 public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
 

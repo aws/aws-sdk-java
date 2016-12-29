@@ -18,6 +18,8 @@ import java.io.Serializable;
  * <p>
  * Describes a domain recordset entry.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DomainEntry"/>AWS API Documentation</a>
  */
 public class DomainEntry implements Serializable, Cloneable {
 

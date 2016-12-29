@@ -15,9 +15,6 @@ package com.amazonaws.services.simpleworkflow.model;
 import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
 public class RecordActivityTaskHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

@@ -23,6 +23,8 @@ import java.io.Serializable;
  * This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code>
  * type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Statement"/>AWS API Documentation</a>
  */
 public class Statement implements Serializable, Cloneable {
 

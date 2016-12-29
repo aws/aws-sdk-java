@@ -17,6 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * A request to delete the specific dataset.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset"/>AWS API
+ *      Documentation</a>
  */
 public class DeleteDatasetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
