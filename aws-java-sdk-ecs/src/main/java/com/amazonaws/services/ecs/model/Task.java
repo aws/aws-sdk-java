@@ -113,6 +113,12 @@ public class Task implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date stoppedAt;
+    /**
+     * <p>
+     * The task group associated with the task.
+     * </p>
+     */
+    private String group;
 
     /**
      * <p>
@@ -747,6 +753,46 @@ public class Task implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The task group associated with the task.
+     * </p>
+     * 
+     * @param group
+     *        The task group associated with the task.
+     */
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    /**
+     * <p>
+     * The task group associated with the task.
+     * </p>
+     * 
+     * @return The task group associated with the task.
+     */
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    /**
+     * <p>
+     * The task group associated with the task.
+     * </p>
+     * 
+     * @param group
+     *        The task group associated with the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withGroup(String group) {
+        setGroup(group);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -784,7 +830,9 @@ public class Task implements Serializable, Cloneable {
         if (getStartedAt() != null)
             sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getStoppedAt() != null)
-            sb.append("StoppedAt: ").append(getStoppedAt());
+            sb.append("StoppedAt: ").append(getStoppedAt()).append(",");
+        if (getGroup() != null)
+            sb.append("Group: ").append(getGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -855,6 +903,10 @@ public class Task implements Serializable, Cloneable {
             return false;
         if (other.getStoppedAt() != null && other.getStoppedAt().equals(this.getStoppedAt()) == false)
             return false;
+        if (other.getGroup() == null ^ this.getGroup() == null)
+            return false;
+        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
+            return false;
         return true;
     }
 
@@ -877,6 +929,7 @@ public class Task implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
+        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         return hashCode;
     }
 

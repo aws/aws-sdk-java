@@ -22,7 +22,7 @@ import java.io.Serializable;
  * the rules in a <code>WebACL</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WafAction"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WafAction"/>AWS API Documentation</a>
  */
 public class WafAction implements Serializable, Cloneable {
 

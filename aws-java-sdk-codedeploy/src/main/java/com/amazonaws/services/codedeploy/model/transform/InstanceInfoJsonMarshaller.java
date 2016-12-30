@@ -44,6 +44,9 @@ public class InstanceInfoJsonMarshaller {
             if (instanceInfo.getInstanceName() != null) {
                 jsonGenerator.writeFieldName("instanceName").writeValue(instanceInfo.getInstanceName());
             }
+            if (instanceInfo.getIamSessionArn() != null) {
+                jsonGenerator.writeFieldName("iamSessionArn").writeValue(instanceInfo.getIamSessionArn());
+            }
             if (instanceInfo.getIamUserArn() != null) {
                 jsonGenerator.writeFieldName("iamUserArn").writeValue(instanceInfo.getIamUserArn());
             }

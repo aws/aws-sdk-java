@@ -49,7 +49,19 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * Amazon ECS task definitions currently only support tags as image identifiers within a specified repository (and
+     * not <code>sha256</code> digests).
+     * </p>
+     * </note>
      * <ul>
+     * <li>
+     * <p>
+     * Images in Amazon ECR repositories use the full registry and repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or
@@ -460,8 +472,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <note>
      * <p>
      * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Currently unsupported log drivers may be available in future releases of the
-     * Amazon ECS container agent.
+     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
+     * container agent.
      * </p>
      * </note>
      * <p>
@@ -575,7 +587,19 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * Amazon ECS task definitions currently only support tags as image identifiers within a specified repository (and
+     * not <code>sha256</code> digests).
+     * </p>
+     * </note>
      * <ul>
+     * <li>
+     * <p>
+     * Images in Amazon ECR repositories use the full registry and repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or
@@ -606,8 +630,19 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p>
+     *        run</a>.</p> <note>
+     *        <p>
+     *        Amazon ECS task definitions currently only support tags as image identifiers within a specified repository
+     *        (and not <code>sha256</code> digests).
+     *        </p>
+     *        </note>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        Images in Amazon ECR repositories use the full registry and repository URI (for example,
+     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or
@@ -644,7 +679,19 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * Amazon ECS task definitions currently only support tags as image identifiers within a specified repository (and
+     * not <code>sha256</code> digests).
+     * </p>
+     * </note>
      * <ul>
+     * <li>
+     * <p>
+     * Images in Amazon ECR repositories use the full registry and repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or
@@ -674,8 +721,19 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and
      *         the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p>
+     *         run</a>.</p> <note>
+     *         <p>
+     *         Amazon ECS task definitions currently only support tags as image identifiers within a specified
+     *         repository (and not <code>sha256</code> digests).
+     *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         Images in Amazon ECR repositories use the full registry and repository URI (for example,
+     *         <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or
@@ -712,7 +770,19 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * Amazon ECS task definitions currently only support tags as image identifiers within a specified repository (and
+     * not <code>sha256</code> digests).
+     * </p>
+     * </note>
      * <ul>
+     * <li>
+     * <p>
+     * Images in Amazon ECR repositories use the full registry and repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or
@@ -743,8 +813,19 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p>
+     *        run</a>.</p> <note>
+     *        <p>
+     *        Amazon ECS task definitions currently only support tags as image identifiers within a specified repository
+     *        (and not <code>sha256</code> digests).
+     *        </p>
+     *        </note>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        Images in Amazon ECR repositories use the full registry and repository URI (for example,
+     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or
@@ -3838,8 +3919,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <note>
      * <p>
      * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Currently unsupported log drivers may be available in future releases of the
-     * Amazon ECS container agent.
+     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
+     * container agent.
      * </p>
      * </note>
      * <p>
@@ -3873,8 +3954,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        documentation.</p> <note>
      *        <p>
      *        Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *        <a>LogConfiguration</a> data type). Currently unsupported log drivers may be available in future releases
-     *        of the Amazon ECS container agent.
+     *        <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *        Amazon ECS container agent.
      *        </p>
      *        </note>
      *        <p>
@@ -3914,8 +3995,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <note>
      * <p>
      * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Currently unsupported log drivers may be available in future releases of the
-     * Amazon ECS container agent.
+     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
+     * container agent.
      * </p>
      * </note>
      * <p>
@@ -3948,8 +4029,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         documentation.</p> <note>
      *         <p>
      *         Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in
-     *         the <a>LogConfiguration</a> data type). Currently unsupported log drivers may be available in future
-     *         releases of the Amazon ECS container agent.
+     *         the <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *         Amazon ECS container agent.
      *         </p>
      *         </note>
      *         <p>
@@ -3989,8 +4070,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <note>
      * <p>
      * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Currently unsupported log drivers may be available in future releases of the
-     * Amazon ECS container agent.
+     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
+     * container agent.
      * </p>
      * </note>
      * <p>
@@ -4024,8 +4105,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        documentation.</p> <note>
      *        <p>
      *        Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *        <a>LogConfiguration</a> data type). Currently unsupported log drivers may be available in future releases
-     *        of the Amazon ECS container agent.
+     *        <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *        Amazon ECS container agent.
      *        </p>
      *        </note>
      *        <p>

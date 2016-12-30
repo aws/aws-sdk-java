@@ -23,12 +23,26 @@ import java.io.Serializable;
  */
 public class RevisionInfo implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the location and type of an application revision.
+     * </p>
+     */
     private RevisionLocation revisionLocation;
-
+    /**
+     * <p>
+     * Information about an application revision, including usage details and currently associated deployment groups.
+     * </p>
+     */
     private GenericRevisionInfo genericRevisionInfo;
 
     /**
+     * <p>
+     * Information about the location and type of an application revision.
+     * </p>
+     * 
      * @param revisionLocation
+     *        Information about the location and type of an application revision.
      */
 
     public void setRevisionLocation(RevisionLocation revisionLocation) {
@@ -36,7 +50,11 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the location and type of an application revision.
+     * </p>
+     * 
+     * @return Information about the location and type of an application revision.
      */
 
     public RevisionLocation getRevisionLocation() {
@@ -44,7 +62,12 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the location and type of an application revision.
+     * </p>
+     * 
      * @param revisionLocation
+     *        Information about the location and type of an application revision.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +77,13 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about an application revision, including usage details and currently associated deployment groups.
+     * </p>
+     * 
      * @param genericRevisionInfo
+     *        Information about an application revision, including usage details and currently associated deployment
+     *        groups.
      */
 
     public void setGenericRevisionInfo(GenericRevisionInfo genericRevisionInfo) {
@@ -62,7 +91,12 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about an application revision, including usage details and currently associated deployment groups.
+     * </p>
+     * 
+     * @return Information about an application revision, including usage details and currently associated deployment
+     *         groups.
      */
 
     public GenericRevisionInfo getGenericRevisionInfo() {
@@ -70,7 +104,13 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about an application revision, including usage details and currently associated deployment groups.
+     * </p>
+     * 
      * @param genericRevisionInfo
+     *        Information about an application revision, including usage details and currently associated deployment
+     *        groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

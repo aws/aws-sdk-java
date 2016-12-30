@@ -75,6 +75,37 @@ public class RunTaskRequestMarshaller implements Marshaller<Request<RunTaskReque
             if (runTaskRequest.getStartedBy() != null) {
                 jsonGenerator.writeFieldName("startedBy").writeValue(runTaskRequest.getStartedBy());
             }
+            if (runTaskRequest.getGroup() != null) {
+                jsonGenerator.writeFieldName("group").writeValue(runTaskRequest.getGroup());
+            }
+
+            com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraintsList = (com.amazonaws.internal.SdkInternalList<PlacementConstraint>) runTaskRequest
+                    .getPlacementConstraints();
+            if (!placementConstraintsList.isEmpty() || !placementConstraintsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("placementConstraints");
+                jsonGenerator.writeStartArray();
+                for (PlacementConstraint placementConstraintsListValue : placementConstraintsList) {
+                    if (placementConstraintsListValue != null) {
+
+                        PlacementConstraintJsonMarshaller.getInstance().marshall(placementConstraintsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategyList = (com.amazonaws.internal.SdkInternalList<PlacementStrategy>) runTaskRequest
+                    .getPlacementStrategy();
+            if (!placementStrategyList.isEmpty() || !placementStrategyList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("placementStrategy");
+                jsonGenerator.writeStartArray();
+                for (PlacementStrategy placementStrategyListValue : placementStrategyList) {
+                    if (placementStrategyListValue != null) {
+
+                        PlacementStrategyJsonMarshaller.getInstance().marshall(placementStrategyListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
 
             jsonGenerator.writeEndObject();
 

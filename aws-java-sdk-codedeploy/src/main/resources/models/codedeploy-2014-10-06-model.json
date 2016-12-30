@@ -185,7 +185,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Get information about one or more deployment groups.</p>",
+      "documentation" : "<p>Gets information about one or more deployment groups.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1704,13 +1704,25 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Registers an on-premises instance.</p>",
+      "documentation" : "<p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InstanceNameAlreadyRegisteredException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "IamArnRequiredException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "IamSessionArnAlreadyRegisteredException"
       }, {
         "documentation" : null,
         "error" : null,
@@ -1740,7 +1752,19 @@
         "error" : null,
         "exception" : false,
         "fault" : false,
+        "shape" : "InvalidIamSessionArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
         "shape" : "InvalidIamUserArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MultipleIamArnsProvidedException"
       } ],
       "http" : {
         "method" : "POST",
@@ -3645,7 +3669,7 @@
         },
         "deploymentConfigName" : {
           "deprecated" : false,
-          "documentation" : "<p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p> <note> <p>CodeDeployDefault.OneAtATime is the default deployment configuration. It is used if a configuration isn't specified for the deployment or the deployment group.</p> </note> <p>The predefined deployment configurations include the following:</p> <ul> <li> <p> <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application revision to as many instances as possible at once. The status of the overall deployment will be displayed as <b>Succeeded</b> if the application revision is deployed to one or more of the instances. The status of the overall deployment will be displayed as <b>Failed</b> if the application revision is not deployed to any of the instances. Using an example of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine instances at once. The overall deployment will succeed if deployment to even a single instance is successful; it will fail only if deployments to all nine instances fail. </p> </li> <li> <p> <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the instances at a time (with fractions rounded down). The overall deployment succeeds if the application revision is deployed to at least half of the instances (with fractions rounded up); otherwise, the deployment fails. In the example of nine instances, it will deploy to up to four instances at a time. The overall deployment succeeds if deployment to five or more instances succeed; otherwise, the deployment fails. The deployment may be successfully deployed to some instances even if the overall deployment fails.</p> </li> <li> <p> <b>CodeDeployDefault.OneAtATime</b> deploys the application revision to only one instance at a time.</p> <p>For deployment groups that contain more than one instance:</p> <ul> <li> <p>The overall deployment succeeds if the application revision is deployed to all of the instances. The exception to this rule is if deployment to the last instance fails, the overall deployment still succeeds. This is because AWS CodeDeploy allows only one instance at a time to be taken offline with the CodeDeployDefault.OneAtATime configuration.</p> </li> <li> <p>The overall deployment fails as soon as the application revision fails to be deployed to any but the last instance. The deployment may be successfully deployed to some instances even if the overall deployment fails.</p> </li> <li> <p>In an example using nine instances, it will deploy to one instance at a time. The overall deployment succeeds if deployment to the first eight instances is successful; the overall deployment fails if deployment to any of the first eight instances fails.</p> </li> </ul> <p>For deployment groups that contain only one instance, the overall deployment is successful only if deployment to the single instance is successful</p> </li> </ul>",
+          "documentation" : "<p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment configuration. It is used if a configuration isn't specified for the deployment or the deployment group.</p> <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html\">Working with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6368,6 +6392,69 @@
       "value" : null,
       "wrapper" : false
     },
+    "IamArnRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "IamSessionArn" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "IamSessionArnAlreadyRegisteredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The request included an IAM session ARN that has already been used to register a different instance.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "IamUserArn" : {
       "deprecated" : false,
       "documentation" : null,
@@ -6558,6 +6645,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "iamSessionArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the IAM session associated with the on-premises instance.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IamSessionArn",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -7227,6 +7327,27 @@
     "InvalidEC2TagException" : {
       "deprecated" : false,
       "documentation" : "<p>The tag was specified in an invalid format.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidIamSessionArnException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The IAM session ARN was specified in an invalid format.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -8769,6 +8890,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "MultipleIamArnsProvidedException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "NextToken" : {
       "deprecated" : false,
       "documentation" : null,
@@ -8884,6 +9026,19 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "iamSessionArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the IAM session to associate with the on-premises instance.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IamSessionArn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "iamUserArn" : {
           "deprecated" : false,
           "documentation" : "<p>The ARN of the IAM user to associate with the on-premises instance.</p>",
@@ -8914,7 +9069,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "instanceName", "iamUserArn" ],
+      "required" : [ "instanceName" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -9045,7 +9200,7 @@
       "members" : {
         "genericRevisionInfo" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Information about an application revision, including usage details and currently associated deployment groups.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -9058,7 +9213,7 @@
         },
         "revisionLocation" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Information about the location and type of an application revision.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -9126,7 +9281,7 @@
       "members" : {
         "gitHubLocation" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Information about the location of application artifacts stored in GitHub.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -9152,7 +9307,7 @@
         },
         "s3Location" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Information about the location of application artifacts stored in Amazon S3. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,

@@ -20,8 +20,7 @@ import java.io.Serializable;
  * requests, the location in requests that you want AWS WAF to search, and other settings.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchTuple"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchTuple"/>AWS API Documentation</a>
  */
 public class ByteMatchTuple implements Serializable, Cloneable {
 

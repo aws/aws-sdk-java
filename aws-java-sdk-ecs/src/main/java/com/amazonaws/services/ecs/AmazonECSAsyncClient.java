@@ -308,6 +308,38 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest request) {
+
+        return deleteAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(final DeleteAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAttributesRequest, DeleteAttributesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAttributesResult>() {
+            @Override
+            public DeleteAttributesResult call() throws Exception {
+                DeleteAttributesResult result;
+
+                try {
+                    result = deleteAttributes(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request) {
 
         return deleteClusterAsync(request, null);
@@ -672,6 +704,38 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(ListAttributesRequest request) {
+
+        return listAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(final ListAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAttributesRequest, ListAttributesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAttributesResult>() {
+            @Override
+            public ListAttributesResult call() throws Exception {
+                ListAttributesResult result;
+
+                try {
+                    result = listAttributes(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request) {
 
         return listClustersAsync(request, null);
@@ -992,6 +1056,38 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     public java.util.concurrent.Future<ListTasksResult> listTasksAsync(com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler) {
 
         return listTasksAsync(new ListTasksRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest request) {
+
+        return putAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(final PutAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAttributesResult>() {
+            @Override
+            public PutAttributesResult call() throws Exception {
+                PutAttributesResult result;
+
+                try {
+                    result = putAttributes(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

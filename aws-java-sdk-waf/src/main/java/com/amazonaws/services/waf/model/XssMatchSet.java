@@ -22,7 +22,7 @@ import java.io.Serializable;
  * to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/XssMatchSet"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/XssMatchSet"/>AWS API Documentation</a>
  */
 public class XssMatchSet implements Serializable, Cloneable {
 

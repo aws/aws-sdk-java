@@ -55,7 +55,7 @@ public class Container implements Serializable, Cloneable {
     private Integer exitCode;
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
      * container.
      * </p>
      */
@@ -269,13 +269,13 @@ public class Container implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
      * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide additional detail about a running or stopped
-     *        container.
+     *        A short (255 max characters) human-readable string to provide additional details about a running or
+     *        stopped container.
      */
 
     public void setReason(String reason) {
@@ -284,11 +284,11 @@ public class Container implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
      * container.
      * </p>
      * 
-     * @return A short (255 max characters) human-readable string to provide additional detail about a running or
+     * @return A short (255 max characters) human-readable string to provide additional details about a running or
      *         stopped container.
      */
 
@@ -298,13 +298,13 @@ public class Container implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
      * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide additional detail about a running or stopped
-     *        container.
+     *        A short (255 max characters) human-readable string to provide additional details about a running or
+     *        stopped container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

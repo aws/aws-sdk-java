@@ -19,7 +19,7 @@ import java.io.Serializable;
  * Specifies the type of update to perform to an <a>IPSet</a> with <a>UpdateIPSet</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSetUpdate"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetUpdate"/>AWS API Documentation</a>
  */
 public class IPSetUpdate implements Serializable, Cloneable {
 

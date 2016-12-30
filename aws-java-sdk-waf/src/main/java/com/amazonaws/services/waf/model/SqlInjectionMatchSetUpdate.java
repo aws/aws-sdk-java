@@ -21,7 +21,7 @@ import java.io.Serializable;
  * <code>SqlInjectionMatchSet</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchSetUpdate"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SqlInjectionMatchSetUpdate"/>AWS API
  *      Documentation</a>
  */
 public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {

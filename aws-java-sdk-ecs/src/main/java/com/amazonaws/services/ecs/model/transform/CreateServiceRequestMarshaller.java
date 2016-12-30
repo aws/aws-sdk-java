@@ -96,6 +96,34 @@ public class CreateServiceRequestMarshaller implements Marshaller<Request<Create
                 DeploymentConfigurationJsonMarshaller.getInstance().marshall(createServiceRequest.getDeploymentConfiguration(), jsonGenerator);
             }
 
+            com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraintsList = (com.amazonaws.internal.SdkInternalList<PlacementConstraint>) createServiceRequest
+                    .getPlacementConstraints();
+            if (!placementConstraintsList.isEmpty() || !placementConstraintsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("placementConstraints");
+                jsonGenerator.writeStartArray();
+                for (PlacementConstraint placementConstraintsListValue : placementConstraintsList) {
+                    if (placementConstraintsListValue != null) {
+
+                        PlacementConstraintJsonMarshaller.getInstance().marshall(placementConstraintsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategyList = (com.amazonaws.internal.SdkInternalList<PlacementStrategy>) createServiceRequest
+                    .getPlacementStrategy();
+            if (!placementStrategyList.isEmpty() || !placementStrategyList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("placementStrategy");
+                jsonGenerator.writeStartArray();
+                for (PlacementStrategy placementStrategyListValue : placementStrategyList) {
+                    if (placementStrategyListValue != null) {
+
+                        PlacementStrategyJsonMarshaller.getInstance().marshall(placementStrategyListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

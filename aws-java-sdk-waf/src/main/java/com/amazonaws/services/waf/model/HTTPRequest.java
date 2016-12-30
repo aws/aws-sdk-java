@@ -21,7 +21,7 @@ import java.io.Serializable;
  * requests that were returned by <code>GetSampledRequests</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/HTTPRequest"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/HTTPRequest"/>AWS API Documentation</a>
  */
 public class HTTPRequest implements Serializable, Cloneable {
 

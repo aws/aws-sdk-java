@@ -20,7 +20,7 @@ import java.io.Serializable;
  * <code>Rule</code> or delete it from a <code>Rule</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RuleUpdate"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RuleUpdate"/>AWS API Documentation</a>
  */
 public class RuleUpdate implements Serializable, Cloneable {
 

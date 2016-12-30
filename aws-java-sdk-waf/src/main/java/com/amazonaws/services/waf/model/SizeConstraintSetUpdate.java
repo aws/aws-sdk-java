@@ -20,7 +20,7 @@ import java.io.Serializable;
  * specification to a <a>SizeConstraintSet</a> or delete it from a <code>SizeConstraintSet</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SizeConstraintSetUpdate"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraintSetUpdate"/>AWS API
  *      Documentation</a>
  */
 public class SizeConstraintSetUpdate implements Serializable, Cloneable {

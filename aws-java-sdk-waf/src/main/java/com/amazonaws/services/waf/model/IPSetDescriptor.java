@@ -20,8 +20,7 @@ import java.io.Serializable;
  * web requests originate from.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSetDescriptor"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetDescriptor"/>AWS API Documentation</a>
  */
 public class IPSetDescriptor implements Serializable, Cloneable {
 

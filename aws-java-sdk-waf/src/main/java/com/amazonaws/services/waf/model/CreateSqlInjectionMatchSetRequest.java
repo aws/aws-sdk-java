@@ -20,7 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to create a <a>SqlInjectionMatchSet</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateSqlInjectionMatchSet"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet"/>AWS API
  *      Documentation</a>
  */
 public class CreateSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

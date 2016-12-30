@@ -23,8 +23,7 @@ import java.io.Serializable;
  * considered a match.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchSet"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SqlInjectionMatchSet"/>AWS API Documentation</a>
  */
 public class SqlInjectionMatchSet implements Serializable, Cloneable {
 

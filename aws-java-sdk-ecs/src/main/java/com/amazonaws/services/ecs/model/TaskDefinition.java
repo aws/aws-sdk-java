@@ -97,6 +97,12 @@ public class TaskDefinition implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> requiresAttributes;
+    /**
+     * <p>
+     * An array of placement constraint objects to use for tasks.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
 
     /**
      * <p>
@@ -794,6 +800,79 @@ public class TaskDefinition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An array of placement constraint objects to use for tasks.
+     * </p>
+     * 
+     * @return An array of placement constraint objects to use for tasks.
+     */
+
+    public java.util.List<TaskDefinitionPlacementConstraint> getPlacementConstraints() {
+        if (placementConstraints == null) {
+            placementConstraints = new com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint>();
+        }
+        return placementConstraints;
+    }
+
+    /**
+     * <p>
+     * An array of placement constraint objects to use for tasks.
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of placement constraint objects to use for tasks.
+     */
+
+    public void setPlacementConstraints(java.util.Collection<TaskDefinitionPlacementConstraint> placementConstraints) {
+        if (placementConstraints == null) {
+            this.placementConstraints = null;
+            return;
+        }
+
+        this.placementConstraints = new com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint>(placementConstraints);
+    }
+
+    /**
+     * <p>
+     * An array of placement constraint objects to use for tasks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementConstraints(java.util.Collection)} or {@link #withPlacementConstraints(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of placement constraint objects to use for tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withPlacementConstraints(TaskDefinitionPlacementConstraint... placementConstraints) {
+        if (this.placementConstraints == null) {
+            setPlacementConstraints(new com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint>(placementConstraints.length));
+        }
+        for (TaskDefinitionPlacementConstraint ele : placementConstraints) {
+            this.placementConstraints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of placement constraint objects to use for tasks.
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of placement constraint objects to use for tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withPlacementConstraints(java.util.Collection<TaskDefinitionPlacementConstraint> placementConstraints) {
+        setPlacementConstraints(placementConstraints);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -821,7 +900,9 @@ public class TaskDefinition implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRequiresAttributes() != null)
-            sb.append("RequiresAttributes: ").append(getRequiresAttributes());
+            sb.append("RequiresAttributes: ").append(getRequiresAttributes()).append(",");
+        if (getPlacementConstraints() != null)
+            sb.append("PlacementConstraints: ").append(getPlacementConstraints());
         sb.append("}");
         return sb.toString();
     }
@@ -872,6 +953,10 @@ public class TaskDefinition implements Serializable, Cloneable {
             return false;
         if (other.getRequiresAttributes() != null && other.getRequiresAttributes().equals(this.getRequiresAttributes()) == false)
             return false;
+        if (other.getPlacementConstraints() == null ^ this.getPlacementConstraints() == null)
+            return false;
+        if (other.getPlacementConstraints() != null && other.getPlacementConstraints().equals(this.getPlacementConstraints()) == false)
+            return false;
         return true;
     }
 
@@ -889,6 +974,7 @@ public class TaskDefinition implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRequiresAttributes() == null) ? 0 : getRequiresAttributes().hashCode());
+        hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
         return hashCode;
     }
 

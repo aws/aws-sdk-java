@@ -19,7 +19,7 @@ import java.io.Serializable;
  * Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WebACLUpdate"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WebACLUpdate"/>AWS API Documentation</a>
  */
 public class WebACLUpdate implements Serializable, Cloneable {
 

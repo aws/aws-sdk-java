@@ -51,6 +51,10 @@ public class InstanceInfoJsonUnmarshaller implements Unmarshaller<InstanceInfo, 
                     context.nextToken();
                     instanceInfo.setInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("iamSessionArn", targetDepth)) {
+                    context.nextToken();
+                    instanceInfo.setIamSessionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("iamUserArn", targetDepth)) {
                     context.nextToken();
                     instanceInfo.setIamUserArn(context.getUnmarshaller(String.class).unmarshall(context));

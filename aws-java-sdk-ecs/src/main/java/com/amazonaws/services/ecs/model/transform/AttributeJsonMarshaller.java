@@ -47,6 +47,12 @@ public class AttributeJsonMarshaller {
             if (attribute.getValue() != null) {
                 jsonGenerator.writeFieldName("value").writeValue(attribute.getValue());
             }
+            if (attribute.getTargetType() != null) {
+                jsonGenerator.writeFieldName("targetType").writeValue(attribute.getTargetType());
+            }
+            if (attribute.getTargetId() != null) {
+                jsonGenerator.writeFieldName("targetId").writeValue(attribute.getTargetId());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

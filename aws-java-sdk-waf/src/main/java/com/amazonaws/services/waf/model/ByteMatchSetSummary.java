@@ -20,8 +20,7 @@ import java.io.Serializable;
  * <code>ByteMatchSetId</code> for one <a>ByteMatchSet</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchSetSummary"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchSetSummary"/>AWS API Documentation</a>
  */
 public class ByteMatchSetSummary implements Serializable, Cloneable {
 

@@ -21,8 +21,7 @@ import java.io.Serializable;
  * <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SizeConstraintSet"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraintSet"/>AWS API Documentation</a>
  */
 public class SizeConstraintSet implements Serializable, Cloneable {
 

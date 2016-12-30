@@ -62,6 +62,9 @@ public class ListContainerInstancesRequestMarshaller implements Marshaller<Reque
             if (listContainerInstancesRequest.getCluster() != null) {
                 jsonGenerator.writeFieldName("cluster").writeValue(listContainerInstancesRequest.getCluster());
             }
+            if (listContainerInstancesRequest.getFilter() != null) {
+                jsonGenerator.writeFieldName("filter").writeValue(listContainerInstancesRequest.getFilter());
+            }
             if (listContainerInstancesRequest.getNextToken() != null) {
                 jsonGenerator.writeFieldName("nextToken").writeValue(listContainerInstancesRequest.getNextToken());
             }

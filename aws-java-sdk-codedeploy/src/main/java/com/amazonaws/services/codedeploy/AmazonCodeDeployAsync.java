@@ -223,7 +223,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Get information about one or more deployment groups.
+     * Gets information about one or more deployment groups.
      * </p>
      * 
      * @param batchGetDeploymentGroupsRequest
@@ -237,7 +237,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Get information about one or more deployment groups.
+     * Gets information about one or more deployment groups.
      * </p>
      * 
      * @param batchGetDeploymentGroupsRequest
@@ -1238,6 +1238,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * <p>
      * Registers an on-premises instance.
      * </p>
+     * <note>
+     * <p>
+     * Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.
+     * </p>
+     * </note>
      * 
      * @param registerOnPremisesInstanceRequest
      *        Represents the input of the register on-premises instance operation.
@@ -1253,6 +1258,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * <p>
      * Registers an on-premises instance.
      * </p>
+     * <note>
+     * <p>
+     * Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.
+     * </p>
+     * </note>
      * 
      * @param registerOnPremisesInstanceRequest
      *        Represents the input of the register on-premises instance operation.

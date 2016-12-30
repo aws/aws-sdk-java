@@ -72,6 +72,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest request) {
+
+        return deleteAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAttributesRequest, DeleteAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request) {
 
         return deleteClusterAsync(request, null);
@@ -243,6 +256,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
             com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler) {
 
         return discoverPollEndpointAsync(new DiscoverPollEndpointRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(ListAttributesRequest request) {
+
+        return listAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(ListAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAttributesRequest, ListAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -452,6 +478,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListTasksResult> listTasksAsync(com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler) {
 
         return listTasksAsync(new ListTasksRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest request) {
+
+        return putAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

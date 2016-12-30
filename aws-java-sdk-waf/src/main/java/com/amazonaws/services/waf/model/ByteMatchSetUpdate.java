@@ -20,8 +20,7 @@ import java.io.Serializable;
  * <a>ByteMatchTuple</a> and includes the settings for the <code>ByteMatchTuple</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchSetUpdate"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchSetUpdate"/>AWS API Documentation</a>
  */
 public class ByteMatchSetUpdate implements Serializable, Cloneable {
 

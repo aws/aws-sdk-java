@@ -162,6 +162,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTriggerConfigException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IamArnRequiredException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.IamArnRequiredException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentConfigDoesNotExistException.class))
                     .addErrorMetadata(
@@ -188,6 +191,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentNotStartedException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentNotStartedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidIamSessionArnException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupAlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException.class))
@@ -236,6 +242,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TriggerTargetsLimitExceededException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IamSessionArnAlreadyRegisteredException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.IamSessionArnAlreadyRegisteredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MultipleIamArnsProvidedException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.MultipleIamArnsProvidedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InstanceNameAlreadyRegisteredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException.class))
@@ -665,7 +677,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Get information about one or more deployment groups.
+     * Gets information about one or more deployment groups.
      * </p>
      * 
      * @param batchGetDeploymentGroupsRequest
@@ -2208,12 +2220,21 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * <p>
      * Registers an on-premises instance.
      * </p>
+     * <note>
+     * <p>
+     * Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.
+     * </p>
+     * </note>
      * 
      * @param registerOnPremisesInstanceRequest
      *        Represents the input of the register on-premises instance operation.
      * @return Result of the RegisterOnPremisesInstance operation returned by the service.
      * @throws InstanceNameAlreadyRegisteredException
      *         The specified on-premises instance name is already registered.
+     * @throws IamArnRequiredException
+     *         No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.
+     * @throws IamSessionArnAlreadyRegisteredException
+     *         The request included an IAM session ARN that has already been used to register a different instance.
      * @throws IamUserArnAlreadyRegisteredException
      *         The specified IAM user ARN is already registered with an on-premises instance.
      * @throws InstanceNameRequiredException
@@ -2222,8 +2243,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         An IAM user ARN was not specified.
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an invalid format.
+     * @throws InvalidIamSessionArnException
+     *         The IAM session ARN was specified in an invalid format.
      * @throws InvalidIamUserArnException
      *         The IAM user ARN was specified in an invalid format.
+     * @throws MultipleIamArnsProvidedException
+     *         Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.
      * @sample AmazonCodeDeploy.RegisterOnPremisesInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"/>AWS API
      *      Documentation</a>

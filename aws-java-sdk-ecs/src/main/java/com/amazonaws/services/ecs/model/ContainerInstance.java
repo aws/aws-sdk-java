@@ -107,7 +107,8 @@ public class ContainerInstance implements Serializable, Cloneable {
     private String agentUpdateStatus;
     /**
      * <p>
-     * The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     * The attributes set for the container instance, either by the Amazon ECS container agent at instance registration
+     * or manually with the <a>PutAttributes</a> operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> attributes;
@@ -785,10 +786,12 @@ public class ContainerInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     * The attributes set for the container instance, either by the Amazon ECS container agent at instance registration
+     * or manually with the <a>PutAttributes</a> operation.
      * </p>
      * 
-     * @return The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     * @return The attributes set for the container instance, either by the Amazon ECS container agent at instance
+     *         registration or manually with the <a>PutAttributes</a> operation.
      */
 
     public java.util.List<Attribute> getAttributes() {
@@ -800,11 +803,13 @@ public class ContainerInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     * The attributes set for the container instance, either by the Amazon ECS container agent at instance registration
+     * or manually with the <a>PutAttributes</a> operation.
      * </p>
      * 
      * @param attributes
-     *        The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     *        The attributes set for the container instance, either by the Amazon ECS container agent at instance
+     *        registration or manually with the <a>PutAttributes</a> operation.
      */
 
     public void setAttributes(java.util.Collection<Attribute> attributes) {
@@ -818,7 +823,8 @@ public class ContainerInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     * The attributes set for the container instance, either by the Amazon ECS container agent at instance registration
+     * or manually with the <a>PutAttributes</a> operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -827,7 +833,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param attributes
-     *        The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     *        The attributes set for the container instance, either by the Amazon ECS container agent at instance
+     *        registration or manually with the <a>PutAttributes</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -843,11 +850,13 @@ public class ContainerInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     * The attributes set for the container instance, either by the Amazon ECS container agent at instance registration
+     * or manually with the <a>PutAttributes</a> operation.
      * </p>
      * 
      * @param attributes
-     *        The attributes set for the container instance by the Amazon ECS container agent at instance registration.
+     *        The attributes set for the container instance, either by the Amazon ECS container agent at instance
+     *        registration or manually with the <a>PutAttributes</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import java.io.Serializable;
  * The response to a <a>ListSqlInjectionMatchSets</a> request.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets"/>AWS API
  *      Documentation</a>
  */
 public class ListSqlInjectionMatchSetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

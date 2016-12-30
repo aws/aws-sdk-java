@@ -94,6 +94,9 @@ public class TaskJsonMarshaller {
             if (task.getStoppedAt() != null) {
                 jsonGenerator.writeFieldName("stoppedAt").writeValue(task.getStoppedAt());
             }
+            if (task.getGroup() != null) {
+                jsonGenerator.writeFieldName("group").writeValue(task.getGroup());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

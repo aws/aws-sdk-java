@@ -17,8 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateByteMatchSet"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet"/>AWS API Documentation</a>
  */
 public class CreateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

@@ -54,13 +54,9 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private TaskOverride overrides;
     /**
      * <p>
-     * The number of instantiations of the specified task to place on your cluster.
+     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks per
+     * call.
      * </p>
-     * <important>
-     * <p>
-     * The <code>count</code> parameter is limited to 10 tasks per call.
-     * </p>
-     * </important>
      */
     private Integer count;
     /**
@@ -77,6 +73,26 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      */
     private String startedBy;
+    /**
+     * <p>
+     * The task group to associate with the task. By default, if you do not specify a task group, the group
+     * <code>family:TASKDEF-FAMILY</code> is applied.
+     * </p>
+     */
+    private String group;
+    /**
+     * <p>
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * (including constraints in the task definition and those specified at run time).
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraints;
+    /**
+     * <p>
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
 
     /**
      * <p>
@@ -273,19 +289,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The number of instantiations of the specified task to place on your cluster.
+     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks per
+     * call.
      * </p>
-     * <important>
-     * <p>
-     * The <code>count</code> parameter is limited to 10 tasks per call.
-     * </p>
-     * </important>
      * 
      * @param count
-     *        The number of instantiations of the specified task to place on your cluster.</p> <important>
-     *        <p>
-     *        The <code>count</code> parameter is limited to 10 tasks per call.
-     *        </p>
+     *        The number of instantiations of the specified task to place on your cluster. You can specify up to 10
+     *        tasks per call.
      */
 
     public void setCount(Integer count) {
@@ -294,18 +304,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The number of instantiations of the specified task to place on your cluster.
+     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks per
+     * call.
      * </p>
-     * <important>
-     * <p>
-     * The <code>count</code> parameter is limited to 10 tasks per call.
-     * </p>
-     * </important>
      * 
-     * @return The number of instantiations of the specified task to place on your cluster.</p> <important>
-     *         <p>
-     *         The <code>count</code> parameter is limited to 10 tasks per call.
-     *         </p>
+     * @return The number of instantiations of the specified task to place on your cluster. You can specify up to 10
+     *         tasks per call.
      */
 
     public Integer getCount() {
@@ -314,19 +318,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The number of instantiations of the specified task to place on your cluster.
+     * The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks per
+     * call.
      * </p>
-     * <important>
-     * <p>
-     * The <code>count</code> parameter is limited to 10 tasks per call.
-     * </p>
-     * </important>
      * 
      * @param count
-     *        The number of instantiations of the specified task to place on your cluster.</p> <important>
-     *        <p>
-     *        The <code>count</code> parameter is limited to 10 tasks per call.
-     *        </p>
+     *        The number of instantiations of the specified task to place on your cluster. You can specify up to 10
+     *        tasks per call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,6 +419,210 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * The task group to associate with the task. By default, if you do not specify a task group, the group
+     * <code>family:TASKDEF-FAMILY</code> is applied.
+     * </p>
+     * 
+     * @param group
+     *        The task group to associate with the task. By default, if you do not specify a task group, the group
+     *        <code>family:TASKDEF-FAMILY</code> is applied.
+     */
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    /**
+     * <p>
+     * The task group to associate with the task. By default, if you do not specify a task group, the group
+     * <code>family:TASKDEF-FAMILY</code> is applied.
+     * </p>
+     * 
+     * @return The task group to associate with the task. By default, if you do not specify a task group, the group
+     *         <code>family:TASKDEF-FAMILY</code> is applied.
+     */
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    /**
+     * <p>
+     * The task group to associate with the task. By default, if you do not specify a task group, the group
+     * <code>family:TASKDEF-FAMILY</code> is applied.
+     * </p>
+     * 
+     * @param group
+     *        The task group to associate with the task. By default, if you do not specify a task group, the group
+     *        <code>family:TASKDEF-FAMILY</code> is applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withGroup(String group) {
+        setGroup(group);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * (including constraints in the task definition and those specified at run time).
+     * </p>
+     * 
+     * @return An array of placement constraint objects to use for the task. You can specify up to 10 constraints per
+     *         task (including constraints in the task definition and those specified at run time).
+     */
+
+    public java.util.List<PlacementConstraint> getPlacementConstraints() {
+        if (placementConstraints == null) {
+            placementConstraints = new com.amazonaws.internal.SdkInternalList<PlacementConstraint>();
+        }
+        return placementConstraints;
+    }
+
+    /**
+     * <p>
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * (including constraints in the task definition and those specified at run time).
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints per
+     *        task (including constraints in the task definition and those specified at run time).
+     */
+
+    public void setPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
+        if (placementConstraints == null) {
+            this.placementConstraints = null;
+            return;
+        }
+
+        this.placementConstraints = new com.amazonaws.internal.SdkInternalList<PlacementConstraint>(placementConstraints);
+    }
+
+    /**
+     * <p>
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * (including constraints in the task definition and those specified at run time).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementConstraints(java.util.Collection)} or {@link #withPlacementConstraints(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints per
+     *        task (including constraints in the task definition and those specified at run time).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withPlacementConstraints(PlacementConstraint... placementConstraints) {
+        if (this.placementConstraints == null) {
+            setPlacementConstraints(new com.amazonaws.internal.SdkInternalList<PlacementConstraint>(placementConstraints.length));
+        }
+        for (PlacementConstraint ele : placementConstraints) {
+            this.placementConstraints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task
+     * (including constraints in the task definition and those specified at run time).
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of placement constraint objects to use for the task. You can specify up to 10 constraints per
+     *        task (including constraints in the task definition and those specified at run time).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
+        setPlacementConstraints(placementConstraints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * </p>
+     * 
+     * @return The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *         task.
+     */
+
+    public java.util.List<PlacementStrategy> getPlacementStrategy() {
+        if (placementStrategy == null) {
+            placementStrategy = new com.amazonaws.internal.SdkInternalList<PlacementStrategy>();
+        }
+        return placementStrategy;
+    }
+
+    /**
+     * <p>
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        task.
+     */
+
+    public void setPlacementStrategy(java.util.Collection<PlacementStrategy> placementStrategy) {
+        if (placementStrategy == null) {
+            this.placementStrategy = null;
+            return;
+        }
+
+        this.placementStrategy = new com.amazonaws.internal.SdkInternalList<PlacementStrategy>(placementStrategy);
+    }
+
+    /**
+     * <p>
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementStrategy(java.util.Collection)} or {@link #withPlacementStrategy(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withPlacementStrategy(PlacementStrategy... placementStrategy) {
+        if (this.placementStrategy == null) {
+            setPlacementStrategy(new com.amazonaws.internal.SdkInternalList<PlacementStrategy>(placementStrategy.length));
+        }
+        for (PlacementStrategy ele : placementStrategy) {
+            this.placementStrategy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withPlacementStrategy(java.util.Collection<PlacementStrategy> placementStrategy) {
+        setPlacementStrategy(placementStrategy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -440,7 +642,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getCount() != null)
             sb.append("Count: ").append(getCount()).append(",");
         if (getStartedBy() != null)
-            sb.append("StartedBy: ").append(getStartedBy());
+            sb.append("StartedBy: ").append(getStartedBy()).append(",");
+        if (getGroup() != null)
+            sb.append("Group: ").append(getGroup()).append(",");
+        if (getPlacementConstraints() != null)
+            sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
+        if (getPlacementStrategy() != null)
+            sb.append("PlacementStrategy: ").append(getPlacementStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -475,6 +683,18 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false)
             return false;
+        if (other.getGroup() == null ^ this.getGroup() == null)
+            return false;
+        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
+            return false;
+        if (other.getPlacementConstraints() == null ^ this.getPlacementConstraints() == null)
+            return false;
+        if (other.getPlacementConstraints() != null && other.getPlacementConstraints().equals(this.getPlacementConstraints()) == false)
+            return false;
+        if (other.getPlacementStrategy() == null ^ this.getPlacementStrategy() == null)
+            return false;
+        if (other.getPlacementStrategy() != null && other.getPlacementStrategy().equals(this.getPlacementStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -488,6 +708,9 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
+        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
+        hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
+        hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
         return hashCode;
     }
 

@@ -55,13 +55,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task.
+     * would like to place your task. You can specify up to 10 container instances.
      * </p>
-     * <important>
-     * <p>
-     * The list of container instances to start tasks on is limited to 10.
-     * </p>
-     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<String> containerInstances;
     /**
@@ -78,6 +73,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String startedBy;
+    /**
+     * <p>
+     * The task group to associate with the task. By default, if you do not specify a task group, the default group is
+     * <code>family:TASKDEF-FAMILY</code>.
+     * </p>
+     */
+    private String group;
 
     /**
      * <p>
@@ -275,19 +277,11 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task.
+     * would like to place your task. You can specify up to 10 container instances.
      * </p>
-     * <important>
-     * <p>
-     * The list of container instances to start tasks on is limited to 10.
-     * </p>
-     * </important>
      * 
      * @return The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on
-     *         which you would like to place your task.</p> <important>
-     *         <p>
-     *         The list of container instances to start tasks on is limited to 10.
-     *         </p>
+     *         which you would like to place your task. You can specify up to 10 container instances.
      */
 
     public java.util.List<String> getContainerInstances() {
@@ -300,20 +294,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task.
+     * would like to place your task. You can specify up to 10 container instances.
      * </p>
-     * <important>
-     * <p>
-     * The list of container instances to start tasks on is limited to 10.
-     * </p>
-     * </important>
      * 
      * @param containerInstances
      *        The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which
-     *        you would like to place your task.</p> <important>
-     *        <p>
-     *        The list of container instances to start tasks on is limited to 10.
-     *        </p>
+     *        you would like to place your task. You can specify up to 10 container instances.
      */
 
     public void setContainerInstances(java.util.Collection<String> containerInstances) {
@@ -328,13 +314,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task.
+     * would like to place your task. You can specify up to 10 container instances.
      * </p>
-     * <important>
-     * <p>
-     * The list of container instances to start tasks on is limited to 10.
-     * </p>
-     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setContainerInstances(java.util.Collection)} or {@link #withContainerInstances(java.util.Collection)} if
@@ -343,10 +324,7 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param containerInstances
      *        The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which
-     *        you would like to place your task.</p> <important>
-     *        <p>
-     *        The list of container instances to start tasks on is limited to 10.
-     *        </p>
+     *        you would like to place your task. You can specify up to 10 container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,20 +341,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task.
+     * would like to place your task. You can specify up to 10 container instances.
      * </p>
-     * <important>
-     * <p>
-     * The list of container instances to start tasks on is limited to 10.
-     * </p>
-     * </important>
      * 
      * @param containerInstances
      *        The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which
-     *        you would like to place your task.</p> <important>
-     *        <p>
-     *        The list of container instances to start tasks on is limited to 10.
-     *        </p>
+     *        you would like to place your task. You can specify up to 10 container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,6 +441,52 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The task group to associate with the task. By default, if you do not specify a task group, the default group is
+     * <code>family:TASKDEF-FAMILY</code>.
+     * </p>
+     * 
+     * @param group
+     *        The task group to associate with the task. By default, if you do not specify a task group, the default
+     *        group is <code>family:TASKDEF-FAMILY</code>.
+     */
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    /**
+     * <p>
+     * The task group to associate with the task. By default, if you do not specify a task group, the default group is
+     * <code>family:TASKDEF-FAMILY</code>.
+     * </p>
+     * 
+     * @return The task group to associate with the task. By default, if you do not specify a task group, the default
+     *         group is <code>family:TASKDEF-FAMILY</code>.
+     */
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    /**
+     * <p>
+     * The task group to associate with the task. By default, if you do not specify a task group, the default group is
+     * <code>family:TASKDEF-FAMILY</code>.
+     * </p>
+     * 
+     * @param group
+     *        The task group to associate with the task. By default, if you do not specify a task group, the default
+     *        group is <code>family:TASKDEF-FAMILY</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskRequest withGroup(String group) {
+        setGroup(group);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -490,7 +506,9 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getContainerInstances() != null)
             sb.append("ContainerInstances: ").append(getContainerInstances()).append(",");
         if (getStartedBy() != null)
-            sb.append("StartedBy: ").append(getStartedBy());
+            sb.append("StartedBy: ").append(getStartedBy()).append(",");
+        if (getGroup() != null)
+            sb.append("Group: ").append(getGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -525,6 +543,10 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false)
             return false;
+        if (other.getGroup() == null ^ this.getGroup() == null)
+            return false;
+        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
+            return false;
         return true;
     }
 
@@ -538,6 +560,7 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getContainerInstances() == null) ? 0 : getContainerInstances().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
+        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         return hashCode;
     }
 

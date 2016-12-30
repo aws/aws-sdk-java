@@ -31,6 +31,15 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     private String cluster;
     /**
      * <p>
+     * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
+     * statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     */
+    private String filter;
+    /**
+     * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code> value. This value is
@@ -99,6 +108,64 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     public ListContainerInstancesRequest withCluster(String cluster) {
         setCluster(cluster);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
+     * statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param filter
+     *        You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
+     *        statements. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     */
+
+    public void setFilter(String filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
+     * statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
+     *         statements. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *         Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     */
+
+    public String getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
+     * statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param filter
+     *        You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
+     *        statements. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListContainerInstancesRequest withFilter(String filter) {
+        setFilter(filter);
         return this;
     }
 
@@ -276,6 +343,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
         sb.append("{");
         if (getCluster() != null)
             sb.append("Cluster: ").append(getCluster()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -298,6 +367,10 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getCluster() != null && other.getCluster().equals(this.getCluster()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -315,6 +388,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

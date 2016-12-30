@@ -39,7 +39,7 @@ import java.io.Serializable;
  * <code>User-Agent</code> header for which the value is <code>BadBot</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/Rule"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/Rule"/>AWS API Documentation</a>
  */
 public class Rule implements Serializable, Cloneable {
 

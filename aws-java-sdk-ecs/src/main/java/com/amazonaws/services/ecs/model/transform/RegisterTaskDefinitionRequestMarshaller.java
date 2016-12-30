@@ -97,6 +97,20 @@ public class RegisterTaskDefinitionRequestMarshaller implements Marshaller<Reque
                 jsonGenerator.writeEndArray();
             }
 
+            com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraintsList = (com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint>) registerTaskDefinitionRequest
+                    .getPlacementConstraints();
+            if (!placementConstraintsList.isEmpty() || !placementConstraintsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("placementConstraints");
+                jsonGenerator.writeStartArray();
+                for (TaskDefinitionPlacementConstraint placementConstraintsListValue : placementConstraintsList) {
+                    if (placementConstraintsListValue != null) {
+
+                        TaskDefinitionPlacementConstraintJsonMarshaller.getInstance().marshall(placementConstraintsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

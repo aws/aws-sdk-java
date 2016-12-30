@@ -20,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to delete an <a>XssMatchSet</a> from AWS WAF.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteXssMatchSet"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet"/>AWS API Documentation</a>
  */
 public class DeleteXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

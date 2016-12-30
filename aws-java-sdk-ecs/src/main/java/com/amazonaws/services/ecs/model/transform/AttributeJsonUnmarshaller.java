@@ -55,6 +55,14 @@ public class AttributeJsonUnmarshaller implements Unmarshaller<Attribute, JsonUn
                     context.nextToken();
                     attribute.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("targetType", targetDepth)) {
+                    context.nextToken();
+                    attribute.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("targetId", targetDepth)) {
+                    context.nextToken();
+                    attribute.setTargetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

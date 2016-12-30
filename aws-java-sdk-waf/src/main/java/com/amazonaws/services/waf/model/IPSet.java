@@ -28,7 +28,7 @@ import java.io.Serializable;
  * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSet"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSet"/>AWS API Documentation</a>
  */
 public class IPSet implements Serializable, Cloneable {
 

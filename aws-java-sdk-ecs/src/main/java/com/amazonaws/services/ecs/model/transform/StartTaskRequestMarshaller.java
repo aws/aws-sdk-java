@@ -85,6 +85,9 @@ public class StartTaskRequestMarshaller implements Marshaller<Request<StartTaskR
             if (startTaskRequest.getStartedBy() != null) {
                 jsonGenerator.writeFieldName("startedBy").writeValue(startTaskRequest.getStartedBy());
             }
+            if (startTaskRequest.getGroup() != null) {
+                jsonGenerator.writeFieldName("group").writeValue(startTaskRequest.getGroup());
+            }
 
             jsonGenerator.writeEndObject();
 

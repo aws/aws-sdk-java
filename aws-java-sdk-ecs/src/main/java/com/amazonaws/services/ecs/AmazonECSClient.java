@@ -99,6 +99,9 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                             new JsonErrorShapeMetadata().withErrorCode("ServiceNotFoundException").withModeledClass(
                                     com.amazonaws.services.ecs.model.ServiceNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AttributeLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.AttributeLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceNotActiveException").withModeledClass(
                                     com.amazonaws.services.ecs.model.ServiceNotActiveException.class))
                     .addErrorMetadata(
@@ -107,6 +110,9 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
                                     com.amazonaws.services.ecs.model.ServerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TargetNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.TargetNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(
                                     com.amazonaws.services.ecs.model.ClientException.class))
@@ -370,8 +376,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <code>maximumPercent</code> is 200%.
      * </p>
      * <p>
-     * When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your
-     * cluster with the following logic:
+     * When the service scheduler launches new tasks, it determines task placement in your cluster with the following
+     * logic:
      * </p>
      * <ul>
      * <li>
@@ -380,6 +386,12 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * example, they have the required CPU, memory, ports, and container instance attributes).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although
+     * you can choose a different placement strategy with the <code>placementStrategy</code> parameter):
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * Sort the valid container instances by the fewest number of running tasks for this service in the same
@@ -392,6 +404,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous
      * steps), favoring container instances with the fewest number of running tasks for this service.
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
@@ -432,6 +446,55 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateServiceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateServiceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes one or more attributes from an Amazon ECS resource.
+     * </p>
+     * 
+     * @param deleteAttributesRequest
+     * @return Result of the DeleteAttributes operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are region-specific.
+     * @throws TargetNotFoundException
+     *         The specified target could not be found. You can view your available container instances with
+     *         <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.DeleteAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes"/>AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAttributesRequest> request = null;
+        Response<DeleteAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1037,6 +1100,56 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a
+     * target type and cluster, <code>LisAttributes</code> returns a list of attribute objects, one for each attribute
+     * on each resource. You can filter the list of results to a single attribute name to only return results that have
+     * that name. You can also filter the results by attribute name and value, for example, to see which container
+     * instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
+     * </p>
+     * 
+     * @param listAttributesRequest
+     * @return Result of the ListAttributes operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.ListAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes"/>AWS API Documentation</a>
+     */
+    @Override
+    public ListAttributesResult listAttributes(ListAttributesRequest listAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAttributesRequest> request = null;
+        Response<ListAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of existing clusters.
      * </p>
      * 
@@ -1091,7 +1204,11 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Returns a list of container instances in a specified cluster.
+     * Returns a list of container instances in a specified cluster. You can filter the results of a
+     * <code>ListContainerInstances</code> operation with cluster query language statements inside the
+     * <code>filter</code> parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param listContainerInstancesRequest
@@ -1390,6 +1507,59 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     }
 
     /**
+     * <p>
+     * Create or update an attribute on an Amazon ECS resource. If the attribute does not already exist on the given
+     * target, it is created; if it does exist, it is replaced with the new value.
+     * </p>
+     * 
+     * @param putAttributesRequest
+     * @return Result of the PutAttributes operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are region-specific.
+     * @throws TargetNotFoundException
+     *         The specified target could not be found. You can view your available container instances with
+     *         <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and region-specific.
+     * @throws AttributeLimitExceededException
+     *         You can apply up to 10 custom attributes per resource. You can view the attributes of a resource with
+     *         <a>ListAttributes</a>. You can remove existing attributes on a resource with <a>DeleteAttributes</a>.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.PutAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes"/>AWS API Documentation</a>
+     */
+    @Override
+    public PutAttributesResult putAttributes(PutAttributesRequest putAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAttributesRequest> request = null;
+        Response<PutAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <note>
      * <p>
      * This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the
@@ -1514,14 +1684,18 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Start a task using random placement and the default Amazon ECS scheduler. To use your own scheduler or place a
-     * task on a specific container instance, use <code>StartTask</code> instead.
+     * Starts a new task using the specified task definition.
      * </p>
-     * <important>
      * <p>
-     * The <code>count</code> parameter is limited to 10 tasks per call.
+     * You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks using placement
+     * constraints and placement strategies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
-     * </important>
+     * <p>
+     * Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks manually on specific
+     * container instances.
+     * </p>
      * 
      * @param runTaskRequest
      * @return Result of the RunTask operation returned by the service.
@@ -1572,14 +1746,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Starts a new task from the specified task definition on the specified container instance or instances. To use the
-     * default Amazon ECS scheduler to place your task, use <code>RunTask</code> instead.
+     * Starts a new task from the specified task definition on the specified container instance or instances.
      * </p>
-     * <important>
      * <p>
-     * The list of container instances to start tasks on is limited to 10.
+     * Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
-     * </important>
      * 
      * @param startTaskRequest
      * @return Result of the StartTask operation returned by the service.
@@ -1915,8 +2088,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
      * </p>
      * <p>
-     * When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your
-     * cluster with the following logic:
+     * When the service scheduler launches new tasks, it determines task placement in your cluster with the following
+     * logic:
      * </p>
      * <ul>
      * <li>
@@ -1925,6 +2098,12 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * example, they have the required CPU, memory, ports, and container instance attributes).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although
+     * you can choose a different placement strategy with the <code>placementStrategy</code> parameter):
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * Sort the valid container instances by the fewest number of running tasks for this service in the same
@@ -1936,6 +2115,27 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous
      * steps), favoring container instances with the fewest number of running tasks for this service.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * When the service scheduler stops running tasks, it attempts to maintain balance across the Availability Zones in
+     * your cluster with the following logic:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Sort the container instances by the largest number of running tasks for this service in the same Availability
+     * Zone as the instance. For example, if zone A has one running service task and zones B and C each have two,
+     * container instances in either zone B or C are considered optimal for termination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stop the task on a container instance in an optimal Availability Zone (based on the previous steps), favoring
+     * container instances with the largest number of running tasks for this service.
      * </p>
      * </li>
      * </ul>

@@ -119,6 +119,18 @@ public class Service implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * The placement constraints for the tasks in the service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraints;
+    /**
+     * <p>
+     * The placement strategy that determines how tasks for the service are placed.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
 
     /**
      * <p>
@@ -854,6 +866,152 @@ public class Service implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The placement constraints for the tasks in the service.
+     * </p>
+     * 
+     * @return The placement constraints for the tasks in the service.
+     */
+
+    public java.util.List<PlacementConstraint> getPlacementConstraints() {
+        if (placementConstraints == null) {
+            placementConstraints = new com.amazonaws.internal.SdkInternalList<PlacementConstraint>();
+        }
+        return placementConstraints;
+    }
+
+    /**
+     * <p>
+     * The placement constraints for the tasks in the service.
+     * </p>
+     * 
+     * @param placementConstraints
+     *        The placement constraints for the tasks in the service.
+     */
+
+    public void setPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
+        if (placementConstraints == null) {
+            this.placementConstraints = null;
+            return;
+        }
+
+        this.placementConstraints = new com.amazonaws.internal.SdkInternalList<PlacementConstraint>(placementConstraints);
+    }
+
+    /**
+     * <p>
+     * The placement constraints for the tasks in the service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementConstraints(java.util.Collection)} or {@link #withPlacementConstraints(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param placementConstraints
+     *        The placement constraints for the tasks in the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withPlacementConstraints(PlacementConstraint... placementConstraints) {
+        if (this.placementConstraints == null) {
+            setPlacementConstraints(new com.amazonaws.internal.SdkInternalList<PlacementConstraint>(placementConstraints.length));
+        }
+        for (PlacementConstraint ele : placementConstraints) {
+            this.placementConstraints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The placement constraints for the tasks in the service.
+     * </p>
+     * 
+     * @param placementConstraints
+     *        The placement constraints for the tasks in the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
+        setPlacementConstraints(placementConstraints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The placement strategy that determines how tasks for the service are placed.
+     * </p>
+     * 
+     * @return The placement strategy that determines how tasks for the service are placed.
+     */
+
+    public java.util.List<PlacementStrategy> getPlacementStrategy() {
+        if (placementStrategy == null) {
+            placementStrategy = new com.amazonaws.internal.SdkInternalList<PlacementStrategy>();
+        }
+        return placementStrategy;
+    }
+
+    /**
+     * <p>
+     * The placement strategy that determines how tasks for the service are placed.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The placement strategy that determines how tasks for the service are placed.
+     */
+
+    public void setPlacementStrategy(java.util.Collection<PlacementStrategy> placementStrategy) {
+        if (placementStrategy == null) {
+            this.placementStrategy = null;
+            return;
+        }
+
+        this.placementStrategy = new com.amazonaws.internal.SdkInternalList<PlacementStrategy>(placementStrategy);
+    }
+
+    /**
+     * <p>
+     * The placement strategy that determines how tasks for the service are placed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementStrategy(java.util.Collection)} or {@link #withPlacementStrategy(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The placement strategy that determines how tasks for the service are placed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withPlacementStrategy(PlacementStrategy... placementStrategy) {
+        if (this.placementStrategy == null) {
+            setPlacementStrategy(new com.amazonaws.internal.SdkInternalList<PlacementStrategy>(placementStrategy.length));
+        }
+        for (PlacementStrategy ele : placementStrategy) {
+            this.placementStrategy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The placement strategy that determines how tasks for the service are placed.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The placement strategy that determines how tasks for the service are placed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withPlacementStrategy(java.util.Collection<PlacementStrategy> placementStrategy) {
+        setPlacementStrategy(placementStrategy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -891,7 +1049,11 @@ public class Service implements Serializable, Cloneable {
         if (getEvents() != null)
             sb.append("Events: ").append(getEvents()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getPlacementConstraints() != null)
+            sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
+        if (getPlacementStrategy() != null)
+            sb.append("PlacementStrategy: ").append(getPlacementStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -962,6 +1124,14 @@ public class Service implements Serializable, Cloneable {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getPlacementConstraints() == null ^ this.getPlacementConstraints() == null)
+            return false;
+        if (other.getPlacementConstraints() != null && other.getPlacementConstraints().equals(this.getPlacementConstraints()) == false)
+            return false;
+        if (other.getPlacementStrategy() == null ^ this.getPlacementStrategy() == null)
+            return false;
+        if (other.getPlacementStrategy() != null && other.getPlacementStrategy().equals(this.getPlacementStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -984,6 +1154,8 @@ public class Service implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
+        hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
         return hashCode;
     }
 

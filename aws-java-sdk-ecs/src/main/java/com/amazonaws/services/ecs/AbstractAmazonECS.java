@@ -51,6 +51,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -111,6 +116,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public ListAttributesResult listAttributes(ListAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListClustersResult listClusters(ListClustersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -168,6 +178,11 @@ public class AbstractAmazonECS implements AmazonECS {
     @Override
     public ListTasksResult listTasks() {
         return listTasks(new ListTasksRequest());
+    }
+
+    @Override
+    public PutAttributesResult putAttributes(PutAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

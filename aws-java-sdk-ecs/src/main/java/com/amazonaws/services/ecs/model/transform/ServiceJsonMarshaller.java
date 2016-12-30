@@ -116,6 +116,34 @@ public class ServiceJsonMarshaller {
                 jsonGenerator.writeFieldName("createdAt").writeValue(service.getCreatedAt());
             }
 
+            com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraintsList = (com.amazonaws.internal.SdkInternalList<PlacementConstraint>) service
+                    .getPlacementConstraints();
+            if (!placementConstraintsList.isEmpty() || !placementConstraintsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("placementConstraints");
+                jsonGenerator.writeStartArray();
+                for (PlacementConstraint placementConstraintsListValue : placementConstraintsList) {
+                    if (placementConstraintsListValue != null) {
+
+                        PlacementConstraintJsonMarshaller.getInstance().marshall(placementConstraintsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategyList = (com.amazonaws.internal.SdkInternalList<PlacementStrategy>) service
+                    .getPlacementStrategy();
+            if (!placementStrategyList.isEmpty() || !placementStrategyList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("placementStrategy");
+                jsonGenerator.writeStartArray();
+                for (PlacementStrategy placementStrategyListValue : placementStrategyList) {
+                    if (placementStrategyListValue != null) {
+
+                        PlacementStrategyJsonMarshaller.getInstance().marshall(placementStrategyListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);

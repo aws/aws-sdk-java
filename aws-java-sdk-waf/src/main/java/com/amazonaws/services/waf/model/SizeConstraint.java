@@ -22,8 +22,7 @@ import java.io.Serializable;
  * true, the <code>SizeConstraint</code> is considered to match.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SizeConstraint"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraint"/>AWS API Documentation</a>
  */
 public class SizeConstraint implements Serializable, Cloneable {
 

@@ -101,6 +101,20 @@ public class TaskDefinitionJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
+            com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraintsList = (com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint>) taskDefinition
+                    .getPlacementConstraints();
+            if (!placementConstraintsList.isEmpty() || !placementConstraintsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("placementConstraints");
+                jsonGenerator.writeStartArray();
+                for (TaskDefinitionPlacementConstraint placementConstraintsListValue : placementConstraintsList) {
+                    if (placementConstraintsListValue != null) {
+
+                        TaskDefinitionPlacementConstraintJsonMarshaller.getInstance().marshall(placementConstraintsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);

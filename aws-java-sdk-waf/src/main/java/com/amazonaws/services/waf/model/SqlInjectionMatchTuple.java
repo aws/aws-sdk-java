@@ -20,7 +20,7 @@ import java.io.Serializable;
  * want AWS WAF to inspect a header, the name of the header.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchTuple"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SqlInjectionMatchTuple"/>AWS API
  *      Documentation</a>
  */
 public class SqlInjectionMatchTuple implements Serializable, Cloneable {

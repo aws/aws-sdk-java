@@ -42,9 +42,17 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      */
     private String revisionType;
-
+    /**
+     * <p>
+     * Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     */
     private S3Location s3Location;
-
+    /**
+     * <p>
+     * Information about the location of application artifacts stored in GitHub.
+     * </p>
+     */
     private GitHubLocation gitHubLocation;
 
     /**
@@ -236,7 +244,12 @@ public class RevisionLocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     * 
      * @param s3Location
+     *        Information about the location of application artifacts stored in Amazon S3.
      */
 
     public void setS3Location(S3Location s3Location) {
@@ -244,7 +257,11 @@ public class RevisionLocation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     * 
+     * @return Information about the location of application artifacts stored in Amazon S3.
      */
 
     public S3Location getS3Location() {
@@ -252,7 +269,12 @@ public class RevisionLocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     * 
      * @param s3Location
+     *        Information about the location of application artifacts stored in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,7 +284,12 @@ public class RevisionLocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the location of application artifacts stored in GitHub.
+     * </p>
+     * 
      * @param gitHubLocation
+     *        Information about the location of application artifacts stored in GitHub.
      */
 
     public void setGitHubLocation(GitHubLocation gitHubLocation) {
@@ -270,7 +297,11 @@ public class RevisionLocation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the location of application artifacts stored in GitHub.
+     * </p>
+     * 
+     * @return Information about the location of application artifacts stored in GitHub.
      */
 
     public GitHubLocation getGitHubLocation() {
@@ -278,7 +309,12 @@ public class RevisionLocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the location of application artifacts stored in GitHub.
+     * </p>
+     * 
      * @param gitHubLocation
+     *        Information about the location of application artifacts stored in GitHub.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

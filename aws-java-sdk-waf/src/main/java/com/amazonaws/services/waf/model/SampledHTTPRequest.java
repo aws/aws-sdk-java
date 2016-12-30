@@ -21,8 +21,7 @@ import java.io.Serializable;
  * <code>SampledHTTPRequest</code> object for each web request that is returned by <code>GetSampledRequests</code>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SampledHTTPRequest"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SampledHTTPRequest"/>AWS API Documentation</a>
  */
 public class SampledHTTPRequest implements Serializable, Cloneable {
 

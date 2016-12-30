@@ -27,7 +27,7 @@ import java.io.Serializable;
  * <code>ByteMatchTuple</code> to be considered a match.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchSet"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchSet"/>AWS API Documentation</a>
  */
 public class ByteMatchSet implements Serializable, Cloneable {
 

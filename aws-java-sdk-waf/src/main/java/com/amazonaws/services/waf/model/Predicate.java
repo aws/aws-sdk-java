@@ -21,7 +21,7 @@ import java.io.Serializable;
  * you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/Predicate"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/Predicate"/>AWS API Documentation</a>
  */
 public class Predicate implements Serializable, Cloneable {
 

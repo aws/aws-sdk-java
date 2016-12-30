@@ -63,6 +63,9 @@ public class RegisterOnPremisesInstanceRequestMarshaller implements Marshaller<R
             if (registerOnPremisesInstanceRequest.getInstanceName() != null) {
                 jsonGenerator.writeFieldName("instanceName").writeValue(registerOnPremisesInstanceRequest.getInstanceName());
             }
+            if (registerOnPremisesInstanceRequest.getIamSessionArn() != null) {
+                jsonGenerator.writeFieldName("iamSessionArn").writeValue(registerOnPremisesInstanceRequest.getIamSessionArn());
+            }
             if (registerOnPremisesInstanceRequest.getIamUserArn() != null) {
                 jsonGenerator.writeFieldName("iamUserArn").writeValue(registerOnPremisesInstanceRequest.getIamUserArn());
             }

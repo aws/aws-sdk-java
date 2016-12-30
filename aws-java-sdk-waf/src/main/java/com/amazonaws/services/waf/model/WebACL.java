@@ -25,7 +25,7 @@ import java.io.Serializable;
  * more information, see <a>UpdateWebACL</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WebACL"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WebACL"/>AWS API Documentation</a>
  */
 public class WebACL implements Serializable, Cloneable {
 

@@ -128,8 +128,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <code>maximumPercent</code> is 200%.
      * </p>
      * <p>
-     * When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your
-     * cluster with the following logic:
+     * When the service scheduler launches new tasks, it determines task placement in your cluster with the following
+     * logic:
      * </p>
      * <ul>
      * <li>
@@ -138,6 +138,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * example, they have the required CPU, memory, ports, and container instance attributes).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although
+     * you can choose a different placement strategy with the <code>placementStrategy</code> parameter):
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * Sort the valid container instances by the fewest number of running tasks for this service in the same
@@ -150,6 +156,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous
      * steps), favoring container instances with the fewest number of running tasks for this service.
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
@@ -201,8 +209,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <code>maximumPercent</code> is 200%.
      * </p>
      * <p>
-     * When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your
-     * cluster with the following logic:
+     * When the service scheduler launches new tasks, it determines task placement in your cluster with the following
+     * logic:
      * </p>
      * <ul>
      * <li>
@@ -211,6 +219,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * example, they have the required CPU, memory, ports, and container instance attributes).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although
+     * you can choose a different placement strategy with the <code>placementStrategy</code> parameter):
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * Sort the valid container instances by the fewest number of running tasks for this service in the same
@@ -225,6 +239,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
      * 
      * @param createServiceRequest
      * @param asyncHandler
@@ -237,6 +253,35 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<CreateServiceResult> createServiceAsync(CreateServiceRequest createServiceRequest,
             com.amazonaws.handlers.AsyncHandler<CreateServiceRequest, CreateServiceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes one or more attributes from an Amazon ECS resource.
+     * </p>
+     * 
+     * @param deleteAttributesRequest
+     * @return A Java Future containing the result of the DeleteAttributes operation returned by the service.
+     * @sample AmazonECSAsync.DeleteAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes"/>AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest deleteAttributesRequest);
+
+    /**
+     * <p>
+     * Deletes one or more attributes from an Amazon ECS resource.
+     * </p>
+     * 
+     * @param deleteAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAttributes operation returned by the service.
+     * @sample AmazonECSAsyncHandler.DeleteAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes"/>AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest deleteAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAttributesRequest, DeleteAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -686,6 +731,43 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a
+     * target type and cluster, <code>LisAttributes</code> returns a list of attribute objects, one for each attribute
+     * on each resource. You can filter the list of results to a single attribute name to only return results that have
+     * that name. You can also filter the results by attribute name and value, for example, to see which container
+     * instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
+     * </p>
+     * 
+     * @param listAttributesRequest
+     * @return A Java Future containing the result of the ListAttributes operation returned by the service.
+     * @sample AmazonECSAsync.ListAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes"/>AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(ListAttributesRequest listAttributesRequest);
+
+    /**
+     * <p>
+     * Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a
+     * target type and cluster, <code>LisAttributes</code> returns a list of attribute objects, one for each attribute
+     * on each resource. You can filter the list of results to a single attribute name to only return results that have
+     * that name. You can also filter the results by attribute name and value, for example, to see which container
+     * instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
+     * </p>
+     * 
+     * @param listAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAttributes operation returned by the service.
+     * @sample AmazonECSAsyncHandler.ListAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes"/>AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(ListAttributesRequest listAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAttributesRequest, ListAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of existing clusters.
      * </p>
      * 
@@ -729,7 +811,11 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Returns a list of container instances in a specified cluster.
+     * Returns a list of container instances in a specified cluster. You can filter the results of a
+     * <code>ListContainerInstances</code> operation with cluster query language statements inside the
+     * <code>filter</code> parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param listContainerInstancesRequest
@@ -742,7 +828,11 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Returns a list of container instances in a specified cluster.
+     * Returns a list of container instances in a specified cluster. You can filter the results of a
+     * <code>ListContainerInstances</code> operation with cluster query language statements inside the
+     * <code>filter</code> parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param listContainerInstancesRequest
@@ -980,6 +1070,37 @@ public interface AmazonECSAsync extends AmazonECS {
     java.util.concurrent.Future<ListTasksResult> listTasksAsync(com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler);
 
     /**
+     * <p>
+     * Create or update an attribute on an Amazon ECS resource. If the attribute does not already exist on the given
+     * target, it is created; if it does exist, it is replaced with the new value.
+     * </p>
+     * 
+     * @param putAttributesRequest
+     * @return A Java Future containing the result of the PutAttributes operation returned by the service.
+     * @sample AmazonECSAsync.PutAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes"/>AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest putAttributesRequest);
+
+    /**
+     * <p>
+     * Create or update an attribute on an Amazon ECS resource. If the attribute does not already exist on the given
+     * target, it is created; if it does exist, it is replaced with the new value.
+     * </p>
+     * 
+     * @param putAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAttributes operation returned by the service.
+     * @sample AmazonECSAsyncHandler.PutAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes"/>AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest putAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult> asyncHandler);
+
+    /**
      * <note>
      * <p>
      * This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the
@@ -1091,14 +1212,18 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Start a task using random placement and the default Amazon ECS scheduler. To use your own scheduler or place a
-     * task on a specific container instance, use <code>StartTask</code> instead.
+     * Starts a new task using the specified task definition.
      * </p>
-     * <important>
      * <p>
-     * The <code>count</code> parameter is limited to 10 tasks per call.
+     * You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks using placement
+     * constraints and placement strategies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
-     * </important>
+     * <p>
+     * Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks manually on specific
+     * container instances.
+     * </p>
      * 
      * @param runTaskRequest
      * @return A Java Future containing the result of the RunTask operation returned by the service.
@@ -1109,14 +1234,18 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Start a task using random placement and the default Amazon ECS scheduler. To use your own scheduler or place a
-     * task on a specific container instance, use <code>StartTask</code> instead.
+     * Starts a new task using the specified task definition.
      * </p>
-     * <important>
      * <p>
-     * The <code>count</code> parameter is limited to 10 tasks per call.
+     * You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks using placement
+     * constraints and placement strategies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
-     * </important>
+     * <p>
+     * Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks manually on specific
+     * container instances.
+     * </p>
      * 
      * @param runTaskRequest
      * @param asyncHandler
@@ -1132,14 +1261,13 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Starts a new task from the specified task definition on the specified container instance or instances. To use the
-     * default Amazon ECS scheduler to place your task, use <code>RunTask</code> instead.
+     * Starts a new task from the specified task definition on the specified container instance or instances.
      * </p>
-     * <important>
      * <p>
-     * The list of container instances to start tasks on is limited to 10.
+     * Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
-     * </important>
      * 
      * @param startTaskRequest
      * @return A Java Future containing the result of the StartTask operation returned by the service.
@@ -1150,14 +1278,13 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Starts a new task from the specified task definition on the specified container instance or instances. To use the
-     * default Amazon ECS scheduler to place your task, use <code>RunTask</code> instead.
+     * Starts a new task from the specified task definition on the specified container instance or instances.
      * </p>
-     * <important>
      * <p>
-     * The list of container instances to start tasks on is limited to 10.
+     * Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
-     * </important>
      * 
      * @param startTaskRequest
      * @param asyncHandler
@@ -1404,8 +1531,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
      * </p>
      * <p>
-     * When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your
-     * cluster with the following logic:
+     * When the service scheduler launches new tasks, it determines task placement in your cluster with the following
+     * logic:
      * </p>
      * <ul>
      * <li>
@@ -1414,6 +1541,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * example, they have the required CPU, memory, ports, and container instance attributes).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although
+     * you can choose a different placement strategy with the <code>placementStrategy</code> parameter):
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * Sort the valid container instances by the fewest number of running tasks for this service in the same
@@ -1425,6 +1558,27 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous
      * steps), favoring container instances with the fewest number of running tasks for this service.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * When the service scheduler stops running tasks, it attempts to maintain balance across the Availability Zones in
+     * your cluster with the following logic:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Sort the container instances by the largest number of running tasks for this service in the same Availability
+     * Zone as the instance. For example, if zone A has one running service task and zones B and C each have two,
+     * container instances in either zone B or C are considered optimal for termination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stop the task on a container instance in an optimal Availability Zone (based on the previous steps), favoring
+     * container instances with the largest number of running tasks for this service.
      * </p>
      * </li>
      * </ul>
@@ -1474,8 +1628,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
      * </p>
      * <p>
-     * When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your
-     * cluster with the following logic:
+     * When the service scheduler launches new tasks, it determines task placement in your cluster with the following
+     * logic:
      * </p>
      * <ul>
      * <li>
@@ -1484,6 +1638,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * example, they have the required CPU, memory, ports, and container instance attributes).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although
+     * you can choose a different placement strategy with the <code>placementStrategy</code> parameter):
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * Sort the valid container instances by the fewest number of running tasks for this service in the same
@@ -1495,6 +1655,27 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous
      * steps), favoring container instances with the fewest number of running tasks for this service.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * When the service scheduler stops running tasks, it attempts to maintain balance across the Availability Zones in
+     * your cluster with the following logic:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Sort the container instances by the largest number of running tasks for this service in the same Availability
+     * Zone as the instance. For example, if zone A has one running service task and zones B and C each have two,
+     * container instances in either zone B or C are considered optimal for termination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stop the task on a container instance in an optimal Availability Zone (based on the previous steps), favoring
+     * container instances with the largest number of running tasks for this service.
      * </p>
      * </li>
      * </ul>

@@ -27,7 +27,7 @@ import java.io.Serializable;
  * that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/TimeWindow"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/TimeWindow"/>AWS API Documentation</a>
  */
 public class TimeWindow implements Serializable, Cloneable {
 
