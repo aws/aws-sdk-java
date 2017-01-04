@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,13 +19,13 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an Amazon S3 object
+     * Source image either as bytes or an S3 object
      * </p>
      */
     private Image sourceImage;
     /**
      * <p>
-     * Target image either as bytes or an Amazon S3 object
+     * Target image either as bytes or an S3 object
      * </p>
      */
     private Image targetImage;
@@ -38,11 +38,11 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an Amazon S3 object
+     * Source image either as bytes or an S3 object
      * </p>
      * 
      * @param sourceImage
-     *        Source image either as bytes or an Amazon S3 object
+     *        Source image either as bytes or an S3 object
      */
 
     public void setSourceImage(Image sourceImage) {
@@ -51,10 +51,10 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an Amazon S3 object
+     * Source image either as bytes or an S3 object
      * </p>
      * 
-     * @return Source image either as bytes or an Amazon S3 object
+     * @return Source image either as bytes or an S3 object
      */
 
     public Image getSourceImage() {
@@ -63,11 +63,11 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an Amazon S3 object
+     * Source image either as bytes or an S3 object
      * </p>
      * 
      * @param sourceImage
-     *        Source image either as bytes or an Amazon S3 object
+     *        Source image either as bytes or an S3 object
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an Amazon S3 object
+     * Target image either as bytes or an S3 object
      * </p>
      * 
      * @param targetImage
-     *        Target image either as bytes or an Amazon S3 object
+     *        Target image either as bytes or an S3 object
      */
 
     public void setTargetImage(Image targetImage) {
@@ -91,10 +91,10 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an Amazon S3 object
+     * Target image either as bytes or an S3 object
      * </p>
      * 
-     * @return Target image either as bytes or an Amazon S3 object
+     * @return Target image either as bytes or an S3 object
      */
 
     public Image getTargetImage() {
@@ -103,11 +103,11 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an Amazon S3 object
+     * Target image either as bytes or an S3 object
      * </p>
      * 
      * @param targetImage
-     *        Target image either as bytes or an Amazon S3 object
+     *        Target image either as bytes or an S3 object
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

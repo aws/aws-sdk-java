@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -318,8 +318,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * @throws ResourceInUseException
      *         The resource is already in use and not available for this operation.
      * @sample AmazonKinesisFirehose.CreateDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateDeliveryStreamResult createDeliveryStream(CreateDeliveryStreamRequest createDeliveryStreamRequest) {
@@ -377,8 +377,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonKinesisFirehose.DeleteDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteDeliveryStreamResult deleteDeliveryStream(DeleteDeliveryStreamRequest deleteDeliveryStreamRequest) {
@@ -423,8 +423,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonKinesisFirehose.DescribeDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeDeliveryStreamResult describeDeliveryStream(DescribeDeliveryStreamRequest describeDeliveryStreamRequest) {
@@ -473,8 +473,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * @param listDeliveryStreamsRequest
      * @return Result of the ListDeliveryStreams operation returned by the service.
      * @sample AmazonKinesisFirehose.ListDeliveryStreams
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListDeliveryStreamsResult listDeliveryStreams(ListDeliveryStreamsRequest listDeliveryStreamsRequest) {
@@ -556,7 +556,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         how to request an increase, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Firehose Limits</a>.
      * @sample AmazonKinesisFirehose.PutRecord
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public PutRecordResult putRecord(PutRecordRequest putRecordRequest) {
@@ -659,7 +660,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         how to request an increase, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Firehose Limits</a>.
      * @sample AmazonKinesisFirehose.PutRecordBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -738,7 +739,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         Another modification has already happened. Fetch <b>VersionId</b> again and use it to update the
      *         destination.
      * @sample AmazonKinesisFirehose.UpdateDestination
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination" target="_top">AWS API
      *      Documentation</a>
      */
     @Override

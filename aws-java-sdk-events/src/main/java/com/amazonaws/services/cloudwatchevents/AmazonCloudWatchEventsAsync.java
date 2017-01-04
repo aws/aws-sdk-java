@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>DeleteRule</a> operation.
      * @return A Java Future containing the result of the DeleteRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.DeleteRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest);
 
@@ -79,7 +80,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.DeleteRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
@@ -93,7 +95,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>DescribeRule</a> operation.
      * @return A Java Future containing the result of the DescribeRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.DescribeRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest describeRuleRequest);
 
@@ -110,7 +113,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.DescribeRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest describeRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeRuleRequest, DescribeRuleResult> asyncHandler);
@@ -128,7 +132,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>DisableRule</a> operation.
      * @return A Java Future containing the result of the DisableRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.DisableRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(DisableRuleRequest disableRuleRequest);
 
@@ -149,7 +154,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.DisableRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(DisableRuleRequest disableRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, DisableRuleResult> asyncHandler);
@@ -167,7 +173,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>EnableRule</a> operation.
      * @return A Java Future containing the result of the EnableRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.EnableRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(EnableRuleRequest enableRuleRequest);
 
@@ -188,7 +195,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.EnableRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(EnableRuleRequest enableRuleRequest,
             com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler);
@@ -205,8 +213,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>ListRuleNamesByTarget</a> operation.
      * @return A Java Future containing the result of the ListRuleNamesByTarget operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.ListRuleNamesByTarget
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListRuleNamesByTargetResult> listRuleNamesByTargetAsync(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest);
 
@@ -226,8 +234,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRuleNamesByTarget operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.ListRuleNamesByTarget
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListRuleNamesByTargetResult> listRuleNamesByTargetAsync(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest,
             com.amazonaws.handlers.AsyncHandler<ListRuleNamesByTargetRequest, ListRuleNamesByTargetResult> asyncHandler);
@@ -244,7 +252,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>ListRules</a> operation.
      * @return A Java Future containing the result of the ListRules operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.ListRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest);
 
@@ -264,7 +273,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRules operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.ListRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult> asyncHandler);
@@ -278,7 +288,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>ListTargetsByRule</a> operation.
      * @return A Java Future containing the result of the ListTargetsByRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.ListTargetsByRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListTargetsByRuleResult> listTargetsByRuleAsync(ListTargetsByRuleRequest listTargetsByRuleRequest);
@@ -296,7 +306,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTargetsByRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.ListTargetsByRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListTargetsByRuleResult> listTargetsByRuleAsync(ListTargetsByRuleRequest listTargetsByRuleRequest,
@@ -311,7 +321,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>PutEvents</a> operation.
      * @return A Java Future containing the result of the PutEvents operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.PutEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest putEventsRequest);
 
@@ -328,7 +339,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutEvents operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.PutEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest putEventsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler);
@@ -358,7 +370,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>PutRule</a> operation.
      * @return A Java Future containing the result of the PutRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.PutRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutRuleResult> putRuleAsync(PutRuleRequest putRuleRequest);
 
@@ -391,7 +404,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.PutRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutRuleResult> putRuleAsync(PutRuleRequest putRuleRequest,
             com.amazonaws.handlers.AsyncHandler<PutRuleRequest, PutRuleResult> asyncHandler);
@@ -431,7 +445,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>PutTargets</a> operation.
      * @return A Java Future containing the result of the PutTargets operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.PutTargets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutTargetsResult> putTargetsAsync(PutTargetsRequest putTargetsRequest);
 
@@ -474,7 +489,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutTargets operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.PutTargets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutTargetsResult> putTargetsAsync(PutTargetsRequest putTargetsRequest,
             com.amazonaws.handlers.AsyncHandler<PutTargetsRequest, PutTargetsResult> asyncHandler);
@@ -492,7 +508,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>RemoveTargets</a> operation.
      * @return A Java Future containing the result of the RemoveTargets operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.RemoveTargets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTargetsResult> removeTargetsAsync(RemoveTargetsRequest removeTargetsRequest);
 
@@ -513,7 +530,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTargets operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.RemoveTargets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTargetsResult> removeTargetsAsync(RemoveTargetsRequest removeTargetsRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveTargetsRequest, RemoveTargetsResult> asyncHandler);
@@ -532,7 +550,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        Container for the parameters to the <a>TestEventPattern</a> operation.
      * @return A Java Future containing the result of the TestEventPattern operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.TestEventPattern
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(TestEventPatternRequest testEventPatternRequest);
@@ -555,7 +573,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TestEventPattern operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.TestEventPattern
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(TestEventPatternRequest testEventPatternRequest,

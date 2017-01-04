@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,13 +19,14 @@ import java.io.Serializable;
  * Provides code size usage and function count associated with the current account and region.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountUsage"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountUsage" target="_top">AWS API
+ *      Documentation</a>
  */
 public class AccountUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total size, in megabytes, of the account's deployment packages per region.
+     * Total size, in bytes, of the account's deployment packages per region.
      * </p>
      */
     private Long totalCodeSize;
@@ -38,11 +39,11 @@ public class AccountUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total size, in megabytes, of the account's deployment packages per region.
+     * Total size, in bytes, of the account's deployment packages per region.
      * </p>
      * 
      * @param totalCodeSize
-     *        Total size, in megabytes, of the account's deployment packages per region.
+     *        Total size, in bytes, of the account's deployment packages per region.
      */
 
     public void setTotalCodeSize(Long totalCodeSize) {
@@ -51,10 +52,10 @@ public class AccountUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total size, in megabytes, of the account's deployment packages per region.
+     * Total size, in bytes, of the account's deployment packages per region.
      * </p>
      * 
-     * @return Total size, in megabytes, of the account's deployment packages per region.
+     * @return Total size, in bytes, of the account's deployment packages per region.
      */
 
     public Long getTotalCodeSize() {
@@ -63,11 +64,11 @@ public class AccountUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total size, in megabytes, of the account's deployment packages per region.
+     * Total size, in bytes, of the account's deployment packages per region.
      * </p>
      * 
      * @param totalCodeSize
-     *        Total size, in megabytes, of the account's deployment packages per region.
+     *        Total size, in bytes, of the account's deployment packages per region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

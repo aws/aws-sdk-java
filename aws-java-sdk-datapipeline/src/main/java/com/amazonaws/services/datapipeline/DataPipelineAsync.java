@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,8 +63,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ActivatePipeline.
      * @return A Java Future containing the result of the ActivatePipeline operation returned by the service.
      * @sample DataPipelineAsync.ActivatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ActivatePipelineResult> activatePipelineAsync(ActivatePipelineRequest activatePipelineRequest);
 
@@ -89,8 +89,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ActivatePipeline operation returned by the service.
      * @sample DataPipelineAsyncHandler.ActivatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ActivatePipelineResult> activatePipelineAsync(ActivatePipelineRequest activatePipelineRequest,
             com.amazonaws.handlers.AsyncHandler<ActivatePipelineRequest, ActivatePipelineResult> asyncHandler);
@@ -104,7 +104,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for AddTags.
      * @return A Java Future containing the result of the AddTags operation returned by the service.
      * @sample DataPipelineAsync.AddTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest);
 
@@ -121,7 +122,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTags operation returned by the service.
      * @sample DataPipelineAsyncHandler.AddTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler);
@@ -135,8 +137,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for CreatePipeline.
      * @return A Java Future containing the result of the CreatePipeline operation returned by the service.
      * @sample DataPipelineAsync.CreatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreatePipelineResult> createPipelineAsync(CreatePipelineRequest createPipelineRequest);
 
@@ -153,8 +155,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePipeline operation returned by the service.
      * @sample DataPipelineAsyncHandler.CreatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreatePipelineResult> createPipelineAsync(CreatePipelineRequest createPipelineRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult> asyncHandler);
@@ -173,8 +175,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for DeactivatePipeline.
      * @return A Java Future containing the result of the DeactivatePipeline operation returned by the service.
      * @sample DataPipelineAsync.DeactivatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeactivatePipelineResult> deactivatePipelineAsync(DeactivatePipelineRequest deactivatePipelineRequest);
 
@@ -196,8 +198,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeactivatePipeline operation returned by the service.
      * @sample DataPipelineAsyncHandler.DeactivatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeactivatePipelineResult> deactivatePipelineAsync(DeactivatePipelineRequest deactivatePipelineRequest,
             com.amazonaws.handlers.AsyncHandler<DeactivatePipelineRequest, DeactivatePipelineResult> asyncHandler);
@@ -217,8 +219,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for DeletePipeline.
      * @return A Java Future containing the result of the DeletePipeline operation returned by the service.
      * @sample DataPipelineAsync.DeletePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(DeletePipelineRequest deletePipelineRequest);
 
@@ -241,8 +243,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePipeline operation returned by the service.
      * @sample DataPipelineAsyncHandler.DeletePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(DeletePipelineRequest deletePipelineRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler);
@@ -257,8 +259,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for DescribeObjects.
      * @return A Java Future containing the result of the DescribeObjects operation returned by the service.
      * @sample DataPipelineAsync.DescribeObjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeObjectsResult> describeObjectsAsync(DescribeObjectsRequest describeObjectsRequest);
 
@@ -276,8 +278,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeObjects operation returned by the service.
      * @sample DataPipelineAsyncHandler.DescribeObjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeObjectsResult> describeObjectsAsync(DescribeObjectsRequest describeObjectsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeObjectsRequest, DescribeObjectsResult> asyncHandler);
@@ -298,8 +300,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for DescribePipelines.
      * @return A Java Future containing the result of the DescribePipelines operation returned by the service.
      * @sample DataPipelineAsync.DescribePipelines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribePipelinesResult> describePipelinesAsync(DescribePipelinesRequest describePipelinesRequest);
 
@@ -323,8 +325,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePipelines operation returned by the service.
      * @sample DataPipelineAsyncHandler.DescribePipelines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribePipelinesResult> describePipelinesAsync(DescribePipelinesRequest describePipelinesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePipelinesRequest, DescribePipelinesResult> asyncHandler);
@@ -339,8 +341,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for EvaluateExpression.
      * @return A Java Future containing the result of the EvaluateExpression operation returned by the service.
      * @sample DataPipelineAsync.EvaluateExpression
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<EvaluateExpressionResult> evaluateExpressionAsync(EvaluateExpressionRequest evaluateExpressionRequest);
 
@@ -358,8 +360,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EvaluateExpression operation returned by the service.
      * @sample DataPipelineAsyncHandler.EvaluateExpression
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<EvaluateExpressionResult> evaluateExpressionAsync(EvaluateExpressionRequest evaluateExpressionRequest,
             com.amazonaws.handlers.AsyncHandler<EvaluateExpressionRequest, EvaluateExpressionResult> asyncHandler);
@@ -374,8 +376,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for GetPipelineDefinition.
      * @return A Java Future containing the result of the GetPipelineDefinition operation returned by the service.
      * @sample DataPipelineAsync.GetPipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPipelineDefinitionResult> getPipelineDefinitionAsync(GetPipelineDefinitionRequest getPipelineDefinitionRequest);
 
@@ -393,8 +395,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPipelineDefinition operation returned by the service.
      * @sample DataPipelineAsyncHandler.GetPipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPipelineDefinitionResult> getPipelineDefinitionAsync(GetPipelineDefinitionRequest getPipelineDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<GetPipelineDefinitionRequest, GetPipelineDefinitionResult> asyncHandler);
@@ -408,7 +410,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ListPipelines.
      * @return A Java Future containing the result of the ListPipelines operation returned by the service.
      * @sample DataPipelineAsync.ListPipelines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(ListPipelinesRequest listPipelinesRequest);
@@ -426,7 +428,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPipelines operation returned by the service.
      * @sample DataPipelineAsyncHandler.ListPipelines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(ListPipelinesRequest listPipelinesRequest,
@@ -467,7 +469,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for PollForTask.
      * @return A Java Future containing the result of the PollForTask operation returned by the service.
      * @sample DataPipelineAsync.PollForTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PollForTaskResult> pollForTaskAsync(PollForTaskRequest pollForTaskRequest);
@@ -496,7 +498,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PollForTask operation returned by the service.
      * @sample DataPipelineAsyncHandler.PollForTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PollForTaskResult> pollForTaskAsync(PollForTaskRequest pollForTaskRequest,
@@ -526,8 +528,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for PutPipelineDefinition.
      * @return A Java Future containing the result of the PutPipelineDefinition operation returned by the service.
      * @sample DataPipelineAsync.PutPipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutPipelineDefinitionResult> putPipelineDefinitionAsync(PutPipelineDefinitionRequest putPipelineDefinitionRequest);
 
@@ -559,8 +561,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutPipelineDefinition operation returned by the service.
      * @sample DataPipelineAsyncHandler.PutPipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutPipelineDefinitionResult> putPipelineDefinitionAsync(PutPipelineDefinitionRequest putPipelineDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<PutPipelineDefinitionRequest, PutPipelineDefinitionResult> asyncHandler);
@@ -574,7 +576,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for QueryObjects.
      * @return A Java Future containing the result of the QueryObjects operation returned by the service.
      * @sample DataPipelineAsync.QueryObjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<QueryObjectsResult> queryObjectsAsync(QueryObjectsRequest queryObjectsRequest);
@@ -592,7 +594,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the QueryObjects operation returned by the service.
      * @sample DataPipelineAsyncHandler.QueryObjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<QueryObjectsResult> queryObjectsAsync(QueryObjectsRequest queryObjectsRequest,
@@ -607,7 +609,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for RemoveTags.
      * @return A Java Future containing the result of the RemoveTags operation returned by the service.
      * @sample DataPipelineAsync.RemoveTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest removeTagsRequest);
@@ -625,7 +627,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTags operation returned by the service.
      * @sample DataPipelineAsyncHandler.RemoveTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest removeTagsRequest,
@@ -649,8 +651,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ReportTaskProgress.
      * @return A Java Future containing the result of the ReportTaskProgress operation returned by the service.
      * @sample DataPipelineAsync.ReportTaskProgress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ReportTaskProgressResult> reportTaskProgressAsync(ReportTaskProgressRequest reportTaskProgressRequest);
 
@@ -676,8 +678,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ReportTaskProgress operation returned by the service.
      * @sample DataPipelineAsyncHandler.ReportTaskProgress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ReportTaskProgressResult> reportTaskProgressAsync(ReportTaskProgressRequest reportTaskProgressRequest,
             com.amazonaws.handlers.AsyncHandler<ReportTaskProgressRequest, ReportTaskProgressResult> asyncHandler);
@@ -693,8 +695,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ReportTaskRunnerHeartbeat.
      * @return A Java Future containing the result of the ReportTaskRunnerHeartbeat operation returned by the service.
      * @sample DataPipelineAsync.ReportTaskRunnerHeartbeat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ReportTaskRunnerHeartbeatResult> reportTaskRunnerHeartbeatAsync(
             ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest);
@@ -714,8 +716,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ReportTaskRunnerHeartbeat operation returned by the service.
      * @sample DataPipelineAsyncHandler.ReportTaskRunnerHeartbeat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ReportTaskRunnerHeartbeatResult> reportTaskRunnerHeartbeatAsync(
             ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest,
@@ -733,7 +735,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for SetStatus.
      * @return A Java Future containing the result of the SetStatus operation returned by the service.
      * @sample DataPipelineAsync.SetStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SetStatusResult> setStatusAsync(SetStatusRequest setStatusRequest);
@@ -754,7 +756,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetStatus operation returned by the service.
      * @sample DataPipelineAsyncHandler.SetStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SetStatusResult> setStatusAsync(SetStatusRequest setStatusRequest,
@@ -772,7 +774,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for SetTaskStatus.
      * @return A Java Future containing the result of the SetTaskStatus operation returned by the service.
      * @sample DataPipelineAsync.SetTaskStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SetTaskStatusResult> setTaskStatusAsync(SetTaskStatusRequest setTaskStatusRequest);
@@ -793,7 +795,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetTaskStatus operation returned by the service.
      * @sample DataPipelineAsyncHandler.SetTaskStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SetTaskStatusResult> setTaskStatusAsync(SetTaskStatusRequest setTaskStatusRequest,
@@ -808,8 +810,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ValidatePipelineDefinition.
      * @return A Java Future containing the result of the ValidatePipelineDefinition operation returned by the service.
      * @sample DataPipelineAsync.ValidatePipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(
             ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest);
@@ -827,8 +829,8 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ValidatePipelineDefinition operation returned by the service.
      * @sample DataPipelineAsyncHandler.ValidatePipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(
             ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest,

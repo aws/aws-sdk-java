@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,8 @@ import java.io.Serializable;
  * This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobMetadata"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobMetadata" target="_top">AWS API
+ *      Documentation</a>
  */
 public class JobMetadata implements Serializable, Cloneable {
 

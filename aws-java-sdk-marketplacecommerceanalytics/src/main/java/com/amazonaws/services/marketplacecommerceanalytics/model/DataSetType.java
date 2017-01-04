@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,7 @@ public enum DataSetType {
     Monthly_revenue_annual_subscriptions("monthly_revenue_annual_subscriptions"),
     Disbursed_amount_by_product("disbursed_amount_by_product"),
     Disbursed_amount_by_product_with_uncollected_funds("disbursed_amount_by_product_with_uncollected_funds"),
+    Disbursed_amount_by_instance_hours("disbursed_amount_by_instance_hours"),
     Disbursed_amount_by_customer_geo("disbursed_amount_by_customer_geo"),
     Disbursed_amount_by_age_of_uncollected_funds("disbursed_amount_by_age_of_uncollected_funds"),
     Disbursed_amount_by_age_of_disbursed_funds("disbursed_amount_by_age_of_disbursed_funds"),

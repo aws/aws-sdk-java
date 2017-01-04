@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import java.io.Serializable;
  * a set of properties. Configurations can be nested, so a configuration may have its own Configuration objects listed.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Configuration"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Configuration" target="_top">AWS API
  *      Documentation</a>
  */
 public class Configuration implements Serializable, Cloneable {

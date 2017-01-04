@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the GenerateDataSet operation.
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"/>AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"
+ *      target="_top">AWS API Documentation</a>
  */
 public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -47,6 +47,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19
      * until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds.</li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.
+     * </li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since
      * 2015-01-26.</li>
@@ -119,6 +121,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19
      * until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds.</li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.
+     * </li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since
      * 2015-01-26.</li>
@@ -160,6 +164,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets:
      *        disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and
      *        disbursed_amount_by_age_of_disbursed_funds.</li>
+     *        <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since
+     *        2012-09-04.</li>
      *        <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since
      *        2012-04-19.</li>
      *        <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time
@@ -203,6 +209,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19
      * until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds.</li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.
+     * </li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since
      * 2015-01-26.</li>
@@ -243,6 +251,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets:
      *         disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and
      *         disbursed_amount_by_age_of_disbursed_funds.</li>
+     *         <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since
+     *         2012-09-04.</li>
      *         <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since
      *         2012-04-19.</li>
      *         <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time
@@ -286,6 +296,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19
      * until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds.</li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.
+     * </li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since
      * 2015-01-26.</li>
@@ -327,6 +339,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets:
      *        disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and
      *        disbursed_amount_by_age_of_disbursed_funds.</li>
+     *        <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since
+     *        2012-09-04.</li>
      *        <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since
      *        2012-04-19.</li>
      *        <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time
@@ -372,6 +386,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19
      * until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds.</li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.
+     * </li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since
      * 2015-01-26.</li>
@@ -413,6 +429,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets:
      *        disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and
      *        disbursed_amount_by_age_of_disbursed_funds.</li>
+     *        <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since
+     *        2012-09-04.</li>
      *        <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since
      *        2012-04-19.</li>
      *        <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time
@@ -456,6 +474,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19
      * until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds.</li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.
+     * </li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since
      * 2015-01-26.</li>
@@ -497,6 +517,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets:
      *        disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and
      *        disbursed_amount_by_age_of_disbursed_funds.</li>
+     *        <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since
+     *        2012-09-04.</li>
      *        <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since
      *        2012-04-19.</li>
      *        <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time

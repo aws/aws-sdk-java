@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,7 +107,7 @@ public interface AmazonCloudWatch {
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
      * @sample AmazonCloudWatch.DeleteAlarms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteAlarmsResult deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest);
@@ -126,8 +126,8 @@ public interface AmazonCloudWatch {
      * @throws InvalidNextTokenException
      *         The next token specified is invalid.
      * @sample AmazonCloudWatch.DescribeAlarmHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeAlarmHistoryResult describeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest);
 
@@ -149,7 +149,7 @@ public interface AmazonCloudWatch {
      * @throws InvalidNextTokenException
      *         The next token specified is invalid.
      * @sample AmazonCloudWatch.DescribeAlarms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeAlarmsResult describeAlarms(DescribeAlarmsRequest describeAlarmsRequest);
@@ -169,8 +169,8 @@ public interface AmazonCloudWatch {
      * @param describeAlarmsForMetricRequest
      * @return Result of the DescribeAlarmsForMetric operation returned by the service.
      * @sample AmazonCloudWatch.DescribeAlarmsForMetric
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeAlarmsForMetricResult describeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest);
 
@@ -183,8 +183,8 @@ public interface AmazonCloudWatch {
      * @param disableAlarmActionsRequest
      * @return Result of the DisableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatch.DisableAlarmActions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
     DisableAlarmActionsResult disableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest);
 
@@ -196,8 +196,8 @@ public interface AmazonCloudWatch {
      * @param enableAlarmActionsRequest
      * @return Result of the EnableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatch.EnableAlarmActions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
     EnableAlarmActionsResult enableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest);
 
@@ -257,8 +257,8 @@ public interface AmazonCloudWatch {
      * @throws InternalServiceException
      *         Request processing has failed due to some unknown error, exception, or failure.
      * @sample AmazonCloudWatch.GetMetricStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics" target="_top">AWS
+     *      API Documentation</a>
      */
     GetMetricStatisticsResult getMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest);
 
@@ -283,7 +283,7 @@ public interface AmazonCloudWatch {
      * @throws InvalidParameterValueException
      *         The value of an input parameter is bad or out-of-range.
      * @sample AmazonCloudWatch.ListMetrics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics" target="_top">AWS API
      *      Documentation</a>
      */
     ListMetricsResult listMetrics(ListMetricsRequest listMetricsRequest);
@@ -361,7 +361,7 @@ public interface AmazonCloudWatch {
      * @throws LimitExceededException
      *         The quota for alarms for this customer has already been reached.
      * @sample AmazonCloudWatch.PutMetricAlarm
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm" target="_top">AWS API
      *      Documentation</a>
      */
     PutMetricAlarmResult putMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest);
@@ -399,7 +399,7 @@ public interface AmazonCloudWatch {
      * @throws InternalServiceException
      *         Request processing has failed due to some unknown error, exception, or failure.
      * @sample AmazonCloudWatch.PutMetricData
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData" target="_top">AWS API
      *      Documentation</a>
      */
     PutMetricDataResult putMetricData(PutMetricDataRequest putMetricDataRequest);
@@ -421,7 +421,7 @@ public interface AmazonCloudWatch {
      * @throws InvalidFormatException
      *         Data was not syntactically valid JSON.
      * @sample AmazonCloudWatch.SetAlarmState
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState" target="_top">AWS API
      *      Documentation</a>
      */
     SetAlarmStateResult setAlarmState(SetAlarmStateRequest setAlarmStateRequest);

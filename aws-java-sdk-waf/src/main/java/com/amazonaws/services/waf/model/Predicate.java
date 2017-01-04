@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,8 @@ import java.io.Serializable;
  * you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/Predicate"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/Predicate" target="_top">AWS API
+ *      Documentation</a>
  */
 public class Predicate implements Serializable, Cloneable {
 

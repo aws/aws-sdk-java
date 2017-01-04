@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,9 +55,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the AllocateConnectionOnInterconnect operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsync.AllocateConnectionOnInterconnect
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AllocateConnectionOnInterconnectResult> allocateConnectionOnInterconnectAsync(
             AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest);
@@ -85,9 +84,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the AllocateConnectionOnInterconnect operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsyncHandler.AllocateConnectionOnInterconnect
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AllocateConnectionOnInterconnectResult> allocateConnectionOnInterconnectAsync(
             AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest,
@@ -112,9 +110,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the AllocatePrivateVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsync.AllocatePrivateVirtualInterface
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AllocatePrivateVirtualInterfaceResult> allocatePrivateVirtualInterfaceAsync(
             AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest);
@@ -142,9 +139,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the AllocatePrivateVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsyncHandler.AllocatePrivateVirtualInterface
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AllocatePrivateVirtualInterfaceResult> allocatePrivateVirtualInterfaceAsync(
             AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest,
@@ -173,9 +169,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the AllocatePublicVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsync.AllocatePublicVirtualInterface
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(
             AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest);
@@ -207,9 +202,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the AllocatePublicVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsyncHandler.AllocatePublicVirtualInterface
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(
             AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest,
@@ -228,8 +222,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the ConfirmConnection operation.
      * @return A Java Future containing the result of the ConfirmConnection operation returned by the service.
      * @sample AmazonDirectConnectAsync.ConfirmConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ConfirmConnectionResult> confirmConnectionAsync(ConfirmConnectionRequest confirmConnectionRequest);
 
@@ -250,8 +244,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ConfirmConnection operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.ConfirmConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ConfirmConnectionResult> confirmConnectionAsync(ConfirmConnectionRequest confirmConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<ConfirmConnectionRequest, ConfirmConnectionResult> asyncHandler);
@@ -270,9 +264,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the ConfirmPrivateVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsync.ConfirmPrivateVirtualInterface
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ConfirmPrivateVirtualInterfaceResult> confirmPrivateVirtualInterfaceAsync(
             ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest);
@@ -295,9 +288,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the ConfirmPrivateVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsyncHandler.ConfirmPrivateVirtualInterface
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ConfirmPrivateVirtualInterfaceResult> confirmPrivateVirtualInterfaceAsync(
             ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest,
@@ -317,8 +309,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the ConfirmPublicVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsync.ConfirmPublicVirtualInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult> confirmPublicVirtualInterfaceAsync(
             ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest);
@@ -341,8 +333,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the ConfirmPublicVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsyncHandler.ConfirmPublicVirtualInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult> confirmPublicVirtualInterfaceAsync(
             ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest,
@@ -370,8 +362,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the CreateBGPPeer operation.
      * @return A Java Future containing the result of the CreateBGPPeer operation returned by the service.
      * @sample AmazonDirectConnectAsync.CreateBGPPeer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateBGPPeerResult> createBGPPeerAsync(CreateBGPPeerRequest createBGPPeerRequest);
 
@@ -401,8 +393,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateBGPPeer operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.CreateBGPPeer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateBGPPeerResult> createBGPPeerAsync(CreateBGPPeerRequest createBGPPeerRequest,
             com.amazonaws.handlers.AsyncHandler<CreateBGPPeerRequest, CreateBGPPeerResult> asyncHandler);
@@ -423,8 +415,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the CreateConnection operation.
      * @return A Java Future containing the result of the CreateConnection operation returned by the service.
      * @sample AmazonDirectConnectAsync.CreateConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest);
 
@@ -448,8 +440,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateConnection operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.CreateConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler);
@@ -481,8 +473,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the CreateInterconnect operation.
      * @return A Java Future containing the result of the CreateInterconnect operation returned by the service.
      * @sample AmazonDirectConnectAsync.CreateInterconnect
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(CreateInterconnectRequest createInterconnectRequest);
 
@@ -517,8 +509,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInterconnect operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.CreateInterconnect
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(CreateInterconnectRequest createInterconnectRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInterconnectRequest, CreateInterconnectResult> asyncHandler);
@@ -534,8 +526,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the CreatePrivateVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsync.CreatePrivateVirtualInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult> createPrivateVirtualInterfaceAsync(
             CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest);
@@ -555,8 +547,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the CreatePrivateVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsyncHandler.CreatePrivateVirtualInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult> createPrivateVirtualInterfaceAsync(
             CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest,
@@ -578,8 +570,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the CreatePublicVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsync.CreatePublicVirtualInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(
             CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest);
@@ -604,8 +596,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the CreatePublicVirtualInterface operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsyncHandler.CreatePublicVirtualInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(
             CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest,
@@ -621,8 +613,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DeleteBGPPeer operation.
      * @return A Java Future containing the result of the DeleteBGPPeer operation returned by the service.
      * @sample AmazonDirectConnectAsync.DeleteBGPPeer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteBGPPeerResult> deleteBGPPeerAsync(DeleteBGPPeerRequest deleteBGPPeerRequest);
 
@@ -640,8 +632,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteBGPPeer operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DeleteBGPPeer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteBGPPeerResult> deleteBGPPeerAsync(DeleteBGPPeerRequest deleteBGPPeerRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteBGPPeerRequest, DeleteBGPPeerResult> asyncHandler);
@@ -660,8 +652,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DeleteConnection operation.
      * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
      * @sample AmazonDirectConnectAsync.DeleteConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest);
 
@@ -683,8 +675,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DeleteConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler);
@@ -703,8 +695,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DeleteInterconnect operation.
      * @return A Java Future containing the result of the DeleteInterconnect operation returned by the service.
      * @sample AmazonDirectConnectAsync.DeleteInterconnect
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest deleteInterconnectRequest);
 
@@ -726,8 +718,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteInterconnect operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DeleteInterconnect
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest deleteInterconnectRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInterconnectRequest, DeleteInterconnectResult> asyncHandler);
@@ -741,8 +733,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DeleteVirtualInterface operation.
      * @return A Java Future containing the result of the DeleteVirtualInterface operation returned by the service.
      * @sample AmazonDirectConnectAsync.DeleteVirtualInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteVirtualInterfaceResult> deleteVirtualInterfaceAsync(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest);
 
@@ -759,8 +751,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteVirtualInterface operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DeleteVirtualInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteVirtualInterfaceResult> deleteVirtualInterfaceAsync(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResult> asyncHandler);
@@ -780,8 +772,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DescribeConnectionLoa operation.
      * @return A Java Future containing the result of the DescribeConnectionLoa operation returned by the service.
      * @sample AmazonDirectConnectAsync.DescribeConnectionLoa
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(DescribeConnectionLoaRequest describeConnectionLoaRequest);
 
@@ -804,8 +796,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeConnectionLoa operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeConnectionLoa
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(DescribeConnectionLoaRequest describeConnectionLoaRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionLoaRequest, DescribeConnectionLoaResult> asyncHandler);
@@ -822,8 +814,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DescribeConnections operation.
      * @return A Java Future containing the result of the DescribeConnections operation returned by the service.
      * @sample AmazonDirectConnectAsync.DescribeConnections
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(DescribeConnectionsRequest describeConnectionsRequest);
 
@@ -843,8 +835,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeConnections operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeConnections
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(DescribeConnectionsRequest describeConnectionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult> asyncHandler);
@@ -879,9 +871,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the DescribeConnectionsOnInterconnect operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsync.DescribeConnectionsOnInterconnect
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult> describeConnectionsOnInterconnectAsync(
             DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest);
@@ -905,9 +896,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the DescribeConnectionsOnInterconnect operation returned by the
      *         service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeConnectionsOnInterconnect
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult> describeConnectionsOnInterconnectAsync(
             DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest,
@@ -928,8 +918,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DescribeInterconnectLoa operation.
      * @return A Java Future containing the result of the DescribeInterconnectLoa operation returned by the service.
      * @sample AmazonDirectConnectAsync.DescribeInterconnectLoa
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(DescribeInterconnectLoaRequest describeInterconnectLoaRequest);
 
@@ -952,8 +942,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInterconnectLoa operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeInterconnectLoa
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(DescribeInterconnectLoaRequest describeInterconnectLoaRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectLoaRequest, DescribeInterconnectLoaResult> asyncHandler);
@@ -970,8 +960,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DescribeInterconnects operation.
      * @return A Java Future containing the result of the DescribeInterconnects operation returned by the service.
      * @sample AmazonDirectConnectAsync.DescribeInterconnects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(DescribeInterconnectsRequest describeInterconnectsRequest);
 
@@ -991,8 +981,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInterconnects operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeInterconnects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(DescribeInterconnectsRequest describeInterconnectsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult> asyncHandler);
@@ -1021,8 +1011,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @param describeLocationsRequest
      * @return A Java Future containing the result of the DescribeLocations operation returned by the service.
      * @sample AmazonDirectConnectAsync.DescribeLocations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(DescribeLocationsRequest describeLocationsRequest);
 
@@ -1039,8 +1029,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLocations operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeLocations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(DescribeLocationsRequest describeLocationsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult> asyncHandler);
@@ -1069,7 +1059,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DescribeTags operation.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonDirectConnectAsync.DescribeTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest);
@@ -1087,7 +1077,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest,
@@ -1107,8 +1097,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @param describeVirtualGatewaysRequest
      * @return A Java Future containing the result of the DescribeVirtualGateways operation returned by the service.
      * @sample AmazonDirectConnectAsync.DescribeVirtualGateways
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest);
 
@@ -1130,8 +1120,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeVirtualGateways operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeVirtualGateways
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResult> asyncHandler);
@@ -1170,8 +1160,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DescribeVirtualInterfaces operation.
      * @return A Java Future containing the result of the DescribeVirtualInterfaces operation returned by the service.
      * @sample AmazonDirectConnectAsync.DescribeVirtualInterfaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest);
@@ -1199,8 +1189,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeVirtualInterfaces operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.DescribeVirtualInterfaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest,
@@ -1235,7 +1225,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the TagResource operation.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonDirectConnectAsync.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
@@ -1258,7 +1248,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
@@ -1273,8 +1263,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the UntagResource operation.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonDirectConnectAsync.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
@@ -1291,8 +1281,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonDirectConnectAsyncHandler.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);

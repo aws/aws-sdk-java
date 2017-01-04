@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,8 +62,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param acceptPortfolioShareRequest
      * @return A Java Future containing the result of the AcceptPortfolioShare operation returned by the service.
      * @sample AWSServiceCatalogAsync.AcceptPortfolioShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AcceptPortfolioShareResult> acceptPortfolioShareAsync(AcceptPortfolioShareRequest acceptPortfolioShareRequest);
 
@@ -79,8 +79,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AcceptPortfolioShare operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.AcceptPortfolioShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AcceptPortfolioShareResult> acceptPortfolioShareAsync(AcceptPortfolioShareRequest acceptPortfolioShareRequest,
             com.amazonaws.handlers.AsyncHandler<AcceptPortfolioShareRequest, AcceptPortfolioShareResult> asyncHandler);
@@ -94,9 +94,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the AssociatePrincipalWithPortfolio operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsync.AssociatePrincipalWithPortfolio
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AssociatePrincipalWithPortfolioResult> associatePrincipalWithPortfolioAsync(
             AssociatePrincipalWithPortfolioRequest associatePrincipalWithPortfolioRequest);
@@ -114,9 +113,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the AssociatePrincipalWithPortfolio operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsyncHandler.AssociatePrincipalWithPortfolio
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AssociatePrincipalWithPortfolioResult> associatePrincipalWithPortfolioAsync(
             AssociatePrincipalWithPortfolioRequest associatePrincipalWithPortfolioRequest,
@@ -131,9 +129,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the AssociateProductWithPortfolio operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsync.AssociateProductWithPortfolio
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AssociateProductWithPortfolioResult> associateProductWithPortfolioAsync(
             AssociateProductWithPortfolioRequest associateProductWithPortfolioRequest);
@@ -151,9 +148,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the AssociateProductWithPortfolio operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsyncHandler.AssociateProductWithPortfolio
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AssociateProductWithPortfolioResult> associateProductWithPortfolioAsync(
             AssociateProductWithPortfolioRequest associateProductWithPortfolioRequest,
@@ -167,8 +163,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param createConstraintRequest
      * @return A Java Future containing the result of the CreateConstraint operation returned by the service.
      * @sample AWSServiceCatalogAsync.CreateConstraint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateConstraintResult> createConstraintAsync(CreateConstraintRequest createConstraintRequest);
 
@@ -184,8 +180,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateConstraint operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.CreateConstraint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateConstraintResult> createConstraintAsync(CreateConstraintRequest createConstraintRequest,
             com.amazonaws.handlers.AsyncHandler<CreateConstraintRequest, CreateConstraintResult> asyncHandler);
@@ -198,8 +194,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param createPortfolioRequest
      * @return A Java Future containing the result of the CreatePortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsync.CreatePortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreatePortfolioResult> createPortfolioAsync(CreatePortfolioRequest createPortfolioRequest);
 
@@ -215,8 +211,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.CreatePortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreatePortfolioResult> createPortfolioAsync(CreatePortfolioRequest createPortfolioRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePortfolioRequest, CreatePortfolioResult> asyncHandler);
@@ -229,8 +225,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param createPortfolioShareRequest
      * @return A Java Future containing the result of the CreatePortfolioShare operation returned by the service.
      * @sample AWSServiceCatalogAsync.CreatePortfolioShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreatePortfolioShareResult> createPortfolioShareAsync(CreatePortfolioShareRequest createPortfolioShareRequest);
 
@@ -246,8 +242,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePortfolioShare operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.CreatePortfolioShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreatePortfolioShareResult> createPortfolioShareAsync(CreatePortfolioShareRequest createPortfolioShareRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePortfolioShareRequest, CreatePortfolioShareResult> asyncHandler);
@@ -260,8 +256,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param createProductRequest
      * @return A Java Future containing the result of the CreateProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.CreateProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateProductResult> createProductAsync(CreateProductRequest createProductRequest);
 
@@ -277,8 +273,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateProduct operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.CreateProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateProductResult> createProductAsync(CreateProductRequest createProductRequest,
             com.amazonaws.handlers.AsyncHandler<CreateProductRequest, CreateProductResult> asyncHandler);
@@ -292,8 +288,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param createProvisioningArtifactRequest
      * @return A Java Future containing the result of the CreateProvisioningArtifact operation returned by the service.
      * @sample AWSServiceCatalogAsync.CreateProvisioningArtifact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateProvisioningArtifactResult> createProvisioningArtifactAsync(
             CreateProvisioningArtifactRequest createProvisioningArtifactRequest);
@@ -311,8 +307,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateProvisioningArtifact operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.CreateProvisioningArtifact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateProvisioningArtifactResult> createProvisioningArtifactAsync(
             CreateProvisioningArtifactRequest createProvisioningArtifactRequest,
@@ -326,8 +322,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param deleteConstraintRequest
      * @return A Java Future containing the result of the DeleteConstraint operation returned by the service.
      * @sample AWSServiceCatalogAsync.DeleteConstraint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteConstraintResult> deleteConstraintAsync(DeleteConstraintRequest deleteConstraintRequest);
 
@@ -343,8 +339,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteConstraint operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DeleteConstraint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteConstraintResult> deleteConstraintAsync(DeleteConstraintRequest deleteConstraintRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteConstraintRequest, DeleteConstraintResult> asyncHandler);
@@ -358,8 +354,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param deletePortfolioRequest
      * @return A Java Future containing the result of the DeletePortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsync.DeletePortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeletePortfolioResult> deletePortfolioAsync(DeletePortfolioRequest deletePortfolioRequest);
 
@@ -376,8 +372,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DeletePortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeletePortfolioResult> deletePortfolioAsync(DeletePortfolioRequest deletePortfolioRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePortfolioRequest, DeletePortfolioResult> asyncHandler);
@@ -390,8 +386,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param deletePortfolioShareRequest
      * @return A Java Future containing the result of the DeletePortfolioShare operation returned by the service.
      * @sample AWSServiceCatalogAsync.DeletePortfolioShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeletePortfolioShareResult> deletePortfolioShareAsync(DeletePortfolioShareRequest deletePortfolioShareRequest);
 
@@ -407,8 +403,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePortfolioShare operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DeletePortfolioShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeletePortfolioShareResult> deletePortfolioShareAsync(DeletePortfolioShareRequest deletePortfolioShareRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePortfolioShareRequest, DeletePortfolioShareResult> asyncHandler);
@@ -422,8 +418,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param deleteProductRequest
      * @return A Java Future containing the result of the DeleteProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.DeleteProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteProductResult> deleteProductAsync(DeleteProductRequest deleteProductRequest);
 
@@ -440,8 +436,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteProduct operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DeleteProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteProductResult> deleteProductAsync(DeleteProductRequest deleteProductRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProductRequest, DeleteProductResult> asyncHandler);
@@ -456,8 +452,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param deleteProvisioningArtifactRequest
      * @return A Java Future containing the result of the DeleteProvisioningArtifact operation returned by the service.
      * @sample AWSServiceCatalogAsync.DeleteProvisioningArtifact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteProvisioningArtifactResult> deleteProvisioningArtifactAsync(
             DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest);
@@ -476,8 +472,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteProvisioningArtifact operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DeleteProvisioningArtifact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteProvisioningArtifactResult> deleteProvisioningArtifactAsync(
             DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest,
@@ -491,8 +487,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param describeConstraintRequest
      * @return A Java Future containing the result of the DescribeConstraint operation returned by the service.
      * @sample AWSServiceCatalogAsync.DescribeConstraint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConstraintResult> describeConstraintAsync(DescribeConstraintRequest describeConstraintRequest);
 
@@ -508,8 +504,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeConstraint operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DescribeConstraint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConstraintResult> describeConstraintAsync(DescribeConstraintRequest describeConstraintRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeConstraintRequest, DescribeConstraintResult> asyncHandler);
@@ -522,8 +518,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param describePortfolioRequest
      * @return A Java Future containing the result of the DescribePortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsync.DescribePortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribePortfolioResult> describePortfolioAsync(DescribePortfolioRequest describePortfolioRequest);
 
@@ -539,8 +535,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DescribePortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribePortfolioResult> describePortfolioAsync(DescribePortfolioRequest describePortfolioRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePortfolioRequest, DescribePortfolioResult> asyncHandler);
@@ -557,8 +553,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param describeProductRequest
      * @return A Java Future containing the result of the DescribeProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.DescribeProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProductResult> describeProductAsync(DescribeProductRequest describeProductRequest);
 
@@ -578,8 +574,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeProduct operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DescribeProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProductResult> describeProductAsync(DescribeProductRequest describeProductRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeProductRequest, DescribeProductResult> asyncHandler);
@@ -592,8 +588,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param describeProductAsAdminRequest
      * @return A Java Future containing the result of the DescribeProductAsAdmin operation returned by the service.
      * @sample AWSServiceCatalogAsync.DescribeProductAsAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProductAsAdminResult> describeProductAsAdminAsync(DescribeProductAsAdminRequest describeProductAsAdminRequest);
 
@@ -609,8 +605,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeProductAsAdmin operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DescribeProductAsAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProductAsAdminResult> describeProductAsAdminAsync(DescribeProductAsAdminRequest describeProductAsAdminRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeProductAsAdminRequest, DescribeProductAsAdminResult> asyncHandler);
@@ -627,8 +623,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param describeProductViewRequest
      * @return A Java Future containing the result of the DescribeProductView operation returned by the service.
      * @sample AWSServiceCatalogAsync.DescribeProductView
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProductViewResult> describeProductViewAsync(DescribeProductViewRequest describeProductViewRequest);
 
@@ -648,8 +644,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeProductView operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DescribeProductView
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProductViewResult> describeProductViewAsync(DescribeProductViewRequest describeProductViewRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeProductViewRequest, DescribeProductViewResult> asyncHandler);
@@ -663,8 +659,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the DescribeProvisioningArtifact operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsync.DescribeProvisioningArtifact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProvisioningArtifactResult> describeProvisioningArtifactAsync(
             DescribeProvisioningArtifactRequest describeProvisioningArtifactRequest);
@@ -682,8 +678,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the DescribeProvisioningArtifact operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsyncHandler.DescribeProvisioningArtifact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProvisioningArtifactResult> describeProvisioningArtifactAsync(
             DescribeProvisioningArtifactRequest describeProvisioningArtifactRequest,
@@ -700,9 +696,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the DescribeProvisioningParameters operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsync.DescribeProvisioningParameters
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProvisioningParametersResult> describeProvisioningParametersAsync(
             DescribeProvisioningParametersRequest describeProvisioningParametersRequest);
@@ -722,9 +717,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the DescribeProvisioningParameters operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsyncHandler.DescribeProvisioningParameters
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeProvisioningParametersResult> describeProvisioningParametersAsync(
             DescribeProvisioningParametersRequest describeProvisioningParametersRequest,
@@ -739,8 +733,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param describeRecordRequest
      * @return A Java Future containing the result of the DescribeRecord operation returned by the service.
      * @sample AWSServiceCatalogAsync.DescribeRecord
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeRecordResult> describeRecordAsync(DescribeRecordRequest describeRecordRequest);
 
@@ -757,8 +751,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeRecord operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.DescribeRecord
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeRecordResult> describeRecordAsync(DescribeRecordRequest describeRecordRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeRecordRequest, DescribeRecordResult> asyncHandler);
@@ -773,8 +767,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *         service.
      * @sample AWSServiceCatalogAsync.DisassociatePrincipalFromPortfolio
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
             DisassociatePrincipalFromPortfolioRequest disassociatePrincipalFromPortfolioRequest);
@@ -793,8 +787,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *         service.
      * @sample AWSServiceCatalogAsyncHandler.DisassociatePrincipalFromPortfolio
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
             DisassociatePrincipalFromPortfolioRequest disassociatePrincipalFromPortfolioRequest,
@@ -809,9 +803,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the DisassociateProductFromPortfolio operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsync.DisassociateProductFromPortfolio
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DisassociateProductFromPortfolioResult> disassociateProductFromPortfolioAsync(
             DisassociateProductFromPortfolioRequest disassociateProductFromPortfolioRequest);
@@ -829,9 +822,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @return A Java Future containing the result of the DisassociateProductFromPortfolio operation returned by the
      *         service.
      * @sample AWSServiceCatalogAsyncHandler.DisassociateProductFromPortfolio
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DisassociateProductFromPortfolioResult> disassociateProductFromPortfolioAsync(
             DisassociateProductFromPortfolioRequest disassociateProductFromPortfolioRequest,
@@ -845,8 +837,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listAcceptedPortfolioSharesRequest
      * @return A Java Future containing the result of the ListAcceptedPortfolioShares operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListAcceptedPortfolioShares
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(
             ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest);
@@ -863,8 +855,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAcceptedPortfolioShares operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListAcceptedPortfolioShares
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(
             ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest,
@@ -878,8 +870,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listConstraintsForPortfolioRequest
      * @return A Java Future containing the result of the ListConstraintsForPortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListConstraintsForPortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListConstraintsForPortfolioResult> listConstraintsForPortfolioAsync(
             ListConstraintsForPortfolioRequest listConstraintsForPortfolioRequest);
@@ -896,8 +888,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListConstraintsForPortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListConstraintsForPortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListConstraintsForPortfolioResult> listConstraintsForPortfolioAsync(
             ListConstraintsForPortfolioRequest listConstraintsForPortfolioRequest,
@@ -912,8 +904,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listLaunchPathsRequest
      * @return A Java Future containing the result of the ListLaunchPaths operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListLaunchPaths
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListLaunchPathsResult> listLaunchPathsAsync(ListLaunchPathsRequest listLaunchPathsRequest);
 
@@ -930,8 +922,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListLaunchPaths operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListLaunchPaths
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListLaunchPathsResult> listLaunchPathsAsync(ListLaunchPathsRequest listLaunchPathsRequest,
             com.amazonaws.handlers.AsyncHandler<ListLaunchPathsRequest, ListLaunchPathsResult> asyncHandler);
@@ -944,8 +936,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listPortfolioAccessRequest
      * @return A Java Future containing the result of the ListPortfolioAccess operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListPortfolioAccess
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPortfolioAccessResult> listPortfolioAccessAsync(ListPortfolioAccessRequest listPortfolioAccessRequest);
 
@@ -961,8 +953,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPortfolioAccess operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListPortfolioAccess
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPortfolioAccessResult> listPortfolioAccessAsync(ListPortfolioAccessRequest listPortfolioAccessRequest,
             com.amazonaws.handlers.AsyncHandler<ListPortfolioAccessRequest, ListPortfolioAccessResult> asyncHandler);
@@ -975,8 +967,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listPortfoliosRequest
      * @return A Java Future containing the result of the ListPortfolios operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListPortfolios
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListPortfoliosResult> listPortfoliosAsync(ListPortfoliosRequest listPortfoliosRequest);
 
@@ -992,8 +984,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPortfolios operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListPortfolios
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListPortfoliosResult> listPortfoliosAsync(ListPortfoliosRequest listPortfoliosRequest,
             com.amazonaws.handlers.AsyncHandler<ListPortfoliosRequest, ListPortfoliosResult> asyncHandler);
@@ -1006,8 +998,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listPortfoliosForProductRequest
      * @return A Java Future containing the result of the ListPortfoliosForProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListPortfoliosForProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPortfoliosForProductResult> listPortfoliosForProductAsync(ListPortfoliosForProductRequest listPortfoliosForProductRequest);
 
@@ -1023,8 +1015,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPortfoliosForProduct operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListPortfoliosForProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPortfoliosForProductResult> listPortfoliosForProductAsync(ListPortfoliosForProductRequest listPortfoliosForProductRequest,
             com.amazonaws.handlers.AsyncHandler<ListPortfoliosForProductRequest, ListPortfoliosForProductResult> asyncHandler);
@@ -1037,8 +1029,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listPrincipalsForPortfolioRequest
      * @return A Java Future containing the result of the ListPrincipalsForPortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListPrincipalsForPortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPrincipalsForPortfolioResult> listPrincipalsForPortfolioAsync(
             ListPrincipalsForPortfolioRequest listPrincipalsForPortfolioRequest);
@@ -1055,8 +1047,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPrincipalsForPortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListPrincipalsForPortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPrincipalsForPortfolioResult> listPrincipalsForPortfolioAsync(
             ListPrincipalsForPortfolioRequest listPrincipalsForPortfolioRequest,
@@ -1070,8 +1062,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listProvisioningArtifactsRequest
      * @return A Java Future containing the result of the ListProvisioningArtifacts operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListProvisioningArtifacts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListProvisioningArtifactsResult> listProvisioningArtifactsAsync(
             ListProvisioningArtifactsRequest listProvisioningArtifactsRequest);
@@ -1088,8 +1080,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListProvisioningArtifacts operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListProvisioningArtifacts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListProvisioningArtifactsResult> listProvisioningArtifactsAsync(
             ListProvisioningArtifactsRequest listProvisioningArtifactsRequest,
@@ -1104,8 +1096,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param listRecordHistoryRequest
      * @return A Java Future containing the result of the ListRecordHistory operation returned by the service.
      * @sample AWSServiceCatalogAsync.ListRecordHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListRecordHistoryResult> listRecordHistoryAsync(ListRecordHistoryRequest listRecordHistoryRequest);
 
@@ -1122,8 +1114,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRecordHistory operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ListRecordHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListRecordHistoryResult> listRecordHistoryAsync(ListRecordHistoryRequest listRecordHistoryRequest,
             com.amazonaws.handlers.AsyncHandler<ListRecordHistoryRequest, ListRecordHistoryResult> asyncHandler);
@@ -1141,8 +1133,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param provisionProductRequest
      * @return A Java Future containing the result of the ProvisionProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.ProvisionProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ProvisionProductResult> provisionProductAsync(ProvisionProductRequest provisionProductRequest);
 
@@ -1163,8 +1155,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ProvisionProduct operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ProvisionProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ProvisionProductResult> provisionProductAsync(ProvisionProductRequest provisionProductRequest,
             com.amazonaws.handlers.AsyncHandler<ProvisionProductRequest, ProvisionProductResult> asyncHandler);
@@ -1177,8 +1169,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param rejectPortfolioShareRequest
      * @return A Java Future containing the result of the RejectPortfolioShare operation returned by the service.
      * @sample AWSServiceCatalogAsync.RejectPortfolioShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RejectPortfolioShareResult> rejectPortfolioShareAsync(RejectPortfolioShareRequest rejectPortfolioShareRequest);
 
@@ -1194,8 +1186,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RejectPortfolioShare operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.RejectPortfolioShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RejectPortfolioShareResult> rejectPortfolioShareAsync(RejectPortfolioShareRequest rejectPortfolioShareRequest,
             com.amazonaws.handlers.AsyncHandler<RejectPortfolioShareRequest, RejectPortfolioShareResult> asyncHandler);
@@ -1208,8 +1200,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param scanProvisionedProductsRequest
      * @return A Java Future containing the result of the ScanProvisionedProducts operation returned by the service.
      * @sample AWSServiceCatalogAsync.ScanProvisionedProducts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ScanProvisionedProductsResult> scanProvisionedProductsAsync(ScanProvisionedProductsRequest scanProvisionedProductsRequest);
 
@@ -1225,8 +1217,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ScanProvisionedProducts operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.ScanProvisionedProducts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ScanProvisionedProductsResult> scanProvisionedProductsAsync(ScanProvisionedProductsRequest scanProvisionedProductsRequest,
             com.amazonaws.handlers.AsyncHandler<ScanProvisionedProductsRequest, ScanProvisionedProductsResult> asyncHandler);
@@ -1242,8 +1234,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param searchProductsRequest
      * @return A Java Future containing the result of the SearchProducts operation returned by the service.
      * @sample AWSServiceCatalogAsync.SearchProducts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<SearchProductsResult> searchProductsAsync(SearchProductsRequest searchProductsRequest);
 
@@ -1262,8 +1254,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SearchProducts operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.SearchProducts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<SearchProductsResult> searchProductsAsync(SearchProductsRequest searchProductsRequest,
             com.amazonaws.handlers.AsyncHandler<SearchProductsRequest, SearchProductsResult> asyncHandler);
@@ -1278,8 +1270,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param searchProductsAsAdminRequest
      * @return A Java Future containing the result of the SearchProductsAsAdmin operation returned by the service.
      * @sample AWSServiceCatalogAsync.SearchProductsAsAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<SearchProductsAsAdminResult> searchProductsAsAdminAsync(SearchProductsAsAdminRequest searchProductsAsAdminRequest);
 
@@ -1297,8 +1289,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SearchProductsAsAdmin operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.SearchProductsAsAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<SearchProductsAsAdminResult> searchProductsAsAdminAsync(SearchProductsAsAdminRequest searchProductsAsAdminRequest,
             com.amazonaws.handlers.AsyncHandler<SearchProductsAsAdminRequest, SearchProductsAsAdminResult> asyncHandler);
@@ -1318,8 +1310,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param terminateProvisionedProductRequest
      * @return A Java Future containing the result of the TerminateProvisionedProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.TerminateProvisionedProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<TerminateProvisionedProductResult> terminateProvisionedProductAsync(
             TerminateProvisionedProductRequest terminateProvisionedProductRequest);
@@ -1343,8 +1335,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TerminateProvisionedProduct operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.TerminateProvisionedProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<TerminateProvisionedProductResult> terminateProvisionedProductAsync(
             TerminateProvisionedProductRequest terminateProvisionedProductRequest,
@@ -1358,8 +1350,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param updateConstraintRequest
      * @return A Java Future containing the result of the UpdateConstraint operation returned by the service.
      * @sample AWSServiceCatalogAsync.UpdateConstraint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateConstraintResult> updateConstraintAsync(UpdateConstraintRequest updateConstraintRequest);
 
@@ -1375,8 +1367,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateConstraint operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.UpdateConstraint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateConstraintResult> updateConstraintAsync(UpdateConstraintRequest updateConstraintRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConstraintRequest, UpdateConstraintResult> asyncHandler);
@@ -1390,8 +1382,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param updatePortfolioRequest
      * @return A Java Future containing the result of the UpdatePortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsync.UpdatePortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdatePortfolioResult> updatePortfolioAsync(UpdatePortfolioRequest updatePortfolioRequest);
 
@@ -1408,8 +1400,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdatePortfolio operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.UpdatePortfolio
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdatePortfolioResult> updatePortfolioAsync(UpdatePortfolioRequest updatePortfolioRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePortfolioRequest, UpdatePortfolioResult> asyncHandler);
@@ -1422,8 +1414,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param updateProductRequest
      * @return A Java Future containing the result of the UpdateProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.UpdateProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateProductResult> updateProductAsync(UpdateProductRequest updateProductRequest);
 
@@ -1439,8 +1431,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateProduct operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.UpdateProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateProductResult> updateProductAsync(UpdateProductRequest updateProductRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProductRequest, UpdateProductResult> asyncHandler);
@@ -1459,8 +1451,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param updateProvisionedProductRequest
      * @return A Java Future containing the result of the UpdateProvisionedProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.UpdateProvisionedProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateProvisionedProductResult> updateProvisionedProductAsync(UpdateProvisionedProductRequest updateProvisionedProductRequest);
 
@@ -1482,8 +1474,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateProvisionedProduct operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.UpdateProvisionedProduct
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateProvisionedProductResult> updateProvisionedProductAsync(UpdateProvisionedProductRequest updateProvisionedProductRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductRequest, UpdateProvisionedProductResult> asyncHandler);
@@ -1497,8 +1489,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * @param updateProvisioningArtifactRequest
      * @return A Java Future containing the result of the UpdateProvisioningArtifact operation returned by the service.
      * @sample AWSServiceCatalogAsync.UpdateProvisioningArtifact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateProvisioningArtifactResult> updateProvisioningArtifactAsync(
             UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest);
@@ -1516,8 +1508,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateProvisioningArtifact operation returned by the service.
      * @sample AWSServiceCatalogAsyncHandler.UpdateProvisioningArtifact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateProvisioningArtifactResult> updateProvisioningArtifactAsync(
             UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest,

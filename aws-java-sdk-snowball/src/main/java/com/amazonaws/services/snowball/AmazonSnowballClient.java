@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -271,7 +271,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.CancelCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -323,7 +323,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The provided AWS Key Management Service key lacks the permissions to perform the specified
      *         <a>CreateJob</a> or <a>UpdateJob</a> action.
      * @sample AmazonSnowball.CancelJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
@@ -373,7 +374,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The address is either outside the serviceable area for your region, or an error occurred. Check the
      *         address with your region's carrier and try again. If the issue persists, contact AWS Support.
      * @sample AmazonSnowball.CreateAddress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -426,7 +427,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @sample AmazonSnowball.CreateCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -485,7 +486,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five notes.
      * @sample AmazonSnowball.CreateJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateJobResult createJob(CreateJobRequest createJobRequest) {
@@ -530,7 +532,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.DescribeAddress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -576,7 +578,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.DescribeAddresses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -622,7 +624,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.DescribeCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -668,7 +670,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.DescribeJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeJobResult describeJob(DescribeJobRequest describeJobRequest) {
@@ -731,7 +734,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidJobStateException
      *         The action can't be performed because the job's current state doesn't allow that action to be performed.
      * @sample AmazonSnowball.GetJobManifest
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -789,7 +792,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidJobStateException
      *         The action can't be performed because the job's current state doesn't allow that action to be performed.
      * @sample AmazonSnowball.GetJobUnlockCode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -836,7 +839,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @param getSnowballUsageRequest
      * @return Result of the GetSnowballUsage operation returned by the service.
      * @sample AmazonSnowball.GetSnowballUsage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -882,7 +885,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
      * @sample AmazonSnowball.ListClusterJobs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -926,7 +929,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @param listClustersRequest
      * @return Result of the ListClusters operation returned by the service.
      * @sample AmazonSnowball.ListClusters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
@@ -970,7 +974,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @param listJobsRequest
      * @return Result of the ListJobs operation returned by the service.
      * @sample AmazonSnowball.ListJobs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
@@ -1025,7 +1030,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @sample AmazonSnowball.UpdateCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1085,7 +1090,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five notes.
      * @sample AmazonSnowball.UpdateJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateJobResult updateJob(UpdateJobRequest updateJobRequest) {

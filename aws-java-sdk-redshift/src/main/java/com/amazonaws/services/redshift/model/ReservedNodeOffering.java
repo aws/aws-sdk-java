@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import java.io.Serializable;
  * Describes a reserved node offering.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeOffering"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeOffering" target="_top">AWS API
  *      Documentation</a>
  */
 public class ReservedNodeOffering implements Serializable, Cloneable {

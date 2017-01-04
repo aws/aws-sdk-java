@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -266,7 +266,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.AssociateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -319,7 +319,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidRoleException
      *         The specified role is invalid.
      * @sample AmazonAppStream.CreateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateFleetResult createFleet(CreateFleetRequest createFleetRequest) {
@@ -364,7 +365,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
      * @sample AmazonAppStream.CreateStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateStackResult createStack(CreateStackRequest createStackRequest) {
@@ -412,8 +414,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateStreamingURL
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateStreamingURLResult createStreamingURL(CreateStreamingURLRequest createStreamingURLRequest) {
@@ -458,7 +460,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.DeleteFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
@@ -504,7 +507,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.DeleteStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
@@ -548,7 +552,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.DescribeFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -593,7 +597,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.DescribeImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -637,7 +641,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @param describeSessionsRequest
      * @return Result of the DescribeSessions operation returned by the service.
      * @sample AmazonAppStream.DescribeSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -683,7 +687,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.DescribeStacks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -729,8 +733,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.DisassociateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DisassociateFleetResult disassociateFleet(DisassociateFleetRequest disassociateFleetRequest) {
@@ -771,7 +775,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @param expireSessionRequest
      * @return Result of the ExpireSession operation returned by the service.
      * @sample AmazonAppStream.ExpireSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -813,8 +817,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @param listAssociatedFleetsRequest
      * @return Result of the ListAssociatedFleets operation returned by the service.
      * @sample AmazonAppStream.ListAssociatedFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListAssociatedFleetsResult listAssociatedFleets(ListAssociatedFleetsRequest listAssociatedFleetsRequest) {
@@ -855,8 +859,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @param listAssociatedStacksRequest
      * @return Result of the ListAssociatedStacks operation returned by the service.
      * @sample AmazonAppStream.ListAssociatedStacks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListAssociatedStacksResult listAssociatedStacks(ListAssociatedStacksRequest listAssociatedStacksRequest) {
@@ -901,7 +905,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
      * @sample AmazonAppStream.StartFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public StartFleetResult startFleet(StartFleetRequest startFleetRequest) {
@@ -944,7 +949,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.StopFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public StopFleetResult stopFleet(StopFleetRequest stopFleetRequest) {
@@ -994,7 +1000,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.UpdateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateFleetResult updateFleet(UpdateFleetRequest updateFleetRequest) {
@@ -1039,7 +1046,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceInUseException
      *         The specified resource is in use.
      * @sample AmazonAppStream.UpdateStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {

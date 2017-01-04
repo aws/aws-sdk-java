@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param addTagsToResourceRequest
      * @return A Java Future containing the result of the AddTagsToResource operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.AddTagsToResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest);
 
@@ -99,7 +100,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTagsToResource operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.AddTagsToResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler);
@@ -113,7 +115,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param cancelCommandRequest
      * @return A Java Future containing the result of the CancelCommand operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.CancelCommand
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(CancelCommandRequest cancelCommandRequest);
 
@@ -130,7 +133,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CancelCommand operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.CancelCommand
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(CancelCommandRequest cancelCommandRequest,
             com.amazonaws.handlers.AsyncHandler<CancelCommandRequest, CancelCommandResult> asyncHandler);
@@ -148,7 +152,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param createActivationRequest
      * @return A Java Future containing the result of the CreateActivation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.CreateActivation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateActivationResult> createActivationAsync(CreateActivationRequest createActivationRequest);
 
@@ -169,7 +174,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateActivation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.CreateActivation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateActivationResult> createActivationAsync(CreateActivationRequest createActivationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateActivationRequest, CreateActivationResult> asyncHandler);
@@ -190,7 +196,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param createAssociationRequest
      * @return A Java Future containing the result of the CreateAssociation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.CreateAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(CreateAssociationRequest createAssociationRequest);
 
@@ -214,7 +221,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAssociation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.CreateAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(CreateAssociationRequest createAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAssociationRequest, CreateAssociationResult> asyncHandler);
@@ -235,7 +243,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param createAssociationBatchRequest
      * @return A Java Future containing the result of the CreateAssociationBatch operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.CreateAssociationBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAssociationBatchResult> createAssociationBatchAsync(CreateAssociationBatchRequest createAssociationBatchRequest);
@@ -260,7 +268,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAssociationBatch operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.CreateAssociationBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAssociationBatchResult> createAssociationBatchAsync(CreateAssociationBatchRequest createAssociationBatchRequest,
@@ -278,7 +286,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param createDocumentRequest
      * @return A Java Future containing the result of the CreateDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.CreateDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(CreateDocumentRequest createDocumentRequest);
 
@@ -298,7 +307,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.CreateDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(CreateDocumentRequest createDocumentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDocumentRequest, CreateDocumentResult> asyncHandler);
@@ -311,8 +321,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param createMaintenanceWindowRequest
      * @return A Java Future containing the result of the CreateMaintenanceWindow operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.CreateMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateMaintenanceWindowResult> createMaintenanceWindowAsync(CreateMaintenanceWindowRequest createMaintenanceWindowRequest);
 
@@ -328,8 +338,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateMaintenanceWindow operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.CreateMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateMaintenanceWindowResult> createMaintenanceWindowAsync(CreateMaintenanceWindowRequest createMaintenanceWindowRequest,
             com.amazonaws.handlers.AsyncHandler<CreateMaintenanceWindowRequest, CreateMaintenanceWindowResult> asyncHandler);
@@ -342,7 +352,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param createPatchBaselineRequest
      * @return A Java Future containing the result of the CreatePatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.CreatePatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreatePatchBaselineResult> createPatchBaselineAsync(CreatePatchBaselineRequest createPatchBaselineRequest);
@@ -359,7 +369,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.CreatePatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreatePatchBaselineResult> createPatchBaselineAsync(CreatePatchBaselineRequest createPatchBaselineRequest,
@@ -375,7 +385,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param deleteActivationRequest
      * @return A Java Future containing the result of the DeleteActivation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DeleteActivation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteActivationResult> deleteActivationAsync(DeleteActivationRequest deleteActivationRequest);
 
@@ -393,7 +404,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteActivation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteActivation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteActivationResult> deleteActivationAsync(DeleteActivationRequest deleteActivationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteActivationRequest, DeleteActivationResult> asyncHandler);
@@ -411,7 +423,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param deleteAssociationRequest
      * @return A Java Future containing the result of the DeleteAssociation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DeleteAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(DeleteAssociationRequest deleteAssociationRequest);
 
@@ -432,7 +445,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAssociation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(DeleteAssociationRequest deleteAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAssociationRequest, DeleteAssociationResult> asyncHandler);
@@ -449,7 +463,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param deleteDocumentRequest
      * @return A Java Future containing the result of the DeleteDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DeleteDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest deleteDocumentRequest);
 
@@ -469,7 +484,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest deleteDocumentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler);
@@ -482,8 +498,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param deleteMaintenanceWindowRequest
      * @return A Java Future containing the result of the DeleteMaintenanceWindow operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DeleteMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest);
 
@@ -499,8 +515,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteMaintenanceWindow operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResult> asyncHandler);
@@ -513,7 +529,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param deleteParameterRequest
      * @return A Java Future containing the result of the DeleteParameter operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DeleteParameter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteParameterResult> deleteParameterAsync(DeleteParameterRequest deleteParameterRequest);
 
@@ -529,7 +546,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteParameter operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteParameter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteParameterResult> deleteParameterAsync(DeleteParameterRequest deleteParameterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteParameterRequest, DeleteParameterResult> asyncHandler);
@@ -542,7 +560,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param deletePatchBaselineRequest
      * @return A Java Future containing the result of the DeletePatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DeletePatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(DeletePatchBaselineRequest deletePatchBaselineRequest);
@@ -559,7 +577,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeletePatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(DeletePatchBaselineRequest deletePatchBaselineRequest,
@@ -574,8 +592,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param deregisterManagedInstanceRequest
      * @return A Java Future containing the result of the DeregisterManagedInstance operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DeregisterManagedInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterManagedInstanceResult> deregisterManagedInstanceAsync(
             DeregisterManagedInstanceRequest deregisterManagedInstanceRequest);
@@ -593,8 +611,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeregisterManagedInstance operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeregisterManagedInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterManagedInstanceResult> deregisterManagedInstanceAsync(
             DeregisterManagedInstanceRequest deregisterManagedInstanceRequest,
@@ -609,8 +627,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DeregisterPatchBaselineForPatchGroup operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.DeregisterPatchBaselineForPatchGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterPatchBaselineForPatchGroupResult> deregisterPatchBaselineForPatchGroupAsync(
             DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest);
@@ -628,8 +646,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DeregisterPatchBaselineForPatchGroup operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeregisterPatchBaselineForPatchGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterPatchBaselineForPatchGroupResult> deregisterPatchBaselineForPatchGroupAsync(
             DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest,
@@ -644,8 +662,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DeregisterTargetFromMaintenanceWindow operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsync.DeregisterTargetFromMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterTargetFromMaintenanceWindowResult> deregisterTargetFromMaintenanceWindowAsync(
             DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest);
@@ -663,8 +681,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DeregisterTargetFromMaintenanceWindow operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeregisterTargetFromMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterTargetFromMaintenanceWindowResult> deregisterTargetFromMaintenanceWindowAsync(
             DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest,
@@ -679,8 +697,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DeregisterTaskFromMaintenanceWindow operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.DeregisterTaskFromMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterTaskFromMaintenanceWindowResult> deregisterTaskFromMaintenanceWindowAsync(
             DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest);
@@ -698,8 +716,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DeregisterTaskFromMaintenanceWindow operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DeregisterTaskFromMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterTaskFromMaintenanceWindowResult> deregisterTaskFromMaintenanceWindowAsync(
             DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest,
@@ -714,7 +732,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeActivationsRequest
      * @return A Java Future containing the result of the DescribeActivations operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeActivations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeActivationsResult> describeActivationsAsync(DescribeActivationsRequest describeActivationsRequest);
@@ -732,7 +750,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeActivations operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeActivations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeActivationsResult> describeActivationsAsync(DescribeActivationsRequest describeActivationsRequest,
@@ -746,7 +764,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeAssociationRequest
      * @return A Java Future containing the result of the DescribeAssociation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(DescribeAssociationRequest describeAssociationRequest);
@@ -763,7 +781,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAssociation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(DescribeAssociationRequest describeAssociationRequest,
@@ -778,8 +796,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeAutomationExecutions operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeAutomationExecutions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(
             DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest);
@@ -797,8 +815,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeAutomationExecutions operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAutomationExecutions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(
             DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest,
@@ -812,8 +830,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeAvailablePatchesRequest
      * @return A Java Future containing the result of the DescribeAvailablePatches operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeAvailablePatches
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAvailablePatchesResult> describeAvailablePatchesAsync(DescribeAvailablePatchesRequest describeAvailablePatchesRequest);
 
@@ -829,8 +847,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAvailablePatches operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAvailablePatches
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAvailablePatchesResult> describeAvailablePatchesAsync(DescribeAvailablePatchesRequest describeAvailablePatchesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAvailablePatchesRequest, DescribeAvailablePatchesResult> asyncHandler);
@@ -843,7 +861,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeDocumentRequest
      * @return A Java Future containing the result of the DescribeDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeDocumentResult> describeDocumentAsync(DescribeDocumentRequest describeDocumentRequest);
 
@@ -859,7 +878,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeDocumentResult> describeDocumentAsync(DescribeDocumentRequest describeDocumentRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDocumentRequest, DescribeDocumentResult> asyncHandler);
@@ -873,8 +893,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeDocumentPermissionRequest
      * @return A Java Future containing the result of the DescribeDocumentPermission operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeDocumentPermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(
             DescribeDocumentPermissionRequest describeDocumentPermissionRequest);
@@ -892,8 +912,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDocumentPermission operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeDocumentPermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(
             DescribeDocumentPermissionRequest describeDocumentPermissionRequest,
@@ -908,8 +928,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeEffectiveInstanceAssociations operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeEffectiveInstanceAssociations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEffectiveInstanceAssociationsResult> describeEffectiveInstanceAssociationsAsync(
             DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest);
@@ -927,8 +947,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeEffectiveInstanceAssociations operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeEffectiveInstanceAssociations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEffectiveInstanceAssociationsResult> describeEffectiveInstanceAssociationsAsync(
             DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest,
@@ -943,9 +963,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeEffectivePatchesForPatchBaseline operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeEffectivePatchesForPatchBaseline
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEffectivePatchesForPatchBaselineResult> describeEffectivePatchesForPatchBaselineAsync(
             DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest);
@@ -963,9 +982,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeEffectivePatchesForPatchBaseline operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeEffectivePatchesForPatchBaseline
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEffectivePatchesForPatchBaselineResult> describeEffectivePatchesForPatchBaselineAsync(
             DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest,
@@ -980,8 +998,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeInstanceAssociationsStatus operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeInstanceAssociationsStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstanceAssociationsStatusResult> describeInstanceAssociationsStatusAsync(
             DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest);
@@ -999,8 +1017,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeInstanceAssociationsStatus operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstanceAssociationsStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstanceAssociationsStatusResult> describeInstanceAssociationsStatusAsync(
             DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest,
@@ -1018,8 +1036,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeInstanceInformationRequest
      * @return A Java Future containing the result of the DescribeInstanceInformation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeInstanceInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
             DescribeInstanceInformationRequest describeInstanceInformationRequest);
@@ -1040,8 +1058,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInstanceInformation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstanceInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
             DescribeInstanceInformationRequest describeInstanceInformationRequest,
@@ -1055,8 +1073,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeInstancePatchStatesRequest
      * @return A Java Future containing the result of the DescribeInstancePatchStates operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeInstancePatchStates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancePatchStatesResult> describeInstancePatchStatesAsync(
             DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest);
@@ -1073,8 +1091,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInstancePatchStates operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstancePatchStates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancePatchStatesResult> describeInstancePatchStatesAsync(
             DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest,
@@ -1089,9 +1107,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeInstancePatchStatesForPatchGroup operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeInstancePatchStatesForPatchGroup
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancePatchStatesForPatchGroupResult> describeInstancePatchStatesForPatchGroupAsync(
             DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest);
@@ -1109,9 +1126,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeInstancePatchStatesForPatchGroup operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstancePatchStatesForPatchGroup
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancePatchStatesForPatchGroupResult> describeInstancePatchStatesForPatchGroupAsync(
             DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest,
@@ -1126,8 +1142,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeInstancePatchesRequest
      * @return A Java Future containing the result of the DescribeInstancePatches operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeInstancePatches
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancePatchesResult> describeInstancePatchesAsync(DescribeInstancePatchesRequest describeInstancePatchesRequest);
 
@@ -1144,8 +1160,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInstancePatches operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstancePatches
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancePatchesResult> describeInstancePatchesAsync(DescribeInstancePatchesRequest describeInstancePatchesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchesRequest, DescribeInstancePatchesResult> asyncHandler);
@@ -1161,8 +1177,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *         returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowExecutionTaskInvocations
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTaskInvocationsResult> describeMaintenanceWindowExecutionTaskInvocationsAsync(
             DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest);
@@ -1182,8 +1198,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *         returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowExecutionTaskInvocations
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTaskInvocationsResult> describeMaintenanceWindowExecutionTaskInvocationsAsync(
             DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest,
@@ -1198,8 +1214,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutionTasks operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowExecutionTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTasksResult> describeMaintenanceWindowExecutionTasksAsync(
             DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest);
@@ -1217,8 +1233,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutionTasks operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowExecutionTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTasksResult> describeMaintenanceWindowExecutionTasksAsync(
             DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest,
@@ -1234,8 +1250,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutions operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowExecutions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowExecutionsResult> describeMaintenanceWindowExecutionsAsync(
             DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest);
@@ -1254,8 +1270,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutions operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowExecutions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowExecutionsResult> describeMaintenanceWindowExecutionsAsync(
             DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest,
@@ -1270,8 +1286,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeMaintenanceWindowTargets operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowTargets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowTargetsResult> describeMaintenanceWindowTargetsAsync(
             DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest);
@@ -1289,8 +1305,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeMaintenanceWindowTargets operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowTargets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowTargetsResult> describeMaintenanceWindowTargetsAsync(
             DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest,
@@ -1305,8 +1321,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeMaintenanceWindowTasks operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowTasksResult> describeMaintenanceWindowTasksAsync(
             DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest);
@@ -1324,8 +1340,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the DescribeMaintenanceWindowTasks operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowTasksResult> describeMaintenanceWindowTasksAsync(
             DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest,
@@ -1339,8 +1355,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeMaintenanceWindowsRequest
      * @return A Java Future containing the result of the DescribeMaintenanceWindows operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindows
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowsResult> describeMaintenanceWindowsAsync(
             DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest);
@@ -1357,8 +1373,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeMaintenanceWindows operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindows
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeMaintenanceWindowsResult> describeMaintenanceWindowsAsync(
             DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest,
@@ -1372,7 +1388,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describeParametersRequest
      * @return A Java Future containing the result of the DescribeParameters operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribeParameters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeParametersResult> describeParametersAsync(DescribeParametersRequest describeParametersRequest);
@@ -1389,7 +1405,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeParameters operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeParameters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeParametersResult> describeParametersAsync(DescribeParametersRequest describeParametersRequest,
@@ -1403,7 +1419,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describePatchBaselinesRequest
      * @return A Java Future containing the result of the DescribePatchBaselines operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribePatchBaselines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribePatchBaselinesResult> describePatchBaselinesAsync(DescribePatchBaselinesRequest describePatchBaselinesRequest);
@@ -1420,7 +1436,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePatchBaselines operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribePatchBaselines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribePatchBaselinesResult> describePatchBaselinesAsync(DescribePatchBaselinesRequest describePatchBaselinesRequest,
@@ -1434,8 +1450,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describePatchGroupStateRequest
      * @return A Java Future containing the result of the DescribePatchGroupState operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribePatchGroupState
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribePatchGroupStateResult> describePatchGroupStateAsync(DescribePatchGroupStateRequest describePatchGroupStateRequest);
 
@@ -1451,8 +1467,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePatchGroupState operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribePatchGroupState
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribePatchGroupStateResult> describePatchGroupStateAsync(DescribePatchGroupStateRequest describePatchGroupStateRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePatchGroupStateRequest, DescribePatchGroupStateResult> asyncHandler);
@@ -1465,7 +1481,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param describePatchGroupsRequest
      * @return A Java Future containing the result of the DescribePatchGroups operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.DescribePatchGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribePatchGroupsResult> describePatchGroupsAsync(DescribePatchGroupsRequest describePatchGroupsRequest);
@@ -1482,7 +1498,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePatchGroups operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.DescribePatchGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribePatchGroupsResult> describePatchGroupsAsync(DescribePatchGroupsRequest describePatchGroupsRequest,
@@ -1496,7 +1512,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getAutomationExecutionRequest
      * @return A Java Future containing the result of the GetAutomationExecution operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetAutomationExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetAutomationExecutionResult> getAutomationExecutionAsync(GetAutomationExecutionRequest getAutomationExecutionRequest);
@@ -1513,7 +1529,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAutomationExecution operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetAutomationExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetAutomationExecutionResult> getAutomationExecutionAsync(GetAutomationExecutionRequest getAutomationExecutionRequest,
@@ -1527,7 +1543,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getCommandInvocationRequest
      * @return A Java Future containing the result of the GetCommandInvocation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetCommandInvocation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest getCommandInvocationRequest);
@@ -1544,7 +1560,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCommandInvocation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetCommandInvocation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest getCommandInvocationRequest,
@@ -1558,8 +1574,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getDefaultPatchBaselineRequest
      * @return A Java Future containing the result of the GetDefaultPatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetDefaultPatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetDefaultPatchBaselineResult> getDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest);
 
@@ -1575,8 +1591,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDefaultPatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetDefaultPatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetDefaultPatchBaselineResult> getDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest,
             com.amazonaws.handlers.AsyncHandler<GetDefaultPatchBaselineRequest, GetDefaultPatchBaselineResult> asyncHandler);
@@ -1591,8 +1607,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the GetDeployablePatchSnapshotForInstance operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsync.GetDeployablePatchSnapshotForInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDeployablePatchSnapshotForInstanceResult> getDeployablePatchSnapshotForInstanceAsync(
             GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest);
@@ -1611,8 +1627,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the GetDeployablePatchSnapshotForInstance operation returned by
      *         the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetDeployablePatchSnapshotForInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDeployablePatchSnapshotForInstanceResult> getDeployablePatchSnapshotForInstanceAsync(
             GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest,
@@ -1626,7 +1642,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getDocumentRequest
      * @return A Java Future containing the result of the GetDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(GetDocumentRequest getDocumentRequest);
 
@@ -1642,7 +1659,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(GetDocumentRequest getDocumentRequest,
             com.amazonaws.handlers.AsyncHandler<GetDocumentRequest, GetDocumentResult> asyncHandler);
@@ -1655,7 +1673,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getInventoryRequest
      * @return A Java Future containing the result of the GetInventory operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetInventory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInventoryResult> getInventoryAsync(GetInventoryRequest getInventoryRequest);
 
@@ -1671,7 +1690,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInventory operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetInventory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetInventoryResult> getInventoryAsync(GetInventoryRequest getInventoryRequest,
             com.amazonaws.handlers.AsyncHandler<GetInventoryRequest, GetInventoryResult> asyncHandler);
@@ -1685,7 +1705,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getInventorySchemaRequest
      * @return A Java Future containing the result of the GetInventorySchema operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetInventorySchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetInventorySchemaResult> getInventorySchemaAsync(GetInventorySchemaRequest getInventorySchemaRequest);
@@ -1703,7 +1723,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInventorySchema operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetInventorySchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetInventorySchemaResult> getInventorySchemaAsync(GetInventorySchemaRequest getInventorySchemaRequest,
@@ -1717,7 +1737,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getMaintenanceWindowRequest
      * @return A Java Future containing the result of the GetMaintenanceWindow operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetMaintenanceWindowResult> getMaintenanceWindowAsync(GetMaintenanceWindowRequest getMaintenanceWindowRequest);
@@ -1734,7 +1754,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetMaintenanceWindow operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetMaintenanceWindowResult> getMaintenanceWindowAsync(GetMaintenanceWindowRequest getMaintenanceWindowRequest,
@@ -1749,8 +1769,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the GetMaintenanceWindowExecution operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.GetMaintenanceWindowExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetMaintenanceWindowExecutionResult> getMaintenanceWindowExecutionAsync(
             GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest);
@@ -1768,8 +1788,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the GetMaintenanceWindowExecution operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetMaintenanceWindowExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetMaintenanceWindowExecutionResult> getMaintenanceWindowExecutionAsync(
             GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest,
@@ -1784,8 +1804,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the GetMaintenanceWindowExecutionTask operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.GetMaintenanceWindowExecutionTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskResult> getMaintenanceWindowExecutionTaskAsync(
             GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest);
@@ -1803,8 +1823,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the GetMaintenanceWindowExecutionTask operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetMaintenanceWindowExecutionTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskResult> getMaintenanceWindowExecutionTaskAsync(
             GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest,
@@ -1818,7 +1838,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getParameterHistoryRequest
      * @return A Java Future containing the result of the GetParameterHistory operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetParameterHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetParameterHistoryResult> getParameterHistoryAsync(GetParameterHistoryRequest getParameterHistoryRequest);
@@ -1835,7 +1855,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetParameterHistory operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetParameterHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetParameterHistoryResult> getParameterHistoryAsync(GetParameterHistoryRequest getParameterHistoryRequest,
@@ -1849,7 +1869,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getParametersRequest
      * @return A Java Future containing the result of the GetParameters operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetParameters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetParametersResult> getParametersAsync(GetParametersRequest getParametersRequest);
 
@@ -1865,7 +1886,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetParameters operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetParameters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetParametersResult> getParametersAsync(GetParametersRequest getParametersRequest,
             com.amazonaws.handlers.AsyncHandler<GetParametersRequest, GetParametersResult> asyncHandler);
@@ -1878,7 +1900,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param getPatchBaselineRequest
      * @return A Java Future containing the result of the GetPatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.GetPatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetPatchBaselineResult> getPatchBaselineAsync(GetPatchBaselineRequest getPatchBaselineRequest);
 
@@ -1894,7 +1917,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetPatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetPatchBaselineResult> getPatchBaselineAsync(GetPatchBaselineRequest getPatchBaselineRequest,
             com.amazonaws.handlers.AsyncHandler<GetPatchBaselineRequest, GetPatchBaselineResult> asyncHandler);
@@ -1908,8 +1932,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the GetPatchBaselineForPatchGroup operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.GetPatchBaselineForPatchGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPatchBaselineForPatchGroupResult> getPatchBaselineForPatchGroupAsync(
             GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest);
@@ -1927,8 +1951,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the GetPatchBaselineForPatchGroup operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.GetPatchBaselineForPatchGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetPatchBaselineForPatchGroupResult> getPatchBaselineForPatchGroupAsync(
             GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest,
@@ -1942,7 +1966,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param listAssociationsRequest
      * @return A Java Future containing the result of the ListAssociations operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.ListAssociations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(ListAssociationsRequest listAssociationsRequest);
 
@@ -1958,7 +1983,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAssociations operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.ListAssociations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(ListAssociationsRequest listAssociationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssociationsRequest, ListAssociationsResult> asyncHandler);
@@ -1974,7 +2000,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param listCommandInvocationsRequest
      * @return A Java Future containing the result of the ListCommandInvocations operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.ListCommandInvocations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListCommandInvocationsResult> listCommandInvocationsAsync(ListCommandInvocationsRequest listCommandInvocationsRequest);
@@ -1994,7 +2020,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListCommandInvocations operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.ListCommandInvocations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListCommandInvocationsResult> listCommandInvocationsAsync(ListCommandInvocationsRequest listCommandInvocationsRequest,
@@ -2008,7 +2034,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param listCommandsRequest
      * @return A Java Future containing the result of the ListCommands operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.ListCommands
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListCommandsResult> listCommandsAsync(ListCommandsRequest listCommandsRequest);
 
@@ -2024,7 +2051,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListCommands operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.ListCommands
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListCommandsResult> listCommandsAsync(ListCommandsRequest listCommandsRequest,
             com.amazonaws.handlers.AsyncHandler<ListCommandsRequest, ListCommandsResult> asyncHandler);
@@ -2037,7 +2065,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param listDocumentVersionsRequest
      * @return A Java Future containing the result of the ListDocumentVersions operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.ListDocumentVersions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(ListDocumentVersionsRequest listDocumentVersionsRequest);
@@ -2054,7 +2082,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDocumentVersions operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.ListDocumentVersions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(ListDocumentVersionsRequest listDocumentVersionsRequest,
@@ -2068,7 +2096,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param listDocumentsRequest
      * @return A Java Future containing the result of the ListDocuments operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.ListDocuments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(ListDocumentsRequest listDocumentsRequest);
 
@@ -2084,7 +2113,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDocuments operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.ListDocuments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(ListDocumentsRequest listDocumentsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler);
@@ -2112,7 +2142,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param listInventoryEntriesRequest
      * @return A Java Future containing the result of the ListInventoryEntries operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.ListInventoryEntries
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest listInventoryEntriesRequest);
@@ -2129,7 +2159,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListInventoryEntries operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.ListInventoryEntries
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest listInventoryEntriesRequest,
@@ -2143,7 +2173,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
@@ -2160,7 +2190,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
@@ -2176,8 +2206,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param modifyDocumentPermissionRequest
      * @return A Java Future containing the result of the ModifyDocumentPermission operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.ModifyDocumentPermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest);
 
@@ -2195,8 +2225,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ModifyDocumentPermission operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.ModifyDocumentPermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult> asyncHandler);
@@ -2210,7 +2240,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param putInventoryRequest
      * @return A Java Future containing the result of the PutInventory operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.PutInventory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutInventoryResult> putInventoryAsync(PutInventoryRequest putInventoryRequest);
 
@@ -2227,7 +2258,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutInventory operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.PutInventory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutInventoryResult> putInventoryAsync(PutInventoryRequest putInventoryRequest,
             com.amazonaws.handlers.AsyncHandler<PutInventoryRequest, PutInventoryResult> asyncHandler);
@@ -2240,7 +2272,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param putParameterRequest
      * @return A Java Future containing the result of the PutParameter operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.PutParameter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutParameterResult> putParameterAsync(PutParameterRequest putParameterRequest);
 
@@ -2256,7 +2289,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutParameter operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.PutParameter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutParameterResult> putParameterAsync(PutParameterRequest putParameterRequest,
             com.amazonaws.handlers.AsyncHandler<PutParameterRequest, PutParameterResult> asyncHandler);
@@ -2270,8 +2304,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the RegisterDefaultPatchBaseline operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.RegisterDefaultPatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterDefaultPatchBaselineResult> registerDefaultPatchBaselineAsync(
             RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest);
@@ -2289,8 +2323,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the RegisterDefaultPatchBaseline operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.RegisterDefaultPatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterDefaultPatchBaselineResult> registerDefaultPatchBaselineAsync(
             RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest,
@@ -2305,8 +2339,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the RegisterPatchBaselineForPatchGroup operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.RegisterPatchBaselineForPatchGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterPatchBaselineForPatchGroupResult> registerPatchBaselineForPatchGroupAsync(
             RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest);
@@ -2324,8 +2358,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the RegisterPatchBaselineForPatchGroup operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.RegisterPatchBaselineForPatchGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterPatchBaselineForPatchGroupResult> registerPatchBaselineForPatchGroupAsync(
             RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest,
@@ -2340,8 +2374,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the RegisterTargetWithMaintenanceWindow operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.RegisterTargetWithMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterTargetWithMaintenanceWindowResult> registerTargetWithMaintenanceWindowAsync(
             RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest);
@@ -2359,8 +2393,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the RegisterTargetWithMaintenanceWindow operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.RegisterTargetWithMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterTargetWithMaintenanceWindowResult> registerTargetWithMaintenanceWindowAsync(
             RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest,
@@ -2375,8 +2409,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the RegisterTaskWithMaintenanceWindow operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.RegisterTaskWithMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterTaskWithMaintenanceWindowResult> registerTaskWithMaintenanceWindowAsync(
             RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest);
@@ -2394,8 +2428,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the RegisterTaskWithMaintenanceWindow operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.RegisterTaskWithMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterTaskWithMaintenanceWindowResult> registerTaskWithMaintenanceWindowAsync(
             RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest,
@@ -2409,7 +2443,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param removeTagsFromResourceRequest
      * @return A Java Future containing the result of the RemoveTagsFromResource operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.RemoveTagsFromResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
@@ -2426,7 +2460,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTagsFromResource operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.RemoveTagsFromResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest removeTagsFromResourceRequest,
@@ -2440,7 +2474,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param sendCommandRequest
      * @return A Java Future containing the result of the SendCommand operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.SendCommand
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SendCommandResult> sendCommandAsync(SendCommandRequest sendCommandRequest);
 
@@ -2456,7 +2491,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SendCommand operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.SendCommand
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SendCommandResult> sendCommandAsync(SendCommandRequest sendCommandRequest,
             com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult> asyncHandler);
@@ -2469,8 +2505,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param startAutomationExecutionRequest
      * @return A Java Future containing the result of the StartAutomationExecution operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.StartAutomationExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<StartAutomationExecutionResult> startAutomationExecutionAsync(StartAutomationExecutionRequest startAutomationExecutionRequest);
 
@@ -2486,8 +2522,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartAutomationExecution operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.StartAutomationExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<StartAutomationExecutionResult> startAutomationExecutionAsync(StartAutomationExecutionRequest startAutomationExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StartAutomationExecutionRequest, StartAutomationExecutionResult> asyncHandler);
@@ -2500,8 +2536,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param stopAutomationExecutionRequest
      * @return A Java Future containing the result of the StopAutomationExecution operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.StopAutomationExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<StopAutomationExecutionResult> stopAutomationExecutionAsync(StopAutomationExecutionRequest stopAutomationExecutionRequest);
 
@@ -2517,8 +2553,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopAutomationExecution operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.StopAutomationExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<StopAutomationExecutionResult> stopAutomationExecutionAsync(StopAutomationExecutionRequest stopAutomationExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StopAutomationExecutionRequest, StopAutomationExecutionResult> asyncHandler);
@@ -2532,7 +2568,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param updateAssociationRequest
      * @return A Java Future containing the result of the UpdateAssociation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.UpdateAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAssociationResult> updateAssociationAsync(UpdateAssociationRequest updateAssociationRequest);
 
@@ -2549,7 +2586,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAssociation operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAssociationResult> updateAssociationAsync(UpdateAssociationRequest updateAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAssociationRequest, UpdateAssociationResult> asyncHandler);
@@ -2562,8 +2600,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param updateAssociationStatusRequest
      * @return A Java Future containing the result of the UpdateAssociationStatus operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.UpdateAssociationStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(UpdateAssociationStatusRequest updateAssociationStatusRequest);
 
@@ -2579,8 +2617,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAssociationStatus operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateAssociationStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(UpdateAssociationStatusRequest updateAssociationStatusRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult> asyncHandler);
@@ -2593,7 +2631,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param updateDocumentRequest
      * @return A Java Future containing the result of the UpdateDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.UpdateDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDocumentResult> updateDocumentAsync(UpdateDocumentRequest updateDocumentRequest);
 
@@ -2609,7 +2648,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDocument operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateDocument
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDocumentResult> updateDocumentAsync(UpdateDocumentRequest updateDocumentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDocumentRequest, UpdateDocumentResult> asyncHandler);
@@ -2623,8 +2663,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the UpdateDocumentDefaultVersion operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsync.UpdateDocumentDefaultVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(
             UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest);
@@ -2642,8 +2682,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @return A Java Future containing the result of the UpdateDocumentDefaultVersion operation returned by the
      *         service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateDocumentDefaultVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(
             UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest,
@@ -2657,8 +2697,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param updateMaintenanceWindowRequest
      * @return A Java Future containing the result of the UpdateMaintenanceWindow operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.UpdateMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateMaintenanceWindowResult> updateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest);
 
@@ -2674,8 +2714,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateMaintenanceWindow operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateMaintenanceWindow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateMaintenanceWindowResult> updateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResult> asyncHandler);
@@ -2688,8 +2728,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param updateManagedInstanceRoleRequest
      * @return A Java Future containing the result of the UpdateManagedInstanceRole operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.UpdateManagedInstanceRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateManagedInstanceRoleResult> updateManagedInstanceRoleAsync(
             UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest);
@@ -2706,8 +2746,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateManagedInstanceRole operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateManagedInstanceRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateManagedInstanceRoleResult> updateManagedInstanceRoleAsync(
             UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest,
@@ -2721,7 +2761,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * @param updatePatchBaselineRequest
      * @return A Java Future containing the result of the UpdatePatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsync.UpdatePatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdatePatchBaselineResult> updatePatchBaselineAsync(UpdatePatchBaselineRequest updatePatchBaselineRequest);
@@ -2738,7 +2778,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdatePatchBaseline operation returned by the service.
      * @sample AWSSimpleSystemsManagementAsyncHandler.UpdatePatchBaseline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdatePatchBaselineResult> updatePatchBaselineAsync(UpdatePatchBaselineRequest updatePatchBaselineRequest,

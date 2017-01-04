@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -151,8 +151,8 @@ public interface AWSMarketplaceMetering {
      * @throws ThrottlingException
      *         The calls to the MeterUsage API are throttled.
      * @sample AWSMarketplaceMetering.BatchMeterUsage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage"
+     *      target="_top">AWS API Documentation</a>
      */
     BatchMeterUsageResult batchMeterUsage(BatchMeterUsageRequest batchMeterUsageRequest);
 
@@ -186,8 +186,8 @@ public interface AWSMarketplaceMetering {
      * @throws ThrottlingException
      *         The calls to the MeterUsage API are throttled.
      * @sample AWSMarketplaceMetering.MeterUsage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage" target="_top">AWS
+     *      API Documentation</a>
      */
     MeterUsageResult meterUsage(MeterUsageRequest meterUsageRequest);
 
@@ -213,8 +213,8 @@ public interface AWSMarketplaceMetering {
      *         An internal error has occurred. Retry your request. If the problem persists, post a message with details
      *         on the AWS forums.
      * @sample AWSMarketplaceMetering.ResolveCustomer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer"
+     *      target="_top">AWS API Documentation</a>
      */
     ResolveCustomerResult resolveCustomer(ResolveCustomerRequest resolveCustomerRequest);
 

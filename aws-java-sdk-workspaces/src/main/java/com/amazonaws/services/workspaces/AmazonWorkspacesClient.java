@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -269,7 +269,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws ResourceLimitExceededException
      *         Your resource limits have been exceeded.
      * @sample AmazonWorkspaces.CreateTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
@@ -320,8 +321,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
      * @sample AmazonWorkspaces.CreateWorkspaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest createWorkspacesRequest) {
@@ -367,7 +368,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
      * @sample AmazonWorkspaces.DeleteTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
@@ -411,7 +413,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @sample AmazonWorkspaces.DescribeTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -465,8 +467,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
      * @sample AmazonWorkspaces.DescribeWorkspaceBundles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeWorkspaceBundlesResult describeWorkspaceBundles(DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest) {
@@ -522,8 +524,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
      * @sample AmazonWorkspaces.DescribeWorkspaceDirectories
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest) {
@@ -585,8 +587,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws ResourceUnavailableException
      *         The specified resource is not available.
      * @sample AmazonWorkspaces.DescribeWorkspaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest describeWorkspacesRequest) {
@@ -634,9 +636,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
      * @sample AmazonWorkspaces.DescribeWorkspacesConnectionStatus
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(
@@ -695,8 +696,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws ResourceUnavailableException
      *         The specified resource is not available.
      * @sample AmazonWorkspaces.ModifyWorkspaceProperties
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest) {
@@ -748,8 +749,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *        Contains the inputs for the <a>RebootWorkspaces</a> operation.
      * @return Result of the RebootWorkspaces operation returned by the service.
      * @sample AmazonWorkspaces.RebootWorkspaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public RebootWorkspacesResult rebootWorkspaces(RebootWorkspacesRequest rebootWorkspacesRequest) {
@@ -819,8 +820,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *        Contains the inputs for the <a>RebuildWorkspaces</a> operation.
      * @return Result of the RebuildWorkspaces operation returned by the service.
      * @sample AmazonWorkspaces.RebuildWorkspaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest) {
@@ -862,7 +863,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @param startWorkspacesRequest
      * @return Result of the StartWorkspaces operation returned by the service.
      * @sample AmazonWorkspaces.StartWorkspaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -905,7 +906,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @param stopWorkspacesRequest
      * @return Result of the StopWorkspaces operation returned by the service.
      * @sample AmazonWorkspaces.StopWorkspaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -960,8 +961,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *        Contains the inputs for the <a>TerminateWorkspaces</a> operation.
      * @return Result of the TerminateWorkspaces operation returned by the service.
      * @sample AmazonWorkspaces.TerminateWorkspaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest terminateWorkspacesRequest) {

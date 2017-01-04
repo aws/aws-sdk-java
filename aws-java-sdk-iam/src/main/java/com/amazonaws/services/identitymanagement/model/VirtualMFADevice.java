@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import java.io.Serializable;
  * Contains information about a virtual MFA device.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/VirtualMFADevice"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/VirtualMFADevice" target="_top">AWS API
+ *      Documentation</a>
  */
 public class VirtualMFADevice implements Serializable, Cloneable {
 
@@ -31,7 +32,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     private String serialNumber;
     /**
      * <p>
-     * The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded.
      * </p>
      */
@@ -101,7 +102,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded.
      * </p>
      * <p>
@@ -116,7 +117,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * </p>
      * 
      * @param base32StringSeed
-     *        The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     *        The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      *        <code>Base32StringSeed</code> is Base64-encoded.
      */
 
@@ -126,7 +127,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded.
      * </p>
      * <p>
@@ -137,8 +138,8 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * {@code position}.
      * </p>
      * 
-     * @return The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
-     *         <code>Base32StringSeed</code> is Base64-encoded.
+     * @return The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>.
+     *         The <code>Base32StringSeed</code> is Base64-encoded.
      */
 
     public java.nio.ByteBuffer getBase32StringSeed() {
@@ -147,12 +148,12 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded.
      * </p>
      * 
      * @param base32StringSeed
-     *        The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     *        The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      *        <code>Base32StringSeed</code> is Base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

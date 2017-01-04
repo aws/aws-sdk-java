@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class ComparedSourceImageFace implements Serializable, Cloneable {
     private BoundingBox boundingBox;
     /**
      * <p>
-     * Confidence that the selected bounding box contains a face.
+     * Confidence level that the selected bounding box contains a face.
      * </p>
      */
     private Float confidence;
@@ -59,11 +59,11 @@ public class ComparedSourceImageFace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Confidence that the selected bounding box contains a face.
+     * Confidence level that the selected bounding box contains a face.
      * </p>
      * 
      * @param confidence
-     *        Confidence that the selected bounding box contains a face.
+     *        Confidence level that the selected bounding box contains a face.
      */
 
     public void setConfidence(Float confidence) {
@@ -72,10 +72,10 @@ public class ComparedSourceImageFace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Confidence that the selected bounding box contains a face.
+     * Confidence level that the selected bounding box contains a face.
      * </p>
      * 
-     * @return Confidence that the selected bounding box contains a face.
+     * @return Confidence level that the selected bounding box contains a face.
      */
 
     public Float getConfidence() {
@@ -84,11 +84,11 @@ public class ComparedSourceImageFace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Confidence that the selected bounding box contains a face.
+     * Confidence level that the selected bounding box contains a face.
      * </p>
      * 
      * @param confidence
-     *        Confidence that the selected bounding box contains a face.
+     *        Confidence level that the selected bounding box contains a face.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

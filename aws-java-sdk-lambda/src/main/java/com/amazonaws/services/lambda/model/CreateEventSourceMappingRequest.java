@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping" target="_top">AWS
+ *      API Documentation</a>
  */
 public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -72,7 +72,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     * information, go to <a href=
+     * information, see <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
@@ -401,14 +401,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     * information, go to <a href=
+     * information, see <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @param startingPosition
      *        The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     *        information, go to <a href=
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @see EventSourcePosition
@@ -421,13 +421,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     * information, go to <a href=
+     * information, see <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @return The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For
-     *         more information, go to <a href=
+     *         more information, see <a href=
      *         "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *         >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @see EventSourcePosition
@@ -440,14 +440,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     * information, go to <a href=
+     * information, see <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @param startingPosition
      *        The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     *        information, go to <a href=
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -462,14 +462,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     * information, go to <a href=
+     * information, see <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @param startingPosition
      *        The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     *        information, go to <a href=
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @see EventSourcePosition
@@ -482,14 +482,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     * information, go to <a href=
+     * information, see <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @param startingPosition
      *        The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
-     *        information, go to <a href=
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

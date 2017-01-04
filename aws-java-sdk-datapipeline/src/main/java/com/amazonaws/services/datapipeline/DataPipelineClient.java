@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -288,8 +288,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.ActivatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ActivatePipelineResult activatePipeline(ActivatePipelineRequest activatePipelineRequest) {
@@ -341,7 +341,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.AddTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
@@ -389,8 +390,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.CreatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
@@ -447,8 +448,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.DeactivatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeactivatePipelineResult deactivatePipeline(DeactivatePipelineRequest deactivatePipelineRequest) {
@@ -504,8 +505,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.DeletePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
@@ -558,8 +559,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.DescribeObjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeObjectsResult describeObjects(DescribeObjectsRequest describeObjectsRequest) {
@@ -618,8 +619,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.DescribePipelines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribePipelinesResult describePipelines(DescribePipelinesRequest describePipelinesRequest) {
@@ -674,8 +675,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.EvaluateExpression
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public EvaluateExpressionResult evaluateExpression(EvaluateExpressionRequest evaluateExpressionRequest) {
@@ -728,8 +729,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.GetPipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetPipelineDefinitionResult getPipelineDefinition(GetPipelineDefinitionRequest getPipelineDefinitionRequest) {
@@ -778,7 +779,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.ListPipelines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -845,7 +846,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws TaskNotFoundException
      *         The specified task was not found.
      * @sample DataPipeline.PollForTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -913,8 +914,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.PutPipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PutPipelineDefinitionResult putPipelineDefinition(PutPipelineDefinitionRequest putPipelineDefinitionRequest) {
@@ -967,7 +968,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.QueryObjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1020,7 +1021,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.RemoveTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1084,8 +1085,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.ReportTaskProgress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ReportTaskProgressResult reportTaskProgress(ReportTaskProgressRequest reportTaskProgressRequest) {
@@ -1135,8 +1136,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.ReportTaskRunnerHeartbeat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ReportTaskRunnerHeartbeatResult reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest) {
@@ -1192,7 +1193,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *         generated with the correct credentials, and that you haven't exceeded any of the service limits for your
      *         account.
      * @sample DataPipeline.SetStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1250,7 +1251,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.SetTaskStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1303,8 +1304,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
      * @sample DataPipeline.ValidatePipelineDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ValidatePipelineDefinitionResult validatePipelineDefinition(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) {

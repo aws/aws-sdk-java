@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,8 +110,8 @@ public interface AWSHealthAsync extends AWSHealth {
      * @param describeAffectedEntitiesRequest
      * @return A Java Future containing the result of the DescribeAffectedEntities operation returned by the service.
      * @sample AWSHealthAsync.DescribeAffectedEntities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAffectedEntitiesResult> describeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest);
 
@@ -134,8 +134,8 @@ public interface AWSHealthAsync extends AWSHealth {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAffectedEntities operation returned by the service.
      * @sample AWSHealthAsyncHandler.DescribeAffectedEntities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAffectedEntitiesResult> describeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAffectedEntitiesRequest, DescribeAffectedEntitiesResult> asyncHandler);
@@ -149,8 +149,8 @@ public interface AWSHealthAsync extends AWSHealth {
      * @param describeEntityAggregatesRequest
      * @return A Java Future containing the result of the DescribeEntityAggregates operation returned by the service.
      * @sample AWSHealthAsync.DescribeEntityAggregates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEntityAggregatesResult> describeEntityAggregatesAsync(DescribeEntityAggregatesRequest describeEntityAggregatesRequest);
 
@@ -167,8 +167,8 @@ public interface AWSHealthAsync extends AWSHealth {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEntityAggregates operation returned by the service.
      * @sample AWSHealthAsyncHandler.DescribeEntityAggregates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEntityAggregatesResult> describeEntityAggregatesAsync(DescribeEntityAggregatesRequest describeEntityAggregatesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEntityAggregatesRequest, DescribeEntityAggregatesResult> asyncHandler);
@@ -182,8 +182,8 @@ public interface AWSHealthAsync extends AWSHealth {
      * @param describeEventAggregatesRequest
      * @return A Java Future containing the result of the DescribeEventAggregates operation returned by the service.
      * @sample AWSHealthAsync.DescribeEventAggregates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventAggregatesResult> describeEventAggregatesAsync(DescribeEventAggregatesRequest describeEventAggregatesRequest);
 
@@ -200,8 +200,8 @@ public interface AWSHealthAsync extends AWSHealth {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEventAggregates operation returned by the service.
      * @sample AWSHealthAsyncHandler.DescribeEventAggregates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventAggregatesResult> describeEventAggregatesAsync(DescribeEventAggregatesRequest describeEventAggregatesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEventAggregatesRequest, DescribeEventAggregatesResult> asyncHandler);
@@ -220,8 +220,8 @@ public interface AWSHealthAsync extends AWSHealth {
      * @param describeEventDetailsRequest
      * @return A Java Future containing the result of the DescribeEventDetails operation returned by the service.
      * @sample AWSHealthAsync.DescribeEventDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventDetailsResult> describeEventDetailsAsync(DescribeEventDetailsRequest describeEventDetailsRequest);
 
@@ -243,8 +243,8 @@ public interface AWSHealthAsync extends AWSHealth {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEventDetails operation returned by the service.
      * @sample AWSHealthAsyncHandler.DescribeEventDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventDetailsResult> describeEventDetailsAsync(DescribeEventDetailsRequest describeEventDetailsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEventDetailsRequest, DescribeEventDetailsResult> asyncHandler);
@@ -258,7 +258,7 @@ public interface AWSHealthAsync extends AWSHealth {
      * @param describeEventTypesRequest
      * @return A Java Future containing the result of the DescribeEventTypes operation returned by the service.
      * @sample AWSHealthAsync.DescribeEventTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventTypesResult> describeEventTypesAsync(DescribeEventTypesRequest describeEventTypesRequest);
@@ -276,7 +276,7 @@ public interface AWSHealthAsync extends AWSHealth {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEventTypes operation returned by the service.
      * @sample AWSHealthAsyncHandler.DescribeEventTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventTypesResult> describeEventTypesAsync(DescribeEventTypesRequest describeEventTypesRequest,
@@ -297,7 +297,8 @@ public interface AWSHealthAsync extends AWSHealth {
      * @param describeEventsRequest
      * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
      * @sample AWSHealthAsync.DescribeEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest);
 
@@ -320,7 +321,8 @@ public interface AWSHealthAsync extends AWSHealth {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
      * @sample AWSHealthAsyncHandler.DescribeEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler);

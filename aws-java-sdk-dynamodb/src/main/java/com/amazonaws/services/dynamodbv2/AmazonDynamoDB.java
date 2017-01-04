@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -322,7 +322,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchGetItem
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem" target="_top">AWS API
+     *      Documentation</a>
      */
     BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest);
 
@@ -452,7 +453,7 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchWriteItem
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem" target="_top">AWS API
      *      Documentation</a>
      */
     BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest);
@@ -503,7 +504,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.CreateTable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateTableResult createTable(CreateTableRequest createTableRequest);
 
@@ -553,7 +555,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteItem
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest);
 
@@ -618,7 +621,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteTable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest);
 
@@ -728,7 +732,7 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DescribeLimits
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest);
@@ -756,7 +760,7 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DescribeTable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeTableResult describeTable(DescribeTableRequest describeTableRequest);
@@ -794,7 +798,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.GetItem
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem" target="_top">AWS API
+     *      Documentation</a>
      */
     GetItemResult getItem(GetItemRequest getItemRequest);
 
@@ -824,7 +829,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.ListTables
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables" target="_top">AWS API
+     *      Documentation</a>
      */
     ListTablesResult listTables(ListTablesRequest listTablesRequest);
 
@@ -910,7 +916,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.PutItem
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem" target="_top">AWS API
+     *      Documentation</a>
      */
     PutItemResult putItem(PutItemRequest putItemRequest);
 
@@ -973,7 +980,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Query
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query" target="_top">AWS API
+     *      Documentation</a>
      */
     QueryResult query(QueryRequest queryRequest);
 
@@ -1017,7 +1025,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Scan
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan" target="_top">AWS API
+     *      Documentation</a>
      */
     ScanResult scan(ScanRequest scanRequest);
 
@@ -1074,7 +1083,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateItem
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateItemResult updateItem(UpdateItemRequest updateItemRequest);
 
@@ -1152,7 +1162,8 @@ public interface AmazonDynamoDB {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateTable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateTableResult updateTable(UpdateTableRequest updateTableRequest);
 

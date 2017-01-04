@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -393,7 +393,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterRoleQuotaExceededException
      *         You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
      * @sample AmazonRDS.AddRoleToDBCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -439,8 +439,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SourceNotFoundException
      *         The requested source could not be found.
      * @sample AmazonRDS.AddSourceIdentifierToSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) {
@@ -492,7 +492,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
      * @sample AmazonRDS.AddTagsToResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
@@ -535,8 +536,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws ResourceNotFoundException
      *         The specified resource ID was not found.
      * @sample AmazonRDS.ApplyPendingMaintenanceAction
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ResourcePendingMaintenanceActions applyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest applyPendingMaintenanceActionRequest) {
@@ -599,8 +600,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws AuthorizationQuotaExceededException
      *         DB security group authorization quota has been reached.
      * @sample AmazonRDS.AuthorizeDBSecurityGroupIngress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBSecurityGroup authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) {
@@ -646,8 +647,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupAlreadyExistsException
      *         A DB parameter group with the same name exists.
      * @sample AmazonRDS.CopyDBClusterParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBClusterParameterGroup copyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest copyDBClusterParameterGroupRequest) {
@@ -702,7 +703,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
      * @sample AmazonRDS.CopyDBClusterSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -749,7 +750,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupQuotaExceededException
      *         Request would result in user exceeding the allowed number of DB parameter groups.
      * @sample AmazonRDS.CopyDBParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -791,74 +792,82 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Amazon Resource Name (ARN) of the shared DB snapshot.
      * </p>
      * <p>
-     * You can not copy an encrypted DB snapshot from another AWS region.
-     * </p>
-     * <p>
-     * You can copy an encrypted DB snapshot from another AWS region. In that case, the region where you call the
+     * You can copy an encrypted DB snapshot from another AWS Region. In that case, the region where you call the
      * <code>CopyDBSnapshot</code> action is the destination region for the encrypted DB snapshot to be copied to. To
      * copy an encrypted DB snapshot from another region, you must provide the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - the AWS Key Management System (KMS) key identifier for the key to use to encrypt the copy
+     * <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the key to use to encrypt the copy
      * of the DB snapshot in the destination region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PreSignedUrl</code> - a URL that contains a Signature Version 4 signed request for the
+     * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
      * <code>CopyDBSnapshot</code> action to be called in the source region where the DB snapshot will be copied from.
-     * The pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
+     * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
      * the source region that contains the encrypted DB snapshot to be copied.
      * </p>
      * <p>
-     * The pre-signed URL request must contain the following parameter values:
+     * The presigned URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot in the
-     * destination region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in
-     * the destination region, and the action contained in the pre-signed URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will be copied to. This region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
+     * </p>
+     * <p>
+     * For example, if you copy an encrypted DB snapshot from the us-west-2 region to the us-east-1 region, then you
+     * will call the <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a presigned URL that
+     * contains a call to the <code>CopyDBSnapshot</code> action in the us-west-2 region. For this example, the
+     * <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
-     * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
-     * would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot in the
+     * destination region. This identifier is the same for both the <code>CopyDBSnapshot</code> action that is called in
+     * the destination region, and the action contained in the presigned URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied.
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you copy
+     * an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code> looks like
+     * this example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
-     * Version 4 Signing Process</a>.
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * Process</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TargetDBSnapshotIdentifier</code> - the identifier for the new copy of the DB snapshot in the destination
+     * <code>TargetDBSnapshotIdentifier</code> - The identifier for the new copy of the DB snapshot in the destination
      * region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be copied.
+     * <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied.
      * This identifier must be in the ARN format for the source region and is the same value as the
-     * <code>SourceDBSnapshotIdentifier</code> in the pre-signed URL.
+     * <code>SourceDBSnapshotIdentifier</code> in the presigned URL.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For more information on copying encrypted snapshots from one region to another, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion"
-     * > Copying an Encrypted DB Snapshot to Another Region in the Amazon RDS User Guide.</a>
+     * > Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User Guide.
      * </p>
      * 
      * @param copyDBSnapshotRequest
@@ -874,7 +883,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
      * @sample AmazonRDS.CopyDBSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBSnapshot copyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest) {
@@ -920,7 +930,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws OptionGroupQuotaExceededException
      *         The quota of 20 option groups was exceeded for this AWS account.
      * @sample AmazonRDS.CopyOptionGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public OptionGroup copyOptionGroup(CopyOptionGroupRequest copyOptionGroupRequest) {
@@ -997,7 +1008,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
      * @sample AmazonRDS.CreateDBCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBCluster createDBCluster(CreateDBClusterRequest createDBClusterRequest) {
@@ -1069,8 +1081,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupAlreadyExistsException
      *         A DB parameter group with the same name exists.
      * @sample AmazonRDS.CreateDBClusterParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBClusterParameterGroup createDBClusterParameterGroup(CreateDBClusterParameterGroupRequest createDBClusterParameterGroupRequest) {
@@ -1123,8 +1135,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value is not a valid DB cluster snapshot state.
      * @sample AmazonRDS.CreateDBClusterSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DBClusterSnapshot createDBClusterSnapshot(CreateDBClusterSnapshotRequest createDBClusterSnapshotRequest) {
@@ -1203,7 +1215,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DomainNotFoundException
      *         <i>Domain</i> does not refer to an existing Active Directory Domain.
      * @sample AmazonRDS.CreateDBInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) {
@@ -1293,8 +1306,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
      * @sample AmazonRDS.CreateDBInstanceReadReplica
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBInstance createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) {
@@ -1357,7 +1370,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupAlreadyExistsException
      *         A DB parameter group with the same name exists.
      * @sample AmazonRDS.CreateDBParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1404,7 +1417,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSecurityGroupNotSupportedException
      *         A DB security group is not allowed for this action.
      * @sample AmazonRDS.CreateDBSecurityGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1453,7 +1466,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SnapshotQuotaExceededException
      *         Request would result in user exceeding the allowed number of DB snapshots.
      * @sample AmazonRDS.CreateDBSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) {
@@ -1505,7 +1519,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @sample AmazonRDS.CreateDBSubnetGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1575,8 +1589,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SourceNotFoundException
      *         The requested source could not be found.
      * @sample AmazonRDS.CreateEventSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public EventSubscription createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) {
@@ -1620,7 +1634,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws OptionGroupQuotaExceededException
      *         The quota of 20 option groups was exceeded for this AWS account.
      * @sample AmazonRDS.CreateOptionGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public OptionGroup createOptionGroup(CreateOptionGroupRequest createOptionGroupRequest) {
@@ -1678,7 +1693,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value is not a valid DB cluster snapshot state.
      * @sample AmazonRDS.DeleteDBCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBCluster deleteDBCluster(DeleteDBClusterRequest deleteDBClusterRequest) {
@@ -1728,8 +1744,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.DeleteDBClusterParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteDBClusterParameterGroupResult deleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest deleteDBClusterParameterGroupRequest) {
@@ -1784,8 +1800,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterSnapshotNotFoundException
      *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
      * @sample AmazonRDS.DeleteDBClusterSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DBClusterSnapshot deleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest deleteDBClusterSnapshotRequest) {
@@ -1868,7 +1884,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBClusterStateException
      *         The DB cluster is not in a valid state.
      * @sample AmazonRDS.DeleteDBInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) {
@@ -1913,7 +1930,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.DeleteDBParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1964,7 +1981,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSecurityGroupNotFoundException
      *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
      * @sample AmazonRDS.DeleteDBSecurityGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2015,7 +2032,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSnapshotNotFoundException
      *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
      * @sample AmazonRDS.DeleteDBSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) {
@@ -2066,7 +2084,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSubnetGroupNotFoundException
      *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
      * @sample AmazonRDS.DeleteDBSubnetGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2112,8 +2130,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidEventSubscriptionStateException
      *         This error can occur if someone else is modifying a subscription. You should retry the action.
      * @sample AmazonRDS.DeleteEventSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) {
@@ -2157,7 +2175,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidOptionGroupStateException
      *         The option group is not in the <i>available</i> state.
      * @sample AmazonRDS.DeleteOptionGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteOptionGroupResult deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest) {
@@ -2203,8 +2222,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeAccountAttributesRequest
      * @return Result of the DescribeAccountAttributes operation returned by the service.
      * @sample AmazonRDS.DescribeAccountAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
@@ -2252,7 +2271,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws CertificateNotFoundException
      *         <i>CertificateIdentifier</i> does not refer to an existing certificate.
      * @sample AmazonRDS.DescribeCertificates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2308,8 +2327,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.DescribeDBClusterParameterGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeDBClusterParameterGroupsResult describeDBClusterParameterGroups(
@@ -2363,8 +2382,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.DescribeDBClusterParameters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeDBClusterParametersResult describeDBClusterParameters(DescribeDBClusterParametersRequest describeDBClusterParametersRequest) {
@@ -2417,8 +2436,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterSnapshotNotFoundException
      *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
      * @sample AmazonRDS.DescribeDBClusterSnapshotAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBClusterSnapshotAttributesResult describeDBClusterSnapshotAttributes(
@@ -2468,8 +2487,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterSnapshotNotFoundException
      *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
      * @sample AmazonRDS.DescribeDBClusterSnapshots
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeDBClusterSnapshotsResult describeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest describeDBClusterSnapshotsRequest) {
@@ -2522,7 +2541,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
      * @sample AmazonRDS.DescribeDBClusters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2569,8 +2588,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeDBEngineVersionsRequest
      * @return Result of the DescribeDBEngineVersions operation returned by the service.
      * @sample AmazonRDS.DescribeDBEngineVersions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeDBEngineVersionsResult describeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) {
@@ -2618,7 +2637,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
      * @sample AmazonRDS.DescribeDBInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2667,7 +2686,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
      * @sample AmazonRDS.DescribeDBLogFiles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2712,8 +2731,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.DescribeDBParameterGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeDBParameterGroupsResult describeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) {
@@ -2761,7 +2780,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.DescribeDBParameters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2806,8 +2825,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSecurityGroupNotFoundException
      *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
      * @sample AmazonRDS.DescribeDBSecurityGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeDBSecurityGroupsResult describeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) {
@@ -2865,8 +2884,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSnapshotNotFoundException
      *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
      * @sample AmazonRDS.DescribeDBSnapshotAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBSnapshotAttributesResult describeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest describeDBSnapshotAttributesRequest) {
@@ -2914,7 +2933,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSnapshotNotFoundException
      *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
      * @sample AmazonRDS.DescribeDBSnapshots
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2968,7 +2987,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSubnetGroupNotFoundException
      *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
      * @sample AmazonRDS.DescribeDBSubnetGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3020,8 +3039,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeEngineDefaultClusterParametersRequest
      * @return Result of the DescribeEngineDefaultClusterParameters operation returned by the service.
      * @sample AmazonRDS.DescribeEngineDefaultClusterParameters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public EngineDefaults describeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest) {
@@ -3062,8 +3081,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeEngineDefaultParametersRequest
      * @return Result of the DescribeEngineDefaultParameters operation returned by the service.
      * @sample AmazonRDS.DescribeEngineDefaultParameters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
@@ -3106,8 +3125,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeEventCategoriesRequest
      * @return Result of the DescribeEventCategories operation returned by the service.
      * @sample AmazonRDS.DescribeEventCategories
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest) {
@@ -3159,8 +3178,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SubscriptionNotFoundException
      *         The subscription name does not exist.
      * @sample AmazonRDS.DescribeEventSubscriptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) {
@@ -3208,7 +3227,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeEventsRequest
      * @return Result of the DescribeEvents operation returned by the service.
      * @sample AmazonRDS.DescribeEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
@@ -3254,8 +3274,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeOptionGroupOptionsRequest
      * @return Result of the DescribeOptionGroupOptions operation returned by the service.
      * @sample AmazonRDS.DescribeOptionGroupOptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) {
@@ -3298,7 +3318,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @sample AmazonRDS.DescribeOptionGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3345,8 +3365,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeOrderableDBInstanceOptionsRequest
      * @return Result of the DescribeOrderableDBInstanceOptions operation returned by the service.
      * @sample AmazonRDS.DescribeOrderableDBInstanceOptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(
@@ -3391,8 +3411,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws ResourceNotFoundException
      *         The specified resource ID was not found.
      * @sample AmazonRDS.DescribePendingMaintenanceActions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribePendingMaintenanceActionsResult describePendingMaintenanceActions(
@@ -3441,8 +3461,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws ReservedDBInstanceNotFoundException
      *         The specified reserved DB Instance not found.
      * @sample AmazonRDS.DescribeReservedDBInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeReservedDBInstancesResult describeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) {
@@ -3490,8 +3510,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws ReservedDBInstancesOfferingNotFoundException
      *         Specified offering does not exist.
      * @sample AmazonRDS.DescribeReservedDBInstancesOfferings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings(
@@ -3540,7 +3560,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeSourceRegionsRequest
      * @return Result of the DescribeSourceRegions operation returned by the service.
      * @sample AmazonRDS.DescribeSourceRegions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3586,8 +3606,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBLogFileNotFoundException
      *         <i>LogFileName</i> does not refer to an existing DB log file.
      * @sample AmazonRDS.DownloadDBLogFilePortion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DownloadDBLogFilePortionResult downloadDBLogFilePortion(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest) {
@@ -3649,7 +3669,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBInstanceStateException
      *         The specified DB instance is not in the <i>available</i> state.
      * @sample AmazonRDS.FailoverDBCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBCluster failoverDBCluster(FailoverDBClusterRequest failoverDBClusterRequest) {
@@ -3705,7 +3726,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
      * @sample AmazonRDS.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3772,7 +3793,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterAlreadyExistsException
      *         User already has a DB cluster with the given identifier.
      * @sample AmazonRDS.ModifyDBCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBCluster modifyDBCluster(ModifyDBClusterRequest modifyDBClusterRequest) {
@@ -3840,8 +3862,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBParameterGroupStateException
      *         The DB parameter group cannot be deleted because it is in use.
      * @sample AmazonRDS.ModifyDBClusterParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ModifyDBClusterParameterGroupResult modifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest modifyDBClusterParameterGroupRequest) {
@@ -3903,8 +3925,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SharedSnapshotQuotaExceededException
      *         You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.
      * @sample AmazonRDS.ModifyDBClusterSnapshotAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBClusterSnapshotAttributesResult modifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest modifyDBClusterSnapshotAttributeRequest) {
@@ -3980,7 +4002,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DomainNotFoundException
      *         <i>Domain</i> does not refer to an existing Active Directory Domain.
      * @sample AmazonRDS.ModifyDBInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBInstance modifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) {
@@ -4042,7 +4065,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBParameterGroupStateException
      *         The DB parameter group cannot be deleted because it is in use.
      * @sample AmazonRDS.ModifyDBParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -4105,8 +4128,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SharedSnapshotQuotaExceededException
      *         You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.
      * @sample AmazonRDS.ModifyDBSnapshotAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DBSnapshotAttributesResult modifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest modifyDBSnapshotAttributeRequest) {
@@ -4159,7 +4182,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @sample AmazonRDS.ModifyDBSubnetGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -4219,8 +4242,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SubscriptionCategoryNotFoundException
      *         The supplied category does not exist.
      * @sample AmazonRDS.ModifyEventSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) {
@@ -4264,7 +4287,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @sample AmazonRDS.ModifyOptionGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest) {
@@ -4315,7 +4339,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
      * @sample AmazonRDS.PromoteReadReplica
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -4360,8 +4384,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBClusterStateException
      *         The DB cluster is not in a valid state.
      * @sample AmazonRDS.PromoteReadReplicaDBCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBCluster promoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest promoteReadReplicaDBClusterRequest) {
@@ -4407,8 +4431,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws ReservedDBInstanceQuotaExceededException
      *         Request would exceed the user's DB Instance quota.
      * @sample AmazonRDS.PurchaseReservedDBInstancesOffering
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ReservedDBInstance purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) {
@@ -4467,7 +4491,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
      * @sample AmazonRDS.RebootDBInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) {
@@ -4515,8 +4540,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBClusterStateException
      *         The DB cluster is not in a valid state.
      * @sample AmazonRDS.RemoveRoleFromDBCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public RemoveRoleFromDBClusterResult removeRoleFromDBCluster(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest) {
@@ -4561,8 +4586,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SourceNotFoundException
      *         The requested source could not be found.
      * @sample AmazonRDS.RemoveSourceIdentifierFromSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) {
@@ -4614,7 +4639,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
      * @sample AmazonRDS.RemoveTagsFromResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -4674,8 +4699,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.ResetDBClusterParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ResetDBClusterParameterGroupResult resetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest) {
@@ -4725,7 +4750,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.ResetDBParameterGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -4800,7 +4825,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         There is insufficient storage available for the current action. You may be able to resolve this error by
      *         updating your subnet group to use different Availability Zones that have more storage available.
      * @sample AmazonRDS.RestoreDBClusterFromS3
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -4884,8 +4909,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
      * @sample AmazonRDS.RestoreDBClusterFromSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBCluster restoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest restoreDBClusterFromSnapshotRequest) {
@@ -4969,8 +4994,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
      * @sample AmazonRDS.RestoreDBClusterToPointInTime
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBCluster restoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest) {
@@ -5065,8 +5090,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DomainNotFoundException
      *         <i>Domain</i> does not refer to an existing Active Directory Domain.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBInstance restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) {
@@ -5156,8 +5181,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DomainNotFoundException
      *         <i>Domain</i> does not refer to an existing Active Directory Domain.
      * @sample AmazonRDS.RestoreDBInstanceToPointInTime
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) {
@@ -5207,8 +5232,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBSecurityGroupStateException
      *         The state of the DB security group does not allow deletion.
      * @sample AmazonRDS.RevokeDBSecurityGroupIngress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) {

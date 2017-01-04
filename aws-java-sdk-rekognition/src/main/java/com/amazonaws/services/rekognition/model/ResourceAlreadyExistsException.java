@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,7 +14,7 @@ package com.amazonaws.services.rekognition.model;
 
 /**
  * <p>
- * The collection with specific ID already exist.
+ * A collection with the specified ID already exists.
  * </p>
  */
 public class ResourceAlreadyExistsException extends com.amazonaws.services.rekognition.model.AmazonRekognitionException {

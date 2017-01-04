@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
+     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
      * attributes). If you specify all attributes, the service performs additional detection, in addition to the
      * default.
      * </p>
@@ -158,7 +158,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
+     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
      * attributes). If you specify all attributes, the service performs additional detection, in addition to the
      * default.
      * </p>
@@ -167,9 +167,9 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         the facial attributes. </p>
      *         <p>
      *         For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *         "DEFAULT"], Rekognition uses the logical AND operator to determine which attributes to return (in this
-     *         case, it is all attributes). If you specify all attributes, the service performs additional detection, in
-     *         addition to the default.
+     *         "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
+     *         this case, it is all attributes). If you specify all attributes, the service performs additional
+     *         detection, in addition to the default.
      * @see Attribute
      */
 
@@ -184,7 +184,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
+     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
      * attributes). If you specify all attributes, the service performs additional detection, in addition to the
      * default.
      * </p>
@@ -194,9 +194,9 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        facial attributes. </p>
      *        <p>
      *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *        "DEFAULT"], Rekognition uses the logical AND operator to determine which attributes to return (in this
-     *        case, it is all attributes). If you specify all attributes, the service performs additional detection, in
-     *        addition to the default.
+     *        "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
+     *        this case, it is all attributes). If you specify all attributes, the service performs additional
+     *        detection, in addition to the default.
      * @see Attribute
      */
 
@@ -216,7 +216,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
+     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
      * attributes). If you specify all attributes, the service performs additional detection, in addition to the
      * default.
      * </p>
@@ -231,9 +231,9 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        facial attributes. </p>
      *        <p>
      *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *        "DEFAULT"], Rekognition uses the logical AND operator to determine which attributes to return (in this
-     *        case, it is all attributes). If you specify all attributes, the service performs additional detection, in
-     *        addition to the default.
+     *        "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
+     *        this case, it is all attributes). If you specify all attributes, the service performs additional
+     *        detection, in addition to the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */
@@ -255,7 +255,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
+     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
      * attributes). If you specify all attributes, the service performs additional detection, in addition to the
      * default.
      * </p>
@@ -265,9 +265,9 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        facial attributes. </p>
      *        <p>
      *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *        "DEFAULT"], Rekognition uses the logical AND operator to determine which attributes to return (in this
-     *        case, it is all attributes). If you specify all attributes, the service performs additional detection, in
-     *        addition to the default.
+     *        "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
+     *        this case, it is all attributes). If you specify all attributes, the service performs additional
+     *        detection, in addition to the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */
@@ -284,7 +284,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
+     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
      * attributes). If you specify all attributes, the service performs additional detection, in addition to the
      * default.
      * </p>
@@ -294,9 +294,9 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        facial attributes. </p>
      *        <p>
      *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *        "DEFAULT"], Rekognition uses the logical AND operator to determine which attributes to return (in this
-     *        case, it is all attributes). If you specify all attributes, the service performs additional detection, in
-     *        addition to the default.
+     *        "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
+     *        this case, it is all attributes). If you specify all attributes, the service performs additional
+     *        detection, in addition to the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */

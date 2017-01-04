@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,7 +71,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param deleteConfigRuleRequest
      * @return A Java Future containing the result of the DeleteConfigRule operation returned by the service.
      * @sample AmazonConfigAsync.DeleteConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(DeleteConfigRuleRequest deleteConfigRuleRequest);
@@ -96,7 +96,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteConfigRule operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DeleteConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(DeleteConfigRuleRequest deleteConfigRuleRequest,
@@ -121,8 +121,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The request object for the <code>DeleteConfigurationRecorder</code> action.
      * @return A Java Future containing the result of the DeleteConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsync.DeleteConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(
             DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest);
@@ -150,8 +150,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DeleteConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(
             DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest,
@@ -171,8 +171,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        format.
      * @return A Java Future containing the result of the DeleteDeliveryChannel operation returned by the service.
      * @sample AmazonConfigAsync.DeleteDeliveryChannel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(DeleteDeliveryChannelRequest deleteDeliveryChannelRequest);
 
@@ -194,8 +194,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDeliveryChannel operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DeleteDeliveryChannel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(DeleteDeliveryChannelRequest deleteDeliveryChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, DeleteDeliveryChannelResult> asyncHandler);
@@ -210,8 +210,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param deleteEvaluationResultsRequest
      * @return A Java Future containing the result of the DeleteEvaluationResults operation returned by the service.
      * @sample AmazonConfigAsync.DeleteEvaluationResults
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(DeleteEvaluationResultsRequest deleteEvaluationResultsRequest);
 
@@ -229,8 +229,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteEvaluationResults operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DeleteEvaluationResults
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(DeleteEvaluationResultsRequest deleteEvaluationResultsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEvaluationResultsRequest, DeleteEvaluationResultsResult> asyncHandler);
@@ -263,8 +263,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>DeliverConfigSnapshot</a> action.
      * @return A Java Future containing the result of the DeliverConfigSnapshot operation returned by the service.
      * @sample AmazonConfigAsync.DeliverConfigSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeliverConfigSnapshotResult> deliverConfigSnapshotAsync(DeliverConfigSnapshotRequest deliverConfigSnapshotRequest);
 
@@ -300,8 +300,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeliverConfigSnapshot operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DeliverConfigSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeliverConfigSnapshotResult> deliverConfigSnapshotAsync(DeliverConfigSnapshotRequest deliverConfigSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<DeliverConfigSnapshotRequest, DeliverConfigSnapshotResult> asyncHandler);
@@ -347,8 +347,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeComplianceByConfigRule operation returned by the
      *         service.
      * @sample AmazonConfigAsync.DescribeComplianceByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(
             DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest);
@@ -398,8 +398,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeComplianceByConfigRule operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.DescribeComplianceByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(
             DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest,
@@ -462,8 +462,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeComplianceByResource operation returned by the
      *         service.
      * @sample AmazonConfigAsync.DescribeComplianceByResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(
             DescribeComplianceByResourceRequest describeComplianceByResourceRequest);
@@ -513,8 +513,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeComplianceByResource operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.DescribeComplianceByResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(
             DescribeComplianceByResourceRequest describeComplianceByResourceRequest,
@@ -546,8 +546,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeConfigRuleEvaluationStatus operation returned by the
      *         service.
      * @sample AmazonConfigAsync.DescribeConfigRuleEvaluationStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(
             DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest);
@@ -567,8 +567,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeConfigRuleEvaluationStatus operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.DescribeConfigRuleEvaluationStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(
             DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest,
@@ -598,7 +598,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param describeConfigRulesRequest
      * @return A Java Future containing the result of the DescribeConfigRules operation returned by the service.
      * @sample AmazonConfigAsync.DescribeConfigRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigRulesResult> describeConfigRulesAsync(DescribeConfigRulesRequest describeConfigRulesRequest);
@@ -615,7 +615,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeConfigRules operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DescribeConfigRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigRulesResult> describeConfigRulesAsync(DescribeConfigRulesRequest describeConfigRulesRequest,
@@ -652,8 +652,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeConfigurationRecorderStatus operation returned by the
      *         service.
      * @sample AmazonConfigAsync.DescribeConfigurationRecorderStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
             DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest);
@@ -678,8 +678,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeConfigurationRecorderStatus operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.DescribeConfigurationRecorderStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
             DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest,
@@ -717,8 +717,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeConfigurationRecorders operation returned by the
      *         service.
      * @sample AmazonConfigAsync.DescribeConfigurationRecorders
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
             DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest);
@@ -743,8 +743,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeConfigurationRecorders operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.DescribeConfigurationRecorders
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
             DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest,
@@ -782,8 +782,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeDeliveryChannelStatus operation returned by the
      *         service.
      * @sample AmazonConfigAsync.DescribeDeliveryChannelStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
             DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest);
@@ -808,8 +808,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the DescribeDeliveryChannelStatus operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.DescribeDeliveryChannelStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
             DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest,
@@ -846,8 +846,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>DescribeDeliveryChannels</a> action.
      * @return A Java Future containing the result of the DescribeDeliveryChannels operation returned by the service.
      * @sample AmazonConfigAsync.DescribeDeliveryChannels
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest);
 
@@ -870,8 +870,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDeliveryChannels operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DescribeDeliveryChannels
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult> asyncHandler);
@@ -901,8 +901,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the GetComplianceDetailsByConfigRule operation returned by the
      *         service.
      * @sample AmazonConfigAsync.GetComplianceDetailsByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult> getComplianceDetailsByConfigRuleAsync(
             GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest);
@@ -921,8 +921,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the GetComplianceDetailsByConfigRule operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.GetComplianceDetailsByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult> getComplianceDetailsByConfigRuleAsync(
             GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest,
@@ -938,8 +938,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the GetComplianceDetailsByResource operation returned by the
      *         service.
      * @sample AmazonConfigAsync.GetComplianceDetailsByResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetComplianceDetailsByResourceResult> getComplianceDetailsByResourceAsync(
             GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest);
@@ -958,8 +958,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the GetComplianceDetailsByResource operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.GetComplianceDetailsByResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetComplianceDetailsByResourceResult> getComplianceDetailsByResourceAsync(
             GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest,
@@ -974,8 +974,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the GetComplianceSummaryByConfigRule operation returned by the
      *         service.
      * @sample AmazonConfigAsync.GetComplianceSummaryByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(
             GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest);
@@ -993,8 +993,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the GetComplianceSummaryByConfigRule operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.GetComplianceSummaryByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(
             GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest,
@@ -1026,8 +1026,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the GetComplianceSummaryByResourceType operation returned by the
      *         service.
      * @sample AmazonConfigAsync.GetComplianceSummaryByResourceType
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(
             GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest);
@@ -1046,8 +1046,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the GetComplianceSummaryByResourceType operation returned by the
      *         service.
      * @sample AmazonConfigAsyncHandler.GetComplianceSummaryByResourceType
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(
             GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest,
@@ -1092,8 +1092,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>GetResourceConfigHistory</a> action.
      * @return A Java Future containing the result of the GetResourceConfigHistory operation returned by the service.
      * @sample AmazonConfigAsync.GetResourceConfigHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest);
 
@@ -1124,8 +1124,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetResourceConfigHistory operation returned by the service.
      * @sample AmazonConfigAsyncHandler.GetResourceConfigHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest,
             com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult> asyncHandler);
@@ -1152,8 +1152,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param listDiscoveredResourcesRequest
      * @return A Java Future containing the result of the ListDiscoveredResources operation returned by the service.
      * @sample AmazonConfigAsync.ListDiscoveredResources
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest);
 
@@ -1183,8 +1183,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDiscoveredResources operation returned by the service.
      * @sample AmazonConfigAsyncHandler.ListDiscoveredResources
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler);
@@ -1238,7 +1238,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param putConfigRuleRequest
      * @return A Java Future containing the result of the PutConfigRule operation returned by the service.
      * @sample AmazonConfigAsync.PutConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(PutConfigRuleRequest putConfigRuleRequest);
 
@@ -1295,7 +1296,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutConfigRule operation returned by the service.
      * @sample AmazonConfigAsyncHandler.PutConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(PutConfigRuleRequest putConfigRuleRequest,
             com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, PutConfigRuleResult> asyncHandler);
@@ -1322,8 +1324,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>PutConfigurationRecorder</a> action.
      * @return A Java Future containing the result of the PutConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsync.PutConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(PutConfigurationRecorderRequest putConfigurationRecorderRequest);
 
@@ -1353,8 +1355,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsyncHandler.PutConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(PutConfigurationRecorderRequest putConfigurationRecorderRequest,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, PutConfigurationRecorderResult> asyncHandler);
@@ -1383,7 +1385,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>PutDeliveryChannel</a> action.
      * @return A Java Future containing the result of the PutDeliveryChannel operation returned by the service.
      * @sample AmazonConfigAsync.PutDeliveryChannel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(PutDeliveryChannelRequest putDeliveryChannelRequest);
@@ -1416,7 +1418,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutDeliveryChannel operation returned by the service.
      * @sample AmazonConfigAsyncHandler.PutDeliveryChannel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(PutDeliveryChannelRequest putDeliveryChannelRequest,
@@ -1431,7 +1433,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param putEvaluationsRequest
      * @return A Java Future containing the result of the PutEvaluations operation returned by the service.
      * @sample AmazonConfigAsync.PutEvaluations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(PutEvaluationsRequest putEvaluationsRequest);
 
@@ -1448,7 +1451,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutEvaluations operation returned by the service.
      * @sample AmazonConfigAsyncHandler.PutEvaluations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(PutEvaluationsRequest putEvaluationsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler);
@@ -1509,8 +1513,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param startConfigRulesEvaluationRequest
      * @return A Java Future containing the result of the StartConfigRulesEvaluation operation returned by the service.
      * @sample AmazonConfigAsync.StartConfigRulesEvaluation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(
             StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest);
@@ -1575,8 +1579,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartConfigRulesEvaluation operation returned by the service.
      * @sample AmazonConfigAsyncHandler.StartConfigRulesEvaluation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(
             StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest,
@@ -1594,8 +1598,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>StartConfigurationRecorder</a> action.
      * @return A Java Future containing the result of the StartConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsync.StartConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest);
@@ -1616,8 +1620,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsyncHandler.StartConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest,
@@ -1632,8 +1636,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>StopConfigurationRecorder</a> action.
      * @return A Java Future containing the result of the StopConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsync.StopConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest);
@@ -1651,8 +1655,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsyncHandler.StopConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest,

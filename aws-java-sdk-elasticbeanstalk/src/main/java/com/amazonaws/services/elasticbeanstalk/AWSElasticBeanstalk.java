@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -111,8 +111,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.AbortEnvironmentUpdate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate"
+     *      target="_top">AWS API Documentation</a>
      */
     AbortEnvironmentUpdateResult abortEnvironmentUpdate(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest);
 
@@ -138,9 +138,8 @@ public interface AWSElasticBeanstalk {
      * @throws ManagedActionInvalidStateException
      *         Cannot modify the managed action in its current state.
      * @sample AWSElasticBeanstalk.ApplyEnvironmentManagedAction
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction"
+     *      target="_top">AWS API Documentation</a>
      */
     ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest);
 
@@ -153,8 +152,8 @@ public interface AWSElasticBeanstalk {
      *        Results message indicating whether a CNAME is available.
      * @return Result of the CheckDNSAvailability operation returned by the service.
      * @sample AWSElasticBeanstalk.CheckDNSAvailability
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability"
+     *      target="_top">AWS API Documentation</a>
      */
     CheckDNSAvailabilityResult checkDNSAvailability(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest);
 
@@ -176,8 +175,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.ComposeEnvironments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments"
+     *      target="_top">AWS API Documentation</a>
      */
     ComposeEnvironmentsResult composeEnvironments(ComposeEnvironmentsRequest composeEnvironmentsRequest);
 
@@ -193,8 +192,8 @@ public interface AWSElasticBeanstalk {
      * @throws TooManyApplicationsException
      *         The specified account has reached its limit of applications.
      * @sample AWSElasticBeanstalk.CreateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
 
@@ -254,8 +253,8 @@ public interface AWSElasticBeanstalk {
      * @throws CodeBuildNotInServiceRegionException
      *         AWS CodeBuild is not available in the specified region.
      * @sample AWSElasticBeanstalk.CreateApplicationVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateApplicationVersionResult createApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest);
 
@@ -295,9 +294,8 @@ public interface AWSElasticBeanstalk {
      * @throws TooManyConfigurationTemplatesException
      *         The specified account has reached its limit of configuration templates.
      * @sample AWSElasticBeanstalk.CreateConfigurationTemplate
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateConfigurationTemplateResult createConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest);
 
@@ -313,8 +311,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.CreateEnvironment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateEnvironmentResult createEnvironment(CreateEnvironmentRequest createEnvironmentRequest);
 
@@ -335,8 +333,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.CreateStorageLocation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateStorageLocationResult createStorageLocation(CreateStorageLocationRequest createStorageLocationRequest);
 
@@ -365,8 +363,8 @@ public interface AWSElasticBeanstalk {
      *         Unable to perform the specified operation because another operation that effects an element in this
      *         activity is already in progress.
      * @sample AWSElasticBeanstalk.DeleteApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
 
@@ -411,8 +409,8 @@ public interface AWSElasticBeanstalk {
      *         </p>
      *         </li>
      * @sample AWSElasticBeanstalk.DeleteApplicationVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteApplicationVersionResult deleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest);
 
@@ -434,9 +432,8 @@ public interface AWSElasticBeanstalk {
      *         Unable to perform the specified operation because another operation that effects an element in this
      *         activity is already in progress.
      * @sample AWSElasticBeanstalk.DeleteConfigurationTemplate
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteConfigurationTemplateResult deleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest);
 
@@ -455,9 +452,8 @@ public interface AWSElasticBeanstalk {
      *        Request to delete a draft environment configuration.
      * @return Result of the DeleteEnvironmentConfiguration operation returned by the service.
      * @sample AWSElasticBeanstalk.DeleteEnvironmentConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest);
 
@@ -470,9 +466,8 @@ public interface AWSElasticBeanstalk {
      *        Request to describe application versions.
      * @return Result of the DescribeApplicationVersions operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeApplicationVersions
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeApplicationVersionsResult describeApplicationVersions(DescribeApplicationVersionsRequest describeApplicationVersionsRequest);
 
@@ -492,8 +487,8 @@ public interface AWSElasticBeanstalk {
      *        Request to describe one or more applications.
      * @return Result of the DescribeApplications operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeApplicationsResult describeApplications(DescribeApplicationsRequest describeApplicationsRequest);
 
@@ -517,9 +512,8 @@ public interface AWSElasticBeanstalk {
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationOptions
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeConfigurationOptionsResult describeConfigurationOptions(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest);
 
@@ -551,9 +545,8 @@ public interface AWSElasticBeanstalk {
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationSettings
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeConfigurationSettingsResult describeConfigurationSettings(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest);
 
@@ -572,8 +565,8 @@ public interface AWSElasticBeanstalk {
      * @throws ElasticBeanstalkServiceException
      *         A generic service exception has occurred.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentHealth
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeEnvironmentHealthResult describeEnvironmentHealth(DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest);
 
@@ -589,8 +582,8 @@ public interface AWSElasticBeanstalk {
      *         A generic service exception has occurred.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActionHistory
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
             DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest);
@@ -607,8 +600,8 @@ public interface AWSElasticBeanstalk {
      *         A generic service exception has occurred.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActions
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest);
 
@@ -623,9 +616,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentResources
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeEnvironmentResourcesResult describeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest);
 
@@ -638,8 +630,8 @@ public interface AWSElasticBeanstalk {
      *        Request to describe one or more environments.
      * @return Result of the DescribeEnvironments operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeEnvironments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeEnvironmentsResult describeEnvironments(DescribeEnvironmentsRequest describeEnvironmentsRequest);
 
@@ -664,8 +656,8 @@ public interface AWSElasticBeanstalk {
      *        Request to retrieve a list of events for an environment.
      * @return Result of the DescribeEvents operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest);
 
@@ -692,8 +684,8 @@ public interface AWSElasticBeanstalk {
      * @throws ElasticBeanstalkServiceException
      *         A generic service exception has occurred.
      * @sample AWSElasticBeanstalk.DescribeInstancesHealth
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeInstancesHealthResult describeInstancesHealth(DescribeInstancesHealthRequest describeInstancesHealthRequest);
 
@@ -705,9 +697,8 @@ public interface AWSElasticBeanstalk {
      * @param listAvailableSolutionStacksRequest
      * @return Result of the ListAvailableSolutionStacks operation returned by the service.
      * @sample AWSElasticBeanstalk.ListAvailableSolutionStacks
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks"
+     *      target="_top">AWS API Documentation</a>
      */
     ListAvailableSolutionStacksResult listAvailableSolutionStacks(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest);
 
@@ -729,8 +720,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.RebuildEnvironment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment"
+     *      target="_top">AWS API Documentation</a>
      */
     RebuildEnvironmentResult rebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest);
 
@@ -764,8 +755,8 @@ public interface AWSElasticBeanstalk {
      *        Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.
      * @return Result of the RequestEnvironmentInfo operation returned by the service.
      * @sample AWSElasticBeanstalk.RequestEnvironmentInfo
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo"
+     *      target="_top">AWS API Documentation</a>
      */
     RequestEnvironmentInfoResult requestEnvironmentInfo(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest);
 
@@ -777,8 +768,8 @@ public interface AWSElasticBeanstalk {
      * @param restartAppServerRequest
      * @return Result of the RestartAppServer operation returned by the service.
      * @sample AWSElasticBeanstalk.RestartAppServer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer"
+     *      target="_top">AWS API Documentation</a>
      */
     RestartAppServerResult restartAppServer(RestartAppServerRequest restartAppServerRequest);
 
@@ -801,8 +792,8 @@ public interface AWSElasticBeanstalk {
      *        Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
      * @return Result of the RetrieveEnvironmentInfo operation returned by the service.
      * @sample AWSElasticBeanstalk.RetrieveEnvironmentInfo
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo"
+     *      target="_top">AWS API Documentation</a>
      */
     RetrieveEnvironmentInfoResult retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest);
 
@@ -815,8 +806,8 @@ public interface AWSElasticBeanstalk {
      *        Swaps the CNAMEs of two environments.
      * @return Result of the SwapEnvironmentCNAMEs operation returned by the service.
      * @sample AWSElasticBeanstalk.SwapEnvironmentCNAMEs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs"
+     *      target="_top">AWS API Documentation</a>
      */
     SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
 
@@ -838,8 +829,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.TerminateEnvironment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment"
+     *      target="_top">AWS API Documentation</a>
      */
     TerminateEnvironmentResult terminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest);
 
@@ -858,8 +849,8 @@ public interface AWSElasticBeanstalk {
      *        Request to update an application.
      * @return Result of the UpdateApplication operation returned by the service.
      * @sample AWSElasticBeanstalk.UpdateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
 
@@ -874,8 +865,8 @@ public interface AWSElasticBeanstalk {
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @sample AWSElasticBeanstalk.UpdateApplicationResourceLifecycle
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(
             UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest);
@@ -894,8 +885,8 @@ public interface AWSElasticBeanstalk {
      * @param updateApplicationVersionRequest
      * @return Result of the UpdateApplicationVersion operation returned by the service.
      * @sample AWSElasticBeanstalk.UpdateApplicationVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateApplicationVersionResult updateApplicationVersion(UpdateApplicationVersionRequest updateApplicationVersionRequest);
 
@@ -928,9 +919,8 @@ public interface AWSElasticBeanstalk {
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateConfigurationTemplate
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateConfigurationTemplateResult updateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest);
 
@@ -957,8 +947,8 @@ public interface AWSElasticBeanstalk {
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateEnvironment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest);
 
@@ -980,9 +970,8 @@ public interface AWSElasticBeanstalk {
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.ValidateConfigurationSettings
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     ValidateConfigurationSettingsResult validateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest);
 

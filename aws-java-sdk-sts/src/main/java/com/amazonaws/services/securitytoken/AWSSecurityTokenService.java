@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -241,7 +241,8 @@ public interface AWSSecurityTokenService {
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole" target="_top">AWS API
+     *      Documentation</a>
      */
     AssumeRoleResult assumeRole(AssumeRoleRequest assumeRoleRequest);
 
@@ -359,7 +360,7 @@ public interface AWSSecurityTokenService {
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithSAML
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML" target="_top">AWS API
      *      Documentation</a>
      */
     AssumeRoleWithSAMLResult assumeRoleWithSAML(AssumeRoleWithSAMLRequest assumeRoleWithSAMLRequest);
@@ -507,8 +508,8 @@ public interface AWSSecurityTokenService {
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithWebIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity" target="_top">AWS
+     *      API Documentation</a>
      */
     AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest);
 
@@ -574,8 +575,8 @@ public interface AWSSecurityTokenService {
      *         The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can
      *         happen if the token contains invalid characters, such as linebreaks.
      * @sample AWSSecurityTokenService.DecodeAuthorizationMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage" target="_top">AWS
+     *      API Documentation</a>
      */
     DecodeAuthorizationMessageResult decodeAuthorizationMessage(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest);
 
@@ -587,7 +588,8 @@ public interface AWSSecurityTokenService {
      * @param getCallerIdentityRequest
      * @return Result of the GetCallerIdentity operation returned by the service.
      * @sample AWSSecurityTokenService.GetCallerIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity" target="_top">AWS API
+     *      Documentation</a>
      */
     GetCallerIdentityResult getCallerIdentity(GetCallerIdentityRequest getCallerIdentityRequest);
 
@@ -709,7 +711,7 @@ public interface AWSSecurityTokenService {
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.GetFederationToken
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken" target="_top">AWS API
      *      Documentation</a>
      */
     GetFederationTokenResult getFederationToken(GetFederationTokenRequest getFederationTokenRequest);
@@ -781,7 +783,8 @@ public interface AWSSecurityTokenService {
      *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.GetSessionToken
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken" target="_top">AWS API
+     *      Documentation</a>
      */
     GetSessionTokenResult getSessionToken(GetSessionTokenRequest getSessionTokenRequest);
 

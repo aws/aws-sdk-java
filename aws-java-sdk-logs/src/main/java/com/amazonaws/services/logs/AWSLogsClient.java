@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -306,7 +306,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.CancelExportTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CancelExportTaskResult cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest) {
@@ -370,7 +371,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
      * @sample AWSLogs.CreateExportTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateExportTaskResult createExportTask(CreateExportTaskRequest createExportTaskRequest) {
@@ -445,7 +447,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.CreateLogGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateLogGroupResult createLogGroup(CreateLogGroupRequest createLogGroupRequest) {
@@ -517,7 +520,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.CreateLogStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateLogStreamResult createLogStream(CreateLogStreamRequest createLogStreamRequest) {
@@ -567,7 +571,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteDestination
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -618,7 +622,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteLogGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteLogGroupResult deleteLogGroup(DeleteLogGroupRequest deleteLogGroupRequest) {
@@ -668,7 +673,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteLogStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteLogStreamResult deleteLogStream(DeleteLogStreamRequest deleteLogStreamRequest) {
@@ -717,7 +723,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteMetricFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -770,7 +776,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteRetentionPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -821,8 +827,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DeleteSubscriptionFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteSubscriptionFilterResult deleteSubscriptionFilter(DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest) {
@@ -868,7 +874,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DescribeDestinations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -920,7 +926,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DescribeExportTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -967,7 +973,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DescribeLogGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1024,7 +1030,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DescribeLogStreams
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1073,7 +1079,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DescribeMetricFilters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1123,8 +1129,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.DescribeSubscriptionFilters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeSubscriptionFiltersResult describeSubscriptionFilters(DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest) {
@@ -1179,7 +1185,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.FilterLogEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public FilterLogEventsResult filterLogEvents(FilterLogEventsRequest filterLogEventsRequest) {
@@ -1231,7 +1238,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.GetLogEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetLogEventsResult getLogEvents(GetLogEventsRequest getLogEventsRequest) {
@@ -1279,7 +1287,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.ListTagsLogGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest listTagsLogGroupRequest) {
@@ -1335,7 +1344,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutDestination
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public PutDestinationResult putDestination(PutDestinationRequest putDestinationRequest) {
@@ -1384,7 +1394,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutDestinationPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1478,7 +1488,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutLogEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public PutLogEventsResult putLogEvents(PutLogEventsRequest putLogEventsRequest) {
@@ -1533,7 +1544,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutMetricFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public PutMetricFilterResult putMetricFilter(PutMetricFilterRequest putMetricFilterRequest) {
@@ -1583,7 +1595,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutRetentionPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1663,7 +1675,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.PutSubscriptionFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1718,7 +1730,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws InvalidParameterException
      *         A parameter is specified incorrectly.
      * @sample AWSLogs.TagLogGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public TagLogGroupResult tagLogGroup(TagLogGroupRequest tagLogGroupRequest) {
@@ -1764,7 +1777,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ServiceUnavailableException
      *         The service cannot complete the request.
      * @sample AWSLogs.TestMetricFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public TestMetricFilterResult testMetricFilter(TestMetricFilterRequest testMetricFilterRequest) {
@@ -1810,7 +1824,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @sample AWSLogs.UntagLogGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UntagLogGroupResult untagLogGroup(UntagLogGroupRequest untagLogGroupRequest) {

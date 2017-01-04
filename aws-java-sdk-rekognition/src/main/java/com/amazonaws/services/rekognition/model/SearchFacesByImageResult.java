@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The bounding box around the face in the input image that Rekognition used for the search.
+     * The bounding box around the face in the input image that Amazon Rekognition used for the search.
      * </p>
      */
     private BoundingBox searchedFaceBoundingBox;
@@ -37,11 +37,11 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The bounding box around the face in the input image that Rekognition used for the search.
+     * The bounding box around the face in the input image that Amazon Rekognition used for the search.
      * </p>
      * 
      * @param searchedFaceBoundingBox
-     *        The bounding box around the face in the input image that Rekognition used for the search.
+     *        The bounding box around the face in the input image that Amazon Rekognition used for the search.
      */
 
     public void setSearchedFaceBoundingBox(BoundingBox searchedFaceBoundingBox) {
@@ -50,10 +50,10 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The bounding box around the face in the input image that Rekognition used for the search.
+     * The bounding box around the face in the input image that Amazon Rekognition used for the search.
      * </p>
      * 
-     * @return The bounding box around the face in the input image that Rekognition used for the search.
+     * @return The bounding box around the face in the input image that Amazon Rekognition used for the search.
      */
 
     public BoundingBox getSearchedFaceBoundingBox() {
@@ -62,11 +62,11 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The bounding box around the face in the input image that Rekognition used for the search.
+     * The bounding box around the face in the input image that Amazon Rekognition used for the search.
      * </p>
      * 
      * @param searchedFaceBoundingBox
-     *        The bounding box around the face in the input image that Rekognition used for the search.
+     *        The bounding box around the face in the input image that Amazon Rekognition used for the search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

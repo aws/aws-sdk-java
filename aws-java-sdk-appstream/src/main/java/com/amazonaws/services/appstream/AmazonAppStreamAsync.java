@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param associateFleetRequest
      * @return A Java Future containing the result of the AssociateFleet operation returned by the service.
      * @sample AmazonAppStreamAsync.AssociateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<AssociateFleetResult> associateFleetAsync(AssociateFleetRequest associateFleetRequest);
@@ -55,7 +55,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AssociateFleet operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.AssociateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<AssociateFleetResult> associateFleetAsync(AssociateFleetRequest associateFleetRequest,
@@ -70,7 +70,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        Contains the parameters for the new fleet to create.
      * @return A Java Future containing the result of the CreateFleet operation returned by the service.
      * @sample AmazonAppStreamAsync.CreateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateFleetResult> createFleetAsync(CreateFleetRequest createFleetRequest);
 
@@ -87,7 +88,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateFleet operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.CreateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateFleetResult> createFleetAsync(CreateFleetRequest createFleetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateFleetRequest, CreateFleetResult> asyncHandler);
@@ -100,7 +102,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param createStackRequest
      * @return A Java Future containing the result of the CreateStack operation returned by the service.
      * @sample AmazonAppStreamAsync.CreateStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateStackResult> createStackAsync(CreateStackRequest createStackRequest);
 
@@ -116,7 +119,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStack operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.CreateStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateStackResult> createStackAsync(CreateStackRequest createStackRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult> asyncHandler);
@@ -130,8 +134,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param createStreamingURLRequest
      * @return A Java Future containing the result of the CreateStreamingURL operation returned by the service.
      * @sample AmazonAppStreamAsync.CreateStreamingURL
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingURLResult> createStreamingURLAsync(CreateStreamingURLRequest createStreamingURLRequest);
 
@@ -148,8 +152,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStreamingURL operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.CreateStreamingURL
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingURLResult> createStreamingURLAsync(CreateStreamingURLRequest createStreamingURLRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStreamingURLRequest, CreateStreamingURLResult> asyncHandler);
@@ -162,7 +166,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param deleteFleetRequest
      * @return A Java Future containing the result of the DeleteFleet operation returned by the service.
      * @sample AmazonAppStreamAsync.DeleteFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest deleteFleetRequest);
 
@@ -178,7 +183,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteFleet operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.DeleteFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest deleteFleetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler);
@@ -192,7 +198,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param deleteStackRequest
      * @return A Java Future containing the result of the DeleteStack operation returned by the service.
      * @sample AmazonAppStreamAsync.DeleteStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(DeleteStackRequest deleteStackRequest);
 
@@ -209,7 +216,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteStack operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.DeleteStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(DeleteStackRequest deleteStackRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler);
@@ -223,7 +231,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param describeFleetsRequest
      * @return A Java Future containing the result of the DescribeFleets operation returned by the service.
      * @sample AmazonAppStreamAsync.DescribeFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetsResult> describeFleetsAsync(DescribeFleetsRequest describeFleetsRequest);
@@ -241,7 +249,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeFleets operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.DescribeFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetsResult> describeFleetsAsync(DescribeFleetsRequest describeFleetsRequest,
@@ -256,7 +264,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param describeImagesRequest
      * @return A Java Future containing the result of the DescribeImages operation returned by the service.
      * @sample AmazonAppStreamAsync.DescribeImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeImagesResult> describeImagesAsync(DescribeImagesRequest describeImagesRequest);
@@ -274,7 +282,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeImages operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.DescribeImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeImagesResult> describeImagesAsync(DescribeImagesRequest describeImagesRequest,
@@ -290,7 +298,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param describeSessionsRequest
      * @return A Java Future containing the result of the DescribeSessions operation returned by the service.
      * @sample AmazonAppStreamAsync.DescribeSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeSessionsResult> describeSessionsAsync(DescribeSessionsRequest describeSessionsRequest);
@@ -309,7 +317,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeSessions operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.DescribeSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeSessionsResult> describeSessionsAsync(DescribeSessionsRequest describeSessionsRequest,
@@ -325,7 +333,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param describeStacksRequest
      * @return A Java Future containing the result of the DescribeStacks operation returned by the service.
      * @sample AmazonAppStreamAsync.DescribeStacks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(DescribeStacksRequest describeStacksRequest);
@@ -344,7 +352,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStacks operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.DescribeStacks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(DescribeStacksRequest describeStacksRequest,
@@ -358,8 +366,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param disassociateFleetRequest
      * @return A Java Future containing the result of the DisassociateFleet operation returned by the service.
      * @sample AmazonAppStreamAsync.DisassociateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DisassociateFleetResult> disassociateFleetAsync(DisassociateFleetRequest disassociateFleetRequest);
 
@@ -375,8 +383,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisassociateFleet operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.DisassociateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DisassociateFleetResult> disassociateFleetAsync(DisassociateFleetRequest disassociateFleetRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateFleetRequest, DisassociateFleetResult> asyncHandler);
@@ -389,7 +397,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param expireSessionRequest
      * @return A Java Future containing the result of the ExpireSession operation returned by the service.
      * @sample AmazonAppStreamAsync.ExpireSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ExpireSessionResult> expireSessionAsync(ExpireSessionRequest expireSessionRequest);
@@ -406,7 +414,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ExpireSession operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.ExpireSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ExpireSessionResult> expireSessionAsync(ExpireSessionRequest expireSessionRequest,
@@ -420,8 +428,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param listAssociatedFleetsRequest
      * @return A Java Future containing the result of the ListAssociatedFleets operation returned by the service.
      * @sample AmazonAppStreamAsync.ListAssociatedFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListAssociatedFleetsResult> listAssociatedFleetsAsync(ListAssociatedFleetsRequest listAssociatedFleetsRequest);
 
@@ -437,8 +445,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAssociatedFleets operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.ListAssociatedFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListAssociatedFleetsResult> listAssociatedFleetsAsync(ListAssociatedFleetsRequest listAssociatedFleetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssociatedFleetsRequest, ListAssociatedFleetsResult> asyncHandler);
@@ -451,8 +459,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param listAssociatedStacksRequest
      * @return A Java Future containing the result of the ListAssociatedStacks operation returned by the service.
      * @sample AmazonAppStreamAsync.ListAssociatedStacks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListAssociatedStacksResult> listAssociatedStacksAsync(ListAssociatedStacksRequest listAssociatedStacksRequest);
 
@@ -468,8 +476,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAssociatedStacks operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.ListAssociatedStacks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListAssociatedStacksResult> listAssociatedStacksAsync(ListAssociatedStacksRequest listAssociatedStacksRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssociatedStacksRequest, ListAssociatedStacksResult> asyncHandler);
@@ -482,7 +490,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param startFleetRequest
      * @return A Java Future containing the result of the StartFleet operation returned by the service.
      * @sample AmazonAppStreamAsync.StartFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartFleetResult> startFleetAsync(StartFleetRequest startFleetRequest);
 
@@ -498,7 +507,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartFleet operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.StartFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartFleetResult> startFleetAsync(StartFleetRequest startFleetRequest,
             com.amazonaws.handlers.AsyncHandler<StartFleetRequest, StartFleetResult> asyncHandler);
@@ -511,7 +521,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param stopFleetRequest
      * @return A Java Future containing the result of the StopFleet operation returned by the service.
      * @sample AmazonAppStreamAsync.StopFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopFleetResult> stopFleetAsync(StopFleetRequest stopFleetRequest);
 
@@ -527,7 +538,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopFleet operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.StopFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopFleetResult> stopFleetAsync(StopFleetRequest stopFleetRequest,
             com.amazonaws.handlers.AsyncHandler<StopFleetRequest, StopFleetResult> asyncHandler);
@@ -541,7 +553,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param updateFleetRequest
      * @return A Java Future containing the result of the UpdateFleet operation returned by the service.
      * @sample AmazonAppStreamAsync.UpdateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateFleetResult> updateFleetAsync(UpdateFleetRequest updateFleetRequest);
 
@@ -558,7 +571,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateFleet operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.UpdateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateFleetResult> updateFleetAsync(UpdateFleetRequest updateFleetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFleetRequest, UpdateFleetResult> asyncHandler);
@@ -571,7 +585,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * @param updateStackRequest
      * @return A Java Future containing the result of the UpdateStack operation returned by the service.
      * @sample AmazonAppStreamAsync.UpdateStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateStackResult> updateStackAsync(UpdateStackRequest updateStackRequest);
 
@@ -587,7 +602,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateStack operation returned by the service.
      * @sample AmazonAppStreamAsyncHandler.UpdateStack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateStackResult> updateStackAsync(UpdateStackRequest updateStackRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult> asyncHandler);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -246,9 +246,8 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      * @throws MarketplaceCommerceAnalyticsException
      *         This exception is thrown when an internal service error occurs.
      * @sample AWSMarketplaceCommerceAnalytics.GenerateDataSet
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GenerateDataSetResult generateDataSet(GenerateDataSetRequest generateDataSetRequest) {
@@ -298,8 +297,8 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *         This exception is thrown when an internal service error occurs.
      * @sample AWSMarketplaceCommerceAnalytics.StartSupportDataExport
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -145,7 +145,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param addPermissionRequest
      * @return A Java Future containing the result of the AddPermission operation returned by the service.
      * @sample AmazonSQSAsync.AddPermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest addPermissionRequest);
 
@@ -188,7 +189,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddPermission operation returned by the service.
      * @sample AmazonSQSAsyncHandler.AddPermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest addPermissionRequest,
             com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler);
@@ -256,8 +258,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param changeMessageVisibilityRequest
      * @return A Java Future containing the result of the ChangeMessageVisibility operation returned by the service.
      * @sample AmazonSQSAsync.ChangeMessageVisibility
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(ChangeMessageVisibilityRequest changeMessageVisibilityRequest);
 
@@ -312,8 +314,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ChangeMessageVisibility operation returned by the service.
      * @sample AmazonSQSAsyncHandler.ChangeMessageVisibility
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(ChangeMessageVisibilityRequest changeMessageVisibilityRequest,
             com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> asyncHandler);
@@ -362,8 +364,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @return A Java Future containing the result of the ChangeMessageVisibilityBatch operation returned by the
      *         service.
      * @sample AmazonSQSAsync.ChangeMessageVisibilityBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(
             ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest);
@@ -401,8 +403,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @return A Java Future containing the result of the ChangeMessageVisibilityBatch operation returned by the
      *         service.
      * @sample AmazonSQSAsyncHandler.ChangeMessageVisibilityBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(
             ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest,
@@ -494,7 +496,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param createQueueRequest
      * @return A Java Future containing the result of the CreateQueue operation returned by the service.
      * @sample AmazonSQSAsync.CreateQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateQueueResult> createQueueAsync(CreateQueueRequest createQueueRequest);
 
@@ -571,7 +574,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateQueue operation returned by the service.
      * @sample AmazonSQSAsyncHandler.CreateQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateQueueResult> createQueueAsync(CreateQueueRequest createQueueRequest,
             com.amazonaws.handlers.AsyncHandler<CreateQueueRequest, CreateQueueResult> asyncHandler);
@@ -618,7 +622,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param deleteMessageRequest
      * @return A Java Future containing the result of the DeleteMessage operation returned by the service.
      * @sample AmazonSQSAsync.DeleteMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(DeleteMessageRequest deleteMessageRequest);
 
@@ -653,7 +658,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteMessage operation returned by the service.
      * @sample AmazonSQSAsyncHandler.DeleteMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(DeleteMessageRequest deleteMessageRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, DeleteMessageResult> asyncHandler);
@@ -700,7 +706,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param deleteMessageBatchRequest
      * @return A Java Future containing the result of the DeleteMessageBatch operation returned by the service.
      * @sample AmazonSQSAsync.DeleteMessageBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMessageBatchResult> deleteMessageBatchAsync(DeleteMessageBatchRequest deleteMessageBatchRequest);
@@ -736,7 +742,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteMessageBatch operation returned by the service.
      * @sample AmazonSQSAsyncHandler.DeleteMessageBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMessageBatchResult> deleteMessageBatchAsync(DeleteMessageBatchRequest deleteMessageBatchRequest,
@@ -780,7 +786,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param deleteQueueRequest
      * @return A Java Future containing the result of the DeleteQueue operation returned by the service.
      * @sample AmazonSQSAsync.DeleteQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(DeleteQueueRequest deleteQueueRequest);
 
@@ -811,7 +818,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteQueue operation returned by the service.
      * @sample AmazonSQSAsyncHandler.DeleteQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(DeleteQueueRequest deleteQueueRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, DeleteQueueResult> asyncHandler);
@@ -851,7 +859,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param getQueueAttributesRequest
      * @return A Java Future containing the result of the GetQueueAttributes operation returned by the service.
      * @sample AmazonSQSAsync.GetQueueAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetQueueAttributesResult> getQueueAttributesAsync(GetQueueAttributesRequest getQueueAttributesRequest);
@@ -880,7 +888,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetQueueAttributes operation returned by the service.
      * @sample AmazonSQSAsyncHandler.GetQueueAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetQueueAttributesResult> getQueueAttributesAsync(GetQueueAttributesRequest getQueueAttributesRequest,
@@ -917,7 +925,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param getQueueUrlRequest
      * @return A Java Future containing the result of the GetQueueUrl operation returned by the service.
      * @sample AmazonSQSAsync.GetQueueUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetQueueUrlResult> getQueueUrlAsync(GetQueueUrlRequest getQueueUrlRequest);
 
@@ -941,7 +950,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetQueueUrl operation returned by the service.
      * @sample AmazonSQSAsyncHandler.GetQueueUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetQueueUrlResult> getQueueUrlAsync(GetQueueUrlRequest getQueueUrlRequest,
             com.amazonaws.handlers.AsyncHandler<GetQueueUrlRequest, GetQueueUrlResult> asyncHandler);
@@ -975,8 +985,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param listDeadLetterSourceQueuesRequest
      * @return A Java Future containing the result of the ListDeadLetterSourceQueues operation returned by the service.
      * @sample AmazonSQSAsync.ListDeadLetterSourceQueues
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDeadLetterSourceQueuesResult> listDeadLetterSourceQueuesAsync(
             ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest);
@@ -999,8 +1009,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeadLetterSourceQueues operation returned by the service.
      * @sample AmazonSQSAsyncHandler.ListDeadLetterSourceQueues
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDeadLetterSourceQueuesResult> listDeadLetterSourceQueuesAsync(
             ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest,
@@ -1016,7 +1026,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param listQueuesRequest
      * @return A Java Future containing the result of the ListQueues operation returned by the service.
      * @sample AmazonSQSAsync.ListQueues
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListQueuesResult> listQueuesAsync(ListQueuesRequest listQueuesRequest);
 
@@ -1034,7 +1045,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListQueues operation returned by the service.
      * @sample AmazonSQSAsyncHandler.ListQueues
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListQueuesResult> listQueuesAsync(ListQueuesRequest listQueuesRequest,
             com.amazonaws.handlers.AsyncHandler<ListQueuesRequest, ListQueuesResult> asyncHandler);
@@ -1087,7 +1099,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param purgeQueueRequest
      * @return A Java Future containing the result of the PurgeQueue operation returned by the service.
      * @sample AmazonSQSAsync.PurgeQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PurgeQueueResult> purgeQueueAsync(PurgeQueueRequest purgeQueueRequest);
 
@@ -1114,7 +1127,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PurgeQueue operation returned by the service.
      * @sample AmazonSQSAsyncHandler.PurgeQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PurgeQueueResult> purgeQueueAsync(PurgeQueueRequest purgeQueueRequest,
             com.amazonaws.handlers.AsyncHandler<PurgeQueueRequest, PurgeQueueResult> asyncHandler);
@@ -1197,7 +1211,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param receiveMessageRequest
      * @return A Java Future containing the result of the ReceiveMessage operation returned by the service.
      * @sample AmazonSQSAsync.ReceiveMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ReceiveMessageResult> receiveMessageAsync(ReceiveMessageRequest receiveMessageRequest);
 
@@ -1283,7 +1298,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ReceiveMessage operation returned by the service.
      * @sample AmazonSQSAsyncHandler.ReceiveMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ReceiveMessageResult> receiveMessageAsync(ReceiveMessageRequest receiveMessageRequest,
             com.amazonaws.handlers.AsyncHandler<ReceiveMessageRequest, ReceiveMessageResult> asyncHandler);
@@ -1312,7 +1328,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param removePermissionRequest
      * @return A Java Future containing the result of the RemovePermission operation returned by the service.
      * @sample AmazonSQSAsync.RemovePermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest);
 
@@ -1329,7 +1346,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemovePermission operation returned by the service.
      * @sample AmazonSQSAsyncHandler.RemovePermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
@@ -1399,7 +1417,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param sendMessageRequest
      * @return A Java Future containing the result of the SendMessage operation returned by the service.
      * @sample AmazonSQSAsync.SendMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SendMessageResult> sendMessageAsync(SendMessageRequest sendMessageRequest);
 
@@ -1457,7 +1476,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SendMessage operation returned by the service.
      * @sample AmazonSQSAsyncHandler.SendMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SendMessageResult> sendMessageAsync(SendMessageRequest sendMessageRequest,
             com.amazonaws.handlers.AsyncHandler<SendMessageRequest, SendMessageResult> asyncHandler);
@@ -1553,7 +1573,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param sendMessageBatchRequest
      * @return A Java Future containing the result of the SendMessageBatch operation returned by the service.
      * @sample AmazonSQSAsync.SendMessageBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SendMessageBatchResult> sendMessageBatchAsync(SendMessageBatchRequest sendMessageBatchRequest);
 
@@ -1637,7 +1658,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SendMessageBatch operation returned by the service.
      * @sample AmazonSQSAsyncHandler.SendMessageBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SendMessageBatchResult> sendMessageBatchAsync(SendMessageBatchRequest sendMessageBatchRequest,
             com.amazonaws.handlers.AsyncHandler<SendMessageBatchRequest, SendMessageBatchResult> asyncHandler);
@@ -1673,7 +1695,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @param setQueueAttributesRequest
      * @return A Java Future containing the result of the SetQueueAttributes operation returned by the service.
      * @sample AmazonSQSAsync.SetQueueAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(SetQueueAttributesRequest setQueueAttributesRequest);
@@ -1698,7 +1720,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetQueueAttributes operation returned by the service.
      * @sample AmazonSQSAsyncHandler.SetQueueAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(SetQueueAttributesRequest setQueueAttributesRequest,

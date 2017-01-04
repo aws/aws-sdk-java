@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -379,7 +379,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the CreateAlias operation returned by the service.
      * @sample AmazonGameLiftAsync.CreateAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest createAliasRequest);
 
@@ -405,7 +406,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAlias operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.CreateAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest createAliasRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler);
@@ -436,7 +438,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the CreateBuild operation returned by the service.
      * @sample AmazonGameLiftAsync.CreateBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateBuildResult> createBuildAsync(CreateBuildRequest createBuildRequest);
 
@@ -470,7 +473,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateBuild operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.CreateBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateBuildResult> createBuildAsync(CreateBuildRequest createBuildRequest,
             com.amazonaws.handlers.AsyncHandler<CreateBuildRequest, CreateBuildResult> asyncHandler);
@@ -555,7 +559,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the CreateFleet operation returned by the service.
      * @sample AmazonGameLiftAsync.CreateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateFleetResult> createFleetAsync(CreateFleetRequest createFleetRequest);
 
@@ -643,7 +648,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateFleet operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.CreateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateFleetResult> createFleetAsync(CreateFleetRequest createFleetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateFleetRequest, CreateFleetResult> asyncHandler);
@@ -670,7 +676,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the CreateGameSession operation returned by the service.
      * @sample AmazonGameLiftAsync.CreateGameSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateGameSessionResult> createGameSessionAsync(CreateGameSessionRequest createGameSessionRequest);
@@ -701,7 +707,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateGameSession operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.CreateGameSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateGameSessionResult> createGameSessionAsync(CreateGameSessionRequest createGameSessionRequest,
@@ -722,8 +728,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the CreatePlayerSession operation returned by the service.
      * @sample AmazonGameLiftAsync.CreatePlayerSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreatePlayerSessionResult> createPlayerSessionAsync(CreatePlayerSessionRequest createPlayerSessionRequest);
 
@@ -746,8 +752,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePlayerSession operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.CreatePlayerSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreatePlayerSessionResult> createPlayerSessionAsync(CreatePlayerSessionRequest createPlayerSessionRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePlayerSessionRequest, CreatePlayerSessionResult> asyncHandler);
@@ -768,8 +774,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the CreatePlayerSessions operation returned by the service.
      * @sample AmazonGameLiftAsync.CreatePlayerSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreatePlayerSessionsResult> createPlayerSessionsAsync(CreatePlayerSessionsRequest createPlayerSessionsRequest);
 
@@ -793,8 +799,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePlayerSessions operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.CreatePlayerSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreatePlayerSessionsResult> createPlayerSessionsAsync(CreatePlayerSessionsRequest createPlayerSessionsRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePlayerSessionsRequest, CreatePlayerSessionsResult> asyncHandler);
@@ -809,7 +815,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DeleteAlias operation returned by the service.
      * @sample AmazonGameLiftAsync.DeleteAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest deleteAliasRequest);
 
@@ -827,7 +834,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAlias operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DeleteAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest deleteAliasRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler);
@@ -845,7 +853,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DeleteBuild operation returned by the service.
      * @sample AmazonGameLiftAsync.DeleteBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteBuildResult> deleteBuildAsync(DeleteBuildRequest deleteBuildRequest);
 
@@ -866,7 +875,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteBuild operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DeleteBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteBuildResult> deleteBuildAsync(DeleteBuildRequest deleteBuildRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, DeleteBuildResult> asyncHandler);
@@ -885,7 +895,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DeleteFleet operation returned by the service.
      * @sample AmazonGameLiftAsync.DeleteFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest deleteFleetRequest);
 
@@ -907,7 +918,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteFleet operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DeleteFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest deleteFleetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler);
@@ -922,8 +934,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DeleteScalingPolicy operation returned by the service.
      * @sample AmazonGameLiftAsync.DeleteScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(DeleteScalingPolicyRequest deleteScalingPolicyRequest);
 
@@ -941,8 +953,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteScalingPolicy operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DeleteScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(DeleteScalingPolicyRequest deleteScalingPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult> asyncHandler);
@@ -957,7 +969,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeAlias operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAliasResult> describeAliasAsync(DescribeAliasRequest describeAliasRequest);
@@ -976,7 +988,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAlias operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAliasResult> describeAliasAsync(DescribeAliasRequest describeAliasRequest,
@@ -992,7 +1004,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeBuild operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeBuildResult> describeBuildAsync(DescribeBuildRequest describeBuildRequest);
@@ -1011,7 +1023,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeBuild operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeBuildResult> describeBuildAsync(DescribeBuildRequest describeBuildRequest,
@@ -1042,8 +1054,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeEC2InstanceLimits operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeEC2InstanceLimits
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEC2InstanceLimitsResult> describeEC2InstanceLimitsAsync(
             DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest);
@@ -1077,8 +1089,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEC2InstanceLimits operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeEC2InstanceLimits
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeEC2InstanceLimitsResult> describeEC2InstanceLimitsAsync(
             DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest,
@@ -1103,8 +1115,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeFleetAttributes operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeFleetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetAttributesResult> describeFleetAttributesAsync(DescribeFleetAttributesRequest describeFleetAttributesRequest);
 
@@ -1131,8 +1143,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeFleetAttributes operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeFleetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetAttributesResult> describeFleetAttributesAsync(DescribeFleetAttributesRequest describeFleetAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFleetAttributesRequest, DescribeFleetAttributesResult> asyncHandler);
@@ -1157,8 +1169,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeFleetCapacity operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeFleetCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetCapacityResult> describeFleetCapacityAsync(DescribeFleetCapacityRequest describeFleetCapacityRequest);
 
@@ -1186,8 +1198,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeFleetCapacity operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeFleetCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetCapacityResult> describeFleetCapacityAsync(DescribeFleetCapacityRequest describeFleetCapacityRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFleetCapacityRequest, DescribeFleetCapacityResult> asyncHandler);
@@ -1203,8 +1215,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeFleetEvents operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeFleetEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetEventsResult> describeFleetEventsAsync(DescribeFleetEventsRequest describeFleetEventsRequest);
 
@@ -1223,8 +1235,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeFleetEvents operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeFleetEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetEventsResult> describeFleetEventsAsync(DescribeFleetEventsRequest describeFleetEventsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFleetEventsRequest, DescribeFleetEventsResult> asyncHandler);
@@ -1241,8 +1253,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeFleetPortSettings operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeFleetPortSettings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetPortSettingsResult> describeFleetPortSettingsAsync(
             DescribeFleetPortSettingsRequest describeFleetPortSettingsRequest);
@@ -1263,8 +1275,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeFleetPortSettings operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeFleetPortSettings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetPortSettingsResult> describeFleetPortSettingsAsync(
             DescribeFleetPortSettingsRequest describeFleetPortSettingsRequest,
@@ -1289,8 +1301,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeFleetUtilization operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeFleetUtilization
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetUtilizationResult> describeFleetUtilizationAsync(DescribeFleetUtilizationRequest describeFleetUtilizationRequest);
 
@@ -1317,8 +1329,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeFleetUtilization operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeFleetUtilization
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeFleetUtilizationResult> describeFleetUtilizationAsync(DescribeFleetUtilizationRequest describeFleetUtilizationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFleetUtilizationRequest, DescribeFleetUtilizationResult> asyncHandler);
@@ -1341,8 +1353,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeGameSessionDetails operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeGameSessionDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeGameSessionDetailsResult> describeGameSessionDetailsAsync(
             DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest);
@@ -1369,8 +1381,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeGameSessionDetails operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeGameSessionDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeGameSessionDetailsResult> describeGameSessionDetailsAsync(
             DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest,
@@ -1395,8 +1407,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeGameSessions operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeGameSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeGameSessionsResult> describeGameSessionsAsync(DescribeGameSessionsRequest describeGameSessionsRequest);
 
@@ -1423,8 +1435,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeGameSessions operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeGameSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeGameSessionsResult> describeGameSessionsAsync(DescribeGameSessionsRequest describeGameSessionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeGameSessionsRequest, DescribeGameSessionsResult> asyncHandler);
@@ -1444,7 +1456,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeInstances operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancesResult> describeInstancesAsync(DescribeInstancesRequest describeInstancesRequest);
@@ -1468,7 +1480,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInstances operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeInstancesResult> describeInstancesAsync(DescribeInstancesRequest describeInstancesRequest,
@@ -1493,8 +1505,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribePlayerSessions operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribePlayerSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribePlayerSessionsResult> describePlayerSessionsAsync(DescribePlayerSessionsRequest describePlayerSessionsRequest);
 
@@ -1521,8 +1533,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePlayerSessions operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribePlayerSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribePlayerSessionsResult> describePlayerSessionsAsync(DescribePlayerSessionsRequest describePlayerSessionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePlayerSessionsRequest, DescribePlayerSessionsResult> asyncHandler);
@@ -1538,8 +1550,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * @return A Java Future containing the result of the DescribeRuntimeConfiguration operation returned by the
      *         service.
      * @sample AmazonGameLiftAsync.DescribeRuntimeConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeRuntimeConfigurationResult> describeRuntimeConfigurationAsync(
             DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest);
@@ -1559,8 +1571,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * @return A Java Future containing the result of the DescribeRuntimeConfiguration operation returned by the
      *         service.
      * @sample AmazonGameLiftAsyncHandler.DescribeRuntimeConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeRuntimeConfigurationResult> describeRuntimeConfigurationAsync(
             DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest,
@@ -1580,8 +1592,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the DescribeScalingPolicies operation returned by the service.
      * @sample AmazonGameLiftAsync.DescribeScalingPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(DescribeScalingPoliciesRequest describeScalingPoliciesRequest);
 
@@ -1603,8 +1615,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeScalingPolicies operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DescribeScalingPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(DescribeScalingPoliciesRequest describeScalingPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeScalingPoliciesRequest, DescribeScalingPoliciesResult> asyncHandler);
@@ -1625,8 +1637,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the GetGameSessionLogUrl operation returned by the service.
      * @sample AmazonGameLiftAsync.GetGameSessionLogUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetGameSessionLogUrlResult> getGameSessionLogUrlAsync(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest);
 
@@ -1650,8 +1662,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetGameSessionLogUrl operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.GetGameSessionLogUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetGameSessionLogUrlResult> getGameSessionLogUrlAsync(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest,
             com.amazonaws.handlers.AsyncHandler<GetGameSessionLogUrlRequest, GetGameSessionLogUrlResult> asyncHandler);
@@ -1680,7 +1692,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * @param getInstanceAccessRequest
      * @return A Java Future containing the result of the GetInstanceAccess operation returned by the service.
      * @sample AmazonGameLiftAsync.GetInstanceAccess
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceAccessResult> getInstanceAccessAsync(GetInstanceAccessRequest getInstanceAccessRequest);
@@ -1713,7 +1725,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInstanceAccess operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.GetInstanceAccess
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetInstanceAccessResult> getInstanceAccessAsync(GetInstanceAccessRequest getInstanceAccessRequest,
@@ -1734,7 +1746,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the ListAliases operation returned by the service.
      * @sample AmazonGameLiftAsync.ListAliases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest listAliasesRequest);
 
@@ -1757,7 +1770,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAliases operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.ListAliases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest listAliasesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler);
@@ -1778,7 +1792,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the ListBuilds operation returned by the service.
      * @sample AmazonGameLiftAsync.ListBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListBuildsResult> listBuildsAsync(ListBuildsRequest listBuildsRequest);
 
@@ -1802,7 +1817,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListBuilds operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.ListBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListBuildsResult> listBuildsAsync(ListBuildsRequest listBuildsRequest,
             com.amazonaws.handlers.AsyncHandler<ListBuildsRequest, ListBuildsResult> asyncHandler);
@@ -1822,7 +1838,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the ListFleets operation returned by the service.
      * @sample AmazonGameLiftAsync.ListFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(ListFleetsRequest listFleetsRequest);
 
@@ -1845,7 +1862,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListFleets operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.ListFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(ListFleetsRequest listFleetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListFleetsRequest, ListFleetsResult> asyncHandler);
@@ -1882,7 +1900,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the PutScalingPolicy operation returned by the service.
      * @sample AmazonGameLiftAsync.PutScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(PutScalingPolicyRequest putScalingPolicyRequest);
@@ -1923,7 +1941,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutScalingPolicy operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.PutScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(PutScalingPolicyRequest putScalingPolicyRequest,
@@ -1951,8 +1969,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the RequestUploadCredentials operation returned by the service.
      * @sample AmazonGameLiftAsync.RequestUploadCredentials
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RequestUploadCredentialsResult> requestUploadCredentialsAsync(RequestUploadCredentialsRequest requestUploadCredentialsRequest);
 
@@ -1982,8 +2000,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RequestUploadCredentials operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.RequestUploadCredentials
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RequestUploadCredentialsResult> requestUploadCredentialsAsync(RequestUploadCredentialsRequest requestUploadCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<RequestUploadCredentialsRequest, RequestUploadCredentialsResult> asyncHandler);
@@ -1997,7 +2015,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the ResolveAlias operation returned by the service.
      * @sample AmazonGameLiftAsync.ResolveAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResolveAliasResult> resolveAliasAsync(ResolveAliasRequest resolveAliasRequest);
 
@@ -2014,7 +2033,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ResolveAlias operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.ResolveAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ResolveAliasResult> resolveAliasAsync(ResolveAliasRequest resolveAliasRequest,
             com.amazonaws.handlers.AsyncHandler<ResolveAliasRequest, ResolveAliasResult> asyncHandler);
@@ -2088,8 +2108,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the SearchGameSessions operation returned by the service.
      * @sample AmazonGameLiftAsync.SearchGameSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<SearchGameSessionsResult> searchGameSessionsAsync(SearchGameSessionsRequest searchGameSessionsRequest);
 
@@ -2166,8 +2186,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SearchGameSessions operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.SearchGameSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<SearchGameSessionsResult> searchGameSessionsAsync(SearchGameSessionsRequest searchGameSessionsRequest,
             com.amazonaws.handlers.AsyncHandler<SearchGameSessionsRequest, SearchGameSessionsResult> asyncHandler);
@@ -2183,7 +2203,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the UpdateAlias operation returned by the service.
      * @sample AmazonGameLiftAsync.UpdateAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(UpdateAliasRequest updateAliasRequest);
 
@@ -2202,7 +2223,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAlias operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.UpdateAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(UpdateAliasRequest updateAliasRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult> asyncHandler);
@@ -2218,7 +2240,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the UpdateBuild operation returned by the service.
      * @sample AmazonGameLiftAsync.UpdateBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateBuildResult> updateBuildAsync(UpdateBuildRequest updateBuildRequest);
 
@@ -2237,7 +2260,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateBuild operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.UpdateBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateBuildResult> updateBuildAsync(UpdateBuildRequest updateBuildRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateBuildRequest, UpdateBuildResult> asyncHandler);
@@ -2252,8 +2276,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the UpdateFleetAttributes operation returned by the service.
      * @sample AmazonGameLiftAsync.UpdateFleetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFleetAttributesResult> updateFleetAttributesAsync(UpdateFleetAttributesRequest updateFleetAttributesRequest);
 
@@ -2271,8 +2295,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateFleetAttributes operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.UpdateFleetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFleetAttributesResult> updateFleetAttributesAsync(UpdateFleetAttributesRequest updateFleetAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFleetAttributesRequest, UpdateFleetAttributesResult> asyncHandler);
@@ -2300,8 +2324,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the UpdateFleetCapacity operation returned by the service.
      * @sample AmazonGameLiftAsync.UpdateFleetCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFleetCapacityResult> updateFleetCapacityAsync(UpdateFleetCapacityRequest updateFleetCapacityRequest);
 
@@ -2332,8 +2356,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateFleetCapacity operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.UpdateFleetCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFleetCapacityResult> updateFleetCapacityAsync(UpdateFleetCapacityRequest updateFleetCapacityRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFleetCapacityRequest, UpdateFleetCapacityResult> asyncHandler);
@@ -2351,8 +2375,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the UpdateFleetPortSettings operation returned by the service.
      * @sample AmazonGameLiftAsync.UpdateFleetPortSettings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFleetPortSettingsResult> updateFleetPortSettingsAsync(UpdateFleetPortSettingsRequest updateFleetPortSettingsRequest);
 
@@ -2373,8 +2397,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateFleetPortSettings operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.UpdateFleetPortSettings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFleetPortSettingsResult> updateFleetPortSettingsAsync(UpdateFleetPortSettingsRequest updateFleetPortSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFleetPortSettingsRequest, UpdateFleetPortSettingsResult> asyncHandler);
@@ -2392,7 +2416,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the UpdateGameSession operation returned by the service.
      * @sample AmazonGameLiftAsync.UpdateGameSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateGameSessionResult> updateGameSessionAsync(UpdateGameSessionRequest updateGameSessionRequest);
@@ -2414,7 +2438,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateGameSession operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.UpdateGameSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateGameSessionResult> updateGameSessionAsync(UpdateGameSessionRequest updateGameSessionRequest,
@@ -2442,8 +2466,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        Represents the input for a request action.
      * @return A Java Future containing the result of the UpdateRuntimeConfiguration operation returned by the service.
      * @sample AmazonGameLiftAsync.UpdateRuntimeConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateRuntimeConfigurationResult> updateRuntimeConfigurationAsync(
             UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest);
@@ -2474,8 +2498,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateRuntimeConfiguration operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.UpdateRuntimeConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateRuntimeConfigurationResult> updateRuntimeConfigurationAsync(
             UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest,

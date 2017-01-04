@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,7 +130,7 @@ public interface AmazonConfig {
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
      *         again later.
      * @sample AmazonConfig.DeleteConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteConfigRuleResult deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest);
@@ -156,8 +156,8 @@ public interface AmazonConfig {
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.DeleteConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteConfigurationRecorderResult deleteConfigurationRecorder(DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest);
 
@@ -179,8 +179,8 @@ public interface AmazonConfig {
      * @throws LastDeliveryChannelDeleteFailedException
      *         You cannot delete the delivery channel you specified because the configuration recorder is running.
      * @sample AmazonConfig.DeleteDeliveryChannel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteDeliveryChannelResult deleteDeliveryChannel(DeleteDeliveryChannelRequest deleteDeliveryChannelRequest);
 
@@ -200,8 +200,8 @@ public interface AmazonConfig {
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
      *         again later.
      * @sample AmazonConfig.DeleteEvaluationResults
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteEvaluationResultsResult deleteEvaluationResults(DeleteEvaluationResultsRequest deleteEvaluationResultsRequest);
 
@@ -240,8 +240,8 @@ public interface AmazonConfig {
      * @throws NoRunningConfigurationRecorderException
      *         There is no configuration recorder running.
      * @sample AmazonConfig.DeliverConfigSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot" target="_top">AWS
+     *      API Documentation</a>
      */
     DeliverConfigSnapshotResult deliverConfigSnapshot(DeliverConfigSnapshotRequest deliverConfigSnapshotRequest);
 
@@ -290,8 +290,8 @@ public interface AmazonConfig {
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @sample AmazonConfig.DescribeComplianceByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeComplianceByConfigRuleResult describeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest);
 
@@ -347,8 +347,8 @@ public interface AmazonConfig {
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeComplianceByResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeComplianceByResourceResult describeComplianceByResource(DescribeComplianceByResourceRequest describeComplianceByResourceRequest);
 
@@ -374,8 +374,8 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeConfigRuleEvaluationStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeConfigRuleEvaluationStatusResult describeConfigRuleEvaluationStatus(
             DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest);
@@ -398,7 +398,7 @@ public interface AmazonConfig {
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @sample AmazonConfig.DescribeConfigRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeConfigRulesResult describeConfigRules(DescribeConfigRulesRequest describeConfigRulesRequest);
@@ -427,8 +427,8 @@ public interface AmazonConfig {
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.DescribeConfigurationRecorderStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeConfigurationRecorderStatusResult describeConfigurationRecorderStatus(
             DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest);
@@ -457,8 +457,8 @@ public interface AmazonConfig {
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.DescribeConfigurationRecorders
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeConfigurationRecordersResult describeConfigurationRecorders(DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest);
 
@@ -486,8 +486,8 @@ public interface AmazonConfig {
      * @throws NoSuchDeliveryChannelException
      *         You have specified a delivery channel that does not exist.
      * @sample AmazonConfig.DescribeDeliveryChannelStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest);
 
@@ -515,8 +515,8 @@ public interface AmazonConfig {
      * @throws NoSuchDeliveryChannelException
      *         You have specified a delivery channel that does not exist.
      * @sample AmazonConfig.DescribeDeliveryChannels
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeDeliveryChannelsResult describeDeliveryChannels(DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest);
 
@@ -544,8 +544,8 @@ public interface AmazonConfig {
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @sample AmazonConfig.GetComplianceDetailsByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest);
 
@@ -560,8 +560,8 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.GetComplianceDetailsByResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"
+     *      target="_top">AWS API Documentation</a>
      */
     GetComplianceDetailsByResourceResult getComplianceDetailsByResource(GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest);
 
@@ -573,8 +573,8 @@ public interface AmazonConfig {
      * @param getComplianceSummaryByConfigRuleRequest
      * @return Result of the GetComplianceSummaryByConfigRule operation returned by the service.
      * @sample AmazonConfig.GetComplianceSummaryByConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule"
+     *      target="_top">AWS API Documentation</a>
      */
     GetComplianceSummaryByConfigRuleResult getComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest);
 
@@ -596,8 +596,8 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.GetComplianceSummaryByResourceType
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType"
+     *      target="_top">AWS API Documentation</a>
      */
     GetComplianceSummaryByResourceTypeResult getComplianceSummaryByResourceType(
             GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest);
@@ -646,8 +646,8 @@ public interface AmazonConfig {
      * @throws ResourceNotDiscoveredException
      *         You have specified a resource that is either unknown or has not been discovered.
      * @sample AmazonConfig.GetResourceConfigHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     GetResourceConfigHistoryResult getResourceConfigHistory(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest);
 
@@ -683,8 +683,8 @@ public interface AmazonConfig {
      *         There are no configuration recorders available to provide the role needed to describe your resources.
      *         Create a configuration recorder.
      * @sample AmazonConfig.ListDiscoveredResources
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources" target="_top">AWS
+     *      API Documentation</a>
      */
     ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest);
 
@@ -762,7 +762,8 @@ public interface AmazonConfig {
      *         There are no configuration recorders available to provide the role needed to describe your resources.
      *         Create a configuration recorder.
      * @sample AmazonConfig.PutConfigRule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule" target="_top">AWS API
+     *      Documentation</a>
      */
     PutConfigRuleResult putConfigRule(PutConfigRuleRequest putConfigRuleRequest);
 
@@ -797,8 +798,8 @@ public interface AmazonConfig {
      *         AWS Config throws an exception if the recording group does not contain a valid list of resource types.
      *         Invalid values could also be incorrectly formatted.
      * @sample AmazonConfig.PutConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     PutConfigurationRecorderResult putConfigurationRecorder(PutConfigurationRecorderRequest putConfigurationRecorderRequest);
 
@@ -841,7 +842,7 @@ public interface AmazonConfig {
      * @throws InsufficientDeliveryPolicyException
      *         Your Amazon S3 bucket policy does not permit AWS Config to write to it.
      * @sample AmazonConfig.PutDeliveryChannel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel" target="_top">AWS API
      *      Documentation</a>
      */
     PutDeliveryChannelResult putDeliveryChannel(PutDeliveryChannelRequest putDeliveryChannelRequest);
@@ -862,7 +863,8 @@ public interface AmazonConfig {
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @sample AmazonConfig.PutEvaluations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations" target="_top">AWS API
+     *      Documentation</a>
      */
     PutEvaluationsResult putEvaluations(PutEvaluationsRequest putEvaluationsRequest);
 
@@ -933,8 +935,8 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.StartConfigRulesEvaluation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation"
+     *      target="_top">AWS API Documentation</a>
      */
     StartConfigRulesEvaluationResult startConfigRulesEvaluation(StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest);
 
@@ -954,8 +956,8 @@ public interface AmazonConfig {
      * @throws NoAvailableDeliveryChannelException
      *         There is no delivery channel available to record configurations.
      * @sample AmazonConfig.StartConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     StartConfigurationRecorderResult startConfigurationRecorder(StartConfigurationRecorderRequest startConfigurationRecorderRequest);
 
@@ -970,8 +972,8 @@ public interface AmazonConfig {
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.StopConfigurationRecorder
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder"
+     *      target="_top">AWS API Documentation</a>
      */
     StopConfigurationRecorderResult stopConfigurationRecorder(StopConfigurationRecorderRequest stopConfigurationRecorderRequest);
 

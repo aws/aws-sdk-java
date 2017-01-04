@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import java.io.Serializable;
  * The code for the Lambda function.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode" target="_top">AWS API
+ *      Documentation</a>
  */
 public class FunctionCode implements Serializable, Cloneable {
 
@@ -27,7 +28,7 @@ public class FunctionCode implements Serializable, Cloneable {
      * <p>
      * The contents of your zip file containing your deployment package. If you are using the web API directly, the
      * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, go to <a
+     * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
      * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
@@ -57,7 +58,7 @@ public class FunctionCode implements Serializable, Cloneable {
      * <p>
      * The contents of your zip file containing your deployment package. If you are using the web API directly, the
      * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, go to <a
+     * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
      * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
@@ -75,7 +76,7 @@ public class FunctionCode implements Serializable, Cloneable {
      * @param zipFile
      *        The contents of your zip file containing your deployment package. If you are using the web API directly,
      *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, go to <a href=
+     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
      *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
      *        >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      */
@@ -88,7 +89,7 @@ public class FunctionCode implements Serializable, Cloneable {
      * <p>
      * The contents of your zip file containing your deployment package. If you are using the web API directly, the
      * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, go to <a
+     * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
      * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
@@ -102,7 +103,7 @@ public class FunctionCode implements Serializable, Cloneable {
      * 
      * @return The contents of your zip file containing your deployment package. If you are using the web API directly,
      *         the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *         SDKs or CLI will do the encoding for you. For more information about creating a .zip file, go to <a href=
+     *         SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
      *         "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
      *         >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      */
@@ -115,7 +116,7 @@ public class FunctionCode implements Serializable, Cloneable {
      * <p>
      * The contents of your zip file containing your deployment package. If you are using the web API directly, the
      * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, go to <a
+     * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
      * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
@@ -123,7 +124,7 @@ public class FunctionCode implements Serializable, Cloneable {
      * @param zipFile
      *        The contents of your zip file containing your deployment package. If you are using the web API directly,
      *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, go to <a href=
+     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
      *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
      *        >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

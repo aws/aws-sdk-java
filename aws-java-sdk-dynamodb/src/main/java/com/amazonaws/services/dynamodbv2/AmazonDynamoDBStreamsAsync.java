@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,8 +81,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        Represents the input of a <i>DescribeStream</i> operation.
      * @return A Java Future containing the result of the DescribeStream operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsync.DescribeStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest describeStreamRequest);
 
@@ -112,8 +112,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStream operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsyncHandler.DescribeStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest describeStreamRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler);
@@ -138,8 +138,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        Represents the input of a <i>GetRecords</i> operation.
      * @return A Java Future containing the result of the GetRecords operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsync.GetRecords
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(GetRecordsRequest getRecordsRequest);
 
@@ -167,8 +167,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRecords operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsyncHandler.GetRecords
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(GetRecordsRequest getRecordsRequest,
             com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult> asyncHandler);
@@ -189,8 +189,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        Represents the input of a <i>GetShardIterator</i> operation.
      * @return A Java Future containing the result of the GetShardIterator operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsync.GetShardIterator
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(GetShardIteratorRequest getShardIteratorRequest);
 
@@ -214,8 +214,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetShardIterator operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsyncHandler.GetShardIterator
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(GetShardIteratorRequest getShardIteratorRequest,
             com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult> asyncHandler);
@@ -235,8 +235,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        Represents the input of a <i>ListStreams</i> operation.
      * @return A Java Future containing the result of the ListStreams operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsync.ListStreams
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest listStreamsRequest);
 
@@ -259,8 +259,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStreams operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsyncHandler.ListStreams
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest listStreamsRequest,
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler);

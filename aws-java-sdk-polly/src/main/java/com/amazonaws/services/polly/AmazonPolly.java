@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -109,7 +109,8 @@ public interface AmazonPolly {
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.DeleteLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteLexiconResult deleteLexicon(DeleteLexiconRequest deleteLexiconRequest);
 
@@ -143,7 +144,8 @@ public interface AmazonPolly {
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.DescribeVoices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeVoicesResult describeVoices(DescribeVoicesRequest describeVoicesRequest);
 
@@ -164,7 +166,8 @@ public interface AmazonPolly {
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.GetLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     GetLexiconResult getLexicon(GetLexiconRequest getLexiconRequest);
 
@@ -181,7 +184,8 @@ public interface AmazonPolly {
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.ListLexicons
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons" target="_top">AWS API
+     *      Documentation</a>
      */
     ListLexiconsResult listLexicons(ListLexiconsRequest listLexiconsRequest);
 
@@ -216,7 +220,8 @@ public interface AmazonPolly {
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.PutLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     PutLexiconResult putLexicon(PutLexiconRequest putLexiconRequest);
 
@@ -248,7 +253,7 @@ public interface AmazonPolly {
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
      * @sample AmazonPolly.SynthesizeSpeech
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech" target="_top">AWS API
      *      Documentation</a>
      */
     SynthesizeSpeechResult synthesizeSpeech(SynthesizeSpeechRequest synthesizeSpeechRequest);

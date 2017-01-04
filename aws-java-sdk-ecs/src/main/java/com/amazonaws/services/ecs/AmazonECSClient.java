@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -297,7 +297,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.CreateCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateClusterResult createCluster(CreateClusterRequest createClusterRequest) {
@@ -423,7 +424,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.CreateService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateServiceResult createService(CreateServiceRequest createServiceRequest) {
@@ -472,7 +474,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.DeleteAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
@@ -534,7 +537,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         desired task count to 0 and then delete the service. For more information, see <a>UpdateService</a> and
      *         <a>DeleteService</a>.
      * @sample AmazonECS.DeleteCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteClusterResult deleteCluster(DeleteClusterRequest deleteClusterRequest) {
@@ -603,7 +607,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
      *         Amazon ECS services are cluster-specific and region-specific.
      * @sample AmazonECS.DeleteService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) {
@@ -673,8 +678,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.DeregisterContainerInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeregisterContainerInstanceResult deregisterContainerInstance(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) {
@@ -733,8 +738,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.DeregisterTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) {
@@ -784,7 +789,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.DescribeClusters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeClustersResult describeClusters(DescribeClustersRequest describeClustersRequest) {
@@ -842,8 +848,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.DescribeContainerInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeContainerInstancesResult describeContainerInstances(DescribeContainerInstancesRequest describeContainerInstancesRequest) {
@@ -896,7 +902,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.DescribeServices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
@@ -952,7 +959,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.DescribeTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1006,7 +1013,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.DescribeTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeTasksResult describeTasks(DescribeTasksRequest describeTasksRequest) {
@@ -1059,7 +1067,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @sample AmazonECS.DiscoverPollEndpoint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1115,7 +1123,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.ListAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListAttributesResult listAttributes(ListAttributesRequest listAttributesRequest) {
@@ -1164,7 +1173,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.ListClusters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
@@ -1225,7 +1235,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.ListContainerInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1284,7 +1294,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.ListServices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListServicesResult listServices(ListServicesRequest listServicesRequest) {
@@ -1344,8 +1355,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.ListTaskDefinitionFamilies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) {
@@ -1401,7 +1412,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.ListTaskDefinitions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1468,7 +1479,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
      *         Amazon ECS services are cluster-specific and region-specific.
      * @sample AmazonECS.ListTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTasksResult listTasks(ListTasksRequest listTasksRequest) {
@@ -1526,7 +1538,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.PutAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public PutAttributesResult putAttributes(PutAttributesRequest putAttributesRequest) {
@@ -1579,8 +1592,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @sample AmazonECS.RegisterContainerInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public RegisterContainerInstanceResult registerContainerInstance(RegisterContainerInstanceRequest registerContainerInstanceRequest) {
@@ -1647,7 +1660,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.RegisterTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1711,7 +1724,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.RunTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public RunTaskResult runTask(RunTaskRequest runTaskRequest) {
@@ -1768,7 +1782,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.StartTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public StartTaskResult startTask(StartTaskRequest startTaskRequest) {
@@ -1826,7 +1841,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon ECS clusters are region-specific.
      * @sample AmazonECS.StopTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public StopTaskResult stopTask(StopTaskRequest stopTaskRequest) {
@@ -1879,8 +1895,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @sample AmazonECS.SubmitContainerStateChange
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
@@ -1939,7 +1955,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @sample AmazonECS.SubmitTaskStateChange
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2016,7 +2032,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         running on the container instance is an older or custom version that does not use our version
      *         information.
      * @sample AmazonECS.UpdateContainerAgent
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2160,7 +2176,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified service is not active. You cannot update a service that is not active. If you have
      *         previously deleted a service, you can re-create it with <a>CreateService</a>.
      * @sample AmazonECS.UpdateService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateServiceResult updateService(UpdateServiceRequest updateServiceRequest) {

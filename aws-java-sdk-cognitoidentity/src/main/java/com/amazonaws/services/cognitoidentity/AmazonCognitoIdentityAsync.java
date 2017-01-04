@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,8 +101,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the CreateIdentityPool action.
      * @return A Java Future containing the result of the CreateIdentityPool operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.CreateIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateIdentityPoolResult> createIdentityPoolAsync(CreateIdentityPoolRequest createIdentityPoolRequest);
 
@@ -151,8 +151,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateIdentityPool operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.CreateIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateIdentityPoolResult> createIdentityPoolAsync(CreateIdentityPoolRequest createIdentityPoolRequest,
             com.amazonaws.handlers.AsyncHandler<CreateIdentityPoolRequest, CreateIdentityPoolResult> asyncHandler);
@@ -169,8 +169,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>DeleteIdentities</code> action.
      * @return A Java Future containing the result of the DeleteIdentities operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.DeleteIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteIdentitiesResult> deleteIdentitiesAsync(DeleteIdentitiesRequest deleteIdentitiesRequest);
 
@@ -190,8 +190,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteIdentities operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.DeleteIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteIdentitiesResult> deleteIdentitiesAsync(DeleteIdentitiesRequest deleteIdentitiesRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteIdentitiesRequest, DeleteIdentitiesResult> asyncHandler);
@@ -208,8 +208,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the DeleteIdentityPool action.
      * @return A Java Future containing the result of the DeleteIdentityPool operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.DeleteIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteIdentityPoolResult> deleteIdentityPoolAsync(DeleteIdentityPoolRequest deleteIdentityPoolRequest);
 
@@ -229,8 +229,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteIdentityPool operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.DeleteIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteIdentityPoolResult> deleteIdentityPoolAsync(DeleteIdentityPoolRequest deleteIdentityPoolRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteIdentityPoolRequest, DeleteIdentityPoolResult> asyncHandler);
@@ -248,8 +248,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>DescribeIdentity</code> action.
      * @return A Java Future containing the result of the DescribeIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.DescribeIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeIdentityResult> describeIdentityAsync(DescribeIdentityRequest describeIdentityRequest);
 
@@ -270,8 +270,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.DescribeIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeIdentityResult> describeIdentityAsync(DescribeIdentityRequest describeIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeIdentityRequest, DescribeIdentityResult> asyncHandler);
@@ -289,8 +289,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the DescribeIdentityPool action.
      * @return A Java Future containing the result of the DescribeIdentityPool operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.DescribeIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeIdentityPoolResult> describeIdentityPoolAsync(DescribeIdentityPoolRequest describeIdentityPoolRequest);
 
@@ -311,8 +311,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeIdentityPool operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.DescribeIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeIdentityPoolResult> describeIdentityPoolAsync(DescribeIdentityPoolRequest describeIdentityPoolRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeIdentityPoolRequest, DescribeIdentityPoolResult> asyncHandler);
@@ -331,8 +331,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>GetCredentialsForIdentity</code> action.
      * @return A Java Future containing the result of the GetCredentialsForIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.GetCredentialsForIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCredentialsForIdentityResult> getCredentialsForIdentityAsync(
             GetCredentialsForIdentityRequest getCredentialsForIdentityRequest);
@@ -355,8 +355,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCredentialsForIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.GetCredentialsForIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCredentialsForIdentityResult> getCredentialsForIdentityAsync(
             GetCredentialsForIdentityRequest getCredentialsForIdentityRequest,
@@ -374,7 +374,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the GetId action.
      * @return A Java Future containing the result of the GetId operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.GetId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetIdResult> getIdAsync(GetIdRequest getIdRequest);
@@ -395,7 +395,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetId operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.GetId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetIdResult> getIdAsync(GetIdRequest getIdRequest, com.amazonaws.handlers.AsyncHandler<GetIdRequest, GetIdResult> asyncHandler);
@@ -412,8 +412,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>GetIdentityPoolRoles</code> action.
      * @return A Java Future containing the result of the GetIdentityPoolRoles operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.GetIdentityPoolRoles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetIdentityPoolRolesResult> getIdentityPoolRolesAsync(GetIdentityPoolRolesRequest getIdentityPoolRolesRequest);
 
@@ -433,8 +433,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetIdentityPoolRoles operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.GetIdentityPoolRoles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetIdentityPoolRolesResult> getIdentityPoolRolesAsync(GetIdentityPoolRolesRequest getIdentityPoolRolesRequest,
             com.amazonaws.handlers.AsyncHandler<GetIdentityPoolRolesRequest, GetIdentityPoolRolesResult> asyncHandler);
@@ -455,8 +455,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the GetOpenIdToken action.
      * @return A Java Future containing the result of the GetOpenIdToken operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.GetOpenIdToken
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetOpenIdTokenResult> getOpenIdTokenAsync(GetOpenIdTokenRequest getOpenIdTokenRequest);
 
@@ -480,8 +480,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOpenIdToken operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.GetOpenIdToken
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetOpenIdTokenResult> getOpenIdTokenAsync(GetOpenIdTokenRequest getOpenIdTokenRequest,
             com.amazonaws.handlers.AsyncHandler<GetOpenIdTokenRequest, GetOpenIdTokenResult> asyncHandler);
@@ -510,8 +510,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *         service.
      * @sample AmazonCognitoIdentityAsync.GetOpenIdTokenForDeveloperIdentity
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetOpenIdTokenForDeveloperIdentityResult> getOpenIdTokenForDeveloperIdentityAsync(
             GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest);
@@ -544,8 +544,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *         service.
      * @sample AmazonCognitoIdentityAsyncHandler.GetOpenIdTokenForDeveloperIdentity
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetOpenIdTokenForDeveloperIdentityResult> getOpenIdTokenForDeveloperIdentityAsync(
             GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest,
@@ -563,8 +563,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the ListIdentities action.
      * @return A Java Future containing the result of the ListIdentities operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.ListIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListIdentitiesResult> listIdentitiesAsync(ListIdentitiesRequest listIdentitiesRequest);
 
@@ -584,8 +584,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIdentities operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.ListIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListIdentitiesResult> listIdentitiesAsync(ListIdentitiesRequest listIdentitiesRequest,
             com.amazonaws.handlers.AsyncHandler<ListIdentitiesRequest, ListIdentitiesResult> asyncHandler);
@@ -602,8 +602,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the ListIdentityPools action.
      * @return A Java Future containing the result of the ListIdentityPools operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.ListIdentityPools
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListIdentityPoolsResult> listIdentityPoolsAsync(ListIdentityPoolsRequest listIdentityPoolsRequest);
 
@@ -623,8 +623,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIdentityPools operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.ListIdentityPools
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListIdentityPoolsResult> listIdentityPoolsAsync(ListIdentityPoolsRequest listIdentityPoolsRequest,
             com.amazonaws.handlers.AsyncHandler<ListIdentityPoolsRequest, ListIdentityPoolsResult> asyncHandler);
@@ -647,8 +647,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>LookupDeveloperIdentityInput</code> action.
      * @return A Java Future containing the result of the LookupDeveloperIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.LookupDeveloperIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<LookupDeveloperIdentityResult> lookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest);
 
@@ -674,8 +674,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the LookupDeveloperIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.LookupDeveloperIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<LookupDeveloperIdentityResult> lookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<LookupDeveloperIdentityRequest, LookupDeveloperIdentityResult> asyncHandler);
@@ -697,8 +697,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>MergeDeveloperIdentities</code> action.
      * @return A Java Future containing the result of the MergeDeveloperIdentities operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.MergeDeveloperIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<MergeDeveloperIdentitiesResult> mergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest);
 
@@ -723,8 +723,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the MergeDeveloperIdentities operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.MergeDeveloperIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<MergeDeveloperIdentitiesResult> mergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest,
             com.amazonaws.handlers.AsyncHandler<MergeDeveloperIdentitiesRequest, MergeDeveloperIdentitiesResult> asyncHandler);
@@ -742,8 +742,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>SetIdentityPoolRoles</code> action.
      * @return A Java Future containing the result of the SetIdentityPoolRoles operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.SetIdentityPoolRoles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<SetIdentityPoolRolesResult> setIdentityPoolRolesAsync(SetIdentityPoolRolesRequest setIdentityPoolRolesRequest);
 
@@ -764,8 +764,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetIdentityPoolRoles operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.SetIdentityPoolRoles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<SetIdentityPoolRolesResult> setIdentityPoolRolesAsync(SetIdentityPoolRolesRequest setIdentityPoolRolesRequest,
             com.amazonaws.handlers.AsyncHandler<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResult> asyncHandler);
@@ -784,8 +784,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>UnlinkDeveloperIdentity</code> action.
      * @return A Java Future containing the result of the UnlinkDeveloperIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.UnlinkDeveloperIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UnlinkDeveloperIdentityResult> unlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest);
 
@@ -807,8 +807,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UnlinkDeveloperIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.UnlinkDeveloperIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UnlinkDeveloperIdentityResult> unlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<UnlinkDeveloperIdentityRequest, UnlinkDeveloperIdentityResult> asyncHandler);
@@ -826,8 +826,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the UnlinkIdentity action.
      * @return A Java Future containing the result of the UnlinkIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.UnlinkIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UnlinkIdentityResult> unlinkIdentityAsync(UnlinkIdentityRequest unlinkIdentityRequest);
 
@@ -848,8 +848,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UnlinkIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.UnlinkIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UnlinkIdentityResult> unlinkIdentityAsync(UnlinkIdentityRequest unlinkIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<UnlinkIdentityRequest, UnlinkIdentityResult> asyncHandler);
@@ -866,8 +866,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        An object representing an Amazon Cognito identity pool.
      * @return A Java Future containing the result of the UpdateIdentityPool operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.UpdateIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateIdentityPoolResult> updateIdentityPoolAsync(UpdateIdentityPoolRequest updateIdentityPoolRequest);
 
@@ -887,8 +887,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateIdentityPool operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.UpdateIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateIdentityPoolResult> updateIdentityPoolAsync(UpdateIdentityPoolRequest updateIdentityPoolRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIdentityPoolRequest, UpdateIdentityPoolResult> asyncHandler);

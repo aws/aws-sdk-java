@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * @param deleteLexiconRequest
      * @return A Java Future containing the result of the DeleteLexicon operation returned by the service.
      * @sample AmazonPollyAsync.DeleteLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLexiconResult> deleteLexiconAsync(DeleteLexiconRequest deleteLexiconRequest);
 
@@ -70,7 +71,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteLexicon operation returned by the service.
      * @sample AmazonPollyAsyncHandler.DeleteLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteLexiconResult> deleteLexiconAsync(DeleteLexiconRequest deleteLexiconRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLexiconRequest, DeleteLexiconResult> asyncHandler);
@@ -101,7 +103,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * @param describeVoicesRequest
      * @return A Java Future containing the result of the DescribeVoices operation returned by the service.
      * @sample AmazonPollyAsync.DescribeVoices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeVoicesResult> describeVoicesAsync(DescribeVoicesRequest describeVoicesRequest);
 
@@ -135,7 +138,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeVoices operation returned by the service.
      * @sample AmazonPollyAsyncHandler.DescribeVoices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeVoicesResult> describeVoicesAsync(DescribeVoicesRequest describeVoicesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeVoicesRequest, DescribeVoicesResult> asyncHandler);
@@ -149,7 +153,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * @param getLexiconRequest
      * @return A Java Future containing the result of the GetLexicon operation returned by the service.
      * @sample AmazonPollyAsync.GetLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetLexiconResult> getLexiconAsync(GetLexiconRequest getLexiconRequest);
 
@@ -166,7 +171,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetLexicon operation returned by the service.
      * @sample AmazonPollyAsyncHandler.GetLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetLexiconResult> getLexiconAsync(GetLexiconRequest getLexiconRequest,
             com.amazonaws.handlers.AsyncHandler<GetLexiconRequest, GetLexiconResult> asyncHandler);
@@ -180,7 +186,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * @param listLexiconsRequest
      * @return A Java Future containing the result of the ListLexicons operation returned by the service.
      * @sample AmazonPollyAsync.ListLexicons
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListLexiconsResult> listLexiconsAsync(ListLexiconsRequest listLexiconsRequest);
 
@@ -197,7 +204,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListLexicons operation returned by the service.
      * @sample AmazonPollyAsyncHandler.ListLexicons
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListLexiconsResult> listLexiconsAsync(ListLexiconsRequest listLexiconsRequest,
             com.amazonaws.handlers.AsyncHandler<ListLexiconsRequest, ListLexiconsResult> asyncHandler);
@@ -216,7 +224,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * @param putLexiconRequest
      * @return A Java Future containing the result of the PutLexicon operation returned by the service.
      * @sample AmazonPollyAsync.PutLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutLexiconResult> putLexiconAsync(PutLexiconRequest putLexiconRequest);
 
@@ -238,7 +247,8 @@ public interface AmazonPollyAsync extends AmazonPolly {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutLexicon operation returned by the service.
      * @sample AmazonPollyAsyncHandler.PutLexicon
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutLexiconResult> putLexiconAsync(PutLexiconRequest putLexiconRequest,
             com.amazonaws.handlers.AsyncHandler<PutLexiconRequest, PutLexiconResult> asyncHandler);
@@ -254,7 +264,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * @param synthesizeSpeechRequest
      * @return A Java Future containing the result of the SynthesizeSpeech operation returned by the service.
      * @sample AmazonPollyAsync.SynthesizeSpeech
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SynthesizeSpeechResult> synthesizeSpeechAsync(SynthesizeSpeechRequest synthesizeSpeechRequest);
@@ -274,7 +284,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SynthesizeSpeech operation returned by the service.
      * @sample AmazonPollyAsyncHandler.SynthesizeSpeech
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SynthesizeSpeechResult> synthesizeSpeechAsync(SynthesizeSpeechRequest synthesizeSpeechRequest,

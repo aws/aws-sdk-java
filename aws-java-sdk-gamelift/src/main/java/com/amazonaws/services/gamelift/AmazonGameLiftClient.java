@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -628,7 +628,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue
      *         before retrying.
      * @sample AmazonGameLift.CreateAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
@@ -698,7 +699,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.CreateBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateBuildResult createBuild(CreateBuildRequest createBuildRequest) {
@@ -828,7 +830,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.CreateFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateFleetResult createFleet(CreateFleetRequest createFleetRequest) {
@@ -914,7 +917,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         A game session with this custom ID string already exists in this fleet. Resolve this conflict before
      *         retrying this request.
      * @sample AmazonGameLift.CreateGameSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -985,8 +988,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         A service resource associated with the request could not be found. Clients should not retry such
      *         requests.
      * @sample AmazonGameLift.CreatePlayerSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreatePlayerSessionResult createPlayerSession(CreatePlayerSessionRequest createPlayerSessionRequest) {
@@ -1057,8 +1060,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         A service resource associated with the request could not be found. Clients should not retry such
      *         requests.
      * @sample AmazonGameLift.CreatePlayerSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreatePlayerSessionsResult createPlayerSessions(CreatePlayerSessionsRequest createPlayerSessionsRequest) {
@@ -1112,7 +1115,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.DeleteAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
@@ -1169,7 +1173,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
      *         retrying.
      * @sample AmazonGameLift.DeleteBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteBuildResult deleteBuild(DeleteBuildRequest deleteBuildRequest) {
@@ -1230,7 +1235,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
      *         retrying.
      * @sample AmazonGameLift.DeleteFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
@@ -1284,8 +1290,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         A service resource associated with the request could not be found. Clients should not retry such
      *         requests.
      * @sample AmazonGameLift.DeleteScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
@@ -1339,7 +1345,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.DescribeAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1394,7 +1400,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.DescribeBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1461,8 +1467,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.DescribeEC2InstanceLimits
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeEC2InstanceLimitsResult describeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest) {
@@ -1526,8 +1532,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.DescribeFleetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeFleetAttributesResult describeFleetAttributes(DescribeFleetAttributesRequest describeFleetAttributesRequest) {
@@ -1592,8 +1598,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.DescribeFleetCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeFleetCapacityResult describeFleetCapacity(DescribeFleetCapacityRequest describeFleetCapacityRequest) {
@@ -1649,8 +1655,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
      *         retrying.
      * @sample AmazonGameLift.DescribeFleetEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeFleetEventsResult describeFleetEvents(DescribeFleetEventsRequest describeFleetEventsRequest) {
@@ -1706,8 +1712,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.DescribeFleetPortSettings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeFleetPortSettingsResult describeFleetPortSettings(DescribeFleetPortSettingsRequest describeFleetPortSettingsRequest) {
@@ -1771,8 +1777,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.DescribeFleetUtilization
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeFleetUtilizationResult describeFleetUtilization(DescribeFleetUtilizationRequest describeFleetUtilizationRequest) {
@@ -1840,8 +1846,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         in the routing strategy itself. Such requests should only be retried if the routing strategy for the
      *         specified alias is modified.
      * @sample AmazonGameLift.DescribeGameSessionDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeGameSessionDetailsResult describeGameSessionDetails(DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest) {
@@ -1910,8 +1916,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         in the routing strategy itself. Such requests should only be retried if the routing strategy for the
      *         specified alias is modified.
      * @sample AmazonGameLift.DescribeGameSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeGameSessionsResult describeGameSessions(DescribeGameSessionsRequest describeGameSessionsRequest) {
@@ -1970,7 +1976,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.DescribeInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2034,8 +2040,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.DescribePlayerSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribePlayerSessionsResult describePlayerSessions(DescribePlayerSessionsRequest describePlayerSessionsRequest) {
@@ -2090,8 +2096,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
      *         retrying.
      * @sample AmazonGameLift.DescribeRuntimeConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeRuntimeConfigurationResult describeRuntimeConfiguration(DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest) {
@@ -2151,8 +2157,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         A service resource associated with the request could not be found. Clients should not retry such
      *         requests.
      * @sample AmazonGameLift.DescribeScalingPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
@@ -2213,8 +2219,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
      *         retrying.
      * @sample AmazonGameLift.GetGameSessionLogUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public GetGameSessionLogUrlResult getGameSessionLogUrl(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest) {
@@ -2282,7 +2288,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.GetInstanceAccess
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2339,7 +2345,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.ListAliases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
@@ -2396,7 +2403,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.ListBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListBuildsResult listBuilds(ListBuildsRequest listBuildsRequest) {
@@ -2455,7 +2463,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.ListFleets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListFleetsResult listFleets(ListFleetsRequest listFleetsRequest) {
@@ -2531,7 +2540,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         A service resource associated with the request could not be found. Clients should not retry such
      *         requests.
      * @sample AmazonGameLift.PutScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2598,8 +2607,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.RequestUploadCredentials
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RequestUploadCredentialsResult requestUploadCredentials(RequestUploadCredentialsRequest requestUploadCredentialsRequest) {
@@ -2658,7 +2667,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.ResolveAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ResolveAliasResult resolveAlias(ResolveAliasRequest resolveAliasRequest) {
@@ -2776,8 +2786,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         in the routing strategy itself. Such requests should only be retried if the routing strategy for the
      *         specified alias is modified.
      * @sample AmazonGameLift.SearchGameSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public SearchGameSessionsResult searchGameSessions(SearchGameSessionsRequest searchGameSessionsRequest) {
@@ -2832,7 +2842,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.UpdateAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
@@ -2887,7 +2898,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @sample AmazonGameLift.UpdateBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateBuildResult updateBuild(UpdateBuildRequest updateBuildRequest) {
@@ -2950,8 +2962,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.UpdateFleetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateFleetAttributesResult updateFleetAttributes(UpdateFleetAttributesRequest updateFleetAttributesRequest) {
@@ -3028,8 +3040,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.UpdateFleetCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateFleetCapacityResult updateFleetCapacity(UpdateFleetCapacityRequest updateFleetCapacityRequest) {
@@ -3095,8 +3107,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
      * @sample AmazonGameLift.UpdateFleetPortSettings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateFleetPortSettingsResult updateFleetPortSettings(UpdateFleetPortSettingsRequest updateFleetPortSettingsRequest) {
@@ -3160,7 +3172,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
      *         retrying.
      * @sample AmazonGameLift.UpdateGameSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3230,8 +3242,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *         The requested operation would cause a conflict with the current state of a resource associated with the
      *         request and/or the fleet. Resolve the conflict before retrying.
      * @sample AmazonGameLift.UpdateRuntimeConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest) {

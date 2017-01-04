@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -166,7 +166,7 @@ public interface AWSCodeBuild {
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.BatchGetBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds" target="_top">AWS API
      *      Documentation</a>
      */
     BatchGetBuildsResult batchGetBuilds(BatchGetBuildsRequest batchGetBuildsRequest);
@@ -181,7 +181,7 @@ public interface AWSCodeBuild {
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.BatchGetProjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects" target="_top">AWS API
      *      Documentation</a>
      */
     BatchGetProjectsResult batchGetProjects(BatchGetProjectsRequest batchGetProjectsRequest);
@@ -201,7 +201,7 @@ public interface AWSCodeBuild {
      * @throws AccountLimitExceededException
      *         An AWS service limit was exceeded for the calling AWS account.
      * @sample AWSCodeBuild.CreateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject" target="_top">AWS API
      *      Documentation</a>
      */
     CreateProjectResult createProject(CreateProjectRequest createProjectRequest);
@@ -216,7 +216,7 @@ public interface AWSCodeBuild {
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.DeleteProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest);
@@ -231,7 +231,8 @@ public interface AWSCodeBuild {
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.ListBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds" target="_top">AWS API
+     *      Documentation</a>
      */
     ListBuildsResult listBuilds(ListBuildsRequest listBuildsRequest);
 
@@ -247,8 +248,8 @@ public interface AWSCodeBuild {
      * @throws ResourceNotFoundException
      *         The specified AWS resource cannot be found.
      * @sample AWSCodeBuild.ListBuildsForProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject" target="_top">AWS
+     *      API Documentation</a>
      */
     ListBuildsForProjectResult listBuildsForProject(ListBuildsForProjectRequest listBuildsForProjectRequest);
 
@@ -260,8 +261,8 @@ public interface AWSCodeBuild {
      * @param listCuratedEnvironmentImagesRequest
      * @return Result of the ListCuratedEnvironmentImages operation returned by the service.
      * @sample AWSCodeBuild.ListCuratedEnvironmentImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages"
+     *      target="_top">AWS API Documentation</a>
      */
     ListCuratedEnvironmentImagesResult listCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest listCuratedEnvironmentImagesRequest);
 
@@ -275,7 +276,7 @@ public interface AWSCodeBuild {
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.ListProjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects" target="_top">AWS API
      *      Documentation</a>
      */
     ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
@@ -294,7 +295,8 @@ public interface AWSCodeBuild {
      * @throws AccountLimitExceededException
      *         An AWS service limit was exceeded for the calling AWS account.
      * @sample AWSCodeBuild.StartBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     StartBuildResult startBuild(StartBuildRequest startBuildRequest);
 
@@ -315,7 +317,8 @@ public interface AWSCodeBuild {
      * @throws ResourceNotFoundException
      *         The specified AWS resource cannot be found.
      * @sample AWSCodeBuild.StopBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     StopBuildResult stopBuild(StopBuildRequest stopBuildRequest);
 
@@ -331,7 +334,7 @@ public interface AWSCodeBuild {
      * @throws ResourceNotFoundException
      *         The specified AWS resource cannot be found.
      * @sample AWSCodeBuild.UpdateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);

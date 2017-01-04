@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import java.io.Serializable;
  * A complex type that describes function metadata.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode" target="_top">AWS API
+ *      Documentation</a>
  */
 public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
@@ -109,7 +110,7 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
     private VpcConfigResponse vpcConfig;
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -732,11 +733,11 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
      *        topic.
      */
 
@@ -746,10 +747,10 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
-     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
+     * @return The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon
      *         SNS topic.
      */
 
@@ -759,11 +760,11 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
      *        topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

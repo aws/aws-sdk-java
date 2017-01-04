@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy" target="_top">AWS API
  *      Documentation</a>
  */
 public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -42,10 +42,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyInputList;
@@ -81,10 +81,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String resourcePolicy;
@@ -314,19 +314,20 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @return An optional list of additional policy documents to include in the simulation. Each document is specified
      *         as a string containing the complete, valid JSON text of an IAM policy.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
-     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
-     *         and carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *         feed ( ), and carriage return ( ).
      */
 
     public java.util.List<String> getPolicyInputList() {
@@ -342,20 +343,21 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyInputList
      *        An optional list of additional policy documents to include in the simulation. Each document is specified
      *        as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      */
 
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
@@ -373,10 +375,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -388,10 +390,11 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        An optional list of additional policy documents to include in the simulation. Each document is specified
      *        as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -411,20 +414,21 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyInputList
      *        An optional list of additional policy documents to include in the simulation. Each document is specified
      *        as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -693,10 +697,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param resourcePolicy
@@ -704,10 +708,11 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        is treated as if it had this policy attached. You can include only one resource-based policy in a
      *        simulation.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      */
 
     public void setResourcePolicy(String resourcePolicy) {
@@ -720,20 +725,21 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @return A resource-based policy to include in the simulation provided as a string. Each resource in the
      *         simulation is treated as if it had this policy attached. You can include only one resource-based policy
      *         in a simulation.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
-     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
-     *         and carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *         feed ( ), and carriage return ( ).
      */
 
     public String getResourcePolicy() {
@@ -746,10 +752,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param resourcePolicy
@@ -757,10 +763,11 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        is treated as if it had this policy attached. You can include only one resource-based policy in a
      *        simulation.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

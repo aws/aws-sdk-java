@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import java.io.Serializable;
  * Represents the DynamoDB Streams configuration for a table in DynamoDB.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/StreamSpecification"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/StreamSpecification" target="_top">AWS API
  *      Documentation</a>
  */
 public class StreamSpecification implements Serializable, Cloneable {

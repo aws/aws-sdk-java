@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -486,8 +486,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws JobNotFoundException
      *         The specified job was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.AcknowledgeJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public AcknowledgeJobResult acknowledgeJob(AcknowledgeJobRequest acknowledgeJobRequest) {
@@ -537,8 +537,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidClientTokenException
      *         The client token was specified in an invalid format
      * @sample AWSCodePipeline.AcknowledgeThirdPartyJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AcknowledgeThirdPartyJobResult acknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest acknowledgeThirdPartyJobRequest) {
@@ -586,8 +586,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws LimitExceededException
      *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
      * @sample AWSCodePipeline.CreateCustomActionType
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateCustomActionTypeResult createCustomActionType(CreateCustomActionTypeRequest createCustomActionTypeRequest) {
@@ -644,8 +644,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws LimitExceededException
      *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
      * @sample AWSCodePipeline.CreatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
@@ -696,8 +696,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.DeleteCustomActionType
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteCustomActionTypeResult deleteCustomActionType(DeleteCustomActionTypeRequest deleteCustomActionTypeRequest) {
@@ -742,8 +742,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.DeletePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
@@ -791,8 +791,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws StageNotFoundException
      *         The specified stage was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.DisableStageTransition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DisableStageTransitionResult disableStageTransition(DisableStageTransitionRequest disableStageTransitionRequest) {
@@ -841,8 +841,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws StageNotFoundException
      *         The specified stage was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.EnableStageTransition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public EnableStageTransitionResult enableStageTransition(EnableStageTransitionRequest enableStageTransitionRequest) {
@@ -896,7 +896,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws JobNotFoundException
      *         The specified job was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.GetJobDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -947,7 +947,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws PipelineVersionNotFoundException
      *         The specified pipeline version was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.GetPipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -998,8 +998,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not
      *         belong to the specified pipeline.
      * @sample AWSCodePipeline.GetPipelineExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetPipelineExecutionResult getPipelineExecution(GetPipelineExecutionRequest getPipelineExecutionRequest) {
@@ -1045,8 +1045,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws PipelineNotFoundException
      *         The specified pipeline was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.GetPipelineState
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public GetPipelineStateResult getPipelineState(GetPipelineStateRequest getPipelineStateRequest) {
@@ -1103,8 +1103,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidJobException
      *         The specified job was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.GetThirdPartyJobDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetThirdPartyJobDetailsResult getThirdPartyJobDetails(GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest) {
@@ -1152,8 +1152,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         The next token was specified in an invalid format. Make sure that the next token you provided is the
      *         token returned by a previous call.
      * @sample AWSCodePipeline.ListActionTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListActionTypesResult listActionTypes(ListActionTypesRequest listActionTypesRequest) {
@@ -1198,7 +1198,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         The next token was specified in an invalid format. Make sure that the next token you provided is the
      *         token returned by a previous call.
      * @sample AWSCodePipeline.ListPipelines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1252,7 +1252,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws ActionTypeNotFoundException
      *         The specified action type cannot be found.
      * @sample AWSCodePipeline.PollForJobs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1305,8 +1305,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.PollForThirdPartyJobs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PollForThirdPartyJobsResult pollForThirdPartyJobs(PollForThirdPartyJobsRequest pollForThirdPartyJobsRequest) {
@@ -1357,8 +1357,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.PutActionRevision
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public PutActionRevisionResult putActionRevision(PutActionRevisionRequest putActionRevisionRequest) {
@@ -1413,8 +1413,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.PutApprovalResult
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public PutApprovalResultResult putApprovalResult(PutApprovalResultRequest putApprovalResultRequest) {
@@ -1462,8 +1462,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidJobStateException
      *         The specified job state was specified in an invalid format.
      * @sample AWSCodePipeline.PutJobFailureResult
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PutJobFailureResultResult putJobFailureResult(PutJobFailureResultRequest putJobFailureResultRequest) {
@@ -1511,8 +1511,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidJobStateException
      *         The specified job state was specified in an invalid format.
      * @sample AWSCodePipeline.PutJobSuccessResult
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PutJobSuccessResultResult putJobSuccessResult(PutJobSuccessResultRequest putJobSuccessResultRequest) {
@@ -1563,8 +1563,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidClientTokenException
      *         The client token was specified in an invalid format
      * @sample AWSCodePipeline.PutThirdPartyJobFailureResult
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PutThirdPartyJobFailureResultResult putThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest) {
@@ -1617,8 +1617,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidClientTokenException
      *         The client token was specified in an invalid format
      * @sample AWSCodePipeline.PutThirdPartyJobSuccessResult
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PutThirdPartyJobSuccessResultResult putThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest) {
@@ -1675,8 +1675,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the
      *         request is out of date.
      * @sample AWSCodePipeline.RetryStageExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RetryStageExecutionResult retryStageExecution(RetryStageExecutionRequest retryStageExecutionRequest) {
@@ -1723,8 +1723,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws PipelineNotFoundException
      *         The specified pipeline was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.StartPipelineExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public StartPipelineExecutionResult startPipelineExecution(StartPipelineExecutionRequest startPipelineExecutionRequest) {
@@ -1779,8 +1779,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidStructureException
      *         The specified structure was specified in an invalid format.
      * @sample AWSCodePipeline.UpdatePipeline
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) {

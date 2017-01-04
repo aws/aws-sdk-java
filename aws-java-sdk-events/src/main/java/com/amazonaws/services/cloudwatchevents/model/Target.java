@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ import java.io.Serializable;
  * <li><b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this constant.</li>
  * </ul>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target" target="_top">AWS API
+ *      Documentation</a>
  */
 public class Target implements Serializable, Cloneable {
 

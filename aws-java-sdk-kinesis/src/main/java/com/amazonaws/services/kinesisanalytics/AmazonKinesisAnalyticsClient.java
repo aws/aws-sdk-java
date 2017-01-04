@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -284,8 +284,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.AddApplicationInput
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AddApplicationInputResult addApplicationInput(AddApplicationInputRequest addApplicationInputRequest) {
@@ -359,8 +359,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.AddApplicationOutput
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest addApplicationOutputRequest) {
@@ -426,8 +426,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.AddApplicationReferenceDataSource
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(
@@ -506,8 +506,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @sample AmazonKinesisAnalytics.CreateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
@@ -560,8 +560,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ResourceInUseException
      *         Application is not available for this operation.
      * @sample AmazonKinesisAnalytics.DeleteApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
@@ -613,8 +613,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.DeleteApplicationOutput
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest deleteApplicationOutputRequest) {
@@ -674,8 +674,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.DeleteApplicationReferenceDataSource
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(
@@ -729,8 +729,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @sample AmazonKinesisAnalytics.DescribeApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeApplicationResult describeApplication(DescribeApplicationRequest describeApplicationRequest) {
@@ -790,8 +790,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         Discovery failed to get a record from the streaming source because of the Kinesis Streams
      *         ProvisionedThroughputExceededException.
      * @sample AmazonKinesisAnalytics.DiscoverInputSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest discoverInputSchemaRequest) {
@@ -842,8 +842,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @param listApplicationsRequest
      * @return Result of the ListApplications operation returned by the service.
      * @sample AmazonKinesisAnalytics.ListApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) {
@@ -908,8 +908,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws InvalidApplicationConfigurationException
      *         User-provided application configuration is not valid.
      * @sample AmazonKinesisAnalytics.StartApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public StartApplicationResult startApplication(StartApplicationRequest startApplicationRequest) {
@@ -960,8 +960,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ResourceInUseException
      *         Application is not available for this operation.
      * @sample AmazonKinesisAnalytics.StopApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public StopApplicationResult stopApplication(StopApplicationRequest stopApplicationRequest) {
@@ -1021,8 +1021,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.UpdateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {

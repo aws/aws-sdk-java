@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"], the
      * service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes).
-     * If you specify all attributes, Rekognition performs additional detection.
+     * If you specify all attributes, Amazon Rekognition performs additional detection.
      * </p>
      */
     private java.util.List<String> attributes;
@@ -84,7 +84,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"], the
      * service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes).
-     * If you specify all attributes, Rekognition performs additional detection.
+     * If you specify all attributes, Amazon Rekognition performs additional detection.
      * </p>
      * 
      * @return A list of facial attributes you would like to be returned. By default, the API returns subset of facial
@@ -92,7 +92,8 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
      *         "DEFAULT"], the service uses a logical AND operator to determine which attributes to return (in this
-     *         case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.
+     *         case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional
+     *         detection.
      * @see Attribute
      */
 
@@ -108,7 +109,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"], the
      * service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes).
-     * If you specify all attributes, Rekognition performs additional detection.
+     * If you specify all attributes, Amazon Rekognition performs additional detection.
      * </p>
      * 
      * @param attributes
@@ -117,7 +118,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
      *        "DEFAULT"], the service uses a logical AND operator to determine which attributes to return (in this case,
-     *        it is all attributes). If you specify all attributes, Rekognition performs additional detection.
+     *        it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.
      * @see Attribute
      */
 
@@ -138,7 +139,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"], the
      * service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes).
-     * If you specify all attributes, Rekognition performs additional detection.
+     * If you specify all attributes, Amazon Rekognition performs additional detection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,7 +153,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
      *        "DEFAULT"], the service uses a logical AND operator to determine which attributes to return (in this case,
-     *        it is all attributes). If you specify all attributes, Rekognition performs additional detection.
+     *        it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */
@@ -175,7 +176,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"], the
      * service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes).
-     * If you specify all attributes, Rekognition performs additional detection.
+     * If you specify all attributes, Amazon Rekognition performs additional detection.
      * </p>
      * 
      * @param attributes
@@ -184,7 +185,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
      *        "DEFAULT"], the service uses a logical AND operator to determine which attributes to return (in this case,
-     *        it is all attributes). If you specify all attributes, Rekognition performs additional detection.
+     *        it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */
@@ -202,7 +203,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"], the
      * service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes).
-     * If you specify all attributes, Rekognition performs additional detection.
+     * If you specify all attributes, Amazon Rekognition performs additional detection.
      * </p>
      * 
      * @param attributes
@@ -211,7 +212,7 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
      *        "DEFAULT"], the service uses a logical AND operator to determine which attributes to return (in this case,
-     *        it is all attributes). If you specify all attributes, Rekognition performs additional detection.
+     *        it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */

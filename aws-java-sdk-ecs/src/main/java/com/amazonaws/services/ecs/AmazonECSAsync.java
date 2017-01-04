@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param createClusterRequest
      * @return A Java Future containing the result of the CreateCluster operation returned by the service.
      * @sample AmazonECSAsync.CreateCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest createClusterRequest);
 
@@ -67,7 +68,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateCluster operation returned by the service.
      * @sample AmazonECSAsyncHandler.CreateCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest createClusterRequest,
             com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler);
@@ -164,7 +166,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param createServiceRequest
      * @return A Java Future containing the result of the CreateService operation returned by the service.
      * @sample AmazonECSAsync.CreateService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateServiceResult> createServiceAsync(CreateServiceRequest createServiceRequest);
 
@@ -249,7 +252,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateService operation returned by the service.
      * @sample AmazonECSAsyncHandler.CreateService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateServiceResult> createServiceAsync(CreateServiceRequest createServiceRequest,
             com.amazonaws.handlers.AsyncHandler<CreateServiceRequest, CreateServiceResult> asyncHandler);
@@ -262,7 +266,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param deleteAttributesRequest
      * @return A Java Future containing the result of the DeleteAttributes operation returned by the service.
      * @sample AmazonECSAsync.DeleteAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest deleteAttributesRequest);
 
@@ -278,7 +283,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAttributes operation returned by the service.
      * @sample AmazonECSAsyncHandler.DeleteAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest deleteAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAttributesRequest, DeleteAttributesResult> asyncHandler);
@@ -293,7 +299,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param deleteClusterRequest
      * @return A Java Future containing the result of the DeleteCluster operation returned by the service.
      * @sample AmazonECSAsync.DeleteCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest);
 
@@ -311,7 +318,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteCluster operation returned by the service.
      * @sample AmazonECSAsyncHandler.DeleteCluster
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler);
@@ -338,7 +346,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param deleteServiceRequest
      * @return A Java Future containing the result of the DeleteService operation returned by the service.
      * @sample AmazonECSAsync.DeleteService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteServiceResult> deleteServiceAsync(DeleteServiceRequest deleteServiceRequest);
 
@@ -368,7 +377,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteService operation returned by the service.
      * @sample AmazonECSAsyncHandler.DeleteService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteServiceResult> deleteServiceAsync(DeleteServiceRequest deleteServiceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler);
@@ -399,8 +409,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param deregisterContainerInstanceRequest
      * @return A Java Future containing the result of the DeregisterContainerInstance operation returned by the service.
      * @sample AmazonECSAsync.DeregisterContainerInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterContainerInstanceResult> deregisterContainerInstanceAsync(
             DeregisterContainerInstanceRequest deregisterContainerInstanceRequest);
@@ -435,8 +445,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeregisterContainerInstance operation returned by the service.
      * @sample AmazonECSAsyncHandler.DeregisterContainerInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterContainerInstanceResult> deregisterContainerInstanceAsync(
             DeregisterContainerInstanceRequest deregisterContainerInstanceRequest,
@@ -458,8 +468,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param deregisterTaskDefinitionRequest
      * @return A Java Future containing the result of the DeregisterTaskDefinition operation returned by the service.
      * @sample AmazonECSAsync.DeregisterTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest);
 
@@ -483,8 +493,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeregisterTaskDefinition operation returned by the service.
      * @sample AmazonECSAsyncHandler.DeregisterTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterTaskDefinitionRequest, DeregisterTaskDefinitionResult> asyncHandler);
@@ -497,7 +507,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param describeClustersRequest
      * @return A Java Future containing the result of the DescribeClusters operation returned by the service.
      * @sample AmazonECSAsync.DescribeClusters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(DescribeClustersRequest describeClustersRequest);
 
@@ -513,7 +524,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeClusters operation returned by the service.
      * @sample AmazonECSAsyncHandler.DescribeClusters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(DescribeClustersRequest describeClustersRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler);
@@ -542,8 +554,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param describeContainerInstancesRequest
      * @return A Java Future containing the result of the DescribeContainerInstances operation returned by the service.
      * @sample AmazonECSAsync.DescribeContainerInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeContainerInstancesResult> describeContainerInstancesAsync(
             DescribeContainerInstancesRequest describeContainerInstancesRequest);
@@ -561,8 +573,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeContainerInstances operation returned by the service.
      * @sample AmazonECSAsyncHandler.DescribeContainerInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeContainerInstancesResult> describeContainerInstancesAsync(
             DescribeContainerInstancesRequest describeContainerInstancesRequest,
@@ -576,7 +588,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param describeServicesRequest
      * @return A Java Future containing the result of the DescribeServices operation returned by the service.
      * @sample AmazonECSAsync.DescribeServices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(DescribeServicesRequest describeServicesRequest);
 
@@ -592,7 +605,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeServices operation returned by the service.
      * @sample AmazonECSAsyncHandler.DescribeServices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(DescribeServicesRequest describeServicesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler);
@@ -612,7 +626,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param describeTaskDefinitionRequest
      * @return A Java Future containing the result of the DescribeTaskDefinition operation returned by the service.
      * @sample AmazonECSAsync.DescribeTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTaskDefinitionResult> describeTaskDefinitionAsync(DescribeTaskDefinitionRequest describeTaskDefinitionRequest);
@@ -636,7 +650,7 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTaskDefinition operation returned by the service.
      * @sample AmazonECSAsyncHandler.DescribeTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTaskDefinitionResult> describeTaskDefinitionAsync(DescribeTaskDefinitionRequest describeTaskDefinitionRequest,
@@ -650,7 +664,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param describeTasksRequest
      * @return A Java Future containing the result of the DescribeTasks operation returned by the service.
      * @sample AmazonECSAsync.DescribeTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTasksResult> describeTasksAsync(DescribeTasksRequest describeTasksRequest);
 
@@ -666,7 +681,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTasks operation returned by the service.
      * @sample AmazonECSAsyncHandler.DescribeTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeTasksResult> describeTasksAsync(DescribeTasksRequest describeTasksRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTasksRequest, DescribeTasksResult> asyncHandler);
@@ -685,7 +701,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param discoverPollEndpointRequest
      * @return A Java Future containing the result of the DiscoverPollEndpoint operation returned by the service.
      * @sample AmazonECSAsync.DiscoverPollEndpoint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(DiscoverPollEndpointRequest discoverPollEndpointRequest);
@@ -708,7 +724,7 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DiscoverPollEndpoint operation returned by the service.
      * @sample AmazonECSAsyncHandler.DiscoverPollEndpoint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(DiscoverPollEndpointRequest discoverPollEndpointRequest,
@@ -741,7 +757,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param listAttributesRequest
      * @return A Java Future containing the result of the ListAttributes operation returned by the service.
      * @sample AmazonECSAsync.ListAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(ListAttributesRequest listAttributesRequest);
 
@@ -761,7 +778,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAttributes operation returned by the service.
      * @sample AmazonECSAsyncHandler.ListAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(ListAttributesRequest listAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAttributesRequest, ListAttributesResult> asyncHandler);
@@ -774,7 +792,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param listClustersRequest
      * @return A Java Future containing the result of the ListClusters operation returned by the service.
      * @sample AmazonECSAsync.ListClusters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest);
 
@@ -790,7 +809,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListClusters operation returned by the service.
      * @sample AmazonECSAsyncHandler.ListClusters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest,
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler);
@@ -821,7 +841,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param listContainerInstancesRequest
      * @return A Java Future containing the result of the ListContainerInstances operation returned by the service.
      * @sample AmazonECSAsync.ListContainerInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListContainerInstancesResult> listContainerInstancesAsync(ListContainerInstancesRequest listContainerInstancesRequest);
@@ -842,7 +862,7 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListContainerInstances operation returned by the service.
      * @sample AmazonECSAsyncHandler.ListContainerInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListContainerInstancesResult> listContainerInstancesAsync(ListContainerInstancesRequest listContainerInstancesRequest,
@@ -871,7 +891,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param listServicesRequest
      * @return A Java Future containing the result of the ListServices operation returned by the service.
      * @sample AmazonECSAsync.ListServices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListServicesResult> listServicesAsync(ListServicesRequest listServicesRequest);
 
@@ -887,7 +908,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListServices operation returned by the service.
      * @sample AmazonECSAsyncHandler.ListServices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListServicesResult> listServicesAsync(ListServicesRequest listServicesRequest,
             com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler);
@@ -920,8 +942,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param listTaskDefinitionFamiliesRequest
      * @return A Java Future containing the result of the ListTaskDefinitionFamilies operation returned by the service.
      * @sample AmazonECSAsync.ListTaskDefinitionFamilies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(
             ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest);
@@ -944,8 +966,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTaskDefinitionFamilies operation returned by the service.
      * @sample AmazonECSAsyncHandler.ListTaskDefinitionFamilies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(
             ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest,
@@ -975,7 +997,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param listTaskDefinitionsRequest
      * @return A Java Future containing the result of the ListTaskDefinitions operation returned by the service.
      * @sample AmazonECSAsync.ListTaskDefinitions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(ListTaskDefinitionsRequest listTaskDefinitionsRequest);
@@ -993,7 +1015,7 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTaskDefinitions operation returned by the service.
      * @sample AmazonECSAsyncHandler.ListTaskDefinitions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(ListTaskDefinitionsRequest listTaskDefinitionsRequest,
@@ -1028,7 +1050,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param listTasksRequest
      * @return A Java Future containing the result of the ListTasks operation returned by the service.
      * @sample AmazonECSAsync.ListTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTasksResult> listTasksAsync(ListTasksRequest listTasksRequest);
 
@@ -1050,7 +1073,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTasks operation returned by the service.
      * @sample AmazonECSAsyncHandler.ListTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListTasksResult> listTasksAsync(ListTasksRequest listTasksRequest,
             com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler);
@@ -1078,7 +1102,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param putAttributesRequest
      * @return A Java Future containing the result of the PutAttributes operation returned by the service.
      * @sample AmazonECSAsync.PutAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest putAttributesRequest);
 
@@ -1095,7 +1120,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutAttributes operation returned by the service.
      * @sample AmazonECSAsyncHandler.PutAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest putAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult> asyncHandler);
@@ -1114,8 +1140,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param registerContainerInstanceRequest
      * @return A Java Future containing the result of the RegisterContainerInstance operation returned by the service.
      * @sample AmazonECSAsync.RegisterContainerInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<RegisterContainerInstanceResult> registerContainerInstanceAsync(
             RegisterContainerInstanceRequest registerContainerInstanceRequest);
@@ -1138,8 +1164,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterContainerInstance operation returned by the service.
      * @sample AmazonECSAsyncHandler.RegisterContainerInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<RegisterContainerInstanceResult> registerContainerInstanceAsync(
             RegisterContainerInstanceRequest registerContainerInstanceRequest,
@@ -1170,7 +1196,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param registerTaskDefinitionRequest
      * @return A Java Future containing the result of the RegisterTaskDefinition operation returned by the service.
      * @sample AmazonECSAsync.RegisterTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<RegisterTaskDefinitionResult> registerTaskDefinitionAsync(RegisterTaskDefinitionRequest registerTaskDefinitionRequest);
@@ -1204,7 +1230,7 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterTaskDefinition operation returned by the service.
      * @sample AmazonECSAsyncHandler.RegisterTaskDefinition
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<RegisterTaskDefinitionResult> registerTaskDefinitionAsync(RegisterTaskDefinitionRequest registerTaskDefinitionRequest,
@@ -1228,7 +1254,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param runTaskRequest
      * @return A Java Future containing the result of the RunTask operation returned by the service.
      * @sample AmazonECSAsync.RunTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RunTaskResult> runTaskAsync(RunTaskRequest runTaskRequest);
 
@@ -1254,7 +1281,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RunTask operation returned by the service.
      * @sample AmazonECSAsyncHandler.RunTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<RunTaskResult> runTaskAsync(RunTaskRequest runTaskRequest,
             com.amazonaws.handlers.AsyncHandler<RunTaskRequest, RunTaskResult> asyncHandler);
@@ -1272,7 +1300,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param startTaskRequest
      * @return A Java Future containing the result of the StartTask operation returned by the service.
      * @sample AmazonECSAsync.StartTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartTaskResult> startTaskAsync(StartTaskRequest startTaskRequest);
 
@@ -1293,7 +1322,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartTask operation returned by the service.
      * @sample AmazonECSAsyncHandler.StartTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartTaskResult> startTaskAsync(StartTaskRequest startTaskRequest,
             com.amazonaws.handlers.AsyncHandler<StartTaskRequest, StartTaskResult> asyncHandler);
@@ -1312,7 +1342,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param stopTaskRequest
      * @return A Java Future containing the result of the StopTask operation returned by the service.
      * @sample AmazonECSAsync.StopTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopTaskResult> stopTaskAsync(StopTaskRequest stopTaskRequest);
 
@@ -1334,7 +1365,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopTask operation returned by the service.
      * @sample AmazonECSAsyncHandler.StopTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopTaskResult> stopTaskAsync(StopTaskRequest stopTaskRequest,
             com.amazonaws.handlers.AsyncHandler<StopTaskRequest, StopTaskResult> asyncHandler);
@@ -1353,8 +1385,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param submitContainerStateChangeRequest
      * @return A Java Future containing the result of the SubmitContainerStateChange operation returned by the service.
      * @sample AmazonECSAsync.SubmitContainerStateChange
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(
             SubmitContainerStateChangeRequest submitContainerStateChangeRequest);
@@ -1377,8 +1409,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SubmitContainerStateChange operation returned by the service.
      * @sample AmazonECSAsyncHandler.SubmitContainerStateChange
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(
             SubmitContainerStateChangeRequest submitContainerStateChangeRequest,
@@ -1413,7 +1445,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param submitTaskStateChangeRequest
      * @return A Java Future containing the result of the SubmitTaskStateChange operation returned by the service.
      * @sample AmazonECSAsync.SubmitTaskStateChange
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SubmitTaskStateChangeResult> submitTaskStateChangeAsync(SubmitTaskStateChangeRequest submitTaskStateChangeRequest);
@@ -1436,7 +1468,7 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SubmitTaskStateChange operation returned by the service.
      * @sample AmazonECSAsyncHandler.SubmitTaskStateChange
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SubmitTaskStateChangeResult> submitTaskStateChangeAsync(SubmitTaskStateChangeRequest submitTaskStateChangeRequest,
@@ -1460,7 +1492,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param updateContainerAgentRequest
      * @return A Java Future containing the result of the UpdateContainerAgent operation returned by the service.
      * @sample AmazonECSAsync.UpdateContainerAgent
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateContainerAgentResult> updateContainerAgentAsync(UpdateContainerAgentRequest updateContainerAgentRequest);
@@ -1487,7 +1519,7 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateContainerAgent operation returned by the service.
      * @sample AmazonECSAsyncHandler.UpdateContainerAgent
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateContainerAgentResult> updateContainerAgentAsync(UpdateContainerAgentRequest updateContainerAgentRequest,
@@ -1586,7 +1618,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * @param updateServiceRequest
      * @return A Java Future containing the result of the UpdateService operation returned by the service.
      * @sample AmazonECSAsync.UpdateService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest updateServiceRequest);
 
@@ -1687,7 +1720,8 @@ public interface AmazonECSAsync extends AmazonECS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateService operation returned by the service.
      * @sample AmazonECSAsyncHandler.UpdateService
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest updateServiceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceRequest, UpdateServiceResult> asyncHandler);

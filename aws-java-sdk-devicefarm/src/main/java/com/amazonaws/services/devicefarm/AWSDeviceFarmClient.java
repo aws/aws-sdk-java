@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -264,8 +264,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.CreateDevicePool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateDevicePoolResult createDevicePool(CreateDevicePoolRequest createDevicePoolRequest) {
@@ -315,7 +315,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.CreateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -366,8 +366,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.CreateRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateRemoteAccessSessionResult createRemoteAccessSession(CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest) {
@@ -418,7 +418,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.CreateUpload
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -469,8 +469,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteDevicePool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest deleteDevicePoolRequest) {
@@ -523,7 +523,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -574,8 +574,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteRemoteAccessSessionResult deleteRemoteAccessSession(DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest) {
@@ -629,7 +629,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteRun
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest) {
@@ -679,7 +680,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteUpload
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -730,8 +731,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetAccountSettings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
@@ -781,7 +782,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetDevice
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest) {
@@ -831,7 +833,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetDevicePool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -882,8 +884,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetDevicePoolCompatibility
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetDevicePoolCompatibilityResult getDevicePoolCompatibility(GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest) {
@@ -934,7 +936,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetJobResult getJob(GetJobRequest getJobRequest) {
@@ -990,8 +993,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetOfferingStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public GetOfferingStatusResult getOfferingStatus(GetOfferingStatusRequest getOfferingStatusRequest) {
@@ -1041,7 +1044,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetProjectResult getProject(GetProjectRequest getProjectRequest) {
@@ -1091,8 +1095,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetRemoteAccessSessionResult getRemoteAccessSession(GetRemoteAccessSessionRequest getRemoteAccessSessionRequest) {
@@ -1143,7 +1147,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetRun
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetRunResult getRun(GetRunRequest getRunRequest) {
@@ -1193,7 +1198,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetSuite
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetSuiteResult getSuite(GetSuiteRequest getSuiteRequest) {
@@ -1243,7 +1249,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetTest
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetTestResult getTest(GetTestRequest getTestRequest) {
@@ -1293,7 +1300,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetUpload
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetUploadResult getUpload(GetUploadRequest getUploadRequest) {
@@ -1345,8 +1353,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.InstallToRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public InstallToRemoteAccessSessionResult installToRemoteAccessSession(InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest) {
@@ -1398,7 +1406,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListArtifacts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1449,7 +1457,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListDevicePools
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1500,7 +1508,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListDevices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1551,7 +1559,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListJobs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
@@ -1607,8 +1616,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListOfferingTransactions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListOfferingTransactionsResult listOfferingTransactions(ListOfferingTransactionsRequest listOfferingTransactionsRequest) {
@@ -1665,7 +1674,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListOfferings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1716,7 +1725,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListProjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1767,8 +1776,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListRemoteAccessSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListRemoteAccessSessionsResult listRemoteAccessSessions(ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest) {
@@ -1819,7 +1828,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListRuns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListRunsResult listRuns(ListRunsRequest listRunsRequest) {
@@ -1869,7 +1879,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListSamples
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1920,7 +1930,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListSuites
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListSuitesResult listSuites(ListSuitesRequest listSuitesRequest) {
@@ -1970,7 +1981,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListTests
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTestsResult listTests(ListTestsRequest listTestsRequest) {
@@ -2020,8 +2032,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListUniqueProblems
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListUniqueProblemsResult listUniqueProblems(ListUniqueProblemsRequest listUniqueProblemsRequest) {
@@ -2071,7 +2083,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListUploads
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2128,8 +2140,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.PurchaseOffering
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest) {
@@ -2185,7 +2197,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.RenewOffering
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2238,7 +2250,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ScheduleRun
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2289,8 +2301,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.StopRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public StopRemoteAccessSessionResult stopRemoteAccessSession(StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest) {
@@ -2344,7 +2356,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.StopRun
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public StopRunResult stopRun(StopRunRequest stopRunRequest) {
@@ -2395,8 +2408,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.UpdateDevicePool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest updateDevicePoolRequest) {
@@ -2446,7 +2459,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.UpdateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject" target="_top">AWS API
      *      Documentation</a>
      */
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ID of the collection to search.
+     * ID of the collection the face belongs to.
      * </p>
      */
     private String collectionId;
@@ -31,8 +31,8 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String faceId;
     /**
      * <p>
-     * Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in
-     * the match.
+     * Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence
+     * in the match.
      * </p>
      */
     private Integer maxFaces;
@@ -46,11 +46,11 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ID of the collection to search.
+     * ID of the collection the face belongs to.
      * </p>
      * 
      * @param collectionId
-     *        ID of the collection to search.
+     *        ID of the collection the face belongs to.
      */
 
     public void setCollectionId(String collectionId) {
@@ -59,10 +59,10 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ID of the collection to search.
+     * ID of the collection the face belongs to.
      * </p>
      * 
-     * @return ID of the collection to search.
+     * @return ID of the collection the face belongs to.
      */
 
     public String getCollectionId() {
@@ -71,11 +71,11 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ID of the collection to search.
+     * ID of the collection the face belongs to.
      * </p>
      * 
      * @param collectionId
-     *        ID of the collection to search.
+     *        ID of the collection the face belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,12 +126,12 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in
-     * the match.
+     * Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence
+     * in the match.
      * </p>
      * 
      * @param maxFaces
-     *        Maximum number of faces to return. The API will return the maximum number of faces with the highest
+     *        Maximum number of faces to return. The operation returns the maximum number of faces with the highest
      *        confidence in the match.
      */
 
@@ -141,11 +141,11 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in
-     * the match.
+     * Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence
+     * in the match.
      * </p>
      * 
-     * @return Maximum number of faces to return. The API will return the maximum number of faces with the highest
+     * @return Maximum number of faces to return. The operation returns the maximum number of faces with the highest
      *         confidence in the match.
      */
 
@@ -155,12 +155,12 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in
-     * the match.
+     * Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence
+     * in the match.
      * </p>
      * 
      * @param maxFaces
-     *        Maximum number of faces to return. The API will return the maximum number of faces with the highest
+     *        Maximum number of faces to return. The operation returns the maximum number of faces with the highest
      *        confidence in the match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

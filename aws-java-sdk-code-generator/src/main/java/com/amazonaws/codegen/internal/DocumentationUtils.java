@@ -129,7 +129,7 @@ public class DocumentationUtils {
      */
     public static String createLinkToServiceDocumentation(Metadata metadata, String name) {
         if (isCrossLinkingEnabledForService(metadata)) {
-            return String.format("@see <a href=\"http://%s/goto/WebAPI/%s/%s\"/>AWS API Documentation</a>",
+            return String.format("@see <a href=\"http://%s/goto/WebAPI/%s/%s\" target=\"_top\">AWS API Documentation</a>",
                     AWS_DOCS_HOST,
                     metadata.getUid(),
                     name);

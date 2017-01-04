@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param deleteAlarmsRequest
      * @return A Java Future containing the result of the DeleteAlarms operation returned by the service.
      * @sample AmazonCloudWatchAsync.DeleteAlarms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(DeleteAlarmsRequest deleteAlarmsRequest);
@@ -67,7 +67,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAlarms operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DeleteAlarms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(DeleteAlarmsRequest deleteAlarmsRequest,
@@ -85,8 +85,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param describeAlarmHistoryRequest
      * @return A Java Future containing the result of the DescribeAlarmHistory operation returned by the service.
      * @sample AmazonCloudWatchAsync.DescribeAlarmHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(DescribeAlarmHistoryRequest describeAlarmHistoryRequest);
 
@@ -106,8 +106,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAlarmHistory operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DescribeAlarmHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(DescribeAlarmHistoryRequest describeAlarmHistoryRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult> asyncHandler);
@@ -136,7 +136,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param describeAlarmsRequest
      * @return A Java Future containing the result of the DescribeAlarms operation returned by the service.
      * @sample AmazonCloudWatchAsync.DescribeAlarms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(DescribeAlarmsRequest describeAlarmsRequest);
@@ -154,7 +154,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAlarms operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DescribeAlarms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(DescribeAlarmsRequest describeAlarmsRequest,
@@ -183,8 +183,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param describeAlarmsForMetricRequest
      * @return A Java Future containing the result of the DescribeAlarmsForMetric operation returned by the service.
      * @sample AmazonCloudWatchAsync.DescribeAlarmsForMetric
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest);
 
@@ -200,8 +200,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAlarmsForMetric operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DescribeAlarmsForMetric
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResult> asyncHandler);
@@ -215,8 +215,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param disableAlarmActionsRequest
      * @return A Java Future containing the result of the DisableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatchAsync.DisableAlarmActions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(DisableAlarmActionsRequest disableAlarmActionsRequest);
 
@@ -233,8 +233,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DisableAlarmActions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(DisableAlarmActionsRequest disableAlarmActionsRequest,
             com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, DisableAlarmActionsResult> asyncHandler);
@@ -247,8 +247,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param enableAlarmActionsRequest
      * @return A Java Future containing the result of the EnableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatchAsync.EnableAlarmActions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(EnableAlarmActionsRequest enableAlarmActionsRequest);
 
@@ -264,8 +264,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.EnableAlarmActions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(EnableAlarmActionsRequest enableAlarmActionsRequest,
             com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, EnableAlarmActionsResult> asyncHandler);
@@ -318,8 +318,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param getMetricStatisticsRequest
      * @return A Java Future containing the result of the GetMetricStatistics operation returned by the service.
      * @sample AmazonCloudWatchAsync.GetMetricStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(GetMetricStatisticsRequest getMetricStatisticsRequest);
 
@@ -375,8 +375,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetMetricStatistics operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.GetMetricStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(GetMetricStatisticsRequest getMetricStatisticsRequest,
             com.amazonaws.handlers.AsyncHandler<GetMetricStatisticsRequest, GetMetricStatisticsResult> asyncHandler);
@@ -398,7 +398,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param listMetricsRequest
      * @return A Java Future containing the result of the ListMetrics operation returned by the service.
      * @sample AmazonCloudWatchAsync.ListMetrics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(ListMetricsRequest listMetricsRequest);
@@ -424,7 +424,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListMetrics operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.ListMetrics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(ListMetricsRequest listMetricsRequest,
@@ -508,7 +508,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param putMetricAlarmRequest
      * @return A Java Future containing the result of the PutMetricAlarm operation returned by the service.
      * @sample AmazonCloudWatchAsync.PutMetricAlarm
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(PutMetricAlarmRequest putMetricAlarmRequest);
@@ -581,7 +581,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutMetricAlarm operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.PutMetricAlarm
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(PutMetricAlarmRequest putMetricAlarmRequest,
@@ -612,7 +612,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param putMetricDataRequest
      * @return A Java Future containing the result of the PutMetricData operation returned by the service.
      * @sample AmazonCloudWatchAsync.PutMetricData
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(PutMetricDataRequest putMetricDataRequest);
@@ -646,7 +646,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutMetricData operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.PutMetricData
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(PutMetricDataRequest putMetricDataRequest,
@@ -665,7 +665,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param setAlarmStateRequest
      * @return A Java Future containing the result of the SetAlarmState operation returned by the service.
      * @sample AmazonCloudWatchAsync.SetAlarmState
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest);
@@ -687,7 +687,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetAlarmState operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.SetAlarmState
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -363,7 +363,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a> </code>
      *         returns this error if the maximum number of permissions for the queue is reached.
      * @sample AmazonSQS.AddPermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
@@ -451,8 +452,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws ReceiptHandleIsInvalidException
      *         The receipt handle provided isn't valid.
      * @sample AmazonSQS.ChangeMessageVisibility
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ChangeMessageVisibilityResult changeMessageVisibility(ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {
@@ -527,8 +528,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws InvalidBatchEntryIdException
      *         The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
      * @sample AmazonSQS.ChangeMessageVisibilityBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ChangeMessageVisibilityBatchResult changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) {
@@ -640,7 +641,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         A queue already exists with this name. Amazon SQS returns this error only if the request includes
      *         attributes whose values differ from those of the existing queue.
      * @sample AmazonSQS.CreateQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateQueueResult createQueue(CreateQueueRequest createQueueRequest) {
@@ -708,7 +710,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws ReceiptHandleIsInvalidException
      *         The receipt handle provided isn't valid.
      * @sample AmazonSQS.DeleteMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteMessageResult deleteMessage(DeleteMessageRequest deleteMessageRequest) {
@@ -780,7 +783,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws InvalidBatchEntryIdException
      *         The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
      * @sample AmazonSQS.DeleteMessageBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -842,7 +845,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @param deleteQueueRequest
      * @return Result of the DeleteQueue operation returned by the service.
      * @sample AmazonSQS.DeleteQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteQueueResult deleteQueue(DeleteQueueRequest deleteQueueRequest) {
@@ -901,7 +905,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws InvalidAttributeNameException
      *         The attribute referred to doesn't exist.
      * @sample AmazonSQS.GetQueueAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -958,7 +962,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws QueueDoesNotExistException
      *         The queue referred to doesn't exist.
      * @sample AmazonSQS.GetQueueUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetQueueUrlResult getQueueUrl(GetQueueUrlRequest getQueueUrlRequest) {
@@ -1011,8 +1016,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws QueueDoesNotExistException
      *         The queue referred to doesn't exist.
      * @sample AmazonSQS.ListDeadLetterSourceQueues
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListDeadLetterSourceQueuesResult listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest) {
@@ -1055,7 +1060,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @param listQueuesRequest
      * @return Result of the ListQueues operation returned by the service.
      * @sample AmazonSQS.ListQueues
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest) {
@@ -1121,7 +1127,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last
      *         60 seconds (the time it can take to delete the messages in the queue).
      * @sample AmazonSQS.PurgeQueue
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public PurgeQueueResult purgeQueue(PurgeQueueRequest purgeQueueRequest) {
@@ -1235,7 +1242,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a> </code>
      *         returns this error if the maximum number of permissions for the queue is reached.
      * @sample AmazonSQS.ReceiveMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ReceiveMessageResult receiveMessage(ReceiveMessageRequest receiveMessageRequest) {
@@ -1282,7 +1290,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @param removePermissionRequest
      * @return Result of the RemovePermission operation returned by the service.
      * @sample AmazonSQS.RemovePermission
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest) {
@@ -1374,7 +1383,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws UnsupportedOperationException
      *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.SendMessage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public SendMessageResult sendMessage(SendMessageRequest sendMessageRequest) {
@@ -1499,7 +1509,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws UnsupportedOperationException
      *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.SendMessageBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public SendMessageBatchResult sendMessageBatch(SendMessageBatchRequest sendMessageBatchRequest) {
@@ -1555,7 +1566,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws InvalidAttributeNameException
      *         The attribute referred to doesn't exist.
      * @sample AmazonSQS.SetQueueAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes" target="_top">AWS API
      *      Documentation</a>
      */
     @Override

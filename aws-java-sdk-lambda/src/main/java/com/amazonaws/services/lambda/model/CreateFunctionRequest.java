@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,15 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction" target="_top">AWS API
+ *      Documentation</a>
  */
 public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
-     * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs,
-     * such as <a>Invoke</a>.
+     * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda API
+     * operations, such as <a>Invoke</a>.
      * </p>
      */
     private String functionName;
@@ -41,7 +42,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
      * possible.
      * </p>
      * </note>
@@ -111,7 +112,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -128,14 +129,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
-     * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs,
-     * such as <a>Invoke</a>.
+     * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda API
+     * operations, such as <a>Invoke</a>.
      * </p>
      * 
      * @param functionName
      *        The name you want to assign to the function you are uploading. The function names appear in the console
      *        and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other
-     *        AWS Lambda APIs, such as <a>Invoke</a>.
+     *        AWS Lambda API operations, such as <a>Invoke</a>.
      */
 
     public void setFunctionName(String functionName) {
@@ -145,13 +146,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
-     * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs,
-     * such as <a>Invoke</a>.
+     * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda API
+     * operations, such as <a>Invoke</a>.
      * </p>
      * 
      * @return The name you want to assign to the function you are uploading. The function names appear in the console
      *         and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other
-     *         AWS Lambda APIs, such as <a>Invoke</a>.
+     *         AWS Lambda API operations, such as <a>Invoke</a>.
      */
 
     public String getFunctionName() {
@@ -161,14 +162,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
-     * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs,
-     * such as <a>Invoke</a>.
+     * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda API
+     * operations, such as <a>Invoke</a>.
      * </p>
      * 
      * @param functionName
      *        The name you want to assign to the function you are uploading. The function names appear in the console
      *        and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other
-     *        AWS Lambda APIs, such as <a>Invoke</a>.
+     *        AWS Lambda API operations, such as <a>Invoke</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,7 +189,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
      * possible.
      * </p>
      * </note>
@@ -202,7 +203,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <note>
      *        <p>
      *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *        functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *        functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
      *        version as soon as possible.
      *        </p>
      * @see Runtime
@@ -223,7 +224,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
      * possible.
      * </p>
      * </note>
@@ -236,7 +237,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <note>
      *         <p>
      *         You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *         functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *         functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
      *         version as soon as possible.
      *         </p>
      * @see Runtime
@@ -257,7 +258,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
      * possible.
      * </p>
      * </note>
@@ -271,7 +272,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <note>
      *        <p>
      *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *        functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *        functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
      *        version as soon as possible.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -294,7 +295,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
      * possible.
      * </p>
      * </note>
@@ -308,7 +309,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <note>
      *        <p>
      *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *        functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *        functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
      *        version as soon as possible.
      *        </p>
      * @see Runtime
@@ -329,7 +330,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
      * possible.
      * </p>
      * </note>
@@ -343,7 +344,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <note>
      *        <p>
      *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *        functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *        functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
      *        version as soon as possible.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -778,11 +779,11 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
      *        topic.
      */
 
@@ -792,10 +793,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
-     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
+     * @return The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon
      *         SNS topic.
      */
 
@@ -805,11 +806,11 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
      *        topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

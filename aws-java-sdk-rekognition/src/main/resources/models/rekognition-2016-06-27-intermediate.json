@@ -48,7 +48,7 @@
     "defaultEndpoint" : "rekognition.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "rekognition.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>This is Amazon Rekognition API guide.</p>",
+    "documentation" : "<p>This is the Amazon Rekognition API reference.</p>",
     "endpointPrefix" : "rekognition",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -86,7 +86,7 @@
       "documentation" : "<p>Compares a face in the <i>source</i> input image with each face detected in the <i>target</i> input image. </p> <note> <p> If the source image contains multiple faces, the service detects the largest face and uses it to compare with each face detected in the target image. </p> </note> <p>In response, the operation returns an array of face matches ordered by similarity score with the highest similarity scores first. For each face match, the response provides a bounding box of the face and <code>confidence</code> value (indicating the level of confidence that the bounding box contains a face). The response also provides a <code>similarity</code> score, which indicates how closely the faces match. </p> <note> <p>By default, only faces with the similarity score of greater than or equal to 80% are returned in the response. You can change this value.</p> </note> <p>In addition to the face matches, the response returns information about the face in the source image, including the bounding box of the face and confidence value.</p> <note> <p> This is a stateless API operation. That is, the operation does not persist any data.</p> </note> <p>For an example, see <a>get-started-exercise-compare-faces</a> </p> <p>This operation requires permissions to perform the <code>rekognition:CompareFaces</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidS3ObjectException",
@@ -142,10 +142,10 @@
       "asyncReturnType" : "CreateCollectionResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a collection in an AWS region. You can add faces to the collection using the operation. </p> <p>For example, you might create collections, one for each of your application users. A user can then index faces using the <code>IndexFaces</code> operation and persist results in a specific collection. Then, a user can search the collection for faces in the user-specific container. </p> <p>For an example, see <a>example1</a>. </p> <p>This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.</p>",
+      "documentation" : "<p>Creates a collection in an AWS Region. You can add faces to the collection using the operation. </p> <p>For example, you might create collections, one for each of your application users. A user can then index faces using the <code>IndexFaces</code> operation and persist results in a specific collection. Then, a user can search the collection for faces in the user-specific container. </p> <p>For an example, see <a>example1</a>. </p> <p>This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -165,7 +165,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
-        "documentation" : "<p>The collection with specific ID already exist.</p>",
+        "documentation" : "<p>A collection with the specified ID already exists.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -196,7 +196,7 @@
       "documentation" : "<p>Deletes the specified collection. Note that this operation removes all faces in the collection. For an example, see <a>example1</a>.</p> <p>This operation requires permissions to perform the <code>rekognition:DeleteCollection</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -247,7 +247,7 @@
       "documentation" : "<p>Deletes faces from a collection. You specify a collection ID and an array of face IDs to remove from the collection.</p> <p>This operation requires permissions to perform the <code>rekognition:DeleteFaces</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -302,7 +302,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ImageTooLargeException",
@@ -354,14 +354,14 @@
       "asyncReturnType" : "DetectLabelsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Detects instances of real-world labels within an image (JPEG or PNG) provided as input. This includes objects like flower, tree, and table; events like wedding, graduation, and birthday party; and concepts like landscape, evening, and nature. For an example, see <a>get-started-exercise-detect-labels</a>.</p> <p> For each object, scene, and concept the API returns one or more labels. Each label provides the object name, and the level of confidence that the image contains the object. For example, suppose the input image has a lighthouse, the sea, and a rock. The response will include all three labels, one for each object. </p> <p> <code>{Name: lighthouse, Confidence: 98.4629}</code> </p> <p> <code>{Name: rock,Confidence: 79.2097}</code> </p> <p> <code> {Name: sea,Confidence: 75.061}</code> </p> <p> In the preceding example, the operation returns one label for each of the three objects. The operation can also return multiple labels for the same object in the image. For example, if the input image shows a flower (for example, a tulip), the operation might return the following three labels. </p> <p> <code>{Name: flower,Confidence: 99.0562}</code> </p> <p> <code>{Name: plant,Confidence: 99.0562}</code> </p> <p> <code>{Name: tulip,Confidence: 99.0562}</code> </p> <p>In this example, the detection algorithm more precisely identifies the flower as a tulip.</p> <p> You can provide the input image as an S3 object or as base64-encoded bytes. In response, the API returns an array of labels. In addition, the response also includes the orientation correction. Optionally, you can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 50%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. </p> <note> <p>If the object detected is a person, the operation doesn't provide the same facial details that the <a>DetectFaces</a> operation provides.</p> </note> <p>This is a stateless API operation. That is, the operation does not persist any data.</p> <p>This operation requires permissions to perform the <code>rekognition:DetectLabels</code> action. </p>",
+      "documentation" : "<p>Detects instances of real-world labels within an image (JPEG or PNG) provided as input. This includes objects like flower, tree, and table; events like wedding, graduation, and birthday party; and concepts like landscape, evening, and nature. For an example, see <a>get-started-exercise-detect-labels</a>.</p> <p> For each object, scene, and concept the API returns one or more labels. Each label provides the object name, and the level of confidence that the image contains the object. For example, suppose the input image has a lighthouse, the sea, and a rock. The response will include all three labels, one for each object. </p> <p> <code>{Name: lighthouse, Confidence: 98.4629}</code> </p> <p> <code>{Name: rock,Confidence: 79.2097}</code> </p> <p> <code> {Name: sea,Confidence: 75.061}</code> </p> <p> In the preceding example, the operation returns one label for each of the three objects. The operation can also return multiple labels for the same object in the image. For example, if the input image shows a flower (for example, a tulip), the operation might return the following three labels. </p> <p> <code>{Name: flower,Confidence: 99.0562}</code> </p> <p> <code>{Name: plant,Confidence: 99.0562}</code> </p> <p> <code>{Name: tulip,Confidence: 99.0562}</code> </p> <p>In this example, the detection algorithm more precisely identifies the flower as a tulip.</p> <p>You can provide the input image as an S3 object or as base64-encoded bytes. In response, the API returns an array of labels. In addition, the response also includes the orientation correction. Optionally, you can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 50%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. </p> <note> <p>If the object detected is a person, the operation doesn't provide the same facial details that the <a>DetectFaces</a> operation provides.</p> </note> <p>This is a stateless API operation. That is, the operation does not persist any data.</p> <p>This operation requires permissions to perform the <code>rekognition:DetectLabels</code> action. </p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidS3ObjectException",
         "documentation" : "<p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ImageTooLargeException",
@@ -413,14 +413,14 @@
       "asyncReturnType" : "IndexFacesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Detects faces in the input image and adds them to the specified collection. </p> <p> Amazon Rekognition does not save the actual faces detected. Instead, the underlying detection algorithm first detects the faces in the input image, and for each face extracts facial features into a feature vector, and stores it in the back-end database. Amazon Rekognition uses feature vectors when performing face match and search operations using the and operations. </p> <p>If you provide the optional <code>externalImageID</code> for the input image you provided, Amazon Rekognition associates this ID with all faces that it detects. When you call the operation, the response returns the external ID. You can use this external image ID to create a client-side index to associate the faces with each image. You can then use the index to find all faces in an image. </p> <p>In response, the operation returns an array of metadata for all detected faces. This includes, the bounding box of the detected face, confidence value (indicating the bounding box contains a face), a face ID assigned by the service for each face that is detected and stored, and an image ID assigned by the service for the input image If you request all facial attributes (using the <code>detectionAttributes</code> parameter, Rekognition returns detailed facial attributes such as facial landmarks (for example, location of eye and mount) and other facial attributes such gender. If you provide the same image, specify the same collection, and use the same external ID in the <code>IndexFaces</code> operation, Rekognition doesn't save duplicate face metadata. </p> <p>For an example, see <a>example2</a>.</p> <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.</p>",
+      "documentation" : "<p>Detects faces in the input image and adds them to the specified collection. </p> <p> Amazon Rekognition does not save the actual faces detected. Instead, the underlying detection algorithm first detects the faces in the input image, and for each face extracts facial features into a feature vector, and stores it in the back-end database. Amazon Rekognition uses feature vectors when performing face match and search operations using the and operations. </p> <p>If you provide the optional <code>externalImageID</code> for the input image you provided, Amazon Rekognition associates this ID with all faces that it detects. When you call the operation, the response returns the external ID. You can use this external image ID to create a client-side index to associate the faces with each image. You can then use the index to find all faces in an image. </p> <p>In response, the operation returns an array of metadata for all detected faces. This includes, the bounding box of the detected face, confidence value (indicating the bounding box contains a face), a face ID assigned by the service for each face that is detected and stored, and an image ID assigned by the service for the input image If you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed facial attributes such as facial landmarks (for example, location of eye and mount) and other facial attributes such gender. If you provide the same image, specify the same collection, and use the same external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata. </p> <p>For an example, see <a>example2</a>.</p> <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidS3ObjectException",
         "documentation" : "<p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ImageTooLargeException",
@@ -479,7 +479,7 @@
       "documentation" : "<p>Returns list of collection IDs in your account. If the result is truncated, the response also provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p> <p>For an example, see <a>example1</a>.</p> <p>This operation requires permissions to perform the <code>rekognition:ListCollections</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -534,7 +534,7 @@
       "documentation" : "<p>Returns metadata for faces in the specified collection. This metadata includes information such as the bounding box coordinates, the confidence (that the bounding box contains a face), and face ID. For an example, see <a>example3</a>. </p> <p>This operation requires permissions to perform the <code>rekognition:ListFaces</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -586,10 +586,10 @@
       "asyncReturnType" : "SearchFacesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>For a given input face ID, searches the specified collection for matching faces. You get a face ID when you add a face to the collection using the <a>IndexFaces</a> operation. The operation compares the features of the input face with faces in the specified collection. </p> <note> <p>You can also search faces without indexing faces by using the <code>SearchFacesByImage</code> operation.</p> </note> <p> The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <code>confidence</code> value for each face match, indicating the confidence that the specific face matches the input face. </p> <p>For an example, see <a>example3</a>.</p> <p>This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.</p>",
+      "documentation" : "<p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the <a>IndexFaces</a> operation. The operation compares the features of the input face with faces in the specified collection. </p> <note> <p>You can also search faces without indexing faces by using the <code>SearchFacesByImage</code> operation.</p> </note> <p> The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <code>confidence</code> value for each face match, indicating the confidence that the specific face matches the input face. </p> <p>For an example, see <a>example3</a>.</p> <p>This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -637,14 +637,14 @@
       "asyncReturnType" : "SearchFacesByImageResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>For a given input image, first detects the largest face in the image, and then searches the specified collection for matching faces. The operation compares the features of the input face with faces in the specified collection. </p> <note> <p> To search for all faces in an input image, you might first call the API, and then use the face IDs returned in subsequent calls to the API. </p> <p> You can also call the <code>DetectFaces</code> API and use the bounding boxes in the response to make face crops, which then you can pass in to the <code>SearchFacesByImage</code> API. </p> </note> <p> The response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match found. Along with the metadata, the response also includes a <code>similarity</code> indicating how similar the face is to the input face. In the response, the API also returns the bounding box (and a confidence level that the bounding box contains a face) of the face that Rekognition used for the input image. </p> <p>For an example, see <a>example3</a>.</p> <p>This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code> action.</p>",
+      "documentation" : "<p>For a given input image, first detects the largest face in the image, and then searches the specified collection for matching faces. The operation compares the features of the input face with faces in the specified collection. </p> <note> <p> To search for all faces in an input image, you might first call the operation, and then use the face IDs returned in subsequent calls to the operation. </p> <p> You can also call the <code>DetectFaces</code> operation and use the bounding boxes in the response to make face crops, which then you can pass in to the <code>SearchFacesByImage</code> operation. </p> </note> <p> The response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match found. Along with the metadata, the response also includes a <code>similarity</code> indicating how similar the face is to the input face. In the response, the operation also returns the bounding box (and a confidence level that the bounding box contains a face) of the face that Amazon Rekognition used for the input image. </p> <p>For an example, see <a>example3</a>.</p> <p>This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidS3ObjectException",
         "documentation" : "<p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
-        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+        "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ImageTooLargeException",
@@ -1535,7 +1535,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Provide the bounding box, confidence that the bounding box actually contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
+      "documentation" : "<p>For the provided the bounding box, confidence level that the bounding box actually contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1818,11 +1818,11 @@
         "c2jName" : "SourceImage",
         "c2jShape" : "Image",
         "deprecated" : false,
-        "documentation" : "<p>Source image either as bytes or an Amazon S3 object</p>",
+        "documentation" : "<p>Source image either as bytes or an S3 object</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Source image either as bytes or an Amazon S3 object</p>\n@param sourceImage Source image either as bytes or an Amazon S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Source image either as bytes or an S3 object</p>\n@param sourceImage Source image either as bytes or an S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceImage",
-        "getterDocumentation" : "/**<p>Source image either as bytes or an Amazon S3 object</p>\n@return Source image either as bytes or an Amazon S3 object*/",
+        "getterDocumentation" : "/**<p>Source image either as bytes or an S3 object</p>\n@return Source image either as bytes or an S3 object*/",
         "getterMethodName" : "getSourceImage",
         "getterModel" : {
           "returnType" : "Image",
@@ -1849,7 +1849,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "SourceImage",
-        "setterDocumentation" : "/**<p>Source image either as bytes or an Amazon S3 object</p>\n@param sourceImage Source image either as bytes or an Amazon S3 object*/",
+        "setterDocumentation" : "/**<p>Source image either as bytes or an S3 object</p>\n@param sourceImage Source image either as bytes or an S3 object*/",
         "setterMethodName" : "setSourceImage",
         "setterModel" : {
           "variableDeclarationType" : "Image",
@@ -1860,12 +1860,12 @@
           "variableSetterType" : "Image"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>Source image either as bytes or an Amazon S3 object</p>\n@param sourceImage Source image either as bytes or an Amazon S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Source image either as bytes or an S3 object</p>\n@param sourceImage Source image either as bytes or an S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Image",
           "variableName" : "sourceImage",
           "variableType" : "Image",
-          "documentation" : "<p>Source image either as bytes or an Amazon S3 object</p>",
+          "documentation" : "<p>Source image either as bytes or an S3 object</p>",
           "simpleType" : "Image",
           "variableSetterType" : "Image"
         },
@@ -1874,11 +1874,11 @@
         "c2jName" : "TargetImage",
         "c2jShape" : "Image",
         "deprecated" : false,
-        "documentation" : "<p>Target image either as bytes or an Amazon S3 object</p>",
+        "documentation" : "<p>Target image either as bytes or an S3 object</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Target image either as bytes or an Amazon S3 object</p>\n@param targetImage Target image either as bytes or an Amazon S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Target image either as bytes or an S3 object</p>\n@param targetImage Target image either as bytes or an S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTargetImage",
-        "getterDocumentation" : "/**<p>Target image either as bytes or an Amazon S3 object</p>\n@return Target image either as bytes or an Amazon S3 object*/",
+        "getterDocumentation" : "/**<p>Target image either as bytes or an S3 object</p>\n@return Target image either as bytes or an S3 object*/",
         "getterMethodName" : "getTargetImage",
         "getterModel" : {
           "returnType" : "Image",
@@ -1905,7 +1905,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "TargetImage",
-        "setterDocumentation" : "/**<p>Target image either as bytes or an Amazon S3 object</p>\n@param targetImage Target image either as bytes or an Amazon S3 object*/",
+        "setterDocumentation" : "/**<p>Target image either as bytes or an S3 object</p>\n@param targetImage Target image either as bytes or an S3 object*/",
         "setterMethodName" : "setTargetImage",
         "setterModel" : {
           "variableDeclarationType" : "Image",
@@ -1916,12 +1916,12 @@
           "variableSetterType" : "Image"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>Target image either as bytes or an Amazon S3 object</p>\n@param targetImage Target image either as bytes or an Amazon S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Target image either as bytes or an S3 object</p>\n@param targetImage Target image either as bytes or an S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Image",
           "variableName" : "targetImage",
           "variableType" : "Image",
-          "documentation" : "<p>Target image either as bytes or an Amazon S3 object</p>",
+          "documentation" : "<p>Target image either as bytes or an S3 object</p>",
           "simpleType" : "Image",
           "variableSetterType" : "Image"
         },
@@ -2045,11 +2045,11 @@
           "c2jName" : "SourceImage",
           "c2jShape" : "Image",
           "deprecated" : false,
-          "documentation" : "<p>Source image either as bytes or an Amazon S3 object</p>",
+          "documentation" : "<p>Source image either as bytes or an S3 object</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Source image either as bytes or an Amazon S3 object</p>\n@param sourceImage Source image either as bytes or an Amazon S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Source image either as bytes or an S3 object</p>\n@param sourceImage Source image either as bytes or an S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceImage",
-          "getterDocumentation" : "/**<p>Source image either as bytes or an Amazon S3 object</p>\n@return Source image either as bytes or an Amazon S3 object*/",
+          "getterDocumentation" : "/**<p>Source image either as bytes or an S3 object</p>\n@return Source image either as bytes or an S3 object*/",
           "getterMethodName" : "getSourceImage",
           "getterModel" : {
             "returnType" : "Image",
@@ -2076,7 +2076,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "SourceImage",
-          "setterDocumentation" : "/**<p>Source image either as bytes or an Amazon S3 object</p>\n@param sourceImage Source image either as bytes or an Amazon S3 object*/",
+          "setterDocumentation" : "/**<p>Source image either as bytes or an S3 object</p>\n@param sourceImage Source image either as bytes or an S3 object*/",
           "setterMethodName" : "setSourceImage",
           "setterModel" : {
             "variableDeclarationType" : "Image",
@@ -2087,12 +2087,12 @@
             "variableSetterType" : "Image"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>Source image either as bytes or an Amazon S3 object</p>\n@param sourceImage Source image either as bytes or an Amazon S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Source image either as bytes or an S3 object</p>\n@param sourceImage Source image either as bytes or an S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Image",
             "variableName" : "sourceImage",
             "variableType" : "Image",
-            "documentation" : "<p>Source image either as bytes or an Amazon S3 object</p>",
+            "documentation" : "<p>Source image either as bytes or an S3 object</p>",
             "simpleType" : "Image",
             "variableSetterType" : "Image"
           },
@@ -2102,11 +2102,11 @@
           "c2jName" : "TargetImage",
           "c2jShape" : "Image",
           "deprecated" : false,
-          "documentation" : "<p>Target image either as bytes or an Amazon S3 object</p>",
+          "documentation" : "<p>Target image either as bytes or an S3 object</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Target image either as bytes or an Amazon S3 object</p>\n@param targetImage Target image either as bytes or an Amazon S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Target image either as bytes or an S3 object</p>\n@param targetImage Target image either as bytes or an S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTargetImage",
-          "getterDocumentation" : "/**<p>Target image either as bytes or an Amazon S3 object</p>\n@return Target image either as bytes or an Amazon S3 object*/",
+          "getterDocumentation" : "/**<p>Target image either as bytes or an S3 object</p>\n@return Target image either as bytes or an S3 object*/",
           "getterMethodName" : "getTargetImage",
           "getterModel" : {
             "returnType" : "Image",
@@ -2133,7 +2133,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "TargetImage",
-          "setterDocumentation" : "/**<p>Target image either as bytes or an Amazon S3 object</p>\n@param targetImage Target image either as bytes or an Amazon S3 object*/",
+          "setterDocumentation" : "/**<p>Target image either as bytes or an S3 object</p>\n@param targetImage Target image either as bytes or an S3 object*/",
           "setterMethodName" : "setTargetImage",
           "setterModel" : {
             "variableDeclarationType" : "Image",
@@ -2144,12 +2144,12 @@
             "variableSetterType" : "Image"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>Target image either as bytes or an Amazon S3 object</p>\n@param targetImage Target image either as bytes or an Amazon S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Target image either as bytes or an S3 object</p>\n@param targetImage Target image either as bytes or an S3 object\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Image",
             "variableName" : "targetImage",
             "variableType" : "Image",
-            "documentation" : "<p>Target image either as bytes or an Amazon S3 object</p>",
+            "documentation" : "<p>Target image either as bytes or an S3 object</p>",
             "simpleType" : "Image",
             "variableSetterType" : "Image"
           },
@@ -2248,11 +2248,11 @@
         "c2jName" : "FaceMatches",
         "c2jShape" : "CompareFacesMatchList",
         "deprecated" : false,
-        "documentation" : "<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
+        "documentation" : "<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withFaceMatches",
-        "getterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@return Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.*/",
+        "getterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@return Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.*/",
         "getterMethodName" : "getFaceMatches",
         "getterModel" : {
           "returnType" : "java.util.List<CompareFacesMatch>",
@@ -2350,7 +2350,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "FaceMatches",
-        "setterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.*/",
+        "setterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.*/",
         "setterMethodName" : "setFaceMatches",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<CompareFacesMatch>",
@@ -2361,12 +2361,12 @@
           "variableSetterType" : "java.util.Collection<CompareFacesMatch>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFaceMatches(java.util.Collection)} or {@link #withFaceMatches(java.util.Collection)} if you want to override the existing values.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFaceMatches(java.util.Collection)} or {@link #withFaceMatches(java.util.Collection)} if you want to override the existing values.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<CompareFacesMatch>",
           "variableName" : "faceMatches",
           "variableType" : "java.util.List<CompareFacesMatch>",
-          "documentation" : "<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
+          "documentation" : "<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
           "simpleType" : "List<CompareFacesMatch>",
           "variableSetterType" : "java.util.Collection<CompareFacesMatch>"
         },
@@ -2377,11 +2377,11 @@
           "c2jName" : "FaceMatches",
           "c2jShape" : "CompareFacesMatchList",
           "deprecated" : false,
-          "documentation" : "<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
+          "documentation" : "<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withFaceMatches",
-          "getterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@return Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.*/",
+          "getterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@return Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.*/",
           "getterMethodName" : "getFaceMatches",
           "getterModel" : {
             "returnType" : "java.util.List<CompareFacesMatch>",
@@ -2479,7 +2479,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "FaceMatches",
-          "setterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.*/",
+          "setterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.*/",
           "setterMethodName" : "setFaceMatches",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<CompareFacesMatch>",
@@ -2490,12 +2490,12 @@
             "variableSetterType" : "java.util.Collection<CompareFacesMatch>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFaceMatches(java.util.Collection)} or {@link #withFaceMatches(java.util.Collection)} if you want to override the existing values.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFaceMatches(java.util.Collection)} or {@link #withFaceMatches(java.util.Collection)} if you want to override the existing values.</p>\n@param faceMatches Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<CompareFacesMatch>",
             "variableName" : "faceMatches",
             "variableType" : "java.util.List<CompareFacesMatch>",
-            "documentation" : "<p>Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
+            "documentation" : "<p>Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence that the bounding box contains a face, and the similarity between the face in the bounding box and the face in the source image.</p>",
             "simpleType" : "List<CompareFacesMatch>",
             "variableSetterType" : "java.util.Collection<CompareFacesMatch>"
           },
@@ -2918,11 +2918,11 @@
         "c2jName" : "Confidence",
         "c2jShape" : "Percent",
         "deprecated" : false,
-        "documentation" : "<p>Confidence that the selected bounding box contains a face.</p>",
+        "documentation" : "<p>Confidence level that the selected bounding box contains a face.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Confidence that the selected bounding box contains a face.</p>\n@param confidence Confidence that the selected bounding box contains a face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Confidence level that the selected bounding box contains a face.</p>\n@param confidence Confidence level that the selected bounding box contains a face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withConfidence",
-        "getterDocumentation" : "/**<p>Confidence that the selected bounding box contains a face.</p>\n@return Confidence that the selected bounding box contains a face.*/",
+        "getterDocumentation" : "/**<p>Confidence level that the selected bounding box contains a face.</p>\n@return Confidence level that the selected bounding box contains a face.*/",
         "getterMethodName" : "getConfidence",
         "getterModel" : {
           "returnType" : "Float",
@@ -2949,7 +2949,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Confidence",
-        "setterDocumentation" : "/**<p>Confidence that the selected bounding box contains a face.</p>\n@param confidence Confidence that the selected bounding box contains a face.*/",
+        "setterDocumentation" : "/**<p>Confidence level that the selected bounding box contains a face.</p>\n@param confidence Confidence level that the selected bounding box contains a face.*/",
         "setterMethodName" : "setConfidence",
         "setterModel" : {
           "variableDeclarationType" : "Float",
@@ -2960,12 +2960,12 @@
           "variableSetterType" : "Float"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>Confidence that the selected bounding box contains a face.</p>\n@param confidence Confidence that the selected bounding box contains a face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Confidence level that the selected bounding box contains a face.</p>\n@param confidence Confidence level that the selected bounding box contains a face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Float",
           "variableName" : "confidence",
           "variableType" : "Float",
-          "documentation" : "<p>Confidence that the selected bounding box contains a face.</p>",
+          "documentation" : "<p>Confidence level that the selected bounding box contains a face.</p>",
           "simpleType" : "Float",
           "variableSetterType" : "Float"
         },
@@ -3033,11 +3033,11 @@
           "c2jName" : "Confidence",
           "c2jShape" : "Percent",
           "deprecated" : false,
-          "documentation" : "<p>Confidence that the selected bounding box contains a face.</p>",
+          "documentation" : "<p>Confidence level that the selected bounding box contains a face.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Confidence that the selected bounding box contains a face.</p>\n@param confidence Confidence that the selected bounding box contains a face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Confidence level that the selected bounding box contains a face.</p>\n@param confidence Confidence level that the selected bounding box contains a face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withConfidence",
-          "getterDocumentation" : "/**<p>Confidence that the selected bounding box contains a face.</p>\n@return Confidence that the selected bounding box contains a face.*/",
+          "getterDocumentation" : "/**<p>Confidence level that the selected bounding box contains a face.</p>\n@return Confidence level that the selected bounding box contains a face.*/",
           "getterMethodName" : "getConfidence",
           "getterModel" : {
             "returnType" : "Float",
@@ -3064,7 +3064,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Confidence",
-          "setterDocumentation" : "/**<p>Confidence that the selected bounding box contains a face.</p>\n@param confidence Confidence that the selected bounding box contains a face.*/",
+          "setterDocumentation" : "/**<p>Confidence level that the selected bounding box contains a face.</p>\n@param confidence Confidence level that the selected bounding box contains a face.*/",
           "setterMethodName" : "setConfidence",
           "setterModel" : {
             "variableDeclarationType" : "Float",
@@ -3075,12 +3075,12 @@
             "variableSetterType" : "Float"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>Confidence that the selected bounding box contains a face.</p>\n@param confidence Confidence that the selected bounding box contains a face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Confidence level that the selected bounding box contains a face.</p>\n@param confidence Confidence level that the selected bounding box contains a face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Float",
             "variableName" : "confidence",
             "variableType" : "Float",
-            "documentation" : "<p>Confidence that the selected bounding box contains a face.</p>",
+            "documentation" : "<p>Confidence level that the selected bounding box contains a face.</p>",
             "simpleType" : "Float",
             "variableSetterType" : "Float"
           },
@@ -4617,11 +4617,11 @@
         "c2jName" : "Attributes",
         "c2jShape" : "Attributes",
         "deprecated" : false,
-        "documentation" : "<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>",
+        "documentation" : "<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>",
         "enumType" : "Attribute",
-        "fluentSetterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
+        "fluentSetterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
         "fluentSetterMethodName" : "withAttributes",
-        "getterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>\n@return A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.\n@see Attribute*/",
+        "getterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>\n@return A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.\n@see Attribute*/",
         "getterMethodName" : "getAttributes",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -4719,7 +4719,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Attributes",
-        "setterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.\n@see Attribute*/",
+        "setterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.\n@see Attribute*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -4730,12 +4730,12 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
+        "varargSetterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>",
+          "documentation" : "<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -4746,11 +4746,11 @@
           "c2jName" : "Attributes",
           "c2jShape" : "Attributes",
           "deprecated" : false,
-          "documentation" : "<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>",
+          "documentation" : "<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>",
           "enumType" : "Attribute",
-          "fluentSetterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
+          "fluentSetterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
           "fluentSetterMethodName" : "withAttributes",
-          "getterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>\n@return A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.\n@see Attribute*/",
+          "getterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>\n@return A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.\n@see Attribute*/",
           "getterMethodName" : "getAttributes",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -4848,7 +4848,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Attributes",
-          "setterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.\n@see Attribute*/",
+          "setterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.\n@see Attribute*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -4859,12 +4859,12 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
+          "varargSetterDocumentation" : "/**<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Rekognition performs additional detection. </p>",
+            "documentation" : "<p>A list of facial attributes you would like to be returned. By default, the API returns subset of facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], the service uses a logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, Amazon Rekognition performs additional detection. </p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -5878,11 +5878,11 @@
         "c2jName" : "OrientationCorrection",
         "c2jShape" : "OrientationCorrection",
         "deprecated" : false,
-        "documentation" : "<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>",
+        "documentation" : "<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>",
         "enumType" : "OrientationCorrection",
-        "fluentSetterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrientationCorrection*/",
+        "fluentSetterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrientationCorrection*/",
         "fluentSetterMethodName" : "withOrientationCorrection",
-        "getterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@return Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@see OrientationCorrection*/",
+        "getterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@return Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@see OrientationCorrection*/",
         "getterMethodName" : "getOrientationCorrection",
         "getterModel" : {
           "returnType" : "String",
@@ -5909,7 +5909,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "OrientationCorrection",
-        "setterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@see OrientationCorrection*/",
+        "setterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@see OrientationCorrection*/",
         "setterMethodName" : "setOrientationCorrection",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -5920,12 +5920,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrientationCorrection*/",
+        "varargSetterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrientationCorrection*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "orientationCorrection",
           "variableType" : "String",
-          "documentation" : "<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>",
+          "documentation" : "<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6064,11 +6064,11 @@
           "c2jName" : "OrientationCorrection",
           "c2jShape" : "OrientationCorrection",
           "deprecated" : false,
-          "documentation" : "<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>",
+          "documentation" : "<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>",
           "enumType" : "OrientationCorrection",
-          "fluentSetterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrientationCorrection*/",
+          "fluentSetterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrientationCorrection*/",
           "fluentSetterMethodName" : "withOrientationCorrection",
-          "getterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@return Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@see OrientationCorrection*/",
+          "getterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@return Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@see OrientationCorrection*/",
           "getterMethodName" : "getOrientationCorrection",
           "getterModel" : {
             "returnType" : "String",
@@ -6095,7 +6095,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "OrientationCorrection",
-          "setterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@see OrientationCorrection*/",
+          "setterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@see OrientationCorrection*/",
           "setterMethodName" : "setOrientationCorrection",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -6106,12 +6106,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrientationCorrection*/",
+          "varargSetterDocumentation" : "/**<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>\n@param orientationCorrection Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrientationCorrection*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "orientationCorrection",
             "variableType" : "String",
-            "documentation" : "<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>",
+            "documentation" : "<p> Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the labels. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10340,7 +10340,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Provides the source image either as bytes or an S3 object.</p>",
+      "documentation" : "<p>Provides the source image either as bytes or an S3 object.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>You may need to Base64-encode the image bytes depending on the language you are using and whether or not you are using the AWS SDK. For more information, see <a>example4</a>.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see <a>manage-access-resource-policies</a>. </p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -11089,11 +11089,11 @@
         "c2jName" : "DetectionAttributes",
         "c2jShape" : "Attributes",
         "deprecated" : false,
-        "documentation" : "<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>",
+        "documentation" : "<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>",
         "enumType" : "Attribute",
-        "fluentSetterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
+        "fluentSetterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
         "fluentSetterMethodName" : "withDetectionAttributes",
-        "getterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@return (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@see Attribute*/",
+        "getterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@return (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@see Attribute*/",
         "getterMethodName" : "getDetectionAttributes",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -11191,7 +11191,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "DetectionAttributes",
-        "setterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@see Attribute*/",
+        "setterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@see Attribute*/",
         "setterMethodName" : "setDetectionAttributes",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -11202,12 +11202,12 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDetectionAttributes(java.util.Collection)} or {@link #withDetectionAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
+        "varargSetterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDetectionAttributes(java.util.Collection)} or {@link #withDetectionAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "detectionAttributes",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>",
+          "documentation" : "<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -11275,11 +11275,11 @@
           "c2jName" : "DetectionAttributes",
           "c2jShape" : "Attributes",
           "deprecated" : false,
-          "documentation" : "<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>",
+          "documentation" : "<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>",
           "enumType" : "Attribute",
-          "fluentSetterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
+          "fluentSetterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
           "fluentSetterMethodName" : "withDetectionAttributes",
-          "getterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@return (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@see Attribute*/",
+          "getterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@return (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@see Attribute*/",
           "getterMethodName" : "getDetectionAttributes",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -11377,7 +11377,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "DetectionAttributes",
-          "setterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@see Attribute*/",
+          "setterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@see Attribute*/",
           "setterMethodName" : "setDetectionAttributes",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -11388,12 +11388,12 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDetectionAttributes(java.util.Collection)} or {@link #withDetectionAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
+          "varargSetterDocumentation" : "/**<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDetectionAttributes(java.util.Collection)} or {@link #withDetectionAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param detectionAttributes (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Attribute*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "detectionAttributes",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>",
+            "documentation" : "<p>(Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial attributes. </p> <p>For example, you can specify the value as, [\"ALL\"] or [\"DEFAULT\"]. If you provide both, [\"ALL\", \"DEFAULT\"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all attributes). If you specify all attributes, the service performs additional detection, in addition to the default. </p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -12046,7 +12046,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API again.</p>",
+      "documentation" : "<p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>",
       "enums" : null,
       "errorCode" : "InvalidParameterException",
       "hasHeaderMember" : false,
@@ -12114,7 +12114,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Structure containing details about the detected label, including bounding box, name, and level of confidence.</p>",
+      "documentation" : "<p>Structure containing details about the detected label, including name, and level of confidence.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -12446,11 +12446,11 @@
         "c2jName" : "X",
         "c2jShape" : "Float",
         "deprecated" : false,
-        "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>",
+        "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withX",
-        "getterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>\n@return x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5.*/",
+        "getterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@return x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
         "getterMethodName" : "getX",
         "getterModel" : {
           "returnType" : "Float",
@@ -12477,7 +12477,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "X",
-        "setterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5.*/",
+        "setterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
         "setterMethodName" : "setX",
         "setterModel" : {
           "variableDeclarationType" : "Float",
@@ -12488,12 +12488,12 @@
           "variableSetterType" : "Float"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Float",
           "variableName" : "x",
           "variableType" : "Float",
-          "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>",
+          "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
           "simpleType" : "Float",
           "variableSetterType" : "Float"
         },
@@ -12502,11 +12502,11 @@
         "c2jName" : "Y",
         "c2jShape" : "Float",
         "deprecated" : false,
-        "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>",
+        "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withY",
-        "getterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>\n@return y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.*/",
+        "getterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@return y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
         "getterMethodName" : "getY",
         "getterModel" : {
           "returnType" : "Float",
@@ -12533,7 +12533,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Y",
-        "setterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.*/",
+        "setterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
         "setterMethodName" : "setY",
         "setterModel" : {
           "variableDeclarationType" : "Float",
@@ -12544,12 +12544,12 @@
           "variableSetterType" : "Float"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Float",
           "variableName" : "y",
           "variableType" : "Float",
-          "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>",
+          "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
           "simpleType" : "Float",
           "variableSetterType" : "Float"
         },
@@ -12617,11 +12617,11 @@
           "c2jName" : "X",
           "c2jShape" : "Float",
           "deprecated" : false,
-          "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>",
+          "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withX",
-          "getterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>\n@return x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5.*/",
+          "getterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@return x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
           "getterMethodName" : "getX",
           "getterModel" : {
             "returnType" : "Float",
@@ -12648,7 +12648,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "X",
-          "setterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5.*/",
+          "setterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
           "setterMethodName" : "setX",
           "setterModel" : {
             "variableDeclarationType" : "Float",
@@ -12659,12 +12659,12 @@
             "variableSetterType" : "Float"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Float",
             "variableName" : "x",
             "variableType" : "Float",
-            "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, then this value is 0.5. </p>",
+            "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
             "simpleType" : "Float",
             "variableSetterType" : "Float"
           },
@@ -12674,11 +12674,11 @@
           "c2jName" : "Y",
           "c2jShape" : "Float",
           "deprecated" : false,
-          "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>",
+          "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withY",
-          "getterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>\n@return y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.*/",
+          "getterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@return y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
           "getterMethodName" : "getY",
           "getterModel" : {
             "returnType" : "Float",
@@ -12705,7 +12705,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Y",
-          "setterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.*/",
+          "setterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
           "setterMethodName" : "setY",
           "setterModel" : {
             "variableDeclarationType" : "Float",
@@ -12716,12 +12716,12 @@
             "variableSetterType" : "Float"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Float",
             "variableName" : "y",
             "variableType" : "Float",
-            "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, then this value is 0.5.</p>",
+            "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
             "simpleType" : "Float",
             "variableSetterType" : "Float"
           },
@@ -15316,7 +15316,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The collection with specific ID already exist.</p>",
+      "documentation" : "<p>A collection with the specified ID already exists.</p>",
       "enums" : null,
       "errorCode" : "ResourceAlreadyExistsException",
       "hasHeaderMember" : false,
@@ -15384,7 +15384,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Provides the S3 bucket name and object name.</p>",
+      "documentation" : "<p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see <a>manage-access-resource-policies</a>. </p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -16267,11 +16267,11 @@
         "c2jName" : "SearchedFaceBoundingBox",
         "c2jShape" : "BoundingBox",
         "deprecated" : false,
-        "documentation" : "<p>The bounding box around the face in the input image that Rekognition used for the search.</p>",
+        "documentation" : "<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The bounding box around the face in the input image that Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Rekognition used for the search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Amazon Rekognition used for the search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSearchedFaceBoundingBox",
-        "getterDocumentation" : "/**<p>The bounding box around the face in the input image that Rekognition used for the search.</p>\n@return The bounding box around the face in the input image that Rekognition used for the search.*/",
+        "getterDocumentation" : "/**<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>\n@return The bounding box around the face in the input image that Amazon Rekognition used for the search.*/",
         "getterMethodName" : "getSearchedFaceBoundingBox",
         "getterModel" : {
           "returnType" : "BoundingBox",
@@ -16298,7 +16298,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "SearchedFaceBoundingBox",
-        "setterDocumentation" : "/**<p>The bounding box around the face in the input image that Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Rekognition used for the search.*/",
+        "setterDocumentation" : "/**<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Amazon Rekognition used for the search.*/",
         "setterMethodName" : "setSearchedFaceBoundingBox",
         "setterModel" : {
           "variableDeclarationType" : "BoundingBox",
@@ -16309,12 +16309,12 @@
           "variableSetterType" : "BoundingBox"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The bounding box around the face in the input image that Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Rekognition used for the search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Amazon Rekognition used for the search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "BoundingBox",
           "variableName" : "searchedFaceBoundingBox",
           "variableType" : "BoundingBox",
-          "documentation" : "<p>The bounding box around the face in the input image that Rekognition used for the search.</p>",
+          "documentation" : "<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>",
           "simpleType" : "BoundingBox",
           "variableSetterType" : "BoundingBox"
         },
@@ -16636,11 +16636,11 @@
           "c2jName" : "SearchedFaceBoundingBox",
           "c2jShape" : "BoundingBox",
           "deprecated" : false,
-          "documentation" : "<p>The bounding box around the face in the input image that Rekognition used for the search.</p>",
+          "documentation" : "<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The bounding box around the face in the input image that Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Rekognition used for the search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Amazon Rekognition used for the search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSearchedFaceBoundingBox",
-          "getterDocumentation" : "/**<p>The bounding box around the face in the input image that Rekognition used for the search.</p>\n@return The bounding box around the face in the input image that Rekognition used for the search.*/",
+          "getterDocumentation" : "/**<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>\n@return The bounding box around the face in the input image that Amazon Rekognition used for the search.*/",
           "getterMethodName" : "getSearchedFaceBoundingBox",
           "getterModel" : {
             "returnType" : "BoundingBox",
@@ -16667,7 +16667,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "SearchedFaceBoundingBox",
-          "setterDocumentation" : "/**<p>The bounding box around the face in the input image that Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Rekognition used for the search.*/",
+          "setterDocumentation" : "/**<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Amazon Rekognition used for the search.*/",
           "setterMethodName" : "setSearchedFaceBoundingBox",
           "setterModel" : {
             "variableDeclarationType" : "BoundingBox",
@@ -16678,12 +16678,12 @@
             "variableSetterType" : "BoundingBox"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The bounding box around the face in the input image that Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Rekognition used for the search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>\n@param searchedFaceBoundingBox The bounding box around the face in the input image that Amazon Rekognition used for the search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "BoundingBox",
             "variableName" : "searchedFaceBoundingBox",
             "variableType" : "BoundingBox",
-            "documentation" : "<p>The bounding box around the face in the input image that Rekognition used for the search.</p>",
+            "documentation" : "<p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>",
             "simpleType" : "BoundingBox",
             "variableSetterType" : "BoundingBox"
           },
@@ -16793,11 +16793,11 @@
         "c2jName" : "CollectionId",
         "c2jShape" : "CollectionId",
         "deprecated" : false,
-        "documentation" : "<p>ID of the collection to search.</p>",
+        "documentation" : "<p>ID of the collection the face belongs to.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>ID of the collection to search.</p>\n@param collectionId ID of the collection to search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>ID of the collection the face belongs to.</p>\n@param collectionId ID of the collection the face belongs to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCollectionId",
-        "getterDocumentation" : "/**<p>ID of the collection to search.</p>\n@return ID of the collection to search.*/",
+        "getterDocumentation" : "/**<p>ID of the collection the face belongs to.</p>\n@return ID of the collection the face belongs to.*/",
         "getterMethodName" : "getCollectionId",
         "getterModel" : {
           "returnType" : "String",
@@ -16824,7 +16824,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CollectionId",
-        "setterDocumentation" : "/**<p>ID of the collection to search.</p>\n@param collectionId ID of the collection to search.*/",
+        "setterDocumentation" : "/**<p>ID of the collection the face belongs to.</p>\n@param collectionId ID of the collection the face belongs to.*/",
         "setterMethodName" : "setCollectionId",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -16835,12 +16835,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>ID of the collection to search.</p>\n@param collectionId ID of the collection to search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>ID of the collection the face belongs to.</p>\n@param collectionId ID of the collection the face belongs to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "collectionId",
           "variableType" : "String",
-          "documentation" : "<p>ID of the collection to search.</p>",
+          "documentation" : "<p>ID of the collection the face belongs to.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -16905,11 +16905,11 @@
         "c2jName" : "MaxFaces",
         "c2jShape" : "MaxFaces",
         "deprecated" : false,
-        "documentation" : "<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>",
+        "documentation" : "<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxFaces",
-        "getterDocumentation" : "/**<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>\n@return Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.*/",
+        "getterDocumentation" : "/**<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>\n@return Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.*/",
         "getterMethodName" : "getMaxFaces",
         "getterModel" : {
           "returnType" : "Integer",
@@ -16936,7 +16936,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "MaxFaces",
-        "setterDocumentation" : "/**<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.*/",
+        "setterDocumentation" : "/**<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.*/",
         "setterMethodName" : "setMaxFaces",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -16947,12 +16947,12 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxFaces",
           "variableType" : "Integer",
-          "documentation" : "<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>",
+          "documentation" : "<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -17019,11 +17019,11 @@
           "c2jName" : "CollectionId",
           "c2jShape" : "CollectionId",
           "deprecated" : false,
-          "documentation" : "<p>ID of the collection to search.</p>",
+          "documentation" : "<p>ID of the collection the face belongs to.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>ID of the collection to search.</p>\n@param collectionId ID of the collection to search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>ID of the collection the face belongs to.</p>\n@param collectionId ID of the collection the face belongs to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCollectionId",
-          "getterDocumentation" : "/**<p>ID of the collection to search.</p>\n@return ID of the collection to search.*/",
+          "getterDocumentation" : "/**<p>ID of the collection the face belongs to.</p>\n@return ID of the collection the face belongs to.*/",
           "getterMethodName" : "getCollectionId",
           "getterModel" : {
             "returnType" : "String",
@@ -17050,7 +17050,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CollectionId",
-          "setterDocumentation" : "/**<p>ID of the collection to search.</p>\n@param collectionId ID of the collection to search.*/",
+          "setterDocumentation" : "/**<p>ID of the collection the face belongs to.</p>\n@param collectionId ID of the collection the face belongs to.*/",
           "setterMethodName" : "setCollectionId",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -17061,12 +17061,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>ID of the collection to search.</p>\n@param collectionId ID of the collection to search.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>ID of the collection the face belongs to.</p>\n@param collectionId ID of the collection the face belongs to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "collectionId",
             "variableType" : "String",
-            "documentation" : "<p>ID of the collection to search.</p>",
+            "documentation" : "<p>ID of the collection the face belongs to.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -17190,11 +17190,11 @@
           "c2jName" : "MaxFaces",
           "c2jShape" : "MaxFaces",
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>",
+          "documentation" : "<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxFaces",
-          "getterDocumentation" : "/**<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>\n@return Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.*/",
+          "getterDocumentation" : "/**<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>\n@return Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.*/",
           "getterMethodName" : "getMaxFaces",
           "getterModel" : {
             "returnType" : "Integer",
@@ -17221,7 +17221,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "MaxFaces",
-          "setterDocumentation" : "/**<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.*/",
+          "setterDocumentation" : "/**<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.*/",
           "setterMethodName" : "setMaxFaces",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -17232,12 +17232,12 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>\n@param maxFaces Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxFaces",
             "variableType" : "Integer",
-            "documentation" : "<p>Maximum number of faces to return. The API will return the maximum number of faces with the highest confidence in the match.</p>",
+            "documentation" : "<p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -18231,11 +18231,559 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "customAuthorizers" : { },
   "examples" : {
-    "examples" : { },
+    "examples" : {
+      "CompareFaces" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation compares the largest face detected in the source image with each face detected in the target image.",
+        "id" : "to-compare-two-images-1482181985581",
+        "input" : {
+          "SourceImage" : {
+            "S3Object" : {
+              "Bucket" : "mybucket",
+              "Name" : "mysourceimage"
+            }
+          },
+          "TargetImage" : {
+            "S3Object" : {
+              "Bucket" : "mybucket",
+              "Name" : "mytargetimage"
+            }
+          },
+          "SimilarityThreshold" : 90
+        },
+        "output" : {
+          "SourceImageFace" : {
+            "BoundingBox" : {
+              "Width" : 0.25,
+              "Height" : 0.33481481671333313,
+              "Left" : 0.31888890266418457,
+              "Top" : 0.4933333396911621
+            },
+            "Confidence" : 99.9991226196289
+          },
+          "FaceMatches" : [ {
+            "Similarity" : 100,
+            "Face" : {
+              "BoundingBox" : {
+                "Width" : 0.25,
+                "Height" : 0.33481481671333313,
+                "Left" : 0.31888890266418457,
+                "Top" : 0.4933333396911621
+              },
+              "Confidence" : 99.9991226196289
+            }
+          } ]
+        },
+        "title" : "To compare two images"
+      } ],
+      "CreateCollection" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation creates a Rekognition collection for storing image data.",
+        "id" : "to-create-a-collection-1481833313674",
+        "input" : {
+          "CollectionId" : "myphotos"
+        },
+        "output" : {
+          "StatusCode" : 200,
+          "CollectionArn" : "aws:rekognition:us-west-2:123456789012:collection/myphotos"
+        },
+        "title" : "To create a collection"
+      } ],
+      "DeleteCollection" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation deletes a Rekognition collection.",
+        "id" : "to-delete-a-collection-1481838179973",
+        "input" : {
+          "CollectionId" : "myphotos"
+        },
+        "output" : {
+          "StatusCode" : 200
+        },
+        "title" : "To delete a collection"
+      } ],
+      "DeleteFaces" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation deletes one or more faces from a Rekognition collection.",
+        "id" : "to-delete-a-face-1482182799377",
+        "input" : {
+          "CollectionId" : "myphotos",
+          "FaceIds" : [ "ff43d742-0c13-5d16-a3e8-03d3f58e980b" ]
+        },
+        "output" : {
+          "DeletedFaces" : [ "ff43d742-0c13-5d16-a3e8-03d3f58e980b" ]
+        },
+        "title" : "To delete a face"
+      } ],
+      "DetectFaces" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation detects faces in an image stored in an AWS S3 bucket.",
+        "id" : "to-detect-faces-in-an-image-1481841782793",
+        "input" : {
+          "Image" : {
+            "S3Object" : {
+              "Bucket" : "mybucket",
+              "Name" : "myphoto"
+            }
+          }
+        },
+        "output" : {
+          "FaceDetails" : [ {
+            "BoundingBox" : {
+              "Width" : 0.23999999463558197,
+              "Height" : 0.18000000715255737,
+              "Left" : 0.5555555820465088,
+              "Top" : 0.33666667342185974
+            },
+            "Landmarks" : [ {
+              "Type" : "EYE_LEFT",
+              "X" : 0.6394737362861633,
+              "Y" : 0.40819624066352844
+            }, {
+              "Type" : "EYE_RIGHT",
+              "X" : 0.7266660928726196,
+              "Y" : 0.41039225459098816
+            }, {
+              "Type" : "NOSE_LEFT",
+              "X" : 0.6912462115287781,
+              "Y" : 0.44240960478782654
+            }, {
+              "Type" : "MOUTH_DOWN",
+              "X" : 0.6306198239326477,
+              "Y" : 0.46700039505958557
+            }, {
+              "Type" : "MOUTH_UP",
+              "X" : 0.7215608954429626,
+              "Y" : 0.47114261984825134
+            } ],
+            "Pose" : {
+              "Roll" : 0.9950747489929199,
+              "Yaw" : 13.693790435791016,
+              "Pitch" : 4.050806522369385
+            },
+            "Quality" : {
+              "Brightness" : 37.60169982910156,
+              "Sharpness" : 80
+            },
+            "Confidence" : 100
+          } ],
+          "OrientationCorrection" : "ROTATE_0"
+        },
+        "title" : "To detect faces in an image"
+      } ],
+      "DetectLabels" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation detects labels in the supplied image",
+        "id" : "to-detect-labels-1481834255770",
+        "input" : {
+          "Image" : {
+            "S3Object" : {
+              "Bucket" : "mybucket",
+              "Name" : "myphoto"
+            }
+          },
+          "MaxLabels" : 123,
+          "MinConfidence" : 70
+        },
+        "output" : {
+          "Labels" : [ {
+            "Name" : "People",
+            "Confidence" : 99.25072479248047
+          }, {
+            "Name" : "Person",
+            "Confidence" : 99.25074005126953
+          } ]
+        },
+        "title" : "To detect labels"
+      } ],
+      "IndexFaces" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation detects faces in an image and adds them to the specified Rekognition collection.",
+        "id" : "to-add-a-face-to-a-collection-1482179542923",
+        "input" : {
+          "CollectionId" : "myphotos",
+          "Image" : {
+            "S3Object" : {
+              "Bucket" : "mybucket",
+              "Name" : "myphoto"
+            }
+          },
+          "ExternalImageId" : "myphotoid",
+          "DetectionAttributes" : [ ]
+        },
+        "output" : {
+          "FaceRecords" : [ {
+            "Face" : {
+              "FaceId" : "ff43d742-0c13-5d16-a3e8-03d3f58e980b",
+              "BoundingBox" : {
+                "Width" : 0.25,
+                "Height" : 0.33481481671333313,
+                "Left" : 0.31888890266418457,
+                "Top" : 0.4933333396911621
+              },
+              "ImageId" : "465f4e93-763e-51d0-b030-b9667a2d94b1",
+              "Confidence" : 99.9991226196289
+            },
+            "FaceDetail" : {
+              "BoundingBox" : {
+                "Width" : 0.25,
+                "Height" : 0.33481481671333313,
+                "Left" : 0.31888890266418457,
+                "Top" : 0.4933333396911621
+              },
+              "Landmarks" : [ {
+                "Type" : "EYE_LEFT",
+                "X" : 0.3976764678955078,
+                "Y" : 0.6248345971107483
+              }, {
+                "Type" : "EYE_RIGHT",
+                "X" : 0.4810936450958252,
+                "Y" : 0.6317117214202881
+              }, {
+                "Type" : "NOSE_LEFT",
+                "X" : 0.41986238956451416,
+                "Y" : 0.7111940383911133
+              }, {
+                "Type" : "MOUTH_DOWN",
+                "X" : 0.40525302290916443,
+                "Y" : 0.7497701048851013
+              }, {
+                "Type" : "MOUTH_UP",
+                "X" : 0.4753248989582062,
+                "Y" : 0.7558549642562866
+              } ],
+              "Pose" : {
+                "Roll" : 4.707281112670898,
+                "Yaw" : -24.438663482666016,
+                "Pitch" : -9.713645935058594
+              },
+              "Quality" : {
+                "Brightness" : 29.23358917236328,
+                "Sharpness" : 80
+              },
+              "Confidence" : 99.9991226196289
+            }
+          }, {
+            "Face" : {
+              "FaceId" : "8be04dba-4e58-520d-850e-9eae4af70eb2",
+              "BoundingBox" : {
+                "Width" : 0.24444444477558136,
+                "Height" : 0.32592591643333435,
+                "Left" : 0.5144444704055786,
+                "Top" : 0.15111111104488373
+              },
+              "ImageId" : "465f4e93-763e-51d0-b030-b9667a2d94b1",
+              "Confidence" : 99.99950408935547
+            },
+            "FaceDetail" : {
+              "BoundingBox" : {
+                "Width" : 0.24444444477558136,
+                "Height" : 0.32592591643333435,
+                "Left" : 0.5144444704055786,
+                "Top" : 0.15111111104488373
+              },
+              "Landmarks" : [ {
+                "Type" : "EYE_LEFT",
+                "X" : 0.6006892323493958,
+                "Y" : 0.290842205286026
+              }, {
+                "Type" : "EYE_RIGHT",
+                "X" : 0.6808141469955444,
+                "Y" : 0.29609042406082153
+              }, {
+                "Type" : "NOSE_LEFT",
+                "X" : 0.6395332217216492,
+                "Y" : 0.3522595763206482
+              }, {
+                "Type" : "MOUTH_DOWN",
+                "X" : 0.5892083048820496,
+                "Y" : 0.38689887523651123
+              }, {
+                "Type" : "MOUTH_UP",
+                "X" : 0.674560010433197,
+                "Y" : 0.394125759601593
+              } ],
+              "Pose" : {
+                "Roll" : 2.1029529571533203,
+                "Yaw" : 6.716655254364014,
+                "Pitch" : -4.683138370513916
+              },
+              "Quality" : {
+                "Brightness" : 34.951698303222656,
+                "Sharpness" : 160
+              },
+              "Confidence" : 99.99950408935547
+            }
+          } ],
+          "OrientationCorrection" : "ROTATE_0"
+        },
+        "title" : "To add a face to a collection"
+      } ],
+      "ListCollections" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation returns a list of Rekognition collections.",
+        "id" : "to-list-the-collections-1482179199088",
+        "input" : { },
+        "output" : {
+          "CollectionIds" : [ "myphotos" ]
+        },
+        "title" : "To list the collections"
+      } ],
+      "ListFaces" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation lists the faces in a Rekognition collection.",
+        "id" : "to-list-the-faces-in-a-collection-1482181416530",
+        "input" : {
+          "CollectionId" : "myphotos",
+          "MaxResults" : 20
+        },
+        "output" : {
+          "Faces" : [ {
+            "FaceId" : "1c62e8b5-69a7-5b7d-b3cd-db4338a8a7e7",
+            "BoundingBox" : {
+              "Width" : 0.23999999463558197,
+              "Height" : 0.18000000715255737,
+              "Left" : 0.5555559992790222,
+              "Top" : 0.336667001247406
+            },
+            "ImageId" : "147fdf82-7a71-52cf-819b-e786c7b9746e",
+            "Confidence" : 100
+          }, {
+            "FaceId" : "29a75abe-397b-5101-ba4f-706783b2246c",
+            "BoundingBox" : {
+              "Width" : 0.22074100375175476,
+              "Height" : 0.16555599868297577,
+              "Left" : 0.30963000655174255,
+              "Top" : 0.7066670060157776
+            },
+            "ImageId" : "147fdf82-7a71-52cf-819b-e786c7b9746e",
+            "Confidence" : 100
+          }, {
+            "FaceId" : "38271d79-7bc2-5efb-b752-398a8d575b85",
+            "BoundingBox" : {
+              "Width" : 0.24222199618816376,
+              "Height" : 0.3234420120716095,
+              "Left" : 0.3233329951763153,
+              "Top" : 0.5
+            },
+            "ImageId" : "d5631190-d039-54e4-b267-abd22c8647c5",
+            "Confidence" : 99.99829864501953
+          }, {
+            "FaceId" : "3b01bef0-c883-5654-ba42-d5ad28b720b3",
+            "BoundingBox" : {
+              "Width" : 0.04747769981622696,
+              "Height" : 0.03555560111999512,
+              "Left" : 0.37388700246810913,
+              "Top" : 0.2477779984474182
+            },
+            "ImageId" : "812d9f04-86f9-54fc-9275-8d0dcbcb6784",
+            "Confidence" : 99.99210357666016
+          }, {
+            "FaceId" : "4839a608-49d0-566c-8301-509d71b534d1",
+            "BoundingBox" : {
+              "Width" : 0.07121659815311432,
+              "Height" : 0.05333330109715462,
+              "Left" : 0.2937690019607544,
+              "Top" : 0.35666701197624207
+            },
+            "ImageId" : "812d9f04-86f9-54fc-9275-8d0dcbcb6784",
+            "Confidence" : 99.99919891357422
+          }, {
+            "FaceId" : "70008e50-75e4-55d0-8e80-363fb73b3a14",
+            "BoundingBox" : {
+              "Width" : 0.24333299696445465,
+              "Height" : 0.3249259889125824,
+              "Left" : 0.5155559778213501,
+              "Top" : 0.1513350009918213
+            },
+            "ImageId" : "d5631190-d039-54e4-b267-abd22c8647c5",
+            "Confidence" : 99.99949645996094
+          }, {
+            "FaceId" : "7f5f88ed-d684-5a88-b0df-01e4a521552b",
+            "BoundingBox" : {
+              "Width" : 0.05044509842991829,
+              "Height" : 0.03777780011296272,
+              "Left" : 0.7002969980239868,
+              "Top" : 0.18777799606323242
+            },
+            "ImageId" : "812d9f04-86f9-54fc-9275-8d0dcbcb6784",
+            "Confidence" : 99.92639923095703
+          }, {
+            "FaceId" : "895b4e2c-81de-5902-a4bd-d1792bda00b2",
+            "BoundingBox" : {
+              "Width" : 0.07270029932260513,
+              "Height" : 0.05555560067296028,
+              "Left" : 0.13946600258350372,
+              "Top" : 0.46333301067352295
+            },
+            "ImageId" : "812d9f04-86f9-54fc-9275-8d0dcbcb6784",
+            "Confidence" : 99.99469757080078
+          }, {
+            "FaceId" : "8be04dba-4e58-520d-850e-9eae4af70eb2",
+            "BoundingBox" : {
+              "Width" : 0.24444399774074554,
+              "Height" : 0.3259260058403015,
+              "Left" : 0.5144439935684204,
+              "Top" : 0.15111100673675537
+            },
+            "ImageId" : "465f4e93-763e-51d0-b030-b9667a2d94b1",
+            "Confidence" : 99.99949645996094
+          }, {
+            "FaceId" : "908544ad-edc3-59df-8faf-6a87cc256cf5",
+            "BoundingBox" : {
+              "Width" : 0.25222599506378174,
+              "Height" : 0.18888899683952332,
+              "Left" : 0.3783380091190338,
+              "Top" : 0.2355560064315796
+            },
+            "ImageId" : "3c731605-d772-541a-a5e7-0375dbc68a07",
+            "Confidence" : 99.9999008178711
+          }, {
+            "FaceId" : "ff43d742-0c13-5d16-a3e8-03d3f58e980b",
+            "BoundingBox" : {
+              "Width" : 0.25,
+              "Height" : 0.33481499552726746,
+              "Left" : 0.31888899207115173,
+              "Top" : 0.49333301186561584
+            },
+            "ImageId" : "465f4e93-763e-51d0-b030-b9667a2d94b1",
+            "Confidence" : 99.99909973144531
+          } ]
+        },
+        "title" : "To list the faces in a collection"
+      } ],
+      "SearchFaces" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation searches for matching faces in the collection the supplied face belongs to.",
+        "id" : "to-delete-a-face-1482182799377",
+        "input" : {
+          "CollectionId" : "myphotos",
+          "FaceId" : "70008e50-75e4-55d0-8e80-363fb73b3a14",
+          "MaxFaces" : 10,
+          "FaceMatchThreshold" : 90
+        },
+        "output" : {
+          "SearchedFaceId" : "70008e50-75e4-55d0-8e80-363fb73b3a14",
+          "FaceMatches" : [ {
+            "Similarity" : 99.97222137451172,
+            "Face" : {
+              "FaceId" : "8be04dba-4e58-520d-850e-9eae4af70eb2",
+              "BoundingBox" : {
+                "Width" : 0.24444399774074554,
+                "Height" : 0.3259260058403015,
+                "Left" : 0.5144439935684204,
+                "Top" : 0.15111100673675537
+              },
+              "ImageId" : "465f4e93-763e-51d0-b030-b9667a2d94b1",
+              "Confidence" : 99.99949645996094
+            }
+          }, {
+            "Similarity" : 97.04154968261719,
+            "Face" : {
+              "FaceId" : "29a75abe-397b-5101-ba4f-706783b2246c",
+              "BoundingBox" : {
+                "Width" : 0.22074100375175476,
+                "Height" : 0.16555599868297577,
+                "Left" : 0.30963000655174255,
+                "Top" : 0.7066670060157776
+              },
+              "ImageId" : "147fdf82-7a71-52cf-819b-e786c7b9746e",
+              "Confidence" : 100
+            }
+          }, {
+            "Similarity" : 95.94520568847656,
+            "Face" : {
+              "FaceId" : "908544ad-edc3-59df-8faf-6a87cc256cf5",
+              "BoundingBox" : {
+                "Width" : 0.25222599506378174,
+                "Height" : 0.18888899683952332,
+                "Left" : 0.3783380091190338,
+                "Top" : 0.2355560064315796
+              },
+              "ImageId" : "3c731605-d772-541a-a5e7-0375dbc68a07",
+              "Confidence" : 99.9999008178711
+            }
+          } ]
+        },
+        "title" : "To delete a face"
+      } ],
+      "SearchFacesByImage" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation searches for faces in a Rekognition collection that match the largest face in an S3 bucket stored image.",
+        "id" : "to-search-for-faces-matching-a-supplied-image-1482175994491",
+        "input" : {
+          "CollectionId" : "myphotos",
+          "Image" : {
+            "S3Object" : {
+              "Bucket" : "mybucket",
+              "Name" : "myphoto"
+            }
+          },
+          "MaxFaces" : 5,
+          "FaceMatchThreshold" : 95
+        },
+        "output" : {
+          "SearchedFaceBoundingBox" : {
+            "Width" : 0.25,
+            "Height" : 0.33481481671333313,
+            "Left" : 0.31888890266418457,
+            "Top" : 0.4933333396911621
+          },
+          "SearchedFaceConfidence" : 99.9991226196289,
+          "FaceMatches" : [ {
+            "Similarity" : 99.97036743164062,
+            "Face" : {
+              "FaceId" : "38271d79-7bc2-5efb-b752-398a8d575b85",
+              "BoundingBox" : {
+                "Width" : 0.24222199618816376,
+                "Height" : 0.3234420120716095,
+                "Left" : 0.3233329951763153,
+                "Top" : 0.5
+              },
+              "ImageId" : "d5631190-d039-54e4-b267-abd22c8647c5",
+              "Confidence" : 99.99829864501953
+            }
+          } ]
+        },
+        "title" : "To search for faces matching a supplied image"
+      } ]
+    },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonRekognitionException",

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,14 @@ import java.io.Serializable;
 /**
  * <p>
  * Provides the S3 bucket name and object name.
+ * </p>
+ * <p>
+ * The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition
+ * operations.
+ * </p>
+ * <p>
+ * For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more
+ * information, see <a>manage-access-resource-policies</a>.
  * </p>
  */
 public class S3Object implements Serializable, Cloneable {

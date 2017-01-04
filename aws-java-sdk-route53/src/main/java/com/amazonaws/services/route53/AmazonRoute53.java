@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -127,8 +127,8 @@ public interface AmazonRoute53 {
      * @throws LimitsExceededException
      *         The limits specified for a resource have been exceeded.
      * @sample AmazonRoute53.AssociateVPCWithHostedZone
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone"
+     *      target="_top">AWS API Documentation</a>
      */
     AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest);
 
@@ -300,8 +300,8 @@ public interface AmazonRoute53 {
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @sample AmazonRoute53.ChangeResourceRecordSets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets"
+     *      target="_top">AWS API Documentation</a>
      */
     ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest);
 
@@ -331,8 +331,8 @@ public interface AmazonRoute53 {
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
      * @sample AmazonRoute53.ChangeTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource" target="_top">AWS
+     *      API Documentation</a>
      */
     ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest changeTagsForResourceRequest);
 
@@ -396,7 +396,7 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.CreateHealthCheck
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck" target="_top">AWS API
      *      Documentation</a>
      */
     CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest);
@@ -488,7 +488,7 @@ public interface AmazonRoute53 {
      * @throws DelegationSetNotReusableException
      *         A reusable delegation set with the specified ID does not exist.
      * @sample AmazonRoute53.CreateHostedZone
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone" target="_top">AWS API
      *      Documentation</a>
      */
     CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest);
@@ -535,8 +535,8 @@ public interface AmazonRoute53 {
      * @throws DelegationSetAlreadyReusableException
      *         The specified delegation set has already been marked as reusable.
      * @sample AmazonRoute53.CreateReusableDelegationSet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest createReusableDelegationSetRequest);
 
@@ -566,8 +566,8 @@ public interface AmazonRoute53 {
      *         The format of the traffic policy document that you specified in the <code>Document</code> element is
      *         invalid.
      * @sample AmazonRoute53.CreateTrafficPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest createTrafficPolicyRequest);
 
@@ -603,8 +603,8 @@ public interface AmazonRoute53 {
      * @throws TrafficPolicyInstanceAlreadyExistsException
      *         Traffic policy instance with given Id already exists.
      * @sample AmazonRoute53.CreateTrafficPolicyInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest);
 
@@ -638,8 +638,8 @@ public interface AmazonRoute53 {
      *         The format of the traffic policy document that you specified in the <code>Document</code> element is
      *         invalid.
      * @sample AmazonRoute53.CreateTrafficPolicyVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest);
 
@@ -682,8 +682,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.CreateVPCAssociationAuthorization
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest createVPCAssociationAuthorizationRequest);
 
@@ -715,7 +715,7 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DeleteHealthCheck
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest);
@@ -752,7 +752,7 @@ public interface AmazonRoute53 {
      * @throws InvalidDomainNameException
      *         The specified domain name is not valid.
      * @sample AmazonRoute53.DeleteHostedZone
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest);
@@ -785,8 +785,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DeleteReusableDelegationSet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest);
 
@@ -811,8 +811,8 @@ public interface AmazonRoute53 {
      * @throws ConcurrentModificationException
      *         Another user submitted a request to update the object at the same time that you did. Retry the request.
      * @sample AmazonRoute53.DeleteTrafficPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest);
 
@@ -844,8 +844,8 @@ public interface AmazonRoute53 {
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @sample AmazonRoute53.DeleteTrafficPolicyInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest);
 
@@ -883,8 +883,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DeleteVPCAssociationAuthorization
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteVPCAssociationAuthorizationResult deleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest deleteVPCAssociationAuthorizationRequest);
 
@@ -927,8 +927,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DisassociateVPCFromHostedZone
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone"
+     *      target="_top">AWS API Documentation</a>
      */
     DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest);
 
@@ -958,7 +958,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetChange
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange" target="_top">AWS API
+     *      Documentation</a>
      */
     GetChangeResult getChange(GetChangeRequest getChangeRequest);
 
@@ -974,7 +975,7 @@ public interface AmazonRoute53 {
      *        Empty request.
      * @return Result of the GetCheckerIpRanges operation returned by the service.
      * @sample AmazonRoute53.GetCheckerIpRanges
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges" target="_top">AWS API
      *      Documentation</a>
      */
     GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest);
@@ -1000,7 +1001,7 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetGeoLocation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation" target="_top">AWS API
      *      Documentation</a>
      */
     GetGeoLocationResult getGeoLocation(GetGeoLocationRequest getGeoLocationRequest);
@@ -1040,7 +1041,7 @@ public interface AmazonRoute53 {
      *         The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider
      *         using a newer endpoint or a tool that does so.
      * @sample AmazonRoute53.GetHealthCheck
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck" target="_top">AWS API
      *      Documentation</a>
      */
     GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest);
@@ -1056,8 +1057,8 @@ public interface AmazonRoute53 {
      *        <code>/2013-04-01/healthcheckcount</code> resource.
      * @return Result of the GetHealthCheckCount operation returned by the service.
      * @sample AmazonRoute53.GetHealthCheckCount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount" target="_top">AWS
+     *      API Documentation</a>
      */
     GetHealthCheckCountResult getHealthCheckCount(GetHealthCheckCountRequest getHealthCheckCountRequest);
 
@@ -1093,8 +1094,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetHealthCheckLastFailureReason
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason"
+     *      target="_top">AWS API Documentation</a>
      */
     GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest);
 
@@ -1113,8 +1114,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetHealthCheckStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus" target="_top">AWS
+     *      API Documentation</a>
      */
     GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest getHealthCheckStatusRequest);
 
@@ -1133,7 +1134,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetHostedZone
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone" target="_top">AWS API
+     *      Documentation</a>
      */
     GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest);
 
@@ -1150,7 +1152,7 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetHostedZoneCount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount" target="_top">AWS API
      *      Documentation</a>
      */
     GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest getHostedZoneCountRequest);
@@ -1178,8 +1180,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetReusableDelegationSet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet"
+     *      target="_top">AWS API Documentation</a>
      */
     GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest);
 
@@ -1200,7 +1202,7 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetTrafficPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest getTrafficPolicyRequest);
@@ -1236,8 +1238,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.GetTrafficPolicyInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest);
 
@@ -1255,8 +1257,8 @@ public interface AmazonRoute53 {
      *        <code>/2013-04-01/trafficpolicyinstancecount</code> resource.
      * @return Result of the GetTrafficPolicyInstanceCount operation returned by the service.
      * @sample AmazonRoute53.GetTrafficPolicyInstanceCount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"
+     *      target="_top">AWS API Documentation</a>
      */
     GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest);
 
@@ -1292,7 +1294,7 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.ListGeoLocations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations" target="_top">AWS API
      *      Documentation</a>
      */
     ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest);
@@ -1337,7 +1339,7 @@ public interface AmazonRoute53 {
      *         The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider
      *         using a newer endpoint or a tool that does so.
      * @sample AmazonRoute53.ListHealthChecks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks" target="_top">AWS API
      *      Documentation</a>
      */
     ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest);
@@ -1442,7 +1444,7 @@ public interface AmazonRoute53 {
      * @throws DelegationSetNotReusableException
      *         A reusable delegation set with the specified ID does not exist.
      * @sample AmazonRoute53.ListHostedZones
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones" target="_top">AWS API
      *      Documentation</a>
      */
     ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest);
@@ -1600,8 +1602,8 @@ public interface AmazonRoute53 {
      * @throws InvalidDomainNameException
      *         The specified domain name is not valid.
      * @sample AmazonRoute53.ListHostedZonesByName
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName" target="_top">AWS
+     *      API Documentation</a>
      */
     ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest listHostedZonesByNameRequest);
 
@@ -1681,8 +1683,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.ListResourceRecordSets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets" target="_top">AWS
+     *      API Documentation</a>
      */
     ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest);
 
@@ -1717,8 +1719,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.ListReusableDelegationSets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets"
+     *      target="_top">AWS API Documentation</a>
      */
     ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest);
 
@@ -1756,8 +1758,8 @@ public interface AmazonRoute53 {
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
      * @sample AmazonRoute53.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -1788,8 +1790,8 @@ public interface AmazonRoute53 {
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
      * @sample AmazonRoute53.ListTagsForResources
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources" target="_top">AWS
+     *      API Documentation</a>
      */
     ListTagsForResourcesResult listTagsForResources(ListTagsForResourcesRequest listTagsForResourcesRequest);
 
@@ -1855,8 +1857,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.ListTrafficPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies" target="_top">AWS
+     *      API Documentation</a>
      */
     ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest listTrafficPoliciesRequest);
 
@@ -1937,8 +1939,8 @@ public interface AmazonRoute53 {
      * @throws NoSuchTrafficPolicyInstanceException
      *         No traffic policy instance exists with the specified ID.
      * @sample AmazonRoute53.ListTrafficPolicyInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest);
 
@@ -2021,9 +2023,8 @@ public interface AmazonRoute53 {
      * @throws NoSuchHostedZoneException
      *         No hosted zone exists with the ID that you specified.
      * @sample AmazonRoute53.ListTrafficPolicyInstancesByHostedZone
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone"
+     *      target="_top">AWS API Documentation</a>
      */
     ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(
             ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest);
@@ -2100,8 +2101,8 @@ public interface AmazonRoute53 {
      * @throws NoSuchTrafficPolicyException
      *         No traffic policy exists with the specified ID.
      * @sample AmazonRoute53.ListTrafficPolicyInstancesByPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(
             ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest);
@@ -2169,8 +2170,8 @@ public interface AmazonRoute53 {
      * @throws NoSuchTrafficPolicyException
      *         No traffic policy exists with the specified ID.
      * @sample AmazonRoute53.ListTrafficPolicyVersions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions"
+     *      target="_top">AWS API Documentation</a>
      */
     ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest);
 
@@ -2210,8 +2211,8 @@ public interface AmazonRoute53 {
      *         The input is not valid.
      * @throws InvalidPaginationTokenException
      * @sample AmazonRoute53.ListVPCAssociationAuthorizations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations"
+     *      target="_top">AWS API Documentation</a>
      */
     ListVPCAssociationAuthorizationsResult listVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest listVPCAssociationAuthorizationsRequest);
 
@@ -2279,7 +2280,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.TestDNSAnswer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer" target="_top">AWS API
+     *      Documentation</a>
      */
     TestDNSAnswerResult testDNSAnswer(TestDNSAnswerRequest testDNSAnswerRequest);
 
@@ -2306,7 +2308,7 @@ public interface AmazonRoute53 {
      *         The value of <code>HealthCheckVersion</code> in the request doesn't match the value of
      *         <code>HealthCheckVersion</code> in the health check.
      * @sample AmazonRoute53.UpdateHealthCheck
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest);
@@ -2325,8 +2327,8 @@ public interface AmazonRoute53 {
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.UpdateHostedZoneComment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest);
 
@@ -2352,8 +2354,8 @@ public interface AmazonRoute53 {
      * @throws ConcurrentModificationException
      *         Another user submitted a request to update the object at the same time that you did. Retry the request.
      * @sample AmazonRoute53.UpdateTrafficPolicyComment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest);
 
@@ -2414,8 +2416,8 @@ public interface AmazonRoute53 {
      *         type than the current type for the instance. You specified the type in the JSON document in the
      *         <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.
      * @sample AmazonRoute53.UpdateTrafficPolicyInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,8 +14,8 @@ package com.amazonaws.services.lambda.model;
 
 /**
  * <p>
- * Lambda was unable to decrypt the environment variables because KMS access was denied. Please check the Lambda
- * function's KMS permissions.
+ * Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS
+ * permissions.
  * </p>
  */
 public class KMSAccessDeniedException extends com.amazonaws.services.lambda.model.AWSLambdaException {

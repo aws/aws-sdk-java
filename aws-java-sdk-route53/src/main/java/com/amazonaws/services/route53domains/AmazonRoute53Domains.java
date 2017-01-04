@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,8 +95,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.CheckDomainAvailability
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability"
+     *      target="_top">AWS API Documentation</a>
      */
     CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest);
 
@@ -121,8 +121,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.DeleteTagsForDomain
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest deleteTagsForDomainRequest);
 
@@ -140,8 +140,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.DisableDomainAutoRenew
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew"
+     *      target="_top">AWS API Documentation</a>
      */
     DisableDomainAutoRenewResult disableDomainAutoRenew(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest);
 
@@ -170,8 +170,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.DisableDomainTransferLock
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock"
+     *      target="_top">AWS API Documentation</a>
      */
     DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest disableDomainTransferLockRequest);
 
@@ -199,8 +199,8 @@ public interface AmazonRoute53Domains {
      * @throws TLDRulesViolationException
      *         The top-level domain does not support this operation.
      * @sample AmazonRoute53Domains.EnableDomainAutoRenew
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew"
+     *      target="_top">AWS API Documentation</a>
      */
     EnableDomainAutoRenewResult enableDomainAutoRenew(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest);
 
@@ -228,8 +228,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.EnableDomainTransferLock
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock"
+     *      target="_top">AWS API Documentation</a>
      */
     EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest);
 
@@ -253,8 +253,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.GetContactReachabilityStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus"
+     *      target="_top">AWS API Documentation</a>
      */
     GetContactReachabilityStatusResult getContactReachabilityStatus(GetContactReachabilityStatusRequest getContactReachabilityStatusRequest);
 
@@ -274,8 +274,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.GetDomainDetail
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail" target="_top">AWS
+     *      API Documentation</a>
      */
     GetDomainDetailResult getDomainDetail(GetDomainDetailRequest getDomainDetailRequest);
 
@@ -306,8 +306,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.GetDomainSuggestions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions"
+     *      target="_top">AWS API Documentation</a>
      */
     GetDomainSuggestionsResult getDomainSuggestions(GetDomainSuggestionsRequest getDomainSuggestionsRequest);
 
@@ -324,8 +324,8 @@ public interface AmazonRoute53Domains {
      *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
      *         the requester account.
      * @sample AmazonRoute53Domains.GetOperationDetail
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail"
+     *      target="_top">AWS API Documentation</a>
      */
     GetOperationDetailResult getOperationDetail(GetOperationDetailRequest getOperationDetailRequest);
 
@@ -342,7 +342,7 @@ public interface AmazonRoute53Domains {
      *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
      *         the requester account.
      * @sample AmazonRoute53Domains.ListDomains
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains" target="_top">AWS API
      *      Documentation</a>
      */
     ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest);
@@ -367,8 +367,8 @@ public interface AmazonRoute53Domains {
      *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
      *         the requester account.
      * @sample AmazonRoute53Domains.ListOperations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations" target="_top">AWS
+     *      API Documentation</a>
      */
     ListOperationsResult listOperations(ListOperationsRequest listOperationsRequest);
 
@@ -400,8 +400,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.ListTagsForDomain
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain"
+     *      target="_top">AWS API Documentation</a>
      */
     ListTagsForDomainResult listTagsForDomain(ListTagsForDomainRequest listTagsForDomainRequest);
 
@@ -445,8 +445,8 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @sample AmazonRoute53Domains.RegisterDomain
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain" target="_top">AWS
+     *      API Documentation</a>
      */
     RegisterDomainResult registerDomain(RegisterDomainRequest registerDomainRequest);
 
@@ -479,7 +479,7 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @sample AmazonRoute53Domains.RenewDomain
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain" target="_top">AWS API
      *      Documentation</a>
      */
     RenewDomainResult renewDomain(RenewDomainRequest renewDomainRequest);
@@ -502,9 +502,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.ResendContactReachabilityEmail
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail"
+     *      target="_top">AWS API Documentation</a>
      */
     ResendContactReachabilityEmailResult resendContactReachabilityEmail(ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest);
 
@@ -524,8 +523,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.RetrieveDomainAuthCode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode"
+     *      target="_top">AWS API Documentation</a>
      */
     RetrieveDomainAuthCodeResult retrieveDomainAuthCode(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest);
 
@@ -574,8 +573,8 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @sample AmazonRoute53Domains.TransferDomain
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain" target="_top">AWS
+     *      API Documentation</a>
      */
     TransferDomainResult transferDomain(TransferDomainRequest transferDomainRequest);
 
@@ -606,8 +605,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.UpdateDomainContact
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateDomainContactResult updateDomainContact(UpdateDomainContactRequest updateDomainContactRequest);
 
@@ -641,8 +640,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.UpdateDomainContactPrivacy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateDomainContactPrivacyResult updateDomainContactPrivacy(UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest);
 
@@ -673,8 +672,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.UpdateDomainNameservers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateDomainNameserversResult updateDomainNameservers(UpdateDomainNameserversRequest updateDomainNameserversRequest);
 
@@ -699,8 +698,8 @@ public interface AmazonRoute53Domains {
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
      * @sample AmazonRoute53Domains.UpdateTagsForDomain
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateTagsForDomainResult updateTagsForDomain(UpdateTagsForDomainRequest updateTagsForDomainRequest);
 
@@ -717,7 +716,7 @@ public interface AmazonRoute53Domains {
      *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
      *         the requester account.
      * @sample AmazonRoute53Domains.ViewBilling
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling" target="_top">AWS API
      *      Documentation</a>
      */
     ViewBillingResult viewBilling(ViewBillingRequest viewBillingRequest);

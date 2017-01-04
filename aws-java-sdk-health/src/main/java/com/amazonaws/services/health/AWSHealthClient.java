@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -318,8 +318,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * @throws UnsupportedLocaleException
      *         The specified locale is not supported.
      * @sample AWSHealth.DescribeAffectedEntities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest) {
@@ -362,8 +362,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * @param describeEntityAggregatesRequest
      * @return Result of the DescribeEntityAggregates operation returned by the service.
      * @sample AWSHealth.DescribeEntityAggregates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest) {
@@ -408,8 +408,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * @throws InvalidPaginationTokenException
      *         The specified pagination token (<code>nextToken</code>) is not valid.
      * @sample AWSHealth.DescribeEventAggregates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
@@ -459,8 +459,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * @throws UnsupportedLocaleException
      *         The specified locale is not supported.
      * @sample AWSHealth.DescribeEventDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest) {
@@ -506,7 +506,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * @throws UnsupportedLocaleException
      *         The specified locale is not supported.
      * @sample AWSHealth.DescribeEventTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -559,7 +559,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * @throws UnsupportedLocaleException
      *         The specified locale is not supported.
      * @sample AWSHealth.DescribeEvents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {

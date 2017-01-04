@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -526,8 +526,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.AddTagsToOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AddTagsToOnPremisesInstancesResult addTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) {
@@ -583,8 +583,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetApplicationRevisions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public BatchGetApplicationRevisionsResult batchGetApplicationRevisions(BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest) {
@@ -636,8 +636,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public BatchGetApplicationsResult batchGetApplications(BatchGetApplicationsRequest batchGetApplicationsRequest) {
@@ -696,8 +696,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetDeploymentGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public BatchGetDeploymentGroupsResult batchGetDeploymentGroups(BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest) {
@@ -752,8 +752,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetDeploymentInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest) {
@@ -803,8 +803,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetDeployments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public BatchGetDeploymentsResult batchGetDeployments(BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
@@ -857,8 +857,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) {
@@ -915,8 +915,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws ApplicationLimitExceededException
      *         More applications were attempted to be created than are allowed.
      * @sample AmazonCodeDeploy.CreateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
@@ -987,8 +987,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.CreateDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) {
@@ -1041,8 +1041,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentConfigLimitExceededException
      *         The deployment configurations limit was exceeded.
      * @sample AmazonCodeDeploy.CreateDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateDeploymentConfigResult createDeploymentConfig(CreateDeploymentConfigRequest createDeploymentConfigRequest) {
@@ -1153,8 +1153,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateDeploymentGroupResult createDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest) {
@@ -1201,8 +1201,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @sample AmazonCodeDeploy.DeleteApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
@@ -1258,8 +1258,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidOperationException
      *         An invalid operation was detected.
      * @sample AmazonCodeDeploy.DeleteDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteDeploymentConfigResult deleteDeploymentConfig(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest) {
@@ -1313,8 +1313,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the
      *         specified service role does not grant the appropriate permissions to Auto Scaling.
      * @sample AmazonCodeDeploy.DeleteDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteDeploymentGroupResult deleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) {
@@ -1361,8 +1361,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an invalid format.
      * @sample AmazonCodeDeploy.DeregisterOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeregisterOnPremisesInstanceResult deregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) {
@@ -1412,7 +1412,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1467,8 +1467,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
      * @sample AmazonCodeDeploy.GetApplicationRevision
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetApplicationRevisionResult getApplicationRevision(GetApplicationRevisionRequest getApplicationRevisionRequest) {
@@ -1517,7 +1517,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentDoesNotExistException
      *         The deployment does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1566,8 +1566,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentConfigDoesNotExistException
      *         The deployment configuration does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public GetDeploymentConfigResult getDeploymentConfig(GetDeploymentConfigRequest getDeploymentConfigRequest) {
@@ -1621,8 +1621,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentGroupDoesNotExistException
      *         The named deployment group does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public GetDeploymentGroupResult getDeploymentGroup(GetDeploymentGroupRequest getDeploymentGroupRequest) {
@@ -1676,8 +1676,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an invalid format.
      * @sample AmazonCodeDeploy.GetDeploymentInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest getDeploymentInstanceRequest) {
@@ -1726,8 +1726,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an invalid format.
      * @sample AmazonCodeDeploy.GetOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetOnPremisesInstanceResult getOnPremisesInstance(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) {
@@ -1790,8 +1790,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListApplicationRevisions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListApplicationRevisionsResult listApplicationRevisions(ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
@@ -1836,8 +1836,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) {
@@ -1886,8 +1886,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListDeploymentConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListDeploymentConfigsResult listDeploymentConfigs(ListDeploymentConfigsRequest listDeploymentConfigsRequest) {
@@ -1943,8 +1943,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListDeploymentGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListDeploymentGroupsResult listDeploymentGroups(ListDeploymentGroupsRequest listDeploymentGroupsRequest) {
@@ -1998,8 +1998,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidInstanceStatusException
      *         The specified instance status does not exist.
      * @sample AmazonCodeDeploy.ListDeploymentInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest listDeploymentInstancesRequest) {
@@ -2061,7 +2061,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListDeployments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2119,8 +2119,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListOnPremisesInstancesResult listOnPremisesInstances(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) {
@@ -2180,8 +2180,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
      * @sample AmazonCodeDeploy.RegisterApplicationRevision
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RegisterApplicationRevisionResult registerApplicationRevision(RegisterApplicationRevisionRequest registerApplicationRevisionRequest) {
@@ -2250,8 +2250,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws MultipleIamArnsProvidedException
      *         Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.
      * @sample AmazonCodeDeploy.RegisterOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RegisterOnPremisesInstanceResult registerOnPremisesInstance(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) {
@@ -2306,9 +2306,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.RemoveTagsFromOnPremisesInstances
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RemoveTagsFromOnPremisesInstancesResult removeTagsFromOnPremisesInstances(
@@ -2361,7 +2360,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid format.
      * @sample AmazonCodeDeploy.StopDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2412,8 +2411,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.UpdateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
@@ -2526,8 +2525,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateDeploymentGroupResult updateDeploymentGroup(UpdateDeploymentGroupRequest updateDeploymentGroupRequest) {

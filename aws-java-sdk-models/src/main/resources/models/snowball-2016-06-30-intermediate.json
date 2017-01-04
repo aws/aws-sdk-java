@@ -21037,11 +21037,417 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "customAuthorizers" : { },
   "examples" : {
-    "examples" : { },
+    "examples" : {
+      "CancelCluster" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation cancels a cluster job. You can only cancel a cluster job while it's in the AwaitingQuorum status.",
+        "id" : "to-cancel-a-cluster-job-1482533760554",
+        "input" : {
+          "ClusterId" : "CID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "output" : null,
+        "title" : "To cancel a cluster job"
+      } ],
+      "CancelJob" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation cancels a job. You can only cancel a job before its JobState value changes to PreparingAppliance.",
+        "id" : "to-cancel-a-job-for-a-snowball-device-1482534699477",
+        "input" : {
+          "JobId" : "JID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "output" : null,
+        "title" : "To cancel a job for a Snowball device"
+      } ],
+      "CreateAddress" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation creates an address for a job. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. If the address is invalid or unsupported, then an exception is thrown.",
+        "id" : "to-create-an-address-for-a-job-1482535416294",
+        "input" : {
+          "Address" : {
+            "Name" : "My Name",
+            "Company" : "My Company's Name",
+            "Street1" : "123 Main Street",
+            "City" : "Seattle",
+            "StateOrProvince" : "WA",
+            "Country" : "USA",
+            "PostalCode" : "98101",
+            "PhoneNumber" : "425-555-5555"
+          }
+        },
+        "output" : {
+          "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b"
+        },
+        "title" : "To create an address for a job"
+      } ],
+      "CreateCluster" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Creates an empty cluster. Each cluster supports five nodes. You use the CreateJob action separately to create the jobs for each of these nodes. The cluster does not ship until these five node jobs have been created.",
+        "id" : "to-create-a-cluster-1482864724077",
+        "input" : {
+          "JobType" : "LOCAL_USE",
+          "Resources" : {
+            "S3Resources" : [ {
+              "BucketArn" : "arn:aws:s3:::MyBucket",
+              "KeyRange" : { }
+            } ]
+          },
+          "Description" : "MyCluster",
+          "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
+          "KmsKeyARN" : "arn:aws:kms:us-east-1:123456789012:key/abcd1234-12ab-34cd-56ef-123456123456",
+          "RoleARN" : "arn:aws:iam::123456789012:role/snowball-import-S3-role",
+          "SnowballType" : "EDGE",
+          "ShippingOption" : "SECOND_DAY",
+          "Notification" : {
+            "JobStatesToNotify" : [ ],
+            "NotifyAll" : false
+          }
+        },
+        "output" : {
+          "ClusterId" : "CID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "title" : "To create a cluster"
+      } ],
+      "CreateJob" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for a node in a cluster, you only need to provide the clusterId value; the other job attributes are inherited from the cluster.",
+        "id" : "to-create-a-job-1482864834886",
+        "input" : {
+          "JobType" : "IMPORT",
+          "Resources" : {
+            "S3Resources" : [ {
+              "BucketArn" : "arn:aws:s3:::MyBucket",
+              "KeyRange" : { }
+            } ]
+          },
+          "Description" : "My Job",
+          "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
+          "KmsKeyARN" : "arn:aws:kms:us-east-1:123456789012:key/abcd1234-12ab-34cd-56ef-123456123456",
+          "RoleARN" : "arn:aws:iam::123456789012:role/snowball-import-S3-role",
+          "SnowballCapacityPreference" : "T80",
+          "ShippingOption" : "SECOND_DAY",
+          "Notification" : {
+            "JobStatesToNotify" : [ ],
+            "NotifyAll" : false
+          },
+          "SnowballType" : "STANDARD"
+        },
+        "output" : {
+          "JobId" : "JID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "title" : "To create a job"
+      } ],
+      "DescribeAddress" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation describes an address for a job.",
+        "id" : "to-describe-an-address-for-a-job-1482538608745",
+        "input" : {
+          "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b"
+        },
+        "output" : {
+          "Address" : {
+            "AddressId" : "ADID5643ec50-3eec-4eb3-9be6-9374c10eb51b",
+            "Name" : "My Name",
+            "Company" : "My Company",
+            "Street1" : "123 Main Street",
+            "City" : "Seattle",
+            "StateOrProvince" : "WA",
+            "Country" : "US",
+            "PostalCode" : "98101",
+            "PhoneNumber" : "425-555-5555"
+          }
+        },
+        "title" : "To describe an address for a job"
+      } ],
+      "DescribeAddresses" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation describes all the addresses that you've created for AWS Snowball. Calling this API in one of the US regions will return addresses from the list of all addresses associated with this account in all US regions.",
+        "id" : "to-describe-all-the-addresses-youve-created-for-aws-snowball-1482538936603",
+        "input" : { },
+        "output" : {
+          "Addresses" : [ {
+            "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
+            "Name" : "My Name",
+            "Company" : "My Company",
+            "Street1" : "123 Main Street",
+            "City" : "Seattle",
+            "StateOrProvince" : "WA",
+            "Country" : "US",
+            "PostalCode" : "98101",
+            "PhoneNumber" : "425-555-5555"
+          } ]
+        },
+        "title" : "To describe all the addresses you've created for AWS Snowball"
+      } ],
+      "DescribeCluster" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Returns information about a specific cluster including shipping information, cluster status, and other important metadata.",
+        "id" : "to-describe-a-cluster-1482864218396",
+        "input" : {
+          "ClusterId" : "CID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "output" : {
+          "ClusterMetadata" : {
+            "ClusterId" : "CID123e4567-e89b-12d3-a456-426655440000",
+            "Description" : "MyCluster",
+            "KmsKeyARN" : "arn:aws:kms:us-east-1:123456789012:key/abcd1234-12ab-34cd-56ef-123456123456",
+            "RoleARN" : "arn:aws:iam::123456789012:role/snowball-import-S3-role",
+            "ClusterState" : "Pending",
+            "JobType" : "LOCAL_USE",
+            "CreationDate" : "1480475517.0",
+            "Resources" : {
+              "S3Resources" : [ {
+                "BucketArn" : "arn:aws:s3:::MyBucket",
+                "KeyRange" : { }
+              } ]
+            },
+            "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
+            "ShippingOption" : "SECOND_DAY",
+            "Notification" : {
+              "JobStatesToNotify" : [ ],
+              "NotifyAll" : false
+            }
+          }
+        },
+        "title" : "To describe a cluster"
+      } ],
+      "DescribeJob" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation describes a job you've created for AWS Snowball.",
+        "id" : "to-describe-a-job-youve-created-for-aws-snowball-1482539500180",
+        "input" : {
+          "JobId" : "JID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "output" : {
+          "JobMetadata" : {
+            "JobId" : "JID123e4567-e89b-12d3-a456-426655440000",
+            "JobState" : "New",
+            "JobType" : "IMPORT",
+            "SnowballType" : "STANDARD",
+            "CreationDate" : "1475626164",
+            "Resources" : {
+              "S3Resources" : [ {
+                "BucketArn" : "arn:aws:s3:::MyBucket",
+                "KeyRange" : { }
+              } ]
+            },
+            "Description" : "My Job",
+            "KmsKeyARN" : "arn:aws:kms:us-east-1:123456789012:key/abcd1234-12ab-34cd-56ef-123456123456",
+            "RoleARN" : "arn:aws:iam::123456789012:role/snowball-import-S3-role",
+            "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
+            "ShippingDetails" : {
+              "ShippingOption" : "SECOND_DAY"
+            },
+            "SnowballCapacityPreference" : "T80",
+            "Notification" : {
+              "JobStatesToNotify" : [ ],
+              "NotifyAll" : false
+            }
+          }
+        },
+        "title" : "To describe a job you've created for AWS Snowball"
+      } ],
+      "GetJobManifest" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value. You can access the manifest file for up to 60 minutes after this request has been made. To access the manifest file after 60 minutes have passed, you'll have to make another call to the GetJobManifest action.\n\nThe manifest is an encrypted file that you can download after your job enters the WithCustomer status. The manifest is decrypted by using the UnlockCode code value, when you pass both values to the Snowball through the Snowball client when the client is started for the first time.\n\nAs a best practice, we recommend that you don't save a copy of an UnlockCode value in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snowball associated with that job.\n\nThe credentials of a given job, including its manifest file and unlock code, expire 90 days after the job is created.",
+        "id" : "to-get-the-manifest-for-a-job-youve-created-for-aws-snowball-1482540389246",
+        "input" : {
+          "JobId" : "JID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "output" : {
+          "ManifestURI" : "https://awsie-frosty-manifests-prod.s3.amazonaws.com/JID123e4567-e89b-12d3-a456-426655440000_manifest.bin?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20161224T005115Z&X-Amz-SignedHeaders=..."
+        },
+        "title" : "To get the manifest for a job you've created for AWS Snowball"
+      } ],
+      "GetJobUnlockCode" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Returns the UnlockCode code value for the specified job. A particular UnlockCode value can be accessed for up to 90 days after the associated job has been created.\n\nThe UnlockCode value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is used to decrypt the manifest file when it is passed along with the manifest to the Snowball through the Snowball client when the client is started for the first time.\n\nAs a best practice, we recommend that you don't save a copy of the UnlockCode in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snowball associated with that job.",
+        "id" : "to-get-the-unlock-code-for-a-job-youve-created-for-aws-snowball-1482541987286",
+        "input" : {
+          "JobId" : "JID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "output" : {
+          "UnlockCode" : "12345-abcde-56789-fghij-01234"
+        },
+        "title" : "To get the unlock code for a job you've created for AWS Snowball"
+      } ],
+      "GetSnowballUsage" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Returns information about the Snowball service limit for your account, and also the number of Snowballs your account has in use.\n\nThe default service limit for the number of Snowballs that you can have at one time is 1. If you want to increase your service limit, contact AWS Support.",
+        "id" : "to-see-your-snowball-service-limit-and-the-number-of-snowballs-you-have-in-use-1482863394588",
+        "input" : { },
+        "output" : {
+          "SnowballLimit" : 1,
+          "SnowballsInUse" : 0
+        },
+        "title" : "To see your Snowball service limit and the number of Snowballs you have in use"
+      } ],
+      "ListClusterJobs" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Returns an array of JobListEntry objects of the specified length. Each JobListEntry object is for a job in the specified cluster and contains a job's state, a job's ID, and other information.",
+        "id" : "to-get-a-list-of-jobs-in-a-cluster-that-youve-created-for-aws-snowball-1482863105773",
+        "input" : {
+          "ClusterId" : "CID123e4567-e89b-12d3-a456-426655440000"
+        },
+        "output" : {
+          "JobListEntries" : [ {
+            "JobId" : "JID123e4567-e89b-12d3-a456-426655440000",
+            "JobState" : "New",
+            "IsMaster" : false,
+            "JobType" : "LOCAL_USE",
+            "SnowballType" : "EDGE",
+            "CreationDate" : "1480475524.0",
+            "Description" : "MyClustrer-node-001"
+          }, {
+            "JobId" : "JID123e4567-e89b-12d3-a456-426655440001",
+            "JobState" : "New",
+            "IsMaster" : false,
+            "JobType" : "LOCAL_USE",
+            "SnowballType" : "EDGE",
+            "CreationDate" : "1480475525.0",
+            "Description" : "MyClustrer-node-002"
+          }, {
+            "JobId" : "JID123e4567-e89b-12d3-a456-426655440002",
+            "JobState" : "New",
+            "IsMaster" : false,
+            "JobType" : "LOCAL_USE",
+            "SnowballType" : "EDGE",
+            "CreationDate" : "1480475525.0",
+            "Description" : "MyClustrer-node-003"
+          }, {
+            "JobId" : "JID123e4567-e89b-12d3-a456-426655440003",
+            "JobState" : "New",
+            "IsMaster" : false,
+            "JobType" : "LOCAL_USE",
+            "SnowballType" : "EDGE",
+            "CreationDate" : "1480475525.0",
+            "Description" : "MyClustrer-node-004"
+          }, {
+            "JobId" : "JID123e4567-e89b-12d3-a456-426655440004",
+            "JobState" : "New",
+            "IsMaster" : false,
+            "JobType" : "LOCAL_USE",
+            "SnowballType" : "EDGE",
+            "CreationDate" : "1480475525.0",
+            "Description" : "MyClustrer-node-005"
+          } ]
+        },
+        "title" : "To get a list of jobs in a cluster that you've created for AWS Snowball"
+      } ],
+      "ListClusters" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Returns an array of ClusterListEntry objects of the specified length. Each ClusterListEntry object contains a cluster's state, a cluster's ID, and other important status information.",
+        "id" : "to-get-a-list-of-clusters-that-youve-created-for-aws-snowball-1482862223003",
+        "input" : { },
+        "output" : {
+          "ClusterListEntries" : [ {
+            "ClusterId" : "CID123e4567-e89b-12d3-a456-426655440000",
+            "ClusterState" : "Pending",
+            "CreationDate" : "1480475517.0",
+            "Description" : "MyCluster"
+          } ]
+        },
+        "title" : "To get a list of clusters that you've created for AWS Snowball"
+      } ],
+      "ListJobs" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "Returns an array of JobListEntry objects of the specified length. Each JobListEntry object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. Calling this API action in one of the US regions will return jobs from the list of all jobs associated with this account in all US regions.",
+        "id" : "to-get-a-list-of-jobs-that-youve-created-for-aws-snowball-1482542167627",
+        "input" : { },
+        "output" : {
+          "JobListEntries" : [ {
+            "JobId" : "JID123e4567-e89b-12d3-a456-426655440000",
+            "JobState" : "New",
+            "IsMaster" : false,
+            "JobType" : "IMPORT",
+            "SnowballType" : "STANDARD",
+            "CreationDate" : "1460678186.0",
+            "Description" : "MyJob"
+          } ]
+        },
+        "title" : "To get a list of jobs that you've created for AWS Snowball"
+      } ],
+      "UpdateCluster" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This action allows you to update certain parameters for a cluster. Once the cluster changes to a different state, usually within 60 minutes of it being created, this action is no longer available.",
+        "id" : "to-update-a-cluster-1482863900595",
+        "input" : {
+          "ClusterId" : "CID123e4567-e89b-12d3-a456-426655440000",
+          "Description" : "Updated the address to send this to image processing - RJ",
+          "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b"
+        },
+        "output" : null,
+        "title" : "To update a cluster"
+      } ],
+      "UpdateJob" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This action allows you to update certain parameters for a job. Once the job changes to a different job state, usually within 60 minutes of the job being created, this action is no longer available.",
+        "id" : "to-update-a-job-1482863556886",
+        "input" : {
+          "JobId" : "JID123e4567-e89b-12d3-a456-426655440000",
+          "AddressId" : "ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b",
+          "ShippingOption" : "NEXT_DAY",
+          "Description" : "Upgraded to Edge, shipped to Finance Dept, and requested faster shipping speed - TS.",
+          "SnowballCapacityPreference" : "T100"
+        },
+        "output" : null,
+        "title" : "To update a job"
+      } ]
+    },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonSnowballException",

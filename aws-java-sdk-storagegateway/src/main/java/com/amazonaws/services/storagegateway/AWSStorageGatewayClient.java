@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -372,8 +372,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ActivateGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ActivateGatewayResult activateGateway(ActivateGatewayRequest activateGatewayRequest) {
@@ -427,7 +427,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.AddCache
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -504,8 +504,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.AddTagsToResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
@@ -557,8 +557,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.AddUploadBuffer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public AddUploadBufferResult addUploadBuffer(AddUploadBufferRequest addUploadBufferRequest) {
@@ -624,8 +624,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.AddWorkingStorage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AddWorkingStorageResult addWorkingStorage(AddWorkingStorageRequest addWorkingStorageRequest) {
@@ -673,8 +673,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.CancelArchival
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CancelArchivalResult cancelArchival(CancelArchivalRequest cancelArchivalRequest) {
@@ -723,8 +723,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.CancelRetrieval
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CancelRetrievalResult cancelRetrieval(CancelRetrievalRequest cancelRetrievalRequest) {
@@ -789,8 +789,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.CreateCachediSCSIVolume
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
@@ -841,8 +841,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.CreateNFSFileShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateNFSFileShareResult createNFSFileShare(CreateNFSFileShareRequest createNFSFileShareRequest) {
@@ -931,8 +931,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred because the service is unavailable. For more information, see the
      *         error and message fields.
      * @sample AWSStorageGateway.CreateSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest) {
@@ -1002,8 +1002,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         error and message fields.
      * @sample AWSStorageGateway.CreateSnapshotFromVolumeRecoveryPoint
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
@@ -1091,8 +1091,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.CreateStorediSCSIVolume
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) {
@@ -1147,8 +1147,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.CreateTapeWithBarcode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateTapeWithBarcodeResult createTapeWithBarcode(CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest) {
@@ -1203,7 +1203,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.CreateTapes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1260,8 +1260,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DeleteBandwidthRateLimit
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest) {
@@ -1322,8 +1322,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DeleteChapCredentials
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest deleteChapCredentialsRequest) {
@@ -1372,8 +1372,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DeleteFileShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteFileShareResult deleteFileShare(DeleteFileShareRequest deleteFileShareRequest) {
@@ -1437,8 +1437,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DeleteGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteGatewayResult deleteGateway(DeleteGatewayRequest deleteGatewayRequest) {
@@ -1498,8 +1498,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DeleteSnapshotSchedule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
@@ -1548,7 +1548,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DeleteTape
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1597,8 +1597,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DeleteTapeArchive
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest deleteTapeArchiveRequest) {
@@ -1658,8 +1658,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DeleteVolume
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteVolumeResult deleteVolume(DeleteVolumeRequest deleteVolumeRequest) {
@@ -1713,8 +1713,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeBandwidthRateLimit
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest) {
@@ -1767,8 +1767,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeCache
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeCacheResult describeCache(DescribeCacheRequest describeCacheRequest) {
@@ -1820,8 +1820,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeCachediSCSIVolumes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest) {
@@ -1871,8 +1871,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeChapCredentials
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest describeChapCredentialsRequest) {
@@ -1923,8 +1923,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeGatewayInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeGatewayInformationResult describeGatewayInformation(DescribeGatewayInformationRequest describeGatewayInformationRequest) {
@@ -1974,8 +1974,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeMaintenanceStartTime
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest) {
@@ -2025,8 +2025,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeNFSFileShares
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeNFSFileSharesResult describeNFSFileShares(DescribeNFSFileSharesRequest describeNFSFileSharesRequest) {
@@ -2076,8 +2076,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeSnapshotSchedule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest) {
@@ -2128,8 +2128,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeStorediSCSIVolumes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) {
@@ -2182,8 +2182,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeTapeArchives
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeTapeArchivesResult describeTapeArchives(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
@@ -2240,8 +2240,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeTapeRecoveryPoints
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) {
@@ -2291,8 +2291,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeTapes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeTapesResult describeTapes(DescribeTapesRequest describeTapesRequest) {
@@ -2344,8 +2344,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeUploadBuffer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeUploadBufferResult describeUploadBuffer(DescribeUploadBufferRequest describeUploadBufferRequest) {
@@ -2397,8 +2397,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeVTLDevices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest describeVTLDevicesRequest) {
@@ -2458,8 +2458,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DescribeWorkingStorage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeWorkingStorageResult describeWorkingStorage(DescribeWorkingStorageRequest describeWorkingStorageRequest) {
@@ -2517,8 +2517,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.DisableGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DisableGatewayResult disableGateway(DisableGatewayRequest disableGatewayRequest) {
@@ -2567,8 +2567,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ListFileShares
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListFileSharesResult listFileShares(ListFileSharesRequest listFileSharesRequest) {
@@ -2637,8 +2637,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ListGateways
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest) {
@@ -2698,8 +2698,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ListLocalDisks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListLocalDisksResult listLocalDisks(ListLocalDisksRequest listLocalDisksRequest) {
@@ -2747,8 +2747,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
@@ -2825,7 +2825,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ListTapes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2875,8 +2875,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ListVolumeInitiators
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListVolumeInitiatorsResult listVolumeInitiators(ListVolumeInitiatorsRequest listVolumeInitiatorsRequest) {
@@ -2929,8 +2929,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ListVolumeRecoveryPoints
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest) {
@@ -2998,7 +2998,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ListVolumes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3047,8 +3047,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.RemoveTagsFromResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
@@ -3111,7 +3111,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ResetCache
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3166,8 +3166,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.RetrieveTapeArchive
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RetrieveTapeArchiveResult retrieveTapeArchive(RetrieveTapeArchiveRequest retrieveTapeArchiveRequest) {
@@ -3225,8 +3225,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.RetrieveTapeRecoveryPoint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest) {
@@ -3277,8 +3277,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.SetLocalConsolePassword
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public SetLocalConsolePasswordResult setLocalConsolePassword(SetLocalConsolePasswordRequest setLocalConsolePasswordRequest) {
@@ -3354,8 +3354,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.ShutdownGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest shutdownGatewayRequest) {
@@ -3415,8 +3415,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.StartGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public StartGatewayResult startGateway(StartGatewayRequest startGatewayRequest) {
@@ -3483,8 +3483,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.UpdateBandwidthRateLimit
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest) {
@@ -3561,8 +3561,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.UpdateChapCredentials
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest updateChapCredentialsRequest) {
@@ -3617,8 +3617,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.UpdateGatewayInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateGatewayInformationResult updateGatewayInformation(UpdateGatewayInformationRequest updateGatewayInformationRequest) {
@@ -3684,8 +3684,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.UpdateGatewaySoftwareNow
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest) {
@@ -3751,8 +3751,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.UpdateMaintenanceStartTime
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) {
@@ -3806,8 +3806,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.UpdateNFSFileShare
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest updateNFSFileShareRequest) {
@@ -3884,8 +3884,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.UpdateSnapshotSchedule
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateSnapshotScheduleResult updateSnapshotSchedule(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) {
@@ -3935,8 +3935,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
      * @sample AWSStorageGateway.UpdateVTLDeviceType
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateVTLDeviceTypeResult updateVTLDeviceType(UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest) {

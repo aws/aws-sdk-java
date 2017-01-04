@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,7 +110,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param batchGetBuildsRequest
      * @return A Java Future containing the result of the BatchGetBuilds operation returned by the service.
      * @sample AWSCodeBuildAsync.BatchGetBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<BatchGetBuildsResult> batchGetBuildsAsync(BatchGetBuildsRequest batchGetBuildsRequest);
@@ -127,7 +127,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetBuilds operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.BatchGetBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<BatchGetBuildsResult> batchGetBuildsAsync(BatchGetBuildsRequest batchGetBuildsRequest,
@@ -141,7 +141,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param batchGetProjectsRequest
      * @return A Java Future containing the result of the BatchGetProjects operation returned by the service.
      * @sample AWSCodeBuildAsync.BatchGetProjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<BatchGetProjectsResult> batchGetProjectsAsync(BatchGetProjectsRequest batchGetProjectsRequest);
@@ -158,7 +158,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetProjects operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.BatchGetProjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<BatchGetProjectsResult> batchGetProjectsAsync(BatchGetProjectsRequest batchGetProjectsRequest,
@@ -172,7 +172,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param createProjectRequest
      * @return A Java Future containing the result of the CreateProject operation returned by the service.
      * @sample AWSCodeBuildAsync.CreateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest createProjectRequest);
@@ -189,7 +189,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateProject operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.CreateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest createProjectRequest,
@@ -203,7 +203,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param deleteProjectRequest
      * @return A Java Future containing the result of the DeleteProject operation returned by the service.
      * @sample AWSCodeBuildAsync.DeleteProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest deleteProjectRequest);
@@ -220,7 +220,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteProject operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.DeleteProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest deleteProjectRequest,
@@ -234,7 +234,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param listBuildsRequest
      * @return A Java Future containing the result of the ListBuilds operation returned by the service.
      * @sample AWSCodeBuildAsync.ListBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListBuildsResult> listBuildsAsync(ListBuildsRequest listBuildsRequest);
 
@@ -250,7 +251,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListBuilds operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.ListBuilds
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ListBuildsResult> listBuildsAsync(ListBuildsRequest listBuildsRequest,
             com.amazonaws.handlers.AsyncHandler<ListBuildsRequest, ListBuildsResult> asyncHandler);
@@ -263,8 +265,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param listBuildsForProjectRequest
      * @return A Java Future containing the result of the ListBuildsForProject operation returned by the service.
      * @sample AWSCodeBuildAsync.ListBuildsForProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListBuildsForProjectResult> listBuildsForProjectAsync(ListBuildsForProjectRequest listBuildsForProjectRequest);
 
@@ -280,8 +282,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListBuildsForProject operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.ListBuildsForProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListBuildsForProjectResult> listBuildsForProjectAsync(ListBuildsForProjectRequest listBuildsForProjectRequest,
             com.amazonaws.handlers.AsyncHandler<ListBuildsForProjectRequest, ListBuildsForProjectResult> asyncHandler);
@@ -295,8 +297,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @return A Java Future containing the result of the ListCuratedEnvironmentImages operation returned by the
      *         service.
      * @sample AWSCodeBuildAsync.ListCuratedEnvironmentImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListCuratedEnvironmentImagesResult> listCuratedEnvironmentImagesAsync(
             ListCuratedEnvironmentImagesRequest listCuratedEnvironmentImagesRequest);
@@ -314,8 +316,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @return A Java Future containing the result of the ListCuratedEnvironmentImages operation returned by the
      *         service.
      * @sample AWSCodeBuildAsyncHandler.ListCuratedEnvironmentImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListCuratedEnvironmentImagesResult> listCuratedEnvironmentImagesAsync(
             ListCuratedEnvironmentImagesRequest listCuratedEnvironmentImagesRequest,
@@ -329,7 +331,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param listProjectsRequest
      * @return A Java Future containing the result of the ListProjects operation returned by the service.
      * @sample AWSCodeBuildAsync.ListProjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest listProjectsRequest);
@@ -346,7 +348,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListProjects operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.ListProjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest listProjectsRequest,
@@ -360,7 +362,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param startBuildRequest
      * @return A Java Future containing the result of the StartBuild operation returned by the service.
      * @sample AWSCodeBuildAsync.StartBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartBuildResult> startBuildAsync(StartBuildRequest startBuildRequest);
 
@@ -376,7 +379,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartBuild operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.StartBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StartBuildResult> startBuildAsync(StartBuildRequest startBuildRequest,
             com.amazonaws.handlers.AsyncHandler<StartBuildRequest, StartBuildResult> asyncHandler);
@@ -394,7 +398,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param stopBuildRequest
      * @return A Java Future containing the result of the StopBuild operation returned by the service.
      * @sample AWSCodeBuildAsync.StopBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopBuildResult> stopBuildAsync(StopBuildRequest stopBuildRequest);
 
@@ -415,7 +420,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopBuild operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.StopBuild
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<StopBuildResult> stopBuildAsync(StopBuildRequest stopBuildRequest,
             com.amazonaws.handlers.AsyncHandler<StopBuildRequest, StopBuildResult> asyncHandler);
@@ -428,7 +434,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * @param updateProjectRequest
      * @return A Java Future containing the result of the UpdateProject operation returned by the service.
      * @sample AWSCodeBuildAsync.UpdateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest updateProjectRequest);
@@ -445,7 +451,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateProject operation returned by the service.
      * @sample AWSCodeBuildAsyncHandler.UpdateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest updateProjectRequest,

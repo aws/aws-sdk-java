@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -109,7 +109,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.AddTagsToStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream" target="_top">AWS API
      *      Documentation</a>
      */
     AddTagsToStreamResult addTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest);
@@ -180,7 +180,8 @@ public interface AmazonKinesis {
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
      *         see the returned message.
      * @sample AmazonKinesis.CreateStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateStreamResult createStream(CreateStreamRequest createStreamRequest);
 
@@ -213,8 +214,8 @@ public interface AmazonKinesis {
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
      *         see the returned message.
      * @sample AmazonKinesis.DecreaseStreamRetentionPeriod
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod"
+     *      target="_top">AWS API Documentation</a>
      */
     DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest);
 
@@ -254,7 +255,8 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.DeleteStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteStreamResult deleteStream(DeleteStreamRequest deleteStreamRequest);
 
@@ -282,7 +284,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.DescribeLimits
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest);
@@ -320,7 +322,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.DescribeStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest);
@@ -366,8 +368,8 @@ public interface AmazonKinesis {
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
      * @sample AmazonKinesis.DisableEnhancedMonitoring
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring"
+     *      target="_top">AWS API Documentation</a>
      */
     DisableEnhancedMonitoringResult disableEnhancedMonitoring(DisableEnhancedMonitoringRequest disableEnhancedMonitoringRequest);
 
@@ -391,8 +393,8 @@ public interface AmazonKinesis {
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
      * @sample AmazonKinesis.EnableEnhancedMonitoring
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring"
+     *      target="_top">AWS API Documentation</a>
      */
     EnableEnhancedMonitoringResult enableEnhancedMonitoring(EnableEnhancedMonitoringRequest enableEnhancedMonitoringRequest);
 
@@ -466,7 +468,8 @@ public interface AmazonKinesis {
      * @throws ExpiredIteratorException
      *         The provided iterator exceeds the maximum age allowed.
      * @sample AmazonKinesis.GetRecords
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords" target="_top">AWS API
+     *      Documentation</a>
      */
     GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest);
 
@@ -530,7 +533,7 @@ public interface AmazonKinesis {
      *         href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
      * @sample AmazonKinesis.GetShardIterator
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator" target="_top">AWS API
      *      Documentation</a>
      */
     GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest);
@@ -574,8 +577,8 @@ public interface AmazonKinesis {
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
      *         see the returned message.
      * @sample AmazonKinesis.IncreaseStreamRetentionPeriod
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod"
+     *      target="_top">AWS API Documentation</a>
      */
     IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest);
 
@@ -606,7 +609,8 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.ListStreams
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams" target="_top">AWS API
+     *      Documentation</a>
      */
     ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest);
 
@@ -648,7 +652,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.ListTagsForStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream" target="_top">AWS API
      *      Documentation</a>
      */
     ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest listTagsForStreamRequest);
@@ -712,7 +716,8 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.MergeShards
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards" target="_top">AWS API
+     *      Documentation</a>
      */
     MergeShardsResult mergeShards(MergeShardsRequest mergeShardsRequest);
 
@@ -786,7 +791,8 @@ public interface AmazonKinesis {
      *         href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
      * @sample AmazonKinesis.PutRecord
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord" target="_top">AWS API
+     *      Documentation</a>
      */
     PutRecordResult putRecord(PutRecordRequest putRecordRequest);
 
@@ -888,7 +894,8 @@ public interface AmazonKinesis {
      *         href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
      * @sample AmazonKinesis.PutRecords
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords" target="_top">AWS API
+     *      Documentation</a>
      */
     PutRecordsResult putRecords(PutRecordsRequest putRecordsRequest);
 
@@ -916,8 +923,8 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.RemoveTagsFromStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream" target="_top">AWS
+     *      API Documentation</a>
      */
     RemoveTagsFromStreamResult removeTagsFromStream(RemoveTagsFromStreamRequest removeTagsFromStreamRequest);
 
@@ -991,7 +998,8 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed (5).
      * @sample AmazonKinesis.SplitShard
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard" target="_top">AWS API
+     *      Documentation</a>
      */
     SplitShardResult splitShard(SplitShardRequest splitShardRequest);
 
@@ -1043,7 +1051,7 @@ public interface AmazonKinesis {
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
      * @sample AmazonKinesis.UpdateShardCount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateShardCountResult updateShardCount(UpdateShardCountRequest updateShardCountRequest);

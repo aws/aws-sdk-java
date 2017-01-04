@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate"/>AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate" target="_top">AWS API
  *      Documentation</a>
  */
 public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -61,10 +61,10 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String certificateBody;
@@ -73,10 +73,10 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the private key in PEM-encoded format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String privateKey;
@@ -86,10 +86,10 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * certificates of the chain.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String certificateChain;
@@ -116,18 +116,20 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        The contents of the public key certificate in PEM-encoded format.
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      */
     public UploadServerCertificateRequest(String serverCertificateName, String certificateBody, String privateKey) {
         setServerCertificateName(serverCertificateName);
@@ -346,19 +348,20 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      */
 
     public void setCertificateBody(String certificateBody) {
@@ -370,18 +373,19 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @return The contents of the public key certificate in PEM-encoded format.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
-     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
-     *         and carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *         feed ( ), and carriage return ( ).
      */
 
     public String getCertificateBody() {
@@ -393,19 +397,20 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,19 +424,20 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the private key in PEM-encoded format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      */
 
     public void setPrivateKey(String privateKey) {
@@ -443,18 +449,19 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the private key in PEM-encoded format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @return The contents of the private key in PEM-encoded format.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
-     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
-     *         and carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *         feed ( ), and carriage return ( ).
      */
 
     public String getPrivateKey() {
@@ -466,19 +473,20 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the private key in PEM-encoded format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,20 +501,21 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * certificates of the chain.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param certificateChain
      *        The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *        certificates of the chain.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      */
 
     public void setCertificateChain(String certificateChain) {
@@ -519,19 +528,20 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * certificates of the chain.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @return The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *         certificates of the chain.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
-     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
-     *         and carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *         feed ( ), and carriage return ( ).
      */
 
     public String getCertificateChain() {
@@ -544,20 +554,21 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * certificates of the chain.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param certificateChain
      *        The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *        certificates of the chain.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

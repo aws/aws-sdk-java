@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -284,7 +284,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.CreateProtection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -331,7 +331,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceAlreadyExistsException
      *         Exception indicating the specified resource already exists.
      * @sample AWSShield.CreateSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -381,7 +381,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that the protection state has been modified by another client. You can retry the
      *         request.
      * @sample AWSShield.DeleteProtection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -431,7 +431,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DeleteSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -478,7 +478,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @sample AWSShield.DescribeAttack
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeAttackResult describeAttack(DescribeAttackRequest describeAttackRequest) {
@@ -524,7 +525,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DescribeProtection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -571,8 +572,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DescribeSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeSubscriptionResult describeSubscription(DescribeSubscriptionRequest describeSubscriptionRequest) {
@@ -620,7 +621,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @sample AWSShield.ListAttacks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListAttacksResult listAttacks(ListAttacksRequest listAttacksRequest) {
@@ -666,7 +668,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.ListProtections
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections" target="_top">AWS API
      *      Documentation</a>
      */
     @Override

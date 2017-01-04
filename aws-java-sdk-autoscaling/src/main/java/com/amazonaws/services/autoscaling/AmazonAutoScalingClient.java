@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -267,8 +267,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.AttachInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public AttachInstancesResult attachInstances(AttachInstancesRequest attachInstancesRequest) {
@@ -322,8 +322,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.AttachLoadBalancerTargetGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AttachLoadBalancerTargetGroupsResult attachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest attachLoadBalancerTargetGroupsRequest) {
@@ -380,8 +380,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.AttachLoadBalancers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AttachLoadBalancersResult attachLoadBalancers(AttachLoadBalancersRequest attachLoadBalancersRequest) {
@@ -468,8 +468,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.CompleteLifecycleAction
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CompleteLifecycleActionResult completeLifecycleAction(CompleteLifecycleActionRequest completeLifecycleActionRequest) {
@@ -528,8 +528,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.CreateAutoScalingGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateAutoScalingGroupResult createAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
@@ -588,8 +588,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.CreateLaunchConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateLaunchConfigurationResult createLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
@@ -648,8 +648,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.CreateOrUpdateTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateOrUpdateTagsResult createOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {
@@ -715,8 +715,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteAutoScalingGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteAutoScalingGroupResult deleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {
@@ -767,8 +767,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteLaunchConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteLaunchConfigurationResult deleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) {
@@ -817,8 +817,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteLifecycleHook
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteLifecycleHookResult deleteLifecycleHook(DeleteLifecycleHookRequest deleteLifecycleHookRequest) {
@@ -863,8 +863,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteNotificationConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteNotificationConfigurationResult deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) {
@@ -913,7 +913,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeletePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -958,8 +958,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteScheduledAction
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest) {
@@ -1004,7 +1004,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DeleteTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1053,8 +1053,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAccountLimits
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
@@ -1103,8 +1103,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAdjustmentTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeAdjustmentTypesResult describeAdjustmentTypes(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest) {
@@ -1156,8 +1156,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeAutoScalingGroupsResult describeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) {
@@ -1209,8 +1209,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeAutoScalingInstancesResult describeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest) {
@@ -1259,9 +1259,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingNotificationTypes
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(
@@ -1315,8 +1314,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLaunchConfigurations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeLaunchConfigurationsResult describeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) {
@@ -1365,8 +1364,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLifecycleHookTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeLifecycleHookTypesResult describeLifecycleHookTypes(DescribeLifecycleHookTypesRequest describeLifecycleHookTypesRequest) {
@@ -1416,8 +1415,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLifecycleHooks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeLifecycleHooksResult describeLifecycleHooks(DescribeLifecycleHooksRequest describeLifecycleHooksRequest) {
@@ -1462,9 +1461,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLoadBalancerTargetGroups
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeLoadBalancerTargetGroupsResult describeLoadBalancerTargetGroups(
@@ -1514,8 +1512,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeLoadBalancers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
@@ -1563,8 +1561,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeMetricCollectionTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeMetricCollectionTypesResult describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest) {
@@ -1616,9 +1614,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeNotificationConfigurations
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeNotificationConfigurationsResult describeNotificationConfigurations(
@@ -1672,8 +1669,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribePolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribePoliciesResult describePolicies(DescribePoliciesRequest describePoliciesRequest) {
@@ -1725,8 +1722,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeScalingActivities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
@@ -1775,8 +1772,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeScalingProcessTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeScalingProcessTypesResult describeScalingProcessTypes(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) {
@@ -1829,8 +1826,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeScheduledActions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest) {
@@ -1891,7 +1888,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1940,8 +1937,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DescribeTerminationPolicyTypes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest) {
@@ -2008,8 +2005,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DetachInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DetachInstancesResult detachInstances(DetachInstancesRequest detachInstancesRequest) {
@@ -2053,8 +2050,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DetachLoadBalancerTargetGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DetachLoadBalancerTargetGroupsResult detachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest detachLoadBalancerTargetGroupsRequest) {
@@ -2108,8 +2105,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DetachLoadBalancers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DetachLoadBalancersResult detachLoadBalancers(DetachLoadBalancersRequest detachLoadBalancersRequest) {
@@ -2159,8 +2156,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.DisableMetricsCollection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DisableMetricsCollectionResult disableMetricsCollection(DisableMetricsCollectionRequest disableMetricsCollectionRequest) {
@@ -2207,8 +2204,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.EnableMetricsCollection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public EnableMetricsCollectionResult enableMetricsCollection(EnableMetricsCollectionRequest enableMetricsCollectionRequest) {
@@ -2258,7 +2255,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.EnterStandby
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2305,7 +2302,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.ExecutePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2355,7 +2352,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.ExitStandby
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2450,8 +2447,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.PutLifecycleHook
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public PutLifecycleHookResult putLifecycleHook(PutLifecycleHookRequest putLifecycleHookRequest) {
@@ -2508,8 +2505,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.PutNotificationConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PutNotificationConfigurationResult putNotificationConfiguration(PutNotificationConfigurationRequest putNotificationConfigurationRequest) {
@@ -2565,8 +2562,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.PutScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
@@ -2622,8 +2619,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.PutScheduledUpdateGroupAction
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) {
@@ -2706,8 +2703,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.RecordLifecycleActionHeartbeat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest recordLifecycleActionHeartbeatRequest) {
@@ -2760,8 +2757,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.ResumeProcesses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ResumeProcessesResult resumeProcesses(ResumeProcessesRequest resumeProcessesRequest) {
@@ -2813,8 +2810,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.SetDesiredCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public SetDesiredCapacityResult setDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest) {
@@ -2864,8 +2861,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.SetInstanceHealth
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public SetInstanceHealthResult setInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest) {
@@ -2918,8 +2915,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.SetInstanceProtection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public SetInstanceProtectionResult setInstanceProtection(SetInstanceProtectionRequest setInstanceProtectionRequest) {
@@ -2978,8 +2975,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.SuspendProcesses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public SuspendProcessesResult suspendProcesses(SuspendProcessesRequest suspendProcessesRequest) {
@@ -3029,9 +3026,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.TerminateInstanceInAutoScalingGroup
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(
@@ -3114,8 +3110,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
      * @sample AmazonAutoScaling.UpdateAutoScalingGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateAutoScalingGroupResult updateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) {

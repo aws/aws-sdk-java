@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,8 @@ import java.io.Serializable;
  * inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/KeyRange"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/KeyRange" target="_top">AWS API
+ *      Documentation</a>
  */
 public class KeyRange implements Serializable, Cloneable {
 

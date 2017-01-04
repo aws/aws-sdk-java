@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,8 @@ import java.io.Serializable;
  * <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/WeeklyAutoScalingSchedule"/>AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/WeeklyAutoScalingSchedule" target="_top">AWS
+ *      API Documentation</a>
  */
 public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
 

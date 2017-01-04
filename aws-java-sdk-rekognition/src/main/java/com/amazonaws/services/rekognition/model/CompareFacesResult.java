@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,7 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
     private ComparedSourceImageFace sourceImageFace;
     /**
      * <p>
-     * Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence
+     * Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence
      * that the bounding box contains a face, and the similarity between the face in the bounding box and the face in
      * the source image.
      * </p>
@@ -73,12 +73,12 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence
+     * Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence
      * that the bounding box contains a face, and the similarity between the face in the bounding box and the face in
      * the source image.
      * </p>
      * 
-     * @return Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box,
+     * @return Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box,
      *         confidence that the bounding box contains a face, and the similarity between the face in the bounding box
      *         and the face in the source image.
      */
@@ -89,13 +89,13 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence
+     * Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence
      * that the bounding box contains a face, and the similarity between the face in the bounding box and the face in
      * the source image.
      * </p>
      * 
      * @param faceMatches
-     *        Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box,
+     *        Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box,
      *        confidence that the bounding box contains a face, and the similarity between the face in the bounding box
      *        and the face in the source image.
      */
@@ -111,7 +111,7 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence
+     * Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence
      * that the bounding box contains a face, and the similarity between the face in the bounding box and the face in
      * the source image.
      * </p>
@@ -122,7 +122,7 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param faceMatches
-     *        Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box,
+     *        Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box,
      *        confidence that the bounding box contains a face, and the similarity between the face in the bounding box
      *        and the face in the source image.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -140,13 +140,13 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box, confidence
+     * Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box, confidence
      * that the bounding box contains a face, and the similarity between the face in the bounding box and the face in
      * the source image.
      * </p>
      * 
      * @param faceMatches
-     *        Provides an array of <code>CompareFacesMatch </code> objects. Each object provides the bounding box,
+     *        Provides an array of <code>CompareFacesMatch</code> objects. Each object provides the bounding box,
      *        confidence that the bounding box contains a face, and the similarity between the face in the bounding box
      *        and the face in the source image.
      * @return Returns a reference to this object so that method calls can be chained together.

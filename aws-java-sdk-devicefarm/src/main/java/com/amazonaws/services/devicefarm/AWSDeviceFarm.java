@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,8 +101,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.CreateDevicePool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateDevicePoolResult createDevicePool(CreateDevicePoolRequest createDevicePoolRequest);
 
@@ -123,7 +123,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.CreateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject" target="_top">AWS API
      *      Documentation</a>
      */
     CreateProjectResult createProject(CreateProjectRequest createProjectRequest);
@@ -145,8 +145,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.CreateRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateRemoteAccessSessionResult createRemoteAccessSession(CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest);
 
@@ -167,7 +167,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.CreateUpload
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload" target="_top">AWS API
      *      Documentation</a>
      */
     CreateUploadResult createUpload(CreateUploadRequest createUploadRequest);
@@ -189,8 +189,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteDevicePool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest deleteDevicePoolRequest);
 
@@ -214,7 +214,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest);
@@ -236,8 +236,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteRemoteAccessSessionResult deleteRemoteAccessSession(DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest);
 
@@ -261,7 +261,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteRun
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest);
 
@@ -282,7 +283,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.DeleteUpload
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteUploadResult deleteUpload(DeleteUploadRequest deleteUploadRequest);
@@ -304,8 +305,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetAccountSettings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings" target="_top">AWS
+     *      API Documentation</a>
      */
     GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest);
 
@@ -326,7 +327,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetDevice
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice" target="_top">AWS API
+     *      Documentation</a>
      */
     GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest);
 
@@ -347,7 +349,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetDevicePool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool" target="_top">AWS API
      *      Documentation</a>
      */
     GetDevicePoolResult getDevicePool(GetDevicePoolRequest getDevicePoolRequest);
@@ -369,8 +371,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetDevicePoolCompatibility
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility"
+     *      target="_top">AWS API Documentation</a>
      */
     GetDevicePoolCompatibilityResult getDevicePoolCompatibility(GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest);
 
@@ -391,7 +393,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob" target="_top">AWS API
+     *      Documentation</a>
      */
     GetJobResult getJob(GetJobRequest getJobRequest);
 
@@ -418,8 +421,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetOfferingStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus" target="_top">AWS
+     *      API Documentation</a>
      */
     GetOfferingStatusResult getOfferingStatus(GetOfferingStatusRequest getOfferingStatusRequest);
 
@@ -440,7 +443,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject" target="_top">AWS API
+     *      Documentation</a>
      */
     GetProjectResult getProject(GetProjectRequest getProjectRequest);
 
@@ -461,8 +465,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     GetRemoteAccessSessionResult getRemoteAccessSession(GetRemoteAccessSessionRequest getRemoteAccessSessionRequest);
 
@@ -483,7 +487,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetRun
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun" target="_top">AWS API
+     *      Documentation</a>
      */
     GetRunResult getRun(GetRunRequest getRunRequest);
 
@@ -504,7 +509,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetSuite
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite" target="_top">AWS API
+     *      Documentation</a>
      */
     GetSuiteResult getSuite(GetSuiteRequest getSuiteRequest);
 
@@ -525,7 +531,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetTest
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest" target="_top">AWS API
+     *      Documentation</a>
      */
     GetTestResult getTest(GetTestRequest getTestRequest);
 
@@ -546,7 +553,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.GetUpload
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload" target="_top">AWS API
+     *      Documentation</a>
      */
     GetUploadResult getUpload(GetUploadRequest getUploadRequest);
 
@@ -569,8 +577,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.InstallToRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     InstallToRemoteAccessSessionResult installToRemoteAccessSession(InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest);
 
@@ -591,7 +599,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListArtifacts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts" target="_top">AWS API
      *      Documentation</a>
      */
     ListArtifactsResult listArtifacts(ListArtifactsRequest listArtifactsRequest);
@@ -613,7 +621,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListDevicePools
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools" target="_top">AWS API
      *      Documentation</a>
      */
     ListDevicePoolsResult listDevicePools(ListDevicePoolsRequest listDevicePoolsRequest);
@@ -635,7 +643,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListDevices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices" target="_top">AWS API
      *      Documentation</a>
      */
     ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest);
@@ -657,7 +665,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListJobs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs" target="_top">AWS API
+     *      Documentation</a>
      */
     ListJobsResult listJobs(ListJobsRequest listJobsRequest);
 
@@ -684,8 +693,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListOfferingTransactions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions"
+     *      target="_top">AWS API Documentation</a>
      */
     ListOfferingTransactionsResult listOfferingTransactions(ListOfferingTransactionsRequest listOfferingTransactionsRequest);
 
@@ -712,7 +721,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListOfferings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings" target="_top">AWS API
      *      Documentation</a>
      */
     ListOfferingsResult listOfferings(ListOfferingsRequest listOfferingsRequest);
@@ -734,7 +743,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListProjects
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects" target="_top">AWS API
      *      Documentation</a>
      */
     ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
@@ -756,8 +765,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListRemoteAccessSessions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions"
+     *      target="_top">AWS API Documentation</a>
      */
     ListRemoteAccessSessionsResult listRemoteAccessSessions(ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest);
 
@@ -778,7 +787,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListRuns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns" target="_top">AWS API
+     *      Documentation</a>
      */
     ListRunsResult listRuns(ListRunsRequest listRunsRequest);
 
@@ -799,7 +809,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListSamples
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples" target="_top">AWS API
      *      Documentation</a>
      */
     ListSamplesResult listSamples(ListSamplesRequest listSamplesRequest);
@@ -821,7 +831,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListSuites
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites" target="_top">AWS API
+     *      Documentation</a>
      */
     ListSuitesResult listSuites(ListSuitesRequest listSuitesRequest);
 
@@ -842,7 +853,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListTests
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests" target="_top">AWS API
+     *      Documentation</a>
      */
     ListTestsResult listTests(ListTestsRequest listTestsRequest);
 
@@ -863,8 +875,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListUniqueProblems
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems" target="_top">AWS
+     *      API Documentation</a>
      */
     ListUniqueProblemsResult listUniqueProblems(ListUniqueProblemsRequest listUniqueProblemsRequest);
 
@@ -885,7 +897,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ListUploads
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads" target="_top">AWS API
      *      Documentation</a>
      */
     ListUploadsResult listUploads(ListUploadsRequest listUploadsRequest);
@@ -913,8 +925,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.PurchaseOffering
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering" target="_top">AWS
+     *      API Documentation</a>
      */
     PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest);
 
@@ -941,7 +953,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.RenewOffering
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering" target="_top">AWS API
      *      Documentation</a>
      */
     RenewOfferingResult renewOffering(RenewOfferingRequest renewOfferingRequest);
@@ -965,7 +977,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.ScheduleRun
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun" target="_top">AWS API
      *      Documentation</a>
      */
     ScheduleRunResult scheduleRun(ScheduleRunRequest scheduleRunRequest);
@@ -987,8 +999,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.StopRemoteAccessSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession"
+     *      target="_top">AWS API Documentation</a>
      */
     StopRemoteAccessSessionResult stopRemoteAccessSession(StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest);
 
@@ -1012,7 +1024,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.StopRun
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun" target="_top">AWS API
+     *      Documentation</a>
      */
     StopRunResult stopRun(StopRunRequest stopRunRequest);
 
@@ -1034,8 +1047,8 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.UpdateDevicePool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool" target="_top">AWS
+     *      API Documentation</a>
      */
     UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest updateDevicePoolRequest);
 
@@ -1056,7 +1069,7 @@ public interface AWSDeviceFarm {
      * @throws ServiceAccountException
      *         There was a problem with the service account.
      * @sample AWSDeviceFarm.UpdateProject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);

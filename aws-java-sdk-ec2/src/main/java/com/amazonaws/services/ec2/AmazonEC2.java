@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,8 +98,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for accepting the quote.
      * @return Result of the AcceptReservedInstancesExchangeQuote operation returned by the service.
      * @sample AmazonEC2.AcceptReservedInstancesExchangeQuote
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote"
+     *      target="_top">AWS API Documentation</a>
      */
     AcceptReservedInstancesExchangeQuoteResult acceptReservedInstancesExchangeQuote(
             AcceptReservedInstancesExchangeQuoteRequest acceptReservedInstancesExchangeQuoteRequest);
@@ -115,8 +115,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AcceptVpcPeeringConnection.
      * @return Result of the AcceptVpcPeeringConnection operation returned by the service.
      * @sample AmazonEC2.AcceptVpcPeeringConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection" target="_top">AWS
+     *      API Documentation</a>
      */
     AcceptVpcPeeringConnectionResult acceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest acceptVpcPeeringConnectionRequest);
 
@@ -141,7 +141,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AllocateAddress.
      * @return Result of the AllocateAddress operation returned by the service.
      * @sample AmazonEC2.AllocateAddress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress" target="_top">AWS API
+     *      Documentation</a>
      */
     AllocateAddressResult allocateAddress(AllocateAddressRequest allocateAddressRequest);
 
@@ -162,7 +163,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AllocateHosts.
      * @return Result of the AllocateHosts operation returned by the service.
      * @sample AmazonEC2.AllocateHosts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts" target="_top">AWS API
+     *      Documentation</a>
      */
     AllocateHostsResult allocateHosts(AllocateHostsRequest allocateHostsRequest);
 
@@ -179,7 +181,7 @@ public interface AmazonEC2 {
      * @param assignIpv6AddressesRequest
      * @return Result of the AssignIpv6Addresses operation returned by the service.
      * @sample AmazonEC2.AssignIpv6Addresses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses" target="_top">AWS API
      *      Documentation</a>
      */
     AssignIpv6AddressesResult assignIpv6Addresses(AssignIpv6AddressesRequest assignIpv6AddressesRequest);
@@ -203,8 +205,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AssignPrivateIpAddresses.
      * @return Result of the AssignPrivateIpAddresses operation returned by the service.
      * @sample AmazonEC2.AssignPrivateIpAddresses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses" target="_top">AWS
+     *      API Documentation</a>
      */
     AssignPrivateIpAddressesResult assignPrivateIpAddresses(AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest);
 
@@ -239,7 +241,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AssociateAddress.
      * @return Result of the AssociateAddress operation returned by the service.
      * @sample AmazonEC2.AssociateAddress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress" target="_top">AWS API
+     *      Documentation</a>
      */
     AssociateAddressResult associateAddress(AssociateAddressRequest associateAddressRequest);
 
@@ -264,7 +267,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for AssociateDhcpOptions.
      * @return Result of the AssociateDhcpOptions operation returned by the service.
      * @sample AmazonEC2.AssociateDhcpOptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions" target="_top">AWS API
      *      Documentation</a>
      */
     AssociateDhcpOptionsResult associateDhcpOptions(AssociateDhcpOptionsRequest associateDhcpOptionsRequest);
@@ -286,7 +289,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for AssociateRouteTable.
      * @return Result of the AssociateRouteTable operation returned by the service.
      * @sample AmazonEC2.AssociateRouteTable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable" target="_top">AWS API
      *      Documentation</a>
      */
     AssociateRouteTableResult associateRouteTable(AssociateRouteTableRequest associateRouteTableRequest);
@@ -300,8 +303,8 @@ public interface AmazonEC2 {
      * @param associateSubnetCidrBlockRequest
      * @return Result of the AssociateSubnetCidrBlock operation returned by the service.
      * @sample AmazonEC2.AssociateSubnetCidrBlock
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock" target="_top">AWS
+     *      API Documentation</a>
      */
     AssociateSubnetCidrBlockResult associateSubnetCidrBlock(AssociateSubnetCidrBlockRequest associateSubnetCidrBlockRequest);
 
@@ -314,7 +317,7 @@ public interface AmazonEC2 {
      * @param associateVpcCidrBlockRequest
      * @return Result of the AssociateVpcCidrBlock operation returned by the service.
      * @sample AmazonEC2.AssociateVpcCidrBlock
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock" target="_top">AWS API
      *      Documentation</a>
      */
     AssociateVpcCidrBlockResult associateVpcCidrBlock(AssociateVpcCidrBlockRequest associateVpcCidrBlockRequest);
@@ -338,7 +341,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for AttachClassicLinkVpc.
      * @return Result of the AttachClassicLinkVpc operation returned by the service.
      * @sample AmazonEC2.AttachClassicLinkVpc
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc" target="_top">AWS API
      *      Documentation</a>
      */
     AttachClassicLinkVpcResult attachClassicLinkVpc(AttachClassicLinkVpcRequest attachClassicLinkVpcRequest);
@@ -354,7 +357,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for AttachInternetGateway.
      * @return Result of the AttachInternetGateway operation returned by the service.
      * @sample AmazonEC2.AttachInternetGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway" target="_top">AWS API
      *      Documentation</a>
      */
     AttachInternetGatewayResult attachInternetGateway(AttachInternetGatewayRequest attachInternetGatewayRequest);
@@ -368,7 +371,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for AttachNetworkInterface.
      * @return Result of the AttachNetworkInterface operation returned by the service.
      * @sample AmazonEC2.AttachNetworkInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface" target="_top">AWS API
      *      Documentation</a>
      */
     AttachNetworkInterfaceResult attachNetworkInterface(AttachNetworkInterfaceRequest attachNetworkInterfaceRequest);
@@ -430,7 +433,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AttachVolume.
      * @return Result of the AttachVolume operation returned by the service.
      * @sample AmazonEC2.AttachVolume
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume" target="_top">AWS API
+     *      Documentation</a>
      */
     AttachVolumeResult attachVolume(AttachVolumeRequest attachVolumeRequest);
 
@@ -445,7 +449,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AttachVpnGateway.
      * @return Result of the AttachVpnGateway operation returned by the service.
      * @sample AmazonEC2.AttachVpnGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway" target="_top">AWS API
+     *      Documentation</a>
      */
     AttachVpnGatewayResult attachVpnGateway(AttachVpnGatewayRequest attachVpnGatewayRequest);
 
@@ -473,8 +478,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AuthorizeSecurityGroupEgress.
      * @return Result of the AuthorizeSecurityGroupEgress operation returned by the service.
      * @sample AmazonEC2.AuthorizeSecurityGroupEgress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress"
+     *      target="_top">AWS API Documentation</a>
      */
     AuthorizeSecurityGroupEgressResult authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest);
 
@@ -504,8 +509,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for AuthorizeSecurityGroupIngress.
      * @return Result of the AuthorizeSecurityGroupIngress operation returned by the service.
      * @sample AmazonEC2.AuthorizeSecurityGroupIngress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress"
+     *      target="_top">AWS API Documentation</a>
      */
     AuthorizeSecurityGroupIngressResult authorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest);
 
@@ -532,7 +537,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for BundleInstance.
      * @return Result of the BundleInstance operation returned by the service.
      * @sample AmazonEC2.BundleInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance" target="_top">AWS API
+     *      Documentation</a>
      */
     BundleInstanceResult bundleInstance(BundleInstanceRequest bundleInstanceRequest);
 
@@ -545,7 +551,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CancelBundleTask.
      * @return Result of the CancelBundleTask operation returned by the service.
      * @sample AmazonEC2.CancelBundleTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask" target="_top">AWS API
+     *      Documentation</a>
      */
     CancelBundleTaskResult cancelBundleTask(CancelBundleTaskRequest cancelBundleTaskRequest);
 
@@ -565,7 +572,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for CancelConversionTask.
      * @return Result of the CancelConversionTask operation returned by the service.
      * @sample AmazonEC2.CancelConversionTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask" target="_top">AWS API
      *      Documentation</a>
      */
     CancelConversionTaskResult cancelConversionTask(CancelConversionTaskRequest cancelConversionTaskRequest);
@@ -581,7 +588,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CancelExportTask.
      * @return Result of the CancelExportTask operation returned by the service.
      * @sample AmazonEC2.CancelExportTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask" target="_top">AWS API
+     *      Documentation</a>
      */
     CancelExportTaskResult cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest);
 
@@ -594,7 +602,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CancelImportTask.
      * @return Result of the CancelImportTask operation returned by the service.
      * @sample AmazonEC2.CancelImportTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask" target="_top">AWS API
+     *      Documentation</a>
      */
     CancelImportTaskResult cancelImportTask(CancelImportTaskRequest cancelImportTaskRequest);
 
@@ -619,8 +628,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CancelReservedInstancesListing.
      * @return Result of the CancelReservedInstancesListing operation returned by the service.
      * @sample AmazonEC2.CancelReservedInstancesListing
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing"
+     *      target="_top">AWS API Documentation</a>
      */
     CancelReservedInstancesListingResult cancelReservedInstancesListing(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest);
 
@@ -640,8 +649,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CancelSpotFleetRequests.
      * @return Result of the CancelSpotFleetRequests operation returned by the service.
      * @sample AmazonEC2.CancelSpotFleetRequests
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests" target="_top">AWS
+     *      API Documentation</a>
      */
     CancelSpotFleetRequestsResult cancelSpotFleetRequests(CancelSpotFleetRequestsRequest cancelSpotFleetRequestsRequest);
 
@@ -663,8 +672,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CancelSpotInstanceRequests.
      * @return Result of the CancelSpotInstanceRequests operation returned by the service.
      * @sample AmazonEC2.CancelSpotInstanceRequests
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests" target="_top">AWS
+     *      API Documentation</a>
      */
     CancelSpotInstanceRequestsResult cancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest);
 
@@ -679,7 +688,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ConfirmProductInstance.
      * @return Result of the ConfirmProductInstance operation returned by the service.
      * @sample AmazonEC2.ConfirmProductInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance" target="_top">AWS API
      *      Documentation</a>
      */
     ConfirmProductInstanceResult confirmProductInstance(ConfirmProductInstanceRequest confirmProductInstanceRequest);
@@ -698,7 +707,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CopyImage.
      * @return Result of the CopyImage operation returned by the service.
      * @sample AmazonEC2.CopyImage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage" target="_top">AWS API
+     *      Documentation</a>
      */
     CopyImageResult copyImage(CopyImageRequest copyImageRequest);
 
@@ -734,7 +744,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CopySnapshot.
      * @return Result of the CopySnapshot operation returned by the service.
      * @sample AmazonEC2.CopySnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot" target="_top">AWS API
+     *      Documentation</a>
      */
     CopySnapshotResult copySnapshot(CopySnapshotRequest copySnapshotRequest);
 
@@ -774,7 +785,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateCustomerGateway.
      * @return Result of the CreateCustomerGateway operation returned by the service.
      * @sample AmazonEC2.CreateCustomerGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway" target="_top">AWS API
      *      Documentation</a>
      */
     CreateCustomerGatewayResult createCustomerGateway(CreateCustomerGatewayRequest createCustomerGatewayRequest);
@@ -838,7 +849,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateDhcpOptions.
      * @return Result of the CreateDhcpOptions operation returned by the service.
      * @sample AmazonEC2.CreateDhcpOptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateDhcpOptionsResult createDhcpOptions(CreateDhcpOptionsRequest createDhcpOptionsRequest);
 
@@ -852,8 +864,8 @@ public interface AmazonEC2 {
      * @param createEgressOnlyInternetGatewayRequest
      * @return Result of the CreateEgressOnlyInternetGateway operation returned by the service.
      * @sample AmazonEC2.CreateEgressOnlyInternetGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateEgressOnlyInternetGatewayResult createEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest createEgressOnlyInternetGatewayRequest);
 
@@ -873,7 +885,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateFlowLogs.
      * @return Result of the CreateFlowLogs operation returned by the service.
      * @sample AmazonEC2.CreateFlowLogs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateFlowLogsResult createFlowLogs(CreateFlowLogsRequest createFlowLogsRequest);
 
@@ -896,7 +909,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateImage.
      * @return Result of the CreateImage operation returned by the service.
      * @sample AmazonEC2.CreateImage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateImageResult createImage(CreateImageRequest createImageRequest);
 
@@ -915,8 +929,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateInstanceExportTask.
      * @return Result of the CreateInstanceExportTask operation returned by the service.
      * @sample AmazonEC2.CreateInstanceExportTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateInstanceExportTaskResult createInstanceExportTask(CreateInstanceExportTaskRequest createInstanceExportTaskRequest);
 
@@ -934,7 +948,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateInternetGateway.
      * @return Result of the CreateInternetGateway operation returned by the service.
      * @sample AmazonEC2.CreateInternetGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway" target="_top">AWS API
      *      Documentation</a>
      */
     CreateInternetGatewayResult createInternetGateway(CreateInternetGatewayRequest createInternetGatewayRequest);
@@ -969,7 +983,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateKeyPair.
      * @return Result of the CreateKeyPair operation returned by the service.
      * @sample AmazonEC2.CreateKeyPair
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateKeyPairResult createKeyPair(CreateKeyPairRequest createKeyPairRequest);
 
@@ -986,7 +1001,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateNatGateway.
      * @return Result of the CreateNatGateway operation returned by the service.
      * @sample AmazonEC2.CreateNatGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateNatGatewayResult createNatGateway(CreateNatGatewayRequest createNatGatewayRequest);
 
@@ -1005,7 +1021,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateNetworkAcl.
      * @return Result of the CreateNetworkAcl operation returned by the service.
      * @sample AmazonEC2.CreateNetworkAcl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateNetworkAclResult createNetworkAcl(CreateNetworkAclRequest createNetworkAclRequest);
 
@@ -1035,7 +1052,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateNetworkAclEntry.
      * @return Result of the CreateNetworkAclEntry operation returned by the service.
      * @sample AmazonEC2.CreateNetworkAclEntry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry" target="_top">AWS API
      *      Documentation</a>
      */
     CreateNetworkAclEntryResult createNetworkAclEntry(CreateNetworkAclEntryRequest createNetworkAclEntryRequest);
@@ -1054,7 +1071,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateNetworkInterface.
      * @return Result of the CreateNetworkInterface operation returned by the service.
      * @sample AmazonEC2.CreateNetworkInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface" target="_top">AWS API
      *      Documentation</a>
      */
     CreateNetworkInterfaceResult createNetworkInterface(CreateNetworkInterfaceRequest createNetworkInterfaceRequest);
@@ -1074,7 +1091,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreatePlacementGroup.
      * @return Result of the CreatePlacementGroup operation returned by the service.
      * @sample AmazonEC2.CreatePlacementGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup" target="_top">AWS API
      *      Documentation</a>
      */
     CreatePlacementGroupResult createPlacementGroup(CreatePlacementGroupRequest createPlacementGroupRequest);
@@ -1107,8 +1124,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateReservedInstancesListing.
      * @return Result of the CreateReservedInstancesListing operation returned by the service.
      * @sample AmazonEC2.CreateReservedInstancesListing
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateReservedInstancesListingResult createReservedInstancesListing(CreateReservedInstancesListingRequest createReservedInstancesListingRequest);
 
@@ -1151,7 +1168,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateRoute.
      * @return Result of the CreateRoute operation returned by the service.
      * @sample AmazonEC2.CreateRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateRouteResult createRoute(CreateRouteRequest createRouteRequest);
 
@@ -1170,7 +1188,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateRouteTable.
      * @return Result of the CreateRouteTable operation returned by the service.
      * @sample AmazonEC2.CreateRouteTable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateRouteTableResult createRouteTable(CreateRouteTableRequest createRouteTableRequest);
 
@@ -1213,7 +1232,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateSecurityGroup.
      * @return Result of the CreateSecurityGroup operation returned by the service.
      * @sample AmazonEC2.CreateSecurityGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup" target="_top">AWS API
      *      Documentation</a>
      */
     CreateSecurityGroupResult createSecurityGroup(CreateSecurityGroupRequest createSecurityGroupRequest);
@@ -1256,7 +1275,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateSnapshot.
      * @return Result of the CreateSnapshot operation returned by the service.
      * @sample AmazonEC2.CreateSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest);
 
@@ -1272,8 +1292,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateSpotDatafeedSubscription.
      * @return Result of the CreateSpotDatafeedSubscription operation returned by the service.
      * @sample AmazonEC2.CreateSpotDatafeedSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateSpotDatafeedSubscriptionResult createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest);
 
@@ -1318,7 +1338,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateSubnet.
      * @return Result of the CreateSubnet operation returned by the service.
      * @sample AmazonEC2.CreateSubnet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateSubnetResult createSubnet(CreateSubnetRequest createSubnetRequest);
 
@@ -1340,7 +1361,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateTags.
      * @return Result of the CreateTags operation returned by the service.
      * @sample AmazonEC2.CreateTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
 
@@ -1371,7 +1393,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateVolume.
      * @return Result of the CreateVolume operation returned by the service.
      * @sample AmazonEC2.CreateVolume
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateVolumeResult createVolume(CreateVolumeRequest createVolumeRequest);
 
@@ -1403,7 +1426,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateVpc.
      * @return Result of the CreateVpc operation returned by the service.
      * @sample AmazonEC2.CreateVpc
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateVpcResult createVpc(CreateVpcRequest createVpcRequest);
 
@@ -1422,7 +1446,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateVpcEndpoint.
      * @return Result of the CreateVpcEndpoint operation returned by the service.
      * @sample AmazonEC2.CreateVpcEndpoint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateVpcEndpointResult createVpcEndpoint(CreateVpcEndpointRequest createVpcEndpointRequest);
 
@@ -1445,8 +1470,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateVpcPeeringConnection.
      * @return Result of the CreateVpcPeeringConnection operation returned by the service.
      * @sample AmazonEC2.CreateVpcPeeringConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateVpcPeeringConnectionResult createVpcPeeringConnection(CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest);
 
@@ -1489,7 +1514,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateVpnConnection.
      * @return Result of the CreateVpnConnection operation returned by the service.
      * @sample AmazonEC2.CreateVpnConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection" target="_top">AWS API
      *      Documentation</a>
      */
     CreateVpnConnectionResult createVpnConnection(CreateVpnConnectionRequest createVpnConnectionRequest);
@@ -1510,8 +1535,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateVpnConnectionRoute.
      * @return Result of the CreateVpnConnectionRoute operation returned by the service.
      * @sample AmazonEC2.CreateVpnConnectionRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateVpnConnectionRouteResult createVpnConnectionRoute(CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest);
 
@@ -1530,7 +1555,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for CreateVpnGateway.
      * @return Result of the CreateVpnGateway operation returned by the service.
      * @sample AmazonEC2.CreateVpnGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateVpnGatewayResult createVpnGateway(CreateVpnGatewayRequest createVpnGatewayRequest);
 
@@ -1544,7 +1570,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteCustomerGateway.
      * @return Result of the DeleteCustomerGateway operation returned by the service.
      * @sample AmazonEC2.DeleteCustomerGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteCustomerGatewayResult deleteCustomerGateway(DeleteCustomerGatewayRequest deleteCustomerGatewayRequest);
@@ -1560,7 +1586,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteDhcpOptions.
      * @return Result of the DeleteDhcpOptions operation returned by the service.
      * @sample AmazonEC2.DeleteDhcpOptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteDhcpOptionsResult deleteDhcpOptions(DeleteDhcpOptionsRequest deleteDhcpOptionsRequest);
 
@@ -1572,8 +1599,8 @@ public interface AmazonEC2 {
      * @param deleteEgressOnlyInternetGatewayRequest
      * @return Result of the DeleteEgressOnlyInternetGateway operation returned by the service.
      * @sample AmazonEC2.DeleteEgressOnlyInternetGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteEgressOnlyInternetGatewayResult deleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest deleteEgressOnlyInternetGatewayRequest);
 
@@ -1586,7 +1613,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteFlowLogs.
      * @return Result of the DeleteFlowLogs operation returned by the service.
      * @sample AmazonEC2.DeleteFlowLogs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteFlowLogsResult deleteFlowLogs(DeleteFlowLogsRequest deleteFlowLogsRequest);
 
@@ -1600,7 +1628,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteInternetGateway.
      * @return Result of the DeleteInternetGateway operation returned by the service.
      * @sample AmazonEC2.DeleteInternetGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteInternetGatewayResult deleteInternetGateway(DeleteInternetGatewayRequest deleteInternetGatewayRequest);
@@ -1614,7 +1642,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteKeyPair.
      * @return Result of the DeleteKeyPair operation returned by the service.
      * @sample AmazonEC2.DeleteKeyPair
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest);
 
@@ -1629,7 +1658,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteNatGateway.
      * @return Result of the DeleteNatGateway operation returned by the service.
      * @sample AmazonEC2.DeleteNatGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteNatGatewayResult deleteNatGateway(DeleteNatGatewayRequest deleteNatGatewayRequest);
 
@@ -1643,7 +1673,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteNetworkAcl.
      * @return Result of the DeleteNetworkAcl operation returned by the service.
      * @sample AmazonEC2.DeleteNetworkAcl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteNetworkAclResult deleteNetworkAcl(DeleteNetworkAclRequest deleteNetworkAclRequest);
 
@@ -1656,7 +1687,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteNetworkAclEntry.
      * @return Result of the DeleteNetworkAclEntry operation returned by the service.
      * @sample AmazonEC2.DeleteNetworkAclEntry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteNetworkAclEntryResult deleteNetworkAclEntry(DeleteNetworkAclEntryRequest deleteNetworkAclEntryRequest);
@@ -1670,7 +1701,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteNetworkInterface.
      * @return Result of the DeleteNetworkInterface operation returned by the service.
      * @sample AmazonEC2.DeleteNetworkInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteNetworkInterfaceResult deleteNetworkInterface(DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest);
@@ -1687,7 +1718,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeletePlacementGroup.
      * @return Result of the DeletePlacementGroup operation returned by the service.
      * @sample AmazonEC2.DeletePlacementGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup" target="_top">AWS API
      *      Documentation</a>
      */
     DeletePlacementGroupResult deletePlacementGroup(DeletePlacementGroupRequest deletePlacementGroupRequest);
@@ -1701,7 +1732,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteRoute.
      * @return Result of the DeleteRoute operation returned by the service.
      * @sample AmazonEC2.DeleteRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteRouteResult deleteRoute(DeleteRouteRequest deleteRouteRequest);
 
@@ -1715,7 +1747,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteRouteTable.
      * @return Result of the DeleteRouteTable operation returned by the service.
      * @sample AmazonEC2.DeleteRouteTable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteRouteTableResult deleteRouteTable(DeleteRouteTableRequest deleteRouteTableRequest);
 
@@ -1733,7 +1766,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteSecurityGroup.
      * @return Result of the DeleteSecurityGroup operation returned by the service.
      * @sample AmazonEC2.DeleteSecurityGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteSecurityGroupResult deleteSecurityGroup(DeleteSecurityGroupRequest deleteSecurityGroupRequest);
@@ -1762,7 +1795,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteSnapshot.
      * @return Result of the DeleteSnapshot operation returned by the service.
      * @sample AmazonEC2.DeleteSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteSnapshotResult deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest);
 
@@ -1775,8 +1809,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteSpotDatafeedSubscription.
      * @return Result of the DeleteSpotDatafeedSubscription operation returned by the service.
      * @sample AmazonEC2.DeleteSpotDatafeedSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteSpotDatafeedSubscriptionResult deleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest);
 
@@ -1797,7 +1831,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteSubnet.
      * @return Result of the DeleteSubnet operation returned by the service.
      * @sample AmazonEC2.DeleteSubnet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteSubnetResult deleteSubnet(DeleteSubnetRequest deleteSubnetRequest);
 
@@ -1816,7 +1851,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteTags.
      * @return Result of the DeleteTags operation returned by the service.
      * @sample AmazonEC2.DeleteTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
@@ -1840,7 +1876,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteVolume.
      * @return Result of the DeleteVolume operation returned by the service.
      * @sample AmazonEC2.DeleteVolume
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteVolumeResult deleteVolume(DeleteVolumeRequest deleteVolumeRequest);
 
@@ -1856,7 +1893,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteVpc.
      * @return Result of the DeleteVpc operation returned by the service.
      * @sample AmazonEC2.DeleteVpc
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteVpcResult deleteVpc(DeleteVpcRequest deleteVpcRequest);
 
@@ -1870,7 +1908,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteVpcEndpoints.
      * @return Result of the DeleteVpcEndpoints operation returned by the service.
      * @sample AmazonEC2.DeleteVpcEndpoints
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteVpcEndpointsResult deleteVpcEndpoints(DeleteVpcEndpointsRequest deleteVpcEndpointsRequest);
@@ -1886,8 +1924,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteVpcPeeringConnection.
      * @return Result of the DeleteVpcPeeringConnection operation returned by the service.
      * @sample AmazonEC2.DeleteVpcPeeringConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteVpcPeeringConnectionResult deleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest);
 
@@ -1908,7 +1946,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteVpnConnection.
      * @return Result of the DeleteVpnConnection operation returned by the service.
      * @sample AmazonEC2.DeleteVpnConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteVpnConnectionResult deleteVpnConnection(DeleteVpnConnectionRequest deleteVpnConnectionRequest);
@@ -1924,8 +1962,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteVpnConnectionRoute.
      * @return Result of the DeleteVpnConnectionRoute operation returned by the service.
      * @sample AmazonEC2.DeleteVpnConnectionRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteVpnConnectionRouteResult deleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest);
 
@@ -1940,7 +1978,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeleteVpnGateway.
      * @return Result of the DeleteVpnGateway operation returned by the service.
      * @sample AmazonEC2.DeleteVpnGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteVpnGatewayResult deleteVpnGateway(DeleteVpnGatewayRequest deleteVpnGatewayRequest);
 
@@ -1956,7 +1995,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DeregisterImage.
      * @return Result of the DeregisterImage operation returned by the service.
      * @sample AmazonEC2.DeregisterImage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage" target="_top">AWS API
+     *      Documentation</a>
      */
     DeregisterImageResult deregisterImage(DeregisterImageRequest deregisterImageRequest);
 
@@ -2005,8 +2045,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeAccountAttributes.
      * @return Result of the DescribeAccountAttributes operation returned by the service.
      * @sample AmazonEC2.DescribeAccountAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest);
 
@@ -2031,7 +2071,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeAddresses.
      * @return Result of the DescribeAddresses operation returned by the service.
      * @sample AmazonEC2.DescribeAddresses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeAddressesResult describeAddresses(DescribeAddressesRequest describeAddressesRequest);
 
@@ -2058,8 +2099,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeAvailabilityZones.
      * @return Result of the DescribeAvailabilityZones operation returned by the service.
      * @sample AmazonEC2.DescribeAvailabilityZones
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeAvailabilityZonesResult describeAvailabilityZones(DescribeAvailabilityZonesRequest describeAvailabilityZonesRequest);
 
@@ -2086,7 +2127,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeBundleTasks.
      * @return Result of the DescribeBundleTasks operation returned by the service.
      * @sample AmazonEC2.DescribeBundleTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeBundleTasksResult describeBundleTasks(DescribeBundleTasksRequest describeBundleTasksRequest);
@@ -2109,8 +2150,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeClassicLinkInstances.
      * @return Result of the DescribeClassicLinkInstances operation returned by the service.
      * @sample AmazonEC2.DescribeClassicLinkInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeClassicLinkInstancesResult describeClassicLinkInstances(DescribeClassicLinkInstancesRequest describeClassicLinkInstancesRequest);
 
@@ -2135,8 +2176,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeConversionTasks.
      * @return Result of the DescribeConversionTasks operation returned by the service.
      * @sample AmazonEC2.DescribeConversionTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeConversionTasksResult describeConversionTasks(DescribeConversionTasksRequest describeConversionTasksRequest);
 
@@ -2161,8 +2202,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeCustomerGateways.
      * @return Result of the DescribeCustomerGateways operation returned by the service.
      * @sample AmazonEC2.DescribeCustomerGateways
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeCustomerGatewaysResult describeCustomerGateways(DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest);
 
@@ -2187,7 +2228,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeDhcpOptions.
      * @return Result of the DescribeDhcpOptions operation returned by the service.
      * @sample AmazonEC2.DescribeDhcpOptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeDhcpOptionsResult describeDhcpOptions(DescribeDhcpOptionsRequest describeDhcpOptionsRequest);
@@ -2207,8 +2248,8 @@ public interface AmazonEC2 {
      * @param describeEgressOnlyInternetGatewaysRequest
      * @return Result of the DescribeEgressOnlyInternetGateways operation returned by the service.
      * @sample AmazonEC2.DescribeEgressOnlyInternetGateways
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeEgressOnlyInternetGatewaysResult describeEgressOnlyInternetGateways(
             DescribeEgressOnlyInternetGatewaysRequest describeEgressOnlyInternetGatewaysRequest);
@@ -2222,7 +2263,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeExportTasks.
      * @return Result of the DescribeExportTasks operation returned by the service.
      * @sample AmazonEC2.DescribeExportTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest describeExportTasksRequest);
@@ -2244,7 +2285,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeFlowLogs.
      * @return Result of the DescribeFlowLogs operation returned by the service.
      * @sample AmazonEC2.DescribeFlowLogs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeFlowLogsResult describeFlowLogs(DescribeFlowLogsRequest describeFlowLogsRequest);
 
@@ -2271,8 +2313,8 @@ public interface AmazonEC2 {
      * @param describeHostReservationOfferingsRequest
      * @return Result of the DescribeHostReservationOfferings operation returned by the service.
      * @sample AmazonEC2.DescribeHostReservationOfferings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeHostReservationOfferingsResult describeHostReservationOfferings(DescribeHostReservationOfferingsRequest describeHostReservationOfferingsRequest);
 
@@ -2284,8 +2326,8 @@ public interface AmazonEC2 {
      * @param describeHostReservationsRequest
      * @return Result of the DescribeHostReservations operation returned by the service.
      * @sample AmazonEC2.DescribeHostReservations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeHostReservationsResult describeHostReservations(DescribeHostReservationsRequest describeHostReservationsRequest);
 
@@ -2303,7 +2345,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeHosts.
      * @return Result of the DescribeHosts operation returned by the service.
      * @sample AmazonEC2.DescribeHosts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeHostsResult describeHosts(DescribeHostsRequest describeHostsRequest);
 
@@ -2336,7 +2379,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeIdFormat.
      * @return Result of the DescribeIdFormat operation returned by the service.
      * @sample AmazonEC2.DescribeIdFormat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeIdFormatResult describeIdFormat(DescribeIdFormatRequest describeIdFormatRequest);
 
@@ -2368,8 +2412,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeIdentityIdFormat.
      * @return Result of the DescribeIdentityIdFormat operation returned by the service.
      * @sample AmazonEC2.DescribeIdentityIdFormat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeIdentityIdFormatResult describeIdentityIdFormat(DescribeIdentityIdFormatRequest describeIdentityIdFormatRequest);
 
@@ -2382,7 +2426,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeImageAttribute.
      * @return Result of the DescribeImageAttribute operation returned by the service.
      * @sample AmazonEC2.DescribeImageAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeImageAttributeResult describeImageAttribute(DescribeImageAttributeRequest describeImageAttributeRequest);
@@ -2403,7 +2447,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeImages.
      * @return Result of the DescribeImages operation returned by the service.
      * @sample AmazonEC2.DescribeImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest);
 
@@ -2423,8 +2468,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeImportImageTasks.
      * @return Result of the DescribeImportImageTasks operation returned by the service.
      * @sample AmazonEC2.DescribeImportImageTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeImportImageTasksResult describeImportImageTasks(DescribeImportImageTasksRequest describeImportImageTasksRequest);
 
@@ -2444,8 +2489,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeImportSnapshotTasks.
      * @return Result of the DescribeImportSnapshotTasks operation returned by the service.
      * @sample AmazonEC2.DescribeImportSnapshotTasks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeImportSnapshotTasksResult describeImportSnapshotTasks(DescribeImportSnapshotTasksRequest describeImportSnapshotTasksRequest);
 
@@ -2469,8 +2514,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeInstanceAttribute.
      * @return Result of the DescribeInstanceAttribute operation returned by the service.
      * @sample AmazonEC2.DescribeInstanceAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeInstanceAttributeResult describeInstanceAttribute(DescribeInstanceAttributeRequest describeInstanceAttributeRequest);
 
@@ -2515,7 +2560,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeInstanceStatus.
      * @return Result of the DescribeInstanceStatus operation returned by the service.
      * @sample AmazonEC2.DescribeInstanceStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeInstanceStatusResult describeInstanceStatus(DescribeInstanceStatusRequest describeInstanceStatusRequest);
@@ -2551,7 +2596,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeInstances.
      * @return Result of the DescribeInstances operation returned by the service.
      * @sample AmazonEC2.DescribeInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeInstancesResult describeInstances(DescribeInstancesRequest describeInstancesRequest);
 
@@ -2571,8 +2617,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeInternetGateways.
      * @return Result of the DescribeInternetGateways operation returned by the service.
      * @sample AmazonEC2.DescribeInternetGateways
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeInternetGatewaysResult describeInternetGateways(DescribeInternetGatewaysRequest describeInternetGatewaysRequest);
 
@@ -2597,7 +2643,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeKeyPairs.
      * @return Result of the DescribeKeyPairs operation returned by the service.
      * @sample AmazonEC2.DescribeKeyPairs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeKeyPairsResult describeKeyPairs(DescribeKeyPairsRequest describeKeyPairsRequest);
 
@@ -2619,8 +2666,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeMovingAddresses.
      * @return Result of the DescribeMovingAddresses operation returned by the service.
      * @sample AmazonEC2.DescribeMovingAddresses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeMovingAddressesResult describeMovingAddresses(DescribeMovingAddressesRequest describeMovingAddressesRequest);
 
@@ -2640,7 +2687,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeNatGateways.
      * @return Result of the DescribeNatGateways operation returned by the service.
      * @sample AmazonEC2.DescribeNatGateways
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeNatGatewaysResult describeNatGateways(DescribeNatGatewaysRequest describeNatGatewaysRequest);
@@ -2659,7 +2706,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeNetworkAcls.
      * @return Result of the DescribeNetworkAcls operation returned by the service.
      * @sample AmazonEC2.DescribeNetworkAcls
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeNetworkAclsResult describeNetworkAcls(DescribeNetworkAclsRequest describeNetworkAclsRequest);
@@ -2680,8 +2727,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeNetworkInterfaceAttribute.
      * @return Result of the DescribeNetworkInterfaceAttribute operation returned by the service.
      * @sample AmazonEC2.DescribeNetworkInterfaceAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeNetworkInterfaceAttributeResult describeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest describeNetworkInterfaceAttributeRequest);
 
@@ -2694,8 +2741,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeNetworkInterfaces.
      * @return Result of the DescribeNetworkInterfaces operation returned by the service.
      * @sample AmazonEC2.DescribeNetworkInterfaces
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeNetworkInterfacesResult describeNetworkInterfaces(DescribeNetworkInterfacesRequest describeNetworkInterfacesRequest);
 
@@ -2717,8 +2764,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribePlacementGroups.
      * @return Result of the DescribePlacementGroups operation returned by the service.
      * @sample AmazonEC2.DescribePlacementGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribePlacementGroupsResult describePlacementGroups(DescribePlacementGroupsRequest describePlacementGroupsRequest);
 
@@ -2740,7 +2787,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribePrefixLists.
      * @return Result of the DescribePrefixLists operation returned by the service.
      * @sample AmazonEC2.DescribePrefixLists
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists" target="_top">AWS API
      *      Documentation</a>
      */
     DescribePrefixListsResult describePrefixLists(DescribePrefixListsRequest describePrefixListsRequest);
@@ -2765,7 +2812,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeRegions.
      * @return Result of the DescribeRegions operation returned by the service.
      * @sample AmazonEC2.DescribeRegions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeRegionsResult describeRegions(DescribeRegionsRequest describeRegionsRequest);
 
@@ -2790,8 +2838,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeReservedInstances.
      * @return Result of the DescribeReservedInstances operation returned by the service.
      * @sample AmazonEC2.DescribeReservedInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeReservedInstancesResult describeReservedInstances(DescribeReservedInstancesRequest describeReservedInstancesRequest);
 
@@ -2832,8 +2880,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeReservedInstancesListings.
      * @return Result of the DescribeReservedInstancesListings operation returned by the service.
      * @sample AmazonEC2.DescribeReservedInstancesListings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeReservedInstancesListingsResult describeReservedInstancesListings(DescribeReservedInstancesListingsRequest describeReservedInstancesListingsRequest);
 
@@ -2860,8 +2908,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeReservedInstancesModifications.
      * @return Result of the DescribeReservedInstancesModifications operation returned by the service.
      * @sample AmazonEC2.DescribeReservedInstancesModifications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeReservedInstancesModificationsResult describeReservedInstancesModifications(
             DescribeReservedInstancesModificationsRequest describeReservedInstancesModificationsRequest);
@@ -2893,8 +2941,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeReservedInstancesOfferings.
      * @return Result of the DescribeReservedInstancesOfferings operation returned by the service.
      * @sample AmazonEC2.DescribeReservedInstancesOfferings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeReservedInstancesOfferingsResult describeReservedInstancesOfferings(
             DescribeReservedInstancesOfferingsRequest describeReservedInstancesOfferingsRequest);
@@ -2925,7 +2973,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeRouteTables.
      * @return Result of the DescribeRouteTables operation returned by the service.
      * @sample AmazonEC2.DescribeRouteTables
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeRouteTablesResult describeRouteTables(DescribeRouteTablesRequest describeRouteTablesRequest);
@@ -2955,8 +3003,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeScheduledInstanceAvailability.
      * @return Result of the DescribeScheduledInstanceAvailability operation returned by the service.
      * @sample AmazonEC2.DescribeScheduledInstanceAvailability
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeScheduledInstanceAvailabilityResult describeScheduledInstanceAvailability(
             DescribeScheduledInstanceAvailabilityRequest describeScheduledInstanceAvailabilityRequest);
@@ -2970,8 +3018,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeScheduledInstances.
      * @return Result of the DescribeScheduledInstances operation returned by the service.
      * @sample AmazonEC2.DescribeScheduledInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeScheduledInstancesResult describeScheduledInstances(DescribeScheduledInstancesRequest describeScheduledInstancesRequest);
 
@@ -2984,8 +3032,8 @@ public interface AmazonEC2 {
      * @param describeSecurityGroupReferencesRequest
      * @return Result of the DescribeSecurityGroupReferences operation returned by the service.
      * @sample AmazonEC2.DescribeSecurityGroupReferences
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeSecurityGroupReferencesResult describeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest describeSecurityGroupReferencesRequest);
 
@@ -3005,7 +3053,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSecurityGroups.
      * @return Result of the DescribeSecurityGroups operation returned by the service.
      * @sample AmazonEC2.DescribeSecurityGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeSecurityGroupsResult describeSecurityGroups(DescribeSecurityGroupsRequest describeSecurityGroupsRequest);
@@ -3031,8 +3079,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSnapshotAttribute.
      * @return Result of the DescribeSnapshotAttribute operation returned by the service.
      * @sample AmazonEC2.DescribeSnapshotAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeSnapshotAttributeResult describeSnapshotAttribute(DescribeSnapshotAttributeRequest describeSnapshotAttributeRequest);
 
@@ -3101,7 +3149,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSnapshots.
      * @return Result of the DescribeSnapshots operation returned by the service.
      * @sample AmazonEC2.DescribeSnapshots
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest);
 
@@ -3123,8 +3172,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSpotDatafeedSubscription.
      * @return Result of the DescribeSpotDatafeedSubscription operation returned by the service.
      * @sample AmazonEC2.DescribeSpotDatafeedSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeSpotDatafeedSubscriptionResult describeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest describeSpotDatafeedSubscriptionRequest);
 
@@ -3144,8 +3193,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSpotFleetInstances.
      * @return Result of the DescribeSpotFleetInstances operation returned by the service.
      * @sample AmazonEC2.DescribeSpotFleetInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeSpotFleetInstancesResult describeSpotFleetInstances(DescribeSpotFleetInstancesRequest describeSpotFleetInstancesRequest);
 
@@ -3162,8 +3211,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSpotFleetRequestHistory.
      * @return Result of the DescribeSpotFleetRequestHistory operation returned by the service.
      * @sample AmazonEC2.DescribeSpotFleetRequestHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeSpotFleetRequestHistoryResult describeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest describeSpotFleetRequestHistoryRequest);
 
@@ -3179,8 +3228,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSpotFleetRequests.
      * @return Result of the DescribeSpotFleetRequests operation returned by the service.
      * @sample AmazonEC2.DescribeSpotFleetRequests
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeSpotFleetRequestsResult describeSpotFleetRequests(DescribeSpotFleetRequestsRequest describeSpotFleetRequestsRequest);
 
@@ -3213,8 +3262,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSpotInstanceRequests.
      * @return Result of the DescribeSpotInstanceRequests operation returned by the service.
      * @sample AmazonEC2.DescribeSpotInstanceRequests
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeSpotInstanceRequestsResult describeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest describeSpotInstanceRequestsRequest);
 
@@ -3241,8 +3290,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSpotPriceHistory.
      * @return Result of the DescribeSpotPriceHistory operation returned by the service.
      * @sample AmazonEC2.DescribeSpotPriceHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeSpotPriceHistoryResult describeSpotPriceHistory(DescribeSpotPriceHistoryRequest describeSpotPriceHistoryRequest);
 
@@ -3263,8 +3312,8 @@ public interface AmazonEC2 {
      * @param describeStaleSecurityGroupsRequest
      * @return Result of the DescribeStaleSecurityGroups operation returned by the service.
      * @sample AmazonEC2.DescribeStaleSecurityGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeStaleSecurityGroupsResult describeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest describeStaleSecurityGroupsRequest);
 
@@ -3282,7 +3331,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeSubnets.
      * @return Result of the DescribeSubnets operation returned by the service.
      * @sample AmazonEC2.DescribeSubnets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeSubnetsResult describeSubnets(DescribeSubnetsRequest describeSubnetsRequest);
 
@@ -3307,7 +3357,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeTags.
      * @return Result of the DescribeTags operation returned by the service.
      * @sample AmazonEC2.DescribeTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
 
@@ -3332,8 +3383,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVolumeAttribute.
      * @return Result of the DescribeVolumeAttribute operation returned by the service.
      * @sample AmazonEC2.DescribeVolumeAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeVolumeAttributeResult describeVolumeAttribute(DescribeVolumeAttributeRequest describeVolumeAttributeRequest);
 
@@ -3382,7 +3433,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVolumeStatus.
      * @return Result of the DescribeVolumeStatus operation returned by the service.
      * @sample AmazonEC2.DescribeVolumeStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeVolumeStatusResult describeVolumeStatus(DescribeVolumeStatusRequest describeVolumeStatusRequest);
@@ -3415,7 +3466,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVolumes.
      * @return Result of the DescribeVolumes operation returned by the service.
      * @sample AmazonEC2.DescribeVolumes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest);
 
@@ -3435,7 +3487,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpcAttribute.
      * @return Result of the DescribeVpcAttribute operation returned by the service.
      * @sample AmazonEC2.DescribeVpcAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeVpcAttributeResult describeVpcAttribute(DescribeVpcAttributeRequest describeVpcAttributeRequest);
@@ -3449,7 +3501,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpcClassicLink.
      * @return Result of the DescribeVpcClassicLink operation returned by the service.
      * @sample AmazonEC2.DescribeVpcClassicLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeVpcClassicLinkResult describeVpcClassicLink(DescribeVpcClassicLinkRequest describeVpcClassicLinkRequest);
@@ -3475,8 +3527,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpcClassicLinkDnsSupport.
      * @return Result of the DescribeVpcClassicLinkDnsSupport operation returned by the service.
      * @sample AmazonEC2.DescribeVpcClassicLinkDnsSupport
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeVpcClassicLinkDnsSupportResult describeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest describeVpcClassicLinkDnsSupportRequest);
 
@@ -3489,8 +3541,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpcEndpointServices.
      * @return Result of the DescribeVpcEndpointServices operation returned by the service.
      * @sample AmazonEC2.DescribeVpcEndpointServices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeVpcEndpointServicesResult describeVpcEndpointServices(DescribeVpcEndpointServicesRequest describeVpcEndpointServicesRequest);
 
@@ -3510,7 +3562,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpcEndpoints.
      * @return Result of the DescribeVpcEndpoints operation returned by the service.
      * @sample AmazonEC2.DescribeVpcEndpoints
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeVpcEndpointsResult describeVpcEndpoints(DescribeVpcEndpointsRequest describeVpcEndpointsRequest);
@@ -3531,8 +3583,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpcPeeringConnections.
      * @return Result of the DescribeVpcPeeringConnections operation returned by the service.
      * @sample AmazonEC2.DescribeVpcPeeringConnections
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections"
+     *      target="_top">AWS API Documentation</a>
      */
     DescribeVpcPeeringConnectionsResult describeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest describeVpcPeeringConnectionsRequest);
 
@@ -3552,7 +3604,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpcs.
      * @return Result of the DescribeVpcs operation returned by the service.
      * @sample AmazonEC2.DescribeVpcs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeVpcsResult describeVpcs(DescribeVpcsRequest describeVpcsRequest);
 
@@ -3577,7 +3630,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpnConnections.
      * @return Result of the DescribeVpnConnections operation returned by the service.
      * @sample AmazonEC2.DescribeVpnConnections
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeVpnConnectionsResult describeVpnConnections(DescribeVpnConnectionsRequest describeVpnConnectionsRequest);
@@ -3603,7 +3656,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DescribeVpnGateways.
      * @return Result of the DescribeVpnGateways operation returned by the service.
      * @sample AmazonEC2.DescribeVpnGateways
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeVpnGatewaysResult describeVpnGateways(DescribeVpnGatewaysRequest describeVpnGatewaysRequest);
@@ -3626,7 +3679,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DetachClassicLinkVpc.
      * @return Result of the DetachClassicLinkVpc operation returned by the service.
      * @sample AmazonEC2.DetachClassicLinkVpc
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc" target="_top">AWS API
      *      Documentation</a>
      */
     DetachClassicLinkVpcResult detachClassicLinkVpc(DetachClassicLinkVpcRequest detachClassicLinkVpcRequest);
@@ -3641,7 +3694,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DetachInternetGateway.
      * @return Result of the DetachInternetGateway operation returned by the service.
      * @sample AmazonEC2.DetachInternetGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway" target="_top">AWS API
      *      Documentation</a>
      */
     DetachInternetGatewayResult detachInternetGateway(DetachInternetGatewayRequest detachInternetGatewayRequest);
@@ -3655,7 +3708,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DetachNetworkInterface.
      * @return Result of the DetachNetworkInterface operation returned by the service.
      * @sample AmazonEC2.DetachNetworkInterface
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface" target="_top">AWS API
      *      Documentation</a>
      */
     DetachNetworkInterfaceResult detachNetworkInterface(DetachNetworkInterfaceRequest detachNetworkInterfaceRequest);
@@ -3683,7 +3736,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DetachVolume.
      * @return Result of the DetachVolume operation returned by the service.
      * @sample AmazonEC2.DetachVolume
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume" target="_top">AWS API
+     *      Documentation</a>
      */
     DetachVolumeResult detachVolume(DetachVolumeRequest detachVolumeRequest);
 
@@ -3702,7 +3756,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DetachVpnGateway.
      * @return Result of the DetachVpnGateway operation returned by the service.
      * @sample AmazonEC2.DetachVpnGateway
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway" target="_top">AWS API
+     *      Documentation</a>
      */
     DetachVpnGatewayResult detachVpnGateway(DetachVpnGatewayRequest detachVpnGatewayRequest);
 
@@ -3715,8 +3770,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DisableVgwRoutePropagation.
      * @return Result of the DisableVgwRoutePropagation operation returned by the service.
      * @sample AmazonEC2.DisableVgwRoutePropagation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation" target="_top">AWS
+     *      API Documentation</a>
      */
     DisableVgwRoutePropagationResult disableVgwRoutePropagation(DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest);
 
@@ -3730,7 +3785,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DisableVpcClassicLink.
      * @return Result of the DisableVpcClassicLink operation returned by the service.
      * @sample AmazonEC2.DisableVpcClassicLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink" target="_top">AWS API
      *      Documentation</a>
      */
     DisableVpcClassicLinkResult disableVpcClassicLink(DisableVpcClassicLinkRequest disableVpcClassicLinkRequest);
@@ -3748,8 +3803,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for DisableVpcClassicLinkDnsSupport.
      * @return Result of the DisableVpcClassicLinkDnsSupport operation returned by the service.
      * @sample AmazonEC2.DisableVpcClassicLinkDnsSupport
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport"
+     *      target="_top">AWS API Documentation</a>
      */
     DisableVpcClassicLinkDnsSupportResult disableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest disableVpcClassicLinkDnsSupportRequest);
 
@@ -3770,7 +3825,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DisassociateAddress.
      * @return Result of the DisassociateAddress operation returned by the service.
      * @sample AmazonEC2.DisassociateAddress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress" target="_top">AWS API
      *      Documentation</a>
      */
     DisassociateAddressResult disassociateAddress(DisassociateAddressRequest disassociateAddressRequest);
@@ -3790,7 +3845,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for DisassociateRouteTable.
      * @return Result of the DisassociateRouteTable operation returned by the service.
      * @sample AmazonEC2.DisassociateRouteTable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable" target="_top">AWS API
      *      Documentation</a>
      */
     DisassociateRouteTableResult disassociateRouteTable(DisassociateRouteTableRequest disassociateRouteTableRequest);
@@ -3805,8 +3860,8 @@ public interface AmazonEC2 {
      * @param disassociateSubnetCidrBlockRequest
      * @return Result of the DisassociateSubnetCidrBlock operation returned by the service.
      * @sample AmazonEC2.DisassociateSubnetCidrBlock
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock"
+     *      target="_top">AWS API Documentation</a>
      */
     DisassociateSubnetCidrBlockResult disassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest disassociateSubnetCidrBlockRequest);
 
@@ -3819,8 +3874,8 @@ public interface AmazonEC2 {
      * @param disassociateVpcCidrBlockRequest
      * @return Result of the DisassociateVpcCidrBlock operation returned by the service.
      * @sample AmazonEC2.DisassociateVpcCidrBlock
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock" target="_top">AWS
+     *      API Documentation</a>
      */
     DisassociateVpcCidrBlockResult disassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest disassociateVpcCidrBlockRequest);
 
@@ -3833,8 +3888,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for EnableVgwRoutePropagation.
      * @return Result of the EnableVgwRoutePropagation operation returned by the service.
      * @sample AmazonEC2.EnableVgwRoutePropagation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation" target="_top">AWS
+     *      API Documentation</a>
      */
     EnableVgwRoutePropagationResult enableVgwRoutePropagation(EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest);
 
@@ -3848,7 +3903,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for EnableVolumeIO.
      * @return Result of the EnableVolumeIO operation returned by the service.
      * @sample AmazonEC2.EnableVolumeIO
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO" target="_top">AWS API
+     *      Documentation</a>
      */
     EnableVolumeIOResult enableVolumeIO(EnableVolumeIORequest enableVolumeIORequest);
 
@@ -3867,7 +3923,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for EnableVpcClassicLink.
      * @return Result of the EnableVpcClassicLink operation returned by the service.
      * @sample AmazonEC2.EnableVpcClassicLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink" target="_top">AWS API
      *      Documentation</a>
      */
     EnableVpcClassicLinkResult enableVpcClassicLink(EnableVpcClassicLinkRequest enableVpcClassicLinkRequest);
@@ -3886,8 +3942,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for EnableVpcClassicLinkDnsSupport.
      * @return Result of the EnableVpcClassicLinkDnsSupport operation returned by the service.
      * @sample AmazonEC2.EnableVpcClassicLinkDnsSupport
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport"
+     *      target="_top">AWS API Documentation</a>
      */
     EnableVpcClassicLinkDnsSupportResult enableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest enableVpcClassicLinkDnsSupportRequest);
 
@@ -3917,7 +3973,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for GetConsoleOutput.
      * @return Result of the GetConsoleOutput operation returned by the service.
      * @sample AmazonEC2.GetConsoleOutput
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput" target="_top">AWS API
+     *      Documentation</a>
      */
     GetConsoleOutputResult getConsoleOutput(GetConsoleOutputRequest getConsoleOutputRequest);
 
@@ -3933,7 +3990,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for the request.
      * @return Result of the GetConsoleScreenshot operation returned by the service.
      * @sample AmazonEC2.GetConsoleScreenshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot" target="_top">AWS API
      *      Documentation</a>
      */
     GetConsoleScreenshotResult getConsoleScreenshot(GetConsoleScreenshotRequest getConsoleScreenshotRequest);
@@ -3951,8 +4008,8 @@ public interface AmazonEC2 {
      * @param getHostReservationPurchasePreviewRequest
      * @return Result of the GetHostReservationPurchasePreview operation returned by the service.
      * @sample AmazonEC2.GetHostReservationPurchasePreview
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview"
+     *      target="_top">AWS API Documentation</a>
      */
     GetHostReservationPurchasePreviewResult getHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest getHostReservationPurchasePreviewRequest);
 
@@ -3979,7 +4036,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for GetPasswordData.
      * @return Result of the GetPasswordData operation returned by the service.
      * @sample AmazonEC2.GetPasswordData
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData" target="_top">AWS API
+     *      Documentation</a>
      */
     GetPasswordDataResult getPasswordData(GetPasswordDataRequest getPasswordDataRequest);
 
@@ -3993,8 +4051,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for GetReservedInstanceExchangeQuote.
      * @return Result of the GetReservedInstancesExchangeQuote operation returned by the service.
      * @sample AmazonEC2.GetReservedInstancesExchangeQuote
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote"
+     *      target="_top">AWS API Documentation</a>
      */
     GetReservedInstancesExchangeQuoteResult getReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest getReservedInstancesExchangeQuoteRequest);
 
@@ -4010,7 +4068,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ImportImage.
      * @return Result of the ImportImage operation returned by the service.
      * @sample AmazonEC2.ImportImage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage" target="_top">AWS API
+     *      Documentation</a>
      */
     ImportImageResult importImage(ImportImageRequest importImageRequest);
 
@@ -4037,7 +4096,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ImportInstance.
      * @return Result of the ImportInstance operation returned by the service.
      * @sample AmazonEC2.ImportInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance" target="_top">AWS API
+     *      Documentation</a>
      */
     ImportInstanceResult importInstance(ImportInstanceRequest importInstanceRequest);
 
@@ -4058,7 +4118,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ImportKeyPair.
      * @return Result of the ImportKeyPair operation returned by the service.
      * @sample AmazonEC2.ImportKeyPair
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair" target="_top">AWS API
+     *      Documentation</a>
      */
     ImportKeyPairResult importKeyPair(ImportKeyPairRequest importKeyPairRequest);
 
@@ -4071,7 +4132,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ImportSnapshot.
      * @return Result of the ImportSnapshot operation returned by the service.
      * @sample AmazonEC2.ImportSnapshot
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot" target="_top">AWS API
+     *      Documentation</a>
      */
     ImportSnapshotResult importSnapshot(ImportSnapshotRequest importSnapshotRequest);
 
@@ -4097,7 +4159,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ImportVolume.
      * @return Result of the ImportVolume operation returned by the service.
      * @sample AmazonEC2.ImportVolume
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume" target="_top">AWS API
+     *      Documentation</a>
      */
     ImportVolumeResult importVolume(ImportVolumeRequest importVolumeRequest);
 
@@ -4114,7 +4177,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyHosts.
      * @return Result of the ModifyHosts operation returned by the service.
      * @sample AmazonEC2.ModifyHosts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts" target="_top">AWS API
+     *      Documentation</a>
      */
     ModifyHostsResult modifyHosts(ModifyHostsRequest modifyHostsRequest);
 
@@ -4141,7 +4205,8 @@ public interface AmazonEC2 {
      *        Contains the parameters of ModifyIdFormat.
      * @return Result of the ModifyIdFormat operation returned by the service.
      * @sample AmazonEC2.ModifyIdFormat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat" target="_top">AWS API
+     *      Documentation</a>
      */
     ModifyIdFormatResult modifyIdFormat(ModifyIdFormatRequest modifyIdFormatRequest);
 
@@ -4170,7 +4235,7 @@ public interface AmazonEC2 {
      *        Contains the parameters of ModifyIdentityIdFormat.
      * @return Result of the ModifyIdentityIdFormat operation returned by the service.
      * @sample AmazonEC2.ModifyIdentityIdFormat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat" target="_top">AWS API
      *      Documentation</a>
      */
     ModifyIdentityIdFormatResult modifyIdentityIdFormat(ModifyIdentityIdFormatRequest modifyIdentityIdFormatRequest);
@@ -4196,7 +4261,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyImageAttribute.
      * @return Result of the ModifyImageAttribute operation returned by the service.
      * @sample AmazonEC2.ModifyImageAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     ModifyImageAttributeResult modifyImageAttribute(ModifyImageAttributeRequest modifyImageAttributeRequest);
@@ -4215,8 +4280,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyInstanceAttribute.
      * @return Result of the ModifyInstanceAttribute operation returned by the service.
      * @sample AmazonEC2.ModifyInstanceAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute" target="_top">AWS
+     *      API Documentation</a>
      */
     ModifyInstanceAttributeResult modifyInstanceAttribute(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest);
 
@@ -4246,8 +4311,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyInstancePlacement.
      * @return Result of the ModifyInstancePlacement operation returned by the service.
      * @sample AmazonEC2.ModifyInstancePlacement
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement" target="_top">AWS
+     *      API Documentation</a>
      */
     ModifyInstancePlacementResult modifyInstancePlacement(ModifyInstancePlacementRequest modifyInstancePlacementRequest);
 
@@ -4260,8 +4325,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyNetworkInterfaceAttribute.
      * @return Result of the ModifyNetworkInterfaceAttribute operation returned by the service.
      * @sample AmazonEC2.ModifyNetworkInterfaceAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute"
+     *      target="_top">AWS API Documentation</a>
      */
     ModifyNetworkInterfaceAttributeResult modifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest modifyNetworkInterfaceAttributeRequest);
 
@@ -4281,8 +4346,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyReservedInstances.
      * @return Result of the ModifyReservedInstances operation returned by the service.
      * @sample AmazonEC2.ModifyReservedInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     ModifyReservedInstancesResult modifyReservedInstances(ModifyReservedInstancesRequest modifyReservedInstancesRequest);
 
@@ -4308,8 +4373,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifySnapshotAttribute.
      * @return Result of the ModifySnapshotAttribute operation returned by the service.
      * @sample AmazonEC2.ModifySnapshotAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute" target="_top">AWS
+     *      API Documentation</a>
      */
     ModifySnapshotAttributeResult modifySnapshotAttribute(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest);
 
@@ -4340,7 +4405,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifySpotFleetRequest.
      * @return Result of the ModifySpotFleetRequest operation returned by the service.
      * @sample AmazonEC2.ModifySpotFleetRequest
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest" target="_top">AWS API
      *      Documentation</a>
      */
     ModifySpotFleetRequestResult modifySpotFleetRequest(ModifySpotFleetRequestRequest modifySpotFleetRequestRequest);
@@ -4354,7 +4419,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifySubnetAttribute.
      * @return Result of the ModifySubnetAttribute operation returned by the service.
      * @sample AmazonEC2.ModifySubnetAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     ModifySubnetAttributeResult modifySubnetAttribute(ModifySubnetAttributeRequest modifySubnetAttributeRequest);
@@ -4377,7 +4442,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyVolumeAttribute.
      * @return Result of the ModifyVolumeAttribute operation returned by the service.
      * @sample AmazonEC2.ModifyVolumeAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     ModifyVolumeAttributeResult modifyVolumeAttribute(ModifyVolumeAttributeRequest modifyVolumeAttributeRequest);
@@ -4391,7 +4456,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyVpcAttribute.
      * @return Result of the ModifyVpcAttribute operation returned by the service.
      * @sample AmazonEC2.ModifyVpcAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     ModifyVpcAttributeResult modifyVpcAttribute(ModifyVpcAttributeRequest modifyVpcAttributeRequest);
@@ -4406,7 +4471,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ModifyVpcEndpoint.
      * @return Result of the ModifyVpcEndpoint operation returned by the service.
      * @sample AmazonEC2.ModifyVpcEndpoint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint" target="_top">AWS API
+     *      Documentation</a>
      */
     ModifyVpcEndpointResult modifyVpcEndpoint(ModifyVpcEndpointRequest modifyVpcEndpointRequest);
 
@@ -4445,8 +4511,8 @@ public interface AmazonEC2 {
      * @param modifyVpcPeeringConnectionOptionsRequest
      * @return Result of the ModifyVpcPeeringConnectionOptions operation returned by the service.
      * @sample AmazonEC2.ModifyVpcPeeringConnectionOptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions"
+     *      target="_top">AWS API Documentation</a>
      */
     ModifyVpcPeeringConnectionOptionsResult modifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest modifyVpcPeeringConnectionOptionsRequest);
 
@@ -4464,7 +4530,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for MonitorInstances.
      * @return Result of the MonitorInstances operation returned by the service.
      * @sample AmazonEC2.MonitorInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances" target="_top">AWS API
+     *      Documentation</a>
      */
     MonitorInstancesResult monitorInstances(MonitorInstancesRequest monitorInstancesRequest);
 
@@ -4481,7 +4548,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for MoveAddressToVpc.
      * @return Result of the MoveAddressToVpc operation returned by the service.
      * @sample AmazonEC2.MoveAddressToVpc
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc" target="_top">AWS API
+     *      Documentation</a>
      */
     MoveAddressToVpcResult moveAddressToVpc(MoveAddressToVpcRequest moveAddressToVpcRequest);
 
@@ -4495,8 +4563,8 @@ public interface AmazonEC2 {
      * @param purchaseHostReservationRequest
      * @return Result of the PurchaseHostReservation operation returned by the service.
      * @sample AmazonEC2.PurchaseHostReservation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation" target="_top">AWS
+     *      API Documentation</a>
      */
     PurchaseHostReservationResult purchaseHostReservation(PurchaseHostReservationRequest purchaseHostReservationRequest);
 
@@ -4521,8 +4589,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for PurchaseReservedInstancesOffering.
      * @return Result of the PurchaseReservedInstancesOffering operation returned by the service.
      * @sample AmazonEC2.PurchaseReservedInstancesOffering
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering"
+     *      target="_top">AWS API Documentation</a>
      */
     PurchaseReservedInstancesOfferingResult purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest purchaseReservedInstancesOfferingRequest);
 
@@ -4544,8 +4612,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for PurchaseScheduledInstances.
      * @return Result of the PurchaseScheduledInstances operation returned by the service.
      * @sample AmazonEC2.PurchaseScheduledInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances" target="_top">AWS
+     *      API Documentation</a>
      */
     PurchaseScheduledInstancesResult purchaseScheduledInstances(PurchaseScheduledInstancesRequest purchaseScheduledInstancesRequest);
 
@@ -4568,7 +4636,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for RebootInstances.
      * @return Result of the RebootInstances operation returned by the service.
      * @sample AmazonEC2.RebootInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances" target="_top">AWS API
+     *      Documentation</a>
      */
     RebootInstancesResult rebootInstances(RebootInstancesRequest rebootInstancesRequest);
 
@@ -4622,7 +4691,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for RegisterImage.
      * @return Result of the RegisterImage operation returned by the service.
      * @sample AmazonEC2.RegisterImage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage" target="_top">AWS API
+     *      Documentation</a>
      */
     RegisterImageResult registerImage(RegisterImageRequest registerImageRequest);
 
@@ -4638,8 +4708,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for RejectVpcPeeringConnection.
      * @return Result of the RejectVpcPeeringConnection operation returned by the service.
      * @sample AmazonEC2.RejectVpcPeeringConnection
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection" target="_top">AWS
+     *      API Documentation</a>
      */
     RejectVpcPeeringConnectionResult rejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest);
 
@@ -4666,7 +4736,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ReleaseAddress.
      * @return Result of the ReleaseAddress operation returned by the service.
      * @sample AmazonEC2.ReleaseAddress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress" target="_top">AWS API
+     *      Documentation</a>
      */
     ReleaseAddressResult releaseAddress(ReleaseAddressRequest releaseAddressRequest);
 
@@ -4690,7 +4761,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ReleaseHosts.
      * @return Result of the ReleaseHosts operation returned by the service.
      * @sample AmazonEC2.ReleaseHosts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts" target="_top">AWS API
+     *      Documentation</a>
      */
     ReleaseHostsResult releaseHosts(ReleaseHostsRequest releaseHostsRequest);
 
@@ -4706,8 +4778,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ReplaceNetworkAclAssociation.
      * @return Result of the ReplaceNetworkAclAssociation operation returned by the service.
      * @sample AmazonEC2.ReplaceNetworkAclAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation"
+     *      target="_top">AWS API Documentation</a>
      */
     ReplaceNetworkAclAssociationResult replaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest replaceNetworkAclAssociationRequest);
 
@@ -4722,7 +4794,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ReplaceNetworkAclEntry.
      * @return Result of the ReplaceNetworkAclEntry operation returned by the service.
      * @sample AmazonEC2.ReplaceNetworkAclEntry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry" target="_top">AWS API
      *      Documentation</a>
      */
     ReplaceNetworkAclEntryResult replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest);
@@ -4743,7 +4815,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ReplaceRoute.
      * @return Result of the ReplaceRoute operation returned by the service.
      * @sample AmazonEC2.ReplaceRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute" target="_top">AWS API
+     *      Documentation</a>
      */
     ReplaceRouteResult replaceRoute(ReplaceRouteRequest replaceRouteRequest);
 
@@ -4763,8 +4836,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ReplaceRouteTableAssociation.
      * @return Result of the ReplaceRouteTableAssociation operation returned by the service.
      * @sample AmazonEC2.ReplaceRouteTableAssociation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation"
+     *      target="_top">AWS API Documentation</a>
      */
     ReplaceRouteTableAssociationResult replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest replaceRouteTableAssociationRequest);
 
@@ -4783,7 +4856,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ReportInstanceStatus.
      * @return Result of the ReportInstanceStatus operation returned by the service.
      * @sample AmazonEC2.ReportInstanceStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus" target="_top">AWS API
      *      Documentation</a>
      */
     ReportInstanceStatusResult reportInstanceStatus(ReportInstanceStatusRequest reportInstanceStatusRequest);
@@ -4816,7 +4889,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for RequestSpotFleet.
      * @return Result of the RequestSpotFleet operation returned by the service.
      * @sample AmazonEC2.RequestSpotFleet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet" target="_top">AWS API
+     *      Documentation</a>
      */
     RequestSpotFleetResult requestSpotFleet(RequestSpotFleetRequest requestSpotFleetRequest);
 
@@ -4833,7 +4907,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for RequestSpotInstances.
      * @return Result of the RequestSpotInstances operation returned by the service.
      * @sample AmazonEC2.RequestSpotInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances" target="_top">AWS API
      *      Documentation</a>
      */
     RequestSpotInstancesResult requestSpotInstances(RequestSpotInstancesRequest requestSpotInstancesRequest);
@@ -4852,7 +4926,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ResetImageAttribute.
      * @return Result of the ResetImageAttribute operation returned by the service.
      * @sample AmazonEC2.ResetImageAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     ResetImageAttributeResult resetImageAttribute(ResetImageAttributeRequest resetImageAttributeRequest);
@@ -4875,7 +4949,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ResetInstanceAttribute.
      * @return Result of the ResetInstanceAttribute operation returned by the service.
      * @sample AmazonEC2.ResetInstanceAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     ResetInstanceAttributeResult resetInstanceAttribute(ResetInstanceAttributeRequest resetInstanceAttributeRequest);
@@ -4889,8 +4963,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for ResetNetworkInterfaceAttribute.
      * @return Result of the ResetNetworkInterfaceAttribute operation returned by the service.
      * @sample AmazonEC2.ResetNetworkInterfaceAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute"
+     *      target="_top">AWS API Documentation</a>
      */
     ResetNetworkInterfaceAttributeResult resetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest resetNetworkInterfaceAttributeRequest);
 
@@ -4908,7 +4982,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for ResetSnapshotAttribute.
      * @return Result of the ResetSnapshotAttribute operation returned by the service.
      * @sample AmazonEC2.ResetSnapshotAttribute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute" target="_top">AWS API
      *      Documentation</a>
      */
     ResetSnapshotAttributeResult resetSnapshotAttribute(ResetSnapshotAttributeRequest resetSnapshotAttributeRequest);
@@ -4924,8 +4998,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for RestoreAddressToClassic.
      * @return Result of the RestoreAddressToClassic operation returned by the service.
      * @sample AmazonEC2.RestoreAddressToClassic
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic" target="_top">AWS
+     *      API Documentation</a>
      */
     RestoreAddressToClassicResult restoreAddressToClassic(RestoreAddressToClassicRequest restoreAddressToClassicRequest);
 
@@ -4949,8 +5023,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for RevokeSecurityGroupEgress.
      * @return Result of the RevokeSecurityGroupEgress operation returned by the service.
      * @sample AmazonEC2.RevokeSecurityGroupEgress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress" target="_top">AWS
+     *      API Documentation</a>
      */
     RevokeSecurityGroupEgressResult revokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest revokeSecurityGroupEgressRequest);
 
@@ -4973,8 +5047,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for RevokeSecurityGroupIngress.
      * @return Result of the RevokeSecurityGroupIngress operation returned by the service.
      * @sample AmazonEC2.RevokeSecurityGroupIngress
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress" target="_top">AWS
+     *      API Documentation</a>
      */
     RevokeSecurityGroupIngressResult revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest);
 
@@ -5064,7 +5138,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for RunInstances.
      * @return Result of the RunInstances operation returned by the service.
      * @sample AmazonEC2.RunInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances" target="_top">AWS API
+     *      Documentation</a>
      */
     RunInstancesResult runInstances(RunInstancesRequest runInstancesRequest);
 
@@ -5088,7 +5163,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for RunScheduledInstances.
      * @return Result of the RunScheduledInstances operation returned by the service.
      * @sample AmazonEC2.RunScheduledInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances" target="_top">AWS API
      *      Documentation</a>
      */
     RunScheduledInstancesResult runScheduledInstances(RunScheduledInstancesRequest runScheduledInstancesRequest);
@@ -5120,7 +5195,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for StartInstances.
      * @return Result of the StartInstances operation returned by the service.
      * @sample AmazonEC2.StartInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances" target="_top">AWS API
+     *      Documentation</a>
      */
     StartInstancesResult startInstances(StartInstancesRequest startInstancesRequest);
 
@@ -5162,7 +5238,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for StopInstances.
      * @return Result of the StopInstances operation returned by the service.
      * @sample AmazonEC2.StopInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances" target="_top">AWS API
+     *      Documentation</a>
      */
     StopInstancesResult stopInstances(StopInstancesRequest stopInstancesRequest);
 
@@ -5201,7 +5278,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for TerminateInstances.
      * @return Result of the TerminateInstances operation returned by the service.
      * @sample AmazonEC2.TerminateInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances" target="_top">AWS API
      *      Documentation</a>
      */
     TerminateInstancesResult terminateInstances(TerminateInstancesRequest terminateInstancesRequest);
@@ -5214,7 +5291,7 @@ public interface AmazonEC2 {
      * @param unassignIpv6AddressesRequest
      * @return Result of the UnassignIpv6Addresses operation returned by the service.
      * @sample AmazonEC2.UnassignIpv6Addresses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses" target="_top">AWS API
      *      Documentation</a>
      */
     UnassignIpv6AddressesResult unassignIpv6Addresses(UnassignIpv6AddressesRequest unassignIpv6AddressesRequest);
@@ -5228,8 +5305,8 @@ public interface AmazonEC2 {
      *        Contains the parameters for UnassignPrivateIpAddresses.
      * @return Result of the UnassignPrivateIpAddresses operation returned by the service.
      * @sample AmazonEC2.UnassignPrivateIpAddresses
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses" target="_top">AWS
+     *      API Documentation</a>
      */
     UnassignPrivateIpAddressesResult unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest);
 
@@ -5244,7 +5321,7 @@ public interface AmazonEC2 {
      *        Contains the parameters for UnmonitorInstances.
      * @return Result of the UnmonitorInstances operation returned by the service.
      * @sample AmazonEC2.UnmonitorInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances" target="_top">AWS API
      *      Documentation</a>
      */
     UnmonitorInstancesResult unmonitorInstances(UnmonitorInstancesRequest unmonitorInstancesRequest);

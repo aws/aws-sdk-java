@@ -130,7 +130,7 @@
       "asyncReturnType" : "CreateMountTargetResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a mount target for a file system. You can then mount the file system on EC2 instances via the mount target.</p> <p>You can create one mount target in each Availability Zone in your VPC. All EC2 instances in a VPC within a given Availability Zone share a single mount target for a given file system. If you have multiple subnets in an Availability Zone, you create a mount target in one of the subnets. EC2 instances do not need to be in the same subnet as the mount target in order to access their file system. For more information, see <a href=\"http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html\">Amazon EFS: How it Works</a>. </p> <p>In the request, you also specify a file system ID for which you are creating the mount target and the file system's lifecycle state must be <code>available</code>. For more information, see <a>DescribeFileSystems</a>.</p> <p>In the request, you also provide a subnet ID, which determines the following:</p> <ul> <li> <p>VPC in which Amazon EFS creates the mount target</p> </li> <li> <p>Availability Zone in which Amazon EFS creates the mount target</p> </li> <li> <p>IP address range from which Amazon EFS selects the IP address of the mount target (if you don't specify an IP address in the request)</p> </li> </ul> <p>After creating the mount target, Amazon EFS returns a response that includes, a <code>MountTargetId</code> and an <code>IpAddress</code>. You use this IP address when mounting the file system in an EC2 instance. You can also use the mount target's DNS name when mounting the file system. The EC2 instance on which you mount the file system via the mount target can resolve the mount target's DNS name to its IP address. For more information, see <a href=\"http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation\">How it Works: Implementation Overview</a>. </p> <p>Note that you can create mount targets for a file system in only one VPC, and there can be only one mount target per Availability Zone. That is, if the file system already has one or more mount targets created for it, the subnet specified in the request to add another mount target must meet the following requirements:</p> <ul> <li> <p>Must belong to the same VPC as the subnets of the existing mount targets</p> </li> <li> <p>Must not be in the same Availability Zone as any of the subnets of the existing mount targets</p> </li> </ul> <p>If the request satisfies the requirements, Amazon EFS does the following:</p> <ul> <li> <p>Creates a new mount target in the specified subnet.</p> </li> <li> <p>Also creates a new network interface in the subnet as follows:</p> <ul> <li> <p>If the request provides an <code>IpAddress</code>, Amazon EFS assigns that IP address to the network interface. Otherwise, Amazon EFS assigns a free address in the subnet (in the same way that the Amazon EC2 <code>CreateNetworkInterface</code> call does when a request does not specify a primary private IP address).</p> </li> <li> <p>If the request provides <code>SecurityGroups</code>, this network interface is associated with those security groups. Otherwise, it belongs to the default security group for the subnet's VPC.</p> </li> <li> <p>Assigns the description <code>Mount target <i>fsmt-id</i> for file system <i>fs-id</i> </code> where <code> <i>fsmt-id</i> </code> is the mount target ID, and <code> <i>fs-id</i> </code> is the <code>FileSystemId</code>.</p> </li> <li> <p>Sets the <code>requesterManaged</code> property of the network interface to <code>true</code>, and the <code>requesterId</code> value to <code>EFS</code>.</p> </li> </ul> <p>Each Amazon EFS mount target has one corresponding requestor-managed EC2 network interface. After the network interface is created, Amazon EFS sets the <code>NetworkInterfaceId</code> field in the mount target's description to the network interface ID, and the <code>IpAddress</code> field to its address. If network interface creation fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li> </ul> <note> <p>The <code>CreateMountTarget</code> call returns only after creating the network interface, but while the mount target state is still <code>creating</code>. You can check the mount target creation status by calling the <a>DescribeFileSystems</a> operation, which among other things returns the mount target state.</p> </note> <p>We recommend you create a mount target in each of the Availability Zones. There are cost considerations for using a file system in an Availability Zone through a mount target created in another Availability Zone. For more information, see <a href=\"http://aws.amazon.com/efs/\">Amazon EFS</a>. In addition, by always using a mount target local to the instance's Availability Zone, you eliminate a partial failure scenario. If the Availability Zone in which your mount target is created goes down, then you won't be able to access your file system through that mount target. </p> <p>This operation requires permissions for the following action on the file system:</p> <ul> <li> <p> <code>elasticfilesystem:CreateMountTarget</code> </p> </li> </ul> <p>This operation also requires permissions for the following Amazon EC2 actions:</p> <ul> <li> <p> <code>ec2:DescribeSubnets</code> </p> </li> <li> <p> <code>ec2:DescribeNetworkInterfaces</code> </p> </li> <li> <p> <code>ec2:CreateNetworkInterface</code> </p> </li> </ul>",
+      "documentation" : "<p>Creates a mount target for a file system. You can then mount the file system on EC2 instances via the mount target.</p> <p>You can create one mount target in each Availability Zone in your VPC. All EC2 instances in a VPC within a given Availability Zone share a single mount target for a given file system. If you have multiple subnets in an Availability Zone, you create a mount target in one of the subnets. EC2 instances do not need to be in the same subnet as the mount target in order to access their file system. For more information, see <a href=\"http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html\">Amazon EFS: How it Works</a>. </p> <p>In the request, you also specify a file system ID for which you are creating the mount target and the file system's lifecycle state must be <code>available</code>. For more information, see <a>DescribeFileSystems</a>.</p> <p>In the request, you also provide a subnet ID, which determines the following:</p> <ul> <li> <p>VPC in which Amazon EFS creates the mount target</p> </li> <li> <p>Availability Zone in which Amazon EFS creates the mount target</p> </li> <li> <p>IP address range from which Amazon EFS selects the IP address of the mount target (if you don't specify an IP address in the request)</p> </li> </ul> <p>After creating the mount target, Amazon EFS returns a response that includes, a <code>MountTargetId</code> and an <code>IpAddress</code>. You use this IP address when mounting the file system in an EC2 instance. You can also use the mount target's DNS name when mounting the file system. The EC2 instance on which you mount the file system via the mount target can resolve the mount target's DNS name to its IP address. For more information, see <a href=\"http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation\">How it Works: Implementation Overview</a>. </p> <p>Note that you can create mount targets for a file system in only one VPC, and there can be only one mount target per Availability Zone. That is, if the file system already has one or more mount targets created for it, the subnet specified in the request to add another mount target must meet the following requirements:</p> <ul> <li> <p>Must belong to the same VPC as the subnets of the existing mount targets</p> </li> <li> <p>Must not be in the same Availability Zone as any of the subnets of the existing mount targets</p> </li> </ul> <p>If the request satisfies the requirements, Amazon EFS does the following:</p> <ul> <li> <p>Creates a new mount target in the specified subnet.</p> </li> <li> <p>Also creates a new network interface in the subnet as follows:</p> <ul> <li> <p>If the request provides an <code>IpAddress</code>, Amazon EFS assigns that IP address to the network interface. Otherwise, Amazon EFS assigns a free address in the subnet (in the same way that the Amazon EC2 <code>CreateNetworkInterface</code> call does when a request does not specify a primary private IP address).</p> </li> <li> <p>If the request provides <code>SecurityGroups</code>, this network interface is associated with those security groups. Otherwise, it belongs to the default security group for the subnet's VPC.</p> </li> <li> <p>Assigns the description <code>Mount target <i>fsmt-id</i> for file system <i>fs-id</i> </code> where <code> <i>fsmt-id</i> </code> is the mount target ID, and <code> <i>fs-id</i> </code> is the <code>FileSystemId</code>.</p> </li> <li> <p>Sets the <code>requesterManaged</code> property of the network interface to <code>true</code>, and the <code>requesterId</code> value to <code>EFS</code>.</p> </li> </ul> <p>Each Amazon EFS mount target has one corresponding requester-managed EC2 network interface. After the network interface is created, Amazon EFS sets the <code>NetworkInterfaceId</code> field in the mount target's description to the network interface ID, and the <code>IpAddress</code> field to its address. If network interface creation fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li> </ul> <note> <p>The <code>CreateMountTarget</code> call returns only after creating the network interface, but while the mount target state is still <code>creating</code>, you can check the mount target creation status by calling the <a>DescribeMountTargets</a> operation, which among other things returns the mount target state.</p> </note> <p>We recommend you create a mount target in each of the Availability Zones. There are cost considerations for using a file system in an Availability Zone through a mount target created in another Availability Zone. For more information, see <a href=\"http://aws.amazon.com/efs/\">Amazon EFS</a>. In addition, by always using a mount target local to the instance's Availability Zone, you eliminate a partial failure scenario. If the Availability Zone in which your mount target is created goes down, then you won't be able to access your file system through that mount target. </p> <p>This operation requires permissions for the following action on the file system:</p> <ul> <li> <p> <code>elasticfilesystem:CreateMountTarget</code> </p> </li> </ul> <p>This operation also requires permissions for the following Amazon EC2 actions:</p> <ul> <li> <p> <code>ec2:DescribeSubnets</code> </p> </li> <li> <p> <code>ec2:DescribeNetworkInterfaces</code> </p> </li> <li> <p> <code>ec2:CreateNetworkInterface</code> </p> </li> </ul>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>",
@@ -177,7 +177,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "UnsupportedAvailabilityZoneException",
-        "documentation" : null,
+        "documentation" : "<p></p>",
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -13608,7 +13608,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "",
+      "documentation" : "<p></p>",
       "enums" : null,
       "errorCode" : "UnsupportedAvailabilityZone",
       "hasHeaderMember" : false,
@@ -13751,11 +13751,211 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "customAuthorizers" : { },
   "examples" : {
-    "examples" : { },
+    "examples" : {
+      "CreateFileSystem" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation creates a new file system with the default generalpurpose performance mode.",
+        "id" : "to-create-a-new-file-system-1481840798547",
+        "input" : {
+          "CreationToken" : "tokenstring",
+          "PerformanceMode" : "generalPurpose"
+        },
+        "output" : {
+          "OwnerId" : "012345678912",
+          "CreationToken" : "tokenstring",
+          "FileSystemId" : "fs-01234567",
+          "CreationTime" : "1481841524.0",
+          "LifeCycleState" : "creating",
+          "NumberOfMountTargets" : 0,
+          "SizeInBytes" : {
+            "Value" : 0
+          },
+          "PerformanceMode" : "generalPurpose"
+        },
+        "title" : "To create a new file system"
+      } ],
+      "CreateMountTarget" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation creates a new mount target for an EFS file system.",
+        "id" : "to-create-a-new-mount-target-1481842289329",
+        "input" : {
+          "FileSystemId" : "fs-01234567",
+          "SubnetId" : "subnet-1234abcd"
+        },
+        "output" : {
+          "OwnerId" : "012345678912",
+          "MountTargetId" : "fsmt-12340abc",
+          "FileSystemId" : "fs-01234567",
+          "SubnetId" : "subnet-1234abcd",
+          "LifeCycleState" : "creating",
+          "IpAddress" : "192.0.0.2",
+          "NetworkInterfaceId" : "eni-cedf6789"
+        },
+        "title" : "To create a new mount target"
+      } ],
+      "CreateTags" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation creates a new tag for an EFS file system.",
+        "id" : "to-create-a-new-tag-1481843409357",
+        "input" : {
+          "FileSystemId" : "fs-01234567",
+          "Tags" : [ {
+            "Key" : "Name",
+            "Value" : "MyFileSystem"
+          } ]
+        },
+        "output" : null,
+        "title" : "To create a new tag"
+      } ],
+      "DeleteFileSystem" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation deletes an EFS file system.",
+        "id" : "to-delete-a-file-system-1481847318348",
+        "input" : {
+          "FileSystemId" : "fs-01234567"
+        },
+        "output" : null,
+        "title" : "To delete a file system"
+      } ],
+      "DeleteMountTarget" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation deletes a mount target.",
+        "id" : "to-delete-a-mount-target-1481847635607",
+        "input" : {
+          "MountTargetId" : "fsmt-12340abc"
+        },
+        "output" : null,
+        "title" : "To delete a mount target"
+      } ],
+      "DeleteTags" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation deletes tags for an EFS file system.",
+        "id" : "to-delete-tags-for-an-efs-file-system-1481848189061",
+        "input" : {
+          "FileSystemId" : "fs-01234567",
+          "TagKeys" : [ "Name" ]
+        },
+        "output" : null,
+        "title" : "To delete tags for an EFS file system"
+      } ],
+      "DescribeFileSystems" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation describes all of the EFS file systems in an account.",
+        "id" : "to-describe-an-efs-file-system-1481848448460",
+        "input" : { },
+        "output" : {
+          "FileSystems" : [ {
+            "OwnerId" : "012345678912",
+            "CreationToken" : "tokenstring",
+            "FileSystemId" : "fs-01234567",
+            "CreationTime" : "1481841524.0",
+            "LifeCycleState" : "available",
+            "Name" : "MyFileSystem",
+            "NumberOfMountTargets" : 1,
+            "SizeInBytes" : {
+              "Value" : 6144
+            },
+            "PerformanceMode" : "generalPurpose"
+          } ]
+        },
+        "title" : "To describe an EFS file system"
+      } ],
+      "DescribeMountTargetSecurityGroups" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation describes all of the security groups for a file system's mount target.",
+        "id" : "to-describe-the-security-groups-for-a-mount-target-1481849317823",
+        "input" : {
+          "MountTargetId" : "fsmt-12340abc"
+        },
+        "output" : {
+          "SecurityGroups" : [ "sg-fghi4567" ]
+        },
+        "title" : "To describe the security groups for a mount target"
+      } ],
+      "DescribeMountTargets" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation describes all of a file system's mount targets.",
+        "id" : "to-describe-the-mount-targets-for-a-file-system-1481849958584",
+        "input" : {
+          "FileSystemId" : "fs-01234567"
+        },
+        "output" : {
+          "MountTargets" : [ {
+            "OwnerId" : "012345678912",
+            "MountTargetId" : "fsmt-12340abc",
+            "FileSystemId" : "fs-01234567",
+            "SubnetId" : "subnet-1234abcd",
+            "LifeCycleState" : "available",
+            "IpAddress" : "192.0.0.2",
+            "NetworkInterfaceId" : "eni-cedf6789"
+          } ]
+        },
+        "title" : "To describe the mount targets for a file system"
+      } ],
+      "DescribeTags" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation describes all of a file system's tags.",
+        "id" : "to-describe-the-tags-for-a-file-system-1481850497090",
+        "input" : {
+          "FileSystemId" : "fs-01234567"
+        },
+        "output" : {
+          "Tags" : [ {
+            "Key" : "Name",
+            "Value" : "MyFileSystem"
+          } ]
+        },
+        "title" : "To describe the tags for a file system"
+      } ],
+      "ModifyMountTargetSecurityGroups" : [ {
+        "comments" : {
+          "input" : null,
+          "output" : null
+        },
+        "description" : "This operation modifies the security groups associated with a mount target for a file system.",
+        "id" : "to-modify-the-security-groups-associated-with-a-mount-target-for-a-file-system-1481850772562",
+        "input" : {
+          "MountTargetId" : "fsmt-12340abc",
+          "SecurityGroups" : [ "sg-abcd1234" ]
+        },
+        "output" : null,
+        "title" : "To modify the security groups associated with a mount target for a file system"
+      } ]
+    },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonElasticFileSystemException",

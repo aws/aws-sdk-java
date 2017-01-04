@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,7 +98,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.AddTagsToResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
      */
     AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest);
@@ -119,7 +119,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.CreateHapg
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateHapgResult createHapg(CreateHapgRequest createHapgRequest);
 
@@ -150,7 +151,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.CreateHsm
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateHsmResult createHsm(CreateHsmRequest createHsmRequest);
 
@@ -169,7 +171,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.CreateLunaClient
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient" target="_top">AWS API
      *      Documentation</a>
      */
     CreateLunaClientResult createLunaClient(CreateLunaClientRequest createLunaClientRequest);
@@ -189,7 +191,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DeleteHapg
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteHapgResult deleteHapg(DeleteHapgRequest deleteHapgRequest);
 
@@ -208,7 +211,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DeleteHsm
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteHsmResult deleteHsm(DeleteHsmRequest deleteHsmRequest);
 
@@ -226,7 +230,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DeleteLunaClient
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteLunaClientResult deleteLunaClient(DeleteLunaClientRequest deleteLunaClientRequest);
@@ -246,7 +250,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DescribeHapg
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeHapgResult describeHapg(DescribeHapgRequest describeHapgRequest);
 
@@ -265,7 +270,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DescribeHsm
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeHsmResult describeHsm(DescribeHsmRequest describeHsmRequest);
 
@@ -290,8 +296,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.DescribeLunaClient
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeLunaClientResult describeLunaClient(DescribeLunaClientRequest describeLunaClientRequest);
 
@@ -317,7 +323,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.GetConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig" target="_top">AWS API
+     *      Documentation</a>
      */
     GetConfigResult getConfig(GetConfigRequest getConfigRequest);
 
@@ -336,8 +343,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListAvailableZones
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones" target="_top">AWS
+     *      API Documentation</a>
      */
     ListAvailableZonesResult listAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest);
 
@@ -367,7 +374,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListHapgs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs" target="_top">AWS API
+     *      Documentation</a>
      */
     ListHapgsResult listHapgs(ListHapgsRequest listHapgsRequest);
 
@@ -397,7 +405,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListHsms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms" target="_top">AWS API
+     *      Documentation</a>
      */
     ListHsmsResult listHsms(ListHsmsRequest listHsmsRequest);
 
@@ -427,7 +436,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListLunaClients
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients" target="_top">AWS API
      *      Documentation</a>
      */
     ListLunaClientsResult listLunaClients(ListLunaClientsRequest listLunaClientsRequest);
@@ -453,8 +462,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -472,7 +481,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ModifyHapg
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg" target="_top">AWS API
+     *      Documentation</a>
      */
     ModifyHapgResult modifyHapg(ModifyHapgRequest modifyHapgRequest);
 
@@ -498,7 +508,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.ModifyHsm
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm" target="_top">AWS API
+     *      Documentation</a>
      */
     ModifyHsmResult modifyHsm(ModifyHsmRequest modifyHsmRequest);
 
@@ -515,7 +526,7 @@ public interface AWSCloudHSM {
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
      * @sample AWSCloudHSM.ModifyLunaClient
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient" target="_top">AWS API
      *      Documentation</a>
      */
     ModifyLunaClientResult modifyLunaClient(ModifyLunaClientRequest modifyLunaClientRequest);
@@ -538,8 +549,8 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not valid.
      * @sample AWSCloudHSM.RemoveTagsFromResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource"
+     *      target="_top">AWS API Documentation</a>
      */
     RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
 

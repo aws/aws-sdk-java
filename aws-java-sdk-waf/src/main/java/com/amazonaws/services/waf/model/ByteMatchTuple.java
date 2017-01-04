@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,8 @@ import java.io.Serializable;
  * requests, the location in requests that you want AWS WAF to search, and other settings.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchTuple"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchTuple" target="_top">AWS API
+ *      Documentation</a>
  */
 public class ByteMatchTuple implements Serializable, Cloneable {
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole" target="_top">AWS API
+ *      Documentation</a>
  */
 public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -55,10 +56,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String assumeRolePolicyDocument;
@@ -244,19 +245,20 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      */
 
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
@@ -268,18 +270,19 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
-     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
-     *         and carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *         feed ( ), and carriage return ( ).
      */
 
     public String getAssumeRolePolicyDocument() {
@@ -291,19 +294,20 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

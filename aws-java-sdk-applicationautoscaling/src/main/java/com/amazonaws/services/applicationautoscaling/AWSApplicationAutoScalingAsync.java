@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,8 +94,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * @param deleteScalingPolicyRequest
      * @return A Java Future containing the result of the DeleteScalingPolicy operation returned by the service.
      * @sample AWSApplicationAutoScalingAsync.DeleteScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(DeleteScalingPolicyRequest deleteScalingPolicyRequest);
 
@@ -118,8 +118,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteScalingPolicy operation returned by the service.
      * @sample AWSApplicationAutoScalingAsyncHandler.DeleteScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(DeleteScalingPolicyRequest deleteScalingPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult> asyncHandler);
@@ -138,9 +138,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * @param deregisterScalableTargetRequest
      * @return A Java Future containing the result of the DeregisterScalableTarget operation returned by the service.
      * @sample AWSApplicationAutoScalingAsync.DeregisterScalableTarget
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterScalableTargetResult> deregisterScalableTargetAsync(DeregisterScalableTargetRequest deregisterScalableTargetRequest);
 
@@ -162,9 +161,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeregisterScalableTarget operation returned by the service.
      * @sample AWSApplicationAutoScalingAsyncHandler.DeregisterScalableTarget
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterScalableTargetResult> deregisterScalableTargetAsync(DeregisterScalableTargetRequest deregisterScalableTargetRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterScalableTargetRequest, DeregisterScalableTargetResult> asyncHandler);
@@ -184,9 +182,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * @param describeScalableTargetsRequest
      * @return A Java Future containing the result of the DescribeScalableTargets operation returned by the service.
      * @sample AWSApplicationAutoScalingAsync.DescribeScalableTargets
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalableTargetsResult> describeScalableTargetsAsync(DescribeScalableTargetsRequest describeScalableTargetsRequest);
 
@@ -209,9 +206,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeScalableTargets operation returned by the service.
      * @sample AWSApplicationAutoScalingAsyncHandler.DescribeScalableTargets
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalableTargetsResult> describeScalableTargetsAsync(DescribeScalableTargetsRequest describeScalableTargetsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeScalableTargetsRequest, DescribeScalableTargetsResult> asyncHandler);
@@ -234,8 +230,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * @return A Java Future containing the result of the DescribeScalingActivities operation returned by the service.
      * @sample AWSApplicationAutoScalingAsync.DescribeScalingActivities
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingActivitiesResult> describeScalingActivitiesAsync(
             DescribeScalingActivitiesRequest describeScalingActivitiesRequest);
@@ -262,8 +258,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * @return A Java Future containing the result of the DescribeScalingActivities operation returned by the service.
      * @sample AWSApplicationAutoScalingAsyncHandler.DescribeScalingActivities
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingActivitiesResult> describeScalingActivitiesAsync(
             DescribeScalingActivitiesRequest describeScalingActivitiesRequest,
@@ -285,9 +281,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * @param describeScalingPoliciesRequest
      * @return A Java Future containing the result of the DescribeScalingPolicies operation returned by the service.
      * @sample AWSApplicationAutoScalingAsync.DescribeScalingPolicies
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(DescribeScalingPoliciesRequest describeScalingPoliciesRequest);
 
@@ -311,9 +306,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeScalingPolicies operation returned by the service.
      * @sample AWSApplicationAutoScalingAsyncHandler.DescribeScalingPolicies
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(DescribeScalingPoliciesRequest describeScalingPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeScalingPoliciesRequest, DescribeScalingPoliciesResult> asyncHandler);
@@ -339,8 +333,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * @param putScalingPolicyRequest
      * @return A Java Future containing the result of the PutScalingPolicy operation returned by the service.
      * @sample AWSApplicationAutoScalingAsync.PutScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(PutScalingPolicyRequest putScalingPolicyRequest);
 
@@ -369,8 +363,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutScalingPolicy operation returned by the service.
      * @sample AWSApplicationAutoScalingAsyncHandler.PutScalingPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(PutScalingPolicyRequest putScalingPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult> asyncHandler);
@@ -390,9 +384,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * @param registerScalableTargetRequest
      * @return A Java Future containing the result of the RegisterScalableTarget operation returned by the service.
      * @sample AWSApplicationAutoScalingAsync.RegisterScalableTarget
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterScalableTargetResult> registerScalableTargetAsync(RegisterScalableTargetRequest registerScalableTargetRequest);
 
@@ -415,9 +408,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterScalableTarget operation returned by the service.
      * @sample AWSApplicationAutoScalingAsyncHandler.RegisterScalableTarget
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterScalableTargetResult> registerScalableTargetAsync(RegisterScalableTargetRequest registerScalableTargetRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterScalableTargetRequest, RegisterScalableTargetResult> asyncHandler);

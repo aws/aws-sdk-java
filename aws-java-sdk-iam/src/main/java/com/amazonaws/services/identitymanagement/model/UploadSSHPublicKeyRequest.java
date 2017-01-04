@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey" target="_top">AWS API
+ *      Documentation</a>
  */
 public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -37,10 +38,10 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String sSHPublicKeyBody;
@@ -117,19 +118,20 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param sSHPublicKeyBody
      *        The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      */
 
     public void setSSHPublicKeyBody(String sSHPublicKeyBody) {
@@ -141,18 +143,19 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @return The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
-     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
-     *         and carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *         feed ( ), and carriage return ( ).
      */
 
     public String getSSHPublicKeyBody() {
@@ -164,19 +167,20 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ).
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param sSHPublicKeyBody
      *        The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ).
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

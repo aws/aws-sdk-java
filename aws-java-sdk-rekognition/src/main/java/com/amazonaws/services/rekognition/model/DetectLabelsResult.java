@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,9 +25,9 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your
-     * application displays the image, you can use this value to correct the orientation. If Rekognition detects that
-     * the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels.
+     * application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects
+     * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
+     * the labels.
      * </p>
      */
     private String orientationCorrection;
@@ -105,16 +105,16 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your
-     * application displays the image, you can use this value to correct the orientation. If Rekognition detects that
-     * the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels.
+     * application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects
+     * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
+     * the labels.
      * </p>
      * 
      * @param orientationCorrection
      *        Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
-     *        your application displays the image, you can use this value to correct the orientation. If Rekognition
-     *        detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation
-     *        before detecting the labels.
+     *        your application displays the image, you can use this value to correct the orientation. If Amazon
+     *        Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
+     *        orientation before detecting the labels.
      * @see OrientationCorrection
      */
 
@@ -125,15 +125,15 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your
-     * application displays the image, you can use this value to correct the orientation. If Rekognition detects that
-     * the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels.
+     * application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects
+     * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
+     * the labels.
      * </p>
      * 
      * @return Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
-     *         your application displays the image, you can use this value to correct the orientation. If Rekognition
-     *         detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation
-     *         before detecting the labels.
+     *         your application displays the image, you can use this value to correct the orientation. If Amazon
+     *         Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
+     *         orientation before detecting the labels.
      * @see OrientationCorrection
      */
 
@@ -144,16 +144,16 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your
-     * application displays the image, you can use this value to correct the orientation. If Rekognition detects that
-     * the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels.
+     * application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects
+     * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
+     * the labels.
      * </p>
      * 
      * @param orientationCorrection
      *        Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
-     *        your application displays the image, you can use this value to correct the orientation. If Rekognition
-     *        detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation
-     *        before detecting the labels.
+     *        your application displays the image, you can use this value to correct the orientation. If Amazon
+     *        Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
+     *        orientation before detecting the labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
      */
@@ -166,16 +166,16 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your
-     * application displays the image, you can use this value to correct the orientation. If Rekognition detects that
-     * the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels.
+     * application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects
+     * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
+     * the labels.
      * </p>
      * 
      * @param orientationCorrection
      *        Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
-     *        your application displays the image, you can use this value to correct the orientation. If Rekognition
-     *        detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation
-     *        before detecting the labels.
+     *        your application displays the image, you can use this value to correct the orientation. If Amazon
+     *        Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
+     *        orientation before detecting the labels.
      * @see OrientationCorrection
      */
 
@@ -186,16 +186,16 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If your
-     * application displays the image, you can use this value to correct the orientation. If Rekognition detects that
-     * the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels.
+     * application displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects
+     * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
+     * the labels.
      * </p>
      * 
      * @param orientationCorrection
      *        Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
-     *        your application displays the image, you can use this value to correct the orientation. If Rekognition
-     *        detects that the input image was rotated (for example, by 90 degrees), it first corrects the orientation
-     *        before detecting the labels.
+     *        your application displays the image, you can use this value to correct the orientation. If Amazon
+     *        Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
+     *        orientation before detecting the labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
      */

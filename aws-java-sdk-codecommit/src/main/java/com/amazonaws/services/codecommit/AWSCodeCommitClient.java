@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -422,8 +422,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.BatchGetRepositories
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public BatchGetRepositoriesResult batchGetRepositories(BatchGetRepositoriesRequest batchGetRepositoriesRequest) {
@@ -504,7 +504,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.CreateBranch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -571,8 +571,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.CreateRepository
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest) {
@@ -634,8 +634,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.DeleteRepository
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest deleteRepositoryRequest) {
@@ -703,7 +703,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.GetBranch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetBranchResult getBranch(GetBranchRequest getBranchRequest) {
@@ -771,7 +772,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.GetCommit
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetCommitResult getCommit(GetCommitRequest getCommitRequest) {
@@ -841,7 +843,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.GetRepository
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -904,8 +906,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.GetRepositoryTriggers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetRepositoryTriggersResult getRepositoryTriggers(GetRepositoryTriggersRequest getRepositoryTriggersRequest) {
@@ -970,7 +972,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws InvalidContinuationTokenException
      *         The specified continuation token is not valid.
      * @sample AWSCodeCommit.ListBranches
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1019,8 +1021,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws InvalidContinuationTokenException
      *         The specified continuation token is not valid.
      * @sample AWSCodeCommit.ListRepositories
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListRepositoriesResult listRepositories(ListRepositoriesRequest listRepositoriesRequest) {
@@ -1111,8 +1113,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.PutRepositoryTriggers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public PutRepositoryTriggersResult putRepositoryTriggers(PutRepositoryTriggersRequest putRepositoryTriggersRequest) {
@@ -1206,8 +1208,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.TestRepositoryTriggers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public TestRepositoryTriggersResult testRepositoryTriggers(TestRepositoryTriggersRequest testRepositoryTriggersRequest) {
@@ -1282,8 +1284,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.UpdateDefaultBranch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateDefaultBranchResult updateDefaultBranch(UpdateDefaultBranchRequest updateDefaultBranchRequest) {
@@ -1355,8 +1357,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @sample AWSCodeCommit.UpdateRepositoryDescription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateRepositoryDescriptionResult updateRepositoryDescription(UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest) {
@@ -1416,8 +1418,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @sample AWSCodeCommit.UpdateRepositoryName
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateRepositoryNameResult updateRepositoryName(UpdateRepositoryNameRequest updateRepositoryNameRequest) {

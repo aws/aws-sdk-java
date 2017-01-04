@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,7 +122,7 @@ public interface AWSCertificateManager {
      * @throws TooManyTagsException
      *         The request contains too many tags. Try the request again with fewer tags.
      * @sample AWSCertificateManager.AddTagsToCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate" target="_top">AWS API
      *      Documentation</a>
      */
     AddTagsToCertificateResult addTagsToCertificate(AddTagsToCertificateRequest addTagsToCertificateRequest);
@@ -152,7 +152,8 @@ public interface AWSCertificateManager {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.DeleteCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
 
@@ -172,7 +173,7 @@ public interface AWSCertificateManager {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.DescribeCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeCertificateResult describeCertificate(DescribeCertificateRequest describeCertificateRequest);
@@ -200,7 +201,8 @@ public interface AWSCertificateManager {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.GetCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate" target="_top">AWS API
+     *      Documentation</a>
      */
     GetCertificateResult getCertificate(GetCertificateRequest getCertificateRequest);
 
@@ -253,7 +255,8 @@ public interface AWSCertificateManager {
      *         which limit you have violated. For more information about ACM limits, see the <a
      *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a> topic.
      * @sample AWSCertificateManager.ImportCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate" target="_top">AWS API
+     *      Documentation</a>
      */
     ImportCertificateResult importCertificate(ImportCertificateRequest importCertificateRequest);
 
@@ -266,7 +269,8 @@ public interface AWSCertificateManager {
      * @param listCertificatesRequest
      * @return Result of the ListCertificates operation returned by the service.
      * @sample AWSCertificateManager.ListCertificates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates" target="_top">AWS API
+     *      Documentation</a>
      */
     ListCertificatesResult listCertificates(ListCertificatesRequest listCertificatesRequest);
 
@@ -285,7 +289,7 @@ public interface AWSCertificateManager {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.ListTagsForCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate" target="_top">AWS API
      *      Documentation</a>
      */
     ListTagsForCertificateResult listTagsForCertificate(ListTagsForCertificateRequest listTagsForCertificateRequest);
@@ -312,8 +316,8 @@ public interface AWSCertificateManager {
      *         One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a
      *         tag value that begins with <code>aws:</code>.
      * @sample AWSCertificateManager.RemoveTagsFromCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate" target="_top">AWS
+     *      API Documentation</a>
      */
     RemoveTagsFromCertificateResult removeTagsFromCertificate(RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest);
 
@@ -337,7 +341,7 @@ public interface AWSCertificateManager {
      * @throws InvalidDomainValidationOptionsException
      *         One or more values in the <a>DomainValidationOption</a> structure is incorrect.
      * @sample AWSCertificateManager.RequestCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate" target="_top">AWS API
      *      Documentation</a>
      */
     RequestCertificateResult requestCertificate(RequestCertificateRequest requestCertificateRequest);
@@ -367,7 +371,7 @@ public interface AWSCertificateManager {
      * @throws InvalidDomainValidationOptionsException
      *         One or more values in the <a>DomainValidationOption</a> structure is incorrect.
      * @sample AWSCertificateManager.ResendValidationEmail
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail" target="_top">AWS API
      *      Documentation</a>
      */
     ResendValidationEmailResult resendValidationEmail(ResendValidationEmailRequest resendValidationEmailRequest);

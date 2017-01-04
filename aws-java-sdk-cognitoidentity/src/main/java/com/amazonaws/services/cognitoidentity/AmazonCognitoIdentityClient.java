@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -346,8 +346,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws LimitExceededException
      *         Thrown when the total number of user pools has exceeded a preset limit.
      * @sample AmazonCognitoIdentity.CreateIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateIdentityPoolResult createIdentityPool(CreateIdentityPoolRequest createIdentityPoolRequest) {
@@ -398,8 +398,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.DeleteIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteIdentitiesResult deleteIdentities(DeleteIdentitiesRequest deleteIdentitiesRequest) {
@@ -454,8 +454,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.DeleteIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteIdentityPoolResult deleteIdentityPool(DeleteIdentityPoolRequest deleteIdentityPoolRequest) {
@@ -511,8 +511,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.DescribeIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeIdentityResult describeIdentity(DescribeIdentityRequest describeIdentityRequest) {
@@ -568,8 +568,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.DescribeIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeIdentityPoolResult describeIdentityPool(DescribeIdentityPoolRequest describeIdentityPoolRequest) {
@@ -633,8 +633,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or Twitter is not responding
      * @sample AmazonCognitoIdentity.GetCredentialsForIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetCredentialsForIdentityResult getCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsForIdentityRequest) {
@@ -696,7 +696,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or Twitter is not responding
      * @sample AmazonCognitoIdentity.GetId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -754,8 +754,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.GetIdentityPoolRoles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetIdentityPoolRolesResult getIdentityPoolRoles(GetIdentityPoolRolesRequest getIdentityPoolRolesRequest) {
@@ -818,8 +818,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or Twitter is not responding
      * @sample AmazonCognitoIdentity.GetOpenIdToken
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetOpenIdTokenResult getOpenIdToken(GetOpenIdTokenRequest getOpenIdTokenRequest) {
@@ -889,8 +889,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *         The provided developer user identifier is already registered with Cognito under a different identity ID.
      * @sample AmazonCognitoIdentity.GetOpenIdTokenForDeveloperIdentity
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenForDeveloperIdentity(
@@ -948,8 +948,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.ListIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListIdentitiesResult listIdentities(ListIdentitiesRequest listIdentitiesRequest) {
@@ -1002,8 +1002,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.ListIdentityPools
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListIdentityPoolsResult listIdentityPools(ListIdentityPoolsRequest listIdentityPoolsRequest) {
@@ -1066,8 +1066,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.LookupDeveloperIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public LookupDeveloperIdentityResult lookupDeveloperIdentity(LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest) {
@@ -1130,8 +1130,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.MergeDeveloperIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public MergeDeveloperIdentitiesResult mergeDeveloperIdentities(MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest) {
@@ -1192,8 +1192,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ConcurrentModificationException
      *         Thrown if there are parallel requests to modify a resource.
      * @sample AmazonCognitoIdentity.SetIdentityPoolRoles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public SetIdentityPoolRolesResult setIdentityPoolRoles(SetIdentityPoolRolesRequest setIdentityPoolRolesRequest) {
@@ -1252,8 +1252,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.UnlinkDeveloperIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UnlinkDeveloperIdentityResult unlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) {
@@ -1314,8 +1314,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or Twitter is not responding
      * @sample AmazonCognitoIdentity.UnlinkIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UnlinkIdentityResult unlinkIdentity(UnlinkIdentityRequest unlinkIdentityRequest) {
@@ -1376,8 +1376,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws LimitExceededException
      *         Thrown when the total number of user pools has exceeded a preset limit.
      * @sample AmazonCognitoIdentity.UpdateIdentityPool
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateIdentityPoolResult updateIdentityPool(UpdateIdentityPoolRequest updateIdentityPoolRequest) {

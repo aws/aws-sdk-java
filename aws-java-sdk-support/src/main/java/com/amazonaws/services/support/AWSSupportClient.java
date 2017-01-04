@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -355,8 +355,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws AttachmentLimitExceededException
      *         The limit for the number of attachment sets created in a short period of time has been exceeded.
      * @sample AWSSupport.AddAttachmentsToSet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public AddAttachmentsToSetResult addAttachmentsToSet(AddAttachmentsToSetRequest addAttachmentsToSetRequest) {
@@ -415,8 +415,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws AttachmentSetExpiredException
      *         The expiration time of the attachment set has passed. The set expires 1 hour after it is created.
      * @sample AWSSupport.AddCommunicationToCase
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public AddCommunicationToCaseResult addCommunicationToCase(AddCommunicationToCaseRequest addCommunicationToCaseRequest) {
@@ -537,7 +537,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws AttachmentSetExpiredException
      *         The expiration time of the attachment set has passed. The set expires 1 hour after it is created.
      * @sample AWSSupport.CreateCase
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateCaseResult createCase(CreateCaseRequest createCaseRequest) {
@@ -587,7 +588,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws AttachmentIdNotFoundException
      *         An attachment with the specified ID could not be found.
      * @sample AWSSupport.DescribeAttachment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -656,7 +657,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws CaseIdNotFoundException
      *         The requested <code>caseId</code> could not be located.
      * @sample AWSSupport.DescribeCases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeCasesResult describeCases(DescribeCasesRequest describeCasesRequest) {
@@ -717,8 +719,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws CaseIdNotFoundException
      *         The requested <code>caseId</code> could not be located.
      * @sample AWSSupport.DescribeCommunications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeCommunicationsResult describeCommunications(DescribeCommunicationsRequest describeCommunicationsRequest) {
@@ -771,7 +773,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws InternalServerErrorException
      *         An internal server error occurred.
      * @sample AWSSupport.DescribeServices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -821,8 +823,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws InternalServerErrorException
      *         An internal server error occurred.
      * @sample AWSSupport.DescribeSeverityLevels
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DescribeSeverityLevelsResult describeSeverityLevels(DescribeSeverityLevelsRequest describeSeverityLevelsRequest) {
@@ -880,8 +882,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *         An internal server error occurred.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckRefreshStatuses
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(
@@ -969,8 +971,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws InternalServerErrorException
      *         An internal server error occurred.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckResult
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResult(
@@ -1020,9 +1022,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws InternalServerErrorException
      *         An internal server error occurred.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckSummaries
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummaries(
@@ -1070,8 +1071,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws InternalServerErrorException
      *         An internal server error occurred.
      * @sample AWSSupport.DescribeTrustedAdvisorChecks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) {
@@ -1144,8 +1145,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws InternalServerErrorException
      *         An internal server error occurred.
      * @sample AWSSupport.RefreshTrustedAdvisorCheck
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest) {
@@ -1192,7 +1193,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @throws CaseIdNotFoundException
      *         The requested <code>caseId</code> could not be located.
      * @sample AWSSupport.ResolveCase
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) {

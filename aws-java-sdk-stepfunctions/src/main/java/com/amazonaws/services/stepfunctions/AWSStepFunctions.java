@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,7 +107,8 @@ public interface AWSStepFunctions {
      * @throws InvalidNameException
      *         The provided name is invalid.
      * @sample AWSStepFunctions.CreateActivity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateActivityResult createActivity(CreateActivityRequest createActivityRequest);
 
@@ -132,7 +133,7 @@ public interface AWSStepFunctions {
      *         The maximum number of state machines has been reached. Existing state machines must be deleted before a
      *         new state machine can be created.
      * @sample AWSStepFunctions.CreateStateMachine
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine" target="_top">AWS API
      *      Documentation</a>
      */
     CreateStateMachineResult createStateMachine(CreateStateMachineRequest createStateMachineRequest);
@@ -147,7 +148,8 @@ public interface AWSStepFunctions {
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.DeleteActivity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteActivityResult deleteActivity(DeleteActivityRequest deleteActivityRequest);
 
@@ -162,7 +164,7 @@ public interface AWSStepFunctions {
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.DeleteStateMachine
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteStateMachineResult deleteStateMachine(DeleteStateMachineRequest deleteStateMachineRequest);
@@ -179,7 +181,7 @@ public interface AWSStepFunctions {
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.DescribeActivity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeActivityResult describeActivity(DescribeActivityRequest describeActivityRequest);
@@ -196,7 +198,7 @@ public interface AWSStepFunctions {
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.DescribeExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeExecutionResult describeExecution(DescribeExecutionRequest describeExecutionRequest);
@@ -213,8 +215,8 @@ public interface AWSStepFunctions {
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
      * @sample AWSStepFunctions.DescribeStateMachine
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine" target="_top">AWS
+     *      API Documentation</a>
      */
     DescribeStateMachineResult describeStateMachine(DescribeStateMachineRequest describeStateMachineRequest);
 
@@ -242,7 +244,7 @@ public interface AWSStepFunctions {
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.GetActivityTask
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask" target="_top">AWS API
      *      Documentation</a>
      */
     GetActivityTaskResult getActivityTask(GetActivityTaskRequest getActivityTaskRequest);
@@ -264,7 +266,7 @@ public interface AWSStepFunctions {
      * @throws InvalidTokenException
      *         The provided token is invalid.
      * @sample AWSStepFunctions.GetExecutionHistory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory" target="_top">AWS API
      *      Documentation</a>
      */
     GetExecutionHistoryResult getExecutionHistory(GetExecutionHistoryRequest getExecutionHistoryRequest);
@@ -280,7 +282,8 @@ public interface AWSStepFunctions {
      * @throws InvalidTokenException
      *         The provided token is invalid.
      * @sample AWSStepFunctions.ListActivities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities" target="_top">AWS API
+     *      Documentation</a>
      */
     ListActivitiesResult listActivities(ListActivitiesRequest listActivitiesRequest);
 
@@ -300,7 +303,8 @@ public interface AWSStepFunctions {
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
      * @sample AWSStepFunctions.ListExecutions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions" target="_top">AWS API
+     *      Documentation</a>
      */
     ListExecutionsResult listExecutions(ListExecutionsRequest listExecutionsRequest);
 
@@ -315,7 +319,7 @@ public interface AWSStepFunctions {
      * @throws InvalidTokenException
      *         The provided token is invalid.
      * @sample AWSStepFunctions.ListStateMachines
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines" target="_top">AWS API
      *      Documentation</a>
      */
     ListStateMachinesResult listStateMachines(ListStateMachinesRequest listStateMachinesRequest);
@@ -332,7 +336,7 @@ public interface AWSStepFunctions {
      *         The provided token is invalid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskFailure
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure" target="_top">AWS API
      *      Documentation</a>
      */
     SendTaskFailureResult sendTaskFailure(SendTaskFailureRequest sendTaskFailureRequest);
@@ -363,7 +367,7 @@ public interface AWSStepFunctions {
      *         The provided token is invalid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskHeartbeat
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat" target="_top">AWS API
      *      Documentation</a>
      */
     SendTaskHeartbeatResult sendTaskHeartbeat(SendTaskHeartbeatRequest sendTaskHeartbeatRequest);
@@ -382,7 +386,7 @@ public interface AWSStepFunctions {
      *         The provided token is invalid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskSuccess
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess" target="_top">AWS API
      *      Documentation</a>
      */
     SendTaskSuccessResult sendTaskSuccess(SendTaskSuccessRequest sendTaskSuccessRequest);
@@ -410,7 +414,8 @@ public interface AWSStepFunctions {
      * @throws StateMachineDeletingException
      *         The specified state machine is being deleted.
      * @sample AWSStepFunctions.StartExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution" target="_top">AWS API
+     *      Documentation</a>
      */
     StartExecutionResult startExecution(StartExecutionRequest startExecutionRequest);
 
@@ -426,7 +431,8 @@ public interface AWSStepFunctions {
      * @throws InvalidArnException
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @sample AWSStepFunctions.StopExecution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution" target="_top">AWS API
+     *      Documentation</a>
      */
     StopExecutionResult stopExecution(StopExecutionRequest stopExecutionRequest);
 

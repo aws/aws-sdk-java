@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -109,8 +109,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @return A Java Future containing the result of the AddTagsToOnPremisesInstances operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsync.AddTagsToOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddTagsToOnPremisesInstancesResult> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest);
@@ -129,8 +129,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @return A Java Future containing the result of the AddTagsToOnPremisesInstances operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsyncHandler.AddTagsToOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddTagsToOnPremisesInstancesResult> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest,
@@ -146,8 +146,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @return A Java Future containing the result of the BatchGetApplicationRevisions operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsync.BatchGetApplicationRevisions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetApplicationRevisionsResult> batchGetApplicationRevisionsAsync(
             BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest);
@@ -166,8 +166,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @return A Java Future containing the result of the BatchGetApplicationRevisions operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsyncHandler.BatchGetApplicationRevisions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetApplicationRevisionsResult> batchGetApplicationRevisionsAsync(
             BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest,
@@ -182,8 +182,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a batch get applications operation.
      * @return A Java Future containing the result of the BatchGetApplications operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(BatchGetApplicationsRequest batchGetApplicationsRequest);
 
@@ -200,8 +200,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetApplications operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.BatchGetApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(BatchGetApplicationsRequest batchGetApplicationsRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetApplicationsRequest, BatchGetApplicationsResult> asyncHandler);
@@ -230,8 +230,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a batch get deployment groups operation.
      * @return A Java Future containing the result of the BatchGetDeploymentGroups operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetDeploymentGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetDeploymentGroupsResult> batchGetDeploymentGroupsAsync(BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest);
 
@@ -248,8 +248,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetDeploymentGroups operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.BatchGetDeploymentGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetDeploymentGroupsResult> batchGetDeploymentGroupsAsync(BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentGroupsRequest, BatchGetDeploymentGroupsResult> asyncHandler);
@@ -263,8 +263,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a batch get deployment instances operation.
      * @return A Java Future containing the result of the BatchGetDeploymentInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetDeploymentInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
             BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest);
@@ -282,8 +282,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetDeploymentInstances operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.BatchGetDeploymentInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
             BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest,
@@ -298,8 +298,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a batch get deployments operation.
      * @return A Java Future containing the result of the BatchGetDeployments operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetDeployments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(BatchGetDeploymentsRequest batchGetDeploymentsRequest);
 
@@ -316,8 +316,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetDeployments operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.BatchGetDeployments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(BatchGetDeploymentsRequest batchGetDeploymentsRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentsRequest, BatchGetDeploymentsResult> asyncHandler);
@@ -346,8 +346,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a batch get on-premises instances operation.
      * @return A Java Future containing the result of the BatchGetOnPremisesInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
             BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest);
@@ -365,8 +365,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetOnPremisesInstances operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.BatchGetOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
             BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest,
@@ -396,8 +396,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a create application operation.
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
      * @sample AmazonCodeDeployAsync.CreateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest);
 
@@ -414,8 +414,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.CreateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
@@ -429,8 +429,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a create deployment operation.
      * @return A Java Future containing the result of the CreateDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsync.CreateDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(CreateDeploymentRequest createDeploymentRequest);
 
@@ -447,8 +447,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.CreateDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(CreateDeploymentRequest createDeploymentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResult> asyncHandler);
@@ -462,8 +462,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a create deployment configuration operation.
      * @return A Java Future containing the result of the CreateDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsync.CreateDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateDeploymentConfigResult> createDeploymentConfigAsync(CreateDeploymentConfigRequest createDeploymentConfigRequest);
 
@@ -480,8 +480,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.CreateDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateDeploymentConfigResult> createDeploymentConfigAsync(CreateDeploymentConfigRequest createDeploymentConfigRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDeploymentConfigRequest, CreateDeploymentConfigResult> asyncHandler);
@@ -495,8 +495,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a create deployment group operation.
      * @return A Java Future containing the result of the CreateDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsync.CreateDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(CreateDeploymentGroupRequest createDeploymentGroupRequest);
 
@@ -513,8 +513,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.CreateDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(CreateDeploymentGroupRequest createDeploymentGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDeploymentGroupRequest, CreateDeploymentGroupResult> asyncHandler);
@@ -528,8 +528,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a delete application operation.
      * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeleteApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest);
 
@@ -546,8 +546,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.DeleteApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
@@ -567,8 +567,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a delete deployment configuration operation.
      * @return A Java Future containing the result of the DeleteDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeleteDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDeploymentConfigResult> deleteDeploymentConfigAsync(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest);
 
@@ -591,8 +591,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.DeleteDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDeploymentConfigResult> deleteDeploymentConfigAsync(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDeploymentConfigRequest, DeleteDeploymentConfigResult> asyncHandler);
@@ -606,8 +606,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a delete deployment group operation.
      * @return A Java Future containing the result of the DeleteDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeleteDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest);
 
@@ -624,8 +624,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.DeleteDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResult> asyncHandler);
@@ -640,8 +640,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @return A Java Future containing the result of the DeregisterOnPremisesInstance operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsync.DeregisterOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(
             DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest);
@@ -660,8 +660,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @return A Java Future containing the result of the DeregisterOnPremisesInstance operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsyncHandler.DeregisterOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(
             DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest,
@@ -676,7 +676,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get application operation.
      * @return A Java Future containing the result of the GetApplication operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(GetApplicationRequest getApplicationRequest);
@@ -694,7 +694,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApplication operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.GetApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(GetApplicationRequest getApplicationRequest,
@@ -709,8 +709,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get application revision operation.
      * @return A Java Future containing the result of the GetApplicationRevision operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetApplicationRevision
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetApplicationRevisionResult> getApplicationRevisionAsync(GetApplicationRevisionRequest getApplicationRevisionRequest);
 
@@ -727,8 +727,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApplicationRevision operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.GetApplicationRevision
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetApplicationRevisionResult> getApplicationRevisionAsync(GetApplicationRevisionRequest getApplicationRevisionRequest,
             com.amazonaws.handlers.AsyncHandler<GetApplicationRevisionRequest, GetApplicationRevisionResult> asyncHandler);
@@ -742,7 +742,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get deployment operation.
      * @return A Java Future containing the result of the GetDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest getDeploymentRequest);
@@ -760,7 +760,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.GetDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest getDeploymentRequest,
@@ -775,8 +775,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get deployment configuration operation.
      * @return A Java Future containing the result of the GetDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetDeploymentConfigResult> getDeploymentConfigAsync(GetDeploymentConfigRequest getDeploymentConfigRequest);
 
@@ -793,8 +793,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.GetDeploymentConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetDeploymentConfigResult> getDeploymentConfigAsync(GetDeploymentConfigRequest getDeploymentConfigRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentConfigRequest, GetDeploymentConfigResult> asyncHandler);
@@ -808,8 +808,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get deployment group operation.
      * @return A Java Future containing the result of the GetDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetDeploymentGroupResult> getDeploymentGroupAsync(GetDeploymentGroupRequest getDeploymentGroupRequest);
 
@@ -826,8 +826,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.GetDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetDeploymentGroupResult> getDeploymentGroupAsync(GetDeploymentGroupRequest getDeploymentGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentGroupRequest, GetDeploymentGroupResult> asyncHandler);
@@ -841,8 +841,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get deployment instance operation.
      * @return A Java Future containing the result of the GetDeploymentInstance operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetDeploymentInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest getDeploymentInstanceRequest);
 
@@ -859,8 +859,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeploymentInstance operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.GetDeploymentInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest getDeploymentInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler);
@@ -874,8 +874,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get on-premises instance operation.
      * @return A Java Future containing the result of the GetOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetOnPremisesInstanceResult> getOnPremisesInstanceAsync(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest);
 
@@ -892,8 +892,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.GetOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetOnPremisesInstanceResult> getOnPremisesInstanceAsync(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<GetOnPremisesInstanceRequest, GetOnPremisesInstanceResult> asyncHandler);
@@ -907,8 +907,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list application revisions operation.
      * @return A Java Future containing the result of the ListApplicationRevisions operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListApplicationRevisions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListApplicationRevisionsResult> listApplicationRevisionsAsync(ListApplicationRevisionsRequest listApplicationRevisionsRequest);
 
@@ -925,8 +925,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListApplicationRevisions operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.ListApplicationRevisions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListApplicationRevisionsResult> listApplicationRevisionsAsync(ListApplicationRevisionsRequest listApplicationRevisionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListApplicationRevisionsRequest, ListApplicationRevisionsResult> asyncHandler);
@@ -940,8 +940,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list applications operation.
      * @return A Java Future containing the result of the ListApplications operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest);
 
@@ -958,8 +958,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListApplications operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.ListApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler);
@@ -988,8 +988,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list deployment configurations operation.
      * @return A Java Future containing the result of the ListDeploymentConfigs operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListDeploymentConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync(ListDeploymentConfigsRequest listDeploymentConfigsRequest);
 
@@ -1006,8 +1006,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeploymentConfigs operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.ListDeploymentConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync(ListDeploymentConfigsRequest listDeploymentConfigsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentConfigsRequest, ListDeploymentConfigsResult> asyncHandler);
@@ -1036,8 +1036,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list deployment groups operation.
      * @return A Java Future containing the result of the ListDeploymentGroups operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListDeploymentGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(ListDeploymentGroupsRequest listDeploymentGroupsRequest);
 
@@ -1054,8 +1054,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeploymentGroups operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.ListDeploymentGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(ListDeploymentGroupsRequest listDeploymentGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentGroupsRequest, ListDeploymentGroupsResult> asyncHandler);
@@ -1069,8 +1069,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list deployment instances operation.
      * @return A Java Future containing the result of the ListDeploymentInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListDeploymentInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest listDeploymentInstancesRequest);
 
@@ -1087,8 +1087,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeploymentInstances operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.ListDeploymentInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest listDeploymentInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult> asyncHandler);
@@ -1103,7 +1103,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list deployments operation.
      * @return A Java Future containing the result of the ListDeployments operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListDeployments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest listDeploymentsRequest);
@@ -1122,7 +1122,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeployments operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.ListDeployments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest listDeploymentsRequest,
@@ -1156,8 +1156,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list on-premises instances operation.
      * @return A Java Future containing the result of the ListOnPremisesInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest);
 
@@ -1178,8 +1178,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListOnPremisesInstances operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.ListOnPremisesInstances
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult> asyncHandler);
@@ -1208,8 +1208,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a register application revision operation.
      * @return A Java Future containing the result of the RegisterApplicationRevision operation returned by the service.
      * @sample AmazonCodeDeployAsync.RegisterApplicationRevision
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterApplicationRevisionResult> registerApplicationRevisionAsync(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest);
@@ -1227,8 +1227,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterApplicationRevision operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.RegisterApplicationRevision
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterApplicationRevisionResult> registerApplicationRevisionAsync(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest,
@@ -1248,8 +1248,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of the register on-premises instance operation.
      * @return A Java Future containing the result of the RegisterOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsync.RegisterOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterOnPremisesInstanceResult> registerOnPremisesInstanceAsync(
             RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest);
@@ -1272,8 +1272,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.RegisterOnPremisesInstance
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterOnPremisesInstanceResult> registerOnPremisesInstanceAsync(
             RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest,
@@ -1289,9 +1289,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @return A Java Future containing the result of the RemoveTagsFromOnPremisesInstances operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsync.RemoveTagsFromOnPremisesInstances
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest);
@@ -1310,9 +1309,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @return A Java Future containing the result of the RemoveTagsFromOnPremisesInstances operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsyncHandler.RemoveTagsFromOnPremisesInstances
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest,
@@ -1327,7 +1325,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a stop deployment operation.
      * @return A Java Future containing the result of the StopDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsync.StopDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(StopDeploymentRequest stopDeploymentRequest);
@@ -1345,7 +1343,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.StopDeployment
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(StopDeploymentRequest stopDeploymentRequest,
@@ -1360,8 +1358,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of an update application operation.
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
      * @sample AmazonCodeDeployAsync.UpdateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
 
@@ -1378,8 +1376,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.UpdateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
@@ -1408,8 +1406,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of an update deployment group operation.
      * @return A Java Future containing the result of the UpdateDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsync.UpdateDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDeploymentGroupResult> updateDeploymentGroupAsync(UpdateDeploymentGroupRequest updateDeploymentGroupRequest);
 
@@ -1426,8 +1424,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.UpdateDeploymentGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDeploymentGroupResult> updateDeploymentGroupAsync(UpdateDeploymentGroupRequest updateDeploymentGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDeploymentGroupRequest, UpdateDeploymentGroupResult> asyncHandler);

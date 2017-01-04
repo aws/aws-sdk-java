@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -112,9 +112,8 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(
             CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest);
@@ -197,8 +196,8 @@ public interface AmazonCloudFront {
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest);
 
@@ -280,8 +279,8 @@ public interface AmazonCloudFront {
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateDistributionWithTagsResult createDistributionWithTags(CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
 
@@ -308,8 +307,8 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest);
 
@@ -371,8 +370,8 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest);
 
@@ -407,9 +406,8 @@ public interface AmazonCloudFront {
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @throws InvalidTaggingException
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
             CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest);
@@ -432,9 +430,8 @@ public interface AmazonCloudFront {
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteCloudFrontOriginAccessIdentityResult deleteCloudFrontOriginAccessIdentity(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
@@ -517,8 +514,8 @@ public interface AmazonCloudFront {
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteDistributionResult deleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
 
@@ -601,8 +598,8 @@ public interface AmazonCloudFront {
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
 
@@ -619,9 +616,8 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentity
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
 
@@ -640,8 +636,8 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig"/>AWS
-     *      API Documentation</a>
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(
             GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest);
@@ -659,7 +655,7 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest);
@@ -677,8 +673,8 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest);
 
@@ -697,7 +693,7 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest);
@@ -715,8 +711,8 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution"
+     *      target="_top">AWS API Documentation</a>
      */
     GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest);
 
@@ -733,8 +729,8 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig"
+     *      target="_top">AWS API Documentation</a>
      */
     GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
 
@@ -749,9 +745,8 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListCloudFrontOriginAccessIdentities
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities"
+     *      target="_top">AWS API Documentation</a>
      */
     ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentities(
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest);
@@ -767,8 +762,8 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions" target="_top">AWS
+     *      API Documentation</a>
      */
     ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest);
 
@@ -784,8 +779,8 @@ public interface AmazonCloudFront {
      *         The argument is invalid.
      * @throws InvalidWebACLIdException
      * @sample AmazonCloudFront.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId"
+     *      target="_top">AWS API Documentation</a>
      */
     ListDistributionsByWebACLIdResult listDistributionsByWebACLId(ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
 
@@ -804,8 +799,8 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations" target="_top">AWS
+     *      API Documentation</a>
      */
     ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest);
 
@@ -820,8 +815,8 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions"
+     *      target="_top">AWS API Documentation</a>
      */
     ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest);
 
@@ -840,8 +835,8 @@ public interface AmazonCloudFront {
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -860,7 +855,7 @@ public interface AmazonCloudFront {
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
@@ -880,7 +875,7 @@ public interface AmazonCloudFront {
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
@@ -910,9 +905,8 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(
             UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest);
@@ -992,8 +986,8 @@ public interface AmazonCloudFront {
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution" target="_top">AWS
+     *      API Documentation</a>
      */
     UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest);
 
@@ -1030,8 +1024,8 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest);
 

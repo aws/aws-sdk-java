@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile" target="_top">AWS API
+ *      Documentation</a>
  */
 public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -37,11 +38,12 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * The new password for the specified IAM user.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ). However, the format can be further restricted by the account administrator by setting a password
-     * policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * However, the format can be further restricted by the account administrator by setting a password policy on the
+     * AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      */
     private String password;
@@ -147,21 +149,24 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * The new password for the specified IAM user.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ). However, the format can be further restricted by the account administrator by setting a password
-     * policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * However, the format can be further restricted by the account administrator by setting a password policy on the
+     * AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
      * @param password
      *        The new password for the specified IAM user.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ). However, the format can be further restricted by the account administrator by setting
-     *        a password policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ). However, the format can be further restricted by the account
+     *        administrator by setting a password policy on the AWS account. For more information, see
+     *        <a>UpdateAccountPasswordPolicy</a>.
      */
 
     public void setPassword(String password) {
@@ -173,20 +178,22 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * The new password for the specified IAM user.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ). However, the format can be further restricted by the account administrator by setting a password
-     * policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * However, the format can be further restricted by the account administrator by setting a password policy on the
+     * AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
      * @return The new password for the specified IAM user.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
-     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
-     *         and carriage return ( ). However, the format can be further restricted by the account administrator by
-     *         setting a password policy on the AWS account. For more information, see
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *         feed ( ), and carriage return ( ). However, the format can be further restricted by the account
+     *         administrator by setting a password policy on the AWS account. For more information, see
      *         <a>UpdateAccountPasswordPolicy</a>.
      */
 
@@ -199,21 +206,24 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * The new password for the specified IAM user.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
-     * return ( ). However, the format can be further restricted by the account administrator by setting a password
-     * policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
+     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * However, the format can be further restricted by the account administrator by setting a password policy on the
+     * AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
      * @param password
      *        The new password for the specified IAM user.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
-     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
-     *        carriage return ( ). However, the format can be further restricted by the account administrator by setting
-     *        a password policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
+     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
+     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
+     *        feed ( ), and carriage return ( ). However, the format can be further restricted by the account
+     *        administrator by setting a password policy on the AWS account. For more information, see
+     *        <a>UpdateAccountPasswordPolicy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

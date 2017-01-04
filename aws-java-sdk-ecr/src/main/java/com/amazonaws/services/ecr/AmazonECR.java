@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,8 +107,8 @@ public interface AmazonECR {
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @sample AmazonECR.BatchCheckLayerAvailability
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability"
+     *      target="_top">AWS API Documentation</a>
      */
     BatchCheckLayerAvailabilityResult batchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest batchCheckLayerAvailabilityRequest);
 
@@ -137,7 +137,8 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.BatchDeleteImage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage" target="_top">AWS API
+     *      Documentation</a>
      */
     BatchDeleteImageResult batchDeleteImage(BatchDeleteImageRequest batchDeleteImageRequest);
 
@@ -157,7 +158,8 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.BatchGetImage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage" target="_top">AWS API
+     *      Documentation</a>
      */
     BatchGetImageResult batchGetImage(BatchGetImageRequest batchGetImageRequest);
 
@@ -195,7 +197,7 @@ public interface AmazonECR {
      * @throws EmptyUploadException
      *         The specified layer upload does not contain any layer parts.
      * @sample AmazonECR.CompleteLayerUpload
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload" target="_top">AWS API
      *      Documentation</a>
      */
     CompleteLayerUploadResult completeLayerUpload(CompleteLayerUploadRequest completeLayerUploadRequest);
@@ -219,7 +221,8 @@ public interface AmazonECR {
      *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
      * @sample AmazonECR.CreateRepository
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest);
 
@@ -242,7 +245,8 @@ public interface AmazonECR {
      *         The specified repository contains images. To delete a repository that contains images, you must force the
      *         deletion with the <code>force</code> parameter.
      * @sample AmazonECR.DeleteRepository
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest deleteRepositoryRequest);
 
@@ -263,7 +267,7 @@ public interface AmazonECR {
      * @throws RepositoryPolicyNotFoundException
      *         The specified repository and registry combination does not have an associated repository policy.
      * @sample AmazonECR.DeleteRepositoryPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteRepositoryPolicyResult deleteRepositoryPolicy(DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest);
@@ -292,7 +296,8 @@ public interface AmazonECR {
      * @throws ImageNotFoundException
      *         The image requested does not exist in the specified repository.
      * @sample AmazonECR.DescribeImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest);
 
@@ -311,7 +316,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.DescribeRepositories
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeRepositoriesResult describeRepositories(DescribeRepositoriesRequest describeRepositoriesRequest);
@@ -335,7 +340,7 @@ public interface AmazonECR {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECR.GetAuthorizationToken
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken" target="_top">AWS API
      *      Documentation</a>
      */
     GetAuthorizationTokenResult getAuthorizationToken(GetAuthorizationTokenRequest getAuthorizationTokenRequest);
@@ -367,7 +372,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.GetDownloadUrlForLayer
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer" target="_top">AWS API
      *      Documentation</a>
      */
     GetDownloadUrlForLayerResult getDownloadUrlForLayer(GetDownloadUrlForLayerRequest getDownloadUrlForLayerRequest);
@@ -389,7 +394,7 @@ public interface AmazonECR {
      * @throws RepositoryPolicyNotFoundException
      *         The specified repository and registry combination does not have an associated repository policy.
      * @sample AmazonECR.GetRepositoryPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     GetRepositoryPolicyResult getRepositoryPolicy(GetRepositoryPolicyRequest getRepositoryPolicyRequest);
@@ -415,7 +420,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.InitiateLayerUpload
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload" target="_top">AWS API
      *      Documentation</a>
      */
     InitiateLayerUploadResult initiateLayerUpload(InitiateLayerUploadRequest initiateLayerUploadRequest);
@@ -441,7 +446,8 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.ListImages
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages" target="_top">AWS API
+     *      Documentation</a>
      */
     ListImagesResult listImages(ListImagesRequest listImagesRequest);
 
@@ -476,7 +482,8 @@ public interface AmazonECR {
      *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
      * @sample AmazonECR.PutImage
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage" target="_top">AWS API
+     *      Documentation</a>
      */
     PutImageResult putImage(PutImageRequest putImageRequest);
 
@@ -495,7 +502,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @sample AmazonECR.SetRepositoryPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     SetRepositoryPolicyResult setRepositoryPolicy(SetRepositoryPolicyRequest setRepositoryPolicyRequest);
@@ -531,7 +538,8 @@ public interface AmazonECR {
      *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
      * @sample AmazonECR.UploadLayerPart
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart" target="_top">AWS API
+     *      Documentation</a>
      */
     UploadLayerPartResult uploadLayerPart(UploadLayerPartRequest uploadLayerPartRequest);
 

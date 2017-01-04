@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,8 +95,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * @param createDeliveryStreamRequest
      * @return A Java Future containing the result of the CreateDeliveryStream operation returned by the service.
      * @sample AmazonKinesisFirehoseAsync.CreateDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDeliveryStreamResult> createDeliveryStreamAsync(CreateDeliveryStreamRequest createDeliveryStreamRequest);
 
@@ -168,8 +168,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeliveryStream operation returned by the service.
      * @sample AmazonKinesisFirehoseAsyncHandler.CreateDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDeliveryStreamResult> createDeliveryStreamAsync(CreateDeliveryStreamRequest createDeliveryStreamRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDeliveryStreamRequest, CreateDeliveryStreamResult> asyncHandler);
@@ -195,8 +195,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * @param deleteDeliveryStreamRequest
      * @return A Java Future containing the result of the DeleteDeliveryStream operation returned by the service.
      * @sample AmazonKinesisFirehoseAsync.DeleteDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDeliveryStreamResult> deleteDeliveryStreamAsync(DeleteDeliveryStreamRequest deleteDeliveryStreamRequest);
 
@@ -225,8 +225,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDeliveryStream operation returned by the service.
      * @sample AmazonKinesisFirehoseAsyncHandler.DeleteDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDeliveryStreamResult> deleteDeliveryStreamAsync(DeleteDeliveryStreamRequest deleteDeliveryStreamRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResult> asyncHandler);
@@ -241,8 +241,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * @param describeDeliveryStreamRequest
      * @return A Java Future containing the result of the DescribeDeliveryStream operation returned by the service.
      * @sample AmazonKinesisFirehoseAsync.DescribeDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeDeliveryStreamResult> describeDeliveryStreamAsync(DescribeDeliveryStreamRequest describeDeliveryStreamRequest);
 
@@ -260,8 +260,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDeliveryStream operation returned by the service.
      * @sample AmazonKinesisFirehoseAsyncHandler.DescribeDeliveryStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeDeliveryStreamResult> describeDeliveryStreamAsync(DescribeDeliveryStreamRequest describeDeliveryStreamRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDeliveryStreamRequest, DescribeDeliveryStreamResult> asyncHandler);
@@ -281,8 +281,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * @param listDeliveryStreamsRequest
      * @return A Java Future containing the result of the ListDeliveryStreams operation returned by the service.
      * @sample AmazonKinesisFirehoseAsync.ListDeliveryStreams
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDeliveryStreamsResult> listDeliveryStreamsAsync(ListDeliveryStreamsRequest listDeliveryStreamsRequest);
 
@@ -305,8 +305,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeliveryStreams operation returned by the service.
      * @sample AmazonKinesisFirehoseAsyncHandler.ListDeliveryStreams
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDeliveryStreamsResult> listDeliveryStreamsAsync(ListDeliveryStreamsRequest listDeliveryStreamsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeliveryStreamsRequest, ListDeliveryStreamsResult> asyncHandler);
@@ -351,7 +351,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * @param putRecordRequest
      * @return A Java Future containing the result of the PutRecord operation returned by the service.
      * @sample AmazonKinesisFirehoseAsync.PutRecord
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutRecordResult> putRecordAsync(PutRecordRequest putRecordRequest);
 
@@ -399,7 +400,8 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRecord operation returned by the service.
      * @sample AmazonKinesisFirehoseAsyncHandler.PutRecord
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutRecordResult> putRecordAsync(PutRecordRequest putRecordRequest,
             com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult> asyncHandler);
@@ -465,7 +467,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * @param putRecordBatchRequest
      * @return A Java Future containing the result of the PutRecordBatch operation returned by the service.
      * @sample AmazonKinesisFirehoseAsync.PutRecordBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutRecordBatchResult> putRecordBatchAsync(PutRecordBatchRequest putRecordBatchRequest);
@@ -535,7 +537,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRecordBatch operation returned by the service.
      * @sample AmazonKinesisFirehoseAsyncHandler.PutRecordBatch
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<PutRecordBatchResult> putRecordBatchAsync(PutRecordBatchRequest putRecordBatchRequest,
@@ -577,7 +579,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * @param updateDestinationRequest
      * @return A Java Future containing the result of the UpdateDestination operation returned by the service.
      * @sample AmazonKinesisFirehoseAsync.UpdateDestination
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(UpdateDestinationRequest updateDestinationRequest);
@@ -622,7 +624,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDestination operation returned by the service.
      * @sample AmazonKinesisFirehoseAsyncHandler.UpdateDestination
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(UpdateDestinationRequest updateDestinationRequest,

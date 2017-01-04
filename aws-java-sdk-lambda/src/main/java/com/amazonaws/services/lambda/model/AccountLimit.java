@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import java.io.Serializable;
  * Provides limits of code size and concurrency associated with the current account and region.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit"/>AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit" target="_top">AWS API
+ *      Documentation</a>
  */
 public class AccountLimit implements Serializable, Cloneable {
 
@@ -39,7 +40,7 @@ public class AccountLimit implements Serializable, Cloneable {
     /**
      * <p>
      * Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar
-     * file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.
+     * file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
      * </p>
      */
     private Long codeSizeZipped;
@@ -142,12 +143,12 @@ public class AccountLimit implements Serializable, Cloneable {
     /**
      * <p>
      * Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar
-     * file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.
+     * file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
      * </p>
      * 
      * @param codeSizeZipped
      *        Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda
-     *        function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.
+     *        function(.zip/.jar file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
      */
 
     public void setCodeSizeZipped(Long codeSizeZipped) {
@@ -157,11 +158,11 @@ public class AccountLimit implements Serializable, Cloneable {
     /**
      * <p>
      * Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar
-     * file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.
+     * file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
      * </p>
      * 
      * @return Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda
-     *         function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.
+     *         function(.zip/.jar file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
      */
 
     public Long getCodeSizeZipped() {
@@ -171,12 +172,12 @@ public class AccountLimit implements Serializable, Cloneable {
     /**
      * <p>
      * Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar
-     * file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.
+     * file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
      * </p>
      * 
      * @param codeSizeZipped
      *        Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda
-     *        function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.
+     *        function(.zip/.jar file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

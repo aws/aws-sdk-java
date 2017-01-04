@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -168,8 +168,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AddClientIDToOpenIDConnectProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider"
+     *      target="_top">AWS API Documentation</a>
      */
     AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest);
@@ -204,8 +204,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AddRoleToInstanceProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile" target="_top">AWS
+     *      API Documentation</a>
      */
     AddRoleToInstanceProfileResult addRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest);
 
@@ -225,7 +225,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AddUserToGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     AddUserToGroupResult addUserToGroup(AddUserToGroupRequest addUserToGroupRequest);
 
@@ -256,7 +257,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AttachGroupPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     AttachGroupPolicyResult attachGroupPolicy(AttachGroupPolicyRequest attachGroupPolicyRequest);
 
@@ -290,7 +292,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AttachRolePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     AttachRolePolicyResult attachRolePolicy(AttachRolePolicyRequest attachRolePolicyRequest);
 
@@ -321,7 +324,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AttachUserPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     AttachUserPolicyResult attachUserPolicy(AttachUserPolicyRequest attachUserPolicyRequest);
 
@@ -356,7 +360,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ChangePassword
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword" target="_top">AWS API
+     *      Documentation</a>
      */
     ChangePasswordResult changePassword(ChangePasswordRequest changePasswordRequest);
 
@@ -394,7 +399,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateAccessKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateAccessKeyResult createAccessKey(CreateAccessKeyRequest createAccessKeyRequest);
 
@@ -422,7 +428,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateAccountAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias" target="_top">AWS API
      *      Documentation</a>
      */
     CreateAccountAliasResult createAccountAlias(CreateAccountAliasRequest createAccountAliasRequest);
@@ -450,7 +456,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateGroupResult createGroup(CreateGroupRequest createGroupRequest);
 
@@ -475,7 +482,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateInstanceProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile" target="_top">AWS API
      *      Documentation</a>
      */
     CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest);
@@ -504,7 +511,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateLoginProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile" target="_top">AWS API
      *      Documentation</a>
      */
     CreateLoginProfileResult createLoginProfile(CreateLoginProfileRequest createLoginProfileRequest);
@@ -543,8 +550,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateOpenIDConnectProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateOpenIDConnectProviderResult createOpenIDConnectProvider(CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest);
 
@@ -579,7 +586,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreatePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     CreatePolicyResult createPolicy(CreatePolicyRequest createPolicyRequest);
 
@@ -615,7 +623,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreatePolicyVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion" target="_top">AWS API
      *      Documentation</a>
      */
     CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest createPolicyVersionRequest);
@@ -642,7 +650,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateRoleResult createRole(CreateRoleRequest createRoleRequest);
 
@@ -688,7 +697,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateSAMLProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider" target="_top">AWS API
      *      Documentation</a>
      */
     CreateSAMLProviderResult createSAMLProvider(CreateSAMLProviderRequest createSAMLProviderRequest);
@@ -724,8 +733,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceNotSupportedException
      *         The specified service does not support service-specific credentials.
      * @sample AmazonIdentityManagement.CreateServiceSpecificCredential
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential"
+     *      target="_top">AWS API Documentation</a>
      */
     CreateServiceSpecificCredentialResult createServiceSpecificCredential(CreateServiceSpecificCredentialRequest createServiceSpecificCredentialRequest);
 
@@ -752,7 +761,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateUser
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateUserResult createUser(CreateUserRequest createUserRequest);
 
@@ -786,7 +796,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateVirtualMFADevice
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice" target="_top">AWS API
      *      Documentation</a>
      */
     CreateVirtualMFADeviceResult createVirtualMFADevice(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest);
@@ -817,7 +827,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeactivateMFADevice
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice" target="_top">AWS API
      *      Documentation</a>
      */
     DeactivateMFADeviceResult deactivateMFADevice(DeactivateMFADeviceRequest deactivateMFADeviceRequest);
@@ -843,7 +853,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccessKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteAccessKeyResult deleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest);
 
@@ -865,7 +876,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccountAlias
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteAccountAliasResult deleteAccountAlias(DeleteAccountAliasRequest deleteAccountAliasRequest);
@@ -886,8 +897,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccountPasswordPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest);
 
@@ -917,7 +928,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
 
@@ -943,7 +955,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteGroupPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteGroupPolicyResult deleteGroupPolicy(DeleteGroupPolicyRequest deleteGroupPolicyRequest);
 
@@ -977,7 +990,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteInstanceProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest);
@@ -1010,7 +1023,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteLoginProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteLoginProfileResult deleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest);
@@ -1038,8 +1051,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteOpenIDConnectProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest);
 
@@ -1095,7 +1108,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeletePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
@@ -1130,7 +1144,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeletePolicyVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion" target="_top">AWS API
      *      Documentation</a>
      */
     DeletePolicyVersionResult deletePolicyVersion(DeletePolicyVersionRequest deletePolicyVersionRequest);
@@ -1162,7 +1176,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteRoleResult deleteRole(DeleteRoleRequest deleteRoleRequest);
 
@@ -1188,7 +1203,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteRolePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteRolePolicyResult deleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest);
 
@@ -1221,7 +1237,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteSAMLProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteSAMLProviderResult deleteSAMLProvider(DeleteSAMLProviderRequest deleteSAMLProviderRequest);
@@ -1243,7 +1259,7 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
      * @sample AmazonIdentityManagement.DeleteSSHPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteSSHPublicKeyResult deleteSSHPublicKey(DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest);
@@ -1284,8 +1300,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteServerCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteServerCertificateResult deleteServerCertificate(DeleteServerCertificateRequest deleteServerCertificateRequest);
 
@@ -1300,8 +1316,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
      * @sample AmazonIdentityManagement.DeleteServiceSpecificCredential
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteServiceSpecificCredentialResult deleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest deleteServiceSpecificCredentialRequest);
 
@@ -1326,8 +1342,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteSigningCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteSigningCertificateResult deleteSigningCertificate(DeleteSigningCertificateRequest deleteSigningCertificateRequest);
 
@@ -1351,7 +1367,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteUser
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
 
@@ -1377,7 +1394,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteUserPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteUserPolicyResult deleteUserPolicy(DeleteUserPolicyRequest deleteUserPolicyRequest);
 
@@ -1406,7 +1424,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteVirtualMFADevice
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteVirtualMFADeviceResult deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest);
@@ -1435,7 +1453,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DetachGroupPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     DetachGroupPolicyResult detachGroupPolicy(DetachGroupPolicyRequest detachGroupPolicyRequest);
 
@@ -1463,7 +1482,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DetachRolePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     DetachRolePolicyResult detachRolePolicy(DetachRolePolicyRequest detachRolePolicyRequest);
 
@@ -1491,7 +1511,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DetachUserPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     DetachUserPolicyResult detachUserPolicy(DetachUserPolicyRequest detachUserPolicyRequest);
 
@@ -1521,7 +1542,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.EnableMFADevice
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice" target="_top">AWS API
+     *      Documentation</a>
      */
     EnableMFADeviceResult enableMFADevice(EnableMFADeviceRequest enableMFADeviceRequest);
 
@@ -1540,8 +1562,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GenerateCredentialReport
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport" target="_top">AWS
+     *      API Documentation</a>
      */
     GenerateCredentialReportResult generateCredentialReport(GenerateCredentialReportRequest generateCredentialReportRequest);
 
@@ -1565,7 +1587,7 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
      * @sample AmazonIdentityManagement.GetAccessKeyLastUsed
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed" target="_top">AWS API
      *      Documentation</a>
      */
     GetAccessKeyLastUsedResult getAccessKeyLastUsed(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest);
@@ -1586,8 +1608,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetAccountAuthorizationDetails
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails"
+     *      target="_top">AWS API Documentation</a>
      */
     GetAccountAuthorizationDetailsResult getAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest getAccountAuthorizationDetailsRequest);
 
@@ -1613,8 +1635,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetAccountPasswordPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy" target="_top">AWS
+     *      API Documentation</a>
      */
     GetAccountPasswordPolicyResult getAccountPasswordPolicy(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest);
 
@@ -1640,7 +1662,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetAccountSummary
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary" target="_top">AWS API
+     *      Documentation</a>
      */
     GetAccountSummaryResult getAccountSummary(GetAccountSummaryRequest getAccountSummaryRequest);
 
@@ -1670,8 +1693,8 @@ public interface AmazonIdentityManagement {
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonIdentityManagement.GetContextKeysForCustomPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     GetContextKeysForCustomPolicyResult getContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest getContextKeysForCustomPolicyRequest);
 
@@ -1705,8 +1728,8 @@ public interface AmazonIdentityManagement {
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonIdentityManagement.GetContextKeysForPrincipalPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     GetContextKeysForPrincipalPolicyResult getContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest getContextKeysForPrincipalPolicyRequest);
 
@@ -1732,7 +1755,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetCredentialReport
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport" target="_top">AWS API
      *      Documentation</a>
      */
     GetCredentialReportResult getCredentialReport(GetCredentialReportRequest getCredentialReportRequest);
@@ -1758,7 +1781,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     GetGroupResult getGroup(GetGroupRequest getGroupRequest);
 
@@ -1793,7 +1817,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetGroupPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     GetGroupPolicyResult getGroupPolicy(GetGroupPolicyRequest getGroupPolicyRequest);
 
@@ -1813,7 +1838,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetInstanceProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile" target="_top">AWS API
      *      Documentation</a>
      */
     GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest);
@@ -1832,7 +1857,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetLoginProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile" target="_top">AWS API
+     *      Documentation</a>
      */
     GetLoginProfileResult getLoginProfile(GetLoginProfileRequest getLoginProfileRequest);
 
@@ -1851,8 +1877,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetOpenIDConnectProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider" target="_top">AWS
+     *      API Documentation</a>
      */
     GetOpenIDConnectProviderResult getOpenIDConnectProvider(GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest);
 
@@ -1885,7 +1911,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest);
 
@@ -1930,7 +1957,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetPolicyVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion" target="_top">AWS API
+     *      Documentation</a>
      */
     GetPolicyVersionResult getPolicyVersion(GetPolicyVersionRequest getPolicyVersionRequest);
 
@@ -1957,7 +1985,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole" target="_top">AWS API
+     *      Documentation</a>
      */
     GetRoleResult getRole(GetRoleRequest getRoleRequest);
 
@@ -1997,7 +2026,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetRolePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     GetRolePolicyResult getRolePolicy(GetRolePolicyRequest getRolePolicyRequest);
 
@@ -2023,7 +2053,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetSAMLProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider" target="_top">AWS API
+     *      Documentation</a>
      */
     GetSAMLProviderResult getSAMLProvider(GetSAMLProviderRequest getSAMLProviderRequest);
 
@@ -2046,7 +2077,8 @@ public interface AmazonIdentityManagement {
      * @throws UnrecognizedPublicKeyEncodingException
      *         The request was rejected because the public key encoding format is unsupported or unrecognized.
      * @sample AmazonIdentityManagement.GetSSHPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey" target="_top">AWS API
+     *      Documentation</a>
      */
     GetSSHPublicKeyResult getSSHPublicKey(GetSSHPublicKeyRequest getSSHPublicKeyRequest);
 
@@ -2069,7 +2101,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetServerCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate" target="_top">AWS API
      *      Documentation</a>
      */
     GetServerCertificateResult getServerCertificate(GetServerCertificateRequest getServerCertificateRequest);
@@ -2091,7 +2123,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetUser
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser" target="_top">AWS API
+     *      Documentation</a>
      */
     GetUserResult getUser(GetUserRequest getUserRequest);
 
@@ -2133,7 +2166,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetUserPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     GetUserPolicyResult getUserPolicy(GetUserPolicyRequest getUserPolicyRequest);
 
@@ -2166,7 +2200,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListAccessKeys
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys" target="_top">AWS API
+     *      Documentation</a>
      */
     ListAccessKeysResult listAccessKeys(ListAccessKeysRequest listAccessKeysRequest);
 
@@ -2189,7 +2224,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListAccountAliases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases" target="_top">AWS API
      *      Documentation</a>
      */
     ListAccountAliasesResult listAccountAliases(ListAccountAliasesRequest listAccountAliasesRequest);
@@ -2228,8 +2263,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListAttachedGroupPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies" target="_top">AWS
+     *      API Documentation</a>
      */
     ListAttachedGroupPoliciesResult listAttachedGroupPolicies(ListAttachedGroupPoliciesRequest listAttachedGroupPoliciesRequest);
 
@@ -2260,8 +2295,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListAttachedRolePolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies" target="_top">AWS
+     *      API Documentation</a>
      */
     ListAttachedRolePoliciesResult listAttachedRolePolicies(ListAttachedRolePoliciesRequest listAttachedRolePoliciesRequest);
 
@@ -2292,8 +2327,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListAttachedUserPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies" target="_top">AWS
+     *      API Documentation</a>
      */
     ListAttachedUserPoliciesResult listAttachedUserPolicies(ListAttachedUserPoliciesRequest listAttachedUserPoliciesRequest);
 
@@ -2320,7 +2355,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListEntitiesForPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     ListEntitiesForPolicyResult listEntitiesForPolicy(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest);
@@ -2348,7 +2383,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListGroupPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies" target="_top">AWS API
+     *      Documentation</a>
      */
     ListGroupPoliciesResult listGroupPolicies(ListGroupPoliciesRequest listGroupPoliciesRequest);
 
@@ -2365,7 +2401,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups" target="_top">AWS API
+     *      Documentation</a>
      */
     ListGroupsResult listGroups(ListGroupsRequest listGroupsRequest);
 
@@ -2392,7 +2429,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListGroupsForUser
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser" target="_top">AWS API
+     *      Documentation</a>
      */
     ListGroupsForUserResult listGroupsForUser(ListGroupsForUserRequest listGroupsForUserRequest);
 
@@ -2411,7 +2449,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListInstanceProfiles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles" target="_top">AWS API
      *      Documentation</a>
      */
     ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest);
@@ -2441,8 +2479,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListInstanceProfilesForRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole"
+     *      target="_top">AWS API Documentation</a>
      */
     ListInstanceProfilesForRoleResult listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest);
 
@@ -2464,7 +2502,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListMFADevices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices" target="_top">AWS API
+     *      Documentation</a>
      */
     ListMFADevicesResult listMFADevices(ListMFADevicesRequest listMFADevicesRequest);
 
@@ -2485,8 +2524,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListOpenIDConnectProviders
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders" target="_top">AWS
+     *      API Documentation</a>
      */
     ListOpenIDConnectProvidersResult listOpenIDConnectProviders(ListOpenIDConnectProvidersRequest listOpenIDConnectProvidersRequest);
 
@@ -2522,7 +2561,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies" target="_top">AWS API
+     *      Documentation</a>
      */
     ListPoliciesResult listPolicies(ListPoliciesRequest listPoliciesRequest);
 
@@ -2554,7 +2594,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListPolicyVersions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions" target="_top">AWS API
      *      Documentation</a>
      */
     ListPolicyVersionsResult listPolicyVersions(ListPolicyVersionsRequest listPolicyVersionsRequest);
@@ -2582,7 +2622,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListRolePolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies" target="_top">AWS API
+     *      Documentation</a>
      */
     ListRolePoliciesResult listRolePolicies(ListRolePoliciesRequest listRolePoliciesRequest);
 
@@ -2601,7 +2642,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListRoles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles" target="_top">AWS API
+     *      Documentation</a>
      */
     ListRolesResult listRoles(ListRolesRequest listRolesRequest);
 
@@ -2628,7 +2670,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListSAMLProviders
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders" target="_top">AWS API
+     *      Documentation</a>
      */
     ListSAMLProvidersResult listSAMLProviders(ListSAMLProvidersRequest listSAMLProvidersRequest);
 
@@ -2661,7 +2704,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
      * @sample AmazonIdentityManagement.ListSSHPublicKeys
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys" target="_top">AWS API
+     *      Documentation</a>
      */
     ListSSHPublicKeysResult listSSHPublicKeys(ListSSHPublicKeysRequest listSSHPublicKeysRequest);
 
@@ -2692,7 +2736,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListServerCertificates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates" target="_top">AWS API
      *      Documentation</a>
      */
     ListServerCertificatesResult listServerCertificates(ListServerCertificatesRequest listServerCertificatesRequest);
@@ -2722,8 +2766,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceNotSupportedException
      *         The specified service does not support service-specific credentials.
      * @sample AmazonIdentityManagement.ListServiceSpecificCredentials
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials"
+     *      target="_top">AWS API Documentation</a>
      */
     ListServiceSpecificCredentialsResult listServiceSpecificCredentials(ListServiceSpecificCredentialsRequest listServiceSpecificCredentialsRequest);
 
@@ -2750,8 +2794,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListSigningCertificates
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates" target="_top">AWS
+     *      API Documentation</a>
      */
     ListSigningCertificatesResult listSigningCertificates(ListSigningCertificatesRequest listSigningCertificatesRequest);
 
@@ -2785,7 +2829,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListUserPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies" target="_top">AWS API
+     *      Documentation</a>
      */
     ListUserPoliciesResult listUserPolicies(ListUserPoliciesRequest listUserPoliciesRequest);
 
@@ -2803,7 +2848,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListUsers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers" target="_top">AWS API
+     *      Documentation</a>
      */
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
 
@@ -2827,7 +2873,7 @@ public interface AmazonIdentityManagement {
      * @param listVirtualMFADevicesRequest
      * @return Result of the ListVirtualMFADevices operation returned by the service.
      * @sample AmazonIdentityManagement.ListVirtualMFADevices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices" target="_top">AWS API
      *      Documentation</a>
      */
     ListVirtualMFADevicesResult listVirtualMFADevices(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest);
@@ -2877,7 +2923,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutGroupPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     PutGroupPolicyResult putGroupPolicy(PutGroupPolicyRequest putGroupPolicyRequest);
 
@@ -2926,7 +2973,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutRolePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     PutRolePolicyResult putRolePolicy(PutRolePolicyRequest putRolePolicyRequest);
 
@@ -2968,7 +3016,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutUserPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
     PutUserPolicyResult putUserPolicy(PutUserPolicyRequest putUserPolicyRequest);
 
@@ -2992,8 +3041,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.RemoveClientIDFromOpenIDConnectProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider"
+     *      target="_top">AWS API Documentation</a>
      */
     RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest);
@@ -3027,8 +3076,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.RemoveRoleFromInstanceProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
      */
     RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest);
 
@@ -3048,7 +3097,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.RemoveUserFromGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup" target="_top">AWS API
      *      Documentation</a>
      */
     RemoveUserFromGroupResult removeUserFromGroup(RemoveUserFromGroupRequest removeUserFromGroupRequest);
@@ -3066,8 +3115,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
      * @sample AmazonIdentityManagement.ResetServiceSpecificCredential
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential"
+     *      target="_top">AWS API Documentation</a>
      */
     ResetServiceSpecificCredentialResult resetServiceSpecificCredential(ResetServiceSpecificCredentialRequest resetServiceSpecificCredentialRequest);
 
@@ -3095,7 +3144,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ResyncMFADevice
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice" target="_top">AWS API
+     *      Documentation</a>
      */
     ResyncMFADeviceResult resyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest);
 
@@ -3126,8 +3176,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.SetDefaultPolicyVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion" target="_top">AWS
+     *      API Documentation</a>
      */
     SetDefaultPolicyVersionResult setDefaultPolicyVersion(SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
 
@@ -3163,7 +3213,7 @@ public interface AmazonIdentityManagement {
      *         The request failed because a provided policy could not be successfully evaluated. An additional detail
      *         message indicates the source of the failure.
      * @sample AmazonIdentityManagement.SimulateCustomPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     SimulateCustomPolicyResult simulateCustomPolicy(SimulateCustomPolicyRequest simulateCustomPolicyRequest);
@@ -3213,8 +3263,8 @@ public interface AmazonIdentityManagement {
      *         The request failed because a provided policy could not be successfully evaluated. An additional detail
      *         message indicates the source of the failure.
      * @sample AmazonIdentityManagement.SimulatePrincipalPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy" target="_top">AWS
+     *      API Documentation</a>
      */
     SimulatePrincipalPolicyResult simulatePrincipalPolicy(SimulatePrincipalPolicyRequest simulatePrincipalPolicyRequest);
 
@@ -3245,7 +3295,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateAccessKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateAccessKeyResult updateAccessKey(UpdateAccessKeyRequest updateAccessKeyRequest);
 
@@ -3280,8 +3331,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateAccountPasswordPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest);
 
@@ -3307,7 +3358,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateAssumeRolePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateAssumeRolePolicyResult updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest);
@@ -3344,7 +3395,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest);
 
@@ -3376,7 +3428,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateLoginProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateLoginProfileResult updateLoginProfile(UpdateLoginProfileRequest updateLoginProfileRequest);
@@ -3413,8 +3465,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateOpenIDConnectProviderThumbprint
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint"/>AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest);
@@ -3443,7 +3495,7 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateSAMLProvider
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateSAMLProviderResult updateSAMLProvider(UpdateSAMLProviderRequest updateSAMLProviderRequest);
@@ -3467,7 +3519,7 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
      * @sample AmazonIdentityManagement.UpdateSSHPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateSSHPublicKeyResult updateSSHPublicKey(UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest);
@@ -3512,8 +3564,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateServerCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate" target="_top">AWS
+     *      API Documentation</a>
      */
     UpdateServerCertificateResult updateServerCertificate(UpdateServerCertificateRequest updateServerCertificateRequest);
 
@@ -3530,8 +3582,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
      * @sample AmazonIdentityManagement.UpdateServiceSpecificCredential
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateServiceSpecificCredentialResult updateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest updateServiceSpecificCredentialRequest);
 
@@ -3557,8 +3609,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateSigningCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate" target="_top">AWS
+     *      API Documentation</a>
      */
     UpdateSigningCertificateResult updateSigningCertificate(UpdateSigningCertificateRequest updateSigningCertificateRequest);
 
@@ -3599,7 +3651,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateUser
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser"/>AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateUserResult updateUser(UpdateUserRequest updateUserRequest);
 
@@ -3629,7 +3682,7 @@ public interface AmazonIdentityManagement {
      * @throws UnrecognizedPublicKeyEncodingException
      *         The request was rejected because the public key encoding format is unsupported or unrecognized.
      * @sample AmazonIdentityManagement.UploadSSHPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey"/>AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     UploadSSHPublicKeyResult uploadSSHPublicKey(UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest);
@@ -3677,8 +3730,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UploadServerCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate" target="_top">AWS
+     *      API Documentation</a>
      */
     UploadServerCertificateResult uploadServerCertificate(UploadServerCertificateRequest uploadServerCertificateRequest);
 
@@ -3724,8 +3777,8 @@ public interface AmazonIdentityManagement {
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UploadSigningCertificate
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate"/>AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate" target="_top">AWS
+     *      API Documentation</a>
      */
     UploadSigningCertificateResult uploadSigningCertificate(UploadSigningCertificateRequest uploadSigningCertificateRequest);
 
