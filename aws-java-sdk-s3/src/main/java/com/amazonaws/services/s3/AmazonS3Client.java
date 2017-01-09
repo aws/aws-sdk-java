@@ -276,7 +276,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -1205,9 +1204,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         rejectNull(bucketName, "The bucket name parameter must be specified when requesting an object's metadata");
         rejectNull(key, "The key parameter must be specified when requesting an object's metadata");
 
-        URI endpoint = resolveServiceEndpoint(getObjectMetadataRequest.getBucketName());
+        Request<GetObjectMetadataRequest> request = createRequest(bucketName, key, getObjectMetadataRequest, HttpMethodName.HEAD);
 
-        Request<GetObjectMetadataRequest> request = createRequest(bucketName, key, getObjectMetadataRequest, HttpMethodName.HEAD, endpoint);
         if (versionId != null) request.addParameter("versionId", versionId);
 
         populateRequesterPaysHeader(request, getObjectMetadataRequest.isRequesterPays());
@@ -3384,6 +3382,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected Signer createSigner(final Request<?> request,
                                   final String bucketName,
                                   final String key) {
+        return createSigner(request, bucketName, key, false);
+    }
+
+    /**
+     * Returns a "complete" S3 specific signer, taking into the S3 bucket, key,
+     * and the current S3 client configuration into account.
+     */
+    protected Signer createSigner(final Request<?> request,
+                                  final String bucketName,
+                                  final String key,
+                                  final boolean isAdditionalHeadRequestToFindRegion) {
+
         // Instead of using request.getEndpoint() for this parameter, we use endpoint which is because
         // in accelerate mode, the endpoint in request is regionless. We need the client-wide endpoint
         // to fetch the region information and pick the correct signer.
@@ -3399,22 +3409,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      // If cache contains the region for the bucket, create an endpoint for the region and
                      // update the request with that endpoint.
                      resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
-
-                     final AWSS3V4Signer v4Signer = (AWSS3V4Signer) signer;
-                     v4Signer.setServiceName(getServiceNameIntern());
-                     v4Signer.setRegionName(region);
-                     return v4Signer;
+                     return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, region);
                 } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
                     return createSigV2Signer(request, bucketName, key);
+                } else if (isAdditionalHeadRequestToFindRegion) {
+                    return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, "us-east-1");
                 }
             }
 
             String regionOverride = getSignerRegionOverride();
             if (regionOverride != null) {
-                final AWSS3V4Signer v4Signer = new AWSS3V4Signer();
-                v4Signer.setServiceName(getServiceNameIntern());
-                v4Signer.setRegionName(regionOverride);
-                return v4Signer;
+                return updateSigV4SignerWithRegion(new AWSS3V4Signer(), regionOverride);
             }
         }
 
@@ -3430,12 +3435,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private S3Signer createSigV2Signer(final Request<?> request,
-                                       final String bucketName,
-                                       final String key) {
+                                            final String bucketName,
+                                            final String key) {
         String resourcePath = "/" +
                 ((bucketName != null) ? bucketName + "/" : "") +
                 ((key != null) ? key : "");
         return new S3Signer(request.getHttpMethod().toString(), resourcePath);
+    }
+
+    private AWSS3V4Signer updateSigV4SignerWithRegion(final AWSS3V4Signer v4Signer, String region) {
+        v4Signer.setServiceName(getServiceNameIntern());
+        v4Signer.setRegionName(region);
+        return v4Signer;
     }
 
     /**
@@ -4072,6 +4083,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return new S3RequestEndpointResolver(serviceEndpointBuilder, clientOptions.isPathStyleAccess(), bucketName, key);
     }
 
+    @Override
+    protected final SignerProvider createSignerProvider(Signer signer) {
+        return new S3SignerProvider(this, signer);
+    }
+
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
                                   Unmarshaller<X, InputStream> unmarshaller,
                                   String bucketName,
@@ -4079,14 +4095,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return invoke(request, new S3XmlResponseHandler<X>(unmarshaller), bucketName, key);
     }
 
-    @Override
-    protected final SignerProvider createSignerProvider(Signer signer) {
-        return new S3SignerProvider(this, signer);
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+                                                            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+                                                            String bucket, String key) {
+        return invoke(request, responseHandler, bucket, key, false);
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            String bucket, String key) {
+            String bucket, String key, boolean isAdditionalHeadRequestToFindRegion) {
 
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         checkHttps(originalRequest);
@@ -4118,11 +4135,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             // Update the bucketRegionCache if we can't find region for the request
             if (bucket != null && !(request.getOriginalRequest() instanceof CreateBucketRequest)
-                    && noExplicitRegionProvided(request)) {
+                    && !isAdditionalHeadRequestToFindRegion && noExplicitRegionProvided(request)) {
                 fetchRegionFromCache(bucket);
             }
 
-            Signer signer = createSigner(request, bucket, key);
+            Signer signer = createSigner(request, bucket, key, isAdditionalHeadRequestToFindRegion);
             signerProvider.setSigner(signer);
 
             // Retry V4 auth errors if signer is explicitly overridden and
@@ -4849,19 +4866,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         String bucketRegion = null;
 
         try {
-            String endpoint = "https://s3-us-west-1.amazonaws.com";
             Request<HeadBucketRequest> request = createRequest(bucketName, null,
-                    new HeadBucketRequest(bucketName), HttpMethodName.HEAD, new URI(endpoint));
+                    new HeadBucketRequest(bucketName), HttpMethodName.HEAD);
 
-            HeadBucketResult result = invoke(request, new HeadBucketResultHandler(), bucketName, null);
+            HeadBucketResult result = invoke(request, new HeadBucketResultHandler(), bucketName, null, true);
             bucketRegion = result.getBucketRegion();
         } catch (AmazonS3Exception exception) {
             if (exception.getAdditionalDetails() != null) {
                 bucketRegion = exception.getAdditionalDetails().get(
                     Headers.S3_BUCKET_REGION);
             }
-        } catch (URISyntaxException e) {
-            log.warn("Error while creating URI");
         }
 
         if (bucketRegion == null && log.isDebugEnabled()) {
