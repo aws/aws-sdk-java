@@ -1035,9 +1035,8 @@ public class TransferManager {
         }
 
         final long origStartingByte = startingByte;
-        final boolean isDownloadParallel =
-                TransferManagerUtils.isDownloadParallelizable(s3, getObjectRequest, ServiceUtils.getPartCount(getObjectRequest, s3))
-                        && !configuration.isDisableParallelDownloads();
+        final boolean isDownloadParallel = !configuration.isDisableParallelDownloads()
+                && TransferManagerUtils.isDownloadParallelizable(s3, getObjectRequest, ServiceUtils.getPartCount(getObjectRequest, s3));
 
         // We still pass the unfiltered listener chain into DownloadImpl
         final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, null,
