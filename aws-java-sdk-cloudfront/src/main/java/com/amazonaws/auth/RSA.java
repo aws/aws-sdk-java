@@ -28,7 +28,10 @@ import java.security.spec.X509EncodedKeySpec;
 
 /**
  * Utility for RSA keys.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudfront.auth.RSA}
  */
+@Deprecated
 public enum RSA {
     ;
     private static final String RSA = "RSA";

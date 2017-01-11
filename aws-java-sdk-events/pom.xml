@@ -9,9 +9,16 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-events</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for Amazon CloudWatch Events</name>
   <description>The AWS Java SDK for Amazon CloudWatch Events module holds the client classes that are used for communicating with Amazon CloudWatch Events Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.cloudwatchevents.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

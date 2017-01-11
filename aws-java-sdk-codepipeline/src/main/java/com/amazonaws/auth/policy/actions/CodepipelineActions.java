@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for CodePipeline.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.codepipeline.auth.policy.actions.CodepipelineActions}
  */
-
+@Deprecated
 public enum CodepipelineActions implements Action {
 
     /** Represents any action executed on CodePipeline. */

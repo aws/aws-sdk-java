@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS Direct Connect.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.directconnect.auth.policy.actions.DirectConnectActions}
  */
-
+@Deprecated
 public enum DirectConnectActions implements Action {
 
     /** Represents any action executed on AWS Direct Connect. */

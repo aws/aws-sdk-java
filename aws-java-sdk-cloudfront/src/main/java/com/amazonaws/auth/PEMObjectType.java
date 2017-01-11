@@ -19,7 +19,10 @@ package com.amazonaws.auth;
  *<p>
  * A PEM file can contain one or multiple PEM objects, each with a beginning
  * and ending marker.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudfront.auth.PEMObjectType}
  */
+@Deprecated
 public enum PEMObjectType {
     PRIVATE_KEY_PKCS1("-----BEGIN RSA PRIVATE KEY-----"),
     PRIVATE_KEY_PKCS8("-----BEGIN PRIVATE KEY-----"),

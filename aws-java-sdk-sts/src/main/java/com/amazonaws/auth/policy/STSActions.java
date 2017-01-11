@@ -21,7 +21,7 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
  * The available AWS access control policy actions for Amazon Security Token Service.
  *
  * @see Statement#setActions(java.util.Collection)
- * @deprecated in favor of {@link com.amazonaws.auth.policy.actions.SecurityTokenServiceActions}
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.policy.actions.SecurityTokenServiceActions}
  */
 @Deprecated
 public enum STSActions implements Action {

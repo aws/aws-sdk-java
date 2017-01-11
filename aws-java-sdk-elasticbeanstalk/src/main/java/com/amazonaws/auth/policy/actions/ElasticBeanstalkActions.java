@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Elastic Beanstalk.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.elasticbeanstalk.auth.policy.actions.ElasticBeanstalkActions}
  */
-
+@Deprecated
 public enum ElasticBeanstalkActions implements Action {
 
     /** Represents any action executed on Elastic Beanstalk. */

@@ -18,7 +18,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS Identity and Access Management.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.identitymanagement.auth.policy.actions.IdentityManagementActions}
  */
+@Deprecated
 public enum IdentityManagementActions implements Action {
     /** Represents any action executed on AWS Identity and Access Management. */
     AllIdentityManagementActions("iam:*"),

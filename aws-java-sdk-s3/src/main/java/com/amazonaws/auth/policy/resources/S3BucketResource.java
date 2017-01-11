@@ -48,7 +48,10 @@ import com.amazonaws.auth.policy.actions.S3Actions;
  * <li> {@link S3Actions#SetBucketNotificationConfiguration}
  * <li> {@link S3Actions#GetBucketNotificationConfiguration}
  * </ul>
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.s3.auth.policy.resources.S3BucketResource}
  */
+@Deprecated
 public class S3BucketResource extends Resource {
     /**
      * Constructs a new bucket resource that represents the the specified bucket

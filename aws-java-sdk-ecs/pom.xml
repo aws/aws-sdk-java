@@ -9,9 +9,16 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-ecs</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for the Amazon EC2 Container Service</name>
   <description>The AWS Java SDK for the Amazon EC2 Container Service holds the client classes that are used for communicating with the Amazon EC2 Container Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.ecs.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

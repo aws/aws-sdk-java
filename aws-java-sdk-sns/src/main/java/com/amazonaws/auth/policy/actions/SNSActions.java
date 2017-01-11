@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon SNS.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.sns.auth.policy.actions.SNSActions}
  */
-
+@Deprecated
 public enum SNSActions implements Action {
 
     /** Represents any action executed on Amazon SNS. */

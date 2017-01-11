@@ -22,9 +22,12 @@ import java.util.Date;
 
 /**
  * Holder class used to atomically store a session with its expiration time.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.SessionCredentialsHolder}
  */
 @ThreadSafe
 @SdkInternalApi
+@Deprecated
 final class SessionCredentialsHolder {
 
     private final AWSSessionCredentials sessionCredentials;

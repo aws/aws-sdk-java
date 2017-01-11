@@ -22,7 +22,10 @@ import com.amazonaws.ClientConfiguration;
 /**
  * Session credentials provider factory to share providers across potentially
  * many clients.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.SessionCredentialsProviderFactory}
  */
+@Deprecated
 public class SessionCredentialsProviderFactory {
 
     /**

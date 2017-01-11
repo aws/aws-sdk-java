@@ -9,9 +9,16 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-storagegateway</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for AWS Storage Gateway</name>
   <description>The AWS Java SDK for AWS Storage Gateway module holds the client classes that are used for communicating with AWS Storage Gateway Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.storagegateway.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

@@ -46,7 +46,10 @@ import com.amazonaws.auth.policy.actions.S3Actions;
  * <li> {@link S3Actions#DeleteObject}
  * <li> {@link S3Actions#DeleteObjectVersion}
  * </ul>
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.s3.auth.policy.resources.S3ObjectResource}
  */
+@Deprecated
 public class S3ObjectResource extends Resource {
 
 	/**

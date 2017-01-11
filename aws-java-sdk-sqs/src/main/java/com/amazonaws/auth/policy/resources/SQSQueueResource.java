@@ -24,8 +24,11 @@ import com.amazonaws.services.sqs.AmazonSQS;
  * Resource Name (ARN), which you can obtain by calling
  * {@link AmazonSQS#getQueueAttributes(com.amazonaws.services.sqs.model.GetQueueAttributesRequest)}
  * and requesting the "QueueArn" attribute.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.sqs.auth.policy.resources.SQSQueueResource}
  */
-public class SQSQueueResource extends Resource {
+@Deprecated
+public class SQSQueueResource extends com.amazonaws.services.sqs.auth.policy.resources.SQSQueueResource {
 
     /**
      * Constructs a new SQS queue resource for an access control policy. A policy statement using
@@ -37,14 +40,6 @@ public class SQSQueueResource extends Resource {
      *            The name of the Amazon SQS queue.
      */
     public SQSQueueResource(String accountId, String queueName) {
-        super("/" + formatAccountId(accountId) + "/" + queueName);
-    }
-
-    private static String formatAccountId(String accountId) {
-        if (accountId == null) {
-            throw new IllegalArgumentException("Account ID cannot be null");
-        }
-
-        return accountId.trim().replaceAll("-", "");
+        super(accountId, queueName);
     }
 }

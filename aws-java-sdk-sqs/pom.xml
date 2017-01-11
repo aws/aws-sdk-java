@@ -9,9 +9,20 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-sqs</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for Amazon SQS</name>
   <description>The AWS Java SDK for Amazon SQS module holds the client classes that are used for communicating with Amazon Simple Queue Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.sqs.*;version=${project.version}
+    </aws.osgi.export>
+    <aws.osgi.private.pkg>
+      com.amazonaws.auth.policy.*,
+      com.amazonaws.services.sqs.internal.*
+    </aws.osgi.private.pkg>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

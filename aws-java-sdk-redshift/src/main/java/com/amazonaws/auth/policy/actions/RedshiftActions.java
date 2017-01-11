@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon Redshift.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.redshift.auth.policy.actions.RedshiftActions}
  */
-
+@Deprecated
 public enum RedshiftActions implements Action {
 
     /** Represents any action executed on Amazon Redshift. */

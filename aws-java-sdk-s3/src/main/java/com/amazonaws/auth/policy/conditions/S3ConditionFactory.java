@@ -24,7 +24,10 @@ import com.amazonaws.services.s3.model.CannedAccessControlList;
  * specific to Amazon S3, as well as methods for quickly creating common S3
  * specific policy conditions such as
  * {@link #newCannedACLCondition(CannedAccessControlList)}.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.s3.auth.policy.conditions.S3ConditionFactory}
  */
+@Deprecated
 public class S3ConditionFactory {
 
     /**

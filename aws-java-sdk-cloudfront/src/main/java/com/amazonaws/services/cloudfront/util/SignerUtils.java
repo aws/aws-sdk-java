@@ -33,8 +33,8 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.Date;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.auth.PEM;
-import com.amazonaws.auth.RSA;
+import com.amazonaws.services.cloudfront.auth.PEM;
+import com.amazonaws.services.cloudfront.auth.RSA;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.StringUtils;

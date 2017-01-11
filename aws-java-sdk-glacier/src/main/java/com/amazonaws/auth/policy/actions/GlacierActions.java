@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon Glacier.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.glacier.auth.policy.actions.GlacierActions}
  */
-
+@Deprecated
 public enum GlacierActions implements Action {
 
     /** Represents any action executed on Amazon Glacier. */

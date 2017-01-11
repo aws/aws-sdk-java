@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS Device Farm.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.devicefarm.auth.policy.actions.DevicefarmActions}
  */
-
+@Deprecated
 public enum DevicefarmActions implements Action {
 
     /** Represents any action executed on AWS Device Farm. */

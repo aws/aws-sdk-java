@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for KMS.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.kms.auth.policy.actions.KMSActions}
  */
-
+@Deprecated
 public enum KMSActions implements Action {
 
     /** Represents any action executed on KMS. */

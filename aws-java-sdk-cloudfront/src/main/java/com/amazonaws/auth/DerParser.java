@@ -40,7 +40,10 @@ import java.math.BigInteger;
  * specific JCE/JVM.
  * 
  * @author zhang
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudfront.auth.DerParser}
  */
+@Deprecated
 class DerParser {
     // Classes
     public final static int UNIVERSAL = 0x00;

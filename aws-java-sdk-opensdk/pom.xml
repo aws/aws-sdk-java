@@ -9,12 +9,19 @@
     </parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-opensdk</artifactId>
+    <packaging>bundle</packaging>
     <name>AWS SDK for Java - OpenSdk Runtime</name>
     <description>A generic runtime built on the AWS SDK for Java</description>
     <url>https://aws.amazon.com/sdkforjava</url>
 
     <properties>
         <jre.version>1.8</jre.version>
+        <aws.osgi.export>
+            com.amazonaws.opensdk.*;version=${project.version}
+        </aws.osgi.export>
+        <aws.osgi.private.pkg>
+            com.amazonaws.opensdk.internal.*
+        </aws.osgi.private.pkg>
     </properties>
 
     <dependencies>

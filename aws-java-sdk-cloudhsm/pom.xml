@@ -9,9 +9,16 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-cloudhsm</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for the AWS CloudHSM</name>
   <description>The AWS Java SDK for AWS CloudHSM holds the client classes that are used for communicating with the AWS CloudHSM Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.cloudhsm.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

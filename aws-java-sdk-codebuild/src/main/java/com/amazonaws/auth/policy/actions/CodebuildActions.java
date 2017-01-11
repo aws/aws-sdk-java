@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS CodeBuild.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.codebuild.auth.policy.actions.CodebuildActions}
  */
-
+@Deprecated
 public enum CodebuildActions implements Action {
 
     /** Represents any action executed on AWS CodeBuild. */

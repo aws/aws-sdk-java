@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon Pinpoint.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.pinpoint.auth.policy.actions.PinpointActions}
  */
-
+@Deprecated
 public enum PinpointActions implements Action {
 
     /** Represents any action executed on Amazon Pinpoint. */

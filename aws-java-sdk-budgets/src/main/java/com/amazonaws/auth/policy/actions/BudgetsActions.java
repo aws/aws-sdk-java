@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWSBudgets.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.budgets.auth.policy.actions.BudgetsActions}
  */
-
+@Deprecated
 public enum BudgetsActions implements Action {
 
     /** Represents any action executed on AWSBudgets. */

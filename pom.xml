@@ -158,6 +158,8 @@
       <cucumber.info.cukes.version>1.2.4</cucumber.info.cukes.version>
       <cucumber.guice.version>4.0</cucumber.guice.version>
       <unitils.version>3.3</unitils.version>
+      <!-- OSGI properties -->
+      <aws.osgi.private.pkg />
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -206,6 +208,56 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    
+    <plugins>
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>3.2.0</version>
+          <extensions>true</extensions>
+          <configuration>
+            <instructions>
+              <Bundle-Name>${project.artifactId}</Bundle-Name>
+              <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+              <Export-Package>
+                ${aws.osgi.export}
+              </Export-Package>
+              <Import-Package>
+                !${aws.osgi.export},
+                *
+              </Import-Package>
+              <Private-Package>${aws.osgi.private.pkg}</Private-Package>
+              <DynamicImport-Package />
+              <Implementation-Title>${project.name}</Implementation-Title>
+              <Implementation-Version>${project.version}</Implementation-Version>
+              <Karaf-Info>AWS-SDK-JAVA;${project.artifactId}=${project.version}</Karaf-Info>
+              <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
+              <_failok>false</_failok>
+            </instructions>
+          </configuration>
+          <executions>
+            <execution>
+              <id>versions</id>
+              <phase>validate</phase>
+              <goals>
+                <goal>cleanVersions</goal>
+              </goals>
+              <configuration>
+                <versions>
+                  <aws.osgi.version.clean>${project.version}</aws.osgi.version.clean>
+                </versions>
+              </configuration>
+            </execution>
+            <execution>
+              <id>bundle-manifest</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>manifest</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+    </plugins>
   </build>
   <profiles>
     <profile>

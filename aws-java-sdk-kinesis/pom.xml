@@ -9,9 +9,18 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-kinesis</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for Amazon Kinesis</name>
   <description>The AWS Java SDK for Amazon Kinesis module holds the client classes that are used for communicating with Amazon Kinesis Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.kinesis.*;version=${project.version},
+      com.amazonaws.services.kinesisanalytics.*;version=${project.version},
+      com.amazonaws.services.kinesisfirehose.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

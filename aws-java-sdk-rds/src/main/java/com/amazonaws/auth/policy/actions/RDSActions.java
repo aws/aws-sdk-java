@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon RDS.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.rds.auth.policy.actions.RDSActions}
  */
-
+@Deprecated
 public enum RDSActions implements Action {
 
     /** Represents any action executed on Amazon RDS. */

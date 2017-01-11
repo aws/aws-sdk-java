@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Route 53.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.route53.auth.policy.actions.Route53Actions}
  */
-
+@Deprecated
 public enum Route53Actions implements Action {
 
     /** Represents any action executed on Route 53. */

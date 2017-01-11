@@ -9,9 +9,16 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-rekognition</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for Amazon Rekognition</name>
   <description>The AWS Java SDK for Amazon Rekognition module holds the client classes that are used for communicating with Amazon Rekognition.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.rekognition.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

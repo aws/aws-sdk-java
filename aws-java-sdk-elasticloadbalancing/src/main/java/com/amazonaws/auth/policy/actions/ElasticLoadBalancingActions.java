@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Elastic Load Balancing.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.elasticloadbalancing.auth.policy.actions.ElasticLoadBalancingActions}
  */
-
+@Deprecated
 public enum ElasticLoadBalancingActions implements Action {
 
     /** Represents any action executed on Elastic Load Balancing. */

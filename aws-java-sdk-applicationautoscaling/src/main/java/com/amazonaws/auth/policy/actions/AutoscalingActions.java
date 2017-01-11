@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Application Auto Scaling.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.applicationautoscaling.auth.policy.actions.AutoscalingActions}
  */
-
+@Deprecated
 public enum AutoscalingActions implements Action {
 
     /** Represents any action executed on Application Auto Scaling. */

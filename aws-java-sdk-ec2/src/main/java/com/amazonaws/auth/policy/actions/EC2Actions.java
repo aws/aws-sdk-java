@@ -18,7 +18,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon EC2.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.ec2.auth.policy.actions.EC2Actions}
  */
+@Deprecated
 public enum EC2Actions implements Action {
   /** Represents any action executed on Amazon EC2. */
   AllEC2Actions("ec2:*"),

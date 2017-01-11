@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS STS.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.policy.actions.SecurityTokenServiceActions}
  */
-
+@Deprecated
 public enum SecurityTokenServiceActions implements Action {
 
     /** Represents any action executed on AWS STS. */

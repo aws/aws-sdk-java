@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS CloudFormation.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudformation.auth.policy.actions.CloudFormationActions}
  */
-
+@Deprecated
 public enum CloudFormationActions implements Action {
 
     /** Represents any action executed on AWS CloudFormation. */
