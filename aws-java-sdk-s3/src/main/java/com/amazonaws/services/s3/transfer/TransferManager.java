@@ -1013,15 +1013,21 @@ public class TransferManager {
         getObjectRequest
                 .setGeneralProgressListener(new ProgressListenerChain(new TransferCompletionFilter(), listenerChain));
 
+        // Defer actual request till later stage if it's required
         GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
                 getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId());
         if (getObjectRequest.getSSECustomerKey() != null) {
             getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
         }
-        final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
+
+        ObjectMetadata objectMetadata = null;
 
         // Used to check if the object is modified between pause and resume
-        long lastModifiedTime = objectMetadata.getLastModified().getTime();
+        if (getObjectRequest.getLastModifiedTime() == null) {
+            objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
+            long lastModifiedTime = lastModifiedTime = objectMetadata.getLastModified().getTime();
+            getObjectRequest.setLastModifiedTime(lastModifiedTime);
+        }
 
         long startingByte = 0;
         long lastByte;
@@ -1031,6 +1037,9 @@ public class TransferManager {
             startingByte = range[0];
             lastByte = range[1];
         } else {
+            if (objectMetadata == null) {
+                objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
+            }
             lastByte = objectMetadata.getContentLength() - 1;
         }
 
@@ -1040,7 +1049,7 @@ public class TransferManager {
 
         // We still pass the unfiltered listener chain into DownloadImpl
         final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, null,
-                stateListener, getObjectRequest, file, objectMetadata, isDownloadParallel);
+                stateListener, getObjectRequest, file, isDownloadParallel);
 
         long totalBytesToDownload = lastByte - startingByte + 1;
         transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
@@ -1062,7 +1071,7 @@ public class TransferManager {
         long fileLength = -1;
 
         if (resumeExistingDownload) {
-            if (isS3ObjectModifiedSincePause(lastModifiedTime, lastModifiedTimeRecordedDuringPause)) {
+            if (isS3ObjectModifiedSincePause(getObjectRequest.getLastModifiedTime(), lastModifiedTimeRecordedDuringPause)) {
                 throw new AmazonClientException("The requested object in bucket " + getObjectRequest.getBucketName()
                         + " with key " + getObjectRequest.getKey() + " is modified on Amazon S3 since the last pause.");
             }

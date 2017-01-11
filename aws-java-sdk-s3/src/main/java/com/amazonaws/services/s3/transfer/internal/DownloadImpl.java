@@ -43,7 +43,6 @@ public class DownloadImpl extends AbstractTransfer implements Download {
 
     private final GetObjectRequest getObjectRequest;
     private final File file;
-    private final ObjectMetadata objectMetadata;
     private final ProgressListenerChain progressListenerChain;
 
     @Deprecated
@@ -51,16 +50,14 @@ public class DownloadImpl extends AbstractTransfer implements Download {
             ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener,
             GetObjectRequest getObjectRequest, File file) {
         this(description, transferProgress, progressListenerChain, s3Object, listener,
-                getObjectRequest, file, null, false);
+                getObjectRequest, file, false);
     }
 
     public DownloadImpl(String description, TransferProgress transferProgress,
             ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener,
-            GetObjectRequest getObjectRequest, File file,
-            ObjectMetadata objectMetadata, boolean isDownloadParallel) {
+            GetObjectRequest getObjectRequest, File file, boolean isDownloadParallel) {
         super(description, transferProgress, progressListenerChain, listener);
         this.s3Object = s3Object;
-        this.objectMetadata = objectMetadata;
         this.getObjectRequest = getObjectRequest;
         this.file = file;
         this.progressListenerChain = progressListenerChain;
@@ -77,7 +74,7 @@ public class DownloadImpl extends AbstractTransfer implements Download {
         if (s3Object != null) {
             return s3Object.getObjectMetadata();
         }
-        return objectMetadata;
+        return null;
     }
 
     /**
@@ -190,7 +187,7 @@ public class DownloadImpl extends AbstractTransfer implements Download {
                     getObjectRequest.getVersionId(), getObjectRequest.getRange(),
                     getObjectRequest.getResponseHeaders(), getObjectRequest.isRequesterPays(),
                     file.getAbsolutePath(), getLastFullyDownloadedPartNumber(),
-                    getObjectMetadata().getLastModified().getTime());
+                    getObjectRequest.getLastModifiedTime());
         }
         return null;
     }
