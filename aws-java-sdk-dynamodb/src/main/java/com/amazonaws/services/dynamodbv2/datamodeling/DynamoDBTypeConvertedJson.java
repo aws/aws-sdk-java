@@ -21,7 +21,6 @@ import java.lang.annotation.Target;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 
 /**
  * A simple JSON converter that uses the Jackson JSON processor.

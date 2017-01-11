@@ -13,7 +13,6 @@
 package com.amazonaws.services.stepfunctions.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 

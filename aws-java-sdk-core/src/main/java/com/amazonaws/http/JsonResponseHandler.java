@@ -35,7 +35,6 @@ import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.JsonUnmarshallerContextImpl;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidJsonUnmarshaller;
-import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful response from an AWS

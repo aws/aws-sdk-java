@@ -104,9 +104,7 @@ public class GetWebACLForResourceResult extends com.amazonaws.AmazonWebServiceRe
         GetWebACLForResourceResult other = (GetWebACLForResourceResult) obj;
         if (other.getWebACLSummary() == null ^ this.getWebACLSummary() == null)
             return false;
-        if (other.getWebACLSummary() != null && other.getWebACLSummary().equals(this.getWebACLSummary()) == false)
-            return false;
-        return true;
+        return !(other.getWebACLSummary() != null && other.getWebACLSummary().equals(this.getWebACLSummary()) == false);
     }
 
     @Override

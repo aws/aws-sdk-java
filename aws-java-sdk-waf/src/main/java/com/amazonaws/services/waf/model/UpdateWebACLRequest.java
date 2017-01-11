@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -483,9 +482,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDefaultAction() == null ^ this.getDefaultAction() == null)
             return false;
-        if (other.getDefaultAction() != null && other.getDefaultAction().equals(this.getDefaultAction()) == false)
-            return false;
-        return true;
+        return !(other.getDefaultAction() != null && other.getDefaultAction().equals(this.getDefaultAction()) == false);
     }
 
     @Override

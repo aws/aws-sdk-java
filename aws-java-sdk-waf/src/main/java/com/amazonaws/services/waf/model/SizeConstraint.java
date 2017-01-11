@@ -2205,9 +2205,7 @@ public class SizeConstraint implements Serializable, Cloneable {
             return false;
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
-            return false;
-        return true;
+        return !(other.getSize() != null && other.getSize().equals(this.getSize()) == false);
     }
 
     @Override

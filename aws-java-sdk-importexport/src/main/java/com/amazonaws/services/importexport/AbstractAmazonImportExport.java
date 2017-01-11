@@ -13,7 +13,6 @@
 package com.amazonaws.services.importexport;
 
 import com.amazonaws.services.importexport.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonImportExport}. Convenient method forms pass through to the corresponding

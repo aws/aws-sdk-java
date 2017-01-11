@@ -411,9 +411,7 @@ public class IPSet implements Serializable, Cloneable {
             return false;
         if (other.getIPSetDescriptors() == null ^ this.getIPSetDescriptors() == null)
             return false;
-        if (other.getIPSetDescriptors() != null && other.getIPSetDescriptors().equals(this.getIPSetDescriptors()) == false)
-            return false;
-        return true;
+        return !(other.getIPSetDescriptors() != null && other.getIPSetDescriptors().equals(this.getIPSetDescriptors()) == false);
     }
 
     @Override

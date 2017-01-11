@@ -13,7 +13,6 @@
 package com.amazonaws.services.machinelearning;
 
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaiters;
 
 /**

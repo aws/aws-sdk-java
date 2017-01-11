@@ -203,9 +203,7 @@ public class ListSizeConstraintSetsResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getSizeConstraintSets() == null ^ this.getSizeConstraintSets() == null)
             return false;
-        if (other.getSizeConstraintSets() != null && other.getSizeConstraintSets().equals(this.getSizeConstraintSets()) == false)
-            return false;
-        return true;
+        return !(other.getSizeConstraintSets() != null && other.getSizeConstraintSets().equals(this.getSizeConstraintSets()) == false);
     }
 
     @Override

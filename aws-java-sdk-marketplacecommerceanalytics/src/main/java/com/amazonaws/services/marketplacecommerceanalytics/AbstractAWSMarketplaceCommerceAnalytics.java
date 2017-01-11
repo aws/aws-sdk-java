@@ -13,7 +13,6 @@
 package com.amazonaws.services.marketplacecommerceanalytics;
 
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSMarketplaceCommerceAnalytics}. Convenient method forms pass through to the

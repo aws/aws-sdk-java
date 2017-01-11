@@ -13,7 +13,6 @@
 package com.amazonaws.services.certificatemanager;
 
 import com.amazonaws.services.certificatemanager.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSCertificateManager}. Convenient method forms pass through to the corresponding

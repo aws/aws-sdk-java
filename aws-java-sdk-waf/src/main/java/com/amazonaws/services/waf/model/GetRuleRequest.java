@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -105,9 +104,7 @@ public class GetRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
         GetRuleRequest other = (GetRuleRequest) obj;
         if (other.getRuleId() == null ^ this.getRuleId() == null)
             return false;
-        if (other.getRuleId() != null && other.getRuleId().equals(this.getRuleId()) == false)
-            return false;
-        return true;
+        return !(other.getRuleId() != null && other.getRuleId().equals(this.getRuleId()) == false);
     }
 
     @Override

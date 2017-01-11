@@ -32,7 +32,6 @@ import com.amazonaws.http.MockServerTestBase;
 import com.amazonaws.http.request.RequestHandlerTestUtils;
 import com.amazonaws.http.request.SlowRequestHandler;
 import com.amazonaws.http.response.NullErrorResponseHandler;
-import com.amazonaws.http.response.NullResponseHandler;
 import com.amazonaws.http.response.UnresponsiveErrorResponseHandler;
 import com.amazonaws.http.server.MockServer;
 

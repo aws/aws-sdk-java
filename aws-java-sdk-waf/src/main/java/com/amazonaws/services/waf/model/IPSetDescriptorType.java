@@ -22,7 +22,7 @@ public enum IPSetDescriptorType {
 
     private String value;
 
-    private IPSetDescriptorType(String value) {
+    IPSetDescriptorType(String value) {
         this.value = value;
     }
 

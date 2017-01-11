@@ -15,8 +15,6 @@
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
 
-import com.amazonaws.AmazonWebServiceRequest;
-
 /**
  * Container object for overriding headers on a {@link GetObjectRequest} or
  * {@link GeneratePresignedUrlRequest} response. Response headers can be set on

@@ -13,7 +13,6 @@
 package com.amazonaws.services.batch;
 
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSBatch}. Convenient method forms pass through to the corresponding overload that

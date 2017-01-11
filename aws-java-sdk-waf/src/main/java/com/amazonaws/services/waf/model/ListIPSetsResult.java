@@ -200,9 +200,7 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getIPSets() == null ^ this.getIPSets() == null)
             return false;
-        if (other.getIPSets() != null && other.getIPSets().equals(this.getIPSets()) == false)
-            return false;
-        return true;
+        return !(other.getIPSets() != null && other.getIPSets().equals(this.getIPSets()) == false);
     }
 
     @Override

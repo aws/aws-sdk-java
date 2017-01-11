@@ -13,7 +13,6 @@
 package com.amazonaws.services.elastictranscoder;
 
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.elastictranscoder.waiters.AmazonElasticTranscoderWaiters;
 
 /**

@@ -211,9 +211,7 @@ public class WebACLUpdate implements Serializable, Cloneable {
             return false;
         if (other.getActivatedRule() == null ^ this.getActivatedRule() == null)
             return false;
-        if (other.getActivatedRule() != null && other.getActivatedRule().equals(this.getActivatedRule()) == false)
-            return false;
-        return true;
+        return !(other.getActivatedRule() != null && other.getActivatedRule().equals(this.getActivatedRule()) == false);
     }
 
     @Override

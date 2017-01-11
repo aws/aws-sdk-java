@@ -413,9 +413,7 @@ public class WebACL implements Serializable, Cloneable {
             return false;
         if (other.getRules() == null ^ this.getRules() == null)
             return false;
-        if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
-            return false;
-        return true;
+        return !(other.getRules() != null && other.getRules().equals(this.getRules()) == false);
     }
 
     @Override

@@ -15,10 +15,6 @@ package com.amazonaws.services.route53.model.transform;
 import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -26,12 +22,8 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
-import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * CreateTrafficPolicyVersionRequest Marshaller

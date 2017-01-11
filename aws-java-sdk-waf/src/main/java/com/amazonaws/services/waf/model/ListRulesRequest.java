@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -192,9 +191,7 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
-            return false;
-        return true;
+        return !(other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false);
     }
 
     @Override

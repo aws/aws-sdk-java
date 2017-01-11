@@ -136,9 +136,7 @@ public class ListResourcesForWebACLResult extends com.amazonaws.AmazonWebService
         ListResourcesForWebACLResult other = (ListResourcesForWebACLResult) obj;
         if (other.getResourceArns() == null ^ this.getResourceArns() == null)
             return false;
-        if (other.getResourceArns() != null && other.getResourceArns().equals(this.getResourceArns()) == false)
-            return false;
-        return true;
+        return !(other.getResourceArns() != null && other.getResourceArns().equals(this.getResourceArns()) == false);
     }
 
     @Override

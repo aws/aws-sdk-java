@@ -200,9 +200,7 @@ public class ListByteMatchSetsResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getByteMatchSets() == null ^ this.getByteMatchSets() == null)
             return false;
-        if (other.getByteMatchSets() != null && other.getByteMatchSets().equals(this.getByteMatchSets()) == false)
-            return false;
-        return true;
+        return !(other.getByteMatchSets() != null && other.getByteMatchSets().equals(this.getByteMatchSets()) == false);
     }
 
     @Override

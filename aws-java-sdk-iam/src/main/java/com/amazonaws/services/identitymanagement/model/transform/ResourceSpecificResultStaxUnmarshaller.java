@@ -13,7 +13,6 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map.Entry;
 

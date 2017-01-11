@@ -13,7 +13,6 @@
 package com.amazonaws.services.simplesystemsmanagement;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSSimpleSystemsManagement}. Convenient method forms pass through to the

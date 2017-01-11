@@ -13,7 +13,6 @@
 package com.amazonaws.services.directory;
 
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSDirectoryService}. Convenient method forms pass through to the corresponding

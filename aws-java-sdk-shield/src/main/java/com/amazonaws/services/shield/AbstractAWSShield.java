@@ -13,7 +13,6 @@
 package com.amazonaws.services.shield;
 
 import com.amazonaws.services.shield.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSShield}. Convenient method forms pass through to the corresponding overload that

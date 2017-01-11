@@ -269,9 +269,7 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
         GetWebACLResult other = (GetWebACLResult) obj;
         if (other.getWebACL() == null ^ this.getWebACL() == null)
             return false;
-        if (other.getWebACL() != null && other.getWebACL().equals(this.getWebACL()) == false)
-            return false;
-        return true;
+        return !(other.getWebACL() != null && other.getWebACL().equals(this.getWebACL()) == false);
     }
 
     @Override

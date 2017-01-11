@@ -13,7 +13,6 @@
 package com.amazonaws.services.lambda;
 
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSLambda}. Convenient method forms pass through to the corresponding overload that

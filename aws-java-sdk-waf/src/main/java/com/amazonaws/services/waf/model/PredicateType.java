@@ -25,7 +25,7 @@ public enum PredicateType {
 
     private String value;
 
-    private PredicateType(String value) {
+    PredicateType(String value) {
         this.value = value;
     }
 

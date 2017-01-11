@@ -13,7 +13,6 @@
 package com.amazonaws.services.simpledb;
 
 import com.amazonaws.services.simpledb.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonSimpleDB}. Convenient method forms pass through to the corresponding overload

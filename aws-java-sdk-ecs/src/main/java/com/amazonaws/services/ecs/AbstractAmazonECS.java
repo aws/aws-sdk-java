@@ -13,7 +13,6 @@
 package com.amazonaws.services.ecs;
 
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
 
 /**

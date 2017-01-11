@@ -14,7 +14,6 @@
  */
 package com.amazonaws.metrics.internal;
 
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.ServiceMetricType;

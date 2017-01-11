@@ -14,7 +14,6 @@
  */
 package com.amazonaws.client;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.Request;
 import com.amazonaws.RequestConfig;
 import com.amazonaws.SdkBaseException;

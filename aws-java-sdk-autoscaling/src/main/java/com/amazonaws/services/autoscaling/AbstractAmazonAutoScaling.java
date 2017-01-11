@@ -13,7 +13,6 @@
 package com.amazonaws.services.autoscaling;
 
 import com.amazonaws.services.autoscaling.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
 
 /**

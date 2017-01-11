@@ -13,7 +13,6 @@
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>

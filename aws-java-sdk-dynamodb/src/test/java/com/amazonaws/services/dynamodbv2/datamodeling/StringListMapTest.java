@@ -19,7 +19,6 @@ import static org.junit.Assert.assertEquals;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.StringListMap;
 
 import java.util.List;
-import java.util.Map.Entry;
 
 import org.junit.Test;
 

@@ -13,7 +13,6 @@
 package com.amazonaws.services.health;
 
 import com.amazonaws.services.health.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSHealth}. Convenient method forms pass through to the corresponding overload that

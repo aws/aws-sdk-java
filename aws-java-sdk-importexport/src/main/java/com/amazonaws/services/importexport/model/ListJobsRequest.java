@@ -13,7 +13,6 @@
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Input structure for the ListJobs operation.

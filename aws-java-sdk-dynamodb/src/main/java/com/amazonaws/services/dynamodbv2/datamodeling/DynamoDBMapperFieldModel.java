@@ -31,15 +31,12 @@ import static com.amazonaws.services.dynamodbv2.model.ComparisonOperator.NOT_CON
 import static com.amazonaws.services.dynamodbv2.model.ComparisonOperator.NOT_NULL;
 
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 
 import java.util.Arrays;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 

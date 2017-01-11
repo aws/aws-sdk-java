@@ -13,7 +13,6 @@
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the GenerateDataSet operation.

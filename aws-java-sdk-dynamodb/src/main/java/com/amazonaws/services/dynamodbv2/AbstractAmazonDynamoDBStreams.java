@@ -13,7 +13,6 @@
 package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonDynamoDBStreams}. Convenient method forms pass through to the corresponding

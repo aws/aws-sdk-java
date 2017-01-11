@@ -13,7 +13,6 @@
 package com.amazonaws.services.logs;
 
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSLogs}. Convenient method forms pass through to the corresponding overload that

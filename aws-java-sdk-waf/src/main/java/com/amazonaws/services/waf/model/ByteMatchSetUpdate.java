@@ -207,9 +207,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
             return false;
         if (other.getByteMatchTuple() == null ^ this.getByteMatchTuple() == null)
             return false;
-        if (other.getByteMatchTuple() != null && other.getByteMatchTuple().equals(this.getByteMatchTuple()) == false)
-            return false;
-        return true;
+        return !(other.getByteMatchTuple() != null && other.getByteMatchTuple().equals(this.getByteMatchTuple()) == false);
     }
 
     @Override

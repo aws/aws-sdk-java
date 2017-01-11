@@ -17,7 +17,6 @@ package com.amazonaws.services.s3;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.client.AwsSyncClientParams;
-import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
 import com.amazonaws.internal.SdkFunction;
 

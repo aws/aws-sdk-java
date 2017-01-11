@@ -200,9 +200,7 @@ public class ListWebACLsResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getWebACLs() == null ^ this.getWebACLs() == null)
             return false;
-        if (other.getWebACLs() != null && other.getWebACLs().equals(this.getWebACLs()) == false)
-            return false;
-        return true;
+        return !(other.getWebACLs() != null && other.getWebACLs().equals(this.getWebACLs()) == false);
     }
 
     @Override

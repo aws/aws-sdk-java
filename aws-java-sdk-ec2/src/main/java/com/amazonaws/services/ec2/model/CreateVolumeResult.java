@@ -13,7 +13,6 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * A simple result wrapper around the Volume object that was sent over the wire.

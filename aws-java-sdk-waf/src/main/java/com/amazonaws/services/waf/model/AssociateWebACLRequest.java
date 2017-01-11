@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -150,9 +149,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
-        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
-            return false;
-        return true;
+        return !(other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false);
     }
 
     @Override

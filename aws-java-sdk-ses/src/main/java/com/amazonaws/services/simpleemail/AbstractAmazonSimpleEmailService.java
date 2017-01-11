@@ -13,7 +13,6 @@
 package com.amazonaws.services.simpleemail;
 
 import com.amazonaws.services.simpleemail.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiters;
 
 /**

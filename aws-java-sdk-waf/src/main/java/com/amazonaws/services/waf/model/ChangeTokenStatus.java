@@ -23,7 +23,7 @@ public enum ChangeTokenStatus {
 
     private String value;
 
-    private ChangeTokenStatus(String value) {
+    ChangeTokenStatus(String value) {
         this.value = value;
     }
 

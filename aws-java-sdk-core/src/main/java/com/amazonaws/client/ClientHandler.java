@@ -14,7 +14,6 @@
  */
 package com.amazonaws.client;
 
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.annotation.SdkProtectedApi;
 
 /**

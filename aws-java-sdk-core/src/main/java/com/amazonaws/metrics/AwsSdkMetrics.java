@@ -37,7 +37,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.PropertiesCredentials;
 import com.amazonaws.jmx.spi.SdkMBeanRegistry;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AWSServiceMetrics;
 

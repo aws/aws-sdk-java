@@ -112,7 +112,7 @@ public enum WafRegionalActions implements Action {
 
     private final String action;
 
-    private WafRegionalActions(String action) {
+    WafRegionalActions(String action) {
         this.action = action;
     }
 

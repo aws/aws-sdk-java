@@ -13,7 +13,6 @@
 package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
 
 /**

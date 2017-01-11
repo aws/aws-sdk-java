@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.polly.presign;
 
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
 import com.amazonaws.annotation.SdkInternalApi;

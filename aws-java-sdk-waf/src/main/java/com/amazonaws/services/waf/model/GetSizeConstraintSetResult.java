@@ -241,9 +241,7 @@ public class GetSizeConstraintSetResult extends com.amazonaws.AmazonWebServiceRe
         GetSizeConstraintSetResult other = (GetSizeConstraintSetResult) obj;
         if (other.getSizeConstraintSet() == null ^ this.getSizeConstraintSet() == null)
             return false;
-        if (other.getSizeConstraintSet() != null && other.getSizeConstraintSet().equals(this.getSizeConstraintSet()) == false)
-            return false;
-        return true;
+        return !(other.getSizeConstraintSet() != null && other.getSizeConstraintSet().equals(this.getSizeConstraintSet()) == false);
     }
 
     @Override

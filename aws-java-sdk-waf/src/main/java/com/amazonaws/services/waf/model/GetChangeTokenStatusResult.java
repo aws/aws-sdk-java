@@ -130,9 +130,7 @@ public class GetChangeTokenStatusResult extends com.amazonaws.AmazonWebServiceRe
         GetChangeTokenStatusResult other = (GetChangeTokenStatusResult) obj;
         if (other.getChangeTokenStatus() == null ^ this.getChangeTokenStatus() == null)
             return false;
-        if (other.getChangeTokenStatus() != null && other.getChangeTokenStatus().equals(this.getChangeTokenStatus()) == false)
-            return false;
-        return true;
+        return !(other.getChangeTokenStatus() != null && other.getChangeTokenStatus().equals(this.getChangeTokenStatus()) == false);
     }
 
     @Override

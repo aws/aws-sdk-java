@@ -13,7 +13,6 @@
 package com.amazonaws.services.cloudsearchv2;
 
 import com.amazonaws.services.cloudsearchv2.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonCloudSearch}. Convenient method forms pass through to the corresponding

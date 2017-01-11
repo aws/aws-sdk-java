@@ -13,7 +13,6 @@
 package com.amazonaws.services.codedeploy;
 
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
 
 /**

@@ -210,9 +210,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
             return false;
         if (other.getSqlInjectionMatchTuple() == null ^ this.getSqlInjectionMatchTuple() == null)
             return false;
-        if (other.getSqlInjectionMatchTuple() != null && other.getSqlInjectionMatchTuple().equals(this.getSqlInjectionMatchTuple()) == false)
-            return false;
-        return true;
+        return !(other.getSqlInjectionMatchTuple() != null && other.getSqlInjectionMatchTuple().equals(this.getSqlInjectionMatchTuple()) == false);
     }
 
     @Override

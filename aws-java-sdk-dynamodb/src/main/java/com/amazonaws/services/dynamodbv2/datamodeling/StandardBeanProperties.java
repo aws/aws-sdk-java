@@ -15,7 +15,6 @@
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Reflect;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.FieldMap;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.TableMap;

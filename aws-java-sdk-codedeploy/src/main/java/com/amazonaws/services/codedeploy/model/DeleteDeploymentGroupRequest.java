@@ -13,7 +13,6 @@
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>

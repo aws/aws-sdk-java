@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -385,9 +384,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
-            return false;
-        return true;
+        return !(other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false);
     }
 
     @Override

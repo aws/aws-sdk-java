@@ -22,7 +22,7 @@ public enum ChangeAction {
 
     private String value;
 
-    private ChangeAction(String value) {
+    ChangeAction(String value) {
         this.value = value;
     }
 

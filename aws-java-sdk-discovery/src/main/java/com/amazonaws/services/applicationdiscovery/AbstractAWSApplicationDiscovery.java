@@ -13,7 +13,6 @@
 package com.amazonaws.services.applicationdiscovery;
 
 import com.amazonaws.services.applicationdiscovery.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSApplicationDiscovery}. Convenient method forms pass through to the corresponding

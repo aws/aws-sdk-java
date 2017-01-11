@@ -13,7 +13,6 @@
 package com.amazonaws.services.sns;
 
 import com.amazonaws.services.sns.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonSNS}. Convenient method forms pass through to the corresponding overload that

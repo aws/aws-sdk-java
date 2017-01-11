@@ -347,9 +347,7 @@ public class Predicate implements Serializable, Cloneable {
             return false;
         if (other.getDataId() == null ^ this.getDataId() == null)
             return false;
-        if (other.getDataId() != null && other.getDataId().equals(this.getDataId()) == false)
-            return false;
-        return true;
+        return !(other.getDataId() != null && other.getDataId().equals(this.getDataId()) == false);
     }
 
     @Override

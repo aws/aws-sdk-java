@@ -13,7 +13,6 @@
 package com.amazonaws.services.cloudwatchevents;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonCloudWatchEvents}. Convenient method forms pass through to the corresponding

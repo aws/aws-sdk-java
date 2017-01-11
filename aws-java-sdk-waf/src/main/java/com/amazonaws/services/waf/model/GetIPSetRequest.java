@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -105,9 +104,7 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
         GetIPSetRequest other = (GetIPSetRequest) obj;
         if (other.getIPSetId() == null ^ this.getIPSetId() == null)
             return false;
-        if (other.getIPSetId() != null && other.getIPSetId().equals(this.getIPSetId()) == false)
-            return false;
-        return true;
+        return !(other.getIPSetId() != null && other.getIPSetId().equals(this.getIPSetId()) == false);
     }
 
     @Override

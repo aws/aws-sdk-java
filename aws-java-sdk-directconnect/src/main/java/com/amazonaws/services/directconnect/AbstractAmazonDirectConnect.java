@@ -13,7 +13,6 @@
 package com.amazonaws.services.directconnect;
 
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonDirectConnect}. Convenient method forms pass through to the corresponding

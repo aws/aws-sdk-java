@@ -237,9 +237,7 @@ public class GetSqlInjectionMatchSetResult extends com.amazonaws.AmazonWebServic
         GetSqlInjectionMatchSetResult other = (GetSqlInjectionMatchSetResult) obj;
         if (other.getSqlInjectionMatchSet() == null ^ this.getSqlInjectionMatchSet() == null)
             return false;
-        if (other.getSqlInjectionMatchSet() != null && other.getSqlInjectionMatchSet().equals(this.getSqlInjectionMatchSet()) == false)
-            return false;
-        return true;
+        return !(other.getSqlInjectionMatchSet() != null && other.getSqlInjectionMatchSet().equals(this.getSqlInjectionMatchSet()) == false);
     }
 
     @Override

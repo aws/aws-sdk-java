@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
@@ -108,9 +107,7 @@ public class GetXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequest
         GetXssMatchSetRequest other = (GetXssMatchSetRequest) obj;
         if (other.getXssMatchSetId() == null ^ this.getXssMatchSetId() == null)
             return false;
-        if (other.getXssMatchSetId() != null && other.getXssMatchSetId().equals(this.getXssMatchSetId()) == false)
-            return false;
-        return true;
+        return !(other.getXssMatchSetId() != null && other.getXssMatchSetId().equals(this.getXssMatchSetId()) == false);
     }
 
     @Override

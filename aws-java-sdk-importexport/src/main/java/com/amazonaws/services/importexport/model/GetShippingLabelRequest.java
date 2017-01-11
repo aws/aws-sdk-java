@@ -13,7 +13,6 @@
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 public class GetShippingLabelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

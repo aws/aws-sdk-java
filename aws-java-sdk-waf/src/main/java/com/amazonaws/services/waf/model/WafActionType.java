@@ -23,7 +23,7 @@ public enum WafActionType {
 
     private String value;
 
-    private WafActionType(String value) {
+    WafActionType(String value) {
         this.value = value;
     }
 

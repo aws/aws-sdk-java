@@ -13,7 +13,6 @@
 package com.amazonaws.services.applicationautoscaling;
 
 import com.amazonaws.services.applicationautoscaling.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSApplicationAutoScaling}. Convenient method forms pass through to the

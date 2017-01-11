@@ -13,7 +13,6 @@
 package com.amazonaws.services.route53;
 
 import com.amazonaws.services.route53.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.route53.waiters.AmazonRoute53Waiters;
 
 /**

@@ -351,9 +351,7 @@ public class WafAction implements Serializable, Cloneable {
         WafAction other = (WafAction) obj;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
-        return true;
+        return !(other.getType() != null && other.getType().equals(this.getType()) == false);
     }
 
     @Override

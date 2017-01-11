@@ -13,7 +13,6 @@
 package com.amazonaws.services.sqs;
 
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonSQS}. Convenient method forms pass through to the corresponding overload that

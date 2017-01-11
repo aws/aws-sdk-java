@@ -13,7 +13,6 @@
 package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 

@@ -13,7 +13,6 @@
 package com.amazonaws.services.gamelift;
 
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonGameLift}. Convenient method forms pass through to the corresponding overload

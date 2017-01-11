@@ -12,16 +12,8 @@
  */
 package com.amazonaws.services.applicationautoscaling.model.transform;
 
-import java.util.Map;
-import java.util.List;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.applicationautoscaling.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
 import com.amazonaws.protocol.json.*;
 
 /**

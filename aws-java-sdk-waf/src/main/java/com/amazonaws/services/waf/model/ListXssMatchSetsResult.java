@@ -203,9 +203,7 @@ public class ListXssMatchSetsResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getXssMatchSets() == null ^ this.getXssMatchSets() == null)
             return false;
-        if (other.getXssMatchSets() != null && other.getXssMatchSets().equals(this.getXssMatchSets()) == false)
-            return false;
-        return true;
+        return !(other.getXssMatchSets() != null && other.getXssMatchSets().equals(this.getXssMatchSets()) == false);
     }
 
     @Override

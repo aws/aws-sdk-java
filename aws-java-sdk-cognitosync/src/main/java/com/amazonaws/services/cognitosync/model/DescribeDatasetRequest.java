@@ -13,7 +13,6 @@
 package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.

@@ -25,7 +25,7 @@ public enum PositionalConstraint {
 
     private String value;
 
-    private PositionalConstraint(String value) {
+    PositionalConstraint(String value) {
         this.value = value;
     }
 

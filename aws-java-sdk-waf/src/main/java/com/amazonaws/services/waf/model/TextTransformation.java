@@ -26,7 +26,7 @@ public enum TextTransformation {
 
     private String value;
 
-    private TextTransformation(String value) {
+    TextTransformation(String value) {
         this.value = value;
     }
 

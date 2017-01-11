@@ -237,9 +237,7 @@ public class GetByteMatchSetResult extends com.amazonaws.AmazonWebServiceResult<
         GetByteMatchSetResult other = (GetByteMatchSetResult) obj;
         if (other.getByteMatchSet() == null ^ this.getByteMatchSet() == null)
             return false;
-        if (other.getByteMatchSet() != null && other.getByteMatchSet().equals(this.getByteMatchSet()) == false)
-            return false;
-        return true;
+        return !(other.getByteMatchSet() != null && other.getByteMatchSet().equals(this.getByteMatchSet()) == false);
     }
 
     @Override

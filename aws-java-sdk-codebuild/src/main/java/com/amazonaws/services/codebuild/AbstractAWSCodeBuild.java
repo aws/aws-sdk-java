@@ -13,7 +13,6 @@
 package com.amazonaws.services.codebuild;
 
 import com.amazonaws.services.codebuild.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSCodeBuild}. Convenient method forms pass through to the corresponding overload

@@ -237,9 +237,7 @@ public class GetXssMatchSetResult extends com.amazonaws.AmazonWebServiceResult<c
         GetXssMatchSetResult other = (GetXssMatchSetResult) obj;
         if (other.getXssMatchSet() == null ^ this.getXssMatchSet() == null)
             return false;
-        if (other.getXssMatchSet() != null && other.getXssMatchSet().equals(this.getXssMatchSet()) == false)
-            return false;
-        return true;
+        return !(other.getXssMatchSet() != null && other.getXssMatchSet().equals(this.getXssMatchSet()) == false);
     }
 
     @Override

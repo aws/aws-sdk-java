@@ -13,7 +13,6 @@
 package com.amazonaws.services.identitymanagement;
 
 import com.amazonaws.services.identitymanagement.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagementWaiters;
 
 /**

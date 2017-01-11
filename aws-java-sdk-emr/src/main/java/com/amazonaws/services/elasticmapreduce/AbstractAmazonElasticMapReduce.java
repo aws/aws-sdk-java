@@ -13,7 +13,6 @@
 package com.amazonaws.services.elasticmapreduce;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWaiters;
 
 /**

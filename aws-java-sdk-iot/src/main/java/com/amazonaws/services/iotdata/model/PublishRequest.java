@@ -13,7 +13,6 @@
 package com.amazonaws.services.iotdata.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>

@@ -13,7 +13,6 @@
 package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 

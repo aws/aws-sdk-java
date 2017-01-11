@@ -20,7 +20,6 @@ import java.io.InputStream;
 
 import javax.net.ssl.SSLSocket;
 
-import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.util.AWSRequestMetrics;
 

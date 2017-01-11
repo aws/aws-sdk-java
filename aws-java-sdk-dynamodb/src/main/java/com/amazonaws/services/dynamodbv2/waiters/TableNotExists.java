@@ -17,14 +17,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.WaiterAcceptor;
 import com.amazonaws.waiters.WaiterState;
-import com.amazonaws.waiters.AcceptorPathMatcher;
 import com.amazonaws.services.dynamodbv2.model.*;
-
-import com.fasterxml.jackson.databind.JsonNode;
-
-import com.amazonaws.jmespath.*;
-
-import java.io.IOException;
 
 @SdkInternalApi
 class TableNotExists {

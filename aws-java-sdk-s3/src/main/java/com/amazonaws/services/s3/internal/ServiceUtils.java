@@ -36,7 +36,6 @@ import com.amazonaws.util.ValidationUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -54,7 +53,6 @@ import java.util.Map;
 
 import javax.net.ssl.SSLProtocolException;
 
-import static com.amazonaws.services.s3.internal.Constants.KB;
 import static com.amazonaws.services.s3.internal.Constants.MB;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 import static com.amazonaws.util.StringUtils.UTF8;

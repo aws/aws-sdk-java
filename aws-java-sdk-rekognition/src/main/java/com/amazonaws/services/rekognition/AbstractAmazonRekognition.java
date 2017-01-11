@@ -13,7 +13,6 @@
 package com.amazonaws.services.rekognition;
 
 import com.amazonaws.services.rekognition.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonRekognition}. Convenient method forms pass through to the corresponding

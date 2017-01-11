@@ -13,7 +13,6 @@
 package com.amazonaws.services.elasticache;
 
 import com.amazonaws.services.elasticache.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.elasticache.waiters.AmazonElastiCacheWaiters;
 
 /**

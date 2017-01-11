@@ -2953,9 +2953,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
             return false;
         if (other.getPositionalConstraint() == null ^ this.getPositionalConstraint() == null)
             return false;
-        if (other.getPositionalConstraint() != null && other.getPositionalConstraint().equals(this.getPositionalConstraint()) == false)
-            return false;
-        return true;
+        return !(other.getPositionalConstraint() != null && other.getPositionalConstraint().equals(this.getPositionalConstraint()) == false);
     }
 
     @Override

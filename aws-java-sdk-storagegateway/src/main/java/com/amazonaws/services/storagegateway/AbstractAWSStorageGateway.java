@@ -13,7 +13,6 @@
 package com.amazonaws.services.storagegateway;
 
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSStorageGateway}. Convenient method forms pass through to the corresponding

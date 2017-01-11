@@ -23,8 +23,6 @@ import org.junit.Test;
 import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.http.IdleConnectionReaper;
-import com.amazonaws.regions.Region;
-import com.amazonaws.regions.Regions;
 
 public class AmazonWebServiceClientTest {
 

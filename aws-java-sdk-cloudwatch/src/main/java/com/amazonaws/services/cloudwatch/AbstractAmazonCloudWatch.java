@@ -13,7 +13,6 @@
 package com.amazonaws.services.cloudwatch;
 
 import com.amazonaws.services.cloudwatch.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
 
 /**

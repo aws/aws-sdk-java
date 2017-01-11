@@ -22,7 +22,7 @@ public enum ParameterExceptionReason {
 
     private String value;
 
-    private ParameterExceptionReason(String value) {
+    ParameterExceptionReason(String value) {
         this.value = value;
     }
 

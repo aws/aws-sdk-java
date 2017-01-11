@@ -18,7 +18,6 @@ import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vec
 
 import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 
 /**

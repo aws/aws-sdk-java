@@ -27,8 +27,6 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import com.amazonaws.util.ImmutableMapParameter;
-
 /**
  * Unit tests for the ImmutableMapParameterTest class.
  */

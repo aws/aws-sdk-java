@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -105,9 +104,7 @@ public class GetByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReques
         GetByteMatchSetRequest other = (GetByteMatchSetRequest) obj;
         if (other.getByteMatchSetId() == null ^ this.getByteMatchSetId() == null)
             return false;
-        if (other.getByteMatchSetId() != null && other.getByteMatchSetId().equals(this.getByteMatchSetId()) == false)
-            return false;
-        return true;
+        return !(other.getByteMatchSetId() != null && other.getByteMatchSetId().equals(this.getByteMatchSetId()) == false);
     }
 
     @Override

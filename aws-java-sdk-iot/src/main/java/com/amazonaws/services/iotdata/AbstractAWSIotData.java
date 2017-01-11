@@ -13,7 +13,6 @@
 package com.amazonaws.services.iotdata;
 
 import com.amazonaws.services.iotdata.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSIotData}. Convenient method forms pass through to the corresponding overload

@@ -13,7 +13,6 @@
 package com.amazonaws.services.elasticfilesystem;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonElasticFileSystem}. Convenient method forms pass through to the corresponding
