@@ -48,7 +48,7 @@ public interface AWSBatch {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "batch";
+    public String ENDPOINT_PREFIX = "batch";
 
     /**
      * Overrides the default endpoint for this client ("batch.us-east-1.amazonaws.com"). Callers can use this method to
