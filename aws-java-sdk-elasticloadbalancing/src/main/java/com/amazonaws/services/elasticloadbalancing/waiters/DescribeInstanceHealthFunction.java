@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.elasticloadbalancing.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.elasticloadbalancing.model.DescribeInstanceHealthRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.elasticloadbalancing.model.DescribeInstanceHealthR
 import com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInstanceHealthFunction implements SdkFunction<DescribeInstanceHealthRequest, DescribeInstanceHealthResult> {
 
     /**

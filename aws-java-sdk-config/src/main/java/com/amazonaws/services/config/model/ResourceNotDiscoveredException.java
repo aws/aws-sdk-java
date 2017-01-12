@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have specified a resource that is either unknown or has not been discovered.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotDiscoveredException extends com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 

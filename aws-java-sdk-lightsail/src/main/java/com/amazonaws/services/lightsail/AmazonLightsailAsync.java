@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.lightsail;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.lightsail.model.*;
 
 /**
@@ -40,6 +42,7 @@ import com.amazonaws.services.lightsail.model.*;
  * >Lightsail Dev Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**

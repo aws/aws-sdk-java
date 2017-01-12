@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * AWS Import/Export cannot cancel the job
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnableToCancelJobIdException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

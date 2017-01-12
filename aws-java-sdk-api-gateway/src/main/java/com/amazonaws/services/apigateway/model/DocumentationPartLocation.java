@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Specifies the target API entity to which the documentation applies.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DocumentationPartLocation implements Serializable, Cloneable {
 
     /**

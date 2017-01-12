@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete
  * it.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidDocumentOperationException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

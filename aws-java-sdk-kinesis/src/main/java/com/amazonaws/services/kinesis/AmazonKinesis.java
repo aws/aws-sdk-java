@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kinesis;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -30,6 +32,7 @@ import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
  * Amazon Kinesis Streams is a managed service that scales elastically for real time processing of streaming big data.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonKinesis {
 
     /**

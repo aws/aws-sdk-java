@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PartitionInstanceType {
 
     SearchM1Small("search.m1.small"),

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servicecatalog.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Service Catalog
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSServiceCatalogException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

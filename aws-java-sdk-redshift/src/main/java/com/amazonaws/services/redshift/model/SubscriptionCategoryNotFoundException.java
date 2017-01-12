@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The value specified for the event category was not one of the allowed values, or it specified a category that does
  * not apply to the specified source type. The allowed values are Configuration, Management, Monitoring, and Security.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SubscriptionCategoryNotFoundException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

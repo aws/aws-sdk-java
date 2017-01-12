@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.appstream.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeFleetsResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeFleetsResultJsonUnmarshaller implements Unmarshaller<DescribeFleetsResult, JsonUnmarshallerContext> {
 
     public DescribeFleetsResult unmarshall(JsonUnmarshallerContext context) throws Exception {

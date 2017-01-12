@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.waf.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation failed because you tried to add an object to or delete an object from another object that doesn't
@@ -42,6 +44,7 @@ package com.amazonaws.services.waf.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFNonexistentContainerException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 

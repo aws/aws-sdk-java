@@ -13,7 +13,9 @@
 package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportJobResponse implements Serializable, Cloneable {
 
     /** The unique ID of the application to which the import job applies. */

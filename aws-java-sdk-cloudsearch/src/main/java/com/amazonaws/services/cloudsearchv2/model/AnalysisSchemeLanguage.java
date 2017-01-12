@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>
  * for multiple languages.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AnalysisSchemeLanguage {
 
     Ar("ar"),

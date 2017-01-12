@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.lambda.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided for
  * the Lambda function.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EC2ThrottledException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 

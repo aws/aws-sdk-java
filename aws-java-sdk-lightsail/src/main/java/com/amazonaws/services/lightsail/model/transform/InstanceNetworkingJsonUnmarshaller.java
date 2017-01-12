@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.lightsail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * InstanceNetworking JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceNetworkingJsonUnmarshaller implements Unmarshaller<InstanceNetworking, JsonUnmarshallerContext> {
 
     public InstanceNetworking unmarshall(JsonUnmarshallerContext context) throws Exception {

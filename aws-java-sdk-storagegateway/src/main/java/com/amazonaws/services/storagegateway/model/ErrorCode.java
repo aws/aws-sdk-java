@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.storagegateway.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ErrorCode {
 
     ActivationKeyExpired("ActivationKeyExpired"),

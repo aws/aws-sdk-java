@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified Amazon EC2 security group is already authorized for the specified cache security group.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AuthorizationAlreadyExistsException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

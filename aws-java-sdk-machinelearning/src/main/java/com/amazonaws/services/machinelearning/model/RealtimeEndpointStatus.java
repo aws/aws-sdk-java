@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RealtimeEndpointStatus {
 
     NONE("NONE"),

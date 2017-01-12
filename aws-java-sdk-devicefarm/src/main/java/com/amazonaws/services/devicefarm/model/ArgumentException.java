@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.devicefarm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An invalid argument was specified.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ArgumentException extends com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 

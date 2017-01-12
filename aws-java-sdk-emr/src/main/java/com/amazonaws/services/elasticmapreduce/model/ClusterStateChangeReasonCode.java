@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ClusterStateChangeReasonCode {
 
     INTERNAL_ERROR("INTERNAL_ERROR"),

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.lambda.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The resource already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceConflictException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 

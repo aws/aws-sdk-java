@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified target could not be found. You can view your available container instances with
  * <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and region-specific.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TargetNotFoundException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

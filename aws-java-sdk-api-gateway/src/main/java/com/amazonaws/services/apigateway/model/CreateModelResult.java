@@ -13,6 +13,7 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -32,6 +33,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models and Mappings</a>
  * </div>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateModelResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

@@ -13,6 +13,7 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import java.io.Serializable;
  * <code>SortExpression</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Suggester implements Serializable, Cloneable {
 
     private String suggesterName;

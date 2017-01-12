@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Provides face metadata (bounding box and confidence that the bounding box actually contains a face).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ComparedFace implements Serializable, Cloneable {
 
     private BoundingBox boundingBox;

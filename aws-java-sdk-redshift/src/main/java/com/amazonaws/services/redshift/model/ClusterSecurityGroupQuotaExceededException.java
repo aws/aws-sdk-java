@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request would result in the user exceeding the allowed number of cluster security groups. For information about
@@ -20,6 +22,7 @@ package com.amazonaws.services.redshift.model;
  * the <i>Amazon Redshift Cluster Management Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClusterSecurityGroupQuotaExceededException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

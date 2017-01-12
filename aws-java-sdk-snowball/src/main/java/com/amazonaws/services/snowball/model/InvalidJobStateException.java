@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The action can't be performed because the job's current state doesn't allow that action to be performed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidJobStateException extends com.amazonaws.services.snowball.model.AmazonSnowballException {
     private static final long serialVersionUID = 1L;
 

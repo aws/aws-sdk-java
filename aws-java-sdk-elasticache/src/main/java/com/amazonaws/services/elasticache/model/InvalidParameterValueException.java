@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The value for a parameter is invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterValueException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

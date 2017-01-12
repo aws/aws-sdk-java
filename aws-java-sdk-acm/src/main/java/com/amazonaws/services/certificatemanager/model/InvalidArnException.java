@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.certificatemanager.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested Amazon Resource Name (ARN) does not refer to an existing resource.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidArnException extends com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 

@@ -13,6 +13,7 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -91,6 +92,7 @@ import java.io.Serializable;
  * when the AWS Lambda service is not available in the current region, or received too many requests.</li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HistoryEvent implements Serializable, Cloneable {
 
     /**

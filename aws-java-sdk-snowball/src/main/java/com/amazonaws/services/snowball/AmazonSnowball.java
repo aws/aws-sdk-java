@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.snowball;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -33,6 +35,7 @@ import com.amazonaws.services.snowball.model.*;
  * href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonSnowball {
 
     /**
@@ -181,10 +184,7 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must
-     * have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for
-     * a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are
-     * inherited from the cluster. .
+     * Creates a job to the other job attributes are inherited from the cluster. .
      * </p>
      * 
      * @param createJobRequest

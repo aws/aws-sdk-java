@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.lightsail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DeleteDomainEntryResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteDomainEntryResultJsonUnmarshaller implements Unmarshaller<DeleteDomainEntryResult, JsonUnmarshallerContext> {
 
     public DeleteDomainEntryResult unmarshall(JsonUnmarshallerContext context) throws Exception {

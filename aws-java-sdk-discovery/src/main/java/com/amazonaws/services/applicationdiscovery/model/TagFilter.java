@@ -13,12 +13,14 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The name of a tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagFilter implements Serializable, Cloneable {
 
     /**

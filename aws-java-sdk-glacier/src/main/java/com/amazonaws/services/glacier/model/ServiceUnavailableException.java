@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.glacier.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the service cannot complete the request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceUnavailableException extends com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 

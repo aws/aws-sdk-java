@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The update is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidUpdateException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

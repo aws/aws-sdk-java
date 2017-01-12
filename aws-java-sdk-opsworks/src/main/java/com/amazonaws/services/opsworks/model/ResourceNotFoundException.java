@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.opsworks.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that a resource was not found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.opsworks.model.AWSOpsWorksException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRequestException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 

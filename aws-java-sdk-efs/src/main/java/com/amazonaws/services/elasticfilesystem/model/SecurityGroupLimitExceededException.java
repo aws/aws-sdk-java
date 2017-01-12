@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SecurityGroupLimitExceededException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

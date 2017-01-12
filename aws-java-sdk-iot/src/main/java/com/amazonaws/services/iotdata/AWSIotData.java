@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.iotdata;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -32,6 +34,7 @@ import com.amazonaws.services.iotdata.model.*;
  * persistent representation of your things and their state in the AWS cloud.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSIotData {
 
     /**

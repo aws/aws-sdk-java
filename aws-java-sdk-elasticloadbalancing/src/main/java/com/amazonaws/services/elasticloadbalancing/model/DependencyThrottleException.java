@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DependencyThrottleException extends com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

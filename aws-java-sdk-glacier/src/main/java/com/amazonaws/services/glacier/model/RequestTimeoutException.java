@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.glacier.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if, when uploading an archive, Amazon Glacier times out while receiving the upload.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RequestTimeoutException extends com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 

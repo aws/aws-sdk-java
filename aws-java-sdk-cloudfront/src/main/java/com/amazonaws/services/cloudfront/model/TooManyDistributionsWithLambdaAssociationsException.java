@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Processing your request would cause the maximum number of distributions with Lambda function associations per owner
  * to be exceeded.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyDistributionsWithLambdaAssociationsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.logs.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.logs.AWSLogsClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.logs.AWSLogsClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSLogsModuleInjector implements InjectorSource {
 
     @Override

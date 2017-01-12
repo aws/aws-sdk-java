@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.servermigration.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -27,6 +29,7 @@ import com.amazonaws.services.servermigration.AWSServerMigrationClient;
  * Injector that binds the AmazonWebServiceClient interface to the
  * com.amazonaws.services.servermigration.AWSServerMigrationClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSServerMigrationModuleInjector implements InjectorSource {
 
     @Override

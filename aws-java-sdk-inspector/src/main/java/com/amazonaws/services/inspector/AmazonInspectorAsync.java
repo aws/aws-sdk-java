@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.inspector;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.inspector.model.*;
 
 /**
@@ -31,6 +33,7 @@ import com.amazonaws.services.inspector.model.*;
  * Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**

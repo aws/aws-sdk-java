@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.gamelift;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.gamelift.model.*;
 
 /**
@@ -359,6 +361,7 @@ import com.amazonaws.services.gamelift.model.*;
  * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Document History</a> page.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**

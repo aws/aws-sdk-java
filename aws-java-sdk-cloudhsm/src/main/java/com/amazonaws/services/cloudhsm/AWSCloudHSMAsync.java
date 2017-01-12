@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudhsm;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudhsm.model.*;
 
 /**
@@ -25,6 +27,7 @@ import com.amazonaws.services.cloudhsm.model.*;
  * <p>
  * <fullname>AWS CloudHSM Service</fullname>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**

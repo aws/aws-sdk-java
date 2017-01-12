@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.stepfunctions.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The provided JSON output data is invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidOutputException extends com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException {
     private static final long serialVersionUID = 1L;
 

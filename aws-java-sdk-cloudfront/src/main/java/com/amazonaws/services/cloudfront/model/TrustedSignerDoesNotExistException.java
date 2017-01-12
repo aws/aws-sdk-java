@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more of your trusted signers do not exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TrustedSignerDoesNotExistException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

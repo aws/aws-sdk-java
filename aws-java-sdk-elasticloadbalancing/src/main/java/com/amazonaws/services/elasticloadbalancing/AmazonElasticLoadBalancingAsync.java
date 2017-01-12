@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticloadbalancing;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticloadbalancing.model.*;
 
 /**
@@ -52,6 +54,7 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * repeat an operation, it succeeds with a 200 OK response code.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalancing {
 
     /**

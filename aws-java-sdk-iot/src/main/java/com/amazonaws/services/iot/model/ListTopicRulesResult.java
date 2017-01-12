@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The output from the ListTopicRules operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTopicRulesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

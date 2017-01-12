@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.autoscaling;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.autoscaling.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.autoscaling.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling implements AmazonAutoScalingAsync {
 
     protected AbstractAmazonAutoScalingAsync() {

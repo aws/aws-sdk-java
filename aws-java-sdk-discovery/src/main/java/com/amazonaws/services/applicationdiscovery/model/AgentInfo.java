@@ -13,6 +13,7 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import java.io.Serializable;
  * agent or connector resides, and agent version for each agent.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AgentInfo implements Serializable, Cloneable {
 
     /**

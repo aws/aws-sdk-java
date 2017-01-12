@@ -2,6 +2,7 @@ ${fileHeader}
 package ${transformPackage};
 
 import org.w3c.dom.Node;
+import javax.annotation.Generated;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.XpathUtils;
@@ -9,6 +10,7 @@ import com.amazonaws.transform.${exceptionUnmarshallerImpl};
 
 import ${metadata.packageName}.model.${shape.shapeName};
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName}Unmarshaller extends ${exceptionUnmarshallerImpl} {
 
     public ${shape.shapeName}Unmarshaller() {

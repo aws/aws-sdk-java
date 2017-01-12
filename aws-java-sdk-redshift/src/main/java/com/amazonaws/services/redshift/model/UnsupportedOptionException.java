@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A request option was specified that is not supported.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedOptionException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * </p>
  */
 @Deprecated
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Clip implements Serializable, Cloneable {
 
     /**

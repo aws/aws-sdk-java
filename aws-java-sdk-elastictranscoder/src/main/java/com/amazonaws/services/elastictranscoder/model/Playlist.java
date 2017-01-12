@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -22,6 +23,7 @@ import java.io.Serializable;
  * output format. The maximum number of master playlists in a job is 30.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Playlist implements Serializable, Cloneable {
 
     /**

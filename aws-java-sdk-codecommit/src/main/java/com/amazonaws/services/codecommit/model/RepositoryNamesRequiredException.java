@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A repository names object is required but was not specified.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RepositoryNamesRequiredException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

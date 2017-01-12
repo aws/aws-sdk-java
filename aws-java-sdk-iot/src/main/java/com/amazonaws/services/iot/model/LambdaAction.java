@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes an action to invoke a Lambda function.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LambdaAction implements Serializable, Cloneable {
 
     /**

@@ -13,11 +13,13 @@
 package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplaceableItem implements Serializable, Cloneable {
 
     /** The name of the replaceable item. */

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudhsm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Specifies the type of subscription for the HSM.
@@ -21,6 +23,7 @@ package com.amazonaws.services.cloudhsm.model;
  * <li><b>TRIAL</b> - The HSM is being used in a product trial.</li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SubscriptionType {
 
     PRODUCTION("PRODUCTION");

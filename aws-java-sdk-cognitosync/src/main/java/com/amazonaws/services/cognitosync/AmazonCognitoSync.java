@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitosync;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -47,6 +49,7 @@ import com.amazonaws.services.cognitosync.model.*;
  * Guide for iOS</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCognitoSync {
 
     /**

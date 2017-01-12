@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The document has too many versions. Delete one or more document versions and try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DocumentVersionLimitExceededException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

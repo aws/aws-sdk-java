@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * format, which supports transparency.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JobWatermark implements Serializable, Cloneable {
 
     /**

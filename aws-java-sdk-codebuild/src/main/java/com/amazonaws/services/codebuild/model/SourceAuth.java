@@ -13,6 +13,7 @@
 package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -26,6 +27,7 @@ import java.io.Serializable;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth" target="_top">AWS API
  *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SourceAuth implements Serializable, Cloneable {
 
     /**

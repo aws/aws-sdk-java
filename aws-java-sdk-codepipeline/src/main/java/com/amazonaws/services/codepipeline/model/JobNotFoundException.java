@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codepipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified job was specified in an invalid format or cannot be found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JobNotFoundException extends com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 

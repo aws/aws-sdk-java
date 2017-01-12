@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The current status of the search domain.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainStatus implements Serializable, Cloneable {
 
     private String domainId;

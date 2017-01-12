@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.certificatemanager.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The certificate request is in process and the certificate in your account has not yet been issued.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RequestInProgressException extends com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 

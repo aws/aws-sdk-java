@@ -13,12 +13,14 @@
 package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream" target="_top">AWS API
  *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteDeliveryStreamResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

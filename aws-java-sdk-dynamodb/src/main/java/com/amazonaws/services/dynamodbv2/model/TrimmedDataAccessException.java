@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation attempted to read past the oldest stream record in a shard.
@@ -34,6 +36,7 @@ package com.amazonaws.services.dynamodbv2.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TrimmedDataAccessException extends com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 

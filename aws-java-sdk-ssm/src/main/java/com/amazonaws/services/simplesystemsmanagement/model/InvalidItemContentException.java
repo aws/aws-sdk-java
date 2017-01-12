@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more content items is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidItemContentException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

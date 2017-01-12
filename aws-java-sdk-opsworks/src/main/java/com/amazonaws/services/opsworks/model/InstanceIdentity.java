@@ -13,6 +13,7 @@
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -23,6 +24,7 @@ import java.io.Serializable;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/InstanceIdentity" target="_top">AWS API
  *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceIdentity implements Serializable, Cloneable {
 
     /**

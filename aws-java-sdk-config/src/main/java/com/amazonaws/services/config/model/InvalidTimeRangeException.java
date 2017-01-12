@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified time range is not valid. The earlier time is not chronologically before the later time.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidTimeRangeException extends com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 

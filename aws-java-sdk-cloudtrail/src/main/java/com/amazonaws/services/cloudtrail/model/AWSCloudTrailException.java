@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS CloudTrail
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCloudTrailException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

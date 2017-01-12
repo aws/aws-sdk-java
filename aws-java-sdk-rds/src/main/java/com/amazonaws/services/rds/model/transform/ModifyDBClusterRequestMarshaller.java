@@ -12,9 +12,7 @@
  */
 package com.amazonaws.services.rds.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -23,12 +21,12 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.rds.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * ModifyDBClusterRequest Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<ModifyDBClusterRequest>, ModifyDBClusterRequest> {
 
     public Request<ModifyDBClusterRequest> marshall(ModifyDBClusterRequest modifyDBClusterRequest) {

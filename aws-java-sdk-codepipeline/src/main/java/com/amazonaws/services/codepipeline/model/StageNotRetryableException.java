@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codepipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified stage can't be retried because the pipeline structure or stage state changed after the stage was not
@@ -19,6 +21,7 @@ package com.amazonaws.services.codepipeline.model;
  * is already in progress.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StageNotRetryableException extends com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 

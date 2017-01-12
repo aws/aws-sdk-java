@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Indicates the pose of the face as determined by pitch, roll, and the yaw.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Pose implements Serializable, Cloneable {
 
     /**

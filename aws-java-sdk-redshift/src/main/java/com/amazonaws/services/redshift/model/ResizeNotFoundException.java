@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A resize operation for the specified cluster is not found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResizeNotFoundException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

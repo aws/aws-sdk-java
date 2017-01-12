@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.glacier.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 

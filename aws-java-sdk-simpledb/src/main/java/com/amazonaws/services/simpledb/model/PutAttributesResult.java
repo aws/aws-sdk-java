@@ -13,7 +13,9 @@
 package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata> implements
         Serializable, Cloneable {
 

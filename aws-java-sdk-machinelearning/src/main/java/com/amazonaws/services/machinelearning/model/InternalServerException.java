@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An error on the server occurred when trying to process a request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerException extends com.amazonaws.services.machinelearning.model.AmazonMachineLearningException {
     private static final long serialVersionUID = 1L;
 

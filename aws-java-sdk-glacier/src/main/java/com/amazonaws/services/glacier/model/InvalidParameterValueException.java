@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.glacier.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if a parameter of the request is incorrectly specified.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterValueException extends com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 

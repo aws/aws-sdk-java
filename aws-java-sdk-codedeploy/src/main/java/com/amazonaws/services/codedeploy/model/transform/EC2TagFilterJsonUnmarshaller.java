@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * EC2TagFilter JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EC2TagFilterJsonUnmarshaller implements Unmarshaller<EC2TagFilter, JsonUnmarshallerContext> {
 
     public EC2TagFilter unmarshall(JsonUnmarshallerContext context) throws Exception {

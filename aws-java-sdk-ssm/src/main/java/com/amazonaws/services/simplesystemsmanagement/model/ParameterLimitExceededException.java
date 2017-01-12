@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have exceeded the number of parameters for this AWS account. Delete one or more parameters and try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ParameterLimitExceededException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

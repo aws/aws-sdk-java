@@ -13,6 +13,8 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -20,6 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes an existing documentation part of an API.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteDocumentationPartRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

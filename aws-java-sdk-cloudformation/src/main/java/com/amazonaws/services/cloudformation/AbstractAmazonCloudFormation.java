@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudformation;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudformation.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters
  * Abstract implementation of {@code AmazonCloudFormation}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
 
     protected AbstractAmazonCloudFormation() {

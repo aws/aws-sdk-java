@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception gets thrown when a user pool tag cannot be set or updated.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UserPoolTaggingException extends com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 

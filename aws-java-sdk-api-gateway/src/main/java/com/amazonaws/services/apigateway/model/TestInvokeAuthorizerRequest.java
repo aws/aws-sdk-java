@@ -13,6 +13,8 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -20,6 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Make a request to simulate the execution of an <a>Authorizer</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

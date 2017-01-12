@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.certificatemanager.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An ACM limit has been exceeded. For example, you may have input more domains than are allowed or you've requested too
@@ -20,6 +22,7 @@ package com.amazonaws.services.certificatemanager.model;
  * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a> topic.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 

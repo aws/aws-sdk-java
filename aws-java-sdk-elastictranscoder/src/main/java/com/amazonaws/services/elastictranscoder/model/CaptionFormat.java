@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptionFormat implements Serializable, Cloneable {
 
     /**

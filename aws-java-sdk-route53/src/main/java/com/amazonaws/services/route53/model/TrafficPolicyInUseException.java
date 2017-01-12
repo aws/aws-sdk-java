@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more traffic policy instances were created by using the specified traffic policy.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TrafficPolicyInUseException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

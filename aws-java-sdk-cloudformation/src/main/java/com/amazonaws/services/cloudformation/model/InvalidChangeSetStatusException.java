@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.cloudformation.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified change set cannot be used to update the stack. For example, the change set status might be
  * <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidChangeSetStatusException extends com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {
     private static final long serialVersionUID = 1L;
 

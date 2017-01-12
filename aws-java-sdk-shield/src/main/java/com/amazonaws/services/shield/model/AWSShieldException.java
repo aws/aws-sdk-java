@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.shield.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Shield
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSShieldException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

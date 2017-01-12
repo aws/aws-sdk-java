@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the public key is malformed or otherwise invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidPublicKeyException extends com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 

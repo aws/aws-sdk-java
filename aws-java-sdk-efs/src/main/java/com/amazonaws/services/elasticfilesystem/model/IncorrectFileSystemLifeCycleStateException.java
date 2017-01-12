@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the file system's life cycle state is not "created".
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IncorrectFileSystemLifeCycleStateException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

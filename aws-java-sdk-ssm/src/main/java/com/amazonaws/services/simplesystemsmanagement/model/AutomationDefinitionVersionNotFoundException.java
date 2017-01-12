@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An Automation document with the specified name and version could not be found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AutomationDefinitionVersionNotFoundException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

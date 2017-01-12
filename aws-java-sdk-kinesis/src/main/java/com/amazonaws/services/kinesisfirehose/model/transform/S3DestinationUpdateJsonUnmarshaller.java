@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.kinesisfirehose.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * S3DestinationUpdate JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3DestinationUpdateJsonUnmarshaller implements Unmarshaller<S3DestinationUpdate, JsonUnmarshallerContext> {
 
     public S3DestinationUpdate unmarshall(JsonUnmarshallerContext context) throws Exception {

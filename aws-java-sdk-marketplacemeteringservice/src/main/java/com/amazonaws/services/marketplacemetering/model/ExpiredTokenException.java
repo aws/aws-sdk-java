@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.marketplacemetering.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to
@@ -20,6 +22,7 @@ package com.amazonaws.services.marketplacemetering.model;
  * browser.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExpiredTokenException extends com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 

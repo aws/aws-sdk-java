@@ -12,22 +12,22 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * DescribeImportImageTasksResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeImportImageTasksResultStaxUnmarshaller implements Unmarshaller<DescribeImportImageTasksResult, StaxUnmarshallerContext> {
 
     public DescribeImportImageTasksResult unmarshall(StaxUnmarshallerContext context) throws Exception {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
@@ -22,6 +24,7 @@ import com.amazonaws.client.AwsSyncClientParams;
  * constructors of the client class.
  **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonEC2ClientBuilder extends AwsSyncClientBuilder<AmazonEC2ClientBuilder, AmazonEC2> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();

@@ -13,12 +13,14 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Information regarding the export status of the discovered data. The value is an array of objects.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExportInfo implements Serializable, Cloneable {
 
     /**

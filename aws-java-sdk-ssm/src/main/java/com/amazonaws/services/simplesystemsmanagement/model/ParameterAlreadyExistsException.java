@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The parameter already exists. You can't create duplicate parameters.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ParameterAlreadyExistsException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified origin access identity does not exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NoSuchCloudFrontOriginAccessIdentityException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

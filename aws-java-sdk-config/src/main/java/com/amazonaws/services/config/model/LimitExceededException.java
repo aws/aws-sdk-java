@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown if an evaluation is in progress or if you call the <a>StartConfigRulesEvaluation</a> API
  * more than once per minute.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 

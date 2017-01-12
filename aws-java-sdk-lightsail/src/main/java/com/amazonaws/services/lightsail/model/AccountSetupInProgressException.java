@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.lightsail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Lightsail throws this exception when an account is still in the setup in progress state.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccountSetupInProgressException extends com.amazonaws.services.lightsail.model.AmazonLightsailException {
     private static final long serialVersionUID = 1L;
 

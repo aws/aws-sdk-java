@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simpleworkflow;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.simpleworkflow.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflowAsync {
 
     protected AbstractAmazonSimpleWorkflowAsync() {

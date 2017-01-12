@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i> equal to 0.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PointInTimeRestoreNotEnabledException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

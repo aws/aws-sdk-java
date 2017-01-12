@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -27,6 +29,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
  * Injector that binds the AmazonWebServiceClient interface to the
  * com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonDynamoDBModuleInjector implements InjectorSource {
 
     @Override

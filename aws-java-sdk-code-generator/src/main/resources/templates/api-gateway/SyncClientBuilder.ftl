@@ -16,12 +16,14 @@ import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.Protocol;
 
 import java.net.URI;
+import javax.annotation.Generated;
 
 /**
  * Fluent builder for {@link ${metadata.packageName + "." + metadata.syncInterface}}. Use of the
  * builder is preferred over using constructors of the client class.
 **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class ${metadata.syncClientBuilderClassName}
     extends SdkSyncClientBuilder<${metadata.syncClientBuilderClassName}, ${metadata.syncInterface}> {
 

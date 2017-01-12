@@ -13,6 +13,7 @@
 package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -22,6 +23,7 @@ import java.io.Serializable;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Image" target="_top">AWS API
  *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Image implements Serializable, Cloneable {
 
     /**

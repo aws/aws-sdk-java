@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains details about a workflow type.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WorkflowTypeDetail extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

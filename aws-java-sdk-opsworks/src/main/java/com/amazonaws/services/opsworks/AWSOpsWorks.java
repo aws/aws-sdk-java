@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.opsworks;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -162,6 +164,7 @@ import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
  * </p>
  * </note>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSOpsWorks {
 
     /**

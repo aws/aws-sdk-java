@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.devicefarm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * There was a problem with the service account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceAccountException extends com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 

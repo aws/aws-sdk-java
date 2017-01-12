@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.certificatemanager;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -32,6 +34,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCertificateManagerAsyncClient extends AWSCertificateManagerClient implements AWSCertificateManagerAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

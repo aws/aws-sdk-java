@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Elastic Beanstalk
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSElasticBeanstalkException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

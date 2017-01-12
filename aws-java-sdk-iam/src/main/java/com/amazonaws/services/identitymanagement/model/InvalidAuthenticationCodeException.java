@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the authentication code was not recognized. The error message describes the specific
  * error.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidAuthenticationCodeException extends com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You already have a snapshot with the given name.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnapshotAlreadyExistsException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

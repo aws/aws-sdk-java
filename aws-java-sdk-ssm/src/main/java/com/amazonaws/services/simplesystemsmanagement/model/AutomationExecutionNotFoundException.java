@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * There is no automation execution information for the requested automation execution ID.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AutomationExecutionNotFoundException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The value specified as a snapshot identifier is already used by an existing snapshot.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClusterSnapshotAlreadyExistsException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HlsContentProtection implements Serializable, Cloneable {
 
     /**

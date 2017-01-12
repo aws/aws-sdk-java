@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.kinesisanalytics.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.kinesisanalytics.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * AddApplicationOutputResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AddApplicationOutputResultJsonUnmarshaller implements Unmarshaller<AddApplicationOutputResult, JsonUnmarshallerContext> {
 
     public AddApplicationOutputResult unmarshall(JsonUnmarshallerContext context) throws Exception {

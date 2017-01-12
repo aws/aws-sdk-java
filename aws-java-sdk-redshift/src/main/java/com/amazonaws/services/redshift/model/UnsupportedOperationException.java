@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested operation isn't supported.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedOperationException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

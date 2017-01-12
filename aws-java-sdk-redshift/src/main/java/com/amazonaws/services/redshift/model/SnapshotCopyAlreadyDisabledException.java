@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The cluster already has cross-region snapshot copy disabled.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnapshotCopyAlreadyDisabledException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

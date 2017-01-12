@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request failed because a provided policy could not be successfully evaluated. An additional detail message
  * indicates the source of the failure.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PolicyEvaluationException extends com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 

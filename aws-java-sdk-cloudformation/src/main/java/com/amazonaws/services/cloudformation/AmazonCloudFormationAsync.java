@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudformation;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudformation.model.*;
 
 /**
@@ -44,6 +46,7 @@ import com.amazonaws.services.cloudformation.model.*;
  * product, see its <a href="http://docs.aws.amazon.com/">technical documentation</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**

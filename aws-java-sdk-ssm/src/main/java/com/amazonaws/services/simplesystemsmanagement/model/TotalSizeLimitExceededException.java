@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The size of inventory data has exceeded the total size limit for the resource.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TotalSizeLimitExceededException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

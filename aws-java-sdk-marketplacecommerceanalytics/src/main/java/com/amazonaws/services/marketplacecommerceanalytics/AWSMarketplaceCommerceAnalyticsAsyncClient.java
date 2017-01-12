@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.marketplacecommerceanalytics;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -24,6 +26,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * Provides AWS Marketplace business intelligence data on-demand.
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSMarketplaceCommerceAnalyticsAsyncClient extends AWSMarketplaceCommerceAnalyticsClient implements AWSMarketplaceCommerceAnalyticsAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

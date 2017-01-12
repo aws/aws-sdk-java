@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -30,6 +31,7 @@ import java.io.Serializable;
  * the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PresetWatermark implements Serializable, Cloneable {
 
     /**

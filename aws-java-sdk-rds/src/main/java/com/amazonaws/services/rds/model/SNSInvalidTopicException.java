@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * SNS has responded that there is a problem with the SND topic specified.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SNSInvalidTopicException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

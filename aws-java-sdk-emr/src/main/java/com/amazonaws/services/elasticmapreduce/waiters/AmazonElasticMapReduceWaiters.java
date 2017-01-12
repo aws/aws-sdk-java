@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticmapreduce.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce;
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -20,6 +22,7 @@ import com.amazonaws.waiters.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElasticMapReduceWaiters {
 
     /**

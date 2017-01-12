@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Your request contains more trusted signers than are allowed per distribution.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyTrustedSignersException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

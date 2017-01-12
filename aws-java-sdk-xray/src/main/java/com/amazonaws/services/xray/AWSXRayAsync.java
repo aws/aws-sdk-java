@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.xray;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.xray.model.*;
 
 /**
@@ -28,6 +30,7 @@ import com.amazonaws.services.xray.model.*;
  * those traces.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSXRayAsync extends AWSXRay {
 
     /**

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DBClusterParameterGroupNotFoundException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

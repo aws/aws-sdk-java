@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that
@@ -19,6 +21,7 @@ package com.amazonaws.services.identitymanagement.model;
  * waiting several minutes. The error message describes the entity.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EntityTemporarilyUnmodifiableException extends com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * At least one branch name is required but was not specified in the trigger configuration.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RepositoryTriggerBranchNameListRequiredException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested cache cluster is not in the <code>available</code> state.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidCacheClusterStateException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

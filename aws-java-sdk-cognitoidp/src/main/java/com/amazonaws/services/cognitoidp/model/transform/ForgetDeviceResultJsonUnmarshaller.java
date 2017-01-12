@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cognitoidp.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * ForgetDeviceResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ForgetDeviceResultJsonUnmarshaller implements Unmarshaller<ForgetDeviceResult, JsonUnmarshallerContext> {
 
     public ForgetDeviceResult unmarshall(JsonUnmarshallerContext context) throws Exception {

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The quota for the number of tags that can be assigned to a load balancer has been reached.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyTagsException extends com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

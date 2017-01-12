@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The cluster parameter group action can not be completed because another task is in progress that involves the
  * parameter group. Wait a few moments and try the operation again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidClusterParameterGroupStateException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

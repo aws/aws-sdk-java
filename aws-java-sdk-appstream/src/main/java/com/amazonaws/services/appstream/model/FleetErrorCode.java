@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.appstream.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FleetErrorCode {
 
     IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION("IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION"),

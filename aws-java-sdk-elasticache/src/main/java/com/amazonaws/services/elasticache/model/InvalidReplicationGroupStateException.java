@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested replication group is not in the <code>available</code> state.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidReplicationGroupStateException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

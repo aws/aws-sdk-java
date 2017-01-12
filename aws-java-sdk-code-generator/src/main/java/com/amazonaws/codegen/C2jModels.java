@@ -16,6 +16,7 @@ package com.amazonaws.codegen;
 
 import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.codegen.model.intermediate.Example;
 import com.amazonaws.codegen.model.intermediate.ServiceExamples;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Waiters;
@@ -101,7 +102,9 @@ public class C2jModels {
         }
 
         public C2jModels build() {
-            return new C2jModels(serviceModel, waitersModel, examplesModel, codeGenConfig, customizationConfig);
+            final Waiters waiters = waitersModel != null ? waitersModel : Waiters.NONE;
+            final ServiceExamples examples = examplesModel != null ? examplesModel : ServiceExamples.NONE;
+            return new C2jModels(serviceModel, waiters, examples, codeGenConfig, customizationConfig);
         }
     }
 }

@@ -13,6 +13,8 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -20,6 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A POST request to import an API to Amazon API Gateway using an input of an API definition file.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

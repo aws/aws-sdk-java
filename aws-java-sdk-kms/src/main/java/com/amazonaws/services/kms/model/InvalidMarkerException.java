@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the marker that specifies where pagination should next begin is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidMarkerException extends com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.opsworkscm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The resource is in a state that does not allow you to perform a specified action.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidStateException extends com.amazonaws.services.opsworkscm.model.AWSOpsWorksCMException {
     private static final long serialVersionUID = 1L;
 

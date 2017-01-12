@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Details about the timing of a job.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Timing implements Serializable, Cloneable {
 
     /**

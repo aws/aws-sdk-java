@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.apigateway.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon API Gateway
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonApiGatewayException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

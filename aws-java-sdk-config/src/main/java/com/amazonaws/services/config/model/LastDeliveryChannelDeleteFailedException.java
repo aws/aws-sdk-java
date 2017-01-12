@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You cannot delete the delivery channel you specified because the configuration recorder is running.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LastDeliveryChannelDeleteFailedException extends com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 

@@ -30,7 +30,7 @@ import static com.amazonaws.codegen.internal.Utils.closeQuietly;
  */
 public class CodeWriter extends StringWriter {
 
-    private final JavaCodeFormatter formatter = new JavaCodeFormatter();
+    private final ContentProcessor processor = ContentProcessor.chain(new UnusedImportRemover(), new JavaCodeFormatter());
 
     private final String dir;
 
@@ -95,7 +95,7 @@ public class CodeWriter extends StringWriter {
                 throw new RuntimeException(e);
             }
             String contents = getBuffer().toString();
-            out.write(formatter.format(contents));
+            out.write(processor.apply(contents));
         } finally {
             closeQuietly(out);
         }

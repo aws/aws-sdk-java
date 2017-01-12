@@ -12,9 +12,7 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -29,6 +27,7 @@ import com.amazonaws.util.IdempotentUtils;
  * PurchaseScheduledInstancesRequest Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PurchaseScheduledInstancesRequestMarshaller implements Marshaller<Request<PurchaseScheduledInstancesRequest>, PurchaseScheduledInstancesRequest> {
 
     public Request<PurchaseScheduledInstancesRequest> marshall(PurchaseScheduledInstancesRequest purchaseScheduledInstancesRequest) {

@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * CreateTapeWithBarcodeResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateTapeWithBarcodeResultJsonUnmarshaller implements Unmarshaller<CreateTapeWithBarcodeResult, JsonUnmarshallerContext> {
 
     public CreateTapeWithBarcodeResult unmarshall(JsonUnmarshallerContext context) throws Exception {

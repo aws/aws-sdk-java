@@ -13,6 +13,7 @@
 package com.amazonaws.services.xray.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -22,6 +23,7 @@ import java.io.Serializable;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TraceUser" target="_top">AWS API
  *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TraceUser implements Serializable, Cloneable {
 
     /**

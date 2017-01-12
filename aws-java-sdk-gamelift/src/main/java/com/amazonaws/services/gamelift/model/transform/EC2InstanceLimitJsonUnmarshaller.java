@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * EC2InstanceLimit JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EC2InstanceLimitJsonUnmarshaller implements Unmarshaller<EC2InstanceLimit, JsonUnmarshallerContext> {
 
     public EC2InstanceLimit unmarshall(JsonUnmarshallerContext context) throws Exception {

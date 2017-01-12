@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The value of the "Text" parameter is longer than the accepted limits. The limit for input text is a maximum of 3000
@@ -19,6 +21,7 @@ package com.amazonaws.services.polly.model;
  * characters.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TextLengthExceededException extends com.amazonaws.services.polly.model.AmazonPollyException {
     private static final long serialVersionUID = 1L;
 

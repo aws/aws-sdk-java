@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AnalysisOptions implements Serializable, Cloneable {
 
     /**

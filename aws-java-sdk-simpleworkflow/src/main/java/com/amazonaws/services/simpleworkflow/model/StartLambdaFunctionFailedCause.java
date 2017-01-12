@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StartLambdaFunctionFailedCause {
 
     ASSUME_ROLE_FAILED("ASSUME_ROLE_FAILED");

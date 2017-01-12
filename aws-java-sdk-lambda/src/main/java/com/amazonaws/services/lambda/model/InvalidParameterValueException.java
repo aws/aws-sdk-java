@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.lambda.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in
@@ -19,6 +21,7 @@ package com.amazonaws.services.lambda.model;
  * assume you will get this exception.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterValueException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 

@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The output for the ListThingTypes operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListThingTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

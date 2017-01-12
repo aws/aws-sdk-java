@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.support;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -99,6 +101,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSupportAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

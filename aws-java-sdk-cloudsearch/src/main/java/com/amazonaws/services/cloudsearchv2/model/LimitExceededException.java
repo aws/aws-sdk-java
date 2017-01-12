@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because a resource limit has already been met.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException {
     private static final long serialVersionUID = 1L;
 

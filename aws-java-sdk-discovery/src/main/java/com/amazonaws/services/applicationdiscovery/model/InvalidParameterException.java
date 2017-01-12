@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.applicationdiscovery.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more parameters are not valid. Verify the parameters and try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterException extends com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {
     private static final long serialVersionUID = 1L;
 

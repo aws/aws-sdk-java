@@ -13,6 +13,7 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * all domains owned by the account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeElasticsearchDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

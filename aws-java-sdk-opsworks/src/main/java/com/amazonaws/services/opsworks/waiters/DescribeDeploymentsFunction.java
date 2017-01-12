@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.opsworks.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.opsworks.model.DescribeDeploymentsRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.opsworks.model.DescribeDeploymentsResult;
 import com.amazonaws.services.opsworks.AWSOpsWorks;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeDeploymentsFunction implements SdkFunction<DescribeDeploymentsRequest, DescribeDeploymentsResult> {
 
     /**

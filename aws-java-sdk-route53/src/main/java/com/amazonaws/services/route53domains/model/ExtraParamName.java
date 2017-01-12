@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.route53domains.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ExtraParamName {
 
     DUNS_NUMBER("DUNS_NUMBER"),

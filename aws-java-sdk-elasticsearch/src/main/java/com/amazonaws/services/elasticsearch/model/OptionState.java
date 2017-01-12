@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticsearch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The state of a requested change. One of the following:
@@ -21,6 +23,7 @@ package com.amazonaws.services.elasticsearch.model;
  * <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum OptionState {
 
     RequiresIndexDocuments("RequiresIndexDocuments"),

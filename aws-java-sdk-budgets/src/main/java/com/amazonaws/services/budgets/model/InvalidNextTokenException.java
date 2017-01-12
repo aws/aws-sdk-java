@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.budgets.model;
 
+import javax.annotation.Generated;
+
 /**
  * This exception is thrown if paging token signature didn't match the token, or the paging token isn't for this request
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidNextTokenException extends com.amazonaws.services.budgets.model.AWSBudgetsException {
     private static final long serialVersionUID = 1L;
 

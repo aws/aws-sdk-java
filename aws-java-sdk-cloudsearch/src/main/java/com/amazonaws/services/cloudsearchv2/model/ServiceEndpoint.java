@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The endpoint to which service requests can be submitted.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceEndpoint implements Serializable, Cloneable {
 
     private String endpoint;

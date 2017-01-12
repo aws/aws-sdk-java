@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A configuration property of an SDK type.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SdkConfigurationProperty implements Serializable, Cloneable {
 
     /**

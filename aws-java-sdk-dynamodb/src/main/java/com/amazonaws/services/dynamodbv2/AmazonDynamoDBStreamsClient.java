@@ -16,13 +16,14 @@ import org.w3c.dom.*;
 
 import java.net.*;
 import java.util.*;
-import java.util.Map.Entry;
+
+import javax.annotation.Generated;
 
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.auth.presign.PresignerParams;
+
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
@@ -80,6 +81,7 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implements AmazonDynamoDBStreams {
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;

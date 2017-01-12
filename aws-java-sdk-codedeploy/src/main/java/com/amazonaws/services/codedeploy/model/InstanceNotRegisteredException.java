@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified on-premises instance is not registered.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceNotRegisteredException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

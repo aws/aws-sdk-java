@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified value for the schema is not valid. You can only specify a scheme for load balancers in a VPC.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidSchemeException extends com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

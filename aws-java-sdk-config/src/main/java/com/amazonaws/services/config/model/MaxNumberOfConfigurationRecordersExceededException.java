@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have reached the limit on the number of recorders you can create.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MaxNumberOfConfigurationRecordersExceededException extends com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 

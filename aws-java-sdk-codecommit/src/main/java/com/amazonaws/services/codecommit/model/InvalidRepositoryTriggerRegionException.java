@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The region for the trigger target does not match the region for the repository. Triggers must be created in the same
  * region as the target for the trigger.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRepositoryTriggerRegionException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

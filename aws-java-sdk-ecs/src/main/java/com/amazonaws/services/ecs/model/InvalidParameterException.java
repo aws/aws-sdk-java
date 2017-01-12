@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified parameter is invalid. Review the available parameters for the API request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

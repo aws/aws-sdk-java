@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested configuration is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidConfigurationRequestException extends com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

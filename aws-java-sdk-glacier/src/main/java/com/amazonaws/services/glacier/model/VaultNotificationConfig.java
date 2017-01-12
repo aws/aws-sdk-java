@@ -13,12 +13,14 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Represents a vault's notification configuration.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VaultNotificationConfig implements Serializable, Cloneable {
 
     /**

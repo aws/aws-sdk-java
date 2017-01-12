@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.elasticmapreduce.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.elasticmapreduce.model.DescribeClusterRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.elasticmapreduce.model.DescribeClusterResult;
 import com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeClusterFunction implements SdkFunction<DescribeClusterRequest, DescribeClusterResult> {
 
     /**

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized to access the specified Amazon
  * S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidS3BucketException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

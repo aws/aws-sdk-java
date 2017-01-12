@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpleemail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that the event destination does not exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventDestinationDoesNotExistException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 

@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * CreateFileSystemResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateFileSystemResultJsonUnmarshaller implements Unmarshaller<CreateFileSystemResult, JsonUnmarshallerContext> {
 
     public CreateFileSystemResult unmarshall(JsonUnmarshallerContext context) throws Exception {

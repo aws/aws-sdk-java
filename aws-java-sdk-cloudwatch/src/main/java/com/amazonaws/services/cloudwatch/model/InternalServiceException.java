@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Request processing has failed due to some unknown error, exception, or failure.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServiceException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {
     private static final long serialVersionUID = 1L;
 

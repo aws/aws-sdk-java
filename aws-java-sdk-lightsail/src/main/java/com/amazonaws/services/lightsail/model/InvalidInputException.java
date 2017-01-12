@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.lightsail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Lightsail throws this exception when user input does not conform to the validation rules of an input field.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidInputException extends com.amazonaws.services.lightsail.model.AmazonLightsailException {
     private static final long serialVersionUID = 1L;
 

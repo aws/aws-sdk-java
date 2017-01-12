@@ -1,6 +1,8 @@
 ${fileHeader}
 package ${metadata.packageName};
 
+import javax.annotation.Generated;
+
 import ${metadata.packageName}.model.*;
 
 /**
@@ -17,6 +19,7 @@ import ${metadata.packageName}.model.*;
  * ${metadata.documentation}
 </#if>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface ${metadata.asyncInterface} extends ${metadata.syncInterface} {
   <#list operations?values as operationModel>
     <@AsyncInterfaceMethodForOperationMacro.content metadata operationModel />

@@ -13,6 +13,7 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -43,6 +44,7 @@ import java.io.Serializable;
  * Amazon SWF Workflows</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
 
     /**

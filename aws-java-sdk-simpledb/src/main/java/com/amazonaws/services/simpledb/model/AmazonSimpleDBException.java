@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simpledb.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon SimpleDB
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSimpleDBException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

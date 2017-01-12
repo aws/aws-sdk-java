@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpleemail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that the delete operation could not be completed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CannotDeleteException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 

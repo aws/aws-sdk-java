@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.workspaces;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.workspaces.model.*;
 
 /**
@@ -28,6 +30,7 @@ import com.amazonaws.services.workspaces.model.*;
  * This reference provides detailed information about the Amazon WorkSpaces operations.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**

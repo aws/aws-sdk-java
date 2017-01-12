@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.inspector.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You cannot perform a specified action if an assessment run is currently in progress.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssessmentRunInProgressException extends com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 

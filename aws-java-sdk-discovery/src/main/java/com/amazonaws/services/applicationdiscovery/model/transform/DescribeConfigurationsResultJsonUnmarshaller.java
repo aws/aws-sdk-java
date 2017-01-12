@@ -13,9 +13,10 @@
 package com.amazonaws.services.applicationdiscovery.model.transform;
 
 import java.util.Map;
-import java.util.Map.Entry;
+
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.applicationdiscovery.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +28,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeConfigurationsResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeConfigurationsResultJsonUnmarshaller implements Unmarshaller<DescribeConfigurationsResult, JsonUnmarshallerContext> {
 
     public DescribeConfigurationsResult unmarshall(JsonUnmarshallerContext context) throws Exception {

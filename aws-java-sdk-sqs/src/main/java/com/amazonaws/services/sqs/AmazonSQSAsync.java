@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.sqs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.sqs.model.*;
 
 /**
@@ -108,6 +110,7 @@ import com.amazonaws.services.sqs.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonSQSAsync extends AmazonSQS {
 
     /**

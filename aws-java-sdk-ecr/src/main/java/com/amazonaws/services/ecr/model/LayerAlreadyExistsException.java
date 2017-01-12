@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The image layer already exists in the associated repository.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LayerAlreadyExistsException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

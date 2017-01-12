@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.rds.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -95,6 +97,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

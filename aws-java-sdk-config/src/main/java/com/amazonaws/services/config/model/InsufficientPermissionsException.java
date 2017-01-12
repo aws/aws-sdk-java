@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates one of the following errors:
@@ -30,6 +32,7 @@ package com.amazonaws.services.config.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsufficientPermissionsException extends com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 

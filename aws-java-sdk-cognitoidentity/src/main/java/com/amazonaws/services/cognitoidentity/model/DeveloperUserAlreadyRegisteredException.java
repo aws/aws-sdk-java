@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidentity.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The provided developer user identifier is already registered with Cognito under a different identity ID.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeveloperUserAlreadyRegisteredException extends com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 

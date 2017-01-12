@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.codepipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FailureType {
 
     JobFailed("JobFailed"),

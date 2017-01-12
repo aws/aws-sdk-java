@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.directory.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified entity could not be found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EntityDoesNotExistException extends com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 

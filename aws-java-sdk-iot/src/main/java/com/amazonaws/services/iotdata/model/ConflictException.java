@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iotdata.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified version does not match the version of the document.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictException extends com.amazonaws.services.iotdata.model.AWSIotDataException {
     private static final long serialVersionUID = 1L;
 

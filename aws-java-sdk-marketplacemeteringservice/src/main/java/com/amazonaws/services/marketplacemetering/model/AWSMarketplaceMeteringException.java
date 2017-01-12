@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.marketplacemetering.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWSMarketplace Metering
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSMarketplaceMeteringException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

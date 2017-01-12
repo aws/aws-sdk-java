@@ -13,6 +13,7 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -22,6 +23,7 @@ import java.io.Serializable;
  * <code>"oldestDate": 1325376070.</code>
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecutionTimeFilter implements Serializable, Cloneable {
 
     /**

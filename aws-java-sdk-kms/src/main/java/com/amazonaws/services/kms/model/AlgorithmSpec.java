@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AlgorithmSpec {
 
     RSAES_PKCS1_V1_5("RSAES_PKCS1_V1_5"),

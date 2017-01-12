@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified replication group does not exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplicationGroupNotFoundException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

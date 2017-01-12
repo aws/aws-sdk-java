@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains a paginated collection of DomainInfo structures.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainInfos extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

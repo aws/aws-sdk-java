@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * User already has a reservation with the given identifier.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReservedDBInstanceAlreadyExistsException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

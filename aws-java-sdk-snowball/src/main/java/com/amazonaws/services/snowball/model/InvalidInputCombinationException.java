@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
  * <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidInputCombinationException extends com.amazonaws.services.snowball.model.AmazonSnowballException {
     private static final long serialVersionUID = 1L;
 

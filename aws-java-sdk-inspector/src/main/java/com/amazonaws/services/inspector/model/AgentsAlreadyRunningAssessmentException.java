@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.inspector.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You started an assessment run, but one of the instances is already participating in another assessment run.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AgentsAlreadyRunningAssessmentException extends com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 

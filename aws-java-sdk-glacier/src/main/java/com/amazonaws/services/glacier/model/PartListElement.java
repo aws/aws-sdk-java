@@ -13,12 +13,14 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A list of the part sizes of the multipart upload.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PartListElement implements Serializable, Cloneable {
 
     /**

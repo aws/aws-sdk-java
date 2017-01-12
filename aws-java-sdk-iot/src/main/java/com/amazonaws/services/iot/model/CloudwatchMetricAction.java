@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes an action that captures a CloudWatch metric.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudwatchMetricAction implements Serializable, Cloneable {
 
     /**

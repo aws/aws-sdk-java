@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.identitymanagement.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.identitymanagement.model.GetInstanceProfileRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.identitymanagement.model.GetInstanceProfileResult;
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagement;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetInstanceProfileFunction implements SdkFunction<GetInstanceProfileRequest, GetInstanceProfileResult> {
 
     /**

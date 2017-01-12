@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * This exception is thrown when an internal service error occurs.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MarketplaceCommerceAnalyticsException extends com.amazonaws.services.marketplacecommerceanalytics.model.AWSMarketplaceCommerceAnalyticsException {
     private static final long serialVersionUID = 1L;
 

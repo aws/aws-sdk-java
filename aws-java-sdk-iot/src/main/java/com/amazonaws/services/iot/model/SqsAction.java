@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes an action to publish data to an Amazon SQS queue.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SqsAction implements Serializable, Cloneable {
 
     /**

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kinesis.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested resource could not be found. The stream might not be specified correctly.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when the key or value specified for the tag does not match the regular expression
  * <code>^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidTagParameterException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 

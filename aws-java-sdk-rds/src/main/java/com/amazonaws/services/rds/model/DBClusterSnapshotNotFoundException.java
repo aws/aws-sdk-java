@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DBClusterSnapshotNotFoundException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

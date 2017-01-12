@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The caller reference you attempted to create the distribution with is associated with another distribution.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DistributionAlreadyExistsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

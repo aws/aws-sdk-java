@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Settings that determine when a clip begins and how long it lasts.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TimeSpan implements Serializable, Cloneable {
 
     /**

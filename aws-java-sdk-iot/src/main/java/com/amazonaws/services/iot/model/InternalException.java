@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An unexpected error has occurred.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalException extends com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 

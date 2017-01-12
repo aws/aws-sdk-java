@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.appstream.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified role is invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRoleException extends com.amazonaws.services.appstream.model.AmazonAppStreamException {
     private static final long serialVersionUID = 1L;
 

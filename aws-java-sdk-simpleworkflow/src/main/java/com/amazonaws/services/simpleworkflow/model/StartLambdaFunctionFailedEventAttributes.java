@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Provides details for the <code>StartLambdaFunctionFailed</code> event.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StartLambdaFunctionFailedEventAttributes implements Serializable, Cloneable {
 
     /**

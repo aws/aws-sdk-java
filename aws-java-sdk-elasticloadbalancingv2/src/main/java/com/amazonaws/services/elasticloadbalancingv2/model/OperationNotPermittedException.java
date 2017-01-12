@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This operation is not allowed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OperationNotPermittedException extends com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

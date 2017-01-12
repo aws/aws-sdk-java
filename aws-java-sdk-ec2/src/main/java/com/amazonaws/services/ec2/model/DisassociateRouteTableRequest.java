@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DisassociateRouteTableRequestMarshaller;
@@ -22,6 +24,7 @@ import com.amazonaws.services.ec2.model.transform.DisassociateRouteTableRequestM
  * Contains the parameters for DisassociateRouteTable.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DisassociateRouteTableRequest> {
 

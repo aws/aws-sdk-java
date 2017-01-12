@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled
  * but an invalid triggering event type or no event types were listed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidAutoRollbackConfigException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

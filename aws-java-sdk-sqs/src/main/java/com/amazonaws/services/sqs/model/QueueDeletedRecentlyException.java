@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.sqs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You must wait 60 seconds after deleting a queue before you can create another one with the same name.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class QueueDeletedRecentlyException extends com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the AWS Lambda
  * service.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnexpectedLambdaException extends com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 

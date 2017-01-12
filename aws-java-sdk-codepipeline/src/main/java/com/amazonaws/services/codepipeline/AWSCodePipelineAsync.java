@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codepipeline;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.codepipeline.model.*;
 
 /**
@@ -200,6 +202,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**

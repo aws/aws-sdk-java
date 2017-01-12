@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.workspaces.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon WorkSpaces
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonWorkspacesException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

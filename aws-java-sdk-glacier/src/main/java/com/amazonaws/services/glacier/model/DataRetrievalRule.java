@@ -13,12 +13,14 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Data retrieval policy rule.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DataRetrievalRule implements Serializable, Cloneable {
 
     /**

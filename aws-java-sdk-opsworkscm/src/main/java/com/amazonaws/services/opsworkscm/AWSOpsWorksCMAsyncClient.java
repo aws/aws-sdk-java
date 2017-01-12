@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.opsworkscm;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.opsworkscm.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -73,6 +75,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWSOpsWorksCMAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

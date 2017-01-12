@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.inspector.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InspectorEvent {
 
     ASSESSMENT_RUN_STARTED("ASSESSMENT_RUN_STARTED"),

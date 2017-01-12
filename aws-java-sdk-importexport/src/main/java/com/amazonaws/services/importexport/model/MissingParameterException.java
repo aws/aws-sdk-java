@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * One or more required parameters was missing from the request.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MissingParameterException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

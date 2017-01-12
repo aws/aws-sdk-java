@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An IAM user ARN was not specified.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IamUserArnRequiredException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyVpcPeeringConnectionOptionsRequestMarshaller;
@@ -20,6 +22,7 @@ import com.amazonaws.services.ec2.model.transform.ModifyVpcPeeringConnectionOpti
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyVpcPeeringConnectionOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ModifyVpcPeeringConnectionOptionsRequest> {
 

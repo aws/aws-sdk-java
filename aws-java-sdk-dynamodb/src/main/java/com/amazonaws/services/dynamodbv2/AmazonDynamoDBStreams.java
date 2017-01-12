@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -58,6 +60,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDynamoDBStreams {
 
     /**

@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeCustomerGatewaysRequestMarshaller;
@@ -22,6 +24,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeCustomerGatewaysReques
  * Contains the parameters for DescribeCustomerGateways.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeCustomerGatewaysRequest> {
 

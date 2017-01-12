@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You cannot specify an instance ID in more than one association.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DuplicateInstanceIdException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

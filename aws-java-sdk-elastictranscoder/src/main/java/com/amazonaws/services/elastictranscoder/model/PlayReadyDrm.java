@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -26,6 +27,7 @@ import java.io.Serializable;
  * If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**

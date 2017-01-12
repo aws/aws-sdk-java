@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation would exceed the number of nodes allowed for a cluster.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NumberOfNodesPerClusterLimitExceededException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

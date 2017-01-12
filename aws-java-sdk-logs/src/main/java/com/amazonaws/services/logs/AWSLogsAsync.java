@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.logs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.logs.model.*;
 
 /**
@@ -59,6 +61,7 @@ import com.amazonaws.services.logs.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSLogsAsync extends AWSLogs {
 
     /**

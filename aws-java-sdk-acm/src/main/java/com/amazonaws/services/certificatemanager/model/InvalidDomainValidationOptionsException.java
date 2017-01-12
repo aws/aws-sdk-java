@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.certificatemanager.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more values in the <a>DomainValidationOption</a> structure is incorrect.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidDomainValidationOptionsException extends com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 

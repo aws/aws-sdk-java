@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.certificatemanager.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Certificate Manager
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCertificateManagerException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

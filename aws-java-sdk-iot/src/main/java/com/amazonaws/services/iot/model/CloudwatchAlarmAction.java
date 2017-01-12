@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes an action that updates a CloudWatch alarm.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudwatchAlarmAction implements Serializable, Cloneable {
 
     /**

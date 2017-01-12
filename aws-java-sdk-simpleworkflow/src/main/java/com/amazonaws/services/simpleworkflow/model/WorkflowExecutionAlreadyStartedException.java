@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in the
  * specified domain.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WorkflowExecutionAlreadyStartedException extends com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.storagegateway.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Storage Gateway
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSStorageGatewayException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

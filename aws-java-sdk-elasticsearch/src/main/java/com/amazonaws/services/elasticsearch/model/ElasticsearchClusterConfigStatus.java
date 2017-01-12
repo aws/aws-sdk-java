@@ -13,12 +13,14 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Specifies the configuration status for the specified Elasticsearch domain.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ElasticsearchClusterConfigStatus implements Serializable, Cloneable {
 
     /**

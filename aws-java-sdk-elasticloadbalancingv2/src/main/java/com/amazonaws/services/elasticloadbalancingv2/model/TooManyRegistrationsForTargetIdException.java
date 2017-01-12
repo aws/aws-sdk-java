@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You've reached the limit on the number of times a target can be registered with a load balancer.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyRegistrationsForTargetIdException extends com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

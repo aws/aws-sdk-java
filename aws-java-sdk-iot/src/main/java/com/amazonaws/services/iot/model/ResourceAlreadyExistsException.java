@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The resource already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceAlreadyExistsException extends com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 

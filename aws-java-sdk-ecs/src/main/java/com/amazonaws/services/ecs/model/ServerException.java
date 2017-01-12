@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * These errors are usually caused by a server issue.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServerException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

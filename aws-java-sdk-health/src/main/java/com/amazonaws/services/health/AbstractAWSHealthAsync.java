@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.health;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.health.model.*;
 
 /**
  * Abstract implementation of {@code AWSHealthAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHealthAsync {
 
     protected AbstractAWSHealthAsync() {

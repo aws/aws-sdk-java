@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Simple Workflow Service
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSimpleWorkflowException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

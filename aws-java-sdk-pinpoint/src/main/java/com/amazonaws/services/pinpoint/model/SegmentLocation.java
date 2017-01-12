@@ -13,7 +13,9 @@
 package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentLocation implements Serializable, Cloneable {
 
     /** The country filter according to ISO 3166-1 Alpha-2 codes. */

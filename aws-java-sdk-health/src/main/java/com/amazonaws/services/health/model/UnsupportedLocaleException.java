@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.health.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified locale is not supported.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedLocaleException extends com.amazonaws.services.health.model.AWSHealthException {
     private static final long serialVersionUID = 1L;
 

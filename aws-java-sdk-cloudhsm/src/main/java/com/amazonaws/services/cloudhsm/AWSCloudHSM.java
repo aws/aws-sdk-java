@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudhsm;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -26,6 +28,7 @@ import com.amazonaws.services.cloudhsm.model.*;
  * <p>
  * <fullname>AWS CloudHSM Service</fullname>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCloudHSM {
 
     /**

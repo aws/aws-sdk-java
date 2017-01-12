@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.route53domains.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Route 53 Domains
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRoute53DomainsException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

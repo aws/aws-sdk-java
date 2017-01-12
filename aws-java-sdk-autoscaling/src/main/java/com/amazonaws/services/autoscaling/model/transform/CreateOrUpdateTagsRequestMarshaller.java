@@ -12,9 +12,7 @@
  */
 package com.amazonaws.services.autoscaling.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -23,12 +21,12 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * CreateOrUpdateTagsRequest Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateOrUpdateTagsRequestMarshaller implements Marshaller<Request<CreateOrUpdateTagsRequest>, CreateOrUpdateTagsRequest> {
 
     public Request<CreateOrUpdateTagsRequest> marshall(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {

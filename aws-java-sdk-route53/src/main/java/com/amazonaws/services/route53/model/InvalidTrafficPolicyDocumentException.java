@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The format of the traffic policy document that you specified in the <code>Document</code> element is invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidTrafficPolicyDocumentException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

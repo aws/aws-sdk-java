@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.codepipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to
  * the specified pipeline.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PipelineExecutionNotFoundException extends com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 

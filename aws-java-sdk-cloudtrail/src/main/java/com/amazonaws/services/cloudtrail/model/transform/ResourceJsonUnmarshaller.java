@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.cloudtrail.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Resource JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnmarshallerContext> {
 
     public Resource unmarshall(JsonUnmarshallerContext context) throws Exception {

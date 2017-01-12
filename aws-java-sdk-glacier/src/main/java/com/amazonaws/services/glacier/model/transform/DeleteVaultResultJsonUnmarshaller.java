@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * DeleteVaultResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteVaultResultJsonUnmarshaller implements Unmarshaller<DeleteVaultResult, JsonUnmarshallerContext> {
 
     public DeleteVaultResult unmarshall(JsonUnmarshallerContext context) throws Exception {

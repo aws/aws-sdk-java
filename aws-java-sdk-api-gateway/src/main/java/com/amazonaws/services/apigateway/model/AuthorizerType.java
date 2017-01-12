@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.apigateway.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The authorizer type. the current value is <code>TOKEN</code> for a Lambda function or <code>COGNITO_USER_POOLS</code>
  * for an Amazon Cognito Your User Pool.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AuthorizerType {
 
     TOKEN("TOKEN"),

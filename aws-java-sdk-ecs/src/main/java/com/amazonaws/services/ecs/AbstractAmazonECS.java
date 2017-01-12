@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
  * Abstract implementation of {@code AmazonECS}. Convenient method forms pass through to the corresponding overload that
  * takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonECS implements AmazonECS {
 
     protected AbstractAmazonECS() {

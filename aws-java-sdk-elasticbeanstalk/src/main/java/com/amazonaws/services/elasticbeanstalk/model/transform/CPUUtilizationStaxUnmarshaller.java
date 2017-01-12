@@ -12,22 +12,20 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map.Entry;
-
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * CPUUtilization StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CPUUtilizationStaxUnmarshaller implements Unmarshaller<CPUUtilization, StaxUnmarshallerContext> {
 
     public CPUUtilization unmarshall(StaxUnmarshallerContext context) throws Exception {

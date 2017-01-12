@@ -13,12 +13,14 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Status of the Elasticsearch version options for the specified Elasticsearch domain.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ElasticsearchVersionStatus implements Serializable, Cloneable {
 
     /**

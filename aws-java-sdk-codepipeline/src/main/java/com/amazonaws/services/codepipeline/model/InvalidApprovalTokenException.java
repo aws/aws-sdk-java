@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codepipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The approval request already received a response or has expired.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidApprovalTokenException extends com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 

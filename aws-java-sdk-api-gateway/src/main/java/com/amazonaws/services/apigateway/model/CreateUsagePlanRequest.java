@@ -13,6 +13,8 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -21,6 +23,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * associated API stages, specified in the payload.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateUsagePlanRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes an action that writes data to an Amazon Kinesis Firehose stream.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FirehoseAction implements Serializable, Cloneable {
 
     /**

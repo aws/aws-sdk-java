@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * No encryption key was found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EncryptionKeyNotFoundException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

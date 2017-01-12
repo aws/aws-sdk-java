@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The number of simultaneously running Automation executions exceeded the allowable limit.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AutomationExecutionLimitExceededException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

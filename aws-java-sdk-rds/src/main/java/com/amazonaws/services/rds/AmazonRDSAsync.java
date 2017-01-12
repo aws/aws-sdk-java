@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.rds.model.*;
 
 /**
@@ -96,6 +98,7 @@ import com.amazonaws.services.rds.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonRDSAsync extends AmazonRDS {
 
     /**

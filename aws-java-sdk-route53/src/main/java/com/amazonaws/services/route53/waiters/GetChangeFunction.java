@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.route53.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.route53.model.GetChangeRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.route53.model.GetChangeResult;
 import com.amazonaws.services.route53.AmazonRoute53;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetChangeFunction implements SdkFunction<GetChangeRequest, GetChangeResult> {
 
     /**

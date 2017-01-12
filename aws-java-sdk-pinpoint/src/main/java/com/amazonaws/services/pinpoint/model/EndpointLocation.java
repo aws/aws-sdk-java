@@ -13,7 +13,9 @@
 package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointLocation implements Serializable, Cloneable {
 
     /** The city where the endpoint is located. */

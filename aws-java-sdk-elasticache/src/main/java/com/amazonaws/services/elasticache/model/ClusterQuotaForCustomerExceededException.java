@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request cannot be processed because it would exceed the allowed number of cache clusters per customer.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClusterQuotaForCustomerExceededException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

@@ -13,13 +13,15 @@
 package com.amazonaws.services.importexport.model.transform;
 
 import org.w3c.dom.Node;
+import javax.annotation.Generated;
 
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.util.XpathUtils;
+
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.importexport.model.NoSuchBucketException;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NoSuchBucketExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public NoSuchBucketExceptionUnmarshaller() {

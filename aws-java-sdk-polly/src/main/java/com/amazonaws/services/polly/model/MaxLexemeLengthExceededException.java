@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The maximum size of the lexeme would be exceeded by this operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MaxLexemeLengthExceededException extends com.amazonaws.services.polly.model.AmazonPollyException {
     private static final long serialVersionUID = 1L;
 

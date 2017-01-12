@@ -12,9 +12,7 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -23,12 +21,12 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DeleteMessageRequest Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteMessageRequestMarshaller implements Marshaller<Request<DeleteMessageRequest>, DeleteMessageRequest> {
 
     public Request<DeleteMessageRequest> marshall(DeleteMessageRequest deleteMessageRequest) {

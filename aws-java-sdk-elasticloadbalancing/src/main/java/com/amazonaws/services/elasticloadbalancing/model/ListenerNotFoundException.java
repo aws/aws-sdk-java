@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The load balancer does not have a listener configured at the specified port.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListenerNotFoundException extends com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

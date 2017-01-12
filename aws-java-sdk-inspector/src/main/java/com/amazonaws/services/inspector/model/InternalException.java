@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.inspector.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Internal server error.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalException extends com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 

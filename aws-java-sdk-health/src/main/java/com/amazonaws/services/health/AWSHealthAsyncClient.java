@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.health;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.health.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -92,6 +94,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.lightsail;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.lightsail.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -39,6 +41,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements AmazonLightsailAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

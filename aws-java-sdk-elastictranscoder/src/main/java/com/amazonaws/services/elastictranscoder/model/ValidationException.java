@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more required parameter values were not provided in the request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ValidationException extends com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 

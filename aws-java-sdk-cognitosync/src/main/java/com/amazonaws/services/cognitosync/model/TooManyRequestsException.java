@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cognitosync.model;
 
+import javax.annotation.Generated;
+
 /**
  * Thrown if the request is throttled.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyRequestsException extends com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 

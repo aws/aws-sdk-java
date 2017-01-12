@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains the counts of open tasks, child workflow executions and timers for a workflow execution.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**

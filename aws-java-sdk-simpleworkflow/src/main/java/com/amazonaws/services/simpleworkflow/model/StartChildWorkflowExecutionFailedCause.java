@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StartChildWorkflowExecutionFailedCause {
 
     WORKFLOW_TYPE_DOES_NOT_EXIST("WORKFLOW_TYPE_DOES_NOT_EXIST"),

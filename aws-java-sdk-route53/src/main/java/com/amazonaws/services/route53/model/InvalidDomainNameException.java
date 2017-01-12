@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified domain name is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidDomainNameException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

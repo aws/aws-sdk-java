@@ -13,6 +13,8 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -20,6 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The POST request to create a usage plan key for adding an existing API key to a usage plan.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

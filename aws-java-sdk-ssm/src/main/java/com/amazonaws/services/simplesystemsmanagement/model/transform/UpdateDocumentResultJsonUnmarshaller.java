@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * UpdateDocumentResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateDocumentResultJsonUnmarshaller implements Unmarshaller<UpdateDocumentResult, JsonUnmarshallerContext> {
 
     public UpdateDocumentResult unmarshall(JsonUnmarshallerContext context) throws Exception {

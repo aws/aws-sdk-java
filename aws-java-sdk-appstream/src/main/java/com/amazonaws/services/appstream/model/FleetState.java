@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.appstream.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FleetState {
 
     STARTING("STARTING"),

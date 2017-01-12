@@ -2,6 +2,8 @@ ${fileHeader}
 package ${metadata.packageName}.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import ${metadata.packageName}.model.transform.${shape.shapeName}Marshaller;
@@ -9,6 +11,7 @@ import ${metadata.packageName}.model.transform.${shape.shapeName}Marshaller;
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName} extends AmazonWebServiceRequest
         implements Serializable, Cloneable, DryRunSupportedRequest<${shape.shapeName}> {
 

@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes the actions associated with a rule.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Action implements Serializable, Cloneable {
 
     /**

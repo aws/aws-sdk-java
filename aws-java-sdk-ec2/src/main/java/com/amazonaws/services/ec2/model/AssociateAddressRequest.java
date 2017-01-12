@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshaller;
@@ -22,6 +24,7 @@ import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshal
  * Contains the parameters for AssociateAddress.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AssociateAddressRequest> {
 
     /**

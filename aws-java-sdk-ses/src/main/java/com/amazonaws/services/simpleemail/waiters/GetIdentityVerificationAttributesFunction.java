@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.simpleemail.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.simpleemail.model.GetIdentityVerificationAttributesRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.simpleemail.model.GetIdentityVerificationAttribute
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetIdentityVerificationAttributesFunction implements
         SdkFunction<GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResult> {
 

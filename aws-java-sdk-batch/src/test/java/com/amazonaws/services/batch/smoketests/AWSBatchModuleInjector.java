@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.batch.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.batch.AWSBatchClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.batch.AWSBatchClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSBatchModuleInjector implements InjectorSource {
 
     @Override

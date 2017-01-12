@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.dynamodbv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15
  * minutes after it is retrieved using the <i>GetShardIterator</i> action.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExpiredIteratorException extends com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 

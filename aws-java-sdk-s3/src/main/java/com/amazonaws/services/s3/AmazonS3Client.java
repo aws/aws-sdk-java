@@ -1933,6 +1933,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addParameter("uploadId", copyPartRequest.getUploadId());
         request.addParameter("partNumber", Integer.toString(copyPartRequest.getPartNumber()));
 
+        populateRequesterPaysHeader(request, copyPartRequest.isRequesterPays());
+
         /*
          * We can't send a non-zero length Content-Length header if the user
          * specified it, otherwise it messes up the HTTP connection when the

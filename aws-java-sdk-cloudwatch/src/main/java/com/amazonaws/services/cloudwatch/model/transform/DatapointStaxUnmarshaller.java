@@ -13,11 +13,11 @@
 package com.amazonaws.services.cloudwatch.model.transform;
 
 import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
+
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.transform.Unmarshaller;
@@ -28,6 +28,8 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Datapoint StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DatapointStaxUnmarshaller implements Unmarshaller<Datapoint, StaxUnmarshallerContext> {
 
     private static class ExtendedStatisticsMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, Double>, StaxUnmarshallerContext> {

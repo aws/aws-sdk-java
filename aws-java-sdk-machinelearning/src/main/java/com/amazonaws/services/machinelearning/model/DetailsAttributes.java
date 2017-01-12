@@ -12,10 +12,13 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * Contains the key values of <code>DetailsMap</code>: <code>PredictiveModelType</code> - Indicates the type of the
  * <code>MLModel</code>. <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DetailsAttributes {
 
     PredictiveModelType("PredictiveModelType"),

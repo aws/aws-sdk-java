@@ -1,9 +1,12 @@
 ${fileHeader}
 package ${metadata.packageName}.model;
 
+import javax.annotation.Generated;
+
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName} extends ${baseClassFqcn} {
     private static final long serialVersionUID = 1L;
 

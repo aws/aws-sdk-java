@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.shield;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.shield.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -30,6 +32,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

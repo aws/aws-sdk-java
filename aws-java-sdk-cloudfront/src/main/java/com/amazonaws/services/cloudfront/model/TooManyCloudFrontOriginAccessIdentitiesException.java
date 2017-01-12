@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Processing your request would cause you to exceed the maximum number of origin access identities allowed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyCloudFrontOriginAccessIdentitiesException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

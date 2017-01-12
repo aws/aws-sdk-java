@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.dynamodbv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum OperationType {
 
     INSERT("INSERT"),

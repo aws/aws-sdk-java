@@ -12,9 +12,7 @@
  */
 package com.amazonaws.services.redshift.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -23,12 +21,12 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.redshift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DisableLoggingRequest Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisableLoggingRequestMarshaller implements Marshaller<Request<DisableLoggingRequest>, DisableLoggingRequest> {
 
     public Request<DisableLoggingRequest> marshall(DisableLoggingRequest disableLoggingRequest) {

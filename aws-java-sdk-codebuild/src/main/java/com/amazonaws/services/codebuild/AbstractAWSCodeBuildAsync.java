@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codebuild;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.codebuild.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.codebuild.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements AWSCodeBuildAsync {
 
     protected AbstractAWSCodeBuildAsync() {

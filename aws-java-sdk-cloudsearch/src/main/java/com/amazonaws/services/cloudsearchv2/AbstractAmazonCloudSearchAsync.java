@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudsearchv2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudsearchv2.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.cloudsearchv2.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch implements AmazonCloudSearchAsync {
 
     protected AbstractAmazonCloudSearchAsync() {

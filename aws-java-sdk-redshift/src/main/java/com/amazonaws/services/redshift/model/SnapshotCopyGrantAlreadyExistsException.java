@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The snapshot copy grant can't be created because a grant with the same name already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnapshotCopyGrantAlreadyExistsException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

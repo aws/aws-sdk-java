@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kinesisanalytics;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.kinesisanalytics.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.kinesisanalytics.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonKinesisAnalyticsAsync extends AbstractAmazonKinesisAnalytics implements AmazonKinesisAnalyticsAsync {
 
     protected AbstractAmazonKinesisAnalyticsAsync() {

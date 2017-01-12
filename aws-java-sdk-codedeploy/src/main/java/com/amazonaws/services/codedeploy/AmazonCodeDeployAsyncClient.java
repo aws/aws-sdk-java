@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codedeploy;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -96,6 +98,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implements AmazonCodeDeployAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

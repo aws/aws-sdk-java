@@ -13,6 +13,7 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -24,6 +25,7 @@ import java.io.Serializable;
  * API</a>, <a href="http://docs.aws.amazon.com/apigateway/api-reference/link-relation/documentationpart-import/">
  * documentationpart:import</a>, <a>DocumentationPart</a> </div>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportDocumentationPartsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.sqs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Error code 400. Unsupported operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedOperationException extends com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 

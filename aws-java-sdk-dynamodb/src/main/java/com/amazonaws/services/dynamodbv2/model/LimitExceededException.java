@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
@@ -25,6 +27,7 @@ package com.amazonaws.services.dynamodbv2.model;
  * The total limit of tables in the <code>ACTIVE</code> state is 250.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 

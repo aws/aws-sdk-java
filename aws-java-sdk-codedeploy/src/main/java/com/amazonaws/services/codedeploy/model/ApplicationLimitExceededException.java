@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * More applications were attempted to be created than are allowed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationLimitExceededException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

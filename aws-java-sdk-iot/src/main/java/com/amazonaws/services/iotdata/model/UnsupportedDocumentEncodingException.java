@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iotdata.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The document encoding is not supported.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedDocumentEncodingException extends com.amazonaws.services.iotdata.model.AWSIotDataException {
     private static final long serialVersionUID = 1L;
 

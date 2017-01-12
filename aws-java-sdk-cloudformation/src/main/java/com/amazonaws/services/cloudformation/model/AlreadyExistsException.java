@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudformation.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Resource with the name requested already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AlreadyExistsException extends com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {
     private static final long serialVersionUID = 1L;
 

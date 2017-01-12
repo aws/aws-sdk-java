@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ChefConfiguration JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ChefConfigurationJsonUnmarshaller implements Unmarshaller<ChefConfiguration, JsonUnmarshallerContext> {
 
     public ChefConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The health check you're attempting to create already exists.
@@ -21,6 +23,7 @@ package com.amazonaws.services.route53.model;
  * <code>CallerReference</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HealthCheckAlreadyExistsException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

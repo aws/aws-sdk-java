@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codepipeline;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.*;
 
@@ -19,6 +21,7 @@ import com.amazonaws.*;
  * Abstract implementation of {@code AWSCodePipeline}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSCodePipeline implements AWSCodePipeline {
 
     protected AbstractAWSCodePipeline() {

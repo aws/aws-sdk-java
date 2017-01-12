@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.lambda.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * AWS Lambda could not unzip the function zip file.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidZipFileException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 

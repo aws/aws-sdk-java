@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Structure containing details about the detected label, including name, and level of confidence.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Label implements Serializable, Cloneable {
 
     /**

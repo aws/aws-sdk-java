@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The collection of documents that match the search request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Hits implements Serializable, Cloneable {
 
     /**

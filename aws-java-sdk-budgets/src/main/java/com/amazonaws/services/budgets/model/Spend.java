@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * A structure represent either a cost spend or usage spend. Contains an amount and a unit.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Spend implements Serializable, Cloneable {
 
     private java.math.BigDecimal amount;

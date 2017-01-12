@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The number of nodes specified exceeds the allotted capacity of the cluster.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsufficientClusterCapacityException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified layer upload does not contain any layer parts.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EmptyUploadException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

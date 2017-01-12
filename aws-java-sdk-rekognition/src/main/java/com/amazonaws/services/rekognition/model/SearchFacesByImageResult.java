@@ -13,7 +13,9 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

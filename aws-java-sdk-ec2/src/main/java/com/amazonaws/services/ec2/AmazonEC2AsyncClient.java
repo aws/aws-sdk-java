@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -29,6 +31,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2Async {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

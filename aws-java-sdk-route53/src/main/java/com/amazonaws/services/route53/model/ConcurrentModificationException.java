@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Another user submitted a request to update the object at the same time that you did. Retry the request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConcurrentModificationException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

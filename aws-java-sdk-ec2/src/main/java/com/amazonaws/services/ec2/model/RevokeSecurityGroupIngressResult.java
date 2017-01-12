@@ -13,11 +13,14 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RevokeSecurityGroupIngressResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

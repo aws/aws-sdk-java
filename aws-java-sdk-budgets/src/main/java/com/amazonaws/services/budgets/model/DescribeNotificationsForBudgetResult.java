@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Response of GetNotificationsForBudget
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 

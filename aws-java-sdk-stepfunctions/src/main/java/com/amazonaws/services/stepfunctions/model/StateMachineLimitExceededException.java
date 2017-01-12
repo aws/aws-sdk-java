@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.stepfunctions.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The maximum number of state machines has been reached. Existing state machines must be deleted before a new state
  * machine can be created.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StateMachineLimitExceededException extends com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException {
     private static final long serialVersionUID = 1L;
 

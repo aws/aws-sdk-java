@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.applicationdiscovery.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The server experienced an internal error. Try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServerInternalErrorException extends com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {
     private static final long serialVersionUID = 1L;
 

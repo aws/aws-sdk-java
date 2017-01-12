@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.datapipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An internal service error occurred.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServiceErrorException extends com.amazonaws.services.datapipeline.model.DataPipelineException {
     private static final long serialVersionUID = 1L;
 

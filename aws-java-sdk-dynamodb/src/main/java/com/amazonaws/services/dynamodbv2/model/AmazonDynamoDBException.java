@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.dynamodbv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon DynamoDB
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonDynamoDBException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

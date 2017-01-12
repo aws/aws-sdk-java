@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Data format is not valid, Kinesis Analytics is not able to detect schema for the given streaming source.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnableToDetectSchemaException extends com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException {
     private static final long serialVersionUID = 1L;
 

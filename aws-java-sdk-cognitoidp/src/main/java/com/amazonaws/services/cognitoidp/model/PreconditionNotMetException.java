@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when a precondition is not met.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PreconditionNotMetException extends com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 

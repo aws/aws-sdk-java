@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SuggestStatus implements Serializable, Cloneable {
 
     /**

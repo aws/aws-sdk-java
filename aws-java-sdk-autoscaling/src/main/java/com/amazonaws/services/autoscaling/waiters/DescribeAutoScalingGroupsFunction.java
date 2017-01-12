@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.autoscaling.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.autoscaling.model.DescribeAutoScalingGroupsRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.autoscaling.model.DescribeAutoScalingGroupsResult;
 import com.amazonaws.services.autoscaling.AmazonAutoScaling;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAutoScalingGroupsFunction implements SdkFunction<DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResult> {
 
     /**

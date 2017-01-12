@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -98,6 +100,7 @@ import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonRDS {
 
     /**

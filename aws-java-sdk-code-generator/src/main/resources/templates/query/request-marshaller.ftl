@@ -4,6 +4,7 @@ package ${transformPackage};
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -19,6 +20,7 @@ import com.amazonaws.util.IdempotentUtils;
  * ${shapeName} Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>, ${shapeName}> {
 
 <#assign shape = shapes[shapeName]/>

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.logs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Multiple requests to update the same resource were in conflict.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OperationAbortedException extends com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 

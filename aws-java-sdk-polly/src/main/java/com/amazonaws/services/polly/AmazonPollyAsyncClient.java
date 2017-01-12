@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.polly;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.polly.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -31,6 +33,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonPollyAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

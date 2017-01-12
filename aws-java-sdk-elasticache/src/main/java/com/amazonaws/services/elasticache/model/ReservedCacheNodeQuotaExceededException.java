@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request cannot be processed because it would exceed the user's cache node quota.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReservedCacheNodeQuotaExceededException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

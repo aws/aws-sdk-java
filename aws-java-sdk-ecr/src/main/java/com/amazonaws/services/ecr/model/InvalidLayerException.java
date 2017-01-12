@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest
  * specified.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidLayerException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

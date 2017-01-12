@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidentity.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Thrown for missing or bad input parameter(s).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterException extends com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 

@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * DisableKeyRotationResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisableKeyRotationResultJsonUnmarshaller implements Unmarshaller<DisableKeyRotationResult, JsonUnmarshallerContext> {
 
     public DisableKeyRotationResult unmarshall(JsonUnmarshallerContext context) throws Exception {

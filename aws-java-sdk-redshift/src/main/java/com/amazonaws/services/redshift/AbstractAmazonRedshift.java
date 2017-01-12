@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.redshift.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
  * Abstract implementation of {@code AmazonRedshift}. Convenient method forms pass through to the corresponding overload
  * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonRedshift implements AmazonRedshift {
 
     protected AbstractAmazonRedshift() {

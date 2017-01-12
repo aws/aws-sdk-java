@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.directory;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.directory.model.*;
 
 /**
@@ -41,6 +43,7 @@ import com.amazonaws.services.directory.model.*;
  * </p>
  * </note>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**

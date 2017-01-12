@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rekognition.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImageTooLargeException extends com.amazonaws.services.rekognition.model.AmazonRekognitionException {
     private static final long serialVersionUID = 1L;
 

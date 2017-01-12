@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kinesisfirehose;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.*;
 
@@ -19,6 +21,7 @@ import com.amazonaws.*;
  * Abstract implementation of {@code AmazonKinesisFirehose}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonKinesisFirehose implements AmazonKinesisFirehose {
 
     protected AbstractAmazonKinesisFirehose() {

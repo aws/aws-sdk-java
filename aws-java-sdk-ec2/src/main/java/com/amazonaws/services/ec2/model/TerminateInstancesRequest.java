@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarshaller;
@@ -22,6 +24,7 @@ import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarsh
  * Contains the parameters for TerminateInstances.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TerminateInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<TerminateInstancesRequest> {
 
     /**

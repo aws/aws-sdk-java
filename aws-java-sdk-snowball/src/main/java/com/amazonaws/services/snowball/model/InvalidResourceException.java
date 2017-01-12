@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified resource can't be found. Check the information you provided in your last request, and try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidResourceException extends com.amazonaws.services.snowball.model.AmazonSnowballException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.marketplacecommerceanalytics;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
@@ -22,6 +24,7 @@ import com.amazonaws.client.AwsSyncClientParams;
  * of the builder is preferred over using constructors of the client class.
  **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSMarketplaceCommerceAnalyticsClientBuilder extends
         AwsSyncClientBuilder<AWSMarketplaceCommerceAnalyticsClientBuilder, AWSMarketplaceCommerceAnalytics> {
 

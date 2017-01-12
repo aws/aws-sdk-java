@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most common reason for
  * this error is that the ARN does not meet the requirements for the service type.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRepositoryTriggerDestinationArnException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

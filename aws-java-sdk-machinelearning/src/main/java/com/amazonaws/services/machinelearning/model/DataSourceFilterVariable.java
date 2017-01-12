@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A list of the variables to use in searching or filtering <code>DataSource</code>.
@@ -33,6 +35,7 @@ package com.amazonaws.services.machinelearning.model;
  * </p>
  * </note>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DataSourceFilterVariable {
 
     CreatedAt("CreatedAt"),

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The address provided was invalid. Check the address with your region's carrier, and try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidAddressException extends com.amazonaws.services.snowball.model.AmazonSnowballException {
     private static final long serialVersionUID = 1L;
 

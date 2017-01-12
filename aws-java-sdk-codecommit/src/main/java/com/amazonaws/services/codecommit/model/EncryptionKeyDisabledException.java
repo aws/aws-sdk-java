@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The encryption key is disabled.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EncryptionKeyDisabledException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

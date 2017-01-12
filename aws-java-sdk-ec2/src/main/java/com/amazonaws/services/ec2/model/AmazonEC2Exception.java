@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.ec2.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Elastic Compute Cloud
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonEC2Exception extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

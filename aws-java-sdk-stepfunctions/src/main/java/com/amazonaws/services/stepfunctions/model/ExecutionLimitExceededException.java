@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.stepfunctions.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The maximum number of running executions has been reached. Running executions must end or be stopped before a new
  * execution can be started.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecutionLimitExceededException extends com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException {
     private static final long serialVersionUID = 1L;
 

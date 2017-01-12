@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.sns.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that the customer already owns the maximum allowed number of topics.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TopicLimitExceededException extends com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 

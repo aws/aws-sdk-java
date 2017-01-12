@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A list of the variables to use in searching or filtering <code>BatchPrediction</code>.
@@ -31,6 +33,7 @@ package com.amazonaws.services.machinelearning.model;
  * URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BatchPredictionFilterVariable {
 
     CreatedAt("CreatedAt"),

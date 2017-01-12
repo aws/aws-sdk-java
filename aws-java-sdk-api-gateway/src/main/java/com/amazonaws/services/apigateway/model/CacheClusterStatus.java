@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.apigateway.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returns the status of the <b>CacheCluster</b>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CacheClusterStatus {
 
     CREATE_IN_PROGRESS("CREATE_IN_PROGRESS"),

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You can't revert the certificate transfer because the transfer is already complete.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TransferAlreadyCompletedException extends com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 

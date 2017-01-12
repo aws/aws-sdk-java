@@ -13,6 +13,7 @@
 package com.amazonaws.services.applicationautoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -23,6 +24,7 @@ import java.io.Serializable;
  *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/StepScalingPolicyConfiguration"
  *      target="_top">AWS API Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StepScalingPolicyConfiguration implements Serializable, Cloneable {
 
     /**

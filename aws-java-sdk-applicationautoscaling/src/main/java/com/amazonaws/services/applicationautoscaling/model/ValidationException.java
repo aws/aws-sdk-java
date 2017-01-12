@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An exception was thrown for a validation issue. Review the available parameters for the API request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ValidationException extends com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 

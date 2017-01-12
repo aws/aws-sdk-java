@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SNSInvalidTopicException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

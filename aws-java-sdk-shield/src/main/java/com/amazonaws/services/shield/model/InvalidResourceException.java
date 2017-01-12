@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.shield.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource
  * might not exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidResourceException extends com.amazonaws.services.shield.model.AWSShieldException {
     private static final long serialVersionUID = 1L;
 

@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * PresetWatermark JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PresetWatermarkJsonUnmarshaller implements Unmarshaller<PresetWatermark, JsonUnmarshallerContext> {
 
     public PresetWatermark unmarshall(JsonUnmarshallerContext context) throws Exception {

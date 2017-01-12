@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:
@@ -45,6 +47,7 @@ package com.amazonaws.services.cloudtrail.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidTrailNameException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 

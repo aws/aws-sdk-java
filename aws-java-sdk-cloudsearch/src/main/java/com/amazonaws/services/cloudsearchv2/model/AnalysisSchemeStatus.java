@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The status and configuration of an <code>AnalysisScheme</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AnalysisSchemeStatus implements Serializable, Cloneable {
 
     private AnalysisScheme options;

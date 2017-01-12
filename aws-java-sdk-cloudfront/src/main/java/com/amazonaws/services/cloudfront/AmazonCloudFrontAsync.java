@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudfront;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudfront.model.*;
 
 /**
@@ -30,6 +32,7 @@ import com.amazonaws.services.cloudfront.model.*;
  * associated API calls, see the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**

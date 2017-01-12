@@ -16,7 +16,8 @@ import org.w3c.dom.*;
 
 import java.net.*;
 import java.util.*;
-import java.util.Map.Entry;
+
+import javax.annotation.Generated;
 
 import org.apache.commons.logging.*;
 
@@ -55,6 +56,7 @@ import com.amazonaws.services.polly.model.transform.*;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonPolly {
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;

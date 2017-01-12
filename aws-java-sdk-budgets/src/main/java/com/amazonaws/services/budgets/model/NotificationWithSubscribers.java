@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * A structure to relate notification and a list of subscribers who belong to the notification.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotificationWithSubscribers implements Serializable, Cloneable {
 
     private Notification notification;

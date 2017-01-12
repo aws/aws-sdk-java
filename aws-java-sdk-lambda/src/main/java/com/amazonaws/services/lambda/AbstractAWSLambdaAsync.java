@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.lambda;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.lambda.model.*;
 
 /**
  * Abstract implementation of {@code AWSLambdaAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLambdaAsync {
 
     protected AbstractAWSLambdaAsync() {

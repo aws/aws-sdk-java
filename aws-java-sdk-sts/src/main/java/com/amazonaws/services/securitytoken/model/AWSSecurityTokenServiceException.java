@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.securitytoken.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Security Token Service
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSSecurityTokenServiceException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

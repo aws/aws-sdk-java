@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified sample rate is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidSampleRateException extends com.amazonaws.services.polly.model.AmazonPollyException {
     private static final long serialVersionUID = 1L;
 

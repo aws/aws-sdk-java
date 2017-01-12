@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.certificatemanager.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Processing has reached an invalid state. For example, this exception can occur if the specified domain is not using
@@ -19,6 +21,7 @@ package com.amazonaws.services.certificatemanager.model;
  * message returned by ACM to determine which state is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidStateException extends com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 

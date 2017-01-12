@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.dynamodbv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An item collection is too large. This exception is only returned for tables that have one or more local secondary
  * indexes.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ItemCollectionSizeLimitExceededException extends com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 

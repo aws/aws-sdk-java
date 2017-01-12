@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.opsworks.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DeploymentCommandName {
 
     Install_dependencies("install_dependencies"),

@@ -1,9 +1,12 @@
 ${fileHeader}
 package ${metadata.packageName}.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by ${metadata.serviceFullName}
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${className} extends ${baseExceptionFqcn} {
 
     private static final long serialVersionUID = 1L;

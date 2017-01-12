@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Subscriber model. Each notification may contain multiple subscribers with different addresses.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Subscriber implements Serializable, Cloneable {
 
     private String subscriptionType;

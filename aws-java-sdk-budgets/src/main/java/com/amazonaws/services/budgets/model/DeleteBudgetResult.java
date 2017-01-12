@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Response of DeleteBudget
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteBudgetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

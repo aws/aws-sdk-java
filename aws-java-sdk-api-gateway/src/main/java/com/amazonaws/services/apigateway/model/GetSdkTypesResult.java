@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The collection of <a>SdkType</a> instances.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetSdkTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String position;

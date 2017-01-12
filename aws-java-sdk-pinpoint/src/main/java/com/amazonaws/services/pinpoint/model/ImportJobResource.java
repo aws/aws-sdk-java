@@ -13,7 +13,9 @@
 package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportJobResource implements Serializable, Cloneable {
 
     /** Sets whether the endpoints create a segment when they are imported. */

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.shield.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Exception that indicates that the operation would not cause any change to occur.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidOperationException extends com.amazonaws.services.shield.model.AWSShieldException {
     private static final long serialVersionUID = 1L;
 

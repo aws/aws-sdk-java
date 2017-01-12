@@ -6,6 +6,8 @@ ${fileHeader}
 
 package ${metadata.packageName}.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import ${metadata.packageName}.model.${inputType};
@@ -13,6 +15,7 @@ import ${metadata.packageName}.model.${outputType};
 import ${metadata.packageName}.${metadata.syncInterface};
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${operationName}Function implements SdkFunction<${inputType}, ${outputType}>{
 
     /**

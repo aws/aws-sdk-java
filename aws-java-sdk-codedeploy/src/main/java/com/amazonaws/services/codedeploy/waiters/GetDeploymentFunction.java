@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.codedeploy.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.codedeploy.model.GetDeploymentRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.codedeploy.model.GetDeploymentResult;
 import com.amazonaws.services.codedeploy.AmazonCodeDeploy;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDeploymentFunction implements SdkFunction<GetDeploymentRequest, GetDeploymentResult> {
 
     /**

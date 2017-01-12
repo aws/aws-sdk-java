@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM) or AWS
@@ -19,6 +21,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * the certificate is not fully available yet.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CertificateNotFoundException extends com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The next token specified is invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidNextTokenException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {
     private static final long serialVersionUID = 1L;
 

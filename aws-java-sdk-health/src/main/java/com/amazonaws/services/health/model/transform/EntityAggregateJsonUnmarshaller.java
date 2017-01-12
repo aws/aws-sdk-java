@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.health.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.health.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * EntityAggregate JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EntityAggregateJsonUnmarshaller implements Unmarshaller<EntityAggregate, JsonUnmarshallerContext> {
 
     public EntityAggregate unmarshall(JsonUnmarshallerContext context) throws Exception {

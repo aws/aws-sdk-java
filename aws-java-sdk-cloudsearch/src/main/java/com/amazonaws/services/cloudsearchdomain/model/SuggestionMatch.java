@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SuggestionMatch implements Serializable, Cloneable {
 
     /**

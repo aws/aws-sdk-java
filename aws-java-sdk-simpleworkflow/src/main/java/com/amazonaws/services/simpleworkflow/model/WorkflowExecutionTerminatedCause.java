@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum WorkflowExecutionTerminatedCause {
 
     CHILD_POLICY_APPLIED("CHILD_POLICY_APPLIED"),

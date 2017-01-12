@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import ${metadata.packageName}.model.*;
 import com.amazonaws.transform.Unmarshaller;
@@ -18,6 +19,8 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ${shape.shapeName} StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName}StaxUnmarshaller implements Unmarshaller<${shape.shapeName}, StaxUnmarshallerContext> {
 
 <#if shape.members?has_content>

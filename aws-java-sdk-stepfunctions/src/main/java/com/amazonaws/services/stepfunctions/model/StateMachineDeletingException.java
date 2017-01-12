@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.stepfunctions.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified state machine is being deleted.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StateMachineDeletingException extends com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException {
     private static final long serialVersionUID = 1L;
 

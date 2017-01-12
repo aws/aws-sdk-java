@@ -13,6 +13,7 @@
 package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Object representing a Connector
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Connector" target="_top">AWS API
  *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Connector implements Serializable, Cloneable {
 
     private String connectorId;

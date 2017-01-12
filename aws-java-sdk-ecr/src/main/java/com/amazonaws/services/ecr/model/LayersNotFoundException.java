@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified layers could not be found, or the specified layer is not valid for this repository.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LayersNotFoundException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

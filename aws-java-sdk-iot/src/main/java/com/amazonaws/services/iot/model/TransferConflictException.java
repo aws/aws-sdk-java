@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You can't transfer the certificate because authorization policies are still attached.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TransferConflictException extends com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 

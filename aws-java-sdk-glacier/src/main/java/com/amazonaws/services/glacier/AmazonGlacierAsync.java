@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.glacier;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.glacier.model.*;
 
 /**
@@ -64,6 +66,7 @@ import com.amazonaws.services.glacier.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonGlacierAsync extends AmazonGlacier {
 
     /**

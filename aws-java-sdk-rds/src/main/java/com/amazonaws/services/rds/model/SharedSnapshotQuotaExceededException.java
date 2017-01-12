@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SharedSnapshotQuotaExceededException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

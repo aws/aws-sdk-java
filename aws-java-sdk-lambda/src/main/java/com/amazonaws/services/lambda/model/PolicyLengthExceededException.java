@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.lambda.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Lambda function access policy is limited to 20 KB.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PolicyLengthExceededException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * The specified job ID has been canceled and is no longer valid.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CanceledJobIdException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpledb.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Too many items exist in a single call.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NumberSubmittedItemsExceededException extends com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 

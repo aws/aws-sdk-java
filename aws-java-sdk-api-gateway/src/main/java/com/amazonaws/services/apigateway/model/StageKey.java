@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A reference to a unique stage identified in the format <code>{restApiId}/{stage}</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StageKey implements Serializable, Cloneable {
 
     /**

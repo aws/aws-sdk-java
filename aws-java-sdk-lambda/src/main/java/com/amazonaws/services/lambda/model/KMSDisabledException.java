@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.lambda.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda
  * function's KMS key settings.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class KMSDisabledException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The calling account has reached the ENI limit for the specific AWS region. Client should try to delete some ENIs or
@@ -20,6 +22,7 @@ package com.amazonaws.services.elasticfilesystem.model;
  * Amazon Virtual Private Cloud User Guide (see the Network interfaces per VPC entry in the table).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NetworkInterfaceLimitExceededException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

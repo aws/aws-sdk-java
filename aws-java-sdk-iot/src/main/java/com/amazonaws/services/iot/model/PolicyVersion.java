@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes a policy version.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PolicyVersion implements Serializable, Cloneable {
 
     /**

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * The account specified does not have the appropriate bucket permissions.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BucketPermissionException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticmapreduce;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -28,6 +30,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceClient implements AmazonElasticMapReduceAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

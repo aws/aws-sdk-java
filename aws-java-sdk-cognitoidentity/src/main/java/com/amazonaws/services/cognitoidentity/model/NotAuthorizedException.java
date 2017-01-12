@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidentity.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Thrown when a user is not authorized to access the requested resource.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotAuthorizedException extends com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 

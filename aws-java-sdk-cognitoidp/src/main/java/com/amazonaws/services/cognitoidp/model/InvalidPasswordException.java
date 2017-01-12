@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when the Amazon Cognito service encounters an invalid password.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidPasswordException extends com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 

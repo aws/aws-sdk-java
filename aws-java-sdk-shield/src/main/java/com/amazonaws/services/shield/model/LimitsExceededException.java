@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.shield.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Exception that indicates that the operation would exceed a limit.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitsExceededException extends com.amazonaws.services.shield.model.AWSShieldException {
     private static final long serialVersionUID = 1L;
 

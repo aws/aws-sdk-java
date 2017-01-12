@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The captions to be created, if any.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InputCaptions implements Serializable, Cloneable {
 
     /**

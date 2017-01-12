@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.marketplacemetering.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have metered usage for a CustomerIdentifier that does not exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidCustomerIdentifierException extends com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 

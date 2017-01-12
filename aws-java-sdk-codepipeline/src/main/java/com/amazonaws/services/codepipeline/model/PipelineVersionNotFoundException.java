@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codepipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified pipeline version was specified in an invalid format or cannot be found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PipelineVersionNotFoundException extends com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 

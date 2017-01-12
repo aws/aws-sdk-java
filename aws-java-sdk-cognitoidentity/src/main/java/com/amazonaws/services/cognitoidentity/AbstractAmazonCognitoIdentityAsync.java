@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidentity;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cognitoidentity.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonCognitoIdentityAsync extends AbstractAmazonCognitoIdentity implements AmazonCognitoIdentityAsync {
 
     protected AbstractAmazonCognitoIdentityAsync() {

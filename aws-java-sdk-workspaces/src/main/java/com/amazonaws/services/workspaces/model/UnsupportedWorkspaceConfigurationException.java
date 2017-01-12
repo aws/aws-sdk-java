@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.workspaces.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The WorkSpace does not have the supported configuration for this operation. For more information, see the <a
  * href="http://docs.aws.amazon.com/workspaces/latest/adminguide">Amazon WorkSpaces Administration Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedWorkspaceConfigurationException extends com.amazonaws.services.workspaces.model.AmazonWorkspacesException {
     private static final long serialVersionUID = 1L;
 

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS CodeDeploy
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCodeDeployException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

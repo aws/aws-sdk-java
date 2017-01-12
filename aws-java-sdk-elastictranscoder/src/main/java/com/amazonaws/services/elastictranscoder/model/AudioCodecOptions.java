@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Options associated with your audio codec.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioCodecOptions implements Serializable, Cloneable {
 
     /**

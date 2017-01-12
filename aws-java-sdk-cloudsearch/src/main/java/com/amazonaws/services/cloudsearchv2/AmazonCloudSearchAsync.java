@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudsearchv2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudsearchv2.model.*;
 
 /**
@@ -36,6 +38,7 @@ import com.amazonaws.services.cloudsearchv2.model.*;
  * Endpoints</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
 
     /**

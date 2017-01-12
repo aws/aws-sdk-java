@@ -12,22 +12,20 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map.Entry;
-
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * SlotStartTimeRangeRequest StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SlotStartTimeRangeRequestStaxUnmarshaller implements Unmarshaller<SlotStartTimeRangeRequest, StaxUnmarshallerContext> {
 
     public SlotStartTimeRangeRequest unmarshall(StaxUnmarshallerContext context) throws Exception {

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * DB security group authorization quota has been reached.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AuthorizationQuotaExceededException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

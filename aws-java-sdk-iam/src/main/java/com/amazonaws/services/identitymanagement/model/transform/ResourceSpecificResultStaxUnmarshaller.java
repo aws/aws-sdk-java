@@ -13,11 +13,12 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
-import java.util.HashMap;
+
 import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.transform.Unmarshaller;
@@ -28,6 +29,8 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ResourceSpecificResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceSpecificResultStaxUnmarshaller implements Unmarshaller<ResourceSpecificResult, StaxUnmarshallerContext> {
 
     private static class EvalDecisionDetailsMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FileSystemNotFoundException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

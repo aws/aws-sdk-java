@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A deployment group with the specified name already exists with the applicable IAM user or AWS account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeploymentGroupAlreadyExistsException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

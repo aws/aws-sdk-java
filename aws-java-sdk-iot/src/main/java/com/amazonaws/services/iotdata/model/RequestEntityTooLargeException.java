@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iotdata.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The payload exceeds the maximum size allowed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RequestEntityTooLargeException extends com.amazonaws.services.iotdata.model.AWSIotDataException {
     private static final long serialVersionUID = 1L;
 

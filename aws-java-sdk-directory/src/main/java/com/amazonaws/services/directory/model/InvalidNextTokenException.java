@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.directory.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The <i>NextToken</i> value is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidNextTokenException extends com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 

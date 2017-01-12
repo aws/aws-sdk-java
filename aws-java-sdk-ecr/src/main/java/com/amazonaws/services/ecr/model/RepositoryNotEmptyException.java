@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified repository contains images. To delete a repository that contains images, you must force the deletion
  * with the <code>force</code> parameter.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RepositoryNotEmptyException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

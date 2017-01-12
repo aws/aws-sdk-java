@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.directconnect;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.directconnect.model.*;
 
 /**
@@ -34,6 +36,7 @@ import com.amazonaws.services.directconnect.model.*;
  * public AWS services in all US Regions and AWS GovCloud (US).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**

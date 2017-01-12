@@ -13,8 +13,11 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

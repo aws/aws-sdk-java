@@ -13,12 +13,14 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Metadata that help you categorize IT assets.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Tag implements Serializable, Cloneable {
 
     /**

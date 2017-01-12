@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rekognition.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The provided image format is not supported.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidImageFormatException extends com.amazonaws.services.rekognition.model.AmazonRekognitionException {
     private static final long serialVersionUID = 1L;
 

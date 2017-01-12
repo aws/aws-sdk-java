@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Represents an activity type.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActivityType implements Serializable, Cloneable {
 
     /**

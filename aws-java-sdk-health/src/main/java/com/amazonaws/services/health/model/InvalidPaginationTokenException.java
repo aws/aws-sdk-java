@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.health.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified pagination token (<code>nextToken</code>) is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidPaginationTokenException extends com.amazonaws.services.health.model.AWSHealthException {
     private static final long serialVersionUID = 1L;
 

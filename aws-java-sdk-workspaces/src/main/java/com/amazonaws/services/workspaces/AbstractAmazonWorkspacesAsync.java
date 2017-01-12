@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.workspaces;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.workspaces.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.workspaces.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces implements AmazonWorkspacesAsync {
 
     protected AbstractAmazonWorkspacesAsync() {

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.stepfunctions.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An execution with the same name already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecutionAlreadyExistsException extends com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException {
     private static final long serialVersionUID = 1L;
 

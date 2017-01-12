@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.elasticache.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.elasticache.model.DescribeReplicationGroupsRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.elasticache.model.DescribeReplicationGroupsResult;
 import com.amazonaws.services.elasticache.AmazonElastiCache;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeReplicationGroupsFunction implements SdkFunction<DescribeReplicationGroupsRequest, DescribeReplicationGroupsResult> {
 
     /**

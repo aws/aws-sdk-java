@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested operation would cause a conflict with the current state of a resource associated with the request
  * and/or the game instance. Resolve the conflict before retrying.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidGameSessionStatusException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 

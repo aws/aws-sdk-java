@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS
  * services are cluster-specific and region-specific.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceNotFoundException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

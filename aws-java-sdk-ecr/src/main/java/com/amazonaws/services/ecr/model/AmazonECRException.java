@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon EC2 Container Registry
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonECRException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

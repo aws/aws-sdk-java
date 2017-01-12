@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.applicationdiscovery.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This operation is not permitted.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OperationNotPermittedException extends com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {
     private static final long serialVersionUID = 1L;
 

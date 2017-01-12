@@ -12,9 +12,9 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -23,12 +23,12 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticloadbalancingv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DeregisterTargetsRequest Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeregisterTargetsRequestMarshaller implements Marshaller<Request<DeregisterTargetsRequest>, DeregisterTargetsRequest> {
 
     public Request<DeregisterTargetsRequest> marshall(DeregisterTargetsRequest deregisterTargetsRequest) {

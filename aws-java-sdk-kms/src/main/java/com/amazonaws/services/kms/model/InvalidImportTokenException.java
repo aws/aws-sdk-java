@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the provided import token is invalid or is associated with a different customer
  * master key (CMK).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidImportTokenException extends com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The following problems can cause this exception:
@@ -32,6 +34,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
  * Shutting-down and Terminated.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidInstanceIdException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

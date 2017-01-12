@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.machinelearning.model.*;
 
 /**
@@ -25,6 +27,7 @@ import com.amazonaws.services.machinelearning.model.*;
  * <p>
  * Definition of the public APIs exposed by Amazon Machine Learning
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
 
     /**

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * There is no configuration recorder running.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NoRunningConfigurationRecorderException extends com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 

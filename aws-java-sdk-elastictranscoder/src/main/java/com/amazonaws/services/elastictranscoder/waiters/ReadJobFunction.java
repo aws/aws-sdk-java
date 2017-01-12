@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.elastictranscoder.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.elastictranscoder.model.ReadJobRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.elastictranscoder.model.ReadJobResult;
 import com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReadJobFunction implements SdkFunction<ReadJobRequest, ReadJobResult> {
 
     /**

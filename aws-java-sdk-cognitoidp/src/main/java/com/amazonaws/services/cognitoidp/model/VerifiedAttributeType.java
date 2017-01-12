@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VerifiedAttributeType {
 
     Phone_number("phone_number"),

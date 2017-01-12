@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to
  * complete before making a new request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InProgressTableRestoreQuotaExceededException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

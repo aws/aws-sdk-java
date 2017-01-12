@@ -8,6 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -26,6 +27,7 @@ import com.amazonaws.util.SdkHttpUtils;
  * ${shapeName} Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>, ${shapeName}> {
 
 <#assign shape = shapes[shapeName]/>

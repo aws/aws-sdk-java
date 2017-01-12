@@ -4,6 +4,8 @@ ${fileHeader}
 <#assign interfaceName = metadata.syncInterface/>
 package ${metadata.smokeTestsPackageName};
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -19,6 +21,7 @@ import ${packageName}.${clientName};
  * Injector that binds the AmazonWebServiceClient interface to the
  *  ${packageName}.${clientName}
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${interfaceName}ModuleInjector implements InjectorSource {
 
     @Override

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.opsworks;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
  * Abstract implementation of {@code AWSOpsWorks}. Convenient method forms pass through to the corresponding overload
  * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSOpsWorks implements AWSOpsWorks {
 
     protected AbstractAWSOpsWorks() {

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClusterNotFoundException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

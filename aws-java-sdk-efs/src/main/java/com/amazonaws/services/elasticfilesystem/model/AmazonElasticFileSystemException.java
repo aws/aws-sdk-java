@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Elastic File System
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElasticFileSystemException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

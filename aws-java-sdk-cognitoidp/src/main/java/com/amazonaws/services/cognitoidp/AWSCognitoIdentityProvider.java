@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidp;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -35,6 +37,7 @@ import com.amazonaws.services.cognitoidp.model.*;
  * For more information, see the Amazon Cognito Documentation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCognitoIdentityProvider {
 
     /**

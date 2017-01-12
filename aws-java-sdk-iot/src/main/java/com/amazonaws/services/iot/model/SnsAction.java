@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes an action to publish to an Amazon SNS topic.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnsAction implements Serializable, Cloneable {
 
     /**

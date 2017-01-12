@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains general information about a domain.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainInfo implements Serializable, Cloneable {
 
     /**

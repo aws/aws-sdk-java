@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * VM Management Product
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VmManagerType {
 
     VSPHERE("VSPHERE");

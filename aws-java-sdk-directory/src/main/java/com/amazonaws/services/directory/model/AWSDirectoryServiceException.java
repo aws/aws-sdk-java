@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.directory.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Directory Service
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSDirectoryServiceException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

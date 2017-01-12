@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.waf.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ParameterExceptionField {
 
     CHANGE_ACTION("CHANGE_ACTION"),

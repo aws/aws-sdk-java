@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * The specified Replication Job cannot be found.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplicationJobNotFoundException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {
     private static final long serialVersionUID = 1L;
 

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.elasticsearch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request processing has failed because of an unknown error, exception or failure (the failure is internal to the
  * service) . Gives http status code of 500.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalException extends com.amazonaws.services.elasticsearch.model.AWSElasticsearchException {
     private static final long serialVersionUID = 1L;
 

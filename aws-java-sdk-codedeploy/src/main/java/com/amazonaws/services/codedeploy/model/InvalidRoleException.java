@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified
  * service role does not grant the appropriate permissions to Auto Scaling.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRoleException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

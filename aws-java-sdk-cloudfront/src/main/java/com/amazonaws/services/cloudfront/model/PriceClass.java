@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PriceClass {
 
     PriceClass_100("PriceClass_100"),

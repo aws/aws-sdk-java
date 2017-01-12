@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.stepfunctions.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The maximum number of workers concurrently polling for activity tasks has been reached.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActivityWorkerLimitExceededException extends com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException {
     private static final long serialVersionUID = 1L;
 

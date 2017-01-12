@@ -13,12 +13,14 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Field and direction for ordered output.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OrderByElement implements Serializable, Cloneable {
 
     /**

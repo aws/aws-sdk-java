@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The image requested does not exist in the specified repository.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImageNotFoundException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

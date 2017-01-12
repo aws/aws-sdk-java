@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The status of domain configuration option.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OptionStatus implements Serializable, Cloneable {
 
     /**

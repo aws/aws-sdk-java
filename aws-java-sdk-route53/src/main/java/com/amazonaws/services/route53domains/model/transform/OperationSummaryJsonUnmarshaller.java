@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * OperationSummary JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OperationSummaryJsonUnmarshaller implements Unmarshaller<OperationSummary, JsonUnmarshallerContext> {
 
     public OperationSummary unmarshall(JsonUnmarshallerContext context) throws Exception {

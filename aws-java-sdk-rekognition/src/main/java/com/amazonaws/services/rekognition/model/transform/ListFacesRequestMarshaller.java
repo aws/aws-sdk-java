@@ -13,10 +13,8 @@
 package com.amazonaws.services.rekognition.model.transform;
 
 import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -24,15 +22,13 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.rekognition.model.*;
 import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
+
 import com.amazonaws.protocol.json.*;
 
 /**
  * ListFacesRequest Marshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListFacesRequestMarshaller implements Marshaller<Request<ListFacesRequest>, ListFacesRequest> {
 
     private final SdkJsonMarshallerFactory protocolFactory;

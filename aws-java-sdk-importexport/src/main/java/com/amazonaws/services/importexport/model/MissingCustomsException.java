@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * One or more required customs parameters was missing from the manifest.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MissingCustomsException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown if two or more modifications are happening concurrently.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConcurrentModificationException extends com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 

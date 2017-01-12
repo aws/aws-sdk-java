@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codebuild;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.codebuild.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -99,6 +101,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCodeBuildAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.math.*;
 import java.nio.ByteBuffer;
+import javax.annotation.Generated;
 
 import ${metadata.packageName}.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -16,6 +17,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ${shape.shapeName} JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.shapeName}, JsonUnmarshallerContext> {
 
     public ${shape.shapeName} unmarshall(JsonUnmarshallerContext context) throws Exception {

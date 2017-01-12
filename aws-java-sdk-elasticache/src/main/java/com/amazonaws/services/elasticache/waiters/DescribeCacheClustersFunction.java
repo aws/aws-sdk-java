@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.elasticache.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.elasticache.model.DescribeCacheClustersRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.elasticache.model.DescribeCacheClustersResult;
 import com.amazonaws.services.elasticache.AmazonElastiCache;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeCacheClustersFunction implements SdkFunction<DescribeCacheClustersRequest, DescribeCacheClustersResult> {
 
     /**

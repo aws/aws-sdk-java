@@ -1,6 +1,8 @@
 ${fileHeader}
 package com.amazonaws.auth.policy.actions;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.auth.policy.Action;
 
 <#assign serviceAbbreviation = (metadata.serviceAbbreviation)!metadata.serviceFullName/>
@@ -8,7 +10,7 @@ import com.amazonaws.auth.policy.Action;
 /**
  * The available AWS access control policy actions for ${serviceAbbreviation}.
  */
-
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
  public enum ${serviceName}Actions implements Action {
 
     /** Represents any action executed on ${serviceAbbreviation}. */

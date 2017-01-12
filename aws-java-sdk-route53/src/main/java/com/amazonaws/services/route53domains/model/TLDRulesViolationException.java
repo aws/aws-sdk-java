@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53domains.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The top-level domain does not support this operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TLDRulesViolationException extends com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException {
     private static final long serialVersionUID = 1L;
 

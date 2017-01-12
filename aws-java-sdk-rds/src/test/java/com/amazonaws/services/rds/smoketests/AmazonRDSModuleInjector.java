@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.rds.AmazonRDSClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.rds.AmazonRDSClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRDSModuleInjector implements InjectorSource {
 
     @Override

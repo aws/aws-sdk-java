@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Kinesis Firehose
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonKinesisFirehoseException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

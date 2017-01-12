@@ -13,6 +13,7 @@
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -28,6 +29,7 @@ import java.io.Serializable;
  * </p>
  * </note>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateRealtimeEndpointResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

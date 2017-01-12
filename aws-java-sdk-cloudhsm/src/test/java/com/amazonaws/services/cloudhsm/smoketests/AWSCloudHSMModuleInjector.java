@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudhsm.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.cloudhsm.AWSCloudHSMClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.cloudhsm.AWSCloudHSMClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCloudHSMModuleInjector implements InjectorSource {
 
     @Override

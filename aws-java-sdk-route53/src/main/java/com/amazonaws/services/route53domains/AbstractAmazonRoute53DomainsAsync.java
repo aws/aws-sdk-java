@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53domains;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.route53domains.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.route53domains.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Domains implements AmazonRoute53DomainsAsync {
 
     protected AbstractAmazonRoute53DomainsAsync() {

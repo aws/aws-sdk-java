@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.route53.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.route53.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements AmazonRoute53Async {
 
     protected AbstractAmazonRoute53Async() {

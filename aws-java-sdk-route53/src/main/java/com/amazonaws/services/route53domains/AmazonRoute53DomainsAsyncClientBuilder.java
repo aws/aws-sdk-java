@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53domains;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsAsyncClientBuilder;
@@ -22,6 +24,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
  * preferred over using constructors of the client class.
  **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonRoute53DomainsAsyncClientBuilder extends AwsAsyncClientBuilder<AmazonRoute53DomainsAsyncClientBuilder, AmazonRoute53DomainsAsync> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();;

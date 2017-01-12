@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.sns.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Simple Notification Service
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSNSException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

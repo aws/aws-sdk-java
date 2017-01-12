@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.support.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An internal server error occurred.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerErrorException extends com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 

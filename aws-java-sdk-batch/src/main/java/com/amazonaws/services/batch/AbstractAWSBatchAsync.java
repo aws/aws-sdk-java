@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.batch;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.batch.model.*;
 
 /**
  * Abstract implementation of {@code AWSBatchAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSBatchAsync extends AbstractAWSBatch implements AWSBatchAsync {
 
     protected AbstractAWSBatchAsync() {

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * Your manifest is not well-formed.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MalformedManifestException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

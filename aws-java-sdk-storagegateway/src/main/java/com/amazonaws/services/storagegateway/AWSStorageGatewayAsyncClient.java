@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.storagegateway;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -99,6 +101,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </important>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implements AWSStorageGatewayAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

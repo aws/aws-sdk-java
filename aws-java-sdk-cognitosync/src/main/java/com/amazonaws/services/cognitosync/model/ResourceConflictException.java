@@ -12,10 +12,13 @@
  */
 package com.amazonaws.services.cognitosync.model;
 
+import javax.annotation.Generated;
+
 /**
  * Thrown if an update can't be applied because the resource was changed by another call and this would result in a
  * conflict.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceConflictException extends com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 

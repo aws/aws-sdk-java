@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.route53.model.*;
 
 /**
@@ -23,6 +25,7 @@ import com.amazonaws.services.route53.model.*;
  * {@link com.amazonaws.services.route53.AbstractAmazonRoute53Async} instead.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**

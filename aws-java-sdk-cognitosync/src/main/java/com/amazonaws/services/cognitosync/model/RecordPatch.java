@@ -13,6 +13,7 @@
 package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * An update operation for a record.
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RecordPatch" target="_top">AWS API
  *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecordPatch implements Serializable, Cloneable {
 
     /** An operation, either replace or remove. */

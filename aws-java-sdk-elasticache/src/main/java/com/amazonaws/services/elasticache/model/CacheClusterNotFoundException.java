@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested cache cluster ID does not refer to an existing cache cluster.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CacheClusterNotFoundException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

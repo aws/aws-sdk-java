@@ -13,10 +13,12 @@
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * A discrete item that contains the description and URL of an artifact (such as a PDF).
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Artifact implements Serializable, Cloneable {
 
     private String description;

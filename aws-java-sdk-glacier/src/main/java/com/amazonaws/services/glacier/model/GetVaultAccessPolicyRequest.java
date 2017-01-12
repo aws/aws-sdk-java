@@ -13,6 +13,8 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -20,6 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for GetVaultAccessPolicy.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetVaultAccessPolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

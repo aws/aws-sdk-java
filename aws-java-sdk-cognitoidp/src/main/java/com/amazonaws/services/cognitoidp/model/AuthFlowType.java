@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AuthFlowType {
 
     USER_SRP_AUTH("USER_SRP_AUTH"),

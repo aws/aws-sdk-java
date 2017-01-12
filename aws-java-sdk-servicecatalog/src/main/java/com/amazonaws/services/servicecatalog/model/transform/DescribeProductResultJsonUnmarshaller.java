@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.servicecatalog.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeProductResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeProductResultJsonUnmarshaller implements Unmarshaller<DescribeProductResult, JsonUnmarshallerContext> {
 
     public DescribeProductResult unmarshall(JsonUnmarshallerContext context) throws Exception {

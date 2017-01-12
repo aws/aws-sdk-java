@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are
@@ -35,6 +37,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3LocationNotInServiceRegionException extends com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 

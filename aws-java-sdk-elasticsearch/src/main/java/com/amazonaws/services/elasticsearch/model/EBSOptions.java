@@ -13,6 +13,7 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import java.io.Serializable;
  * target="_blank"> Configuring EBS-based Storage</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EBSOptions implements Serializable, Cloneable {
 
     /**

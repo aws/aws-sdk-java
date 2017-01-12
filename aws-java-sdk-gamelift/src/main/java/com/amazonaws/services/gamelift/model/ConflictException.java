@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested operation would cause a conflict with the current state of a service resource associated with the
  * request. Resolve the conflict before retrying this request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 

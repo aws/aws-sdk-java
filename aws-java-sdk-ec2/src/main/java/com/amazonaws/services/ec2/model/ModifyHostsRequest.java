@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyHostsRequestMarshaller;
@@ -22,6 +24,7 @@ import com.amazonaws.services.ec2.model.transform.ModifyHostsRequestMarshaller;
  * Contains the parameters for ModifyHosts.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyHostsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyHostsRequest> {
 
     /**

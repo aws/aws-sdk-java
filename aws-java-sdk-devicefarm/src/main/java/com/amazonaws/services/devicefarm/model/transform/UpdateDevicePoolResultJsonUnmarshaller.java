@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * UpdateDevicePoolResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateDevicePoolResultJsonUnmarshaller implements Unmarshaller<UpdateDevicePoolResult, JsonUnmarshallerContext> {
 
     public UpdateDevicePoolResult unmarshall(JsonUnmarshallerContext context) throws Exception {

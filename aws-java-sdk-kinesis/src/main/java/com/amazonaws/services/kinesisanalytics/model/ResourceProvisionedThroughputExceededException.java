@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Discovery failed to get a record from the streaming source because of the Kinesis Streams
  * ProvisionedThroughputExceededException.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceProvisionedThroughputExceededException extends com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException {
     private static final long serialVersionUID = 1L;
 

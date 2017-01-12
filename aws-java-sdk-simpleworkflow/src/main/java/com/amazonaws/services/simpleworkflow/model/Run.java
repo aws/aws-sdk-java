@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Specifies the <code>runId</code> of a workflow execution.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Run extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

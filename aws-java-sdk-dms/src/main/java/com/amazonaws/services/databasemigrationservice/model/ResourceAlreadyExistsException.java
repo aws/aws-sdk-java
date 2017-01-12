@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The resource you are attempting to create already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceAlreadyExistsException extends com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codedeploy;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
  * Abstract implementation of {@code AmazonCodeDeploy}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
 
     protected AbstractAmazonCodeDeploy() {

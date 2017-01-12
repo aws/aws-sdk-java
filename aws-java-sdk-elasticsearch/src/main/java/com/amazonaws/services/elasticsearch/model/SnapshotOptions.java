@@ -13,6 +13,7 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * domain. Default value is <code>0</code> hours.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnapshotOptions implements Serializable, Cloneable {
 
     /**

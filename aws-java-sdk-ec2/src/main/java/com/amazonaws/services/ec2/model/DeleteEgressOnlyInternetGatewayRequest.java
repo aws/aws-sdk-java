@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteEgressOnlyInternetGatewayRequestMarshaller;
@@ -20,6 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteEgressOnlyInternetGatewa
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DeleteEgressOnlyInternetGatewayRequest> {
 

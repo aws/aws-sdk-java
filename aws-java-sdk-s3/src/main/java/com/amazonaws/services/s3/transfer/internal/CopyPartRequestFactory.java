@@ -73,6 +73,7 @@ public class CopyPartRequestFactory {
             .withLastByte(Long.valueOf(offset + partSize - 1))
             .withSourceSSECustomerKey(origReq.getSourceSSECustomerKey())
             .withDestinationSSECustomerKey(origReq.getDestinationSSECustomerKey())
+            .withRequesterPays(origReq.isRequesterPays())
             // other meta data
             .withMatchingETagConstraints(origReq.getMatchingETagConstraints())
             .withModifiedSinceConstraint(origReq.getModifiedSinceConstraint())

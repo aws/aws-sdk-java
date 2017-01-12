@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The definition of the thing type, including thing type name and description.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ThingTypeDefinition implements Serializable, Cloneable {
 
     /**

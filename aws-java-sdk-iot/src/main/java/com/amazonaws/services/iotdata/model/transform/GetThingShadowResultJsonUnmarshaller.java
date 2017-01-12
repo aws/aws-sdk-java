@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.iotdata.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
 import java.nio.ByteBuffer;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * GetThingShadowResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetThingShadowResultJsonUnmarshaller implements Unmarshaller<GetThingShadowResult, JsonUnmarshallerContext> {
 
     public GetThingShadowResult unmarshall(JsonUnmarshallerContext context) throws Exception {

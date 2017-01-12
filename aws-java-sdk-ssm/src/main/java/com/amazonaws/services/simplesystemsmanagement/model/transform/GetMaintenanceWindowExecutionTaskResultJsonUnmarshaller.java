@@ -13,9 +13,10 @@
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
-import java.util.Map.Entry;
+
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +28,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * GetMaintenanceWindowExecutionTaskResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetMaintenanceWindowExecutionTaskResultJsonUnmarshaller implements Unmarshaller<GetMaintenanceWindowExecutionTaskResult, JsonUnmarshallerContext> {
 
     public GetMaintenanceWindowExecutionTaskResult unmarshall(JsonUnmarshallerContext context) throws Exception {

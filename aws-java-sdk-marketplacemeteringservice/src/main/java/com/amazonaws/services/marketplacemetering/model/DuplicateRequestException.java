@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.marketplacemetering.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a
  * different usageQuantity.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DuplicateRequestException extends com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 

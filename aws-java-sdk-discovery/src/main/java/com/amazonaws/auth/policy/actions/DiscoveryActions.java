@@ -12,12 +12,14 @@
  */
 package com.amazonaws.auth.policy.actions;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS Application Discovery Service.
  */
-
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DiscoveryActions implements Action {
 
     /** Represents any action executed on AWS Application Discovery Service. */

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request included an IAM session ARN that has already been used to register a different instance.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IamSessionArnAlreadyRegisteredException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

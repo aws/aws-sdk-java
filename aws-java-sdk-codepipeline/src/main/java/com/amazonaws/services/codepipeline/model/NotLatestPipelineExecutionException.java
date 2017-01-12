@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.codepipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of
  * date.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotLatestPipelineExecutionException extends com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 

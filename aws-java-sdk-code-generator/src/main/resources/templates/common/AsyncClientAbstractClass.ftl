@@ -1,6 +1,8 @@
 ${fileHeader}
 package ${metadata.packageName};
 
+import javax.annotation.Generated;
+
 import ${metadata.packageName}.model.*;
 
 /**
@@ -9,6 +11,7 @@ import ${metadata.packageName}.model.*;
  * request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${metadata.asyncAbstractClass} extends ${metadata.syncAbstractClass}
         implements ${metadata.asyncInterface} {
 

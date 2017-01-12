@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -36,6 +38,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

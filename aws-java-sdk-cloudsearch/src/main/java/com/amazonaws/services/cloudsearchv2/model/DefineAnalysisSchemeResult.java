@@ -13,6 +13,7 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * analysis scheme.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DefineAnalysisSchemeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private AnalysisSchemeStatus analysisScheme;

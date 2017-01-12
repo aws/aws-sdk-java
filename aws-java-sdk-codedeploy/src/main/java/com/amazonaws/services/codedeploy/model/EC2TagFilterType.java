@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EC2TagFilterType {
 
     KEY_ONLY("KEY_ONLY"),

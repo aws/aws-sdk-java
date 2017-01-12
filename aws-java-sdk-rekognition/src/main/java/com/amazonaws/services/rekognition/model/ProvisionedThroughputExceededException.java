@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.rekognition.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
  * Rekognition.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProvisionedThroughputExceededException extends com.amazonaws.services.rekognition.model.AmazonRekognitionException {
     private static final long serialVersionUID = 1L;
 

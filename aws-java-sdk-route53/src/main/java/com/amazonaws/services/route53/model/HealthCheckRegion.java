@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An Amazon EC2 Region that you want Amazon Route 53 to use to perform health checks.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HealthCheckRegion {
 
     UsEast1("us-east-1"),

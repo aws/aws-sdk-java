@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.stepfunctions.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * StopExecutionResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StopExecutionResultJsonUnmarshaller implements Unmarshaller<StopExecutionResult, JsonUnmarshallerContext> {
 
     public StopExecutionResult unmarshall(JsonUnmarshallerContext context) throws Exception {

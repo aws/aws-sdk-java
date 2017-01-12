@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidentity;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -57,6 +59,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClient implements AmazonCognitoIdentityAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

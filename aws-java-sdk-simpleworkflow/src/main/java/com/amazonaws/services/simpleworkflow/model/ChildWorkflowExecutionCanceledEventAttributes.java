@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ChildWorkflowExecutionCanceledEventAttributes implements Serializable, Cloneable {
 
     /**

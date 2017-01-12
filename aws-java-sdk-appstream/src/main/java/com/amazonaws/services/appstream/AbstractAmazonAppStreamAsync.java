@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.appstream;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.appstream.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.appstream.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implements AmazonAppStreamAsync {
 
     protected AbstractAmazonAppStreamAsync() {

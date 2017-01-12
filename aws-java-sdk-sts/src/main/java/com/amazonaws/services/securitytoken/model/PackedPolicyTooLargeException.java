@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.securitytoken.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the policy document was too large. The error message describes how big the policy
  * document is, in packed form, as a percentage of what the API allows.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PackedPolicyTooLargeException extends com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 

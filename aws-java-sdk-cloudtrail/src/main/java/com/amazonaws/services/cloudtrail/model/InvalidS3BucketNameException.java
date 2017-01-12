@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when the provided S3 bucket name is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidS3BucketNameException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 

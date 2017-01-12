@@ -13,12 +13,14 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Specifies the configuration for the domain cluster, such as the type and number of instances.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**

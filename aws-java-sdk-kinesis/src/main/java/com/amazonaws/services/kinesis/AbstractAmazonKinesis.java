@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kinesis;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
  * Abstract implementation of {@code AmazonKinesis}. Convenient method forms pass through to the corresponding overload
  * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonKinesis implements AmazonKinesis {
 
     protected AbstractAmazonKinesis() {

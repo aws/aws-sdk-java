@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * There is already an existing event notification subscription with the specified name.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SubscriptionAlreadyExistException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

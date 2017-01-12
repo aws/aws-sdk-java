@@ -1,6 +1,8 @@
 ${fileHeader}
 package ${metadata.packageName};
 
+import javax.annotation.Generated;
+
 import ${metadata.packageName}.model.*;
 import com.amazonaws.*;
 <#if hasWaiters>
@@ -12,6 +14,7 @@ import ${metadata.packageName}.waiters.${metadata.syncInterface}Waiters;
  * method forms pass through to the corresponding overload that takes a
  * request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} {
 
     protected ${metadata.syncAbstractClass}() {

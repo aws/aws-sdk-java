@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codebuild.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An AWS service limit was exceeded for the calling AWS account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccountLimitExceededException extends com.amazonaws.services.codebuild.model.AWSCodeBuildException {
     private static final long serialVersionUID = 1L;
 

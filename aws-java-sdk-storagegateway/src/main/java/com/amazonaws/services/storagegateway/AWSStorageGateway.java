@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.storagegateway;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -101,6 +103,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * </p>
  * </important>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSStorageGateway {
 
     /**

@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.opsworkscm.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.opsworkscm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * CreateBackupResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateBackupResultJsonUnmarshaller implements Unmarshaller<CreateBackupResult, JsonUnmarshallerContext> {
 
     public CreateBackupResult unmarshall(JsonUnmarshallerContext context) throws Exception {

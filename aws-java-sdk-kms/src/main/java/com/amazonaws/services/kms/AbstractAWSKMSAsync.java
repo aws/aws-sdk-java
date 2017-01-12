@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.kms;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.kms.model.*;
 
 /**
  * Abstract implementation of {@code AWSKMSAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
 
     protected AbstractAWSKMSAsync() {

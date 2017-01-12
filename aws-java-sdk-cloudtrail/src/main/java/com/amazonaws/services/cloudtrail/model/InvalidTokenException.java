@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Reserved for future use.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidTokenException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 

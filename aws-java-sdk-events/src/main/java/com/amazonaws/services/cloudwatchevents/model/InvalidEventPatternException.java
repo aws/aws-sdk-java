@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudwatchevents.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The event pattern is invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidEventPatternException extends com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException {
     private static final long serialVersionUID = 1L;
 

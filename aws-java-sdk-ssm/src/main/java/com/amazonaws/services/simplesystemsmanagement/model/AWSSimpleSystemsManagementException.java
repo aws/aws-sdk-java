@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Simple Systems Manager (SSM)
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSSimpleSystemsManagementException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

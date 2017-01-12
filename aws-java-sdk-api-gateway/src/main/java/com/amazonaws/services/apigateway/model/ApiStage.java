@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * API stage name of the associated API stage in a usage plan.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApiStage implements Serializable, Cloneable {
 
     /**

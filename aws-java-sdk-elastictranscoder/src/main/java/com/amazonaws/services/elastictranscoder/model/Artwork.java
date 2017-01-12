@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -27,6 +28,7 @@ import java.io.Serializable;
  * and use an empty <code>Artwork</code> array.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Artwork implements Serializable, Cloneable {
 
     /**

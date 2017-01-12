@@ -1,6 +1,8 @@
 ${fileHeader}
 package ${metadata.packageName};
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
@@ -11,6 +13,7 @@ import com.amazonaws.client.AwsSyncClientParams;
  * builder is preferred over using constructors of the client class.
 **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class ${metadata.syncClientBuilderClassName}
     extends AwsSyncClientBuilder<${metadata.syncClientBuilderClassName}, ${metadata.syncInterface}> {
 

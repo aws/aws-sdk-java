@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudhsm;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -24,6 +26,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * <fullname>AWS CloudHSM Service</fullname>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSCloudHSMAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

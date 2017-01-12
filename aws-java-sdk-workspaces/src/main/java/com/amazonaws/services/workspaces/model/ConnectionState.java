@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.workspaces.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ConnectionState {
 
     CONNECTED("CONNECTED"),

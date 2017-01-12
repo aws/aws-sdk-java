@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.kinesis.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.kinesis.model.DescribeStreamRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.kinesis.model.DescribeStreamResult;
 import com.amazonaws.services.kinesis.AmazonKinesis;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeStreamFunction implements SdkFunction<DescribeStreamRequest, DescribeStreamResult> {
 
     /**

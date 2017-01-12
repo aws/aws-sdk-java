@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import java.io.Serializable;
  * you must specify the mode you want Elastic Transcoder to use to encrypt your output files.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Encryption implements Serializable, Cloneable {
 
     /**

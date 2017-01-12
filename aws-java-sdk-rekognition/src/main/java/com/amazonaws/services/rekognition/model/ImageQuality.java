@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Identifies image brightness and sharpness.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImageQuality implements Serializable, Cloneable {
 
     /**

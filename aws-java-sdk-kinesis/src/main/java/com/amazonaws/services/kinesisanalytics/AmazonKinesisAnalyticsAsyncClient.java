@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kinesisanalytics;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.kinesisanalytics.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -22,6 +24,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * notification when an asynchronous operation completes.
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsClient implements AmazonKinesisAnalyticsAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

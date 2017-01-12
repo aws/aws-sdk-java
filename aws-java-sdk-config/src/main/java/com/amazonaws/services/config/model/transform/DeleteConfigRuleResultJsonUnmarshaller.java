@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.config.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * DeleteConfigRuleResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteConfigRuleResultJsonUnmarshaller implements Unmarshaller<DeleteConfigRuleResult, JsonUnmarshallerContext> {
 
     public DeleteConfigRuleResult unmarshall(JsonUnmarshallerContext context) throws Exception {

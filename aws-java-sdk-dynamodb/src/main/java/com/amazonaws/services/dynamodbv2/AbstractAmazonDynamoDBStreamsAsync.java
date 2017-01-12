@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.dynamodbv2.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonDynamoDBStreamsAsync extends AbstractAmazonDynamoDBStreams implements AmazonDynamoDBStreamsAsync {
 
     protected AbstractAmazonDynamoDBStreamsAsync() {

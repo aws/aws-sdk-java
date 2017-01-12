@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The address is either outside the serviceable area for your region, or an error occurred. Check the address with your
  * region's carrier and try again. If the issue persists, contact AWS Support.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedAddressException extends com.amazonaws.services.snowball.model.AmazonSnowballException {
     private static final long serialVersionUID = 1L;
 

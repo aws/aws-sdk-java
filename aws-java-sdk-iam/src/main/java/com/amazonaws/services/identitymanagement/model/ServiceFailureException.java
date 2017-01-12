@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request processing has failed because of an unknown error, exception or failure.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceFailureException extends com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 

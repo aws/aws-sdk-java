@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.lightsail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Lightsail throws this exception when it cannot find a resource.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotFoundException extends com.amazonaws.services.lightsail.model.AmazonLightsailException {
     private static final long serialVersionUID = 1L;
 

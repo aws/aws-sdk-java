@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.rds.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
  * Abstract implementation of {@code AmazonRDS}. Convenient method forms pass through to the corresponding overload that
  * takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonRDS implements AmazonRDS {
 
     protected AbstractAmazonRDS() {

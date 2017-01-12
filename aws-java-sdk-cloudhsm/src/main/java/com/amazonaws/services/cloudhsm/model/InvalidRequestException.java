@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudhsm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that one or more of the request parameters are not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRequestException extends com.amazonaws.services.cloudhsm.model.AWSCloudHSMException {
     private static final long serialVersionUID = 1L;
 

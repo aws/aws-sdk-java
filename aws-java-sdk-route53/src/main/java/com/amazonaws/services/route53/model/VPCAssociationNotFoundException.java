@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified VPC and hosted zone are not currently associated.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VPCAssociationNotFoundException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

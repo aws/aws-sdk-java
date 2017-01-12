@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A source file for the input sidecar captions used during the transcoding process.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptionSource implements Serializable, Cloneable {
 
     /**

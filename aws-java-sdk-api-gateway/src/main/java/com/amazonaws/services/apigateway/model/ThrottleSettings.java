@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The API request rate limits.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ThrottleSettings implements Serializable, Cloneable {
 
     /**

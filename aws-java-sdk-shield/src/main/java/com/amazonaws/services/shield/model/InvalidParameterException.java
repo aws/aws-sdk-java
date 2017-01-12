@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.shield.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Exception that indicates that the parameters passed to the API are invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterException extends com.amazonaws.services.shield.model.AWSShieldException {
     private static final long serialVersionUID = 1L;
 

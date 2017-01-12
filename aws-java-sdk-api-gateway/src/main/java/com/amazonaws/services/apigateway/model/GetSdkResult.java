@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetSdkResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

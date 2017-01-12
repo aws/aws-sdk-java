@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticmapreduce;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticmapreduce.model.*;
 
 /**
@@ -29,6 +31,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * machine learning, scientific simulation, and data warehousing.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**

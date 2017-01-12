@@ -13,12 +13,14 @@
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes the database details required to connect to an Amazon Redshift database.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RedshiftDatabase implements Serializable, Cloneable {
 
     private String databaseName;

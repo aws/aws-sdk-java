@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simpleemail.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Simple Email Service
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSimpleEmailServiceException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

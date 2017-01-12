@@ -12,10 +12,13 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * Each account can create only a certain number of jobs per day. If you need to create more than this, please contact
  * awsimportexport@amazon.com to explain your particular use case.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateJobQuotaExceededException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

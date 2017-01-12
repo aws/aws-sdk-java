@@ -13,20 +13,18 @@
 package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
-import java.util.List;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
+
 import com.amazonaws.protocol.json.*;
 
 /**
  * ScheduleRunTestMarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduleRunTestJsonMarshaller {
 
     /**

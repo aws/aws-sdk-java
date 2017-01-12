@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:
@@ -21,6 +23,7 @@ package com.amazonaws.services.machinelearning.model;
  * <li> <code>RandomForest</code> - Random forest of decision trees.</li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Algorithm {
 
     Sgd("sgd");

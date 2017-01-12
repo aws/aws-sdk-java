@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SortByEnum {
 
     RepositoryName("repositoryName"),

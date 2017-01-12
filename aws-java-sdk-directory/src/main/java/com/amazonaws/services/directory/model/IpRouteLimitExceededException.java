@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.directory.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IpRouteLimitExceededException extends com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 

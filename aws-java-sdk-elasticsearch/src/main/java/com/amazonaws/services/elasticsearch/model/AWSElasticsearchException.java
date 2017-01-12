@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticsearch.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Elasticsearch Service
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSElasticsearchException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

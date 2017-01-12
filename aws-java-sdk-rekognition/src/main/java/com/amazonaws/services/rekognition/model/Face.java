@@ -13,6 +13,7 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * that you assigned.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Face implements Serializable, Cloneable {
 
     /**

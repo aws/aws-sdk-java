@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.workspaces.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more parameter values are not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterValuesException extends com.amazonaws.services.workspaces.model.AmazonWorkspacesException {
     private static final long serialVersionUID = 1L;
 

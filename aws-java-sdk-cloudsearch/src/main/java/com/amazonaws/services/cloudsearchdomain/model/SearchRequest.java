@@ -13,6 +13,8 @@
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -20,6 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <code>Search</code> request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**

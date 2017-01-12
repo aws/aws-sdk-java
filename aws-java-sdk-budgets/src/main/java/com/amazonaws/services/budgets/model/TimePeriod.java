@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * A time period indicated the start date and end date of a budget.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TimePeriod implements Serializable, Cloneable {
 
     private java.util.Date start;

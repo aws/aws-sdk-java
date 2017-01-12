@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FaceMatch implements Serializable, Cloneable {
 
     /**

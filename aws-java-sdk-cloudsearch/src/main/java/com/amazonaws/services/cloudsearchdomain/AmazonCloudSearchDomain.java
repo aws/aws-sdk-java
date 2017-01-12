@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudsearchdomain;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -38,6 +40,7 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
  * CloudSearch Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudSearchDomain {
 
     /**

@@ -13,6 +13,7 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -22,6 +23,7 @@ import java.io.Serializable;
  * This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DynamoDBv2Action implements Serializable, Cloneable {
 
     /**

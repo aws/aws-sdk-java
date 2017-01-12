@@ -12,9 +12,8 @@
  */
 package com.amazonaws.services.sns.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -23,12 +22,12 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sns.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * SetPlatformApplicationAttributesRequest Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SetPlatformApplicationAttributesRequestMarshaller implements
         Marshaller<Request<SetPlatformApplicationAttributesRequest>, SetPlatformApplicationAttributesRequest> {
 

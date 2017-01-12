@@ -1,6 +1,8 @@
 ${fileHeader}
 package ${metadata.packageName}.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import ${metadata.packageName}.${metadata.syncInterface};
 import ${metadata.packageName}.model.*;
@@ -9,6 +11,7 @@ import com.amazonaws.waiters.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${className}{
 
     /**

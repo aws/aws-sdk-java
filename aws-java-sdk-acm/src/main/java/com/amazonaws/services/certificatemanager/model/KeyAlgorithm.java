@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.certificatemanager.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum KeyAlgorithm {
 
     RSA_2048("RSA_2048"),

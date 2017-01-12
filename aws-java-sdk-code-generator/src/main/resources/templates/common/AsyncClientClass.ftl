@@ -1,6 +1,8 @@
 ${fileHeader}
 package ${metadata.packageName};
 
+import javax.annotation.Generated;
+
 import ${metadata.packageName}.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -15,7 +17,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * ${metadata.documentation}
 </#if>
  */
- @ThreadSafe
+@ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${metadata.asyncClient} extends ${metadata.syncClient}
         implements ${metadata.asyncInterface} {
 

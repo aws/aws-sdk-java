@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.autoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation can't be performed because there are scaling activities in progress.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScalingActivityInProgressException extends com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * Current state of Replication Job
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReplicationJobState {
 
     PENDING("PENDING"),

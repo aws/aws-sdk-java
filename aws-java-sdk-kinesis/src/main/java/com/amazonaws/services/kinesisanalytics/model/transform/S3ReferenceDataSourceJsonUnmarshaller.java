@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.kinesisanalytics.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.kinesisanalytics.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * S3ReferenceDataSource JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3ReferenceDataSourceJsonUnmarshaller implements Unmarshaller<S3ReferenceDataSource, JsonUnmarshallerContext> {
 
     public S3ReferenceDataSource unmarshall(JsonUnmarshallerContext context) throws Exception {

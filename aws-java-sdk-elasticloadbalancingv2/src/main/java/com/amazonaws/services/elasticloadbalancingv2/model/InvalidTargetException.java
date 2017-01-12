@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified target does not exist or is not in the same VPC as the target group.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidTargetException extends com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

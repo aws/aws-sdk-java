@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kinesis.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The provided iterator exceeds the maximum age allowed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExpiredIteratorException extends com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 

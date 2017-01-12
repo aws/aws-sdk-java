@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudwatch;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
  * Abstract implementation of {@code AmazonCloudWatch}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
 
     protected AbstractAmazonCloudWatch() {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elastictranscoder;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elastictranscoder.model.*;
 
 /**
@@ -28,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
  * The AWS Elastic Transcoder Service.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
 
     /**

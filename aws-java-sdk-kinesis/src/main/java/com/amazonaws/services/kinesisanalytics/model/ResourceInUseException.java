@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Application is not available for this operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceInUseException extends com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException {
     private static final long serialVersionUID = 1L;
 

@@ -13,6 +13,7 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * similarity between the face in the bounding box and the face in the source image.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CompareFacesMatch implements Serializable, Cloneable {
 
     /**

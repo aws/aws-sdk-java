@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified account has reached its limit of configuration templates.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyConfigurationTemplatesException extends com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 

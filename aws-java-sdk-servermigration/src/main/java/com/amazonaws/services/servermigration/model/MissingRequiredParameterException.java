@@ -12,10 +12,13 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * The request is missing a required parameter. Ensure that you have supplied all the required parameters for the
  * request.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MissingRequiredParameterException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {
     private static final long serialVersionUID = 1L;
 

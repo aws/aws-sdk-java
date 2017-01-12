@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.glacier;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -66,6 +68,7 @@ import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonGlacier {
 
     /**

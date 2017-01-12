@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.waf;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.waf.model.*;
 
 /**
@@ -33,6 +35,7 @@ import com.amazonaws.services.waf.model.*;
  * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**

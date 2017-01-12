@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Route 53
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRoute53Exception extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

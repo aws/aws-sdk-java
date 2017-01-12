@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53domains.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The number of operations or jobs running exceeded the allowed threshold for the account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OperationLimitExceededException extends com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException {
     private static final long serialVersionUID = 1L;
 

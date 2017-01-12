@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The state of processing a change to an option. One of:
@@ -25,6 +27,7 @@ package com.amazonaws.services.cloudsearchv2.model;
  * You must either modify the option value or update or remove the incompatible documents.</li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum OptionState {
 
     RequiresIndexDocuments("RequiresIndexDocuments"),

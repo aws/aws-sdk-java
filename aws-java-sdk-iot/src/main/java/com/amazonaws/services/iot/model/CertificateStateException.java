@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The certificate operation is not allowed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CertificateStateException extends com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 

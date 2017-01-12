@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * OrderableReplicationInstance JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OrderableReplicationInstanceJsonUnmarshaller implements Unmarshaller<OrderableReplicationInstance, JsonUnmarshallerContext> {
 
     public OrderableReplicationInstance unmarshall(JsonUnmarshallerContext context) throws Exception {

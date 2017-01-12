@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * There is already a current Amazon ECS container agent update in progress on the specified container instance. If the
@@ -20,6 +22,7 @@ package com.amazonaws.services.ecs.model;
  * where it stopped previously.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateInProgressException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

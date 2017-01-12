@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation would exceed the number of nodes allotted to the account. For information about increasing your quota,
@@ -19,6 +21,7 @@ package com.amazonaws.services.redshift.model;
  * Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NumberOfNodesQuotaExceededException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

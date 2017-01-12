@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidentity.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Thrown when a request is throttled.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyRequestsException extends com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 

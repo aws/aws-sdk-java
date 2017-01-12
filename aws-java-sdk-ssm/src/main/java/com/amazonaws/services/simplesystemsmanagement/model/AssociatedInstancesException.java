@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You must disassociate an SSM document from all instances before you can delete it.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociatedInstancesException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

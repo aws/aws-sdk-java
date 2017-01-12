@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IncompatibleVersionException extends com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 

@@ -13,6 +13,7 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * <code>int</code>. All options are enabled by default.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IntOptions implements Serializable, Cloneable {
 
     /**

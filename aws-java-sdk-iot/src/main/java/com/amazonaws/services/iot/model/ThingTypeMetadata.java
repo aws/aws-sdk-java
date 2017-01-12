@@ -13,6 +13,7 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * indicating whether the thing type is deprecated, and a date and time when time was deprecated.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ThingTypeMetadata implements Serializable, Cloneable {
 
     /**

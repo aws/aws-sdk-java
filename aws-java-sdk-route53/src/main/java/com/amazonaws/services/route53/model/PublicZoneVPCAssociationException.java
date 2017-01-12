@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a VPC with a
  * public hosted zone.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PublicZoneVPCAssociationException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

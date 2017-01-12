@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.opsworkscm;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -75,6 +77,7 @@ import com.amazonaws.services.opsworkscm.model.*;
  * All API operations allow for 5 requests per second with a burst of 10 requests per second.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSOpsWorksCM {
 
     /**

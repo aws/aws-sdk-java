@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Request would result in user exceeding the allowed amount of storage available across all DB instances.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StorageQuotaExceededException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

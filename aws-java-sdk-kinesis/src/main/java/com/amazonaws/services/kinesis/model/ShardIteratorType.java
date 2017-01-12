@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.kinesis.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ShardIteratorType {
 
     AT_SEQUENCE_NUMBER("AT_SEQUENCE_NUMBER"),

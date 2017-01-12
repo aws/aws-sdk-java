@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * General authentication failure. The request was not signed correctly.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccessDeniedException extends com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 

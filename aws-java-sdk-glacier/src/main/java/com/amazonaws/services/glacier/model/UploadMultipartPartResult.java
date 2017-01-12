@@ -13,12 +13,14 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

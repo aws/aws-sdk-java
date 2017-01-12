@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The next token supplied was invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidNextTokenException extends com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 

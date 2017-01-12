@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.marketplacemetering.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The timestamp value passed in the meterUsage() is out of allowed range.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TimestampOutOfBoundsException extends com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InputStartingPosition {
 
     NOW("NOW"),

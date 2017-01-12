@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because a limit was exceeded. For more information, see <a
@@ -19,6 +21,7 @@ package com.amazonaws.services.kms.model;
  * Service Developer Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 

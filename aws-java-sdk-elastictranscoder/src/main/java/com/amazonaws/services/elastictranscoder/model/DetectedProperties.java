@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The detected properties of the input file. Elastic Transcoder identifies these values from the input file.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DetectedProperties implements Serializable, Cloneable {
 
     /**

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CancelTimerFailedCause {
 
     TIMER_ID_UNKNOWN("TIMER_ID_UNKNOWN"),

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simplesystemsmanagement;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManagementAsync {
 
     protected AbstractAWSSimpleSystemsManagementAsync() {

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ScaleDownBehavior {
 
     TERMINATE_AT_INSTANCE_HOUR("TERMINATE_AT_INSTANCE_HOUR"),

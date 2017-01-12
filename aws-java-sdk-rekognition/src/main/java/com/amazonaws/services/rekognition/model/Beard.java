@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Indicates whether or not the face has a beard, and the confidence level in the determination.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Beard implements Serializable, Cloneable {
 
     /**

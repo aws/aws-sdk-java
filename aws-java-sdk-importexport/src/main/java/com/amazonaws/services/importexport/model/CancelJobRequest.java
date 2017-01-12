@@ -13,11 +13,14 @@
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Input structure for the CancelJob operation.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String jobId;

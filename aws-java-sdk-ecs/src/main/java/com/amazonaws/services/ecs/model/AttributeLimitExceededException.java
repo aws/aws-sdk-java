@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You can apply up to 10 custom attributes per resource. You can view the attributes of a resource with
  * <a>ListAttributes</a>. You can remove existing attributes on a resource with <a>DeleteAttributes</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AttributeLimitExceededException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

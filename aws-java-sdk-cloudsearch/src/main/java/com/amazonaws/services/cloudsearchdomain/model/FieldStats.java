@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The statistics for a field calculated in the request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FieldStats implements Serializable, Cloneable {
 
     /**

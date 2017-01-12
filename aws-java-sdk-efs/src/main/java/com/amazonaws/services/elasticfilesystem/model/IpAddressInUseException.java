@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the request specified an <code>IpAddress</code> that is already in use in the subnet.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IpAddressInUseException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

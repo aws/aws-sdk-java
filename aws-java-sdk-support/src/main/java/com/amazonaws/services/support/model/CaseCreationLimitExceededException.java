@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.support.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The case creation limit for the account has been exceeded.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaseCreationLimitExceededException extends com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because it attempted to create a resource that already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AlreadyExistsException extends com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 

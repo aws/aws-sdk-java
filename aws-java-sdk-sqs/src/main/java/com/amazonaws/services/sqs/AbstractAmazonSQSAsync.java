@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.sqs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.sqs.model.*;
 
 /**
  * Abstract implementation of {@code AmazonSQSAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonSQSAsync {
 
     protected AbstractAmazonSQSAsync() {

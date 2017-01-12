@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.config;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -54,6 +56,7 @@ import com.amazonaws.services.config.model.*;
  * <i>AWS Config Developer Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonConfig {
 
     /**

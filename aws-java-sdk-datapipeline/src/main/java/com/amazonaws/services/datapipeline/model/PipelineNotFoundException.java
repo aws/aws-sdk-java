@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.datapipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified pipeline was not found. Verify that you used the correct user and account identifiers.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PipelineNotFoundException extends com.amazonaws.services.datapipeline.model.DataPipelineException {
     private static final long serialVersionUID = 1L;
 

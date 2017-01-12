@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned when the specified activity or workflow type was already deprecated.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TypeDeprecatedException extends com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 

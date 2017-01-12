@@ -13,12 +13,14 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Provides options for specifying a range inventory retrieval job.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InventoryRetrievalJobInput implements Serializable, Cloneable {
 
     /**

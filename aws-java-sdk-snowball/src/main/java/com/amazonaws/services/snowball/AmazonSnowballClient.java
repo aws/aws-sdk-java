@@ -16,13 +16,14 @@ import org.w3c.dom.*;
 
 import java.net.*;
 import java.util.*;
-import java.util.Map.Entry;
+
+import javax.annotation.Generated;
 
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.auth.presign.PresignerParams;
+
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
@@ -55,6 +56,7 @@ import com.amazonaws.services.snowball.model.transform.*;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSnowballClient extends AmazonWebServiceClient implements AmazonSnowball {
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
@@ -463,10 +465,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must
-     * have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for
-     * a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are
-     * inherited from the cluster. .
+     * Creates a job to the other job attributes are inherited from the cluster. .
      * </p>
      * 
      * @param createJobRequest

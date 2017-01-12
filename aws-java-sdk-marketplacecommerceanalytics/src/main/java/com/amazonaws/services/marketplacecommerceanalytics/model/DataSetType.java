@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DataSetType {
 
     Customer_subscriber_hourly_monthly_subscriptions("customer_subscriber_hourly_monthly_subscriptions"),

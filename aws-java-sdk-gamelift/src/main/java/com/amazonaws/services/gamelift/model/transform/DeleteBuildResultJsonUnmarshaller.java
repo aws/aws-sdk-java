@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * DeleteBuildResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteBuildResultJsonUnmarshaller implements Unmarshaller<DeleteBuildResult, JsonUnmarshallerContext> {
 
     public DeleteBuildResult unmarshall(JsonUnmarshallerContext context) throws Exception {

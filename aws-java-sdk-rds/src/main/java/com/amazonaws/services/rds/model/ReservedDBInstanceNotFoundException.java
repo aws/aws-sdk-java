@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified reserved DB Instance not found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReservedDBInstanceNotFoundException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

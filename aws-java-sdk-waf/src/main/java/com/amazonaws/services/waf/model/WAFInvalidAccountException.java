@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.waf.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFInvalidAccountException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 

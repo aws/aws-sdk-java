@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticloadbalancing;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBalancingWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBala
  * Abstract implementation of {@code AmazonElasticLoadBalancing}. Convenient method forms pass through to the
  * corresponding overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBalancing {
 
     protected AbstractAmazonElasticLoadBalancing() {

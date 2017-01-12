@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code> request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NoSuchHealthCheckException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

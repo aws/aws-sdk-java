@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because it attempted an operation which is not enabled.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisabledOperationException extends com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A tag key was specified more than once.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DuplicateTagKeysException extends com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

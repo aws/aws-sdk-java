@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.inspector.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Inspector
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonInspectorException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

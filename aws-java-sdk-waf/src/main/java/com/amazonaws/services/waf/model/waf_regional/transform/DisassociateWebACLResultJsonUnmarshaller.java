@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * DisassociateWebACLResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateWebACLResultJsonUnmarshaller implements Unmarshaller<DisassociateWebACLResult, JsonUnmarshallerContext> {
 
     public DisassociateWebACLResult unmarshall(JsonUnmarshallerContext context) throws Exception {

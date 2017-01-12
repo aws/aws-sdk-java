@@ -13,12 +13,14 @@
 package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Object representing a VM server
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/VmServer" target="_top">AWS API Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VmServer implements Serializable, Cloneable {
 
     private VmServerAddress vmServerAddress;

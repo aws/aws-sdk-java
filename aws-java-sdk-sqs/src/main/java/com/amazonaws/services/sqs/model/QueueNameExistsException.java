@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.sqs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A queue already exists with this name. Amazon SQS returns this error only if the request includes attributes whose
  * values differ from those of the existing queue.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class QueueNameExistsException extends com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 

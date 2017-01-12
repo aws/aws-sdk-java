@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The number of triggers allowed for the repository was exceeded.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MaximumRepositoryTriggersExceededException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

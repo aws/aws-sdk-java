@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You do not have permission to publish to the SNS topic ARN.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SNSNoAuthorizationException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

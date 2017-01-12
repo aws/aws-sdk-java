@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * A parameter specified in the request is not valid, is unsupported, or cannot be used.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {
     private static final long serialVersionUID = 1L;
 

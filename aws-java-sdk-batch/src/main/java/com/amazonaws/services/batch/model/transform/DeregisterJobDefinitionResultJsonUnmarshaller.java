@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.batch.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * DeregisterJobDefinitionResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeregisterJobDefinitionResultJsonUnmarshaller implements Unmarshaller<DeregisterJobDefinitionResult, JsonUnmarshallerContext> {
 
     public DeregisterJobDefinitionResult unmarshall(JsonUnmarshallerContext context) throws Exception {

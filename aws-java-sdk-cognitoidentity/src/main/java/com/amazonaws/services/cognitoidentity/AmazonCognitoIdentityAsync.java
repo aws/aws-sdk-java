@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidentity;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cognitoidentity.model.*;
 
 /**
@@ -58,6 +60,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
  * Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**

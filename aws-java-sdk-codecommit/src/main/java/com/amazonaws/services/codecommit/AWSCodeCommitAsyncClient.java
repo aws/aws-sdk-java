@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codecommit;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -72,6 +74,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWSCodeCommitAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

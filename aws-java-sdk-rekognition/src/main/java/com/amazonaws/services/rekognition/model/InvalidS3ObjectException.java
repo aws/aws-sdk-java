@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rekognition.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Amazon Rekognition is unable to access the S3 object specified in the request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidS3ObjectException extends com.amazonaws.services.rekognition.model.AmazonRekognitionException {
     private static final long serialVersionUID = 1L;
 

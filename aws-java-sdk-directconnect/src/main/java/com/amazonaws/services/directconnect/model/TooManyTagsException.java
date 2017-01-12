@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.directconnect.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have reached the limit on the number of tags that can be assigned to a Direct Connect resource.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyTagsException extends com.amazonaws.services.directconnect.model.AmazonDirectConnectException {
     private static final long serialVersionUID = 1L;
 

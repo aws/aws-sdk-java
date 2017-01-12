@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.xray.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request is missing required parameters or has invalid parameters.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRequestException extends com.amazonaws.services.xray.model.AWSXRayException {
     private static final long serialVersionUID = 1L;
 

@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.xray.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.xray.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * TelemetryRecord JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TelemetryRecordJsonUnmarshaller implements Unmarshaller<TelemetryRecord, JsonUnmarshallerContext> {
 
     public TelemetryRecord unmarshall(JsonUnmarshallerContext context) throws Exception {

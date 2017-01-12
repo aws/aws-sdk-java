@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudhsm;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudhsm.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.cloudhsm.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWSCloudHSMAsync {
 
     protected AbstractAWSCloudHSMAsync() {

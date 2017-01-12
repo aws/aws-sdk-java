@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Limits implements Serializable, Cloneable {
 
     private Integer maximumReplicationCount;

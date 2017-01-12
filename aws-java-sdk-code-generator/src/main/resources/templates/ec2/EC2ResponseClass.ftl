@@ -2,11 +2,14 @@ ${fileHeader}
 package ${metadata.packageName}.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName} extends ${baseClassFqcn}
     implements Serializable, Cloneable {
 

@@ -13,6 +13,7 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * satisfied by each returned result.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WorkflowTypeFilter implements Serializable, Cloneable {
 
     /**

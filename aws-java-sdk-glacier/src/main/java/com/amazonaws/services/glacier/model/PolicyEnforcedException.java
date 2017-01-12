@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.glacier.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about
  * data retrieval policies,
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PolicyEnforcedException extends com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Your request contains forward cookies option which doesn't match with the expectation for the
@@ -19,6 +21,7 @@ package com.amazonaws.services.cloudfront.model;
  * list of cookie names is missing when expected.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidForwardCookiesException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

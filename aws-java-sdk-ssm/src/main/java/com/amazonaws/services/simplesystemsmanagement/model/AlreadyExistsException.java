@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Error returned if an attempt is made to register a patch group with a patch baseline that is already registered with
  * a different patch baseline.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AlreadyExistsException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

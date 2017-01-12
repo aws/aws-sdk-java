@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation, which
@@ -21,6 +23,7 @@ package com.amazonaws.services.applicationautoscaling.model;
  * cannot be found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ObjectNotFoundException extends com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 

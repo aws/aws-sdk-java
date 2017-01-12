@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You cannot delete a cluster that has registered container instances. You must first deregister the container
  * instances before you can delete the cluster. For more information, see <a>DeregisterContainerInstance</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClusterContainsContainerInstancesException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

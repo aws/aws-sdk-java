@@ -13,12 +13,14 @@
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes the data specification of a <code>DataSource</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3DataSpec implements Serializable, Cloneable {
 
     /**

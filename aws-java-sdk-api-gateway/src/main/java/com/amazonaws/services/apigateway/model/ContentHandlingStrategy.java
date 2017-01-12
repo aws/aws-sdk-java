@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.apigateway.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ContentHandlingStrategy {
 
     CONVERT_TO_BINARY("CONVERT_TO_BINARY"),

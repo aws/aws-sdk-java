@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MaximumExecutionFrequency {
 
     One_Hour("One_Hour"),

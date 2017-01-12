@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.waf.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation failed because AWS WAF didn't recognize a parameter in the request. For example:
@@ -65,6 +67,7 @@ package com.amazonaws.services.waf.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFInvalidParameterException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 

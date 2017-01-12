@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.autoscaling;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
  * Abstract implementation of {@code AmazonAutoScaling}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
 
     protected AbstractAmazonAutoScaling() {

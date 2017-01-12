@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.workspaces;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.*;
 
@@ -19,6 +21,7 @@ import com.amazonaws.*;
  * Abstract implementation of {@code AmazonWorkspaces}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     protected AbstractAmazonWorkspaces() {

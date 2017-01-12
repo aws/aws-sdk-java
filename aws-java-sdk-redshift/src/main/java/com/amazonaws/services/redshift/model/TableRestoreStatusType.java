@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TableRestoreStatusType {
 
     PENDING("PENDING"),

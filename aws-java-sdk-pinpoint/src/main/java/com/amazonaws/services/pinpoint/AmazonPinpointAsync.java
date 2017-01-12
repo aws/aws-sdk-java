@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.pinpoint;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.pinpoint.model.*;
 
 /**
@@ -23,6 +25,7 @@ import com.amazonaws.services.pinpoint.model.*;
  * {@link com.amazonaws.services.pinpoint.AbstractAmazonPinpointAsync} instead.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**

@@ -32,7 +32,7 @@ import java.util.Map;
  * Formats the generated java source code. Uses Eclipse JDT core plugin from the Eclipse SDK.
  */
 @SuppressWarnings("unchecked")
-public class JavaCodeFormatter {
+public class JavaCodeFormatter implements ContentProcessor {
 
     private final CodeFormatter codeFormatter;
 
@@ -90,7 +90,7 @@ public class JavaCodeFormatter {
                 ToolFactory.M_FORMAT_EXISTING);
     }
 
-    public String format(String contents) {
+    public String apply(String contents) {
         final TextEdit edit = codeFormatter.format(
                 CodeFormatter.K_COMPILATION_UNIT
                         | CodeFormatter.F_INCLUDE_COMMENTS, contents, 0,

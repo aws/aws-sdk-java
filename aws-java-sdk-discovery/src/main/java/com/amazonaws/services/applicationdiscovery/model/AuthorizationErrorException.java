@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.applicationdiscovery.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The AWS user account does not have permission to perform the action. Check the IAM policy associated with this
  * account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AuthorizationErrorException extends com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {
     private static final long serialVersionUID = 1L;
 

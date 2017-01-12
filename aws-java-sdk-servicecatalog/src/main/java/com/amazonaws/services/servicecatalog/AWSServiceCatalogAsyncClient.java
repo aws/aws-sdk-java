@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.servicecatalog;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.servicecatalog.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -51,6 +53,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implements AWSServiceCatalogAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

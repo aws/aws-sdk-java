@@ -13,6 +13,7 @@
 package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import java.io.Serializable;
  * exists, or if a specific attribute doesn't exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateCondition implements Serializable, Cloneable {
 
     /**

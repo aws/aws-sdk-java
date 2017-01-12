@@ -2,6 +2,8 @@ ${fileHeader}
 <#assign serviceAbbreviation = (metadata.serviceAbbreviation)!metadata.serviceFullName/>
 package ${metadata.packageName};
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.opensdk.*;
 import com.amazonaws.opensdk.model.*;
@@ -16,6 +18,7 @@ import ${metadata.packageName}.model.*;
  * ${metadata.documentation}
 </#if>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface ${metadata.syncInterface} {
 
   <#list operations?values as operationModel>
@@ -28,30 +31,6 @@ public interface ${metadata.syncInterface} {
     public static ${metadata.syncClientBuilderClassName} builder() {
       return new ${metadata.syncClientBuilderClassName}();
     }
-
-    /**
-     * Execute the given request.
-     * <p>
-     * Any content returned in the response will be discarded.
-     *
-     * @param request The request.
-     *
-     * @return The result of the request execution.
-     */
-    RawResult execute(RawRequest request);
-
-    /**
-     * Execute the given request.
-     * <p>
-     * The request content stream will be made available to the supplied {@link
-     * ResultContentConsumer}.
-     *
-     * @param request The request.
-     * @param consumer The result content consumer.
-     *
-     * @return The result of the request execution.
-     */
-    RawResult execute(RawRequest request, ResultContentConsumer consumer);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

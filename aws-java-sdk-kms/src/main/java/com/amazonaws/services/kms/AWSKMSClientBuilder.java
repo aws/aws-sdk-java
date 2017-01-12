@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kms;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
@@ -22,6 +24,7 @@ import com.amazonaws.client.AwsSyncClientParams;
  * of the client class.
  **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSKMSClientBuilder extends AwsSyncClientBuilder<AWSKMSClientBuilder, AWSKMS> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.snowball;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsAsyncClientBuilder;
@@ -22,6 +24,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
  * using constructors of the client class.
  **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonSnowballAsyncClientBuilder extends AwsAsyncClientBuilder<AmazonSnowballAsyncClientBuilder, AmazonSnowballAsync> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();;

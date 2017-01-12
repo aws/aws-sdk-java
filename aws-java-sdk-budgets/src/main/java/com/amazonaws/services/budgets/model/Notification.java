@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Notification model. Each budget may contain multiple notifications with different settings.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Notification implements Serializable, Cloneable {
 
     private String notificationType;

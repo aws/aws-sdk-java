@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.budgets.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Budgets
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSBudgetsException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

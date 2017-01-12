@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.redshift.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.redshift.model.DescribeClusterSnapshotsRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.redshift.model.DescribeClusterSnapshotsResult;
 import com.amazonaws.services.redshift.AmazonRedshift;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeClusterSnapshotsFunction implements SdkFunction<DescribeClusterSnapshotsRequest, DescribeClusterSnapshotsResult> {
 
     /**

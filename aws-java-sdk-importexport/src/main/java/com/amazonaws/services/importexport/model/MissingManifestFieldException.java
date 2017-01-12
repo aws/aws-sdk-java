@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * One or more required fields were missing from the manifest file. Please correct and resubmit.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MissingManifestFieldException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

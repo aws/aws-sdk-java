@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the specified alias name is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidAliasNameException extends com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 

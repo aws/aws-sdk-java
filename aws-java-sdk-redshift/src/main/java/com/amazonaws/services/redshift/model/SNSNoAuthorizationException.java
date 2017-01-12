@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You do not have permission to publish to the specified Amazon SNS topic.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SNSNoAuthorizationException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

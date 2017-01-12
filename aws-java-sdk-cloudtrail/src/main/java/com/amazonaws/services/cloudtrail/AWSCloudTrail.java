@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudtrail;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -48,6 +50,7 @@ import com.amazonaws.services.cloudtrail.model.*;
  * User Guide</a> for information about the data that is included with each AWS API call listed in the log files.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCloudTrail {
 
     /**

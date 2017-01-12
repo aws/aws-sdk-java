@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum OutputFormat {
 
     Mp3("mp3"),

@@ -13,12 +13,14 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A list of in-progress multipart uploads for a vault.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UploadListElement implements Serializable, Cloneable {
 
     /**

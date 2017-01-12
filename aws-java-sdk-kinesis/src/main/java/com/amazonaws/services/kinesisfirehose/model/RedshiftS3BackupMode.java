@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RedshiftS3BackupMode {
 
     Disabled("Disabled"),

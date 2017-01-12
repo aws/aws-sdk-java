@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simpleemail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the
@@ -20,6 +22,7 @@ package com.amazonaws.services.simpleemail.model;
  * Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MailFromDomainNotVerifiedException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 

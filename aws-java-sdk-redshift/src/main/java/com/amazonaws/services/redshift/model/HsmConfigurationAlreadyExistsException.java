@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * There is already an existing Amazon Redshift HSM configuration with the specified identifier.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HsmConfigurationAlreadyExistsException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

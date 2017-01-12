@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.pinpoint.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Action {
 
     OPEN_APP("OPEN_APP"),

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.support.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The expiration time of the attachment set has passed. The set expires 1 hour after it is created.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AttachmentSetExpiredException extends com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 

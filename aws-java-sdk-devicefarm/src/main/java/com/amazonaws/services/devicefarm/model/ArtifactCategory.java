@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.devicefarm.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ArtifactCategory {
 
     SCREENSHOT("SCREENSHOT"),

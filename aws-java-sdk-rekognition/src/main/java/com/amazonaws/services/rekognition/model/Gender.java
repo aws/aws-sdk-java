@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Gender of the face and the confidence level in the determination.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Gender implements Serializable, Cloneable {
 
     /**

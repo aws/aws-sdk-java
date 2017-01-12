@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Used to filter the closed workflow executions in visibility APIs by their close status.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloseStatusFilter implements Serializable, Cloneable {
 
     /**

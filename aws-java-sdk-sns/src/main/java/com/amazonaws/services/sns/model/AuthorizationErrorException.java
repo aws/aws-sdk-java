@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.sns.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that the user has been denied access to the requested resource.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AuthorizationErrorException extends com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 

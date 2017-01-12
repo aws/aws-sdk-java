@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.appstream.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.appstream.model.DescribeFleetsRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.appstream.model.DescribeFleetsResult;
 import com.amazonaws.services.appstream.AmazonAppStream;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeFleetsFunction implements SdkFunction<DescribeFleetsRequest, DescribeFleetsResult> {
 
     /**

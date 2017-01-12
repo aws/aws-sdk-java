@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Failed access to resources caused an exception. This exception currently only applies to
@@ -22,6 +24,7 @@ package com.amazonaws.services.applicationautoscaling.model;
  * operation on behalf of your account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FailedResourceAccessException extends com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 

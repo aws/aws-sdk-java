@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is
  * currently in use.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceInUseException extends com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 

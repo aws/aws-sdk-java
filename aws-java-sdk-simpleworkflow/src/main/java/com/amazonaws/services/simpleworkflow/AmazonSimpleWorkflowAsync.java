@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simpleworkflow;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.simpleworkflow.model.*;
 
 /**
@@ -39,6 +41,7 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
 
     /**

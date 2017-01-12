@@ -12,10 +12,13 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please
  * correct and resubmit.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MultipleRegionsException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

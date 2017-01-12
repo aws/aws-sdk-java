@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticsearch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An exception for missing / invalid input fields. Gives http status code of 400.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ValidationException extends com.amazonaws.services.elasticsearch.model.AWSElasticsearchException {
     private static final long serialVersionUID = 1L;
 

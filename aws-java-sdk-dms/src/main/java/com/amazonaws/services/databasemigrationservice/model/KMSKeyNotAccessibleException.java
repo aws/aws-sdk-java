@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * AWS DMS cannot access the KMS key.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class KMSKeyNotAccessibleException extends com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 

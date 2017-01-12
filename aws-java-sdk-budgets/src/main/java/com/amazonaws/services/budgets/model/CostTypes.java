@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * This includes the options for getting the cost of a budget.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CostTypes implements Serializable, Cloneable {
 
     private Boolean includeTax;

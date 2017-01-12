@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Provides details of the <code>WorkflowExecutionContinuedAsNew</code> event.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializable, Cloneable {
 
     /**

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.redshift.AmazonRedshiftClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.redshift.AmazonRedshiftClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRedshiftModuleInjector implements InjectorSource {
 
     @Override

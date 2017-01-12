@@ -13,12 +13,14 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Network details about the host where the agent/Connector resides.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AgentNetworkInfo implements Serializable, Cloneable {
 
     /**

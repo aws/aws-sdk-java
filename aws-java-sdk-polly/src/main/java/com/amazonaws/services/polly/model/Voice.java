@@ -13,6 +13,7 @@
 package com.amazonaws.services.polly.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import java.io.Serializable;
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/Voice" target="_top">AWS API Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Voice implements Serializable, Cloneable {
 
     /**

@@ -13,12 +13,14 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Status of a daily automated snapshot.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnapshotOptionsStatus implements Serializable, Cloneable {
 
     /**

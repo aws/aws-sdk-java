@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BuildSuggestersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<String> fieldNames;

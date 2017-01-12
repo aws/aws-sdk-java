@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticsearch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The type of EBS volume, standard, gp2, or io1. See <a href=
@@ -19,6 +21,7 @@ package com.amazonaws.services.elasticsearch.model;
  * target="_blank">Configuring EBS-based Storage</a>for more information.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VolumeType {
 
     Standard("standard"),

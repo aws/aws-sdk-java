@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.sqs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The queue referred to doesn't exist.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class QueueDoesNotExistException extends com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 

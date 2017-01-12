@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The attribute payload.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AttributePayload implements Serializable, Cloneable {
 
     /**

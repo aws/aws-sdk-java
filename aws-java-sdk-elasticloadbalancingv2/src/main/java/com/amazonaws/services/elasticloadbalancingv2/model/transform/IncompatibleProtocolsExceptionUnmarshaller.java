@@ -13,13 +13,15 @@
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
 import org.w3c.dom.Node;
+import javax.annotation.Generated;
 
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.util.XpathUtils;
+
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.elasticloadbalancingv2.model.IncompatibleProtocolsException;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IncompatibleProtocolsExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public IncompatibleProtocolsExceptionUnmarshaller() {

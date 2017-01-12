@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.directory.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The maximum number of manual snapshots for the directory has been reached. You can use the <a>GetSnapshotLimits</a>
  * operation to determine the snapshot limits for a directory.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnapshotLimitExceededException extends com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 

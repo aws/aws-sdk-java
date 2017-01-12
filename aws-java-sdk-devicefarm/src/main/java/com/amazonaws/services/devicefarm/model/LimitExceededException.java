@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.devicefarm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A limit was exceeded.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 

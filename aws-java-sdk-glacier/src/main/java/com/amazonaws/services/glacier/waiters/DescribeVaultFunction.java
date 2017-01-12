@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.glacier.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.glacier.model.DescribeVaultRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.glacier.model.DescribeVaultResult;
 import com.amazonaws.services.glacier.AmazonGlacier;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVaultFunction implements SdkFunction<DescribeVaultRequest, DescribeVaultResult> {
 
     /**

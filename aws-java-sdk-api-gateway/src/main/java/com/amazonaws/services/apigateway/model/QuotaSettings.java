@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Quotas configured for a usage plan.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class QuotaSettings implements Serializable, Cloneable {
 
     /**

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.kinesis.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the
  * returned message.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidArgumentException extends com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 

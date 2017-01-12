@@ -13,12 +13,14 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Tags for a configuration item. Tags are metadata that help you categorize IT assets.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigurationTag implements Serializable, Cloneable {
 
     /**

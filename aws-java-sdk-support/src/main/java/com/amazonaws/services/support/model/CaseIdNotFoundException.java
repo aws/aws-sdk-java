@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.support.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested <code>caseId</code> could not be located.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaseIdNotFoundException extends com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 

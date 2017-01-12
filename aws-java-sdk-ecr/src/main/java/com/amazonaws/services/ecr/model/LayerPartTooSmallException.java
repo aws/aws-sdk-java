@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Layer parts must be at least 5 MiB in size.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LayerPartTooSmallException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

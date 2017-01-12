@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.rekognition.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * MouthOpen JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MouthOpenJsonUnmarshaller implements Unmarshaller<MouthOpen, JsonUnmarshallerContext> {
 
     public MouthOpen unmarshall(JsonUnmarshallerContext context) throws Exception {

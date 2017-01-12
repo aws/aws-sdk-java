@@ -13,11 +13,11 @@
 package com.amazonaws.services.sns.model.transform;
 
 import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
+
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.sns.model.*;
 import com.amazonaws.transform.Unmarshaller;
@@ -28,6 +28,8 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GetSMSAttributesResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetSMSAttributesResultStaxUnmarshaller implements Unmarshaller<GetSMSAttributesResult, StaxUnmarshallerContext> {
 
     private static class AttributesMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {

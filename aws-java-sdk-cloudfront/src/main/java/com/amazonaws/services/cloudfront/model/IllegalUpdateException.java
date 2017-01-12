@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Origin and <code>CallerReference</code> cannot be updated.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IllegalUpdateException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

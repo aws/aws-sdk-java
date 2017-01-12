@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified service is not active. You cannot update a service that is not active. If you have previously deleted a
  * service, you can re-create it with <a>CreateService</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceNotActiveException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

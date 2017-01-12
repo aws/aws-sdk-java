@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a
@@ -19,6 +21,7 @@ package com.amazonaws.services.redshift.model;
  * the <i>Amazon Redshift Cluster Management Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HsmClientCertificateQuotaExceededException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

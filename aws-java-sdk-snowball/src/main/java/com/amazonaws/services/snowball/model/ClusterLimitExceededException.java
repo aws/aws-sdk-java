@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your cluster and
  * you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five notes.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClusterLimitExceededException extends com.amazonaws.services.snowball.model.AmazonSnowballException {
     private static final long serialVersionUID = 1L;
 

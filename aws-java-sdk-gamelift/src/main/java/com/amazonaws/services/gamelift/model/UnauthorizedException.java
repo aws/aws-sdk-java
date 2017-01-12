@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The client failed authentication. Clients should not retry such requests.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnauthorizedException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 

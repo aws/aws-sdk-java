@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 

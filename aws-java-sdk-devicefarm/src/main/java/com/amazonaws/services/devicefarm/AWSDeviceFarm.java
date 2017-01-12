@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.devicefarm;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -29,6 +31,7 @@ import com.amazonaws.services.devicefarm.model.*;
  * phones, tablets, and other devices in the cloud.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSDeviceFarm {
 
     /**

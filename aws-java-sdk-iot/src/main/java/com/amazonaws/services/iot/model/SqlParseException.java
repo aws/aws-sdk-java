@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The Rule-SQL expression can't be parsed correctly.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SqlParseException extends com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 

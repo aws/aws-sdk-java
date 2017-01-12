@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An encryption key could not be accessed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EncryptionKeyAccessDeniedException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

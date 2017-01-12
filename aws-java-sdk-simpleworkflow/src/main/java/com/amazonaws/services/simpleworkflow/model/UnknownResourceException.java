@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could
  * happen if the named resource was never created or is no longer available for this operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnknownResourceException extends com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 

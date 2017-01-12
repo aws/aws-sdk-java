@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * Specifies whether the job to initiate is an import or export job.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum JobType {
 
     Import("Import"),

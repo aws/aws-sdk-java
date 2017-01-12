@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.budgets.model;
 
+import javax.annotation.Generated;
+
 /**
  * This exception is thrown on an unknown internal failure.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalErrorException extends com.amazonaws.services.budgets.model.AWSBudgetsException {
     private static final long serialVersionUID = 1L;
 

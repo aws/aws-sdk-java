@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceRecordSetRegion {
 
     UsEast1("us-east-1"),

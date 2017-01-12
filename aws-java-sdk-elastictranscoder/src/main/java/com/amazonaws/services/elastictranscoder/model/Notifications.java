@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -24,6 +25,7 @@ import java.io.Serializable;
  * </p>
  * </important>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Notifications implements Serializable, Cloneable {
 
     /**

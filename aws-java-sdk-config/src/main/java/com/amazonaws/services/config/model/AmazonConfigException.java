@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Config
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonConfigException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

@@ -13,12 +13,14 @@
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes the <code>DataSource</code> details specific to Amazon Redshift.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RedshiftMetadata implements Serializable, Cloneable {
 
     private RedshiftDatabase redshiftDatabase;

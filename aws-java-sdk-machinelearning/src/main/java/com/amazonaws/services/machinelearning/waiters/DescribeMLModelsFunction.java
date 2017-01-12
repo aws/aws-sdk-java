@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.machinelearning.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.machinelearning.model.DescribeMLModelsRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.machinelearning.model.DescribeMLModelsResult;
 import com.amazonaws.services.machinelearning.AmazonMachineLearning;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeMLModelsFunction implements SdkFunction<DescribeMLModelsRequest, DescribeMLModelsResult> {
 
     /**

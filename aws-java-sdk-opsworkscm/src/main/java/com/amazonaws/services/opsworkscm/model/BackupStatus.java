@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.opsworkscm.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BackupStatus {
 
     IN_PROGRESS("IN_PROGRESS"),

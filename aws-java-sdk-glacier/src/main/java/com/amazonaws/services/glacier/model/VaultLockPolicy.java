@@ -13,12 +13,14 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains the vault lock policy.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VaultLockPolicy implements Serializable, Cloneable {
 
     /**

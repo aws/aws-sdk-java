@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.servicecatalog.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * One or more parameters provided to the operation are invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParametersException extends com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException {
     private static final long serialVersionUID = 1L;
 

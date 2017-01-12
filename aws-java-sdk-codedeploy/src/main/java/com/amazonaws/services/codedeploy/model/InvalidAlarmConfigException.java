@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The format of the alarm configuration is invalid. Possible causes include:
@@ -44,6 +46,7 @@ package com.amazonaws.services.codedeploy.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidAlarmConfigException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

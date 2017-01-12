@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MultipleIamArnsProvidedException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

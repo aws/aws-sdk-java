@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the mount target would violate one of the specified restrictions based on the file system's existing
  * mount targets.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MountTargetConflictException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

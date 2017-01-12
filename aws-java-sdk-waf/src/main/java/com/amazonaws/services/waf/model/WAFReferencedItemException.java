@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.waf.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation failed because you tried to delete an object that is still in use. For example:
@@ -29,6 +31,7 @@ package com.amazonaws.services.waf.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFReferencedItemException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 

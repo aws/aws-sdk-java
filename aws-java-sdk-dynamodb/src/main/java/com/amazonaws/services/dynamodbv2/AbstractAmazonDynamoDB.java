@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
  * Abstract implementation of {@code AmazonDynamoDB}. Convenient method forms pass through to the corresponding overload
  * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
 
     protected AbstractAmazonDynamoDB() {

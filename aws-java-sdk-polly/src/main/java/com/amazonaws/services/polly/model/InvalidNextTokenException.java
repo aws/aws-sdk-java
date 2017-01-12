@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The NextToken is invalid. Verify that it's spelled correctly, and then try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidNextTokenException extends com.amazonaws.services.polly.model.AmazonPollyException {
     private static final long serialVersionUID = 1L;
 

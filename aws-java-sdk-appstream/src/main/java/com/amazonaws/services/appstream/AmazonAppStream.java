@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.appstream;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -30,6 +32,7 @@ import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
  * API documentation for Amazon AppStream 2.0.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonAppStream {
 
     /**

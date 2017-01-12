@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ProtectionPolicy {
 
     NoProtection("NoProtection"),

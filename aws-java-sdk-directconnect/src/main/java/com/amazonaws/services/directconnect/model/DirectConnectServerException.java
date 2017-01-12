@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.directconnect.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A server-side error occurred during the API call. The error message will contain additional details about the cause.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DirectConnectServerException extends com.amazonaws.services.directconnect.model.AmazonDirectConnectException {
     private static final long serialVersionUID = 1L;
 

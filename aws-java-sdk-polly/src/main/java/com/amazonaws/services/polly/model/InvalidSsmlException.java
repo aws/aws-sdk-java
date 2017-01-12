@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidSsmlException extends com.amazonaws.services.polly.model.AmazonPollyException {
     private static final long serialVersionUID = 1L;
 

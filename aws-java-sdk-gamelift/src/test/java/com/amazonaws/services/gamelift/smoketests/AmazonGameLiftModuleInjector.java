@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.gamelift.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.gamelift.AmazonGameLiftClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.gamelift.AmazonGameLiftClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonGameLiftModuleInjector implements InjectorSource {
 
     @Override

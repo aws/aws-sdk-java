@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Indicates whether or not the mouth on the face is open, and the confidence level in the determination.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MouthOpen implements Serializable, Cloneable {
 
     /**

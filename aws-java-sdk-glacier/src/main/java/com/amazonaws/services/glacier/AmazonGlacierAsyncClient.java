@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.glacier;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -63,6 +65,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements AmazonGlacierAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

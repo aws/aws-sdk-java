@@ -13,12 +13,14 @@
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The database details of an Amazon RDS database.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RDSDatabase implements Serializable, Cloneable {
 
     /**

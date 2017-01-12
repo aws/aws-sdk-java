@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.budgets.model;
 
+import javax.annotation.Generated;
+
 /**
  * This exception is thrown if the paging token is expired - past its TTL
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExpiredNextTokenException extends com.amazonaws.services.budgets.model.AWSBudgetsException {
     private static final long serialVersionUID = 1L;
 

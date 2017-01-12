@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.sns;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.sns.model.*;
 
 /**
  * Abstract implementation of {@code AmazonSNSAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonSNSAsync {
 
     protected AbstractAmazonSNSAsync() {

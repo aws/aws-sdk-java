@@ -13,6 +13,7 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -27,6 +28,7 @@ import java.io.Serializable;
  * information, see <a>manage-access-resource-policies</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3Object implements Serializable, Cloneable {
 
     /**

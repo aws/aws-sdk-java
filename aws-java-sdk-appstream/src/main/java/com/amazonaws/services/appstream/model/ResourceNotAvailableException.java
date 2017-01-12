@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.appstream.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified resource exists and is not in use, but isn't available.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotAvailableException extends com.amazonaws.services.appstream.model.AmazonAppStreamException {
     private static final long serialVersionUID = 1L;
 

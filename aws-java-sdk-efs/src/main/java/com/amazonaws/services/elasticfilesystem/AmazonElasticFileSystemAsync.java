@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticfilesystem;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticfilesystem.model.*;
 
 /**
@@ -31,6 +33,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
  * href="http://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**

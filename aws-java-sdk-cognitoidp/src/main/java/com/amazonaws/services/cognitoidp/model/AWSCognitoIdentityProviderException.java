@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Cognito Identity Provider
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCognitoIdentityProviderException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The value specified for the event severity was not one of the allowed values, or it specified a severity that does
  * not apply to the specified source type. The allowed values are ERROR and INFO.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SubscriptionSeverityNotFoundException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

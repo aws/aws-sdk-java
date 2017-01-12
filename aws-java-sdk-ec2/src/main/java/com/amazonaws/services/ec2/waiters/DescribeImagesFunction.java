@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.ec2.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.ec2.model.DescribeImagesRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.ec2.model.DescribeImagesResult;
 import com.amazonaws.services.ec2.AmazonEC2;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeImagesFunction implements SdkFunction<DescribeImagesRequest, DescribeImagesResult> {
 
     /**

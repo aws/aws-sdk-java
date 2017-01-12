@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The desired instance type and desired number of replicas of each index partition.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScalingParameters implements Serializable, Cloneable {
 
     /**

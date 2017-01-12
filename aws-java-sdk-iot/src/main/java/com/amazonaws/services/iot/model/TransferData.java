@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Data used to transfer a certificate to an AWS account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TransferData implements Serializable, Cloneable {
 
     /**

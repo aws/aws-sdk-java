@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified repository could not be found. Check the spelling of the specified repository and ensure that you are
  * performing operations on the correct registry.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RepositoryNotFoundException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

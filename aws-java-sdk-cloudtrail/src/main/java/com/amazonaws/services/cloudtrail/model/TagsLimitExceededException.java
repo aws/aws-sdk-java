@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagsLimitExceededException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 

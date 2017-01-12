@@ -12,12 +12,14 @@
  */
 package com.amazonaws.auth.policy.actions;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS Device Farm.
  */
-
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DevicefarmActions implements Action {
 
     /** Represents any action executed on AWS Device Farm. */

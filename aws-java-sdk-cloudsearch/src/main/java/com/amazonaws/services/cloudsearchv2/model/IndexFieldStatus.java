@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The value of an <code>IndexField</code> and its current status.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IndexFieldStatus implements Serializable, Cloneable {
 
     private IndexField options;

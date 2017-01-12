@@ -13,7 +13,6 @@
 
 package com.amazonaws.services.ec2.waiters;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.WaiterAcceptor;
 import com.amazonaws.waiters.WaiterState;
@@ -25,8 +24,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.amazonaws.jmespath.*;
 
 import java.io.IOException;
+import javax.annotation.Generated;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 class ConversionTaskDeleted {
 
     static class IsDeletedMatcher extends WaiterAcceptor<DescribeConversionTasksResult> {

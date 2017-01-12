@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Indicates the location of the landmark on the face.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Landmark implements Serializable, Cloneable {
 
     /**

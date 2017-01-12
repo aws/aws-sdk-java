@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudfront;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
  * Abstract implementation of {@code AmazonCloudFront}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     protected AbstractAmazonCloudFront() {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.budgets.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.budgets.AWSBudgetsClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.budgets.AWSBudgetsClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSBudgetsModuleInjector implements InjectorSource {
 
     @Override

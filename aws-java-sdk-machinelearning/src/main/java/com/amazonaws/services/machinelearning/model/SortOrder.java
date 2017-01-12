@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The sort order specified in a listing condition. Possible values include the following:
@@ -21,6 +23,7 @@ package com.amazonaws.services.machinelearning.model;
  * <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SortOrder {
 
     Asc("asc"),

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DBSnapshotNotFoundException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.storagegateway.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An exception occurred because an invalid gateway request was issued to the service. For more information, see the
  * error and message fields.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidGatewayRequestException extends com.amazonaws.services.storagegateway.model.AWSStorageGatewayException {
     private static final long serialVersionUID = 1L;
 

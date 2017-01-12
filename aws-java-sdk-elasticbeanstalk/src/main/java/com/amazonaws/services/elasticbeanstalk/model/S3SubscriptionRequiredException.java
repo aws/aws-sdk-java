@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified account does not have a subscription to Amazon S3.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3SubscriptionRequiredException extends com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 

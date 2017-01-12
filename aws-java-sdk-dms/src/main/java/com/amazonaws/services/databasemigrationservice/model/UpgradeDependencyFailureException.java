@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An upgrade dependency is preventing the database migration.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpgradeDependencyFailureException extends com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 

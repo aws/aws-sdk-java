@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Represents the response of the test invoke request for a custom <a>Authorizer</a>
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

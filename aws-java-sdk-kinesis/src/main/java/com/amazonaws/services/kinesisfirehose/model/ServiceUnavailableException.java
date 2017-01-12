@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits
@@ -19,6 +21,7 @@ package com.amazonaws.services.kinesisfirehose.model;
  * <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Firehose Limits</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceUnavailableException extends com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 

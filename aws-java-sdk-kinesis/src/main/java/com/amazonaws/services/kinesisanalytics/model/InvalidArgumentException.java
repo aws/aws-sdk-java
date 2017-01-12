@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Specified input parameter value is invalid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidArgumentException extends com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException {
     private static final long serialVersionUID = 1L;
 

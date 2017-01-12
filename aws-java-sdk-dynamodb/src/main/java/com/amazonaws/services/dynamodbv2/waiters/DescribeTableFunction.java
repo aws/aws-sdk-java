@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.dynamodbv2.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.dynamodbv2.model.DescribeTableResult;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeTableFunction implements SdkFunction<DescribeTableRequest, DescribeTableResult> {
 
     /**

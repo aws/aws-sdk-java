@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.autoscaling;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.autoscaling.model.*;
 
 /**
@@ -30,6 +32,7 @@ import com.amazonaws.services.autoscaling.model.*;
  * services.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iotdata.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified combination of HTTP verb and URI is not supported.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MethodNotAllowedException extends com.amazonaws.services.iotdata.model.AWSIotDataException {
     private static final long serialVersionUID = 1L;
 

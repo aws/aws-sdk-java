@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded. For more
@@ -20,6 +22,7 @@ package com.amazonaws.services.applicationautoscaling.model;
  * Limits</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 

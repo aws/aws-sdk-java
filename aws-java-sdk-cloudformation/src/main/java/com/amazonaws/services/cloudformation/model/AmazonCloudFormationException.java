@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cloudformation.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS CloudFormation
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudFormationException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

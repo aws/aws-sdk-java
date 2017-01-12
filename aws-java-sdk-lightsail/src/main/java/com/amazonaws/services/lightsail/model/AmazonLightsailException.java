@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.lightsail.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Lightsail
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonLightsailException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

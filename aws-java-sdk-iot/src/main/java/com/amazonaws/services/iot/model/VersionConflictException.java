@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An exception thrown when the version of a thing passed to a command is different than the version specified with the
  * --version parameter.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VersionConflictException extends com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 

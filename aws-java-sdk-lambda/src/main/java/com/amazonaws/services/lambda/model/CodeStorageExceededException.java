@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.lambda.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have exceeded your maximum total code size per account. <a
  * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CodeStorageExceededException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 

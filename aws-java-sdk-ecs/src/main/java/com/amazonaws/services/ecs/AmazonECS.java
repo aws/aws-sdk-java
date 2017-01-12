@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -39,6 +41,7 @@ import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
  * infrastructure.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonECS {
 
     /**

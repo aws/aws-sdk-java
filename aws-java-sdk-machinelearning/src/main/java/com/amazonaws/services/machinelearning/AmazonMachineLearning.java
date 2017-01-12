@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -27,6 +29,7 @@ import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaite
  * <p>
  * Definition of the public APIs exposed by Amazon Machine Learning
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonMachineLearning {
 
     /**

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.lambda;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -36,6 +38,7 @@ import com.amazonaws.services.lambda.model.*;
  * <i>AWS Lambda Developer Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSLambda {
 
     /**

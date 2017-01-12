@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.budgets;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.budgets.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -24,6 +26,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * All public APIs for AWS Budgets
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSBudgetsAsyncClient extends AWSBudgetsClient implements AWSBudgetsAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

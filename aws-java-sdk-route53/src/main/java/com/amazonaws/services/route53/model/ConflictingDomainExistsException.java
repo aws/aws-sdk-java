@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You specified an Amazon VPC that you're already using for another hosted zone, and the domain that you specified for
@@ -19,6 +21,7 @@ package com.amazonaws.services.route53.model;
  * can't use the same Amazon VPC for the hosted zones for example.com and test.example.com.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictingDomainExistsException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

@@ -13,6 +13,7 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -57,6 +58,7 @@ import java.io.Serializable;
  * <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set up an API's
  * method</a> </div>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Method implements Serializable, Cloneable {
 
     /**

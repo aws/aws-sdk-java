@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.support.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The limit for the number of <a>DescribeAttachment</a> requests in a short period of time has been exceeded.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAttachmentLimitExceededException extends com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 

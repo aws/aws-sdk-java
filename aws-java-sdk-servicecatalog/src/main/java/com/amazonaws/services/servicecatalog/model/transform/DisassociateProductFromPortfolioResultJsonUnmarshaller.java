@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.servicecatalog.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * DisassociateProductFromPortfolioResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateProductFromPortfolioResultJsonUnmarshaller implements Unmarshaller<DisassociateProductFromPortfolioResult, JsonUnmarshallerContext> {
 
     public DisassociateProductFromPortfolioResult unmarshall(JsonUnmarshallerContext context) throws Exception {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.stepfunctions;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.stepfunctions.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -38,6 +40,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implements AWSStepFunctionsAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

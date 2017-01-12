@@ -13,12 +13,14 @@
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Represents a summary of a <a>Method</a> resource, given a particular date and time.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MethodSnapshot implements Serializable, Cloneable {
 
     /**

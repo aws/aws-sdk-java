@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticbeanstalk;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticbeanstalk.model.*;
 
 /**
@@ -45,6 +47,7 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * the <i>Amazon Web Services Glossary</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**

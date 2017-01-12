@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The VPC that you're trying to disassociate from the private hosted zone is the last VPC that is associated with the
  * hosted zone. Amazon Route 53 doesn't support disassociating the last VPC from a hosted zone.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LastVPCAssociationException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

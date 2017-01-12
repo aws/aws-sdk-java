@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.rds;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.rds.model.*;
 
 /**
  * Abstract implementation of {@code AmazonRDSAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonRDSAsync {
 
     protected AbstractAmazonRDSAsync() {

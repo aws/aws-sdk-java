@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecr;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.ecr.model.*;
 
 /**
@@ -31,6 +33,7 @@ import com.amazonaws.services.ecr.model.*;
  * images.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonECRAsync extends AmazonECR {
 
     /**

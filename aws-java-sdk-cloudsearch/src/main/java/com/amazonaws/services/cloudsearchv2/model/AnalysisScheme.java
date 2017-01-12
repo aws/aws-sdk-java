@@ -13,6 +13,7 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -22,6 +23,7 @@ import java.io.Serializable;
  * <code>AlgorithmicStemming</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AnalysisScheme implements Serializable, Cloneable {
 
     private String analysisSchemeName;

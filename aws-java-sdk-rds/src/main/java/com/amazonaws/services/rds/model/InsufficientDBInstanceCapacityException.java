@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Specified DB instance class is not available in the specified Availability Zone.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsufficientDBInstanceCapacityException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

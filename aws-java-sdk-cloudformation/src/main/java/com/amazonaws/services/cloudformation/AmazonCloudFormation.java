@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudformation;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -46,6 +48,7 @@ import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters
  * product, see its <a href="http://docs.aws.amazon.com/">technical documentation</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudFormation {
 
     /**

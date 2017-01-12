@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.servermigration.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.servermigration.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Connector JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConnectorJsonUnmarshaller implements Unmarshaller<Connector, JsonUnmarshallerContext> {
 
     public Connector unmarshall(JsonUnmarshallerContext context) throws Exception {

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.servicecatalog.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation was requested against a resource that is currently in use. Free the resource from use and retry the
  * operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceInUseException extends com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException {
     private static final long serialVersionUID = 1L;
 

@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.servicecatalog.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * RecordOutput JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecordOutputJsonUnmarshaller implements Unmarshaller<RecordOutput, JsonUnmarshallerContext> {
 
     public RecordOutput unmarshall(JsonUnmarshallerContext context) throws Exception {

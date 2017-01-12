@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticsearch;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -35,6 +37,7 @@ import com.amazonaws.services.elasticsearch.model.*;
  * and Endpoints</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSElasticsearch {
 
     /**

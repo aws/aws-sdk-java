@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cognitosync.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Cognito Sync
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCognitoSyncException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

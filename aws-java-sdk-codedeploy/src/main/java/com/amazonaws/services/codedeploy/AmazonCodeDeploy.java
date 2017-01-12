@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codedeploy;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -99,6 +101,7 @@ import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCodeDeploy {
 
     /**

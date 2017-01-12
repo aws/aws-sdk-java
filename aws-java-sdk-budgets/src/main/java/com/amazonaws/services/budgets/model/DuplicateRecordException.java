@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.budgets.model;
 
+import javax.annotation.Generated;
+
 /**
  * The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DuplicateRecordException extends com.amazonaws.services.budgets.model.AWSBudgetsException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudformation;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudformation.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -43,6 +45,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient implements AmazonCloudFormationAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

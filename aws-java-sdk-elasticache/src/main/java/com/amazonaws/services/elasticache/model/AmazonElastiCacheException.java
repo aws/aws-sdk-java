@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon ElastiCache
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElastiCacheException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

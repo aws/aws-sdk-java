@@ -13,6 +13,7 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import java.io.Serializable;
  * Rekognition selects the largest face in the source image for this comparison.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ComparedSourceImageFace implements Serializable, Cloneable {
 
     private BoundingBox boundingBox;

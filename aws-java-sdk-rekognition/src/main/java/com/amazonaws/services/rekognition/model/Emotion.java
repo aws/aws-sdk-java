@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The emotions detected on the face, and the confidence level in the determination. For example, HAPPY, SAD, and ANGRY.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Emotion implements Serializable, Cloneable {
 
     /**

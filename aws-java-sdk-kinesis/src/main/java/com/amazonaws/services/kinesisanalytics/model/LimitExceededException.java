@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Exceeded the number of applications allowed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException {
     private static final long serialVersionUID = 1L;
 

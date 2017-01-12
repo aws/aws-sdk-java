@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN is:
@@ -20,6 +22,7 @@ package com.amazonaws.services.cloudtrail.model;
  * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudTrailARNInvalidException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 

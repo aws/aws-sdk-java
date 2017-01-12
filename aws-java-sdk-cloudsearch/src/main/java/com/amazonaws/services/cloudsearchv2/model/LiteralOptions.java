@@ -13,6 +13,7 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * . All options are enabled by default.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LiteralOptions implements Serializable, Cloneable {
 
     /** A value to use for the field if the field isn't specified for a document. */

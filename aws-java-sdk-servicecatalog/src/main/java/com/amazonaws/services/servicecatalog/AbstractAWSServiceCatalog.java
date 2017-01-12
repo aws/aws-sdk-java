@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.servicecatalog;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.servicecatalog.model.*;
 import com.amazonaws.*;
 
@@ -19,6 +21,7 @@ import com.amazonaws.*;
  * Abstract implementation of {@code AWSServiceCatalog}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
 
     protected AbstractAWSServiceCatalog() {

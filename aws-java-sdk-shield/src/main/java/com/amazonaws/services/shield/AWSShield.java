@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.shield;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -32,6 +34,7 @@ import com.amazonaws.services.shield.model.*;
  * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSShield {
 
     /**

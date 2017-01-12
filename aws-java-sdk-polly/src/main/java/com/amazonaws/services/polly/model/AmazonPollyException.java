@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Polly
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonPollyException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

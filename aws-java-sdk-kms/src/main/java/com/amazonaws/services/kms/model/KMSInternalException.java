@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because an internal exception occurred. The request can be retried.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class KMSInternalException extends com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 

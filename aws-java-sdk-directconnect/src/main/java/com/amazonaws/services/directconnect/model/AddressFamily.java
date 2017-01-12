@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.directconnect.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates the address family for the BGP peer.
@@ -29,6 +31,7 @@ package com.amazonaws.services.directconnect.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AddressFamily {
 
     Ipv4("ipv4"),

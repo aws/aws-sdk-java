@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HistoryItemType {
 
     ConfigurationUpdate("ConfigurationUpdate"),

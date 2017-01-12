@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the file system you are trying to create already exists, with the creation token you provided.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FileSystemAlreadyExistsException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

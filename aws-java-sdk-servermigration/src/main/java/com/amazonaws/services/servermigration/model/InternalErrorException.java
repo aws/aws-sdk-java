@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * An internal error has occured.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalErrorException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the public key certificate and the private key do not match.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class KeyPairMismatchException extends com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 

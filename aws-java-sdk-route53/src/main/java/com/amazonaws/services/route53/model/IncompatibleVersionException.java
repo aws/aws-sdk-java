@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider using a newer
  * endpoint or a tool that does so.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IncompatibleVersionException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

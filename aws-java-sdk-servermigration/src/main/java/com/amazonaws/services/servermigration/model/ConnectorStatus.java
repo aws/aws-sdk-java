@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * Status of on-premise Connector
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ConnectorStatus {
 
     HEALTHY("HEALTHY"),

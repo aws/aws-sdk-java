@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * AWS CodeBuild is not available in the specified region.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CodeBuildNotInServiceRegionException extends com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 

@@ -13,11 +13,11 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
+
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.transform.Unmarshaller;
@@ -28,6 +28,8 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GetAccountSummaryResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetAccountSummaryResultStaxUnmarshaller implements Unmarshaller<GetAccountSummaryResult, StaxUnmarshallerContext> {
 
     private static class SummaryMapMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, Integer>, StaxUnmarshallerContext> {

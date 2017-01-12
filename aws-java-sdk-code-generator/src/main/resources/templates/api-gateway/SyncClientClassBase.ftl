@@ -8,6 +8,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
+import javax.annotation.Generated;
 
 import org.apache.commons.logging.*;
 
@@ -50,7 +51,8 @@ import ${metadata.packageName}.model.transform.*;
  * <p>
  * ${documentation}
  */
- @ThreadSafe
+@ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 class ${metadata.syncClient} implements ${metadata.syncInterface} {
 
 
@@ -76,33 +78,6 @@ class ${metadata.syncClient} implements ${metadata.syncInterface} {
 <#list operations?values as operationModel>
     <@ClientMethodForOperation.content metadata operationModel />
 </#list>
-
-
-    @Override
-    public RawResult execute(RawRequest request) {
-        return execute(request, (r,c) -> {});
-    }
-
-    @Override
-    public RawResult execute(RawRequest request, ResultContentConsumer consumer) {
-        if (consumer == null) {
-            throw new IllegalArgumentException("consumer must not be null");
-        }
-
-        HttpResponseHandler<RawResult> responseHandler =
-                protocolFactory.createResponseHandler(new JsonOperationMetadata()
-                                .withPayloadJson(false)
-                                .withHasStreamingSuccessResponse(true),
-                        new RawResultUnmarshaller(consumer));
-
-        HttpResponseHandler<SdkBaseException> errorResponseHandler = createErrorResponseHandler();
-
-        return clientHandler.execute(new ClientExecutionParams<RawRequest, RawResult>()
-                .withMarshaller(new RawRequestMarshaller(protocolFactory))
-                .withResponseHandler(responseHandler)
-                .withErrorResponseHandler(errorResponseHandler)
-                .withInput(request));
-    }
 
     /**
      * Create the error response handler for the operation.

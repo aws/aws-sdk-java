@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.directconnect;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -33,6 +35,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient implements AmazonDirectConnectAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

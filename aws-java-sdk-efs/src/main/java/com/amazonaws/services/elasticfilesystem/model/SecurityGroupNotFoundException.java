@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if one of the specified security groups does not exist in the subnet's VPC.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SecurityGroupNotFoundException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

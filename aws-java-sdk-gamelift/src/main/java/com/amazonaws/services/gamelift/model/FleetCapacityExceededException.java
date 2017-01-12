@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry
  * such requests immediately or after a waiting period.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FleetCapacityExceededException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 

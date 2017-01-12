@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudwatch;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -39,6 +41,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implements AmazonCloudWatchAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

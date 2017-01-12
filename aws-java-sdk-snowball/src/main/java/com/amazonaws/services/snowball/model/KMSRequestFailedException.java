@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The provided AWS Key Management Service key lacks the permissions to perform the specified <a>CreateJob</a> or
  * <a>UpdateJob</a> action.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class KMSRequestFailedException extends com.amazonaws.services.snowball.model.AmazonSnowballException {
     private static final long serialVersionUID = 1L;
 

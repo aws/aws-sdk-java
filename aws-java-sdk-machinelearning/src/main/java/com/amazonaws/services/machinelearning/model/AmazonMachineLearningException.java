@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Machine Learning
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonMachineLearningException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

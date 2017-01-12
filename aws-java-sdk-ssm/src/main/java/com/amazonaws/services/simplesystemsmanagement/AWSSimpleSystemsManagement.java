@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simplesystemsmanagement;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -42,6 +44,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSimpleSystemsManagement {
 
     /**

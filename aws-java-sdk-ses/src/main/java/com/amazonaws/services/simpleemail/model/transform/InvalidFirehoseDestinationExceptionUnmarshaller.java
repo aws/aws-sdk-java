@@ -13,6 +13,7 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import org.w3c.dom.Node;
+import javax.annotation.Generated;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.XpathUtils;
@@ -20,6 +21,7 @@ import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.simpleemail.model.InvalidFirehoseDestinationException;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidFirehoseDestinationExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public InvalidFirehoseDestinationExceptionUnmarshaller() {

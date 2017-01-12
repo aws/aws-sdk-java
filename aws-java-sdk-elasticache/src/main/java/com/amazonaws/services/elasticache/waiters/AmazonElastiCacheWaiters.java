@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticache.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.elasticache.AmazonElastiCache;
 import com.amazonaws.services.elasticache.model.*;
@@ -20,6 +22,7 @@ import com.amazonaws.waiters.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElastiCacheWaiters {
 
     /**

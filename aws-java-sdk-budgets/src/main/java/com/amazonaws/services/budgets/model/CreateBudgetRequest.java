@@ -13,11 +13,14 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Request of CreateBudget
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String accountId;

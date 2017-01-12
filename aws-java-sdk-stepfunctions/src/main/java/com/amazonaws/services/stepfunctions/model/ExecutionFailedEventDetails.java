@@ -13,12 +13,14 @@
 package com.amazonaws.services.stepfunctions.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionFailedEventDetails" target="_top">AWS
  *      API Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecutionFailedEventDetails implements Serializable, Cloneable {
 
     /**

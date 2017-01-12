@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticache;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -40,6 +42,7 @@ import com.amazonaws.services.elasticache.waiters.AmazonElastiCacheWaiters;
  * statistics associated with their cache and can receive alarms if a part of their cache runs hot.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonElastiCache {
 
     /**

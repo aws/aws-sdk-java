@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A container for the calculated facet values and counts.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BucketInfo implements Serializable, Cloneable {
 
     /**

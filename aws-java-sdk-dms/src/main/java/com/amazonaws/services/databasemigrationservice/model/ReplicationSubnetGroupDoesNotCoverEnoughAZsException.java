@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and
  * add more AZs.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplicationSubnetGroupDoesNotCoverEnoughAZsException extends
         com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;

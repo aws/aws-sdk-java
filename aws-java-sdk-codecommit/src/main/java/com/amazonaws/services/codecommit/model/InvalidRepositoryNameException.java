@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * At least one specified repository name is not valid.
@@ -23,6 +25,7 @@ package com.amazonaws.services.codecommit.model;
  * </p>
  * </note>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRepositoryNameException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

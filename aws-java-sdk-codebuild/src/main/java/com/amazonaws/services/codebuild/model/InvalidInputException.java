@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codebuild.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The input value that was provided is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidInputException extends com.amazonaws.services.codebuild.model.AWSCodeBuildException {
     private static final long serialVersionUID = 1L;
 

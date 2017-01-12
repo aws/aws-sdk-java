@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This hosted zone can't be created because the hosted zone limit is exceeded. To request a limit increase, go to the
  * Amazon Route 53 <a href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyHostedZonesException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

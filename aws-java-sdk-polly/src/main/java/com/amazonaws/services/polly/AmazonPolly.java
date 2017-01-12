@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.polly;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -33,6 +35,7 @@ import com.amazonaws.services.polly.model.*;
  * for your application domain.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonPolly {
 
     /**

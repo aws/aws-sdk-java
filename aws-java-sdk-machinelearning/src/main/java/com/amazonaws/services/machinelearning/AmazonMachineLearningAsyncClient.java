@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -24,6 +26,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * Definition of the public APIs exposed by Amazon Machine Learning
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClient implements AmazonMachineLearningAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

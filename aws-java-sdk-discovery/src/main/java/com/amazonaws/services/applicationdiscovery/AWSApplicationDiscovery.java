@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.applicationdiscovery;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -90,6 +92,7 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * <i>AWS Application Discovery Service User Guide</i> </a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSApplicationDiscovery {
 
     /**

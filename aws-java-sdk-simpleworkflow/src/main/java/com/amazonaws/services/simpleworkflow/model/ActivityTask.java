@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Unit of work sent to an activity worker.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActivityTask extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

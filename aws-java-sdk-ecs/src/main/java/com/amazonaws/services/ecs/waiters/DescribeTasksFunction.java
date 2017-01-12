@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.ecs.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.ecs.model.DescribeTasksRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.ecs.model.DescribeTasksResult;
 import com.amazonaws.services.ecs.AmazonECS;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeTasksFunction implements SdkFunction<DescribeTasksRequest, DescribeTasksResult> {
 
     /**

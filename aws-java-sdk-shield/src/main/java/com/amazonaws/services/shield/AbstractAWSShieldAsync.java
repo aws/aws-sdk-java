@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.shield;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.shield.model.*;
 
 /**
  * Abstract implementation of {@code AWSShieldAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShieldAsync {
 
     protected AbstractAWSShieldAsync() {

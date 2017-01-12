@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
@@ -22,6 +24,7 @@ import com.amazonaws.client.AwsSyncClientParams;
  * constructors of the client class.
  **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonRoute53ClientBuilder extends AwsSyncClientBuilder<AmazonRoute53ClientBuilder, AmazonRoute53> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudsearchv2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudsearchv2.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -35,6 +37,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient implements AmazonCloudSearchAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

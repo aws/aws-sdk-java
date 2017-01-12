@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * The license type to be used for the Amazon Machine Image (AMI) created after a successful ReplicationRun.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum LicenseType {
 
     AWS("AWS"),

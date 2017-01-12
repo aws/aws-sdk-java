@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticloadbalancingv2.model.*;
 
 /**
@@ -96,6 +98,7 @@ import com.amazonaws.services.elasticloadbalancingv2.model.*;
  * an operation, it succeeds.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalancing {
 
     /**

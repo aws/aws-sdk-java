@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when you are trying to modify a user pool while a user import job is in progress for that
  * pool.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UserImportInProgressException extends com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 

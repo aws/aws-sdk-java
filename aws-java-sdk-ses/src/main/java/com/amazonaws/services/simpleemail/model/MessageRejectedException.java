@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.simpleemail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that the action failed, and the message could not be sent. Check the error stack for more information about
  * what caused the error.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MessageRejectedException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 

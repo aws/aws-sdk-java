@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.xray.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request exceeds the maximum number of requests per second.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ThrottledException extends com.amazonaws.services.xray.model.AWSXRayException {
     private static final long serialVersionUID = 1L;
 

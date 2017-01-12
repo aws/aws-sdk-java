@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.marketplacemetering;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.marketplacemetering.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -58,6 +60,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringClient implements AWSMarketplaceMeteringAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

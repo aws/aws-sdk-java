@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The type of field. The valid options for a field depend on the field type. For more information about the supported
@@ -19,6 +21,7 @@ package com.amazonaws.services.cloudsearchv2.model;
  * target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum IndexFieldType {
 
     Int("int"),

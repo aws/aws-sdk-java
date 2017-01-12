@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.pinpoint.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MethodNotAllowedException extends com.amazonaws.services.pinpoint.model.AmazonPinpointException {
     private static final long serialVersionUID = 1L;
 

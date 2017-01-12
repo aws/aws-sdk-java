@@ -2,6 +2,8 @@ ${fileHeader}
 <#assign serviceAbbreviation = (metadata.serviceAbbreviation)!metadata.serviceFullName/>
 package ${metadata.packageName};
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -21,6 +23,7 @@ import ${metadata.packageName}.waiters.${metadata.syncInterface}Waiters;
  * ${metadata.documentation}
 </#if>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface ${metadata.syncInterface} {
 
     /**

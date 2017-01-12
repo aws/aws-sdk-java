@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.sqs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -107,6 +109,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

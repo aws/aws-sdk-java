@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.waf;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.waf.model.*;
 
 /**
@@ -32,6 +34,7 @@ import com.amazonaws.services.waf.model.*;
  * WAF Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSWAFAsync extends AWSWAF {
 
     /**

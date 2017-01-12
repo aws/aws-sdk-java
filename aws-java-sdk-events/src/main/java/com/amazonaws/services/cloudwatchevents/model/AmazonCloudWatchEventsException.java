@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cloudwatchevents.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon CloudWatch Events
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudWatchEventsException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

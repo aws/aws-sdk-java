@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ConditionalForwarder JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConditionalForwarderJsonUnmarshaller implements Unmarshaller<ConditionalForwarder, JsonUnmarshallerContext> {
 
     public ConditionalForwarder unmarshall(JsonUnmarshallerContext context) throws Exception {

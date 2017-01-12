@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.storagegateway;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
@@ -22,6 +24,7 @@ import com.amazonaws.client.AwsSyncClientParams;
  * over using constructors of the client class.
  **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSStorageGatewayClientBuilder extends AwsSyncClientBuilder<AWSStorageGatewayClientBuilder, AWSStorageGateway> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The service is unable to resolve the routing for a particular alias because it has a terminal <a>RoutingStrategy</a>
@@ -19,6 +21,7 @@ package com.amazonaws.services.gamelift.model;
  * Such requests should only be retried if the routing strategy for the specified alias is modified.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TerminalRoutingStrategyException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 

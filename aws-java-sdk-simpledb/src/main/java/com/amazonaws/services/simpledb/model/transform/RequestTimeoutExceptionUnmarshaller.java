@@ -13,6 +13,7 @@
 package com.amazonaws.services.simpledb.model.transform;
 
 import org.w3c.dom.Node;
+import javax.annotation.Generated;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.XpathUtils;
@@ -20,6 +21,7 @@ import com.amazonaws.transform.LegacyErrorUnmarshaller;
 
 import com.amazonaws.services.simpledb.model.RequestTimeoutException;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RequestTimeoutExceptionUnmarshaller extends LegacyErrorUnmarshaller {
 
     public RequestTimeoutExceptionUnmarshaller() {

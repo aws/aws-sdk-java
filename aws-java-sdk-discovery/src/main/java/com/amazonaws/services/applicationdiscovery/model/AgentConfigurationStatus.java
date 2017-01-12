@@ -13,6 +13,7 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * agent/Connector ID, a description of the operation, and whether or not the agent/Connector configuration was updated.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AgentConfigurationStatus implements Serializable, Cloneable {
 
     /**

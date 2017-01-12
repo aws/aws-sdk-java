@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <important>
@@ -26,6 +27,7 @@ import java.io.Serializable;
  * listed for the first output in the <code>Outputs</code> object.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JobOutput implements Serializable, Cloneable {
 
     /**

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpledb.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The item name was specified more than once.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DuplicateItemNameException extends com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 

@@ -13,11 +13,14 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Request of DescribeNotificationsForBudget
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String accountId;

@@ -13,12 +13,14 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Provides the current status of the entity.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OptionStatus implements Serializable, Cloneable {
 
     /**

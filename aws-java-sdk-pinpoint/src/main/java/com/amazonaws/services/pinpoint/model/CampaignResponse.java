@@ -13,7 +13,9 @@
 package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CampaignResponse implements Serializable, Cloneable {
 
     /** Treatments that are defined in addition to the default treatment. */

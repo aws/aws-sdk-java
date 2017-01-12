@@ -13,8 +13,11 @@
 package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateGcmChannelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String applicationId;

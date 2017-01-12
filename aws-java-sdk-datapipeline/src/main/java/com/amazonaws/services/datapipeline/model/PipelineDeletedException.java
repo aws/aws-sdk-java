@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.datapipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified pipeline has been deleted.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PipelineDeletedException extends com.amazonaws.services.datapipeline.model.DataPipelineException {
     private static final long serialVersionUID = 1L;
 

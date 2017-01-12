@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.batch.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Batch
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSBatchException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

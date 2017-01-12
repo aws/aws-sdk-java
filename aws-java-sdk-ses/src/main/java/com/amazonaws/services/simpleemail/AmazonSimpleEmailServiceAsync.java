@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simpleemail;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.simpleemail.model.*;
 
 /**
@@ -37,6 +39,7 @@ import com.amazonaws.services.simpleemail.model.*;
  * </p>
  * </note>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService {
 
     /**

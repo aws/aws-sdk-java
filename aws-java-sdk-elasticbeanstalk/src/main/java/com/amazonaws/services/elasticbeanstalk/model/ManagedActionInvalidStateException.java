@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Cannot modify the managed action in its current state.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ManagedActionInvalidStateException extends com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 

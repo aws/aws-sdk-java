@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.batch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
  * doesn't have permission to use the action or resource, or specifying an identifier that is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClientException extends com.amazonaws.services.batch.model.AWSBatchException {
     private static final long serialVersionUID = 1L;
 

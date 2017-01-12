@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the container instance and
@@ -19,6 +21,7 @@ package com.amazonaws.services.ecs.model;
  * instance is an older or custom version that does not use our version information.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MissingVersionException extends com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 

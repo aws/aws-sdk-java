@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>, or
  * <code>sourceTableName</code> parameter, or a combination of these, doesn't exist in the snapshot.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidTableRestoreArgumentException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

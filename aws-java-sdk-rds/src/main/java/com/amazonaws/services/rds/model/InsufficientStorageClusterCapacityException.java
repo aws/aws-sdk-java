@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * There is insufficient storage available for the current action. You may be able to resolve this error by updating
  * your subnet group to use different Availability Zones that have more storage available.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsufficientStorageClusterCapacityException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

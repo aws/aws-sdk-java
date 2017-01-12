@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the provided key material is invalid or is not the same key material that was
  * previously imported into this customer master key (CMK).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IncorrectKeyMaterialException extends com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 

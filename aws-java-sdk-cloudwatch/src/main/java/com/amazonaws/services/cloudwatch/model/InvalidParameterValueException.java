@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The value of an input parameter is bad or out-of-range.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterValueException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {
     private static final long serialVersionUID = 1L;
 

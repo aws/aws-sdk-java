@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * A structure holds the actual and forecasted spend for a budget.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CalculatedSpend implements Serializable, Cloneable {
 
     private Spend actualSpend;

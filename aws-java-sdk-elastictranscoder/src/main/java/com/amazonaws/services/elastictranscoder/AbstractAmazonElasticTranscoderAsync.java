@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elastictranscoder;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elastictranscoder.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticTranscoder implements AmazonElasticTranscoderAsync {
 
     protected AbstractAmazonElasticTranscoderAsync() {

@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.cloudwatch.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.cloudwatch.model.DescribeAlarmsRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.cloudwatch.model.DescribeAlarmsResult;
 import com.amazonaws.services.cloudwatch.AmazonCloudWatch;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAlarmsFunction implements SdkFunction<DescribeAlarmsRequest, DescribeAlarmsResult> {
 
     /**

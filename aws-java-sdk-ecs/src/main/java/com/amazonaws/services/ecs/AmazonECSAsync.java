@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.ecs.model.*;
 
 /**
@@ -37,6 +39,7 @@ import com.amazonaws.services.ecs.model.*;
  * infrastructure.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonECSAsync extends AmazonECS {
 
     /**

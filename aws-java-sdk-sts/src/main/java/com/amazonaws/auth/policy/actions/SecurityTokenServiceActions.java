@@ -12,12 +12,14 @@
  */
 package com.amazonaws.auth.policy.actions;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS STS.
  */
-
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SecurityTokenServiceActions implements Action {
 
     /** Represents any action executed on AWS STS. */

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ActionOnFailure {
 
     TERMINATE_JOB_FLOW("TERMINATE_JOB_FLOW"),

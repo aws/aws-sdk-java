@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.inspector.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -27,6 +29,7 @@ import com.amazonaws.services.inspector.AmazonInspectorClient;
  * Injector that binds the AmazonWebServiceClient interface to the
  * com.amazonaws.services.inspector.AmazonInspectorClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonInspectorModuleInjector implements InjectorSource {
 
     @Override

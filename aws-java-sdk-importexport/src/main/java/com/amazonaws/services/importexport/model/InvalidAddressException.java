@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * The address specified in the manifest is invalid.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidAddressException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

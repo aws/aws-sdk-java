@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the provided import token is expired. Use <a>GetParametersForImport</a> to retrieve
@@ -19,6 +21,7 @@ package com.amazonaws.services.kms.model;
  * again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExpiredImportTokenException extends com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 

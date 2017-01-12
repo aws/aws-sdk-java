@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Elastic Load Balancing
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElasticLoadBalancingException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

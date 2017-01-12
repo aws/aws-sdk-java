@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SupportDataSetType {
 
     Customer_support_contacts_data("customer_support_contacts_data"),

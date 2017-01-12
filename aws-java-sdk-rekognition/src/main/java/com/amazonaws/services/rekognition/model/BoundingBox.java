@@ -13,6 +13,7 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -39,6 +40,7 @@ import java.io.Serializable;
  * </p>
  * </note>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BoundingBox implements Serializable, Cloneable {
 
     /**

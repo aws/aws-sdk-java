@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.waf.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can
@@ -20,6 +22,7 @@ package com.amazonaws.services.waf.model;
  * Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFLimitsExceededException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 

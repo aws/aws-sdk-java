@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -189,6 +191,7 @@ import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
  * Operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDynamoDB {
 
     /**

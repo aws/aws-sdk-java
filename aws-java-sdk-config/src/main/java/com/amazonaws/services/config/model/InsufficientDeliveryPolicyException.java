@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.config.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Your Amazon S3 bucket policy does not permit AWS Config to write to it.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsufficientDeliveryPolicyException extends com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 

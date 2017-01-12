@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.budgets.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.budgets.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Spend JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SpendJsonUnmarshaller implements Unmarshaller<Spend, JsonUnmarshallerContext> {
 
     public Spend unmarshall(JsonUnmarshallerContext context) throws Exception {

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudformation.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Quota for the resource has already been reached.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {
     private static final long serialVersionUID = 1L;
 

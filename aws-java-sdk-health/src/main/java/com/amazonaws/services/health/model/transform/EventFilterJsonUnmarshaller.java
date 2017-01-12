@@ -13,9 +13,10 @@
 package com.amazonaws.services.health.model.transform;
 
 import java.util.Map;
-import java.util.Map.Entry;
+
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.health.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +28,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * EventFilter JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventFilterJsonUnmarshaller implements Unmarshaller<EventFilter, JsonUnmarshallerContext> {
 
     public EventFilter unmarshall(JsonUnmarshallerContext context) throws Exception {

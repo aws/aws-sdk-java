@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A certificate that has been transfered but not yet accepted.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OutgoingCertificate implements Serializable, Cloneable {
 
     /**

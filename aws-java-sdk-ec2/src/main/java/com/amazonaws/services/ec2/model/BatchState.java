@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.ec2.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BatchState {
 
     Submitted("submitted"),

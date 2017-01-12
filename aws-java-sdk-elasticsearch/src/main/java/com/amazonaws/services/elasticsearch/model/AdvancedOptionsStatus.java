@@ -13,6 +13,7 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -33,6 +34,7 @@ import java.io.Serializable;
  * >Configuring Advanced Options</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AdvancedOptionsStatus implements Serializable, Cloneable {
 
     /**

@@ -9,6 +9,7 @@ package ${dataModel.transformPackage};
 
 import java.util.Map;
 import java.util.List;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import ${metadata.packageName}.model.*;
@@ -22,6 +23,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * ${shapeName}Marshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shapeName}JsonMarshaller {
 
     <#assign shape = shapes[shapeName]/>

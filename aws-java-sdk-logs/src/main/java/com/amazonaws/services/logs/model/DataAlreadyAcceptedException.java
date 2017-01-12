@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.logs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The event was already logged.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DataAlreadyAcceptedException extends com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 

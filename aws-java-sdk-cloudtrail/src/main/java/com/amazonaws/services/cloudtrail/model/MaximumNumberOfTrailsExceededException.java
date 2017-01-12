@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when the maximum number of trails is reached.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MaximumNumberOfTrailsExceededException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 

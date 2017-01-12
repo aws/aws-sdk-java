@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaite
  * Abstract implementation of {@code AmazonMachineLearning}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
 
     protected AbstractAmazonMachineLearning() {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.apigateway;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -29,6 +31,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implements AmazonApiGatewayAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

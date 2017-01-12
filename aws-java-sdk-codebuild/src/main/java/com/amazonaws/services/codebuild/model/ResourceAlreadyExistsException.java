@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codebuild.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified AWS resource cannot be created, because an AWS resource with the same settings already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceAlreadyExistsException extends com.amazonaws.services.codebuild.model.AWSCodeBuildException {
     private static final long serialVersionUID = 1L;
 

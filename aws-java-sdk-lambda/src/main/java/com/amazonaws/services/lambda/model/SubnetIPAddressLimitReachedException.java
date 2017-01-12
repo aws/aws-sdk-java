@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.lambda.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * AWS Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no
  * available IP addresses.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SubnetIPAddressLimitReachedException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The storage quota has been exceeded.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StorageQuotaExceededException extends com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 

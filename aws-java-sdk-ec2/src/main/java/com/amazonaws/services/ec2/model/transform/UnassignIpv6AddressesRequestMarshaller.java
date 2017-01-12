@@ -12,9 +12,7 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -23,12 +21,12 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * UnassignIpv6AddressesRequest Marshaller
  */
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnassignIpv6AddressesRequestMarshaller implements Marshaller<Request<UnassignIpv6AddressesRequest>, UnassignIpv6AddressesRequest> {
 
     public Request<UnassignIpv6AddressesRequest> marshall(UnassignIpv6AddressesRequest unassignIpv6AddressesRequest) {

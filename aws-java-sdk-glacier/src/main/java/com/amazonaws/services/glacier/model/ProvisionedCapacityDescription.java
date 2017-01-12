@@ -13,12 +13,14 @@
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The definition for a provisioned capacity unit.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProvisionedCapacityDescription implements Serializable, Cloneable {
 
     /**

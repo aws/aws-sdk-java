@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A section of the response body that provides information about the job that is created.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Job implements Serializable, Cloneable {
 
     /**

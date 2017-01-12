@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.ecs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.ecs.model.*;
 
 /**
  * Abstract implementation of {@code AmazonECSAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonECSAsync {
 
     protected AbstractAmazonECSAsync() {

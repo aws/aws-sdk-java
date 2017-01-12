@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes an action to write data to an Amazon S3 bucket.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3Action implements Serializable, Cloneable {
 
     /**

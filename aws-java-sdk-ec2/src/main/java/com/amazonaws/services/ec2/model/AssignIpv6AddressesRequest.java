@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AssignIpv6AddressesRequestMarshaller;
@@ -20,6 +22,7 @@ import com.amazonaws.services.ec2.model.transform.AssignIpv6AddressesRequestMars
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AssignIpv6AddressesRequest> {
 
     /**

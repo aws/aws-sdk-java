@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidp;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cognitoidp.model.*;
 import com.amazonaws.*;
 
@@ -19,6 +21,7 @@ import com.amazonaws.*;
  * Abstract implementation of {@code AWSCognitoIdentityProvider}. Convenient method forms pass through to the
  * corresponding overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityProvider {
 
     protected AbstractAWSCognitoIdentityProvider() {

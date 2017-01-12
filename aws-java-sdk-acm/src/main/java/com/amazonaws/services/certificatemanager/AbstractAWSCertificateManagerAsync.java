@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.certificatemanager;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.certificatemanager.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.certificatemanager.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateManager implements AWSCertificateManagerAsync {
 
     protected AbstractAWSCertificateManagerAsync() {

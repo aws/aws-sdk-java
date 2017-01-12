@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InconsistentQuantitiesException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

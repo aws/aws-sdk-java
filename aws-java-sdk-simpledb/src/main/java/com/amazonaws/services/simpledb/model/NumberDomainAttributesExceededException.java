@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpledb.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Too many attributes in this domain.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NumberDomainAttributesExceededException extends com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 

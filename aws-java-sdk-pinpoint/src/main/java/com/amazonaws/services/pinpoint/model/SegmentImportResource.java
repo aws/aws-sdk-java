@@ -13,7 +13,9 @@
 package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentImportResource implements Serializable, Cloneable {
 
     /** A unique, custom ID assigned to the IAM role that restricts who can assume the role. */

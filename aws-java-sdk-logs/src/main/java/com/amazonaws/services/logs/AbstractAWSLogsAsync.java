@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.logs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.logs.model.*;
 
 /**
  * Abstract implementation of {@code AWSLogsAsync}. Convenient method forms pass through to the corresponding overload
  * that takes a request object and an {@code AsyncHandler}, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsync {
 
     protected AbstractAWSLogsAsync() {

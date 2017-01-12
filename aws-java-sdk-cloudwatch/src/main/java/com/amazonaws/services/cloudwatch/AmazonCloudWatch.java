@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudwatch;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -42,6 +44,7 @@ import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
  * health.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudWatch {
 
     /**

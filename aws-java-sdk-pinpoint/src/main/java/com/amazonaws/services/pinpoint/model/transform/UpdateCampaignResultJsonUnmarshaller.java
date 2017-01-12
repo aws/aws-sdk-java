@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.pinpoint.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * UpdateCampaignResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateCampaignResultJsonUnmarshaller implements Unmarshaller<UpdateCampaignResult, JsonUnmarshallerContext> {
 
     public UpdateCampaignResult unmarshall(JsonUnmarshallerContext context) throws Exception {

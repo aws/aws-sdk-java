@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.rds.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.rds.model.DescribeDBInstancesRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.rds.model.DescribeDBInstancesResult;
 import com.amazonaws.services.rds.AmazonRDS;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeDBInstancesFunction implements SdkFunction<DescribeDBInstancesRequest, DescribeDBInstancesResult> {
 
     /**

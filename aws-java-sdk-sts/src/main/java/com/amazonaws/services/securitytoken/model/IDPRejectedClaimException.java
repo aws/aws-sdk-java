@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.securitytoken.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.
@@ -21,6 +23,7 @@ package com.amazonaws.services.securitytoken.model;
  * has expired or has been explicitly revoked.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IDPRejectedClaimException extends com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 

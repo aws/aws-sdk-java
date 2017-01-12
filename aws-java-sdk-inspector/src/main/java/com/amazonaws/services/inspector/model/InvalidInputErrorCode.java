@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.inspector.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InvalidInputErrorCode {
 
     INVALID_ASSESSMENT_TARGET_ARN("INVALID_ASSESSMENT_TARGET_ARN"),

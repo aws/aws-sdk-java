@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * Indicates that the specified job has expired out of the system.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExpiredJobIdException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

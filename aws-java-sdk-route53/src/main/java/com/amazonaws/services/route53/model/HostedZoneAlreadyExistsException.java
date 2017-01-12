@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The hosted zone you are trying to create already exists. Amazon Route 53 returns this error when a hosted zone has
  * already been created with the specified <code>CallerReference</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HostedZoneAlreadyExistsException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

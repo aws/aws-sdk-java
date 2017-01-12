@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.importexport;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -30,6 +32,7 @@ import com.amazonaws.services.importexport.model.*;
  * data sets, AWS Import/Export is often faster than Internet transfer and more cost effective than upgrading your
  * connectivity.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonImportExport {
 
     /**

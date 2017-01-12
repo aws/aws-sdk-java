@@ -12,21 +12,20 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
  * RemoveTagsFromResourceResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RemoveTagsFromResourceResultJsonUnmarshaller implements Unmarshaller<RemoveTagsFromResourceResult, JsonUnmarshallerContext> {
 
     public RemoveTagsFromResourceResult unmarshall(JsonUnmarshallerContext context) throws Exception {

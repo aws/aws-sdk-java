@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codecommit.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An encryption integrity check failed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EncryptionIntegrityChecksFailedException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 

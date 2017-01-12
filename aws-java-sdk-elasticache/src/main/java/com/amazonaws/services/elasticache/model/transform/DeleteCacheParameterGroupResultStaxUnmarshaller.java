@@ -12,22 +12,20 @@
  */
 package com.amazonaws.services.elasticache.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map.Entry;
-
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticache.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * DeleteCacheParameterGroupResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteCacheParameterGroupResultStaxUnmarshaller implements Unmarshaller<DeleteCacheParameterGroupResult, StaxUnmarshallerContext> {
 
     public DeleteCacheParameterGroupResult unmarshall(StaxUnmarshallerContext context) throws Exception {

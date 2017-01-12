@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than
@@ -19,6 +21,7 @@ package com.amazonaws.services.route53.model;
  * <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictingTypesException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

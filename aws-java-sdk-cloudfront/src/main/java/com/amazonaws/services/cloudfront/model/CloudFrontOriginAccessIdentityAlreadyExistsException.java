@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudfront.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the
@@ -19,6 +21,7 @@ package com.amazonaws.services.cloudfront.model;
  * returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudFrontOriginAccessIdentityAlreadyExistsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.securitytoken;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.securitytoken.model.*;
 
 /**
@@ -79,6 +81,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * User Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
 
     /**

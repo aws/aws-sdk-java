@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * Type of Replication Run
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReplicationRunType {
 
     ON_DEMAND("ON_DEMAND"),

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudtrail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class KmsException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 

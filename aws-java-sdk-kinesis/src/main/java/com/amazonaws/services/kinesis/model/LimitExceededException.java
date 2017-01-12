@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.kinesis.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the
  * maximum number allowed (5).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 

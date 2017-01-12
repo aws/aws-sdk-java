@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.codebuild.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EnvironmentType {
 
     LINUX_CONTAINER("LINUX_CONTAINER");

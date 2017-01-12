@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified input parameter has an value that is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidArgumentException extends com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 

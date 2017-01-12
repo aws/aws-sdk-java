@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.sqs.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The message referred to isn't in flight.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MessageNotInflightException extends com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 

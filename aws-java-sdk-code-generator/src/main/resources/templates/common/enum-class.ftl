@@ -1,12 +1,15 @@
 ${fileHeader}
 package ${metadata.packageName}.model;
 
+import javax.annotation.Generated;
+
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
 <#if shape.deprecated>
 @Deprecated
 </#if>
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ${shape.shapeName} {
 
 <#assign enums = shape.enums/>

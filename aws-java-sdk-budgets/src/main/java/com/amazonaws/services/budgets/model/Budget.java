@@ -13,10 +13,12 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * AWS Budget model
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Budget implements Serializable, Cloneable {
 
     private String budgetName;

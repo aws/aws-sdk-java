@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ModifyHsmResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyHsmResultJsonUnmarshaller implements Unmarshaller<ModifyHsmResult, JsonUnmarshallerContext> {
 
     public ModifyHsmResult unmarshall(JsonUnmarshallerContext context) throws Exception {

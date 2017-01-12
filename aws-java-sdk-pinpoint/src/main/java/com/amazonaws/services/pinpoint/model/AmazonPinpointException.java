@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.pinpoint.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Pinpoint
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonPinpointException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

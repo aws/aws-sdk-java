@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.applicationdiscovery.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Application Discovery Service
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSApplicationDiscoveryException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

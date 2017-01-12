@@ -13,6 +13,7 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -141,6 +142,7 @@ import java.io.Serializable;
  * <li><a>StartChildWorkflowExecutionDecisionAttributes</a></li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Decision implements Serializable, Cloneable {
 
     /**

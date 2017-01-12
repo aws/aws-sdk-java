@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cognitosync.model;
 
+import javax.annotation.Generated;
+
 /**
  * Thrown if the resource doesn't exist.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 

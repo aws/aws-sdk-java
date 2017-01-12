@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AssociateVpcCidrBlockRequestMarshaller;
@@ -20,6 +22,7 @@ import com.amazonaws.services.ec2.model.transform.AssociateVpcCidrBlockRequestMa
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<AssociateVpcCidrBlockRequest> {
 

@@ -12,21 +12,18 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.util.Map;
 import java.util.List;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
+
 import com.amazonaws.protocol.json.*;
 
 /**
  * ActivitiesResponseMarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActivitiesResponseJsonMarshaller {
 
     /**

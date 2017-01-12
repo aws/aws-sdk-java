@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.appstream.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The attempted operation is not permitted.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OperationNotPermittedException extends com.amazonaws.services.appstream.model.AmazonAppStreamException {
     private static final long serialVersionUID = 1L;
 

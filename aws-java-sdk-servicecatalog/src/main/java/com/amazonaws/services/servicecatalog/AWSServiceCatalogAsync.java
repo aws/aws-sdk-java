@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.servicecatalog;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.servicecatalog.model.*;
 
 /**
@@ -52,6 +54,7 @@ import com.amazonaws.services.servicecatalog.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**

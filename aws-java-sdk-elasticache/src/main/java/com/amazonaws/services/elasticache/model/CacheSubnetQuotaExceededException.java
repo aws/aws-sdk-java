@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request cannot be processed because it would exceed the allowed number of subnets in a cache subnet group.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CacheSubnetQuotaExceededException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

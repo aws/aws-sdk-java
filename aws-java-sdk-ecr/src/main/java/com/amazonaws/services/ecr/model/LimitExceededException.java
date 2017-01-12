@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecr.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation did not succeed because it would have exceeded a service limit for your account. For more information,
@@ -19,6 +21,7 @@ package com.amazonaws.services.ecr.model;
  * Limits</a> in the Amazon EC2 Container Registry User Guide.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 

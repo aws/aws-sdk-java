@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.opsworkscm;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.opsworkscm.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.opsworkscm.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSOpsWorksCMAsync extends AbstractAWSOpsWorksCM implements AWSOpsWorksCMAsync {
 
     protected AbstractAWSOpsWorksCMAsync() {

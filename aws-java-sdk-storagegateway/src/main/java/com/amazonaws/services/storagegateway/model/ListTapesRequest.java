@@ -13,6 +13,8 @@
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -40,6 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes" target="_top">AWS API
  *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<String> tapeARNs;

@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateServiceAccessPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

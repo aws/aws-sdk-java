@@ -13,8 +13,11 @@
 package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /** The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100. */

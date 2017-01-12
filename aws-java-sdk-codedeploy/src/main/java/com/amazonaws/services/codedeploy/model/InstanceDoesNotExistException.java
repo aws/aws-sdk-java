@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified instance does not exist in the deployment group.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceDoesNotExistException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

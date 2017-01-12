@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A delegation set with the same owner and caller reference combination has already been created.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DelegationSetAlreadyCreatedException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

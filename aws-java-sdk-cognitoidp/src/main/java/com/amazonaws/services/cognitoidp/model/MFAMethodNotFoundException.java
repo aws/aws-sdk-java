@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when Amazon Cognito cannot find a multi-factor authentication (MFA) method.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MFAMethodNotFoundException extends com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 

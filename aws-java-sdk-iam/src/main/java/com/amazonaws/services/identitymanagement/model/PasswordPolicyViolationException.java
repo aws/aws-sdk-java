@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request was rejected because the provided password did not meet the requirements imposed by the account password
  * policy.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PasswordPolicyViolationException extends com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 

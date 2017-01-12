@@ -13,10 +13,12 @@
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Output structure for the ListJobs operation.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<Job> jobs;

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Another modification has already happened. Fetch <b>VersionId</b> again and use it to update the destination.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConcurrentModificationException extends com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 

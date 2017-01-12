@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.health.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EventStatusCode {
 
     Open("open"),

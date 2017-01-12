@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested cache parameter group name does not refer to an existing cache parameter group.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CacheParameterGroupNotFoundException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

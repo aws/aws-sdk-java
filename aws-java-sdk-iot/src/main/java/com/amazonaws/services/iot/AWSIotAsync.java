@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.iot;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.iot.model.*;
 
 /**
@@ -36,6 +38,7 @@ import com.amazonaws.services.iot.model.*;
  * href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSIotAsync extends AWSIot {
 
     /**

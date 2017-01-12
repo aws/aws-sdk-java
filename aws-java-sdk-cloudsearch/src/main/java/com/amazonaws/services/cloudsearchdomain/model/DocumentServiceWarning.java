@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A warning returned by the document service when an issue is discovered while processing an upload request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DocumentServiceWarning implements Serializable, Cloneable {
 
     /**

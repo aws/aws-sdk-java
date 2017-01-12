@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.autoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You already have an Auto Scaling group or launch configuration with this name.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AlreadyExistsException extends com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 

@@ -12,22 +12,22 @@
  */
 package com.amazonaws.services.sns.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.sns.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * ListEndpointsByPlatformApplicationResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListEndpointsByPlatformApplicationResultStaxUnmarshaller implements
         Unmarshaller<ListEndpointsByPlatformApplicationResult, StaxUnmarshallerContext> {
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.marketplacecommerceanalytics;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -26,6 +28,7 @@ import com.amazonaws.services.marketplacecommerceanalytics.model.*;
  * <p>
  * Provides AWS Marketplace business intelligence data on-demand.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSMarketplaceCommerceAnalytics {
 
     /**

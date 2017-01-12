@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitosync.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Thrown if there are parallel requests to modify a resource.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConcurrentModificationException extends com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 

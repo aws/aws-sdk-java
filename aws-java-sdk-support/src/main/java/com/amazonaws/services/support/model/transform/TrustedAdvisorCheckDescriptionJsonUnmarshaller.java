@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.support.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * TrustedAdvisorCheckDescription JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TrustedAdvisorCheckDescriptionJsonUnmarshaller implements Unmarshaller<TrustedAdvisorCheckDescription, JsonUnmarshallerContext> {
 
     public TrustedAdvisorCheckDescription unmarshall(JsonUnmarshallerContext context) throws Exception {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.directory.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -27,6 +29,7 @@ import com.amazonaws.services.directory.AWSDirectoryServiceClient;
  * Injector that binds the AmazonWebServiceClient interface to the
  * com.amazonaws.services.directory.AWSDirectoryServiceClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSDirectoryServiceModuleInjector implements InjectorSource {
 
     @Override

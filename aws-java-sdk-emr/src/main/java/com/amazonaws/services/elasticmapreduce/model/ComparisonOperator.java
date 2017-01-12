@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ComparisonOperator {
 
     GREATER_THAN_OR_EQUAL("GREATER_THAN_OR_EQUAL"),

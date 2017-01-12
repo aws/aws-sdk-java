@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.apigateway.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The integration type. The valid value is <code>HTTP</code> for integrating with an HTTP back end, <code>AWS</code>
@@ -20,6 +22,7 @@ package com.amazonaws.services.apigateway.model;
  * with the Lambda proxy integration type.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum IntegrationType {
 
     HTTP("HTTP"),

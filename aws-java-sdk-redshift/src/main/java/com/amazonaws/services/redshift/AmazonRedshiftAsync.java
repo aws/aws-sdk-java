@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.redshift.model.*;
 
 /**
@@ -52,6 +54,7 @@ import com.amazonaws.services.redshift.model.*;
  * your data warehouse.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**

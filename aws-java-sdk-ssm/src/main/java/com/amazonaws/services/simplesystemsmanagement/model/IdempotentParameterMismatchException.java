@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Error returned when an idempotent operation is retried and the parameters don’t match the original call to the API
  * with the same idempotency token.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IdempotentParameterMismatchException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

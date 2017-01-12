@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -22,6 +23,7 @@ import java.io.Serializable;
  * preset you want to use when you create a job.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Preset implements Serializable, Cloneable {
 
     /**

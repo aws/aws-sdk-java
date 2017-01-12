@@ -10,6 +10,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 import java.util.Map.Entry;
+import javax.annotation.Generated;
 
 import org.apache.commons.logging.*;
 
@@ -50,7 +51,8 @@ import ${transformPackage}.*;
  * <p>
  * ${documentation}
  */
- @ThreadSafe
+@ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${metadata.syncInterface} {
 <#if customizationConfig.requestMetrics?has_content>
     // register the service specific set of predefined metrics

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.stepfunctions.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StateMachineStatus {
 
     ACTIVE("ACTIVE"),

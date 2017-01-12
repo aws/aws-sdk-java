@@ -2,6 +2,8 @@ ${fileHeader}
 package ${metadata.packageName}.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 <#if shape.requestSignerAware>
 import com.amazonaws.auth.RequestSigner;
@@ -14,6 +16,7 @@ import com.amazonaws.opensdk.protect.auth.RequestSignerAware;
 <#if awsDocsUrl?has_content> * ${awsDocsUrl}</#if>
  */
 </#if>
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName} extends ${baseClassFqcn} implements Serializable, Cloneable
         <#if shape.requestSignerAware>, RequestSignerAware</#if> {
 

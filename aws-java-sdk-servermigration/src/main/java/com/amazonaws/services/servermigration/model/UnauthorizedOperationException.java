@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * This user does not have permissions to perform this operation.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnauthorizedOperationException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {
     private static final long serialVersionUID = 1L;
 

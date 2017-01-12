@@ -13,6 +13,7 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -24,6 +25,7 @@ import java.io.Serializable;
  * reduces processing time and prevents cross-regional charges.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Warning implements Serializable, Cloneable {
 
     /**

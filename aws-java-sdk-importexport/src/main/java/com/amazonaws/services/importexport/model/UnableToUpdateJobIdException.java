@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * AWS Import/Export cannot update the job
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnableToUpdateJobIdException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

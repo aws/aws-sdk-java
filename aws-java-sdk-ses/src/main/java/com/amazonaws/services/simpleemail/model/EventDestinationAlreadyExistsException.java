@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpleemail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that the event destination could not be created because of a naming conflict.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventDestinationAlreadyExistsException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kms.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.kms.AWSKMSClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.kms.AWSKMSClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSKMSModuleInjector implements InjectorSource {
 
     @Override

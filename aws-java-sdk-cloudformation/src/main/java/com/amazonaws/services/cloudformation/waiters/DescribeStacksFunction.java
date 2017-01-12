@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.cloudformation.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.cloudformation.model.DescribeStacksRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.cloudformation.model.DescribeStacksResult;
 import com.amazonaws.services.cloudformation.AmazonCloudFormation;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeStacksFunction implements SdkFunction<DescribeStacksRequest, DescribeStacksResult> {
 
     /**

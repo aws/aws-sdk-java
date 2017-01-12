@@ -13,6 +13,8 @@
 
 package com.amazonaws.services.cloudfront.waiters;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
 import com.amazonaws.services.cloudfront.model.GetStreamingDistributionRequest;
@@ -20,6 +22,7 @@ import com.amazonaws.services.cloudfront.model.GetStreamingDistributionResult;
 import com.amazonaws.services.cloudfront.AmazonCloudFront;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetStreamingDistributionFunction implements SdkFunction<GetStreamingDistributionRequest, GetStreamingDistributionResult> {
 
     /**

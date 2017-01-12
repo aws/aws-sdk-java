@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.directconnect;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.directconnect.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.directconnect.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnect implements AmazonDirectConnectAsync {
 
     protected AbstractAmazonDirectConnectAsync() {

@@ -12,21 +12,17 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.util.Map;
-import java.util.List;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
+
 import com.amazonaws.protocol.json.*;
 
 /**
  * SmsConfigurationTypeMarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SmsConfigurationTypeJsonMarshaller {
 
     /**

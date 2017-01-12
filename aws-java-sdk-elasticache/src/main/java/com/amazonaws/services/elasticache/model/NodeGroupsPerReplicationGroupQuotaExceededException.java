@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request cannot be processed because it would exceed the maximum of 15 node groups (shards) in a single
  * replication group.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NodeGroupsPerReplicationGroupQuotaExceededException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

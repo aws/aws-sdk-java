@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidp;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cognitoidp.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.cognitoidp.model.*;
  * corresponding overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSCognitoIdentityProviderAsync extends AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityProviderAsync {
 
     protected AbstractAWSCognitoIdentityProviderAsync() {

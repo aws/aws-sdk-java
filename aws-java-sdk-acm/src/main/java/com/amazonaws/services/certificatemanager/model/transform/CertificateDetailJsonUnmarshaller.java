@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.certificatemanager.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * CertificateDetail JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CertificateDetailJsonUnmarshaller implements Unmarshaller<CertificateDetail, JsonUnmarshallerContext> {
 
     public CertificateDetail unmarshall(JsonUnmarshallerContext context) throws Exception {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The S3 bucket name is invalid. For more information about naming rules, go to <a
@@ -19,6 +21,7 @@ package com.amazonaws.services.redshift.model;
  * in the Amazon Simple Storage Service (S3) Developer Guide.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidS3BucketNameException extends com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 

@@ -2,6 +2,7 @@ ${fileHeader}
 <#assign hasPlacement=authorizer.hasTokenPlacement()>
 package ${metadata.packageName}.auth;
 
+import javax.annotation.Generated;
 <#if hasPlacement>
 import com.amazonaws.ImmutableRequest;
 import com.amazonaws.SignableRequest;
@@ -33,6 +34,7 @@ import ${metadata.packageName}.${metadata.syncClient}Builder;
 </#if>
  */
 @FunctionalInterface
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface ${className} extends RequestSigner {
 
     <#if hasPlacement>

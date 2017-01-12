@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DefineExpressionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private ExpressionStatus expression;

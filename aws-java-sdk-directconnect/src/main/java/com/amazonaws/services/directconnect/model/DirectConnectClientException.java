@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.directconnect.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The API was called with invalid parameters. The error message will contain additional details about the cause.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DirectConnectClientException extends com.amazonaws.services.directconnect.model.AmazonDirectConnectException {
     private static final long serialVersionUID = 1L;
 

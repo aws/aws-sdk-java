@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidp.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can
@@ -19,6 +21,7 @@ package com.amazonaws.services.cognitoidp.model;
  * what is provided in the SMS configuration for the user pool.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidSmsRoleTrustRelationshipException extends com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 

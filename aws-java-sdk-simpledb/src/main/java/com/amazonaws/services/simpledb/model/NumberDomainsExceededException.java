@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpledb.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Too many domains exist per this account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NumberDomainsExceededException extends com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 

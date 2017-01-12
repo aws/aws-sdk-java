@@ -13,6 +13,8 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateNetworkInterfaceRequestMarshaller;
@@ -22,6 +24,7 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkInterfaceRequestM
  * Contains the parameters for CreateNetworkInterface.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<CreateNetworkInterfaceRequest> {
 

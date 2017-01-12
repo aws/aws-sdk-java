@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The requested cache subnet group name is already in use by an existing cache subnet group.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CacheSubnetGroupAlreadyExistsException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simpledb;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.simpledb.model.*;
 
 /**
@@ -38,6 +40,7 @@ import com.amazonaws.services.simpledb.model.*;
  * Visit <a href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a> for more information.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
 
     /**

@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.rekognition.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Rekognition
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRekognitionException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

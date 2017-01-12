@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Application Auto Scaling
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSApplicationAutoScalingException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

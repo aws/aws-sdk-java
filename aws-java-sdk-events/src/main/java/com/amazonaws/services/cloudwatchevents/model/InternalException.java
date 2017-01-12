@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudwatchevents.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This exception occurs due to unexpected causes.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalException extends com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException {
     private static final long serialVersionUID = 1L;
 

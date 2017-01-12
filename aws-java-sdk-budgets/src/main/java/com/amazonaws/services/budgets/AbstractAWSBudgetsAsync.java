@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.budgets;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.budgets.model.*;
 
 /**
@@ -19,6 +21,7 @@ import com.amazonaws.services.budgets.model.*;
  * overload that takes a request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSBudgetsAsync extends AbstractAWSBudgets implements AWSBudgetsAsync {
 
     protected AbstractAWSBudgetsAsync() {

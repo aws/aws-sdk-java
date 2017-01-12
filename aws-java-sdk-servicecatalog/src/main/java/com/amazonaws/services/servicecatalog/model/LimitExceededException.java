@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.servicecatalog.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The current limits of the service would have been exceeded by this operation. Reduce the resource use or increase the
  * service limits and retry the operation.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException {
     private static final long serialVersionUID = 1L;
 

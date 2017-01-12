@@ -13,6 +13,7 @@
 package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -23,6 +24,7 @@ import java.io.Serializable;
  *      Documentation</a>
  */
 @Deprecated
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvokeAsyncResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

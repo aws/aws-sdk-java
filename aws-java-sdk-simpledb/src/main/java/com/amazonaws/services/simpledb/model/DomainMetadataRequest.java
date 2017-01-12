@@ -13,8 +13,11 @@
 package com.amazonaws.services.simpledb.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainMetadataRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /** The name of the domain for which to display the metadata of. */

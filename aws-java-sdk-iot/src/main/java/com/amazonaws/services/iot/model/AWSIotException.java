@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS IoT
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSIotException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

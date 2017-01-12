@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.budgets.model;
 
+import javax.annotation.Generated;
+
 /**
  * The type of a budget. Can be COST or USAGE.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BudgetType {
 
     USAGE("USAGE"),

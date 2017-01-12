@@ -25,8 +25,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.amazonaws.jmespath.*;
 
 import java.io.IOException;
+import javax.annotation.Generated;
 
 @SdkInternalApi
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 class InstanceTerminated {
 
     static class IsTerminatedMatcher extends WaiterAcceptor<DescribeInstancesResult> {

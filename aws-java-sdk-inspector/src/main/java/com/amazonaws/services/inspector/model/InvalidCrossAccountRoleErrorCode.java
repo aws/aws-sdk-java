@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.inspector.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InvalidCrossAccountRoleErrorCode {
 
     ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP("ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP"),

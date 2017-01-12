@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Object status with the following possible values:
@@ -24,6 +26,7 @@ package com.amazonaws.services.machinelearning.model;
  * <li><code>DELETED</code></li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EntityStatus {
 
     PENDING("PENDING"),

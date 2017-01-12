@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.batch;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.batch.model.*;
 
 /**
@@ -39,6 +41,7 @@ import com.amazonaws.services.batch.model.*;
  * their batch jobs in the AWS Cloud.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSBatchAsync extends AWSBatch {
 
     /**

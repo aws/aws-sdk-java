@@ -13,6 +13,7 @@
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -42,6 +43,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PerformanceMetrics implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalMap<String, String> properties;

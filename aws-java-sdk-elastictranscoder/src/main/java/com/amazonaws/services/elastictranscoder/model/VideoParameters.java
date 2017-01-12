@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The <code>VideoParameters</code> structure.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VideoParameters implements Serializable, Cloneable {
 
     /**

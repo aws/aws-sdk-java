@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.devicefarm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Exception gets thrown when a user is not eligible to perform the specified transaction.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotEligibleException extends com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 

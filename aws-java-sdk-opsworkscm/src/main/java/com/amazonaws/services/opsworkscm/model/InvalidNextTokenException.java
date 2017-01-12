@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.opsworkscm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * This occurs when the provided nextToken is not valid.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidNextTokenException extends com.amazonaws.services.opsworkscm.model.AWSOpsWorksCMException {
     private static final long serialVersionUID = 1L;
 

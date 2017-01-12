@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagementWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagemen
  * Abstract implementation of {@code AmazonIdentityManagement}. Convenient method forms pass through to the
  * corresponding overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonIdentityManagement implements AmazonIdentityManagement {
 
     protected AbstractAmazonIdentityManagement() {

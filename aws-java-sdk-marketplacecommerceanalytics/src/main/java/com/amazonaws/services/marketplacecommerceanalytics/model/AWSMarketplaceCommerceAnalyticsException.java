@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Marketplace Commerce Analytics
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSMarketplaceCommerceAnalyticsException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

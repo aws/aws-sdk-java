@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.waf.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation failed because the entity referenced is temporarily unavailable. Retry your request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFUnavailableEntityException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 

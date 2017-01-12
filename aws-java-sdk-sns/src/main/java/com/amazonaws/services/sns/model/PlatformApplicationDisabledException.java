@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.sns.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Exception error indicating platform application disabled.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PlatformApplicationDisabledException extends com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 

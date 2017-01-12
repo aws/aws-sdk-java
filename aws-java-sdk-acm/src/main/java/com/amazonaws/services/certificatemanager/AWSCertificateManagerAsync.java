@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.certificatemanager;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.certificatemanager.model.*;
 
 /**
@@ -33,6 +35,7 @@ import com.amazonaws.services.certificatemanager.model.*;
  * Guide</i> </a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.sns.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.sns.AmazonSNSClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.sns.AmazonSNSClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSNSModuleInjector implements InjectorSource {
 
     @Override

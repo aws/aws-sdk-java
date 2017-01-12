@@ -12,22 +12,20 @@
  */
 package com.amazonaws.services.cloudwatch.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map.Entry;
-
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * DeleteAlarmsResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteAlarmsResultStaxUnmarshaller implements Unmarshaller<DeleteAlarmsResult, StaxUnmarshallerContext> {
 
     public DeleteAlarmsResult unmarshall(StaxUnmarshallerContext context) throws Exception {

@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.cloudsearchdomain.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Hits JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HitsJsonUnmarshaller implements Unmarshaller<Hits, JsonUnmarshallerContext> {
 
     public Hits unmarshall(JsonUnmarshallerContext context) throws Exception {

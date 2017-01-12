@@ -12,22 +12,20 @@
  */
 package com.amazonaws.services.simpleemail.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map.Entry;
-
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * DescribeReceiptRuleResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeReceiptRuleResultStaxUnmarshaller implements Unmarshaller<DescribeReceiptRuleResult, StaxUnmarshallerContext> {
 
     public DescribeReceiptRuleResult unmarshall(StaxUnmarshallerContext context) throws Exception {

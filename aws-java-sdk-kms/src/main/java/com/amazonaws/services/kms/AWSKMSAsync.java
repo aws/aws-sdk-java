@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kms;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.kms.model.*;
 
 /**
@@ -126,6 +128,7 @@ import com.amazonaws.services.kms.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSKMSAsync extends AWSKMS {
 
     /**

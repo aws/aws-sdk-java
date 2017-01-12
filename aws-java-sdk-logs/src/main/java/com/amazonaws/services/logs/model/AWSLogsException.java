@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.logs.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon CloudWatch Logs
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSLogsException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Determines the level of detail about provisioned throughput consumption that is returned in the response:
@@ -39,6 +41,7 @@ package com.amazonaws.services.dynamodbv2.model;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReturnConsumedCapacity {
 
     INDEXES("INDEXES"),

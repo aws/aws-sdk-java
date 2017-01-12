@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simpleemail.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could not execute the provided
@@ -20,6 +22,7 @@ package com.amazonaws.services.simpleemail.model;
  * Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidLambdaFunctionException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 

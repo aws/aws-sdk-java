@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cognitosync.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * AWS Lambda throttled your account, please contact AWS Support
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LambdaThrottledException extends com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 

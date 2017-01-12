@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.stepfunctions;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.stepfunctions.model.*;
 
 /**
@@ -39,6 +41,7 @@ import com.amazonaws.services.stepfunctions.model.*;
  * invitation email), or an HTTP API (the subject of this document).
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**

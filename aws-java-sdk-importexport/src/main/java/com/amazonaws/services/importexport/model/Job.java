@@ -13,10 +13,12 @@
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Representation of a job returned by the ListJobs operation.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Job implements Serializable, Cloneable {
 
     private String jobId;

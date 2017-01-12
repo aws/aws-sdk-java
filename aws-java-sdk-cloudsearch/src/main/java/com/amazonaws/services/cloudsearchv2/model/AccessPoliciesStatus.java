@@ -13,12 +13,14 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The configured access rules for the domain's document and search endpoints, and the current status of those rules.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccessPoliciesStatus implements Serializable, Cloneable {
 
     private String options;

@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You've created the maximum number of traffic policies that can be created for the current AWS account. You can
  * request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyTrafficPoliciesException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

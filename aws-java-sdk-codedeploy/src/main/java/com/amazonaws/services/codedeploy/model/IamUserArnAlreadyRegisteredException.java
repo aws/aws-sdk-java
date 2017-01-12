@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified IAM user ARN is already registered with an on-premises instance.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IamUserArnAlreadyRegisteredException extends com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 

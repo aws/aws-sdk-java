@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ecs.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.ecs.AmazonECSClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.ecs.AmazonECSClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonECSModuleInjector implements InjectorSource {
 
     @Override

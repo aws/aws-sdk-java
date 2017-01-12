@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The pipeline (queue) that is used to manage jobs.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Pipeline implements Serializable, Cloneable {
 
     /**

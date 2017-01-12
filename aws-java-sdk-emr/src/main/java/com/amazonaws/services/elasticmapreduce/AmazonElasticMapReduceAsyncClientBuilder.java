@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticmapreduce;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsAsyncClientBuilder;
@@ -22,6 +24,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
  * preferred over using constructors of the client class.
  **/
 @NotThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonElasticMapReduceAsyncClientBuilder extends
         AwsAsyncClientBuilder<AmazonElasticMapReduceAsyncClientBuilder, AmazonElasticMapReduceAsync> {
 

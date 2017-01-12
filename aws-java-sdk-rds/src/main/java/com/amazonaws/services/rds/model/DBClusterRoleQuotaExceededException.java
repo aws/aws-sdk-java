@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DBClusterRoleQuotaExceededException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

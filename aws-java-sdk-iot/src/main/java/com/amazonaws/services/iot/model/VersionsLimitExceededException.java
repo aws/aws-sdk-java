@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.iot.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The number of policy versions exceeds the limit.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VersionsLimitExceededException extends com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 

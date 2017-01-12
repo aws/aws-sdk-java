@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ShippingOption {
 
     SECOND_DAY("SECOND_DAY"),

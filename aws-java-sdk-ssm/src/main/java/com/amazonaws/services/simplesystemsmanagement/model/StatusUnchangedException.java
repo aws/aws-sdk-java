@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The updated status is the same as the current status.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StatusUnchangedException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

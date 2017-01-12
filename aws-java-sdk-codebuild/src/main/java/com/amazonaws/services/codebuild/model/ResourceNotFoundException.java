@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codebuild.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified AWS resource cannot be found.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.codebuild.model.AWSCodeBuildException {
     private static final long serialVersionUID = 1L;
 

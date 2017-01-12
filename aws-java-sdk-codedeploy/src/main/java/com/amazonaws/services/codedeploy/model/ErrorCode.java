@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.codedeploy.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ErrorCode {
 
     DEPLOYMENT_GROUP_MISSING("DEPLOYMENT_GROUP_MISSING"),

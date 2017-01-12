@@ -13,10 +13,12 @@
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * Output structure for the CreateJob operation.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String jobId;

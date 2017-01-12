@@ -13,12 +13,14 @@
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutItemInput implements Serializable, Cloneable {
 
     /**

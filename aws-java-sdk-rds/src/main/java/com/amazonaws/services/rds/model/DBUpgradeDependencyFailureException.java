@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.rds.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The DB upgrade failed because a resource the DB depends on could not be modified.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DBUpgradeDependencyFailureException extends com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 

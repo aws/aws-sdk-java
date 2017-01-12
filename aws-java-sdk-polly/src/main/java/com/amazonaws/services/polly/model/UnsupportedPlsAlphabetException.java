@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and
  * <code>ipa</code>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedPlsAlphabetException extends com.amazonaws.services.polly.model.AmazonPollyException {
     private static final long serialVersionUID = 1L;
 

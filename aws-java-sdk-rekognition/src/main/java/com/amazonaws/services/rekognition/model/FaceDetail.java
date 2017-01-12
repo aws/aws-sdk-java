@@ -13,12 +13,14 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Structure containing attributes of the face that the algorithm detected.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FaceDetail implements Serializable, Cloneable {
 
     /**

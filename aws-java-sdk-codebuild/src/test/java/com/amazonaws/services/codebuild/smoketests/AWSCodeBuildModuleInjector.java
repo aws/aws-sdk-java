@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codebuild.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ import com.amazonaws.services.codebuild.AWSCodeBuildClient;
 /**
  * Injector that binds the AmazonWebServiceClient interface to the com.amazonaws.services.codebuild.AWSCodeBuildClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCodeBuildModuleInjector implements InjectorSource {
 
     @Override

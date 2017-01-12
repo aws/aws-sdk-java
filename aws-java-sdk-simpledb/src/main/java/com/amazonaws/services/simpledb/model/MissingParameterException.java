@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.simpledb.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request must contain the specified missing parameter.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MissingParameterException extends com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 

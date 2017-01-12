@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.sns;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -40,6 +42,7 @@ import com.amazonaws.services.sns.model.*;
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonSNS {
 
     /**

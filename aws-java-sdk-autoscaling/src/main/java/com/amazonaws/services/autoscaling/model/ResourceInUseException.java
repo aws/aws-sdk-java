@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.autoscaling.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation can't be performed because the resource is in use.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceInUseException extends com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 

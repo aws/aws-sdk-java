@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.directory.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The maximum number of directories in the region has been reached. You can use the <a>GetDirectoryLimits</a> operation
  * to determine your directory limits in the region.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DirectoryLimitExceededException extends com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 

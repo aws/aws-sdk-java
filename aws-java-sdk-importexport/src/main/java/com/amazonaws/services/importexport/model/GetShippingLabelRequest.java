@@ -13,8 +13,11 @@
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetShippingLabelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<String> jobIds;

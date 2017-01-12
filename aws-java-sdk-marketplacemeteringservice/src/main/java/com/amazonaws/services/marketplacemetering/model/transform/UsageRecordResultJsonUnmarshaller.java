@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.marketplacemetering.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.marketplacemetering.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * UsageRecordResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UsageRecordResultJsonUnmarshaller implements Unmarshaller<UsageRecordResult, JsonUnmarshallerContext> {
 
     public UsageRecordResult unmarshall(JsonUnmarshallerContext context) throws Exception {

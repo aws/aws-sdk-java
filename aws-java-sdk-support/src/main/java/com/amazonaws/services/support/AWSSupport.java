@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.support;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -101,6 +103,7 @@ import com.amazonaws.services.support.model.*;
  * and how to call Trusted Advisor for results of checks on your resources.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSupport {
 
     /**

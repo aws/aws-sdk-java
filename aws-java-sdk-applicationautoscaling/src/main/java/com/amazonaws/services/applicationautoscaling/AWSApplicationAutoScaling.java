@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.applicationautoscaling;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -78,6 +80,7 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * Auto Scaling</a> in the <i>AWS General Reference</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSApplicationAutoScaling {
 
     /**

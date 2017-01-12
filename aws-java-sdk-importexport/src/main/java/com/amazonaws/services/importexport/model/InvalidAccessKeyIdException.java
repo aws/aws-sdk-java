@@ -12,10 +12,13 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the
  * request authentication must use the same AWS Access Key ID.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidAccessKeyIdException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

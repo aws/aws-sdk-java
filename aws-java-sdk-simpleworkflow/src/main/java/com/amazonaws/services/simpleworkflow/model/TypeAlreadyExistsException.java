@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if the type already exists in the specified domain. You will get this fault even if the existing type is in
  * deprecated status. You can specify another version if the intent is to create a new distinct version of the type.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TypeAlreadyExistsException extends com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 

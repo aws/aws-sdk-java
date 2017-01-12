@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.lambda;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -34,6 +36,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

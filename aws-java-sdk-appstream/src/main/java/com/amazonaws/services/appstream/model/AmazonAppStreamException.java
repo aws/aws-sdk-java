@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.appstream.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon AppStream
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonAppStreamException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

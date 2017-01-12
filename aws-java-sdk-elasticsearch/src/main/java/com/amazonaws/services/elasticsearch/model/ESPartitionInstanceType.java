@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.elasticsearch.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ESPartitionInstanceType {
 
     M3MediumElasticsearch("m3.medium.elasticsearch"),

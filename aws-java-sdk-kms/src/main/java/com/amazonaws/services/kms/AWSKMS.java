@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kms;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -127,6 +129,7 @@ import com.amazonaws.services.kms.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSKMS {
 
     /**

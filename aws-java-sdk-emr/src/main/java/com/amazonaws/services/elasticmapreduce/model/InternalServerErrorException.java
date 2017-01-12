@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that an error occurred while processing the request and that the request was not completed.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerErrorException extends com.amazonaws.services.elasticmapreduce.model.AmazonElasticMapReduceException {
     private static final long serialVersionUID = 1L;
 

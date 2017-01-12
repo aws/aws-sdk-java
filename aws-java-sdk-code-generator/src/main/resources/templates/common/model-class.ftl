@@ -2,6 +2,7 @@ ${fileHeader}
 package ${metadata.packageName}.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 <#if shape.documentation?has_content || awsDocsUrl?has_content>
 /**
@@ -12,6 +13,7 @@ import java.io.Serializable;
 <#if shape.deprecated>
 @Deprecated
 </#if>
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName} <#if baseClassFqcn??>extends ${baseClassFqcn}</#if>
     implements Serializable, Cloneable {
 

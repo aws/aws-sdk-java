@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified configuration is not valid with this protocol.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IncompatibleProtocolsException extends com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

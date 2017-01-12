@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -25,6 +27,7 @@ import com.amazonaws.services.route53.waiters.AmazonRoute53Waiters;
  * {@link com.amazonaws.services.route53.AbstractAmazonRoute53} instead.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonRoute53 {
 
     /**

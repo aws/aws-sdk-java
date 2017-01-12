@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.waf.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The operation failed because of a system problem, even though the request was valid. Retry your request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFInternalErrorException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 

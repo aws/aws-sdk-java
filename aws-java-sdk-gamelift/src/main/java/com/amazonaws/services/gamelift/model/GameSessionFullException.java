@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests
  * immediately or after a waiting period.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GameSessionFullException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudwatch;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.cloudwatch.model.*;
 
 /**
@@ -40,6 +42,7 @@ import com.amazonaws.services.cloudwatch.model.*;
  * health.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The health of the specified targets could not be retrieved due to an internal error.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HealthUnavailableException extends com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 

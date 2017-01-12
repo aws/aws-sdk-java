@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.elasticache.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The
  * maximum number of tags permitted on a resource is 10.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagQuotaPerResourceExceededException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 

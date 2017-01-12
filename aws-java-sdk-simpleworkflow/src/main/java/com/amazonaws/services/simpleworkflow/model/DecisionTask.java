@@ -13,12 +13,14 @@
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DecisionTask extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

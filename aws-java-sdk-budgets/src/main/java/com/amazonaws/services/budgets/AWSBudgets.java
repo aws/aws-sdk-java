@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.budgets;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -26,6 +28,7 @@ import com.amazonaws.services.budgets.model.*;
  * <p>
  * All public APIs for AWS Budgets
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSBudgets {
 
     /**

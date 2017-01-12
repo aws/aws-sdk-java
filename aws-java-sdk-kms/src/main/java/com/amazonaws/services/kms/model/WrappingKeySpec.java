@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.kms.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum WrappingKeySpec {
 
     RSA_2048("RSA_2048");

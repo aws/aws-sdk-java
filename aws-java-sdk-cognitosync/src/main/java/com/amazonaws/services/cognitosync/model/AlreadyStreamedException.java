@@ -12,10 +12,13 @@
  */
 package com.amazonaws.services.cognitosync.model;
 
+import javax.annotation.Generated;
+
 /**
  * An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish
  * operation completed successfully.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AlreadyStreamedException extends com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 

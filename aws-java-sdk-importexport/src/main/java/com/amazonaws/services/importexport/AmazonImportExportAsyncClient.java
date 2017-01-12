@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.importexport;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.importexport.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -28,6 +30,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * connectivity.
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonImportExportAsyncClient extends AmazonImportExportClient implements AmazonImportExportAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

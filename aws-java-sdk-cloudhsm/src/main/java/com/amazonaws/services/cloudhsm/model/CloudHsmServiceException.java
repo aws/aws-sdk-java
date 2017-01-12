@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudhsm.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Indicates that an exception occurred in the AWS CloudHSM service.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudHsmServiceException extends com.amazonaws.services.cloudhsm.model.AWSCloudHSMException {
     private static final long serialVersionUID = 1L;
 

@@ -13,6 +13,7 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import java.io.Serializable;
  * default.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DoubleArrayOptions implements Serializable, Cloneable {
 
     /** A value to use for the field if the field isn't specified for a document. */

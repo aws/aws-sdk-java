@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.importexport.model;
 
+import javax.annotation.Generated;
+
 /**
  * The JOBID was missing, not found, or not associated with the AWS account.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidJobIdException extends com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 

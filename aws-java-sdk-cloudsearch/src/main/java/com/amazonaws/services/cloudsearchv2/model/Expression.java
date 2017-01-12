@@ -13,6 +13,7 @@
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * expressions, or return computed information in the search results.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Expression implements Serializable, Cloneable {
 
     private String expressionName;

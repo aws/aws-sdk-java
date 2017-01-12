@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon CloudSearch
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudSearchException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

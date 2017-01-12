@@ -12,10 +12,9 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cognitoidp.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -27,6 +26,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ForgotPasswordResult JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ForgotPasswordResultJsonUnmarshaller implements Unmarshaller<ForgotPasswordResult, JsonUnmarshallerContext> {
 
     public ForgotPasswordResult unmarshall(JsonUnmarshallerContext context) throws Exception {

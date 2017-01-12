@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.budgets.model;
 
+import javax.annotation.Generated;
+
 /**
  * The time unit of the budget. e.g. weekly, monthly, etc.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TimeUnit {
 
     MONTHLY("MONTHLY"),

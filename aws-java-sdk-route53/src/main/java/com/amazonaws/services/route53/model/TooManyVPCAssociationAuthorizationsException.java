@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.route53.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * You've created the maximum number of authorizations that can be created for the specified hosted zone. To authorize
@@ -20,6 +22,7 @@ package com.amazonaws.services.route53.model;
  * <code>ListVPCAssociationAuthorizations</code> request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyVPCAssociationAuthorizationsException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 

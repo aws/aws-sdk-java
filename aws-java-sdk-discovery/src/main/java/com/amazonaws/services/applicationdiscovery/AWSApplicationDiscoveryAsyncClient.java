@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.applicationdiscovery;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.applicationdiscovery.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -88,6 +90,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryClient implements AWSApplicationDiscoveryAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

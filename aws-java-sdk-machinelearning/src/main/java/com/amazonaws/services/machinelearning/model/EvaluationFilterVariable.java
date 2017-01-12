@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.machinelearning.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A list of the variables to use in searching or filtering <code>Evaluation</code>.
@@ -28,6 +30,7 @@ package com.amazonaws.services.machinelearning.model;
  * either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EvaluationFilterVariable {
 
     CreatedAt("CreatedAt"),

@@ -13,6 +13,7 @@
 package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import java.io.Serializable;
  * but aren't stored in the database.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FaceRecord implements Serializable, Cloneable {
 
     private Face face;

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.codepipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The approval action has already been approved or rejected.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApprovalAlreadyCompletedException extends com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 

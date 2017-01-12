@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.appstream;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.appstream.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
  * Abstract implementation of {@code AmazonAppStream}. Convenient method forms pass through to the corresponding
  * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonAppStream implements AmazonAppStream {
 
     protected AbstractAmazonAppStream() {

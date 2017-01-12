@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The type of instance.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum JobFlowExecutionState {
 
     STARTING("STARTING"),

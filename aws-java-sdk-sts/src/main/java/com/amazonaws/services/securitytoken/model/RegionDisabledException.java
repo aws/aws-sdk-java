@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.securitytoken.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * STS is not activated in the requested region for the account that is being asked to generate credentials. The account
@@ -20,6 +22,7 @@ package com.amazonaws.services.securitytoken.model;
  * Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RegionDisabledException extends com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.polly.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is
@@ -22,6 +24,7 @@ package com.amazonaws.services.polly.model;
  * correctly. Then try again.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LexiconNotFoundException extends com.amazonaws.services.polly.model.AmazonPollyException {
     private static final long serialVersionUID = 1L;
 

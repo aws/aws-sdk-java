@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.directconnect.smoketests;
 
+import javax.annotation.Generated;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -27,6 +29,7 @@ import com.amazonaws.services.directconnect.AmazonDirectConnectClient;
  * Injector that binds the AmazonWebServiceClient interface to the
  * com.amazonaws.services.directconnect.AmazonDirectConnectClient
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonDirectConnectModuleInjector implements InjectorSource {
 
     @Override

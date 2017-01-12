@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StartTimerFailedCause {
 
     TIMER_ID_ALREADY_IN_USE("TIMER_ID_ALREADY_IN_USE"),

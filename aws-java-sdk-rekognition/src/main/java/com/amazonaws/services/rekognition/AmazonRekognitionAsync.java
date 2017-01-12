@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rekognition;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.rekognition.model.*;
 
 /**
@@ -27,6 +29,7 @@ import com.amazonaws.services.rekognition.model.*;
  * This is the Amazon Rekognition API reference.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**

@@ -4,10 +4,12 @@ package ${metadata.packageName}.model;
 import com.amazonaws.opensdk.SdkErrorHttpMetadata;
 import com.amazonaws.opensdk.internal.BaseException;
 import com.amazonaws.annotation.SdkInternalApi;
+import javax.annotation.Generated;
 
 /**
  * Base exception for all service exceptions thrown by ${metadata.serviceFullName}
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${className} extends ${baseExceptionFqcn} implements BaseException {
 
     private static final long serialVersionUID = 1L;

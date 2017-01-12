@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that
@@ -20,6 +22,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
  * Command Changes Status</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRoleException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 

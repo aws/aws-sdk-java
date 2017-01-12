@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.servermigration;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.servermigration.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -24,6 +26,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * Amazon Server Migration Service automates the process of migrating servers to EC2.
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient implements AWSServerMigrationAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

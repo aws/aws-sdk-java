@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.simpleemail;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.*;
 import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiters;
@@ -20,6 +22,7 @@ import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiter
  * Abstract implementation of {@code AmazonSimpleEmailService}. Convenient method forms pass through to the
  * corresponding overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailService {
 
     protected AbstractAmazonSimpleEmailService() {

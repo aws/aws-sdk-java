@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kinesisfirehose;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -30,6 +32,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
  * Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), and Amazon Redshift.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonKinesisFirehose {
 
     /**

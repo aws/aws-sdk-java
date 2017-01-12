@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.rekognition.model;
 
+import javax.annotation.Generated;
+
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum LandmarkType {
 
     EYE_LEFT("EYE_LEFT"),

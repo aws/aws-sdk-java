@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.cognitosync.model;
 
+import javax.annotation.Generated;
+
 /**
  * An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DuplicateRequestException extends com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 

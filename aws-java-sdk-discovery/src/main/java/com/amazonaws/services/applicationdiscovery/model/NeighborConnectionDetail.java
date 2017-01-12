@@ -13,12 +13,14 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Details about neighboring servers.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**

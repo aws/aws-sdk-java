@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.appstream.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * The specified resource already exists.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceAlreadyExistsException extends com.amazonaws.services.appstream.model.AmazonAppStreamException {
     private static final long serialVersionUID = 1L;
 

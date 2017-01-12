@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.databasemigrationservice;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -31,6 +33,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigrationServiceClient implements AWSDatabaseMigrationServiceAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

@@ -13,12 +13,14 @@
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The database credentials to connect to a database on an RDS DB instance.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RDSDatabaseCredentials implements Serializable, Cloneable {
 
     private String username;

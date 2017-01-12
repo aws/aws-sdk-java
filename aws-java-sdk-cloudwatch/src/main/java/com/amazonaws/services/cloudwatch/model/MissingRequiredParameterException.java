@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * An input parameter that is required is missing.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MissingRequiredParameterException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {
     private static final long serialVersionUID = 1L;
 

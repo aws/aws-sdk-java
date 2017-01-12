@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.pinpoint;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.pinpoint.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -22,6 +24,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * notification when an asynchronous operation completes.
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements AmazonPinpointAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

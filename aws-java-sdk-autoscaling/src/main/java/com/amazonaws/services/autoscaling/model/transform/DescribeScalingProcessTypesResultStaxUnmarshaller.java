@@ -12,22 +12,22 @@
  */
 package com.amazonaws.services.autoscaling.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * DescribeScalingProcessTypesResult StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeScalingProcessTypesResultStaxUnmarshaller implements Unmarshaller<DescribeScalingProcessTypesResult, StaxUnmarshallerContext> {
 
     public DescribeScalingProcessTypesResult unmarshall(StaxUnmarshallerContext context) throws Exception {

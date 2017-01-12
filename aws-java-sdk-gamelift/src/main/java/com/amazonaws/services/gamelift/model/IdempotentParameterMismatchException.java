@@ -12,12 +12,15 @@
  */
 package com.amazonaws.services.gamelift.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * A game session with this custom ID string already exists in this fleet. Resolve this conflict before retrying this
  * request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IdempotentParameterMismatchException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 

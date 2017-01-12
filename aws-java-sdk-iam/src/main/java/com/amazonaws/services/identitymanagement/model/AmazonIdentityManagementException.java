@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Identity and Access Management
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonIdentityManagementException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

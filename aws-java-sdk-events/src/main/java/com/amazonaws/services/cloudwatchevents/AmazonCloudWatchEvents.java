@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudwatchevents;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -42,6 +44,7 @@ import com.amazonaws.services.cloudwatchevents.model.*;
  * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon CloudWatch Developer Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudWatchEvents {
 
     /**

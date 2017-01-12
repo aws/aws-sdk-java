@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * Capabilities for a Connector
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ConnectorCapability {
 
     VSPHERE("VSPHERE");

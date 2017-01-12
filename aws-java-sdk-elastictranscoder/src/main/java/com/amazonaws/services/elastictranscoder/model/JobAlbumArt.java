@@ -13,12 +13,14 @@
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The .jpg or .png file associated with an audio file.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JobAlbumArt implements Serializable, Cloneable {
 
     /**

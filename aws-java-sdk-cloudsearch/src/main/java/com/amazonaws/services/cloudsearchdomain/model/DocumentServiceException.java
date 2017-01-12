@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Information about any problems encountered while processing an upload request.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DocumentServiceException extends com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException {
     private static final long serialVersionUID = 1L;
 

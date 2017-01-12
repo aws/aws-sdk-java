@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
@@ -37,6 +38,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * ${shapeName} Marshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>, ${shapeName}> {
 
     private final SdkJsonMarshallerFactory protocolFactory;

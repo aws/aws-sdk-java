@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.datapipeline.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by AWS Data Pipeline
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DataPipelineException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

@@ -12,11 +12,14 @@
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
+import javax.annotation.Generated;
+
 /**
  * <p>
  * Returned if there is no mount target with the specified ID found in the caller's account.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MountTargetNotFoundException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 

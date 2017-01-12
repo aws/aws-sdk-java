@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kinesisanalytics;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.kinesisanalytics.model.*;
 
 /**
@@ -23,6 +25,7 @@ import com.amazonaws.services.kinesisanalytics.model.*;
  * {@link com.amazonaws.services.kinesisanalytics.AbstractAmazonKinesisAnalyticsAsync} instead.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
 
     /**

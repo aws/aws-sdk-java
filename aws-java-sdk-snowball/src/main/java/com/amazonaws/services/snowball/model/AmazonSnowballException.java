@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.snowball.model;
 
+import javax.annotation.Generated;
+
 /**
  * Base exception for all service exceptions thrown by Amazon Import/Export Snowball
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSnowballException extends com.amazonaws.AmazonServiceException {
 
     private static final long serialVersionUID = 1L;

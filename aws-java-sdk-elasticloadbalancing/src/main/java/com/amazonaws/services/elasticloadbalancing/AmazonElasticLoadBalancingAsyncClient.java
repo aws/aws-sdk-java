@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticloadbalancing;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
@@ -51,6 +53,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  */
 @ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBalancingClient implements AmazonElasticLoadBalancingAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -32,6 +34,7 @@ import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
  * applications faster.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonEC2 {
 
     /**

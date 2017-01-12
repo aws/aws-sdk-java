@@ -13,12 +13,14 @@
 package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Inventory data for installed discovery agents.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CustomerAgentInfo implements Serializable, Cloneable {
 
     /**

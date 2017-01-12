@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.identitymanagement.model.*;
 
 /**
@@ -90,6 +92,7 @@ import com.amazonaws.services.identitymanagement.model.*;
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement {
 
     /**

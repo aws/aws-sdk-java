@@ -12,9 +12,12 @@
  */
 package com.amazonaws.services.servermigration.model;
 
+import javax.annotation.Generated;
+
 /**
  * This user has exceeded the maximum allowed Replication Run limit.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplicationRunLimitExceededException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {
     private static final long serialVersionUID = 1L;
 

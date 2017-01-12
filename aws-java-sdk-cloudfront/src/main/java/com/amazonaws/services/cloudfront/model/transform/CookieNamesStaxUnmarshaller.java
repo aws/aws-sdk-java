@@ -12,22 +12,22 @@
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * CookieNames StAX Unmarshaller
  */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CookieNamesStaxUnmarshaller implements Unmarshaller<CookieNames, StaxUnmarshallerContext> {
 
     public CookieNames unmarshall(StaxUnmarshallerContext context) throws Exception {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
@@ -92,6 +94,7 @@ import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagemen
  * </li>
  * </ul>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonIdentityManagement {
 
     /**
