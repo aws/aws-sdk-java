@@ -21,6 +21,7 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
@@ -33,7 +34,9 @@ import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 /**
  * Utility methods for extracting data from XML documents using Xpath
@@ -55,6 +58,29 @@ public class XpathUtils {
 
     /** The FQCN of the desired DTMManager implementation. */
     private static final String DTM_MANAGER_IMPL_CLASS_NAME = "com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault";
+    
+    /** Logs problems found when parsing xml */
+    private static final ErrorHandler ERROR_HANDLER = new ErrorHandler() {
+        
+        @Override
+        public void warning(SAXParseException e) throws SAXException {
+            if (log.isDebugEnabled()) {
+                log.debug("xml parse warning: " + e.getMessage(), e);
+            }
+        }
+        
+        @Override
+        public void fatalError(SAXParseException e) throws SAXException {
+            throw e;
+        }
+        
+        @Override
+        public void error(SAXParseException e) throws SAXException {
+            if (log.isDebugEnabled()) {
+                log.debug("xml parse error: " + e.getMessage(), e);
+            }
+        }
+    }; 
 
     private static final Log log = LogFactory.getLog(XpathUtils.class);
 
@@ -130,11 +156,15 @@ public class XpathUtils {
         is = new NamespaceRemovingInputStream(is);
         // DocumentBuilderFactory is not thread safe
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        Document doc = factory.newDocumentBuilder().parse(is);
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        // ensure that parser writes error/warning messages to the logger
+        // rather than stderr
+        builder.setErrorHandler(ERROR_HANDLER);
+        Document doc = builder.parse(is);
         is.close();
         return doc;
     }
-
+    
     public static Document documentFrom(String xml) throws SAXException,
             IOException, ParserConfigurationException {
         return documentFrom(new ByteArrayInputStream(xml.getBytes(StringUtils.UTF8)));
