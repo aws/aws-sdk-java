@@ -486,7 +486,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String snapshotWindow;
     /**
      * <p>
-     * The password used to access a password protected server.
+     * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
      * <p>
      * Password constraints:
@@ -3652,7 +3652,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The password used to access a password protected server.
+     * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
      * <p>
      * Password constraints:
@@ -3679,7 +3679,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param authToken
-     *        The password used to access a password protected server.</p>
+     *        <b>Reserved parameter.</b> The password used to access a password protected server.</p>
      *        <p>
      *        Password constraints:
      *        </p>
@@ -3710,7 +3710,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The password used to access a password protected server.
+     * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
      * <p>
      * Password constraints:
@@ -3736,7 +3736,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
      * </p>
      * 
-     * @return The password used to access a password protected server.</p>
+     * @return <b>Reserved parameter.</b> The password used to access a password protected server.</p>
      *         <p>
      *         Password constraints:
      *         </p>
@@ -3767,7 +3767,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The password used to access a password protected server.
+     * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
      * <p>
      * Password constraints:
@@ -3794,7 +3794,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param authToken
-     *        The password used to access a password protected server.</p>
+     *        <b>Reserved parameter.</b> The password used to access a password protected server.</p>
      *        <p>
      *        Password constraints:
      *        </p>

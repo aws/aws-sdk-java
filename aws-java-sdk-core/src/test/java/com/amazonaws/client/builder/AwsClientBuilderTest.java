@@ -24,6 +24,7 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
@@ -245,6 +246,23 @@ public class AwsClientBuilderTest {
         when(mockRegionProvider.getRegion()).thenReturn("ap-southeast-2");
         final URI actualUri = new ConcreteAsyncBuilder(mockRegionProvider).build().getEndpoint();
         assertEquals(URI.create("https://mockprefix.ap-southeast-2.amazonaws.com"), actualUri);
+    }
+
+    @Test
+    public void endpointAndSigningRegionCanBeUsedInPlaceOfSetRegion() {
+        AmazonConcreteClient client = new ConcreteSyncBuilder()
+                .withEndpointConfiguration(new EndpointConfiguration("https://mockprefix.ap-southeast-2.amazonaws.com", "us-east-1"))
+                .build();
+        assertEquals("us-east-1", client.getSignerRegionOverride());
+        assertEquals(URI.create("https://mockprefix.ap-southeast-2.amazonaws.com"), client.getEndpoint());
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void cannotSetBothEndpointConfigurationAndRegionOnBuilder() {
+        new ConcreteSyncBuilder()
+                .withEndpointConfiguration(new EndpointConfiguration("http://localhost:3030", "us-west-2"))
+                .withRegion("us-east-1")
+                .build();
     }
 
     @Test

@@ -671,6 +671,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeComplianceByConfigRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"
      *      target="_top">AWS API Documentation</a>
@@ -755,7 +758,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeComplianceByResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"
@@ -813,6 +816,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         again.
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeConfigRuleEvaluationStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"
      *      target="_top">AWS API Documentation</a>
@@ -866,6 +872,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeConfigRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules" target="_top">AWS API
      *      Documentation</a>
@@ -1149,7 +1158,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
@@ -1371,7 +1380,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.
@@ -1440,7 +1449,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.

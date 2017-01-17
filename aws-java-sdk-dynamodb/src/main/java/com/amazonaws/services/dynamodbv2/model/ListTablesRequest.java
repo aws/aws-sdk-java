@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>ListTables</i> operation.
+ * Represents the input of a <code>ListTables</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables" target="_top">AWS API
@@ -31,7 +31,7 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The first table name that this operation will evaluate. Use the value that was returned for
-     * <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     * <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.
      * </p>
      */
     private String exclusiveStartTableName;
@@ -55,7 +55,8 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param exclusiveStartTableName
      *        The first table name that this operation will evaluate. Use the value that was returned for
-     *        <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     *        <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of
+     *        results.
      */
     public ListTablesRequest(String exclusiveStartTableName) {
         setExclusiveStartTableName(exclusiveStartTableName);
@@ -67,7 +68,8 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param exclusiveStartTableName
      *        The first table name that this operation will evaluate. Use the value that was returned for
-     *        <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     *        <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of
+     *        results.
      * @param limit
      *        A maximum number of table names to return. If this parameter is not specified, the limit is 100.
      */
@@ -79,12 +81,13 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The first table name that this operation will evaluate. Use the value that was returned for
-     * <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     * <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.
      * </p>
      * 
      * @param exclusiveStartTableName
      *        The first table name that this operation will evaluate. Use the value that was returned for
-     *        <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     *        <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of
+     *        results.
      */
 
     public void setExclusiveStartTableName(String exclusiveStartTableName) {
@@ -94,11 +97,12 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The first table name that this operation will evaluate. Use the value that was returned for
-     * <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     * <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.
      * </p>
      * 
      * @return The first table name that this operation will evaluate. Use the value that was returned for
-     *         <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     *         <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of
+     *         results.
      */
 
     public String getExclusiveStartTableName() {
@@ -108,12 +112,13 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The first table name that this operation will evaluate. Use the value that was returned for
-     * <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     * <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.
      * </p>
      * 
      * @param exclusiveStartTableName
      *        The first table name that this operation will evaluate. Use the value that was returned for
-     *        <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.
+     *        <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of
+     *        results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

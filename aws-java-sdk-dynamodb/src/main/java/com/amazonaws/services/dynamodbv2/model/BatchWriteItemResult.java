@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a <i>BatchWriteItem</i> operation.
+ * Represents the output of a <code>BatchWriteItem</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem" target="_top">AWS API
@@ -28,24 +28,25 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i> value is
-     * in the same form as <i>RequestItems</i>, so you can provide this value directly to a subsequent
-     * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in the Request Parameters section.
+     * A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
+     * value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent
+     * <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request
+     * Parameters section.
      * </p>
      * <p>
-     * Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a list of operations to perform
-     * (<i>DeleteRequest</i> or <i>PutRequest</i>).
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:
+     * Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to
+     * perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Key</i> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be
+     * deleted is identified by a <code>Key</code> subelement:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
      * consists of an attribute name and an attribute value.
      * </p>
      * </li>
@@ -53,16 +54,16 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * <li>
      * <p>
-     * <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by
-     * an <i>Item</i> subelement:
+     * <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an
-     * attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater
-     * than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a
-     * <i>ValidationException</i> exception.
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
+     * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the data types for those attributes must match
@@ -73,14 +74,14 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * </ul>
      * <p>
-     * If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
+     * If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.
      * </p>
      */
     private java.util.Map<String, java.util.List<WriteRequest>> unprocessedItems;
     /**
      * <p>
-     * A list of tables that were processed by <i>BatchWriteItem</i> and, for each table, information about any item
-     * collections that were affected by individual <i>DeleteItem</i> or <i>PutItem</i> operations.
+     * A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any
+     * item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.
      * </p>
      * <p>
      * Each entry consists of the following subelements:
@@ -88,16 +89,16 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The partition key value of the item collection. This is the same as the partition key
-     * value of the item.
+     * <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the
+     * partition key value of the item.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element array
-     * containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in
-     * the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use
-     * this estimate to measure whether a local secondary index is approaching its size limit.
+     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a two-element
+     * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
+     * items in the table, plus the size of all attributes projected into all of the local secondary indexes on the
+     * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
      * </p>
      * <p>
      * The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.
@@ -108,7 +109,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Map<String, java.util.List<ItemCollectionMetrics>> itemCollectionMetrics;
     /**
      * <p>
-     * The capacity units consumed by the operation.
+     * The capacity units consumed by the entire <code>BatchWriteItem</code> operation.
      * </p>
      * <p>
      * Each element consists of:
@@ -116,12 +117,12 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>TableName</i> - The table that consumed the provisioned throughput.
+     * <code>TableName</code> - The table that consumed the provisioned throughput.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CapacityUnits</i> - The total number of capacity units consumed.
+     * <code>CapacityUnits</code> - The total number of capacity units consumed.
      * </p>
      * </li>
      * </ul>
@@ -130,24 +131,25 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i> value is
-     * in the same form as <i>RequestItems</i>, so you can provide this value directly to a subsequent
-     * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in the Request Parameters section.
+     * A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
+     * value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent
+     * <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request
+     * Parameters section.
      * </p>
      * <p>
-     * Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a list of operations to perform
-     * (<i>DeleteRequest</i> or <i>PutRequest</i>).
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:
+     * Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to
+     * perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Key</i> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be
+     * deleted is identified by a <code>Key</code> subelement:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
      * consists of an attribute name and an attribute value.
      * </p>
      * </li>
@@ -155,16 +157,16 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * <li>
      * <p>
-     * <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by
-     * an <i>Item</i> subelement:
+     * <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an
-     * attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater
-     * than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a
-     * <i>ValidationException</i> exception.
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
+     * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the data types for those attributes must match
@@ -175,44 +177,44 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * </ul>
      * <p>
-     * If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
+     * If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.
      * </p>
      * 
-     * @return A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i>
-     *         value is in the same form as <i>RequestItems</i>, so you can provide this value directly to a subsequent
-     *         <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in the Request Parameters
-     *         section.</p>
+     * @return A map of tables and requests against those tables that were not processed. The
+     *         <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
+     *         this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+     *         <code>RequestItems</code> in the Request Parameters section.</p>
      *         <p>
-     *         Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a list of operations to
-     *         perform (<i>DeleteRequest</i> or <i>PutRequest</i>).
+     *         Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
+     *         operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be
-     *         deleted is identified by a <i>Key</i> subelement:
+     *         <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item
+     *         to be deleted is identified by a <code>Key</code> subelement:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>Key</i> - A map of primary key attribute values that uniquely identify the item. Each entry in this
-     *         map consists of an attribute name and an attribute value.
+     *         <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
+     *         this map consists of an attribute name and an attribute value.
      *         </p>
      *         </li>
      *         </ul>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is
-     *         identified by an <i>Item</i> subelement:
+     *         <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be
+     *         put is identified by an <code>Item</code> subelement:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name
-     *         and an attribute value. Attribute values must not be null; string and binary type attributes must have
-     *         lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values
-     *         will be rejected with a <i>ValidationException</i> exception.
+     *         <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
+     *         name and an attribute value. Attribute values must not be null; string and binary type attributes must
+     *         have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
+     *         values will be rejected with a <code>ValidationException</code> exception.
      *         </p>
      *         <p>
      *         If you specify any attributes that are part of an index key, then the data types for those attributes
@@ -223,7 +225,8 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      *         </li>
      *         </ul>
      *         <p>
-     *         If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
+     *         If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code>
+     *         map.
      */
 
     public java.util.Map<String, java.util.List<WriteRequest>> getUnprocessedItems() {
@@ -232,24 +235,25 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i> value is
-     * in the same form as <i>RequestItems</i>, so you can provide this value directly to a subsequent
-     * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in the Request Parameters section.
+     * A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
+     * value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent
+     * <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request
+     * Parameters section.
      * </p>
      * <p>
-     * Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a list of operations to perform
-     * (<i>DeleteRequest</i> or <i>PutRequest</i>).
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:
+     * Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to
+     * perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Key</i> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be
+     * deleted is identified by a <code>Key</code> subelement:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
      * consists of an attribute name and an attribute value.
      * </p>
      * </li>
@@ -257,16 +261,16 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * <li>
      * <p>
-     * <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by
-     * an <i>Item</i> subelement:
+     * <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an
-     * attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater
-     * than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a
-     * <i>ValidationException</i> exception.
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
+     * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the data types for those attributes must match
@@ -277,45 +281,45 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * </ul>
      * <p>
-     * If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
+     * If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.
      * </p>
      * 
      * @param unprocessedItems
-     *        A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i>
-     *        value is in the same form as <i>RequestItems</i>, so you can provide this value directly to a subsequent
-     *        <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in the Request Parameters
-     *        section.</p>
+     *        A map of tables and requests against those tables that were not processed. The
+     *        <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
+     *        this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+     *        <code>RequestItems</code> in the Request Parameters section.</p>
      *        <p>
-     *        Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a list of operations to
-     *        perform (<i>DeleteRequest</i> or <i>PutRequest</i>).
+     *        Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
+     *        operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted
-     *        is identified by a <i>Key</i> subelement:
+     *        <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item
+     *        to be deleted is identified by a <code>Key</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Key</i> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
-     *        consists of an attribute name and an attribute value.
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
+     *        this map consists of an attribute name and an attribute value.
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is
-     *        identified by an <i>Item</i> subelement:
+     *        <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be
+     *        put is identified by an <code>Item</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name
-     *        and an attribute value. Attribute values must not be null; string and binary type attributes must have
-     *        lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values
-     *        will be rejected with a <i>ValidationException</i> exception.
+     *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
+     *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
+     *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
+     *        values will be rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -326,7 +330,8 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      *        </li>
      *        </ul>
      *        <p>
-     *        If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
+     *        If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code>
+     *        map.
      */
 
     public void setUnprocessedItems(java.util.Map<String, java.util.List<WriteRequest>> unprocessedItems) {
@@ -335,24 +340,25 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i> value is
-     * in the same form as <i>RequestItems</i>, so you can provide this value directly to a subsequent
-     * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in the Request Parameters section.
+     * A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
+     * value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent
+     * <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request
+     * Parameters section.
      * </p>
      * <p>
-     * Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a list of operations to perform
-     * (<i>DeleteRequest</i> or <i>PutRequest</i>).
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:
+     * Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to
+     * perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Key</i> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be
+     * deleted is identified by a <code>Key</code> subelement:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
      * consists of an attribute name and an attribute value.
      * </p>
      * </li>
@@ -360,16 +366,16 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * <li>
      * <p>
-     * <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by
-     * an <i>Item</i> subelement:
+     * <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an
-     * attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater
-     * than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a
-     * <i>ValidationException</i> exception.
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
+     * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the data types for those attributes must match
@@ -380,45 +386,45 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * </ul>
      * <p>
-     * If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
+     * If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.
      * </p>
      * 
      * @param unprocessedItems
-     *        A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i>
-     *        value is in the same form as <i>RequestItems</i>, so you can provide this value directly to a subsequent
-     *        <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in the Request Parameters
-     *        section.</p>
+     *        A map of tables and requests against those tables that were not processed. The
+     *        <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
+     *        this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+     *        <code>RequestItems</code> in the Request Parameters section.</p>
      *        <p>
-     *        Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a list of operations to
-     *        perform (<i>DeleteRequest</i> or <i>PutRequest</i>).
+     *        Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
+     *        operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted
-     *        is identified by a <i>Key</i> subelement:
+     *        <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item
+     *        to be deleted is identified by a <code>Key</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Key</i> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
-     *        consists of an attribute name and an attribute value.
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
+     *        this map consists of an attribute name and an attribute value.
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is
-     *        identified by an <i>Item</i> subelement:
+     *        <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be
+     *        put is identified by an <code>Item</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name
-     *        and an attribute value. Attribute values must not be null; string and binary type attributes must have
-     *        lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values
-     *        will be rejected with a <i>ValidationException</i> exception.
+     *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
+     *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
+     *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
+     *        values will be rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -429,7 +435,8 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      *        </li>
      *        </ul>
      *        <p>
-     *        If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
+     *        If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code>
+     *        map.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,8 +468,8 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of tables that were processed by <i>BatchWriteItem</i> and, for each table, information about any item
-     * collections that were affected by individual <i>DeleteItem</i> or <i>PutItem</i> operations.
+     * A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any
+     * item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.
      * </p>
      * <p>
      * Each entry consists of the following subelements:
@@ -470,16 +477,16 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The partition key value of the item collection. This is the same as the partition key
-     * value of the item.
+     * <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the
+     * partition key value of the item.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element array
-     * containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in
-     * the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use
-     * this estimate to measure whether a local secondary index is approaching its size limit.
+     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a two-element
+     * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
+     * items in the table, plus the size of all attributes projected into all of the local secondary indexes on the
+     * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
      * </p>
      * <p>
      * The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.
@@ -487,24 +494,26 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * </ul>
      * 
-     * @return A list of tables that were processed by <i>BatchWriteItem</i> and, for each table, information about any
-     *         item collections that were affected by individual <i>DeleteItem</i> or <i>PutItem</i> operations.</p>
+     * @return A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information
+     *         about any item collections that were affected by individual <code>DeleteItem</code> or
+     *         <code>PutItem</code> operations.</p>
      *         <p>
      *         Each entry consists of the following subelements:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>ItemCollectionKey</i> - The partition key value of the item collection. This is the same as the
+     *         <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the
      *         partition key value of the item.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element
-     *         array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all
-     *         the items in the table, plus the size of all attributes projected into all of the local secondary indexes
-     *         on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.
+     *         <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a
+     *         two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
+     *         size of all the items in the table, plus the size of all attributes projected into all of the local
+     *         secondary indexes on the table. Use this estimate to measure whether a local secondary index is
+     *         approaching its size limit.
      *         </p>
      *         <p>
      *         The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the
@@ -519,8 +528,8 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of tables that were processed by <i>BatchWriteItem</i> and, for each table, information about any item
-     * collections that were affected by individual <i>DeleteItem</i> or <i>PutItem</i> operations.
+     * A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any
+     * item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.
      * </p>
      * <p>
      * Each entry consists of the following subelements:
@@ -528,16 +537,16 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The partition key value of the item collection. This is the same as the partition key
-     * value of the item.
+     * <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the
+     * partition key value of the item.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element array
-     * containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in
-     * the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use
-     * this estimate to measure whether a local secondary index is approaching its size limit.
+     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a two-element
+     * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
+     * items in the table, plus the size of all attributes projected into all of the local secondary indexes on the
+     * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
      * </p>
      * <p>
      * The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.
@@ -546,24 +555,26 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </ul>
      * 
      * @param itemCollectionMetrics
-     *        A list of tables that were processed by <i>BatchWriteItem</i> and, for each table, information about any
-     *        item collections that were affected by individual <i>DeleteItem</i> or <i>PutItem</i> operations.</p>
+     *        A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about
+     *        any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code>
+     *        operations.</p>
      *        <p>
      *        Each entry consists of the following subelements:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ItemCollectionKey</i> - The partition key value of the item collection. This is the same as the
+     *        <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the
      *        partition key value of the item.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element
-     *        array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all
-     *        the items in the table, plus the size of all attributes projected into all of the local secondary indexes
-     *        on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.
+     *        <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a
+     *        two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
+     *        size of all the items in the table, plus the size of all attributes projected into all of the local
+     *        secondary indexes on the table. Use this estimate to measure whether a local secondary index is
+     *        approaching its size limit.
      *        </p>
      *        <p>
      *        The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the
@@ -578,8 +589,8 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of tables that were processed by <i>BatchWriteItem</i> and, for each table, information about any item
-     * collections that were affected by individual <i>DeleteItem</i> or <i>PutItem</i> operations.
+     * A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any
+     * item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.
      * </p>
      * <p>
      * Each entry consists of the following subelements:
@@ -587,16 +598,16 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The partition key value of the item collection. This is the same as the partition key
-     * value of the item.
+     * <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the
+     * partition key value of the item.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element array
-     * containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in
-     * the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use
-     * this estimate to measure whether a local secondary index is approaching its size limit.
+     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a two-element
+     * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
+     * items in the table, plus the size of all attributes projected into all of the local secondary indexes on the
+     * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
      * </p>
      * <p>
      * The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.
@@ -605,24 +616,26 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </ul>
      * 
      * @param itemCollectionMetrics
-     *        A list of tables that were processed by <i>BatchWriteItem</i> and, for each table, information about any
-     *        item collections that were affected by individual <i>DeleteItem</i> or <i>PutItem</i> operations.</p>
+     *        A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about
+     *        any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code>
+     *        operations.</p>
      *        <p>
      *        Each entry consists of the following subelements:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ItemCollectionKey</i> - The partition key value of the item collection. This is the same as the
+     *        <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the
      *        partition key value of the item.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element
-     *        array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all
-     *        the items in the table, plus the size of all attributes projected into all of the local secondary indexes
-     *        on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.
+     *        <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a
+     *        two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
+     *        size of all the items in the table, plus the size of all attributes projected into all of the local
+     *        secondary indexes on the table. Use this estimate to measure whether a local secondary index is
+     *        approaching its size limit.
      *        </p>
      *        <p>
      *        The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the
@@ -660,7 +673,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The capacity units consumed by the operation.
+     * The capacity units consumed by the entire <code>BatchWriteItem</code> operation.
      * </p>
      * <p>
      * Each element consists of:
@@ -668,29 +681,29 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>TableName</i> - The table that consumed the provisioned throughput.
+     * <code>TableName</code> - The table that consumed the provisioned throughput.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CapacityUnits</i> - The total number of capacity units consumed.
+     * <code>CapacityUnits</code> - The total number of capacity units consumed.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The capacity units consumed by the operation.</p>
+     * @return The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
      *         <p>
      *         Each element consists of:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>TableName</i> - The table that consumed the provisioned throughput.
+     *         <code>TableName</code> - The table that consumed the provisioned throughput.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>CapacityUnits</i> - The total number of capacity units consumed.
+     *         <code>CapacityUnits</code> - The total number of capacity units consumed.
      *         </p>
      *         </li>
      */
@@ -701,7 +714,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The capacity units consumed by the operation.
+     * The capacity units consumed by the entire <code>BatchWriteItem</code> operation.
      * </p>
      * <p>
      * Each element consists of:
@@ -709,30 +722,30 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>TableName</i> - The table that consumed the provisioned throughput.
+     * <code>TableName</code> - The table that consumed the provisioned throughput.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CapacityUnits</i> - The total number of capacity units consumed.
+     * <code>CapacityUnits</code> - The total number of capacity units consumed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param consumedCapacity
-     *        The capacity units consumed by the operation.</p>
+     *        The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
      *        <p>
      *        Each element consists of:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>TableName</i> - The table that consumed the provisioned throughput.
+     *        <code>TableName</code> - The table that consumed the provisioned throughput.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CapacityUnits</i> - The total number of capacity units consumed.
+     *        <code>CapacityUnits</code> - The total number of capacity units consumed.
      *        </p>
      *        </li>
      */
@@ -748,7 +761,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The capacity units consumed by the operation.
+     * The capacity units consumed by the entire <code>BatchWriteItem</code> operation.
      * </p>
      * <p>
      * Each element consists of:
@@ -756,12 +769,12 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>TableName</i> - The table that consumed the provisioned throughput.
+     * <code>TableName</code> - The table that consumed the provisioned throughput.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CapacityUnits</i> - The total number of capacity units consumed.
+     * <code>CapacityUnits</code> - The total number of capacity units consumed.
      * </p>
      * </li>
      * </ul>
@@ -772,19 +785,19 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param consumedCapacity
-     *        The capacity units consumed by the operation.</p>
+     *        The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
      *        <p>
      *        Each element consists of:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>TableName</i> - The table that consumed the provisioned throughput.
+     *        <code>TableName</code> - The table that consumed the provisioned throughput.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CapacityUnits</i> - The total number of capacity units consumed.
+     *        <code>CapacityUnits</code> - The total number of capacity units consumed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -802,7 +815,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The capacity units consumed by the operation.
+     * The capacity units consumed by the entire <code>BatchWriteItem</code> operation.
      * </p>
      * <p>
      * Each element consists of:
@@ -810,30 +823,30 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <ul>
      * <li>
      * <p>
-     * <i>TableName</i> - The table that consumed the provisioned throughput.
+     * <code>TableName</code> - The table that consumed the provisioned throughput.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CapacityUnits</i> - The total number of capacity units consumed.
+     * <code>CapacityUnits</code> - The total number of capacity units consumed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param consumedCapacity
-     *        The capacity units consumed by the operation.</p>
+     *        The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
      *        <p>
      *        Each element consists of:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>TableName</i> - The table that consumed the provisioned throughput.
+     *        <code>TableName</code> - The table that consumed the provisioned throughput.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CapacityUnits</i> - The total number of capacity units consumed.
+     *        <code>CapacityUnits</code> - The total number of capacity units consumed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -51,15 +51,15 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent reads, so a
-     * setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent <i>ReadCapacityUnits</i> per
-     * second.
+     * <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads,
+     * so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     * <code>ReadCapacityUnits</code> per second.
      * </p>
      */
     private Long readCapacityUnits;
     /**
      * <p>
-     * The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
+     * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
      * </p>
      */
     private Long writeCapacityUnits;
@@ -205,16 +205,16 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent reads, so a
-     * setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent <i>ReadCapacityUnits</i> per
-     * second.
+     * <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads,
+     * so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     * <code>ReadCapacityUnits</code> per second.
      * </p>
      * 
      * @param readCapacityUnits
      *        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *        <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent
-     *        reads, so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent
-     *        <i>ReadCapacityUnits</i> per second.
+     *        <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent
+     *        reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     *        <code>ReadCapacityUnits</code> per second.
      */
 
     public void setReadCapacityUnits(Long readCapacityUnits) {
@@ -224,15 +224,15 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent reads, so a
-     * setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent <i>ReadCapacityUnits</i> per
-     * second.
+     * <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads,
+     * so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     * <code>ReadCapacityUnits</code> per second.
      * </p>
      * 
      * @return The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *         <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent
-     *         reads, so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent
-     *         <i>ReadCapacityUnits</i> per second.
+     *         <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly
+     *         consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually
+     *         consistent <code>ReadCapacityUnits</code> per second.
      */
 
     public Long getReadCapacityUnits() {
@@ -242,16 +242,16 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent reads, so a
-     * setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent <i>ReadCapacityUnits</i> per
-     * second.
+     * <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads,
+     * so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     * <code>ReadCapacityUnits</code> per second.
      * </p>
      * 
      * @param readCapacityUnits
      *        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *        <i>ThrottlingException</i>. Eventually consistent reads require less effort than strongly consistent
-     *        reads, so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100 eventually consistent
-     *        <i>ReadCapacityUnits</i> per second.
+     *        <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent
+     *        reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     *        <code>ReadCapacityUnits</code> per second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +262,12 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
+     * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
      * </p>
      * 
      * @param writeCapacityUnits
-     *        The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
+     *        The maximum number of writes consumed per second before DynamoDB returns a
+     *        <code>ThrottlingException</code>.
      */
 
     public void setWriteCapacityUnits(Long writeCapacityUnits) {
@@ -275,10 +276,11 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
+     * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
      * </p>
      * 
-     * @return The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
+     * @return The maximum number of writes consumed per second before DynamoDB returns a
+     *         <code>ThrottlingException</code>.
      */
 
     public Long getWriteCapacityUnits() {
@@ -287,11 +289,12 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
+     * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
      * </p>
      * 
      * @param writeCapacityUnits
-     *        The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
+     *        The maximum number of writes consumed per second before DynamoDB returns a
+     *        <code>ThrottlingException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

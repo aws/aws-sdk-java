@@ -17,30 +17,32 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents a condition to be compared with an attribute value. This condition can be used with <i>DeleteItem</i>,
- * <i>PutItem</i> or <i>UpdateItem</i> operations; if the comparison evaluates to true, the operation succeeds; if not,
- * the operation fails. You can use <i>ExpectedAttributeValue</i> in one of two different ways:
+ * Represents a condition to be compared with an attribute value. This condition can be used with
+ * <code>DeleteItem</code>, <code>PutItem</code> or <code>UpdateItem</code> operations; if the comparison evaluates to
+ * true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of
+ * two different ways:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Use <i>AttributeValueList</i> to specify one or more values to compare against an attribute. Use
- * <i>ComparisonOperator</i> to specify how you want to perform the comparison. If the comparison evaluates to true,
- * then the conditional operation succeeds.
+ * Use <code>AttributeValueList</code> to specify one or more values to compare against an attribute. Use
+ * <code>ComparisonOperator</code> to specify how you want to perform the comparison. If the comparison evaluates to
+ * true, then the conditional operation succeeds.
  * </p>
  * </li>
  * <li>
  * <p>
- * Use <i>Value</i> to specify a value that DynamoDB will compare against an attribute. If the values match, then
- * <i>ExpectedAttributeValue</i> evaluates to true and the conditional operation succeeds. Optionally, you can also set
- * <i>Exists</i> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this
- * case, the conditional operation succeeds only if the comparison evaluates to false.
+ * Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute. If the values match, then
+ * <code>ExpectedAttributeValue</code> evaluates to true and the conditional operation succeeds. Optionally, you can
+ * also set <code>Exists</code> to false, indicating that you <i>do not</i> expect to find the attribute value in the
+ * table. In this case, the conditional operation succeeds only if the comparison evaluates to false.
  * </p>
  * </li>
  * </ul>
  * <p>
- * <i>Value</i> and <i>Exists</i> are incompatible with <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note
- * that if you use both sets of parameters at once, DynamoDB will return a <i>ValidationException</i> exception.
+ * <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and
+ * <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a
+ * <code>ValidationException</code> exception.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExpectedAttributeValue" target="_top">AWS
@@ -49,6 +51,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExpectedAttributeValue implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Represents the data for the expected attribute.
+     * </p>
+     * <p>
+     * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data
+     * itself.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     */
     private AttributeValue value;
     /**
      * <p>
@@ -57,37 +73,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in the
-     * table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the table. If
-     * in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found,
-     * despite the assumption that it does not exist, the operation fails with a <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
+     * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself, DynamoDB
-     * assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because it is implied.
+     * The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all by
+     * itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to <code>true</code>,
+     * because it is implied.
      * </p>
      * <p>
-     * DynamoDB returns a <i>ValidationException</i> if:
+     * DynamoDB returns a <code>ValidationException</code> if:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist, but don't
-     * specify what that value is.)
+     * <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value to
+     * exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute to have
-     * a value, while also expecting it not to exist.)
+     * <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an
+     * attribute to have a value, while also expecting it not to exist.)
      * </p>
      * </li>
      * </ul>
@@ -95,8 +113,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     private Boolean exists;
     /**
      * <p>
-     * A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater than, less
-     * than, etc.
+     * A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals, greater than,
+     * less than, etc.
      * </p>
      * <p>
      * The following comparison operators are available:
@@ -110,24 +128,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, Binary,
-     * String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a different type
-     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a
+     * different type than the one provided in the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     * <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary, String Set,
-     * Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, Binary,
+     * String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different type
+     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
+     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -135,9 +154,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LE</code> : Less than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -146,10 +165,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LT</code> : Less than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set
-     * type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided in the
-     * request, the value does not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, or
+     * Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than the
+     * one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -157,9 +176,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GE</code> : Greater than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -168,35 +187,35 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GT</code> : Greater than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes, including
+     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <i>true</i>.
-     * This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     * <code>NOT_NULL</code> comparison operator.
+     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
+     * <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to
+     * the <code>NOT_NULL</code> comparison operator.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes, including
+     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <i>false</i>. This
-     * is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
+     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>.
+     * This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
      * comparison operator.
      * </p>
      * </note></li>
@@ -205,9 +224,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is of type String, then the operator checks for a
-     * substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is of type String, then the operator checks
+     * for a substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
      * subsequence of the target that matches the input. If the target attribute of the comparison is a set ("
      * <code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it finds an
      * exact match with any member of the set.
@@ -222,12 +241,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is a String, then the operator checks for the absence
-     * of a substring match. If the target attribute of the comparison is Binary, then the operator checks for the
-     * absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set
-     * ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does
-     * not</i> find an exact match with any member of the set.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks for
+     * the absence of a substring match. If the target attribute of the comparison is Binary, then the operator checks
+     * for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison
+     * is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it
+     * <i>does not</i> find an exact match with any member of the set.
      * </p>
      * <p>
      * NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -239,18 +258,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BEGINS_WITH</code> : Checks for a prefix.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set type). The target attribute of the comparison must be of type String or Binary (not a Number or a set type).
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary (not a
+     * Number or a set type). The target attribute of the comparison must be of type String or Binary (not a Number or a
+     * set type).
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>IN</code> : Checks for matching elements within two sets.
+     * <code>IN</code> : Checks for matching elements in a list.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number, or
-     * Binary (not a set type). These attributes are compared against an existing set type attribute of an item. If any
-     * elements of the input set are present in the item attribute, the expression evaluates to true.
+     * <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type String,
+     * Number, or Binary. These attributes are compared against an existing attribute of an item. If any elements of the
+     * input are equal to the item attribute, the expression evaluates to true.
      * </p>
      * </li>
      * <li>
@@ -258,12 +278,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     * Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to,
-     * the first element and less than, or equal to, the second element. If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one provided in the request, the value does not match. For example,
-     * <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>
+     * <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either
+     * String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
+     * equal to, the first element and less than, or equal to, the second element. If an item contains an
+     * <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not
+     * match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p>
      * </li>
      * </ul>
@@ -272,7 +292,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * One or more values to evaluate against the supplied attribute. The number of values in the list depends on the
-     * <i>ComparisonOperator</i> being used.
+     * <code>ComparisonOperator</code> being used.
      * </p>
      * <p>
      * For type Number, value comparisons are numeric.
@@ -307,6 +327,15 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * to initialize any additional object members.
      * 
      * @param value
+     *        Represents the data for the expected attribute.</p>
+     *        <p>
+     *        Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *        data itself.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public ExpectedAttributeValue(AttributeValue value) {
         setValue(value);
@@ -321,39 +350,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists
-     *        in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     *        <i>ConditionalCheckFailedException</i>.
+     *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
+     *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
+     *        with a <code>ConditionalCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
-     *        table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If
-     *        the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <i>ConditionalCheckFailedException</i>.
+     *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
+     *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
+     *        If the value is found, despite the assumption that it does not exist, the operation fails with a
+     *        <code>ConditionalCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself,
-     *        DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because
-     *        it is implied.
+     *        The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
+     *        by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
+     *        <code>true</code>, because it is implied.
      *        </p>
      *        <p>
-     *        DynamoDB returns a <i>ValidationException</i> if:
+     *        DynamoDB returns a <code>ValidationException</code> if:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist,
-     *        but don't specify what that value is.)
+     *        <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value
+     *        to exist, but don't specify what that value is.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute
-     *        to have a value, while also expecting it not to exist.)
+     *        <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an
+     *        attribute to have a value, while also expecting it not to exist.)
      *        </p>
      *        </li>
      */
@@ -362,7 +391,29 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the data for the expected attribute.
+     * </p>
+     * <p>
+     * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data
+     * itself.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param value
+     *        Represents the data for the expected attribute.</p>
+     *        <p>
+     *        Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *        data itself.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setValue(AttributeValue value) {
@@ -370,7 +421,28 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the data for the expected attribute.
+     * </p>
+     * <p>
+     * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data
+     * itself.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return Represents the data for the expected attribute.</p>
+     *         <p>
+     *         Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *         data itself.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *         >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public AttributeValue getValue() {
@@ -378,7 +450,29 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the data for the expected attribute.
+     * </p>
+     * <p>
+     * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data
+     * itself.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param value
+     *        Represents the data for the expected attribute.</p>
+     *        <p>
+     *        Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *        data itself.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,37 +488,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in the
-     * table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the table. If
-     * in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found,
-     * despite the assumption that it does not exist, the operation fails with a <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
+     * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself, DynamoDB
-     * assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because it is implied.
+     * The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all by
+     * itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to <code>true</code>,
+     * because it is implied.
      * </p>
      * <p>
-     * DynamoDB returns a <i>ValidationException</i> if:
+     * DynamoDB returns a <code>ValidationException</code> if:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist, but don't
-     * specify what that value is.)
+     * <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value to
+     * exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute to have
-     * a value, while also expecting it not to exist.)
+     * <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an
+     * attribute to have a value, while also expecting it not to exist.)
      * </p>
      * </li>
      * </ul>
@@ -434,39 +530,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists
-     *        in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     *        <i>ConditionalCheckFailedException</i>.
+     *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
+     *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
+     *        with a <code>ConditionalCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
-     *        table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If
-     *        the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <i>ConditionalCheckFailedException</i>.
+     *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
+     *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
+     *        If the value is found, despite the assumption that it does not exist, the operation fails with a
+     *        <code>ConditionalCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself,
-     *        DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because
-     *        it is implied.
+     *        The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
+     *        by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
+     *        <code>true</code>, because it is implied.
      *        </p>
      *        <p>
-     *        DynamoDB returns a <i>ValidationException</i> if:
+     *        DynamoDB returns a <code>ValidationException</code> if:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist,
-     *        but don't specify what that value is.)
+     *        <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value
+     *        to exist, but don't specify what that value is.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute
-     *        to have a value, while also expecting it not to exist.)
+     *        <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an
+     *        attribute to have a value, while also expecting it not to exist.)
      *        </p>
      *        </li>
      */
@@ -482,37 +578,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in the
-     * table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the table. If
-     * in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found,
-     * despite the assumption that it does not exist, the operation fails with a <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
+     * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself, DynamoDB
-     * assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because it is implied.
+     * The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all by
+     * itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to <code>true</code>,
+     * because it is implied.
      * </p>
      * <p>
-     * DynamoDB returns a <i>ValidationException</i> if:
+     * DynamoDB returns a <code>ValidationException</code> if:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist, but don't
-     * specify what that value is.)
+     * <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value to
+     * exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute to have
-     * a value, while also expecting it not to exist.)
+     * <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an
+     * attribute to have a value, while also expecting it not to exist.)
      * </p>
      * </li>
      * </ul>
@@ -521,39 +619,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists
-     *         in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     *         <i>ConditionalCheckFailedException</i>.
+     *         If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
+     *         exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
+     *         with a <code>ConditionalCheckFailedException</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
-     *         table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If
-     *         the value is found, despite the assumption that it does not exist, the operation fails with a
-     *         <i>ConditionalCheckFailedException</i>.
+     *         If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
+     *         the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
+     *         If the value is found, despite the assumption that it does not exist, the operation fails with a
+     *         <code>ConditionalCheckFailedException</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself,
-     *         DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because
-     *         it is implied.
+     *         The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
+     *         by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
+     *         <code>true</code>, because it is implied.
      *         </p>
      *         <p>
-     *         DynamoDB returns a <i>ValidationException</i> if:
+     *         DynamoDB returns a <code>ValidationException</code> if:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist,
-     *         but don't specify what that value is.)
+     *         <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value
+     *         to exist, but don't specify what that value is.)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute
-     *         to have a value, while also expecting it not to exist.)
+     *         <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect
+     *         an attribute to have a value, while also expecting it not to exist.)
      *         </p>
      *         </li>
      */
@@ -569,37 +667,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in the
-     * table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the table. If
-     * in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found,
-     * despite the assumption that it does not exist, the operation fails with a <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
+     * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself, DynamoDB
-     * assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because it is implied.
+     * The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all by
+     * itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to <code>true</code>,
+     * because it is implied.
      * </p>
      * <p>
-     * DynamoDB returns a <i>ValidationException</i> if:
+     * DynamoDB returns a <code>ValidationException</code> if:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist, but don't
-     * specify what that value is.)
+     * <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value to
+     * exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute to have
-     * a value, while also expecting it not to exist.)
+     * <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an
+     * attribute to have a value, while also expecting it not to exist.)
      * </p>
      * </li>
      * </ul>
@@ -609,39 +709,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists
-     *        in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     *        <i>ConditionalCheckFailedException</i>.
+     *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
+     *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
+     *        with a <code>ConditionalCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
-     *        table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If
-     *        the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <i>ConditionalCheckFailedException</i>.
+     *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
+     *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
+     *        If the value is found, despite the assumption that it does not exist, the operation fails with a
+     *        <code>ConditionalCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself,
-     *        DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because
-     *        it is implied.
+     *        The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
+     *        by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
+     *        <code>true</code>, because it is implied.
      *        </p>
      *        <p>
-     *        DynamoDB returns a <i>ValidationException</i> if:
+     *        DynamoDB returns a <code>ValidationException</code> if:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist,
-     *        but don't specify what that value is.)
+     *        <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value
+     *        to exist, but don't specify what that value is.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute
-     *        to have a value, while also expecting it not to exist.)
+     *        <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an
+     *        attribute to have a value, while also expecting it not to exist.)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -659,37 +759,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in the
-     * table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
+     * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the table. If
-     * in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found,
-     * despite the assumption that it does not exist, the operation fails with a <i>ConditionalCheckFailedException</i>.
+     * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
+     * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
+     * is found, despite the assumption that it does not exist, the operation fails with a
+     * <code>ConditionalCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself, DynamoDB
-     * assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because it is implied.
+     * The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all by
+     * itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to <code>true</code>,
+     * because it is implied.
      * </p>
      * <p>
-     * DynamoDB returns a <i>ValidationException</i> if:
+     * DynamoDB returns a <code>ValidationException</code> if:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist, but don't
-     * specify what that value is.)
+     * <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value to
+     * exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute to have
-     * a value, while also expecting it not to exist.)
+     * <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an
+     * attribute to have a value, while also expecting it not to exist.)
      * </p>
      * </li>
      * </ul>
@@ -698,39 +800,39 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists
-     *         in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     *         <i>ConditionalCheckFailedException</i>.
+     *         If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
+     *         exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
+     *         with a <code>ConditionalCheckFailedException</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
-     *         table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If
-     *         the value is found, despite the assumption that it does not exist, the operation fails with a
-     *         <i>ConditionalCheckFailedException</i>.
+     *         If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
+     *         the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
+     *         If the value is found, despite the assumption that it does not exist, the operation fails with a
+     *         <code>ConditionalCheckFailedException</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself,
-     *         DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because
-     *         it is implied.
+     *         The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
+     *         by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
+     *         <code>true</code>, because it is implied.
      *         </p>
      *         <p>
-     *         DynamoDB returns a <i>ValidationException</i> if:
+     *         DynamoDB returns a <code>ValidationException</code> if:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist,
-     *         but don't specify what that value is.)
+     *         <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a value
+     *         to exist, but don't specify what that value is.)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute
-     *         to have a value, while also expecting it not to exist.)
+     *         <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect
+     *         an attribute to have a value, while also expecting it not to exist.)
      *         </p>
      *         </li>
      */
@@ -741,8 +843,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater than, less
-     * than, etc.
+     * A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals, greater than,
+     * less than, etc.
      * </p>
      * <p>
      * The following comparison operators are available:
@@ -756,24 +858,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, Binary,
-     * String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a different type
-     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a
+     * different type than the one provided in the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     * <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary, String Set,
-     * Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, Binary,
+     * String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different type
+     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
+     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -781,9 +884,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LE</code> : Less than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -792,10 +895,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LT</code> : Less than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set
-     * type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided in the
-     * request, the value does not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, or
+     * Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than the
+     * one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -803,9 +906,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GE</code> : Greater than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -814,35 +917,35 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GT</code> : Greater than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes, including
+     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <i>true</i>.
-     * This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     * <code>NOT_NULL</code> comparison operator.
+     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
+     * <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to
+     * the <code>NOT_NULL</code> comparison operator.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes, including
+     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <i>false</i>. This
-     * is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
+     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>.
+     * This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
      * comparison operator.
      * </p>
      * </note></li>
@@ -851,9 +954,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is of type String, then the operator checks for a
-     * substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is of type String, then the operator checks
+     * for a substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
      * subsequence of the target that matches the input. If the target attribute of the comparison is a set ("
      * <code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it finds an
      * exact match with any member of the set.
@@ -868,12 +971,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is a String, then the operator checks for the absence
-     * of a substring match. If the target attribute of the comparison is Binary, then the operator checks for the
-     * absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set
-     * ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does
-     * not</i> find an exact match with any member of the set.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks for
+     * the absence of a substring match. If the target attribute of the comparison is Binary, then the operator checks
+     * for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison
+     * is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it
+     * <i>does not</i> find an exact match with any member of the set.
      * </p>
      * <p>
      * NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -885,18 +988,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BEGINS_WITH</code> : Checks for a prefix.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set type). The target attribute of the comparison must be of type String or Binary (not a Number or a set type).
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary (not a
+     * Number or a set type). The target attribute of the comparison must be of type String or Binary (not a Number or a
+     * set type).
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>IN</code> : Checks for matching elements within two sets.
+     * <code>IN</code> : Checks for matching elements in a list.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number, or
-     * Binary (not a set type). These attributes are compared against an existing set type attribute of an item. If any
-     * elements of the input set are present in the item attribute, the expression evaluates to true.
+     * <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type String,
+     * Number, or Binary. These attributes are compared against an existing attribute of an item. If any elements of the
+     * input are equal to the item attribute, the expression evaluates to true.
      * </p>
      * </li>
      * <li>
@@ -904,19 +1008,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     * Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to,
-     * the first element and less than, or equal to, the second element. If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one provided in the request, the value does not match. For example,
-     * <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>
+     * <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either
+     * String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
+     * equal to, the first element and less than, or equal to, the second element. If an item contains an
+     * <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not
+     * match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param comparisonOperator
-     *        A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater
-     *        than, less than, etc.</p>
+     *        A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
+     *        greater than, less than, etc.</p>
      *        <p>
      *        The following comparison operators are available:
      *        </p>
@@ -929,25 +1033,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     *        <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number,
-     *        Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a
-     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code>
+     *        element of a different type than the one provided in the request, the value does not match. For example,
      *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     *        <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary,
-     *        String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type
-     *        than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
-     *        not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *        Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
@@ -956,11 +1060,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>LE</code> : Less than or equal.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
@@ -968,10 +1072,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>LT</code> : Less than.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary
-     *        (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one
-     *        provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *        or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type
+     *        than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
+     *        not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
@@ -980,11 +1084,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>GE</code> : Greater than or equal.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
@@ -992,37 +1096,37 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>GT</code> : Greater than.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes,
+     *        <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types,
      *        including lists and maps.
      *        </p>
      *        <note>
      *        <p>
      *        This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
      *        <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
-     *        <i>true</i>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant
-     *        to the <code>NOT_NULL</code> comparison operator.
+     *        <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not
+     *        relevant to the <code>NOT_NULL</code> comparison operator.
      *        </p>
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes,
+     *        <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types,
      *        including lists and maps.
      *        </p>
      *        <note>
      *        <p>
      *        This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute
      *        "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean
-     *        <i>false</i>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     *        <code>NULL</code> comparison operator.
+     *        <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant
+     *        to the <code>NULL</code> comparison operator.
      *        </p>
      *        </note></li>
      *        <li>
@@ -1030,10 +1134,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If the target attribute of the comparison is of type String, then the operator
-     *        checks for a substring match. If the target attribute of the comparison is of type Binary, then the
-     *        operator looks for a subsequence of the target that matches the input. If the target attribute of the
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then the
+     *        operator checks for a substring match. If the target attribute of the comparison is of type Binary, then
+     *        the operator looks for a subsequence of the target that matches the input. If the target attribute of the
      *        comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator
      *        evaluates to true if it finds an exact match with any member of the set.
      *        </p>
@@ -1047,12 +1151,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks
-     *        for the absence of a substring match. If the target attribute of the comparison is Binary, then the
-     *        operator checks for the absence of a subsequence of the target that matches the input. If the target
-     *        attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then
-     *        the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If the target attribute of the comparison is a String, then the
+     *        operator checks for the absence of a substring match. If the target attribute of the comparison is Binary,
+     *        then the operator checks for the absence of a subsequence of the target that matches the input. If the
+     *        target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"),
+     *        then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
      *        </p>
      *        <p>
      *        NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -1064,20 +1168,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>BEGINS_WITH</code> : Checks for a prefix.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a
-     *        Number or a set type). The target attribute of the comparison must be of type String or Binary (not a
-     *        Number or a set type).
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary
+     *        (not a Number or a set type). The target attribute of the comparison must be of type String or Binary (not
+     *        a Number or a set type).
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>IN</code> : Checks for matching elements within two sets.
+     *        <code>IN</code> : Checks for matching elements in a list.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number,
-     *        or Binary (not a set type). These attributes are compared against an existing set type attribute of an
-     *        item. If any elements of the input set are present in the item attribute, the expression evaluates to
-     *        true.
+     *        <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type
+     *        String, Number, or Binary. These attributes are compared against an existing attribute of an item. If any
+     *        elements of the input are equal to the item attribute, the expression evaluates to true.
      *        </p>
      *        </li>
      *        <li>
@@ -1086,12 +1189,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        value.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     *        Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
-     *        equal to, the first element and less than, or equal to, the second element. If an item contains an
-     *        <i>AttributeValue</i> element of a different type than the one provided in the request, the value does not
-     *        match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-     *        <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+     *        <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type,
+     *        either String, Number, or Binary (not a set type). A target attribute matches if the target value is
+     *        greater than, or equal to, the first element and less than, or equal to, the second element. If an item
+     *        contains an <code>AttributeValue</code> element of a different type than the one provided in the request,
+     *        the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
+     *        Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      *        </p>
      *        </li>
      * @see ComparisonOperator
@@ -1103,8 +1206,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater than, less
-     * than, etc.
+     * A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals, greater than,
+     * less than, etc.
      * </p>
      * <p>
      * The following comparison operators are available:
@@ -1118,24 +1221,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, Binary,
-     * String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a different type
-     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a
+     * different type than the one provided in the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     * <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary, String Set,
-     * Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, Binary,
+     * String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different type
+     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
+     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -1143,9 +1247,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LE</code> : Less than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -1154,10 +1258,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LT</code> : Less than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set
-     * type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided in the
-     * request, the value does not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, or
+     * Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than the
+     * one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -1165,9 +1269,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GE</code> : Greater than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -1176,35 +1280,35 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GT</code> : Greater than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes, including
+     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <i>true</i>.
-     * This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     * <code>NOT_NULL</code> comparison operator.
+     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
+     * <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to
+     * the <code>NOT_NULL</code> comparison operator.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes, including
+     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <i>false</i>. This
-     * is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
+     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>.
+     * This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
      * comparison operator.
      * </p>
      * </note></li>
@@ -1213,9 +1317,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is of type String, then the operator checks for a
-     * substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is of type String, then the operator checks
+     * for a substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
      * subsequence of the target that matches the input. If the target attribute of the comparison is a set ("
      * <code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it finds an
      * exact match with any member of the set.
@@ -1230,12 +1334,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is a String, then the operator checks for the absence
-     * of a substring match. If the target attribute of the comparison is Binary, then the operator checks for the
-     * absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set
-     * ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does
-     * not</i> find an exact match with any member of the set.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks for
+     * the absence of a substring match. If the target attribute of the comparison is Binary, then the operator checks
+     * for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison
+     * is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it
+     * <i>does not</i> find an exact match with any member of the set.
      * </p>
      * <p>
      * NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -1247,18 +1351,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BEGINS_WITH</code> : Checks for a prefix.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set type). The target attribute of the comparison must be of type String or Binary (not a Number or a set type).
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary (not a
+     * Number or a set type). The target attribute of the comparison must be of type String or Binary (not a Number or a
+     * set type).
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>IN</code> : Checks for matching elements within two sets.
+     * <code>IN</code> : Checks for matching elements in a list.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number, or
-     * Binary (not a set type). These attributes are compared against an existing set type attribute of an item. If any
-     * elements of the input set are present in the item attribute, the expression evaluates to true.
+     * <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type String,
+     * Number, or Binary. These attributes are compared against an existing attribute of an item. If any elements of the
+     * input are equal to the item attribute, the expression evaluates to true.
      * </p>
      * </li>
      * <li>
@@ -1266,18 +1371,18 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     * Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to,
-     * the first element and less than, or equal to, the second element. If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one provided in the request, the value does not match. For example,
-     * <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>
+     * <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either
+     * String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
+     * equal to, the first element and less than, or equal to, the second element. If an item contains an
+     * <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not
+     * match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater
-     *         than, less than, etc.</p>
+     * @return A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
+     *         greater than, less than, etc.</p>
      *         <p>
      *         The following comparison operators are available:
      *         </p>
@@ -1290,25 +1395,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     *         <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number,
-     *         Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a
-     *         different type than the one provided in the request, the value does not match. For example,
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *         Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code>
+     *         element of a different type than the one provided in the request, the value does not match. For example,
      *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *         <code>{"NS":["6", "2", "1"]}</code>.
      *         </p>
      *         <p/></li>
      *         <li>
      *         <p>
-     *         <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     *         <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary,
-     *         String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type
-     *         than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
-     *         not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *         Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a
+     *         different type than the one provided in the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *         <code>{"NS":["6", "2", "1"]}</code>.
      *         </p>
      *         <p/></li>
@@ -1317,11 +1422,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <code>LE</code> : Less than or equal.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than
-     *         the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *         <code>{"NS":["6", "2", "1"]}</code>.
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *         different type than the one provided in the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *         compare to <code>{"NS":["6", "2", "1"]}</code>.
      *         </p>
      *         <p/></li>
      *         <li>
@@ -1329,10 +1434,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <code>LT</code> : Less than.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary
-     *         (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one
-     *         provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *         or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+     *         type than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code>
+     *         does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
      *         <code>{"NS":["6", "2", "1"]}</code>.
      *         </p>
      *         <p/></li>
@@ -1341,11 +1446,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <code>GE</code> : Greater than or equal.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than
-     *         the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *         <code>{"NS":["6", "2", "1"]}</code>.
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *         different type than the one provided in the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *         compare to <code>{"NS":["6", "2", "1"]}</code>.
      *         </p>
      *         <p/></li>
      *         <li>
@@ -1353,37 +1458,37 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <code>GT</code> : Greater than.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *         Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than
-     *         the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     *         equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *         <code>{"NS":["6", "2", "1"]}</code>.
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *         Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *         different type than the one provided in the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *         compare to <code>{"NS":["6", "2", "1"]}</code>.
      *         </p>
      *         <p/></li>
      *         <li>
      *         <p>
-     *         <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes,
+     *         <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types,
      *         including lists and maps.
      *         </p>
      *         <note>
      *         <p>
      *         This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
      *         <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
-     *         <i>true</i>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant
-     *         to the <code>NOT_NULL</code> comparison operator.
+     *         <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not
+     *         relevant to the <code>NOT_NULL</code> comparison operator.
      *         </p>
      *         </note></li>
      *         <li>
      *         <p>
-     *         <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes,
+     *         <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types,
      *         including lists and maps.
      *         </p>
      *         <note>
      *         <p>
      *         This operator tests for the nonexistence of an attribute, not its data type. If the data type of
      *         attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean
-     *         <i>false</i>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     *         <code>NULL</code> comparison operator.
+     *         <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant
+     *         to the <code>NULL</code> comparison operator.
      *         </p>
      *         </note></li>
      *         <li>
@@ -1391,10 +1496,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *         Binary (not a set type). If the target attribute of the comparison is of type String, then the operator
-     *         checks for a substring match. If the target attribute of the comparison is of type Binary, then the
-     *         operator looks for a subsequence of the target that matches the input. If the target attribute of the
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *         Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then the
+     *         operator checks for a substring match. If the target attribute of the comparison is of type Binary, then
+     *         the operator looks for a subsequence of the target that matches the input. If the target attribute of the
      *         comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator
      *         evaluates to true if it finds an exact match with any member of the set.
      *         </p>
@@ -1408,12 +1513,13 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *         Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks
-     *         for the absence of a substring match. If the target attribute of the comparison is Binary, then the
-     *         operator checks for the absence of a subsequence of the target that matches the input. If the target
-     *         attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then
-     *         the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *         Number, or Binary (not a set type). If the target attribute of the comparison is a String, then the
+     *         operator checks for the absence of a substring match. If the target attribute of the comparison is
+     *         Binary, then the operator checks for the absence of a subsequence of the target that matches the input.
+     *         If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "
+     *         <code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any
+     *         member of the set.
      *         </p>
      *         <p>
      *         NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -1425,20 +1531,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <code>BEGINS_WITH</code> : Checks for a prefix.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a
-     *         Number or a set type). The target attribute of the comparison must be of type String or Binary (not a
-     *         Number or a set type).
+     *         <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary
+     *         (not a Number or a set type). The target attribute of the comparison must be of type String or Binary
+     *         (not a Number or a set type).
      *         </p>
      *         <p/></li>
      *         <li>
      *         <p>
-     *         <code>IN</code> : Checks for matching elements within two sets.
+     *         <code>IN</code> : Checks for matching elements in a list.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number,
-     *         or Binary (not a set type). These attributes are compared against an existing set type attribute of an
-     *         item. If any elements of the input set are present in the item attribute, the expression evaluates to
-     *         true.
+     *         <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type
+     *         String, Number, or Binary. These attributes are compared against an existing attribute of an item. If any
+     *         elements of the input are equal to the item attribute, the expression evaluates to true.
      *         </p>
      *         </li>
      *         <li>
@@ -1447,12 +1552,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         value.
      *         </p>
      *         <p>
-     *         <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either
-     *         String, Number, or Binary (not a set type). A target attribute matches if the target value is greater
-     *         than, or equal to, the first element and less than, or equal to, the second element. If an item contains
-     *         an <i>AttributeValue</i> element of a different type than the one provided in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-     *         <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+     *         <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type,
+     *         either String, Number, or Binary (not a set type). A target attribute matches if the target value is
+     *         greater than, or equal to, the first element and less than, or equal to, the second element. If an item
+     *         contains an <code>AttributeValue</code> element of a different type than the one provided in the request,
+     *         the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      *         </p>
      *         </li>
      * @see ComparisonOperator
@@ -1464,8 +1569,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater than, less
-     * than, etc.
+     * A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals, greater than,
+     * less than, etc.
      * </p>
      * <p>
      * The following comparison operators are available:
@@ -1479,24 +1584,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, Binary,
-     * String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a different type
-     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a
+     * different type than the one provided in the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     * <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary, String Set,
-     * Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, Binary,
+     * String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different type
+     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
+     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -1504,9 +1610,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LE</code> : Less than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -1515,10 +1621,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LT</code> : Less than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set
-     * type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided in the
-     * request, the value does not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, or
+     * Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than the
+     * one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -1526,9 +1632,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GE</code> : Greater than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -1537,35 +1643,35 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GT</code> : Greater than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes, including
+     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <i>true</i>.
-     * This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     * <code>NOT_NULL</code> comparison operator.
+     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
+     * <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to
+     * the <code>NOT_NULL</code> comparison operator.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes, including
+     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <i>false</i>. This
-     * is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
+     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>.
+     * This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
      * comparison operator.
      * </p>
      * </note></li>
@@ -1574,9 +1680,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is of type String, then the operator checks for a
-     * substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is of type String, then the operator checks
+     * for a substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
      * subsequence of the target that matches the input. If the target attribute of the comparison is a set ("
      * <code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it finds an
      * exact match with any member of the set.
@@ -1591,12 +1697,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is a String, then the operator checks for the absence
-     * of a substring match. If the target attribute of the comparison is Binary, then the operator checks for the
-     * absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set
-     * ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does
-     * not</i> find an exact match with any member of the set.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks for
+     * the absence of a substring match. If the target attribute of the comparison is Binary, then the operator checks
+     * for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison
+     * is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it
+     * <i>does not</i> find an exact match with any member of the set.
      * </p>
      * <p>
      * NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -1608,18 +1714,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BEGINS_WITH</code> : Checks for a prefix.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set type). The target attribute of the comparison must be of type String or Binary (not a Number or a set type).
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary (not a
+     * Number or a set type). The target attribute of the comparison must be of type String or Binary (not a Number or a
+     * set type).
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>IN</code> : Checks for matching elements within two sets.
+     * <code>IN</code> : Checks for matching elements in a list.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number, or
-     * Binary (not a set type). These attributes are compared against an existing set type attribute of an item. If any
-     * elements of the input set are present in the item attribute, the expression evaluates to true.
+     * <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type String,
+     * Number, or Binary. These attributes are compared against an existing attribute of an item. If any elements of the
+     * input are equal to the item attribute, the expression evaluates to true.
      * </p>
      * </li>
      * <li>
@@ -1627,19 +1734,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     * Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to,
-     * the first element and less than, or equal to, the second element. If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one provided in the request, the value does not match. For example,
-     * <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>
+     * <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either
+     * String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
+     * equal to, the first element and less than, or equal to, the second element. If an item contains an
+     * <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not
+     * match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param comparisonOperator
-     *        A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater
-     *        than, less than, etc.</p>
+     *        A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
+     *        greater than, less than, etc.</p>
      *        <p>
      *        The following comparison operators are available:
      *        </p>
@@ -1652,25 +1759,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     *        <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number,
-     *        Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a
-     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code>
+     *        element of a different type than the one provided in the request, the value does not match. For example,
      *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     *        <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary,
-     *        String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type
-     *        than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
-     *        not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *        Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
@@ -1679,11 +1786,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>LE</code> : Less than or equal.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
@@ -1691,10 +1798,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>LT</code> : Less than.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary
-     *        (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one
-     *        provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *        or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type
+     *        than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
+     *        not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
@@ -1703,11 +1810,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>GE</code> : Greater than or equal.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
@@ -1715,37 +1822,37 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>GT</code> : Greater than.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes,
+     *        <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types,
      *        including lists and maps.
      *        </p>
      *        <note>
      *        <p>
      *        This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
      *        <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
-     *        <i>true</i>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant
-     *        to the <code>NOT_NULL</code> comparison operator.
+     *        <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not
+     *        relevant to the <code>NOT_NULL</code> comparison operator.
      *        </p>
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes,
+     *        <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types,
      *        including lists and maps.
      *        </p>
      *        <note>
      *        <p>
      *        This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute
      *        "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean
-     *        <i>false</i>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     *        <code>NULL</code> comparison operator.
+     *        <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant
+     *        to the <code>NULL</code> comparison operator.
      *        </p>
      *        </note></li>
      *        <li>
@@ -1753,10 +1860,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If the target attribute of the comparison is of type String, then the operator
-     *        checks for a substring match. If the target attribute of the comparison is of type Binary, then the
-     *        operator looks for a subsequence of the target that matches the input. If the target attribute of the
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then the
+     *        operator checks for a substring match. If the target attribute of the comparison is of type Binary, then
+     *        the operator looks for a subsequence of the target that matches the input. If the target attribute of the
      *        comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator
      *        evaluates to true if it finds an exact match with any member of the set.
      *        </p>
@@ -1770,12 +1877,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks
-     *        for the absence of a substring match. If the target attribute of the comparison is Binary, then the
-     *        operator checks for the absence of a subsequence of the target that matches the input. If the target
-     *        attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then
-     *        the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If the target attribute of the comparison is a String, then the
+     *        operator checks for the absence of a substring match. If the target attribute of the comparison is Binary,
+     *        then the operator checks for the absence of a subsequence of the target that matches the input. If the
+     *        target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"),
+     *        then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
      *        </p>
      *        <p>
      *        NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -1787,20 +1894,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>BEGINS_WITH</code> : Checks for a prefix.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a
-     *        Number or a set type). The target attribute of the comparison must be of type String or Binary (not a
-     *        Number or a set type).
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary
+     *        (not a Number or a set type). The target attribute of the comparison must be of type String or Binary (not
+     *        a Number or a set type).
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>IN</code> : Checks for matching elements within two sets.
+     *        <code>IN</code> : Checks for matching elements in a list.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number,
-     *        or Binary (not a set type). These attributes are compared against an existing set type attribute of an
-     *        item. If any elements of the input set are present in the item attribute, the expression evaluates to
-     *        true.
+     *        <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type
+     *        String, Number, or Binary. These attributes are compared against an existing attribute of an item. If any
+     *        elements of the input are equal to the item attribute, the expression evaluates to true.
      *        </p>
      *        </li>
      *        <li>
@@ -1809,12 +1915,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        value.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     *        Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
-     *        equal to, the first element and less than, or equal to, the second element. If an item contains an
-     *        <i>AttributeValue</i> element of a different type than the one provided in the request, the value does not
-     *        match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-     *        <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+     *        <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type,
+     *        either String, Number, or Binary (not a set type). A target attribute matches if the target value is
+     *        greater than, or equal to, the first element and less than, or equal to, the second element. If an item
+     *        contains an <code>AttributeValue</code> element of a different type than the one provided in the request,
+     *        the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
+     *        Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1828,8 +1934,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater than, less
-     * than, etc.
+     * A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals, greater than,
+     * less than, etc.
      * </p>
      * <p>
      * The following comparison operators are available:
@@ -1843,24 +1949,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, Binary,
-     * String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a different type
-     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a
+     * different type than the one provided in the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     * <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary, String Set,
-     * Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, Binary,
+     * String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different type
+     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
+     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -1868,9 +1975,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LE</code> : Less than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -1879,10 +1986,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LT</code> : Less than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set
-     * type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided in the
-     * request, the value does not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, or
+     * Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than the
+     * one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -1890,9 +1997,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GE</code> : Greater than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -1901,35 +2008,35 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GT</code> : Greater than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes, including
+     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <i>true</i>.
-     * This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     * <code>NOT_NULL</code> comparison operator.
+     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
+     * <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to
+     * the <code>NOT_NULL</code> comparison operator.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes, including
+     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <i>false</i>. This
-     * is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
+     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>.
+     * This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
      * comparison operator.
      * </p>
      * </note></li>
@@ -1938,9 +2045,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is of type String, then the operator checks for a
-     * substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is of type String, then the operator checks
+     * for a substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
      * subsequence of the target that matches the input. If the target attribute of the comparison is a set ("
      * <code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it finds an
      * exact match with any member of the set.
@@ -1955,12 +2062,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is a String, then the operator checks for the absence
-     * of a substring match. If the target attribute of the comparison is Binary, then the operator checks for the
-     * absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set
-     * ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does
-     * not</i> find an exact match with any member of the set.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks for
+     * the absence of a substring match. If the target attribute of the comparison is Binary, then the operator checks
+     * for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison
+     * is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it
+     * <i>does not</i> find an exact match with any member of the set.
      * </p>
      * <p>
      * NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -1972,18 +2079,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BEGINS_WITH</code> : Checks for a prefix.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set type). The target attribute of the comparison must be of type String or Binary (not a Number or a set type).
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary (not a
+     * Number or a set type). The target attribute of the comparison must be of type String or Binary (not a Number or a
+     * set type).
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>IN</code> : Checks for matching elements within two sets.
+     * <code>IN</code> : Checks for matching elements in a list.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number, or
-     * Binary (not a set type). These attributes are compared against an existing set type attribute of an item. If any
-     * elements of the input set are present in the item attribute, the expression evaluates to true.
+     * <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type String,
+     * Number, or Binary. These attributes are compared against an existing attribute of an item. If any elements of the
+     * input are equal to the item attribute, the expression evaluates to true.
      * </p>
      * </li>
      * <li>
@@ -1991,19 +2099,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     * Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to,
-     * the first element and less than, or equal to, the second element. If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one provided in the request, the value does not match. For example,
-     * <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>
+     * <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either
+     * String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
+     * equal to, the first element and less than, or equal to, the second element. If an item contains an
+     * <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not
+     * match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param comparisonOperator
-     *        A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater
-     *        than, less than, etc.</p>
+     *        A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
+     *        greater than, less than, etc.</p>
      *        <p>
      *        The following comparison operators are available:
      *        </p>
@@ -2016,25 +2124,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     *        <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number,
-     *        Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a
-     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code>
+     *        element of a different type than the one provided in the request, the value does not match. For example,
      *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     *        <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary,
-     *        String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type
-     *        than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
-     *        not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *        Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
@@ -2043,11 +2151,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>LE</code> : Less than or equal.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
@@ -2055,10 +2163,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>LT</code> : Less than.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary
-     *        (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one
-     *        provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *        or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type
+     *        than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
+     *        not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
@@ -2067,11 +2175,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>GE</code> : Greater than or equal.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
@@ -2079,37 +2187,37 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>GT</code> : Greater than.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes,
+     *        <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types,
      *        including lists and maps.
      *        </p>
      *        <note>
      *        <p>
      *        This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
      *        <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
-     *        <i>true</i>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant
-     *        to the <code>NOT_NULL</code> comparison operator.
+     *        <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not
+     *        relevant to the <code>NOT_NULL</code> comparison operator.
      *        </p>
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes,
+     *        <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types,
      *        including lists and maps.
      *        </p>
      *        <note>
      *        <p>
      *        This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute
      *        "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean
-     *        <i>false</i>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     *        <code>NULL</code> comparison operator.
+     *        <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant
+     *        to the <code>NULL</code> comparison operator.
      *        </p>
      *        </note></li>
      *        <li>
@@ -2117,10 +2225,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If the target attribute of the comparison is of type String, then the operator
-     *        checks for a substring match. If the target attribute of the comparison is of type Binary, then the
-     *        operator looks for a subsequence of the target that matches the input. If the target attribute of the
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then the
+     *        operator checks for a substring match. If the target attribute of the comparison is of type Binary, then
+     *        the operator looks for a subsequence of the target that matches the input. If the target attribute of the
      *        comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator
      *        evaluates to true if it finds an exact match with any member of the set.
      *        </p>
@@ -2134,12 +2242,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks
-     *        for the absence of a substring match. If the target attribute of the comparison is Binary, then the
-     *        operator checks for the absence of a subsequence of the target that matches the input. If the target
-     *        attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then
-     *        the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If the target attribute of the comparison is a String, then the
+     *        operator checks for the absence of a substring match. If the target attribute of the comparison is Binary,
+     *        then the operator checks for the absence of a subsequence of the target that matches the input. If the
+     *        target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"),
+     *        then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
      *        </p>
      *        <p>
      *        NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -2151,20 +2259,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>BEGINS_WITH</code> : Checks for a prefix.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a
-     *        Number or a set type). The target attribute of the comparison must be of type String or Binary (not a
-     *        Number or a set type).
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary
+     *        (not a Number or a set type). The target attribute of the comparison must be of type String or Binary (not
+     *        a Number or a set type).
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>IN</code> : Checks for matching elements within two sets.
+     *        <code>IN</code> : Checks for matching elements in a list.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number,
-     *        or Binary (not a set type). These attributes are compared against an existing set type attribute of an
-     *        item. If any elements of the input set are present in the item attribute, the expression evaluates to
-     *        true.
+     *        <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type
+     *        String, Number, or Binary. These attributes are compared against an existing attribute of an item. If any
+     *        elements of the input are equal to the item attribute, the expression evaluates to true.
      *        </p>
      *        </li>
      *        <li>
@@ -2173,12 +2280,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        value.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     *        Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
-     *        equal to, the first element and less than, or equal to, the second element. If an item contains an
-     *        <i>AttributeValue</i> element of a different type than the one provided in the request, the value does not
-     *        match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-     *        <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+     *        <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type,
+     *        either String, Number, or Binary (not a set type). A target attribute matches if the target value is
+     *        greater than, or equal to, the first element and less than, or equal to, the second element. If an item
+     *        contains an <code>AttributeValue</code> element of a different type than the one provided in the request,
+     *        the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
+     *        Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      *        </p>
      *        </li>
      * @see ComparisonOperator
@@ -2190,8 +2297,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater than, less
-     * than, etc.
+     * A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals, greater than,
+     * less than, etc.
      * </p>
      * <p>
      * The following comparison operators are available:
@@ -2205,24 +2312,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     * <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, Binary,
-     * String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a different type
-     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
-     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a
+     * different type than the one provided in the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     * <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary, String Set,
-     * Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, Binary,
+     * String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different type
+     * than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not
+     * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -2230,9 +2338,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LE</code> : Less than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -2241,10 +2349,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>LT</code> : Less than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set
-     * type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided in the
-     * request, the value does not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number, or
+     * Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than the
+     * one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
@@ -2252,9 +2360,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GE</code> : Greater than or equal.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
@@ -2263,35 +2371,35 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>GT</code> : Greater than.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one provided
-     * in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type than
+     * the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes, including
+     * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <i>true</i>.
-     * This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     * <code>NOT_NULL</code> comparison operator.
+     * <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
+     * <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to
+     * the <code>NOT_NULL</code> comparison operator.
      * </p>
      * </note></li>
      * <li>
      * <p>
-     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes, including
+     * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including
      * lists and maps.
      * </p>
      * <note>
      * <p>
      * This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute "
-     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <i>false</i>. This
-     * is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
+     * <code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>.
+     * This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
      * comparison operator.
      * </p>
      * </note></li>
@@ -2300,9 +2408,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is of type String, then the operator checks for a
-     * substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is of type String, then the operator checks
+     * for a substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a
      * subsequence of the target that matches the input. If the target attribute of the comparison is a set ("
      * <code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it finds an
      * exact match with any member of the set.
@@ -2317,12 +2425,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or Binary
-     * (not a set type). If the target attribute of the comparison is a String, then the operator checks for the absence
-     * of a substring match. If the target attribute of the comparison is Binary, then the operator checks for the
-     * absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set
-     * ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does
-     * not</i> find an exact match with any member of the set.
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String, Number,
+     * or Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks for
+     * the absence of a substring match. If the target attribute of the comparison is Binary, then the operator checks
+     * for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison
+     * is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it
+     * <i>does not</i> find an exact match with any member of the set.
      * </p>
      * <p>
      * NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -2334,18 +2442,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BEGINS_WITH</code> : Checks for a prefix.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set type). The target attribute of the comparison must be of type String or Binary (not a Number or a set type).
+     * <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary (not a
+     * Number or a set type). The target attribute of the comparison must be of type String or Binary (not a Number or a
+     * set type).
      * </p>
      * <p/></li>
      * <li>
      * <p>
-     * <code>IN</code> : Checks for matching elements within two sets.
+     * <code>IN</code> : Checks for matching elements in a list.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number, or
-     * Binary (not a set type). These attributes are compared against an existing set type attribute of an item. If any
-     * elements of the input set are present in the item attribute, the expression evaluates to true.
+     * <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type String,
+     * Number, or Binary. These attributes are compared against an existing attribute of an item. If any elements of the
+     * input are equal to the item attribute, the expression evaluates to true.
      * </p>
      * </li>
      * <li>
@@ -2353,19 +2462,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value.
      * </p>
      * <p>
-     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     * Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to,
-     * the first element and less than, or equal to, the second element. If an item contains an <i>AttributeValue</i>
-     * element of a different type than the one provided in the request, the value does not match. For example,
-     * <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>
+     * <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either
+     * String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
+     * equal to, the first element and less than, or equal to, the second element. If an item contains an
+     * <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not
+     * match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param comparisonOperator
-     *        A comparator for evaluating attributes in the <i>AttributeValueList</i>. For example, equals, greater
-     *        than, less than, etc.</p>
+     *        A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
+     *        greater than, less than, etc.</p>
      *        <p>
      *        The following comparison operators are available:
      *        </p>
@@ -2378,25 +2487,25 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including lists and maps.
+     *        <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number,
-     *        Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> element of a
-     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code>
+     *        element of a different type than the one provided in the request, the value does not match. For example,
      *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including lists and maps.
+     *        <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, Binary,
-     *        String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i> of a different type
-     *        than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
-     *        not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *        Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
@@ -2405,11 +2514,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>LE</code> : Less than or equal.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
@@ -2417,10 +2526,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>LT</code> : Less than.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary
-     *        (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the one
-     *        provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String, Number,
+     *        or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different type
+     *        than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does
+     *        not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
      *        <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
@@ -2429,11 +2538,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>GE</code> : Greater than or equal.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
@@ -2441,37 +2550,37 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>GT</code> : Greater than.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If an item contains an <i>AttributeValue</i> element of a different type than the
-     *        one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-     *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     *        <code>{"NS":["6", "2", "1"]}</code>.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a
+     *        different type than the one provided in the request, the value does not match. For example,
+     *        <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
+     *        compare to <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all datatypes,
+     *        <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types,
      *        including lists and maps.
      *        </p>
      *        <note>
      *        <p>
      *        This operator tests for the existence of an attribute, not its data type. If the data type of attribute "
      *        <code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean
-     *        <i>true</i>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant
-     *        to the <code>NOT_NULL</code> comparison operator.
+     *        <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not
+     *        relevant to the <code>NOT_NULL</code> comparison operator.
      *        </p>
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all datatypes,
+     *        <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types,
      *        including lists and maps.
      *        </p>
      *        <note>
      *        <p>
      *        This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute
      *        "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean
-     *        <i>false</i>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the
-     *        <code>NULL</code> comparison operator.
+     *        <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant
+     *        to the <code>NULL</code> comparison operator.
      *        </p>
      *        </note></li>
      *        <li>
@@ -2479,10 +2588,10 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If the target attribute of the comparison is of type String, then the operator
-     *        checks for a substring match. If the target attribute of the comparison is of type Binary, then the
-     *        operator looks for a subsequence of the target that matches the input. If the target attribute of the
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then the
+     *        operator checks for a substring match. If the target attribute of the comparison is of type Binary, then
+     *        the operator looks for a subsequence of the target that matches the input. If the target attribute of the
      *        comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator
      *        evaluates to true if it finds an exact match with any member of the set.
      *        </p>
@@ -2496,12 +2605,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in a set.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type String, Number, or
-     *        Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks
-     *        for the absence of a substring match. If the target attribute of the comparison is Binary, then the
-     *        operator checks for the absence of a subsequence of the target that matches the input. If the target
-     *        attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then
-     *        the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+     *        Number, or Binary (not a set type). If the target attribute of the comparison is a String, then the
+     *        operator checks for the absence of a substring match. If the target attribute of the comparison is Binary,
+     *        then the operator checks for the absence of a subsequence of the target that matches the input. If the
+     *        target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"),
+     *        then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.
      *        </p>
      *        <p>
      *        NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>
@@ -2513,20 +2622,19 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>BEGINS_WITH</code> : Checks for a prefix.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a
-     *        Number or a set type). The target attribute of the comparison must be of type String or Binary (not a
-     *        Number or a set type).
+     *        <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or Binary
+     *        (not a Number or a set type). The target attribute of the comparison must be of type String or Binary (not
+     *        a Number or a set type).
      *        </p>
      *        <p/></li>
      *        <li>
      *        <p>
-     *        <code>IN</code> : Checks for matching elements within two sets.
+     *        <code>IN</code> : Checks for matching elements in a list.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of type String, Number,
-     *        or Binary (not a set type). These attributes are compared against an existing set type attribute of an
-     *        item. If any elements of the input set are present in the item attribute, the expression evaluates to
-     *        true.
+     *        <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code> elements of type
+     *        String, Number, or Binary. These attributes are compared against an existing attribute of an item. If any
+     *        elements of the input are equal to the item attribute, the expression evaluates to true.
      *        </p>
      *        </li>
      *        <li>
@@ -2535,12 +2643,12 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        value.
      *        </p>
      *        <p>
-     *        <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same type, either String,
-     *        Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or
-     *        equal to, the first element and less than, or equal to, the second element. If an item contains an
-     *        <i>AttributeValue</i> element of a different type than the one provided in the request, the value does not
-     *        match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-     *        <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+     *        <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type,
+     *        either String, Number, or Binary (not a set type). A target attribute matches if the target value is
+     *        greater than, or equal to, the first element and less than, or equal to, the second element. If an item
+     *        contains an <code>AttributeValue</code> element of a different type than the one provided in the request,
+     *        the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
+     *        Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2555,7 +2663,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * One or more values to evaluate against the supplied attribute. The number of values in the list depends on the
-     * <i>ComparisonOperator</i> being used.
+     * <code>ComparisonOperator</code> being used.
      * </p>
      * <p>
      * For type Number, value comparisons are numeric.
@@ -2577,7 +2685,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * 
      * @return One or more values to evaluate against the supplied attribute. The number of values in the list depends
-     *         on the <i>ComparisonOperator</i> being used.</p>
+     *         on the <code>ComparisonOperator</code> being used.</p>
      *         <p>
      *         For type Number, value comparisons are numeric.
      *         </p>
@@ -2604,7 +2712,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * One or more values to evaluate against the supplied attribute. The number of values in the list depends on the
-     * <i>ComparisonOperator</i> being used.
+     * <code>ComparisonOperator</code> being used.
      * </p>
      * <p>
      * For type Number, value comparisons are numeric.
@@ -2627,7 +2735,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * 
      * @param attributeValueList
      *        One or more values to evaluate against the supplied attribute. The number of values in the list depends on
-     *        the <i>ComparisonOperator</i> being used.</p>
+     *        the <code>ComparisonOperator</code> being used.</p>
      *        <p>
      *        For type Number, value comparisons are numeric.
      *        </p>
@@ -2659,7 +2767,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * One or more values to evaluate against the supplied attribute. The number of values in the list depends on the
-     * <i>ComparisonOperator</i> being used.
+     * <code>ComparisonOperator</code> being used.
      * </p>
      * <p>
      * For type Number, value comparisons are numeric.
@@ -2687,7 +2795,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * 
      * @param attributeValueList
      *        One or more values to evaluate against the supplied attribute. The number of values in the list depends on
-     *        the <i>ComparisonOperator</i> being used.</p>
+     *        the <code>ComparisonOperator</code> being used.</p>
      *        <p>
      *        For type Number, value comparisons are numeric.
      *        </p>
@@ -2721,7 +2829,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * One or more values to evaluate against the supplied attribute. The number of values in the list depends on the
-     * <i>ComparisonOperator</i> being used.
+     * <code>ComparisonOperator</code> being used.
      * </p>
      * <p>
      * For type Number, value comparisons are numeric.
@@ -2744,7 +2852,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * 
      * @param attributeValueList
      *        One or more values to evaluate against the supplied attribute. The number of values in the list depends on
-     *        the <i>ComparisonOperator</i> being used.</p>
+     *        the <code>ComparisonOperator</code> being used.</p>
      *        <p>
      *        For type Number, value comparisons are numeric.
      *        </p>

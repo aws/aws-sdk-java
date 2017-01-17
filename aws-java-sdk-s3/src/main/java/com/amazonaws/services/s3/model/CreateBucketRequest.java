@@ -30,6 +30,7 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
     private String bucketName;
 
     /** The name of the Amazon S3 region in which to create this bucket. */
+    @Deprecated
     private String region;
 
     /**
@@ -132,8 +133,11 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
      *            the client is configured against the US Standard endpoint
      *            (s3.amazonaws.com).
      *
+     * @deprecated Use regional client instead to create bucket in that region.
+     *
      * @see CreateBucketRequest#getRegion()
      */
+    @Deprecated
     public void setRegion(String region) {
         this.region = region;
     }
@@ -145,6 +149,7 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
      *
      * @see CreateBucketRequest#setRegion(String)
      */
+    @Deprecated
     public String getRegion() {
         return region;
     }

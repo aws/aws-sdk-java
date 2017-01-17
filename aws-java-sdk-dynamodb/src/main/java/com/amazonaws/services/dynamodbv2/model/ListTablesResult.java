@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a <i>ListTables</i> operation.
+ * Represents the output of a <code>ListTables</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables" target="_top">AWS API
@@ -32,20 +32,21 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * array is 100.
      * </p>
      * <p>
-     * If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     * <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next page of
-     * results.
+     * If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     * <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the
+     * next page of results.
      * </p>
      */
     private java.util.List<String> tableNames;
     /**
      * <p>
-     * The name of the last table in the current page of results. Use this value as the <i>ExclusiveStartTableName</i>
-     * in a new request to obtain the next page of results, until all the table names are returned.
+     * The name of the last table in the current page of results. Use this value as the
+     * <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table
+     * names are returned.
      * </p>
      * <p>
-     * If you do not receive a <i>LastEvaluatedTableName</i> value in the response, this means that there are no more
-     * table names to be retrieved.
+     * If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no
+     * more table names to be retrieved.
      * </p>
      */
     private String lastEvaluatedTableName;
@@ -56,17 +57,17 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * array is 100.
      * </p>
      * <p>
-     * If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     * <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next page of
-     * results.
+     * If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     * <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the
+     * next page of results.
      * </p>
      * 
      * @return The names of the tables associated with the current account at the current endpoint. The maximum size of
      *         this array is 100.</p>
      *         <p>
-     *         If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     *         <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next
-     *         page of results.
+     *         If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     *         <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain
+     *         the next page of results.
      */
 
     public java.util.List<String> getTableNames() {
@@ -79,18 +80,18 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * array is 100.
      * </p>
      * <p>
-     * If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     * <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next page of
-     * results.
+     * If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     * <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the
+     * next page of results.
      * </p>
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the current endpoint. The maximum size of
      *        this array is 100.</p>
      *        <p>
-     *        If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     *        <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next
-     *        page of results.
+     *        If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     *        <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain
+     *        the next page of results.
      */
 
     public void setTableNames(java.util.Collection<String> tableNames) {
@@ -108,9 +109,9 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * array is 100.
      * </p>
      * <p>
-     * If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     * <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next page of
-     * results.
+     * If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     * <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the
+     * next page of results.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,9 +123,9 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        The names of the tables associated with the current account at the current endpoint. The maximum size of
      *        this array is 100.</p>
      *        <p>
-     *        If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     *        <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next
-     *        page of results.
+     *        If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     *        <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain
+     *        the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,18 +145,18 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * array is 100.
      * </p>
      * <p>
-     * If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     * <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next page of
-     * results.
+     * If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     * <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the
+     * next page of results.
      * </p>
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the current endpoint. The maximum size of
      *        this array is 100.</p>
      *        <p>
-     *        If <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the
-     *        <i>ExclusiveStartTableName</i> parameter in a subsequent <i>ListTables</i> request and obtain the next
-     *        page of results.
+     *        If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+     *        <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain
+     *        the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,21 +167,22 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The name of the last table in the current page of results. Use this value as the <i>ExclusiveStartTableName</i>
-     * in a new request to obtain the next page of results, until all the table names are returned.
+     * The name of the last table in the current page of results. Use this value as the
+     * <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table
+     * names are returned.
      * </p>
      * <p>
-     * If you do not receive a <i>LastEvaluatedTableName</i> value in the response, this means that there are no more
-     * table names to be retrieved.
+     * If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no
+     * more table names to be retrieved.
      * </p>
      * 
      * @param lastEvaluatedTableName
      *        The name of the last table in the current page of results. Use this value as the
-     *        <i>ExclusiveStartTableName</i> in a new request to obtain the next page of results, until all the table
-     *        names are returned.</p>
+     *        <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the
+     *        table names are returned.</p>
      *        <p>
-     *        If you do not receive a <i>LastEvaluatedTableName</i> value in the response, this means that there are no
-     *        more table names to be retrieved.
+     *        If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there
+     *        are no more table names to be retrieved.
      */
 
     public void setLastEvaluatedTableName(String lastEvaluatedTableName) {
@@ -189,20 +191,21 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The name of the last table in the current page of results. Use this value as the <i>ExclusiveStartTableName</i>
-     * in a new request to obtain the next page of results, until all the table names are returned.
+     * The name of the last table in the current page of results. Use this value as the
+     * <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table
+     * names are returned.
      * </p>
      * <p>
-     * If you do not receive a <i>LastEvaluatedTableName</i> value in the response, this means that there are no more
-     * table names to be retrieved.
+     * If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no
+     * more table names to be retrieved.
      * </p>
      * 
      * @return The name of the last table in the current page of results. Use this value as the
-     *         <i>ExclusiveStartTableName</i> in a new request to obtain the next page of results, until all the table
-     *         names are returned.</p>
+     *         <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the
+     *         table names are returned.</p>
      *         <p>
-     *         If you do not receive a <i>LastEvaluatedTableName</i> value in the response, this means that there are no
-     *         more table names to be retrieved.
+     *         If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there
+     *         are no more table names to be retrieved.
      */
 
     public String getLastEvaluatedTableName() {
@@ -211,21 +214,22 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The name of the last table in the current page of results. Use this value as the <i>ExclusiveStartTableName</i>
-     * in a new request to obtain the next page of results, until all the table names are returned.
+     * The name of the last table in the current page of results. Use this value as the
+     * <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table
+     * names are returned.
      * </p>
      * <p>
-     * If you do not receive a <i>LastEvaluatedTableName</i> value in the response, this means that there are no more
-     * table names to be retrieved.
+     * If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no
+     * more table names to be retrieved.
      * </p>
      * 
      * @param lastEvaluatedTableName
      *        The name of the last table in the current page of results. Use this value as the
-     *        <i>ExclusiveStartTableName</i> in a new request to obtain the next page of results, until all the table
-     *        names are returned.</p>
+     *        <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the
+     *        table names are returned.</p>
      *        <p>
-     *        If you do not receive a <i>LastEvaluatedTableName</i> value in the response, this means that there are no
-     *        more table names to be retrieved.
+     *        If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there
+     *        are no more table names to be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

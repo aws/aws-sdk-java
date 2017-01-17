@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a <i>Query</i> operation.
+ * Represents the output of a <code>Query</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query" target="_top">AWS API
@@ -38,23 +38,25 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * The number of items in the response.
      * </p>
      * <p>
-     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after the
-     * filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.
+     * If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned
+     * after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
+     * If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.
      * </p>
      */
     private Integer count;
     /**
      * <p>
-     * The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value with
-     * few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more information, see <a
+     * The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code>
+     * value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
+     * If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.
      * </p>
      */
     private Integer scannedCount;
@@ -64,16 +66,26 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * start a new operation, excluding this value in the new request.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data
-     * to be retrieved.
+     * If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no
+     * more data to be retrieved.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set.
-     * The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.
+     * If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result
+     * set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code>
+     * is empty.
      * </p>
      */
     private java.util.Map<String, AttributeValue> lastEvaluatedKey;
-
+    /**
+     * <p>
+     * The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned
+     * throughput consumed, along with statistics for the table and any indexes involved in the operation.
+     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     */
     private ConsumedCapacity consumedCapacity;
 
     /**
@@ -159,22 +171,24 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * The number of items in the response.
      * </p>
      * <p>
-     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after the
-     * filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.
+     * If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned
+     * after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
+     * If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.
      * </p>
      * 
      * @param count
      *        The number of items in the response.</p>
      *        <p>
-     *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after
-     *        the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was
-     *        applied.
+     *        If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items
+     *        returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items
+     *        before the filter was applied.
      *        </p>
      *        <p>
-     *        If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
+     *        If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
+     *        same.
      */
 
     public void setCount(Integer count) {
@@ -186,21 +200,23 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * The number of items in the response.
      * </p>
      * <p>
-     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after the
-     * filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.
+     * If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned
+     * after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
+     * If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.
      * </p>
      * 
      * @return The number of items in the response.</p>
      *         <p>
-     *         If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after
-     *         the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was
-     *         applied.
+     *         If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items
+     *         returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items
+     *         before the filter was applied.
      *         </p>
      *         <p>
-     *         If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
+     *         If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
+     *         same.
      */
 
     public Integer getCount() {
@@ -212,22 +228,24 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * The number of items in the response.
      * </p>
      * <p>
-     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after the
-     * filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.
+     * If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned
+     * after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
+     * If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.
      * </p>
      * 
      * @param count
      *        The number of items in the response.</p>
      *        <p>
-     *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after
-     *        the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was
-     *        applied.
+     *        If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items
+     *        returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items
+     *        before the filter was applied.
      *        </p>
      *        <p>
-     *        If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
+     *        If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
+     *        same.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,23 +256,25 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value with
-     * few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more information, see <a
+     * The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code>
+     * value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
+     * If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.
      * </p>
      * 
      * @param scannedCount
-     *        The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value
-     *        with few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more
-     *        information, see <a
+     *        The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
+     *        <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
+     *        <code>Query</code> operation. For more information, see <a
      *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      *        ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
-     *        If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
+     *        If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
+     *        <code>Count</code>.
      */
 
     public void setScannedCount(Integer scannedCount) {
@@ -263,22 +283,24 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value with
-     * few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more information, see <a
+     * The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code>
+     * value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
+     * If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.
      * </p>
      * 
-     * @return The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value
-     *         with few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more
-     *         information, see <a
+     * @return The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
+     *         <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
+     *         <code>Query</code> operation. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      *         ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *         <p>
-     *         If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
+     *         If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
+     *         <code>Count</code>.
      */
 
     public Integer getScannedCount() {
@@ -287,23 +309,25 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value with
-     * few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more information, see <a
+     * The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code>
+     * value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
+     * If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.
      * </p>
      * 
      * @param scannedCount
-     *        The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value
-     *        with few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more
-     *        information, see <a
+     *        The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
+     *        <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
+     *        <code>Query</code> operation. For more information, see <a
      *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      *        ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
-     *        If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
+     *        If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
+     *        <code>Count</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,24 +342,25 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * start a new operation, excluding this value in the new request.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data
-     * to be retrieved.
+     * If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no
+     * more data to be retrieved.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set.
-     * The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.
+     * If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result
+     * set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code>
+     * is empty.
      * </p>
      * 
      * @return The primary key of the item where the operation stopped, inclusive of the previous result set. Use this
      *         value to start a new operation, excluding this value in the new request.</p>
      *         <p>
-     *         If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no
-     *         more data to be retrieved.
+     *         If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there
+     *         is no more data to be retrieved.
      *         </p>
      *         <p>
-     *         If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the
-     *         result set. The only way to know when you have reached the end of the result set is when
-     *         <i>LastEvaluatedKey</i> is empty.
+     *         If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in
+     *         the result set. The only way to know when you have reached the end of the result set is when
+     *         <code>LastEvaluatedKey</code> is empty.
      */
 
     public java.util.Map<String, AttributeValue> getLastEvaluatedKey() {
@@ -348,25 +373,26 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * start a new operation, excluding this value in the new request.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data
-     * to be retrieved.
+     * If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no
+     * more data to be retrieved.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set.
-     * The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.
+     * If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result
+     * set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code>
+     * is empty.
      * </p>
      * 
      * @param lastEvaluatedKey
      *        The primary key of the item where the operation stopped, inclusive of the previous result set. Use this
      *        value to start a new operation, excluding this value in the new request.</p>
      *        <p>
-     *        If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no
-     *        more data to be retrieved.
+     *        If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is
+     *        no more data to be retrieved.
      *        </p>
      *        <p>
-     *        If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the
+     *        If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the
      *        result set. The only way to know when you have reached the end of the result set is when
-     *        <i>LastEvaluatedKey</i> is empty.
+     *        <code>LastEvaluatedKey</code> is empty.
      */
 
     public void setLastEvaluatedKey(java.util.Map<String, AttributeValue> lastEvaluatedKey) {
@@ -379,25 +405,26 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * start a new operation, excluding this value in the new request.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data
-     * to be retrieved.
+     * If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no
+     * more data to be retrieved.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set.
-     * The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.
+     * If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result
+     * set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code>
+     * is empty.
      * </p>
      * 
      * @param lastEvaluatedKey
      *        The primary key of the item where the operation stopped, inclusive of the previous result set. Use this
      *        value to start a new operation, excluding this value in the new request.</p>
      *        <p>
-     *        If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no
-     *        more data to be retrieved.
+     *        If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is
+     *        no more data to be retrieved.
      *        </p>
      *        <p>
-     *        If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the
+     *        If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the
      *        result set. The only way to know when you have reached the end of the result set is when
-     *        <i>LastEvaluatedKey</i> is empty.
+     *        <code>LastEvaluatedKey</code> is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,7 +455,22 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     }
 
     /**
+     * <p>
+     * The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned
+     * throughput consumed, along with statistics for the table and any indexes involved in the operation.
+     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param consumedCapacity
+     *        The capacity units consumed by the <code>Query</code> operation. The data returned includes the total
+     *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
+     *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
+     *        parameter was specified For more information, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
@@ -436,7 +478,21 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned
+     * throughput consumed, along with statistics for the table and any indexes involved in the operation.
+     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return The capacity units consumed by the <code>Query</code> operation. The data returned includes the total
+     *         provisioned throughput consumed, along with statistics for the table and any indexes involved in the
+     *         operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
+     *         parameter was specified For more information, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *         >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public ConsumedCapacity getConsumedCapacity() {
@@ -444,7 +500,22 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     }
 
     /**
+     * <p>
+     * The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned
+     * throughput consumed, along with statistics for the table and any indexes involved in the operation.
+     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param consumedCapacity
+     *        The capacity units consumed by the <code>Query</code> operation. The data returned includes the total
+     *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
+     *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
+     *        parameter was specified For more information, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

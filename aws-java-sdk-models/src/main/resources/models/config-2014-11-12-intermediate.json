@@ -298,6 +298,10 @@
         "exceptionName" : "NoSuchConfigRuleException",
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous response to get the next page of results.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -331,7 +335,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidNextTokenException",
-        "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>",
+        "documentation" : "<p>The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous response to get the next page of results.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -368,6 +372,10 @@
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous response to get the next page of results.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -398,6 +406,10 @@
       "exceptions" : [ {
         "exceptionName" : "NoSuchConfigRuleException",
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous response to get the next page of results.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -556,7 +568,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidNextTokenException",
-        "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>",
+        "documentation" : "<p>The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous response to get the next page of results.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NoSuchConfigRuleException",
@@ -692,7 +704,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidNextTokenException",
-        "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>",
+        "documentation" : "<p>The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous response to get the next page of results.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NoAvailableConfigurationRecorderException",
@@ -739,7 +751,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidNextTokenException",
-        "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>",
+        "documentation" : "<p>The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous response to get the next page of results.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NoAvailableConfigurationRecorderException",
@@ -13206,11 +13218,11 @@
         "c2jName" : "NextToken",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+        "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextToken",
-        "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "getterMethodName" : "getNextToken",
         "getterModel" : {
           "returnType" : "String",
@@ -13237,7 +13249,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "NextToken",
-        "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -13248,12 +13260,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -13520,11 +13532,11 @@
           "c2jName" : "NextToken",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextToken",
-          "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "getterMethodName" : "getNextToken",
           "getterModel" : {
             "returnType" : "String",
@@ -13551,7 +13563,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "NextToken",
-          "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -13562,12 +13574,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
-            "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+            "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -14318,11 +14330,11 @@
         "c2jName" : "NextToken",
         "c2jShape" : "NextToken",
         "deprecated" : false,
-        "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+        "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextToken",
-        "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "getterMethodName" : "getNextToken",
         "getterModel" : {
           "returnType" : "String",
@@ -14349,7 +14361,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "NextToken",
-        "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -14360,12 +14372,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -14561,11 +14573,11 @@
           "c2jName" : "NextToken",
           "c2jShape" : "NextToken",
           "deprecated" : false,
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextToken",
-          "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "getterMethodName" : "getNextToken",
           "getterModel" : {
             "returnType" : "String",
@@ -14592,7 +14604,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "NextToken",
-          "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -14603,12 +14615,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
-            "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+            "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -16234,11 +16246,11 @@
         "c2jName" : "NextToken",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+        "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextToken",
-        "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "getterMethodName" : "getNextToken",
         "getterModel" : {
           "returnType" : "String",
@@ -16265,7 +16277,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "NextToken",
-        "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -16276,12 +16288,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -16420,11 +16432,11 @@
           "c2jName" : "NextToken",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextToken",
-          "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "getterMethodName" : "getNextToken",
           "getterModel" : {
             "returnType" : "String",
@@ -16451,7 +16463,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "NextToken",
-          "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -16462,12 +16474,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
-            "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+            "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -21522,11 +21534,11 @@
         "c2jName" : "NextToken",
         "c2jShape" : "NextToken",
         "deprecated" : false,
-        "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+        "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextToken",
-        "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "getterMethodName" : "getNextToken",
         "getterModel" : {
           "returnType" : "String",
@@ -21553,7 +21565,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "NextToken",
-        "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -21564,12 +21576,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -21822,11 +21834,11 @@
           "c2jName" : "NextToken",
           "c2jShape" : "NextToken",
           "deprecated" : false,
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextToken",
-          "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "getterMethodName" : "getNextToken",
           "getterModel" : {
             "returnType" : "String",
@@ -21853,7 +21865,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "NextToken",
-          "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -21864,12 +21876,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
-            "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+            "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -22564,11 +22576,11 @@
         "c2jName" : "NextToken",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+        "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextToken",
-        "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "getterMethodName" : "getNextToken",
         "getterModel" : {
           "returnType" : "String",
@@ -22595,7 +22607,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "NextToken",
-        "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+        "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -22606,12 +22618,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -22750,11 +22762,11 @@
           "c2jName" : "NextToken",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+          "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextToken",
-          "getterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "getterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@return The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "getterMethodName" : "getNextToken",
           "getterModel" : {
             "returnType" : "String",
@@ -22781,7 +22793,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "NextToken",
-          "setterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
+          "setterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -22792,12 +22804,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>\n@param nextToken The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
-            "documentation" : "<p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
+            "documentation" : "<p>The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -25539,7 +25551,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>",
+      "documentation" : "<p>The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous response to get the next page of results.</p>",
       "enums" : null,
       "errorCode" : "InvalidNextTokenException",
       "hasHeaderMember" : false,

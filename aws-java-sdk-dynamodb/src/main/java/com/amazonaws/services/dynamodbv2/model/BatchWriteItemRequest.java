@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>BatchWriteItem</i> operation.
+ * Represents the input of a <code>BatchWriteItem</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem" target="_top">AWS API
@@ -30,38 +30,38 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i>
-     * or <i>PutRequest</i>). Each element in the map consists of the following:
+     * A map of one or more table names and, for each table, a list of operations to be performed (
+     * <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be
+     * deleted is identified by a <code>Key</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map
-     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
-     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
-     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
+     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
+     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by
-     * an <i>Item</i> subelement:
+     * <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an
-     * attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater
-     * than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a
-     * <i>ValidationException</i> exception.
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
+     * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the data types for those attributes must match
@@ -96,19 +96,20 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * to initialize any additional object members.
      * 
      * @param requestItems
-     *        A map of one or more table names and, for each table, a list of operations to be performed
-     *        (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following:</p>
+     *        A map of one or more table names and, for each table, a list of operations to be performed (
+     *        <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted
-     *        is identified by a <i>Key</i> subelement:
+     *        <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item
+     *        to be deleted is identified by a <code>Key</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     *        map consists of an attribute name and an attribute value. For each primary key, you must provide
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition
      *        key and the sort key.
@@ -118,16 +119,16 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is
-     *        identified by an <i>Item</i> subelement:
+     *        <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be
+     *        put is identified by an <code>Item</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name
-     *        and an attribute value. Attribute values must not be null; string and binary type attributes must have
-     *        lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values
-     *        will be rejected with a <i>ValidationException</i> exception.
+     *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
+     *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
+     *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
+     *        values will be rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -143,38 +144,38 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i>
-     * or <i>PutRequest</i>). Each element in the map consists of the following:
+     * A map of one or more table names and, for each table, a list of operations to be performed (
+     * <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be
+     * deleted is identified by a <code>Key</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map
-     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
-     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
-     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
+     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
+     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by
-     * an <i>Item</i> subelement:
+     * <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an
-     * attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater
-     * than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a
-     * <i>ValidationException</i> exception.
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
+     * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the data types for those attributes must match
@@ -185,19 +186,20 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return A map of one or more table names and, for each table, a list of operations to be performed
-     *         (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following:</p>
+     * @return A map of one or more table names and, for each table, a list of operations to be performed (
+     *         <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
+     *         following:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be
-     *         deleted is identified by a <i>Key</i> subelement:
+     *         <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item
+     *         to be deleted is identified by a <code>Key</code> subelement:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     *         map consists of an attribute name and an attribute value. For each primary key, you must provide
+     *         <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *         this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *         <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a
      *         value for the partition key. For a composite primary key, you must provide values for <i>both</i> the
      *         partition key and the sort key.
@@ -207,16 +209,16 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is
-     *         identified by an <i>Item</i> subelement:
+     *         <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be
+     *         put is identified by an <code>Item</code> subelement:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name
-     *         and an attribute value. Attribute values must not be null; string and binary type attributes must have
-     *         lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values
-     *         will be rejected with a <i>ValidationException</i> exception.
+     *         <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
+     *         name and an attribute value. Attribute values must not be null; string and binary type attributes must
+     *         have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
+     *         values will be rejected with a <code>ValidationException</code> exception.
      *         </p>
      *         <p>
      *         If you specify any attributes that are part of an index key, then the data types for those attributes
@@ -233,38 +235,38 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i>
-     * or <i>PutRequest</i>). Each element in the map consists of the following:
+     * A map of one or more table names and, for each table, a list of operations to be performed (
+     * <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be
+     * deleted is identified by a <code>Key</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map
-     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
-     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
-     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
+     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
+     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by
-     * an <i>Item</i> subelement:
+     * <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an
-     * attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater
-     * than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a
-     * <i>ValidationException</i> exception.
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
+     * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the data types for those attributes must match
@@ -276,19 +278,20 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param requestItems
-     *        A map of one or more table names and, for each table, a list of operations to be performed
-     *        (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following:</p>
+     *        A map of one or more table names and, for each table, a list of operations to be performed (
+     *        <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted
-     *        is identified by a <i>Key</i> subelement:
+     *        <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item
+     *        to be deleted is identified by a <code>Key</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     *        map consists of an attribute name and an attribute value. For each primary key, you must provide
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition
      *        key and the sort key.
@@ -298,16 +301,16 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is
-     *        identified by an <i>Item</i> subelement:
+     *        <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be
+     *        put is identified by an <code>Item</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name
-     *        and an attribute value. Attribute values must not be null; string and binary type attributes must have
-     *        lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values
-     *        will be rejected with a <i>ValidationException</i> exception.
+     *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
+     *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
+     *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
+     *        values will be rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -324,38 +327,38 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i>
-     * or <i>PutRequest</i>). Each element in the map consists of the following:
+     * A map of one or more table names and, for each table, a list of operations to be performed (
+     * <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be
+     * deleted is identified by a <code>Key</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map
-     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
-     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
-     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
+     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
+     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by
-     * an <i>Item</i> subelement:
+     * <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an
-     * attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater
-     * than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a
-     * <i>ValidationException</i> exception.
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
+     * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the data types for those attributes must match
@@ -367,19 +370,20 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param requestItems
-     *        A map of one or more table names and, for each table, a list of operations to be performed
-     *        (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following:</p>
+     *        A map of one or more table names and, for each table, a list of operations to be performed (
+     *        <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted
-     *        is identified by a <i>Key</i> subelement:
+     *        <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item
+     *        to be deleted is identified by a <code>Key</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     *        map consists of an attribute name and an attribute value. For each primary key, you must provide
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition
      *        key and the sort key.
@@ -389,16 +393,16 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is
-     *        identified by an <i>Item</i> subelement:
+     *        <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be
+     *        put is identified by an <code>Item</code> subelement:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name
-     *        and an attribute value. Attribute values must not be null; string and binary type attributes must have
-     *        lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values
-     *        will be rejected with a <i>ValidationException</i> exception.
+     *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
+     *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
+     *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
+     *        values will be rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must

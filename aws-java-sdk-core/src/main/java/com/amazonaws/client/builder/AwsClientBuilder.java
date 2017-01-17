@@ -65,9 +65,8 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     private final ClientConfigurationFactory clientConfigFactory;
 
     /**
-     * {@link AwsRegionProvider} to use when no explicit region is configured. This is currently
-     * not
-     * exposed for customization by customers.
+     * {@link AwsRegionProvider} to use when no explicit region or endpointConfiguration is configured.
+     * This is currently not exposed for customization by customers.
      */
     private final AwsRegionProvider regionProvider;
 
@@ -76,6 +75,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     private RequestMetricCollector metricsCollector;
     private Region region;
     private List<RequestHandler2> requestHandlers;
+    private EndpointConfiguration endpointConfiguration;
 
     protected AwsClientBuilder(ClientConfigurationFactory clientConfigFactory) {
         this(clientConfigFactory, DEFAULT_REGION_PROVIDER);
@@ -199,8 +199,10 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     }
 
     /**
-     * Sets the region to be used by the client. If region is not explicity provided in the builder
-     * the {@link #DEFAULT_REGION_PROVIDER} is consulted.
+     * Sets the region to be used by the client. This will be used to determine both the
+     * service endpoint (eg: https://sns.us-west-1.amazonaws.com) and signing region (eg: us-west-1)
+     * for requests. If neither region or endpoint configuration {@link #setEndpointConfiguration(EndpointConfiguration)}
+     * are explicitly provided in the builder the {@link #DEFAULT_REGION_PROVIDER} is consulted.
      *
      * @param region Region to use
      */
@@ -209,8 +211,10 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     }
 
     /**
-     * Sets the region to be used by the client. If region is not explicity provided in the builder
-     * the {@link #DEFAULT_REGION_PROVIDER} is consulted.
+     * Sets the region to be used by the client. This will be used to determine both the
+     * service endpoint (eg: https://sns.us-west-1.amazonaws.com) and signing region (eg: us-west-1)
+     * for requests. If neither region or endpoint configuration {@link #setEndpointConfiguration(EndpointConfiguration)}
+     * are explicitly provided in the builder the {@link #DEFAULT_REGION_PROVIDER} is consulted.
      *
      * <p> For regions not explicitly in the {@link Regions} enum use the {@link
      * #withRegion(String)} overload.</p>
@@ -223,8 +227,10 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     }
 
     /**
-     * Sets the region to be used by the client. If region is not explicity provided in the builder
-     * the DefaultRegionProviderChain is consulted.
+     * Sets the region to be used by the client. This will be used to determine both the
+     * service endpoint (eg: https://sns.us-west-1.amazonaws.com) and signing region (eg: us-west-1)
+     * for requests. If neither region or endpoint configuration {@link #setEndpointConfiguration(EndpointConfiguration)}
+     * are explicitly provided in the builder the {@link #DEFAULT_REGION_PROVIDER} is consulted.
      *
      * @param region Region to use
      * @return This object for method chaining.
@@ -234,14 +240,50 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     }
 
     /**
-     * Sets the region to be used by the client. There is no default for region. You must provide
-     * either a region or an endpoint.
+     * Sets the region to be used by the client. This will be used to determine both the
+     * service endpoint (eg: https://sns.us-west-1.amazonaws.com) and signing region (eg: us-west-1)
+     * for requests. If neither region or endpoint configuration {@link #setEndpointConfiguration(EndpointConfiguration)}
+     * are explicitly provided in the builder the {@link #DEFAULT_REGION_PROVIDER} is consulted.
      *
-     * @param region Region to use
+     * @param region Region to use, this will be used to determine both service endpoint
+     *               and the signing region
      * @return This object for method chaining.
      */
     private Subclass withRegion(Region region) {
         this.region = region;
+        return getSubclass();
+    }
+
+    /**
+     * Gets the service endpointConfiguration in use by the builder
+     */
+    public final EndpointConfiguration getEndpoint() {
+        return endpointConfiguration;
+    }
+
+    /**
+     * Sets the endpoint configuration (service endpoint & signing region) to be used for requests. If neither region {@link #setRegion(String)}
+     * or endpoint configuration are explicitly provided in the builder the {@link #DEFAULT_REGION_PROVIDER} is consulted.
+     *
+     * <p><b>Only use this if using a non-standard service endpoint - the recommended approach for configuring a client is to use {@link #setRegion(String)}</b>
+     *
+     * @param endpointConfiguration The endpointConfiguration to use
+     */
+    public final void setEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        withEndpointConfiguration(endpointConfiguration);
+    }
+
+    /**
+     * Sets the endpoint configuration (service endpoint & signing region) to be used for requests. If neither region {@link #withRegion(String)}
+     * or endpoint configuration are explicitly provided in the builder the {@link #DEFAULT_REGION_PROVIDER} is consulted.
+     *
+     * <p><b>Only use this if using a non-standard service endpoint - the recommended approach for configuring a client is to use {@link #withRegion(String)}</b>
+     *
+     * @param endpointConfiguration The endpointConfiguration to use
+     * @return This object for method chaining.
+     */
+    public final Subclass withEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        this.endpointConfiguration = endpointConfiguration;
         return getSubclass();
     }
 
@@ -313,7 +355,13 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     }
 
     private <ClientClass extends AmazonWebServiceClient> void setRegion(ClientClass client) {
-        if (region != null) {
+        if (region != null && endpointConfiguration != null) {
+            throw new IllegalStateException("Only one of Region or EndpointConfiguration may be set.");
+        }
+        if (endpointConfiguration != null) {
+            client.setEndpoint(endpointConfiguration.getServiceEndpoint());
+            client.setSignerRegionOverride(endpointConfiguration.getSigningRegion());
+        } else if (region != null) {
             client.setRegion(region);
         } else {
             final String region = regionProvider.getRegion();
@@ -375,6 +423,31 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
             throw new UnsupportedOperationException("ExecutorService is not used for sync client.");
         }
 
+    }
+
+    /**
+     * A container for configuration required to submit requests to a service (service endpoint and signing region)
+     */
+    public static final class EndpointConfiguration {
+        private final String serviceEndpoint;
+        private final String signingRegion;
+
+        /**
+         * @param serviceEndpoint the service endpoint either with or without the protocol (e.g. https://sns.us-west-1.amazonaws.com or sns.us-west-1.amazonaws.com)
+         * @param signingRegion the region to use for SigV4 signing of requests (e.g. us-west-1)
+         */
+        public EndpointConfiguration(String serviceEndpoint, String signingRegion) {
+            this.serviceEndpoint = serviceEndpoint;
+            this.signingRegion = signingRegion;
+        }
+
+        public String getServiceEndpoint() {
+            return serviceEndpoint;
+        }
+
+        public String getSigningRegion() {
+            return signingRegion;
+        }
     }
 
 }

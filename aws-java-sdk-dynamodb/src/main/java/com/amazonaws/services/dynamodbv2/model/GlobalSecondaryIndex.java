@@ -63,9 +63,23 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      * </note>
      */
     private java.util.List<KeySchemaElement> keySchema;
-
+    /**
+     * <p>
+     * Represents attributes that are copied (projected) from the table into the global secondary index. These are in
+     * addition to the primary key attributes and index key attributes, which are automatically projected.
+     * </p>
+     */
     private Projection projection;
-
+    /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     */
     private ProvisionedThroughput provisionedThroughput;
 
     /**
@@ -375,7 +389,14 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents attributes that are copied (projected) from the table into the global secondary index. These are in
+     * addition to the primary key attributes and index key attributes, which are automatically projected.
+     * </p>
+     * 
      * @param projection
+     *        Represents attributes that are copied (projected) from the table into the global secondary index. These
+     *        are in addition to the primary key attributes and index key attributes, which are automatically projected.
      */
 
     public void setProjection(Projection projection) {
@@ -383,7 +404,14 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents attributes that are copied (projected) from the table into the global secondary index. These are in
+     * addition to the primary key attributes and index key attributes, which are automatically projected.
+     * </p>
+     * 
+     * @return Represents attributes that are copied (projected) from the table into the global secondary index. These
+     *         are in addition to the primary key attributes and index key attributes, which are automatically
+     *         projected.
      */
 
     public Projection getProjection() {
@@ -391,7 +419,14 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents attributes that are copied (projected) from the table into the global secondary index. These are in
+     * addition to the primary key attributes and index key attributes, which are automatically projected.
+     * </p>
+     * 
      * @param projection
+     *        Represents attributes that are copied (projected) from the table into the global secondary index. These
+     *        are in addition to the primary key attributes and index key attributes, which are automatically projected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,7 +436,21 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param provisionedThroughput
+     *        Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *        <p>
+     *        For current minimum and maximum provisioned throughput values, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
@@ -409,7 +458,20 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *         <p>
+     *         For current minimum and maximum provisioned throughput values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *         <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public ProvisionedThroughput getProvisionedThroughput() {
@@ -417,7 +479,21 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param provisionedThroughput
+     *        Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *        <p>
+     *        For current minimum and maximum provisioned throughput values, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

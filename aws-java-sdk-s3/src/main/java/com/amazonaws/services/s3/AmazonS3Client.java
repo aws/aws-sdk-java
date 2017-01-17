@@ -939,12 +939,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
+    @Deprecated
     public Bucket createBucket(String bucketName, Region region)
             throws SdkClientException, AmazonServiceException {
         return createBucket(new CreateBucketRequest(bucketName, region));
     }
 
     @Override
+    @Deprecated
     public Bucket createBucket(String bucketName, String region)
             throws SdkClientException, AmazonServiceException {
         return createBucket(new CreateBucketRequest(bucketName, region));
@@ -977,7 +979,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-        if (!(getSignerRegion() == null || getSignerRegion().equals("us-east-1"))) {
+        if (!(getSignerRegion() == null || getSignerRegion().equals("us-east-1")) && StringUtils.isNullOrEmpty(region)) {
             region = AwsHostNameUtils.parseRegion(endpoint.getHost(), S3_SERVICE_NAME);
         }
 

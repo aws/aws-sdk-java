@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeTable</i> operation.
+ * Represents the output of a <code>DescribeTable</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable" target="_top">AWS API
@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeTableResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The properties of the table.
+     * </p>
+     */
     private TableDescription table;
 
     /**
+     * <p>
+     * The properties of the table.
+     * </p>
+     * 
      * @param table
+     *        The properties of the table.
      */
 
     public void setTable(TableDescription table) {
@@ -37,7 +47,11 @@ public class DescribeTableResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * The properties of the table.
+     * </p>
+     * 
+     * @return The properties of the table.
      */
 
     public TableDescription getTable() {
@@ -45,7 +59,12 @@ public class DescribeTableResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The properties of the table.
+     * </p>
+     * 
      * @param table
+     *        The properties of the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

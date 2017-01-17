@@ -232,7 +232,7 @@ public class XpathUtilsTest {
 
         assertEquals(null, asByteBuffer("Foo/Empty", document, xpath));
     }
-    
+
     @Test
     public void testFromDocumentDoesNotWriteToStderrWhenXmlInvalid() throws SAXException, IOException, ParserConfigurationException {
         PrintStream err = System.err;
@@ -250,5 +250,5 @@ public class XpathUtilsTest {
             System.setErr(err);
         }
     }
-    
+
 }

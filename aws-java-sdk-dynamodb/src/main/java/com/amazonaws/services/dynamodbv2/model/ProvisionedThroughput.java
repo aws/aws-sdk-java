@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the
- * <i>UpdateTable</i> operation.
+ * <code>UpdateTable</code> operation.
  * </p>
  * <p>
  * For current minimum and maximum provisioned throughput values, see <a
@@ -35,7 +35,7 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. For more information, see <a href=
+     * <code>ThrottlingException</code>. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -43,8 +43,8 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
     private Long readCapacityUnits;
     /**
      * <p>
-     * The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more
-     * information, see <a href=
+     * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
+     * more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -64,12 +64,12 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
      * 
      * @param readCapacityUnits
      *        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *        <i>ThrottlingException</i>. For more information, see <a href=
+     *        <code>ThrottlingException</code>. For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param writeCapacityUnits
-     *        The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For
-     *        more information, see <a href=
+     *        The maximum number of writes consumed per second before DynamoDB returns a
+     *        <code>ThrottlingException</code>. For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -81,14 +81,14 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. For more information, see <a href=
+     * <code>ThrottlingException</code>. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param readCapacityUnits
      *        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *        <i>ThrottlingException</i>. For more information, see <a href=
+     *        <code>ThrottlingException</code>. For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -100,13 +100,13 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. For more information, see <a href=
+     * <code>ThrottlingException</code>. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *         <i>ThrottlingException</i>. For more information, see <a href=
+     *         <code>ThrottlingException</code>. For more information, see <a href=
      *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      *         >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -118,14 +118,14 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. For more information, see <a href=
+     * <code>ThrottlingException</code>. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param readCapacityUnits
      *        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *        <i>ThrottlingException</i>. For more information, see <a href=
+     *        <code>ThrottlingException</code>. For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -138,15 +138,15 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more
-     * information, see <a href=
+     * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
+     * more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param writeCapacityUnits
-     *        The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For
-     *        more information, see <a href=
+     *        The maximum number of writes consumed per second before DynamoDB returns a
+     *        <code>ThrottlingException</code>. For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -157,14 +157,14 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more
-     * information, see <a href=
+     * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
+     * more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
-     *         For more information, see <a href=
+     * @return The maximum number of writes consumed per second before DynamoDB returns a
+     *         <code>ThrottlingException</code>. For more information, see <a href=
      *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      *         >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -175,15 +175,15 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more
-     * information, see <a href=
+     * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
+     * more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param writeCapacityUnits
-     *        The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For
-     *        more information, see <a href=
+     *        The maximum number of writes consumed per second before DynamoDB returns a
+     *        <code>ThrottlingException</code>. For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

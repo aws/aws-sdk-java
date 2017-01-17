@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents an operation to perform - either <i>DeleteItem</i> or <i>PutItem</i>. You can only request one of these
- * operations, not both, in a single <i>WriteRequest</i>. If you do need to perform both of these operations, you will
- * need to provide two separate <i>WriteRequest</i> objects.
+ * Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one
+ * of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these
+ * operations, you will need to provide two separate <code>WriteRequest</code> objects.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/WriteRequest" target="_top">AWS API
@@ -30,13 +30,13 @@ public class WriteRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A request to perform a <i>PutItem</i> operation.
+     * A request to perform a <code>PutItem</code> operation.
      * </p>
      */
     private PutRequest putRequest;
     /**
      * <p>
-     * A request to perform a <i>DeleteItem</i> operation.
+     * A request to perform a <code>DeleteItem</code> operation.
      * </p>
      */
     private DeleteRequest deleteRequest;
@@ -53,7 +53,7 @@ public class WriteRequest implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param putRequest
-     *        A request to perform a <i>PutItem</i> operation.
+     *        A request to perform a <code>PutItem</code> operation.
      */
     public WriteRequest(PutRequest putRequest) {
         setPutRequest(putRequest);
@@ -64,7 +64,7 @@ public class WriteRequest implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param deleteRequest
-     *        A request to perform a <i>DeleteItem</i> operation.
+     *        A request to perform a <code>DeleteItem</code> operation.
      */
     public WriteRequest(DeleteRequest deleteRequest) {
         setDeleteRequest(deleteRequest);
@@ -72,11 +72,11 @@ public class WriteRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A request to perform a <i>PutItem</i> operation.
+     * A request to perform a <code>PutItem</code> operation.
      * </p>
      * 
      * @param putRequest
-     *        A request to perform a <i>PutItem</i> operation.
+     *        A request to perform a <code>PutItem</code> operation.
      */
 
     public void setPutRequest(PutRequest putRequest) {
@@ -85,10 +85,10 @@ public class WriteRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A request to perform a <i>PutItem</i> operation.
+     * A request to perform a <code>PutItem</code> operation.
      * </p>
      * 
-     * @return A request to perform a <i>PutItem</i> operation.
+     * @return A request to perform a <code>PutItem</code> operation.
      */
 
     public PutRequest getPutRequest() {
@@ -97,11 +97,11 @@ public class WriteRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A request to perform a <i>PutItem</i> operation.
+     * A request to perform a <code>PutItem</code> operation.
      * </p>
      * 
      * @param putRequest
-     *        A request to perform a <i>PutItem</i> operation.
+     *        A request to perform a <code>PutItem</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +112,11 @@ public class WriteRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A request to perform a <i>DeleteItem</i> operation.
+     * A request to perform a <code>DeleteItem</code> operation.
      * </p>
      * 
      * @param deleteRequest
-     *        A request to perform a <i>DeleteItem</i> operation.
+     *        A request to perform a <code>DeleteItem</code> operation.
      */
 
     public void setDeleteRequest(DeleteRequest deleteRequest) {
@@ -125,10 +125,10 @@ public class WriteRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A request to perform a <i>DeleteItem</i> operation.
+     * A request to perform a <code>DeleteItem</code> operation.
      * </p>
      * 
-     * @return A request to perform a <i>DeleteItem</i> operation.
+     * @return A request to perform a <code>DeleteItem</code> operation.
      */
 
     public DeleteRequest getDeleteRequest() {
@@ -137,11 +137,11 @@ public class WriteRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A request to perform a <i>DeleteItem</i> operation.
+     * A request to perform a <code>DeleteItem</code> operation.
      * </p>
      * 
      * @param deleteRequest
-     *        A request to perform a <i>DeleteItem</i> operation.
+     *        A request to perform a <code>DeleteItem</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

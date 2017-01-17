@@ -1296,9 +1296,12 @@ public interface AmazonS3 extends S3DirectSpi {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      *
+     * @deprecated Use regional endpoint and call {@link #createBucket(String)} instead.
+     *
      * @see com.amazonaws.services.s3.model.Region
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">AWS API Documentation</a>
      */
+    @Deprecated
     public Bucket createBucket(String bucketName, Region region)
             throws SdkClientException, AmazonServiceException;
 
@@ -1370,9 +1373,12 @@ public interface AmazonS3 extends S3DirectSpi {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      *
+     * @deprecated Use regional endpoint and call {@link #createBucket(String)} instead.
+     *
      * @see com.amazonaws.services.s3.model.Region
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">AWS API Documentation</a>
      */
+    @Deprecated
     public Bucket createBucket(String bucketName, String region)
             throws SdkClientException, AmazonServiceException;
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents a request to perform a <i>DeleteItem</i> operation on an item.
+ * Represents a request to perform a <code>DeleteItem</code> operation on an item.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteRequest" target="_top">AWS API

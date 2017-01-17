@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of an <i>UpdateTable</i> operation.
+ * Represents the input of an <code>UpdateTable</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable" target="_top">AWS API
@@ -31,7 +31,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * An array of attributes that describe the key schema for the table and indexes. If you are adding a new global
-     * secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.
+     * secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.
      * </p>
      */
     private java.util.List<AttributeDefinition> attributeDefinitions;
@@ -41,7 +41,11 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String tableName;
-
+    /**
+     * <p>
+     * The new provisioned throughput settings for the specified table or index.
+     * </p>
+     */
     private ProvisionedThroughput provisionedThroughput;
     /**
      * <p>
@@ -51,17 +55,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <i>Create</i> - add a new global secondary index to the table.
+     * <code>Create</code> - add a new global secondary index to the table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     * <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Delete</i> - remove a global secondary index from the table.
+     * <code>Delete</code> - remove a global secondary index from the table.
      * </p>
      * </li>
      * </ul>
@@ -78,8 +82,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a
-     * stream, or if you attempt to disable a stream on a table which does not have a stream.
+     * You will receive a <code>ResourceInUseException</code> if you attempt to enable a stream on a table that already
+     * has a stream, or if you attempt to disable a stream on a table which does not have a stream.
      * </p>
      * </note>
      */
@@ -99,6 +103,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param tableName
      *        The name of the table to be updated.
      * @param provisionedThroughput
+     *        The new provisioned throughput settings for the specified table or index.
      */
     public UpdateTableRequest(String tableName, ProvisionedThroughput provisionedThroughput) {
         setTableName(tableName);
@@ -108,12 +113,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * An array of attributes that describe the key schema for the table and indexes. If you are adding a new global
-     * secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.
+     * secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.
      * </p>
      * 
      * @return An array of attributes that describe the key schema for the table and indexes. If you are adding a new
-     *         global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the
-     *         new index.
+     *         global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of
+     *         the new index.
      */
 
     public java.util.List<AttributeDefinition> getAttributeDefinitions() {
@@ -123,13 +128,13 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * An array of attributes that describe the key schema for the table and indexes. If you are adding a new global
-     * secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.
+     * secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.
      * </p>
      * 
      * @param attributeDefinitions
      *        An array of attributes that describe the key schema for the table and indexes. If you are adding a new
-     *        global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the
-     *        new index.
+     *        global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of
+     *        the new index.
      */
 
     public void setAttributeDefinitions(java.util.Collection<AttributeDefinition> attributeDefinitions) {
@@ -144,7 +149,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * An array of attributes that describe the key schema for the table and indexes. If you are adding a new global
-     * secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.
+     * secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -154,8 +159,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param attributeDefinitions
      *        An array of attributes that describe the key schema for the table and indexes. If you are adding a new
-     *        global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the
-     *        new index.
+     *        global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of
+     *        the new index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,13 +177,13 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * An array of attributes that describe the key schema for the table and indexes. If you are adding a new global
-     * secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the new index.
+     * secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.
      * </p>
      * 
      * @param attributeDefinitions
      *        An array of attributes that describe the key schema for the table and indexes. If you are adding a new
-     *        global secondary index to the table, <i>AttributeDefinitions</i> must include the key element(s) of the
-     *        new index.
+     *        global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of
+     *        the new index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,7 +233,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The new provisioned throughput settings for the specified table or index.
+     * </p>
+     * 
      * @param provisionedThroughput
+     *        The new provisioned throughput settings for the specified table or index.
      */
 
     public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
@@ -236,7 +246,11 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The new provisioned throughput settings for the specified table or index.
+     * </p>
+     * 
+     * @return The new provisioned throughput settings for the specified table or index.
      */
 
     public ProvisionedThroughput getProvisionedThroughput() {
@@ -244,7 +258,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The new provisioned throughput settings for the specified table or index.
+     * </p>
+     * 
      * @param provisionedThroughput
+     *        The new provisioned throughput settings for the specified table or index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,17 +280,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <i>Create</i> - add a new global secondary index to the table.
+     * <code>Create</code> - add a new global secondary index to the table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     * <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Delete</i> - remove a global secondary index from the table.
+     * <code>Delete</code> - remove a global secondary index from the table.
      * </p>
      * </li>
      * </ul>
@@ -286,17 +305,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>Create</i> - add a new global secondary index to the table.
+     *         <code>Create</code> - add a new global secondary index to the table.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     *         <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>Delete</i> - remove a global secondary index from the table.
+     *         <code>Delete</code> - remove a global secondary index from the table.
      *         </p>
      *         </li>
      *         </ul>
@@ -318,17 +337,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <i>Create</i> - add a new global secondary index to the table.
+     * <code>Create</code> - add a new global secondary index to the table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     * <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Delete</i> - remove a global secondary index from the table.
+     * <code>Delete</code> - remove a global secondary index from the table.
      * </p>
      * </li>
      * </ul>
@@ -344,17 +363,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Create</i> - add a new global secondary index to the table.
+     *        <code>Create</code> - add a new global secondary index to the table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     *        <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Delete</i> - remove a global secondary index from the table.
+     *        <code>Delete</code> - remove a global secondary index from the table.
      *        </p>
      *        </li>
      *        </ul>
@@ -381,17 +400,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <i>Create</i> - add a new global secondary index to the table.
+     * <code>Create</code> - add a new global secondary index to the table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     * <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Delete</i> - remove a global secondary index from the table.
+     * <code>Delete</code> - remove a global secondary index from the table.
      * </p>
      * </li>
      * </ul>
@@ -412,17 +431,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Create</i> - add a new global secondary index to the table.
+     *        <code>Create</code> - add a new global secondary index to the table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     *        <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Delete</i> - remove a global secondary index from the table.
+     *        <code>Delete</code> - remove a global secondary index from the table.
      *        </p>
      *        </li>
      *        </ul>
@@ -451,17 +470,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <i>Create</i> - add a new global secondary index to the table.
+     * <code>Create</code> - add a new global secondary index to the table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     * <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Delete</i> - remove a global secondary index from the table.
+     * <code>Delete</code> - remove a global secondary index from the table.
      * </p>
      * </li>
      * </ul>
@@ -477,17 +496,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>Create</i> - add a new global secondary index to the table.
+     *        <code>Create</code> - add a new global secondary index to the table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Update</i> - modify the provisioned throughput settings of an existing global secondary index.
+     *        <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Delete</i> - remove a global secondary index from the table.
+     *        <code>Delete</code> - remove a global secondary index from the table.
      *        </p>
      *        </li>
      *        </ul>
@@ -509,16 +528,16 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a
-     * stream, or if you attempt to disable a stream on a table which does not have a stream.
+     * You will receive a <code>ResourceInUseException</code> if you attempt to enable a stream on a table that already
+     * has a stream, or if you attempt to disable a stream on a table which does not have a stream.
      * </p>
      * </note>
      * 
      * @param streamSpecification
      *        Represents the DynamoDB Streams configuration for the table.</p> <note>
      *        <p>
-     *        You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already
-     *        has a stream, or if you attempt to disable a stream on a table which does not have a stream.
+     *        You will receive a <code>ResourceInUseException</code> if you attempt to enable a stream on a table that
+     *        already has a stream, or if you attempt to disable a stream on a table which does not have a stream.
      *        </p>
      */
 
@@ -532,14 +551,14 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a
-     * stream, or if you attempt to disable a stream on a table which does not have a stream.
+     * You will receive a <code>ResourceInUseException</code> if you attempt to enable a stream on a table that already
+     * has a stream, or if you attempt to disable a stream on a table which does not have a stream.
      * </p>
      * </note>
      * 
      * @return Represents the DynamoDB Streams configuration for the table.</p> <note>
      *         <p>
-     *         You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that
+     *         You will receive a <code>ResourceInUseException</code> if you attempt to enable a stream on a table that
      *         already has a stream, or if you attempt to disable a stream on a table which does not have a stream.
      *         </p>
      */
@@ -554,16 +573,16 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already has a
-     * stream, or if you attempt to disable a stream on a table which does not have a stream.
+     * You will receive a <code>ResourceInUseException</code> if you attempt to enable a stream on a table that already
+     * has a stream, or if you attempt to disable a stream on a table which does not have a stream.
      * </p>
      * </note>
      * 
      * @param streamSpecification
      *        Represents the DynamoDB Streams configuration for the table.</p> <note>
      *        <p>
-     *        You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream on a table that already
-     *        has a stream, or if you attempt to disable a stream on a table which does not have a stream.
+     *        You will receive a <code>ResourceInUseException</code> if you attempt to enable a stream on a table that
+     *        already has a stream, or if you attempt to disable a stream on a table which does not have a stream.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

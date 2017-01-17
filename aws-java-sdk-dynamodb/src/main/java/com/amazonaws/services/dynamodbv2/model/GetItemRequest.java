@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>GetItem</i> operation.
+ * Represents the input of a <code>GetItem</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem" target="_top">AWS API
@@ -36,7 +36,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String tableName;
     /**
      * <p>
-     * A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve.
+     * A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to
+     * retrieve.
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only
@@ -46,24 +47,10 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
     private java.util.Map<String, AttributeValue> key;
     /**
-     * <important>
      * <p>
-     * This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i>
-     * instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB
-     * will return a <i>ValidationException</i> exception.
-     * </p>
-     * <p>
-     * This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.
-     * </p>
-     * </important>
-     * <p>
-     * The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will not appear in the result.
-     * </p>
-     * <p>
-     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.List<String> attributesToGet;
@@ -90,17 +77,12 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-     * </p>
-     * </note>
      */
     private String projectionExpression;
     /**
      * <p>
      * One or more substitution tokens for attribute names in an expression. The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>:
+     * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
      * <li>
@@ -135,7 +117,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
-     * <i>ExpressionAttributeNames</i>:
+     * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
      * <li>
@@ -182,8 +164,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @param tableName
      *        The name of the table containing the requested item.
      * @param key
-     *        A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to
-     *        retrieve.</p>
+     *        A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item
+     *        to retrieve.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For example, with a simple primary key, you
      *        only need to provide a value for the partition key. For a composite primary key, you must provide values
@@ -201,8 +183,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @param tableName
      *        The name of the table containing the requested item.
      * @param key
-     *        A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to
-     *        retrieve.</p>
+     *        A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item
+     *        to retrieve.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For example, with a simple primary key, you
      *        only need to provide a value for the partition key. For a composite primary key, you must provide values
@@ -259,7 +241,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve.
+     * A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to
+     * retrieve.
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only
@@ -267,8 +250,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * partition key and the sort key.
      * </p>
      * 
-     * @return A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to
-     *         retrieve.</p>
+     * @return A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item
+     *         to retrieve.</p>
      *         <p>
      *         For the primary key, you must provide all of the attributes. For example, with a simple primary key, you
      *         only need to provide a value for the partition key. For a composite primary key, you must provide values
@@ -281,7 +264,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve.
+     * A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to
+     * retrieve.
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only
@@ -290,8 +274,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param key
-     *        A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to
-     *        retrieve.</p>
+     *        A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item
+     *        to retrieve.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For example, with a simple primary key, you
      *        only need to provide a value for the partition key. For a composite primary key, you must provide values
@@ -304,7 +288,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve.
+     * A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to
+     * retrieve.
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only
@@ -313,8 +298,8 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param key
-     *        A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to
-     *        retrieve.</p>
+     *        A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item
+     *        to retrieve.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For example, with a simple primary key, you
      *        only need to provide a value for the partition key. For a composite primary key, you must provide values
@@ -349,43 +334,16 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * <important>
      * <p>
-     * This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i>
-     * instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB
-     * will return a <i>ValidationException</i> exception.
-     * </p>
-     * <p>
-     * This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.
-     * </p>
-     * </important>
-     * <p>
-     * The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will not appear in the result.
-     * </p>
-     * <p>
-     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return <p>
-     *         This is a legacy parameter, for backward compatibility. New applications should use
-     *         <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a
-     *         single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception.
-     *         </p>
-     *         <p>
-     *         This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve
-     *         individual elements within a List or a Map.
-     *         </p>
-     *         </important>
-     *         <p>
-     *         The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes
-     *         will be returned. If any of the requested attributes are not found, they will not appear in the result.
-     *         </p>
-     *         <p>
-     *         Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     *         capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     * @return This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *         >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.List<String> getAttributesToGet() {
@@ -393,44 +351,17 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * <important>
      * <p>
-     * This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i>
-     * instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB
-     * will return a <i>ValidationException</i> exception.
-     * </p>
-     * <p>
-     * This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.
-     * </p>
-     * </important>
-     * <p>
-     * The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will not appear in the result.
-     * </p>
-     * <p>
-     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
-     *        <p>
-     *        This is a legacy parameter, for backward compatibility. New applications should use
-     *        <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a
-     *        single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception.
-     *        </p>
-     *        <p>
-     *        This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve
-     *        individual elements within a List or a Map.
-     *        </p>
-     *        </important>
-     *        <p>
-     *        The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes
-     *        will be returned. If any of the requested attributes are not found, they will not appear in the result.
-     *        </p>
-     *        <p>
-     *        Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     *        capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -443,24 +374,10 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * <important>
      * <p>
-     * This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i>
-     * instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB
-     * will return a <i>ValidationException</i> exception.
-     * </p>
-     * <p>
-     * This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.
-     * </p>
-     * </important>
-     * <p>
-     * The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will not appear in the result.
-     * </p>
-     * <p>
-     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -469,23 +386,10 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param attributesToGet
-     *        <p>
-     *        This is a legacy parameter, for backward compatibility. New applications should use
-     *        <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a
-     *        single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception.
-     *        </p>
-     *        <p>
-     *        This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve
-     *        individual elements within a List or a Map.
-     *        </p>
-     *        </important>
-     *        <p>
-     *        The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes
-     *        will be returned. If any of the requested attributes are not found, they will not appear in the result.
-     *        </p>
-     *        <p>
-     *        Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     *        capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -500,44 +404,17 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * <important>
      * <p>
-     * This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i>
-     * instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB
-     * will return a <i>ValidationException</i> exception.
-     * </p>
-     * <p>
-     * This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.
-     * </p>
-     * </important>
-     * <p>
-     * The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will not appear in the result.
-     * </p>
-     * <p>
-     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
-     *        <p>
-     *        This is a legacy parameter, for backward compatibility. New applications should use
-     *        <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a
-     *        single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception.
-     *        </p>
-     *        <p>
-     *        This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve
-     *        individual elements within a List or a Map.
-     *        </p>
-     *        </important>
-     *        <p>
-     *        The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes
-     *        will be returned. If any of the requested attributes are not found, they will not appear in the result.
-     *        </p>
-     *        <p>
-     *        Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines
-     *        capacity units consumed based on item size, not on the amount of data that is returned to an application.
+     *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -669,11 +546,6 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-     * </p>
-     * </note>
      * 
      * @param projectionExpression
      *        A string that identifies one or more attributes to retrieve from the table. These attributes can include
@@ -687,11 +559,6 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-     *        </p>
      */
 
     public void setProjectionExpression(String projectionExpression) {
@@ -712,11 +579,6 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-     * </p>
-     * </note>
      * 
      * @return A string that identifies one or more attributes to retrieve from the table. These attributes can include
      *         scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by
@@ -729,11 +591,6 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-     *         </p>
      */
 
     public String getProjectionExpression() {
@@ -754,11 +611,6 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-     * </p>
-     * </note>
      * 
      * @param projectionExpression
      *        A string that identifies one or more attributes to retrieve from the table. These attributes can include
@@ -772,11 +624,6 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -788,7 +635,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * One or more substitution tokens for attribute names in an expression. The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>:
+     * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
      * <li>
@@ -823,7 +670,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
-     * <i>ExpressionAttributeNames</i>:
+     * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
      * <li>
@@ -855,7 +702,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @return One or more substitution tokens for attribute names in an expression. The following are some use cases
-     *         for using <i>ExpressionAttributeNames</i>:</p>
+     *         for using <code>ExpressionAttributeNames</code>:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -889,7 +736,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         expression. (For the complete list of reserved words, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
-     *         following for <i>ExpressionAttributeNames</i>:
+     *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
      *         <ul>
      *         <li>
@@ -927,7 +774,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * One or more substitution tokens for attribute names in an expression. The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>:
+     * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
      * <li>
@@ -962,7 +809,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
-     * <i>ExpressionAttributeNames</i>:
+     * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
      * <li>
@@ -995,7 +842,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param expressionAttributeNames
      *        One or more substitution tokens for attribute names in an expression. The following are some use cases for
-     *        using <i>ExpressionAttributeNames</i>:</p>
+     *        using <code>ExpressionAttributeNames</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1029,7 +876,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        (For the complete list of reserved words, see <a
      *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
-     *        following for <i>ExpressionAttributeNames</i>:
+     *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
      *        <ul>
      *        <li>
@@ -1067,7 +914,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * One or more substitution tokens for attribute names in an expression. The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>:
+     * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
      * <li>
@@ -1102,7 +949,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
-     * <i>ExpressionAttributeNames</i>:
+     * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
      * <li>
@@ -1135,7 +982,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param expressionAttributeNames
      *        One or more substitution tokens for attribute names in an expression. The following are some use cases for
-     *        using <i>ExpressionAttributeNames</i>:</p>
+     *        using <code>ExpressionAttributeNames</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1169,7 +1016,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        (For the complete list of reserved words, see <a
      *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
-     *        following for <i>ExpressionAttributeNames</i>:
+     *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
      *        <ul>
      *        <li>

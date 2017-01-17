@@ -40,7 +40,7 @@ public class Projection implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <i>NonKeyAttributes</i>.
+     * attributes are in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -56,9 +56,9 @@ public class Projection implements Serializable, Cloneable {
      * Represents the non-key attribute names which will be projected into the index.
      * </p>
      * <p>
-     * For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two
-     * distinct attributes when determining the total.
+     * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
+     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * as two distinct attributes when determining the total.
      * </p>
      */
     private java.util.List<String> nonKeyAttributes;
@@ -76,7 +76,7 @@ public class Projection implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <i>NonKeyAttributes</i>.
+     * attributes are in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -97,7 +97,7 @@ public class Projection implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <i>NonKeyAttributes</i>.
+     *        projected attributes are in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -125,7 +125,7 @@ public class Projection implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <i>NonKeyAttributes</i>.
+     * attributes are in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -145,7 +145,7 @@ public class Projection implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes are in <i>NonKeyAttributes</i>.
+     *         projected attributes are in <code>NonKeyAttributes</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -173,7 +173,7 @@ public class Projection implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <i>NonKeyAttributes</i>.
+     * attributes are in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -194,7 +194,7 @@ public class Projection implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <i>NonKeyAttributes</i>.
+     *        projected attributes are in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -224,7 +224,7 @@ public class Projection implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <i>NonKeyAttributes</i>.
+     * attributes are in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -245,7 +245,7 @@ public class Projection implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <i>NonKeyAttributes</i>.
+     *        projected attributes are in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -273,7 +273,7 @@ public class Projection implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <i>NonKeyAttributes</i>.
+     * attributes are in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -294,7 +294,7 @@ public class Projection implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <i>NonKeyAttributes</i>.
+     *        projected attributes are in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -316,16 +316,16 @@ public class Projection implements Serializable, Cloneable {
      * Represents the non-key attribute names which will be projected into the index.
      * </p>
      * <p>
-     * For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two
-     * distinct attributes when determining the total.
+     * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
+     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * as two distinct attributes when determining the total.
      * </p>
      * 
      * @return Represents the non-key attribute names which will be projected into the index.</p>
      *         <p>
-     *         For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local
-     *         secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
-     *         counts as two distinct attributes when determining the total.
+     *         For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the
+     *         local secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *         indexes, this counts as two distinct attributes when determining the total.
      */
 
     public java.util.List<String> getNonKeyAttributes() {
@@ -337,17 +337,17 @@ public class Projection implements Serializable, Cloneable {
      * Represents the non-key attribute names which will be projected into the index.
      * </p>
      * <p>
-     * For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two
-     * distinct attributes when determining the total.
+     * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
+     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * as two distinct attributes when determining the total.
      * </p>
      * 
      * @param nonKeyAttributes
      *        Represents the non-key attribute names which will be projected into the index.</p>
      *        <p>
-     *        For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local
-     *        secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
-     *        counts as two distinct attributes when determining the total.
+     *        For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the
+     *        local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes,
+     *        this counts as two distinct attributes when determining the total.
      */
 
     public void setNonKeyAttributes(java.util.Collection<String> nonKeyAttributes) {
@@ -364,9 +364,9 @@ public class Projection implements Serializable, Cloneable {
      * Represents the non-key attribute names which will be projected into the index.
      * </p>
      * <p>
-     * For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two
-     * distinct attributes when determining the total.
+     * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
+     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * as two distinct attributes when determining the total.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -377,9 +377,9 @@ public class Projection implements Serializable, Cloneable {
      * @param nonKeyAttributes
      *        Represents the non-key attribute names which will be projected into the index.</p>
      *        <p>
-     *        For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local
-     *        secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
-     *        counts as two distinct attributes when determining the total.
+     *        For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the
+     *        local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes,
+     *        this counts as two distinct attributes when determining the total.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,17 +398,17 @@ public class Projection implements Serializable, Cloneable {
      * Represents the non-key attribute names which will be projected into the index.
      * </p>
      * <p>
-     * For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local secondary
-     * indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two
-     * distinct attributes when determining the total.
+     * For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local
+     * secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts
+     * as two distinct attributes when determining the total.
      * </p>
      * 
      * @param nonKeyAttributes
      *        Represents the non-key attribute names which will be projected into the index.</p>
      *        <p>
-     *        For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across all of the local
-     *        secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
-     *        counts as two distinct attributes when determining the total.
+     *        For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the
+     *        local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes,
+     *        this counts as two distinct attributes when determining the total.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

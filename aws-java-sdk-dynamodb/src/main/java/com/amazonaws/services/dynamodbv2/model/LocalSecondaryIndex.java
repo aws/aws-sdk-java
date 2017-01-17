@@ -63,7 +63,12 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * </note>
      */
     private java.util.List<KeySchemaElement> keySchema;
-
+    /**
+     * <p>
+     * Represents attributes that are copied (projected) from the table into the local secondary index. These are in
+     * addition to the primary key attributes and index key attributes, which are automatically projected.
+     * </p>
+     */
     private Projection projection;
 
     /**
@@ -373,7 +378,14 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents attributes that are copied (projected) from the table into the local secondary index. These are in
+     * addition to the primary key attributes and index key attributes, which are automatically projected.
+     * </p>
+     * 
      * @param projection
+     *        Represents attributes that are copied (projected) from the table into the local secondary index. These are
+     *        in addition to the primary key attributes and index key attributes, which are automatically projected.
      */
 
     public void setProjection(Projection projection) {
@@ -381,7 +393,14 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents attributes that are copied (projected) from the table into the local secondary index. These are in
+     * addition to the primary key attributes and index key attributes, which are automatically projected.
+     * </p>
+     * 
+     * @return Represents attributes that are copied (projected) from the table into the local secondary index. These
+     *         are in addition to the primary key attributes and index key attributes, which are automatically
+     *         projected.
      */
 
     public Projection getProjection() {
@@ -389,7 +408,14 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents attributes that are copied (projected) from the table into the local secondary index. These are in
+     * addition to the primary key attributes and index key attributes, which are automatically projected.
+     * </p>
+     * 
      * @param projection
+     *        Represents attributes that are copied (projected) from the table into the local secondary index. These are
+     *        in addition to the primary key attributes and index key attributes, which are automatically projected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,18 +17,18 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * For the <i>UpdateItem</i> operation, represents the attributes to be modified, the action to perform on each, and the
- * new value for each.
+ * For the <code>UpdateItem</code> operation, represents the attributes to be modified, the action to perform on each,
+ * and the new value for each.
  * </p>
  * <note>
  * <p>
- * You cannot use <i>UpdateItem</i> to update any primary key attributes. Instead, you will need to delete the item, and
- * then use <i>PutItem</i> to create a new item with new attributes.
+ * You cannot use <code>UpdateItem</code> to update any primary key attributes. Instead, you will need to delete the
+ * item, and then use <code>PutItem</code> to create a new item with new attributes.
  * </p>
  * </note>
  * <p>
  * Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type
- * attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i>
+ * attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code>
  * exception.
  * </p>
  * 
@@ -38,6 +38,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AttributeValueUpdate implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Represents the data for an attribute.
+     * </p>
+     * <p>
+     * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data
+     * itself.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     */
     private AttributeValue value;
     /**
      * <p>
@@ -61,8 +75,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if the
-     * attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified <code>[a,c]</code>, then
-     * the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
+     * attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified <code>[a,c]</code>,
+     * then the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
      * </p>
      * </li>
      * <li>
@@ -74,9 +88,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     * mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from
-     * the existing attribute.
+     * If the existing attribute is a number, and if <code>Value</code> is also a number, then the <code>Value</code> is
+     * mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted
+     * from the existing attribute.
      * </p>
      * <note>
      * <p>
@@ -95,15 +109,15 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </note></li>
      * <li>
      * <p>
-     * If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added to the
-     * existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the attribute value
-     * was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final
-     * attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set attribute
-     * and the attribute type specified does not match the existing set type.
+     * If the existing data type is a set, and if the <code>Value</code> is also a set, then the <code>Value</code> is
+     * added to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
+     * attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
+     * the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set
+     * attribute and the attribute type specified does not match the existing set type.
      * </p>
      * <p>
      * Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the
-     * <i>Value</i> must also be a set of strings. The same holds true for number sets and binary sets.
+     * <code>Value</code> must also be a set of strings. The same holds true for number sets and binary sets.
      * </p>
      * </li>
      * </ul>
@@ -149,10 +163,19 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param value
+     *        Represents the data for an attribute.</p>
+     *        <p>
+     *        Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *        data itself.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param action
      *        Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>, and
-     *        <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the
-     *        table.</p>
+     *        <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the table.
+     *        </p>
      *        <p>
      *        <b>If an item with the specified <i>Key</i> is found in the table:</b>
      *        </p>
@@ -170,7 +193,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if
-     *        the attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *        the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified
      *        <code>[a,c]</code>, then the final attribute value would be <code>[b]</code>. Specifying an empty set is
      *        an error.
      *        </p>
@@ -184,9 +207,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     *        mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is
-     *        subtracted from the existing attribute.
+     *        If the existing attribute is a number, and if <code>Value</code> is also a number, then the
+     *        <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative
+     *        number, then it is subtracted from the existing attribute.
      *        </p>
      *        <note>
      *        <p>
@@ -205,16 +228,17 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </note></li>
      *        <li>
      *        <p>
-     *        If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added
-     *        to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
-     *        attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>
-     *        , then the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is
-     *        specified for a set attribute and the attribute type specified does not match the existing set type.
+     *        If the existing data type is a set, and if the <code>Value</code> is also a set, then the
+     *        <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not mathematical
+     *        addition.) For example, if the attribute value was the set <code>[1,2]</code>, and the <code>ADD</code>
+     *        action specified <code>[3]</code>, then the final attribute value would be <code>[1,2,3]</code>. An error
+     *        occurs if an Add action is specified for a set attribute and the attribute type specified does not match
+     *        the existing set type.
      *        </p>
      *        <p>
      *        Both sets must have the same primitive data type. For example, if the existing data type is a set of
-     *        strings, the <i>Value</i> must also be a set of strings. The same holds true for number sets and binary
-     *        sets.
+     *        strings, the <code>Value</code> must also be a set of strings. The same holds true for number sets and
+     *        binary sets.
      *        </p>
      *        </li>
      *        </ul>
@@ -257,10 +281,19 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param value
+     *        Represents the data for an attribute.</p>
+     *        <p>
+     *        Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *        data itself.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param action
      *        Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>, and
-     *        <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the
-     *        table.</p>
+     *        <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the table.
+     *        </p>
      *        <p>
      *        <b>If an item with the specified <i>Key</i> is found in the table:</b>
      *        </p>
@@ -278,7 +311,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if
-     *        the attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *        the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified
      *        <code>[a,c]</code>, then the final attribute value would be <code>[b]</code>. Specifying an empty set is
      *        an error.
      *        </p>
@@ -292,9 +325,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     *        mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is
-     *        subtracted from the existing attribute.
+     *        If the existing attribute is a number, and if <code>Value</code> is also a number, then the
+     *        <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative
+     *        number, then it is subtracted from the existing attribute.
      *        </p>
      *        <note>
      *        <p>
@@ -313,16 +346,17 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </note></li>
      *        <li>
      *        <p>
-     *        If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added
-     *        to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
-     *        attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>
-     *        , then the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is
-     *        specified for a set attribute and the attribute type specified does not match the existing set type.
+     *        If the existing data type is a set, and if the <code>Value</code> is also a set, then the
+     *        <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not mathematical
+     *        addition.) For example, if the attribute value was the set <code>[1,2]</code>, and the <code>ADD</code>
+     *        action specified <code>[3]</code>, then the final attribute value would be <code>[1,2,3]</code>. An error
+     *        occurs if an Add action is specified for a set attribute and the attribute type specified does not match
+     *        the existing set type.
      *        </p>
      *        <p>
      *        Both sets must have the same primitive data type. For example, if the existing data type is a set of
-     *        strings, the <i>Value</i> must also be a set of strings. The same holds true for number sets and binary
-     *        sets.
+     *        strings, the <code>Value</code> must also be a set of strings. The same holds true for number sets and
+     *        binary sets.
      *        </p>
      *        </li>
      *        </ul>
@@ -361,7 +395,29 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the data for an attribute.
+     * </p>
+     * <p>
+     * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data
+     * itself.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param value
+     *        Represents the data for an attribute.</p>
+     *        <p>
+     *        Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *        data itself.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setValue(AttributeValue value) {
@@ -369,7 +425,28 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the data for an attribute.
+     * </p>
+     * <p>
+     * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data
+     * itself.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return Represents the data for an attribute.</p>
+     *         <p>
+     *         Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *         data itself.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *         >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public AttributeValue getValue() {
@@ -377,7 +454,29 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the data for an attribute.
+     * </p>
+     * <p>
+     * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data
+     * itself.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param value
+     *        Represents the data for an attribute.</p>
+     *        <p>
+     *        Each attribute value is described as a name-value pair. The name is the data type, and the value is the
+     *        data itself.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,8 +507,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if the
-     * attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified <code>[a,c]</code>, then
-     * the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
+     * attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified <code>[a,c]</code>,
+     * then the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
      * </p>
      * </li>
      * <li>
@@ -421,9 +520,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     * mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from
-     * the existing attribute.
+     * If the existing attribute is a number, and if <code>Value</code> is also a number, then the <code>Value</code> is
+     * mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted
+     * from the existing attribute.
      * </p>
      * <note>
      * <p>
@@ -442,15 +541,15 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </note></li>
      * <li>
      * <p>
-     * If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added to the
-     * existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the attribute value
-     * was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final
-     * attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set attribute
-     * and the attribute type specified does not match the existing set type.
+     * If the existing data type is a set, and if the <code>Value</code> is also a set, then the <code>Value</code> is
+     * added to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
+     * attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
+     * the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set
+     * attribute and the attribute type specified does not match the existing set type.
      * </p>
      * <p>
      * Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the
-     * <i>Value</i> must also be a set of strings. The same holds true for number sets and binary sets.
+     * <code>Value</code> must also be a set of strings. The same holds true for number sets and binary sets.
      * </p>
      * </li>
      * </ul>
@@ -503,7 +602,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if
-     *        the attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *        the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified
      *        <code>[a,c]</code>, then the final attribute value would be <code>[b]</code>. Specifying an empty set is
      *        an error.
      *        </p>
@@ -517,9 +616,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     *        mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is
-     *        subtracted from the existing attribute.
+     *        If the existing attribute is a number, and if <code>Value</code> is also a number, then the
+     *        <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative
+     *        number, then it is subtracted from the existing attribute.
      *        </p>
      *        <note>
      *        <p>
@@ -538,16 +637,17 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </note></li>
      *        <li>
      *        <p>
-     *        If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added
-     *        to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
-     *        attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>
-     *        , then the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is
-     *        specified for a set attribute and the attribute type specified does not match the existing set type.
+     *        If the existing data type is a set, and if the <code>Value</code> is also a set, then the
+     *        <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not mathematical
+     *        addition.) For example, if the attribute value was the set <code>[1,2]</code>, and the <code>ADD</code>
+     *        action specified <code>[3]</code>, then the final attribute value would be <code>[1,2,3]</code>. An error
+     *        occurs if an Add action is specified for a set attribute and the attribute type specified does not match
+     *        the existing set type.
      *        </p>
      *        <p>
      *        Both sets must have the same primitive data type. For example, if the existing data type is a set of
-     *        strings, the <i>Value</i> must also be a set of strings. The same holds true for number sets and binary
-     *        sets.
+     *        strings, the <code>Value</code> must also be a set of strings. The same holds true for number sets and
+     *        binary sets.
      *        </p>
      *        </li>
      *        </ul>
@@ -608,8 +708,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if the
-     * attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified <code>[a,c]</code>, then
-     * the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
+     * attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified <code>[a,c]</code>,
+     * then the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
      * </p>
      * </li>
      * <li>
@@ -621,9 +721,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     * mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from
-     * the existing attribute.
+     * If the existing attribute is a number, and if <code>Value</code> is also a number, then the <code>Value</code> is
+     * mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted
+     * from the existing attribute.
      * </p>
      * <note>
      * <p>
@@ -642,15 +742,15 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </note></li>
      * <li>
      * <p>
-     * If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added to the
-     * existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the attribute value
-     * was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final
-     * attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set attribute
-     * and the attribute type specified does not match the existing set type.
+     * If the existing data type is a set, and if the <code>Value</code> is also a set, then the <code>Value</code> is
+     * added to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
+     * attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
+     * the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set
+     * attribute and the attribute type specified does not match the existing set type.
      * </p>
      * <p>
      * Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the
-     * <i>Value</i> must also be a set of strings. The same holds true for number sets and binary sets.
+     * <code>Value</code> must also be a set of strings. The same holds true for number sets and binary sets.
      * </p>
      * </li>
      * </ul>
@@ -702,7 +802,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example,
-     *         if the attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *         if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified
      *         <code>[a,c]</code>, then the final attribute value would be <code>[b]</code>. Specifying an empty set is
      *         an error.
      *         </p>
@@ -716,9 +816,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     *         mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is
-     *         subtracted from the existing attribute.
+     *         If the existing attribute is a number, and if <code>Value</code> is also a number, then the
+     *         <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative
+     *         number, then it is subtracted from the existing attribute.
      *         </p>
      *         <note>
      *         <p>
@@ -737,17 +837,17 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *         </note></li>
      *         <li>
      *         <p>
-     *         If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added
-     *         to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
-     *         attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add
-     *         action is specified for a set attribute and the attribute type specified does not match the existing set
-     *         type.
+     *         If the existing data type is a set, and if the <code>Value</code> is also a set, then the
+     *         <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not mathematical
+     *         addition.) For example, if the attribute value was the set <code>[1,2]</code>, and the <code>ADD</code>
+     *         action specified <code>[3]</code>, then the final attribute value would be <code>[1,2,3]</code>. An error
+     *         occurs if an Add action is specified for a set attribute and the attribute type specified does not match
+     *         the existing set type.
      *         </p>
      *         <p>
      *         Both sets must have the same primitive data type. For example, if the existing data type is a set of
-     *         strings, the <i>Value</i> must also be a set of strings. The same holds true for number sets and binary
-     *         sets.
+     *         strings, the <code>Value</code> must also be a set of strings. The same holds true for number sets and
+     *         binary sets.
      *         </p>
      *         </li>
      *         </ul>
@@ -808,8 +908,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if the
-     * attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified <code>[a,c]</code>, then
-     * the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
+     * attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified <code>[a,c]</code>,
+     * then the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
      * </p>
      * </li>
      * <li>
@@ -821,9 +921,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     * mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from
-     * the existing attribute.
+     * If the existing attribute is a number, and if <code>Value</code> is also a number, then the <code>Value</code> is
+     * mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted
+     * from the existing attribute.
      * </p>
      * <note>
      * <p>
@@ -842,15 +942,15 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </note></li>
      * <li>
      * <p>
-     * If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added to the
-     * existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the attribute value
-     * was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final
-     * attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set attribute
-     * and the attribute type specified does not match the existing set type.
+     * If the existing data type is a set, and if the <code>Value</code> is also a set, then the <code>Value</code> is
+     * added to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
+     * attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
+     * the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set
+     * attribute and the attribute type specified does not match the existing set type.
      * </p>
      * <p>
      * Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the
-     * <i>Value</i> must also be a set of strings. The same holds true for number sets and binary sets.
+     * <code>Value</code> must also be a set of strings. The same holds true for number sets and binary sets.
      * </p>
      * </li>
      * </ul>
@@ -903,7 +1003,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if
-     *        the attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *        the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified
      *        <code>[a,c]</code>, then the final attribute value would be <code>[b]</code>. Specifying an empty set is
      *        an error.
      *        </p>
@@ -917,9 +1017,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     *        mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is
-     *        subtracted from the existing attribute.
+     *        If the existing attribute is a number, and if <code>Value</code> is also a number, then the
+     *        <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative
+     *        number, then it is subtracted from the existing attribute.
      *        </p>
      *        <note>
      *        <p>
@@ -938,16 +1038,17 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </note></li>
      *        <li>
      *        <p>
-     *        If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added
-     *        to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
-     *        attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>
-     *        , then the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is
-     *        specified for a set attribute and the attribute type specified does not match the existing set type.
+     *        If the existing data type is a set, and if the <code>Value</code> is also a set, then the
+     *        <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not mathematical
+     *        addition.) For example, if the attribute value was the set <code>[1,2]</code>, and the <code>ADD</code>
+     *        action specified <code>[3]</code>, then the final attribute value would be <code>[1,2,3]</code>. An error
+     *        occurs if an Add action is specified for a set attribute and the attribute type specified does not match
+     *        the existing set type.
      *        </p>
      *        <p>
      *        Both sets must have the same primitive data type. For example, if the existing data type is a set of
-     *        strings, the <i>Value</i> must also be a set of strings. The same holds true for number sets and binary
-     *        sets.
+     *        strings, the <code>Value</code> must also be a set of strings. The same holds true for number sets and
+     *        binary sets.
      *        </p>
      *        </li>
      *        </ul>
@@ -1010,8 +1111,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if the
-     * attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified <code>[a,c]</code>, then
-     * the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
+     * attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified <code>[a,c]</code>,
+     * then the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
      * </p>
      * </li>
      * <li>
@@ -1023,9 +1124,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     * mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from
-     * the existing attribute.
+     * If the existing attribute is a number, and if <code>Value</code> is also a number, then the <code>Value</code> is
+     * mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted
+     * from the existing attribute.
      * </p>
      * <note>
      * <p>
@@ -1044,15 +1145,15 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </note></li>
      * <li>
      * <p>
-     * If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added to the
-     * existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the attribute value
-     * was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final
-     * attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set attribute
-     * and the attribute type specified does not match the existing set type.
+     * If the existing data type is a set, and if the <code>Value</code> is also a set, then the <code>Value</code> is
+     * added to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
+     * attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
+     * the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set
+     * attribute and the attribute type specified does not match the existing set type.
      * </p>
      * <p>
      * Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the
-     * <i>Value</i> must also be a set of strings. The same holds true for number sets and binary sets.
+     * <code>Value</code> must also be a set of strings. The same holds true for number sets and binary sets.
      * </p>
      * </li>
      * </ul>
@@ -1105,7 +1206,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if
-     *        the attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *        the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified
      *        <code>[a,c]</code>, then the final attribute value would be <code>[b]</code>. Specifying an empty set is
      *        an error.
      *        </p>
@@ -1119,9 +1220,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     *        mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is
-     *        subtracted from the existing attribute.
+     *        If the existing attribute is a number, and if <code>Value</code> is also a number, then the
+     *        <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative
+     *        number, then it is subtracted from the existing attribute.
      *        </p>
      *        <note>
      *        <p>
@@ -1140,16 +1241,17 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </note></li>
      *        <li>
      *        <p>
-     *        If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added
-     *        to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
-     *        attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>
-     *        , then the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is
-     *        specified for a set attribute and the attribute type specified does not match the existing set type.
+     *        If the existing data type is a set, and if the <code>Value</code> is also a set, then the
+     *        <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not mathematical
+     *        addition.) For example, if the attribute value was the set <code>[1,2]</code>, and the <code>ADD</code>
+     *        action specified <code>[3]</code>, then the final attribute value would be <code>[1,2,3]</code>. An error
+     *        occurs if an Add action is specified for a set attribute and the attribute type specified does not match
+     *        the existing set type.
      *        </p>
      *        <p>
      *        Both sets must have the same primitive data type. For example, if the existing data type is a set of
-     *        strings, the <i>Value</i> must also be a set of strings. The same holds true for number sets and binary
-     *        sets.
+     *        strings, the <code>Value</code> must also be a set of strings. The same holds true for number sets and
+     *        binary sets.
      *        </p>
      *        </li>
      *        </ul>
@@ -1210,8 +1312,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if the
-     * attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified <code>[a,c]</code>, then
-     * the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
+     * attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified <code>[a,c]</code>,
+     * then the final attribute value would be <code>[b]</code>. Specifying an empty set is an error.
      * </p>
      * </li>
      * <li>
@@ -1223,9 +1325,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     * mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from
-     * the existing attribute.
+     * If the existing attribute is a number, and if <code>Value</code> is also a number, then the <code>Value</code> is
+     * mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted
+     * from the existing attribute.
      * </p>
      * <note>
      * <p>
@@ -1244,15 +1346,15 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </note></li>
      * <li>
      * <p>
-     * If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added to the
-     * existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the attribute value
-     * was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final
-     * attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set attribute
-     * and the attribute type specified does not match the existing set type.
+     * If the existing data type is a set, and if the <code>Value</code> is also a set, then the <code>Value</code> is
+     * added to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
+     * attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
+     * the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is specified for a set
+     * attribute and the attribute type specified does not match the existing set type.
      * </p>
      * <p>
      * Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the
-     * <i>Value</i> must also be a set of strings. The same holds true for number sets and binary sets.
+     * <code>Value</code> must also be a set of strings. The same holds true for number sets and binary sets.
      * </p>
      * </li>
      * </ul>
@@ -1305,7 +1407,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If a <i>set</i> of values is specified, then those values are subtracted from the old set. For example, if
-     *        the attribute value was the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *        the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specified
      *        <code>[a,c]</code>, then the final attribute value would be <code>[b]</code>. Specifying an empty set is
      *        an error.
      *        </p>
@@ -1319,9 +1421,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is
-     *        mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is
-     *        subtracted from the existing attribute.
+     *        If the existing attribute is a number, and if <code>Value</code> is also a number, then the
+     *        <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative
+     *        number, then it is subtracted from the existing attribute.
      *        </p>
      *        <note>
      *        <p>
@@ -1340,16 +1442,17 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </note></li>
      *        <li>
      *        <p>
-     *        If the existing data type is a set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added
-     *        to the existing set. (This is a <i>set</i> operation, not mathematical addition.) For example, if the
-     *        attribute value was the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>
-     *        , then the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add action is
-     *        specified for a set attribute and the attribute type specified does not match the existing set type.
+     *        If the existing data type is a set, and if the <code>Value</code> is also a set, then the
+     *        <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not mathematical
+     *        addition.) For example, if the attribute value was the set <code>[1,2]</code>, and the <code>ADD</code>
+     *        action specified <code>[3]</code>, then the final attribute value would be <code>[1,2,3]</code>. An error
+     *        occurs if an Add action is specified for a set attribute and the attribute type specified does not match
+     *        the existing set type.
      *        </p>
      *        <p>
      *        Both sets must have the same primitive data type. For example, if the existing data type is a set of
-     *        strings, the <i>Value</i> must also be a set of strings. The same holds true for number sets and binary
-     *        sets.
+     *        strings, the <code>Value</code> must also be a set of strings. The same holds true for number sets and
+     *        binary sets.
      *        </p>
      *        </li>
      *        </ul>

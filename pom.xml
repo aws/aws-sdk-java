@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.79-SNAPSHOT</version>
+  <version>1.11.79</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -111,6 +111,7 @@
     <module>aws-java-sdk-lightsail</module>
     <module>aws-java-sdk-stepfunctions</module>
     <module>aws-java-sdk-health</module>
+    <module>aws-java-sdk-costandusagereport</module>
     <module>aws-java-sdk-codebuild</module>
     <module>aws-java-sdk-appstream</module>
     <module>aws-java-sdk-shield</module>

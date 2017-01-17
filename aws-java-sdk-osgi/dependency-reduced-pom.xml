@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.78</version>
+    <version>1.11.79</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.78</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.79</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.78</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.79</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -438,6 +438,10 @@
                     <group>
                       <title>AWS Health APIs and Notifications</title>
                       <packages>com.amazonaws.services.health*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Cost and Usage Report</title>
+                      <packages>com.amazonaws.services.costandusagereport*</packages>
                     </group>
                     <group>
                       <title>AWS Code Build</title>
@@ -584,10 +588,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.78</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.79</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.78</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.79</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -910,6 +914,10 @@
                       <packages>com.amazonaws.services.health*</packages>
                     </group>
                     <group>
+                      <title>AWS Cost and Usage Report</title>
+                      <packages>com.amazonaws.services.costandusagereport*</packages>
+                    </group>
+                    <group>
                       <title>AWS Code Build</title>
                       <packages>com.amazonaws.services.codebuild*</packages>
                     </group>
@@ -1050,10 +1058,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.78</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.79</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.78</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.79</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1374,6 +1382,10 @@
                 <group>
                   <title>AWS Health APIs and Notifications</title>
                   <packages>com.amazonaws.services.health*</packages>
+                </group>
+                <group>
+                  <title>AWS Cost and Usage Report</title>
+                  <packages>com.amazonaws.services.costandusagereport*</packages>
                 </group>
                 <group>
                   <title>AWS Code Build</title>
@@ -1713,7 +1725,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.78-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.79-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

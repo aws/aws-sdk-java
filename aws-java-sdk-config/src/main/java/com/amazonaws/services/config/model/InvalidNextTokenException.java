@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous
+ * The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the previous
  * response to get the next page of results.
  * </p>
  */

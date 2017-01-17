@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.79-SNAPSHOT</version>
+    <version>1.11.79</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -479,6 +479,12 @@
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-health</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-costandusagereport</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>
@@ -969,6 +975,10 @@
                               <group>
                                   <title>AWS Health APIs and Notifications</title>
                                   <packages>com.amazonaws.services.health*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Cost and Usage Report</title>
+                                  <packages>com.amazonaws.services.costandusagereport*</packages>
                               </group>
                               <group>
                                   <title>AWS Code Build</title>

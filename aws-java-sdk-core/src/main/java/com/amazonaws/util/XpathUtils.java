@@ -58,31 +58,30 @@ public class XpathUtils {
 
     /** The FQCN of the desired DTMManager implementation. */
     private static final String DTM_MANAGER_IMPL_CLASS_NAME = "com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault";
-    
-    /** Logs problems found when parsing xml */
+
+    private static final Log log = LogFactory.getLog(XpathUtils.class);
+
     private static final ErrorHandler ERROR_HANDLER = new ErrorHandler() {
-        
+
         @Override
         public void warning(SAXParseException e) throws SAXException {
             if (log.isDebugEnabled()) {
                 log.debug("xml parse warning: " + e.getMessage(), e);
             }
         }
-        
+
         @Override
         public void fatalError(SAXParseException e) throws SAXException {
             throw e;
         }
-        
+
         @Override
         public void error(SAXParseException e) throws SAXException {
             if (log.isDebugEnabled()) {
                 log.debug("xml parse error: " + e.getMessage(), e);
             }
         }
-    }; 
-
-    private static final Log log = LogFactory.getLog(XpathUtils.class);
+    };
 
     /**
      * Used to optimize performance by avoiding expensive file access every time
@@ -137,8 +136,8 @@ public class XpathUtils {
         } catch(Throwable t) {
             log.debug("Ingore failure in speeding up DTMManager", t);
         }
-    }    
-    
+    }
+
     // XPath is not thread safe and not reentrant.
     /**
      * Returns a new instance of XPath, which is not thread safe and not
@@ -164,7 +163,7 @@ public class XpathUtils {
         is.close();
         return doc;
     }
-    
+
     public static Document documentFrom(String xml) throws SAXException,
             IOException, ParserConfigurationException {
         return documentFrom(new ByteArrayInputStream(xml.getBytes(StringUtils.UTF8)));
@@ -183,14 +182,14 @@ public class XpathUtils {
      * invocation. Consider passing in the xpath explicitly via {
      * {@link #asDouble(String, Node, XPath)} instead.  Note {@link XPath} is
      * not thread-safe and not reentrant.
-     * 
+     *
      * @param expression
      *            The XPath expression to evaluate.
      * @param node
      *            The node to run the expression on.
-     * 
+     *
      * @return The Double result.
-     * 
+     *
      * @throws XPathExpressionException
      *             If there was a problem processing the specified XPath
      *             expression.

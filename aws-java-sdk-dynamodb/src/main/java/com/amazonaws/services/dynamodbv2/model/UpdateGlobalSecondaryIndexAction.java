@@ -32,7 +32,16 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable
      * </p>
      */
     private String indexName;
-
+    /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     */
     private ProvisionedThroughput provisionedThroughput;
 
     /**
@@ -76,7 +85,21 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param provisionedThroughput
+     *        Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *        <p>
+     *        For current minimum and maximum provisioned throughput values, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
@@ -84,7 +107,20 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *         <p>
+     *         For current minimum and maximum provisioned throughput values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *         <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public ProvisionedThroughput getProvisionedThroughput() {
@@ -92,7 +128,21 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param provisionedThroughput
+     *        Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *        <p>
+     *        For current minimum and maximum provisioned throughput values, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
