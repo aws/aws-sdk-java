@@ -156,6 +156,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public ListTagsOfResourceResult listTagsOfResource(ListTagsOfResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutItemResult putItem(PutItemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -193,6 +198,16 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public ScanResult scan(String tableName, java.util.List<String> attributesToGet, java.util.Map<String, Condition> scanFilter) {
         return scan(new ScanRequest().withTableName(tableName).withAttributesToGet(attributesToGet).withScanFilter(scanFilter));
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

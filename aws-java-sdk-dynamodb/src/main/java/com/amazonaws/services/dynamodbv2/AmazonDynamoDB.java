@@ -727,6 +727,30 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
+     * List all tags on an Amazon DynamoDB resource. You can call ListTagsOfResource up to 10 times per second, per
+     * account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsOfResourceRequest
+     * @return Result of the ListTagsOfResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListTagsOfResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsOfResourceResult listTagsOfResource(ListTagsOfResourceRequest listTagsOfResourceRequest);
+
+    /**
+     * <p>
      * Creates a new item, or replaces an old item with a new item. If an item that has the same primary key as the new
      * item already exists in the specified table, the new item completely replaces the existing item. You can perform a
      * conditional put operation (add a new item if one with the specified primary key doesn't exist), or replace an
@@ -911,6 +935,79 @@ public interface AmazonDynamoDB {
      * @see #scan(ScanRequest)
      */
     ScanResult scan(String tableName, java.util.List<String> attributesToGet, java.util.Map<String, Condition> scanFilter);
+
+    /**
+     * <p>
+     * Associate a set of tags with an Amazon DynamoDB resource. You can then activate these user-defined tags so that
+     * they appear on the Billing and Cost Management console for cost allocation tracking. You can call TagResource up
+     * to 5 times per second, per account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @sample AmazonDynamoDB.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the association of tags from an Amazon DynamoDB resource. You can call UntagResource up to 5 times per
+     * second, per account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @sample AmazonDynamoDB.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

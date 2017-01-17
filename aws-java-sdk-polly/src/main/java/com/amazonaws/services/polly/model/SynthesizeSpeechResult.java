@@ -49,7 +49,7 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      * <li>
      * <p>
      * If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
-     * audio/pcm.
+     * audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      * </p>
      * </li>
      * </ul>
@@ -124,7 +124,7 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      * <li>
      * <p>
      * If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
-     * audio/pcm.
+     * audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      * </p>
      * </li>
      * </ul>
@@ -150,7 +150,7 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      *        <li>
      *        <p>
      *        If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
-     *        audio/pcm.
+     *        audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      *        </p>
      *        </li>
      *        </ul>
@@ -181,7 +181,7 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      * <li>
      * <p>
      * If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
-     * audio/pcm.
+     * audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      * </p>
      * </li>
      * </ul>
@@ -206,7 +206,7 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      *         <li>
      *         <p>
      *         If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned
-     *         is audio/pcm.
+     *         is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      *         </p>
      *         </li>
      *         </ul>
@@ -237,7 +237,7 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      * <li>
      * <p>
      * If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
-     * audio/pcm.
+     * audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      * </p>
      * </li>
      * </ul>
@@ -263,7 +263,7 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      *        <li>
      *        <p>
      *        If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
-     *        audio/pcm.
+     *        audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      *        </p>
      *        </li>
      *        </ul>

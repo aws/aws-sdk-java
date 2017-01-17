@@ -31,6 +31,12 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
      * the labels.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      */
     private String orientationCorrection;
 
@@ -111,12 +117,22 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
      * the labels.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @param orientationCorrection
      *        Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
      *        your application displays the image, you can use this value to correct the orientation. If Amazon
      *        Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
-     *        orientation before detecting the labels.
+     *        orientation before detecting the labels. </p> <note>
+     *        <p>
+     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        </p>
      * @see OrientationCorrection
      */
 
@@ -131,11 +147,21 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
      * the labels.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @return Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
      *         your application displays the image, you can use this value to correct the orientation. If Amazon
      *         Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
-     *         orientation before detecting the labels.
+     *         orientation before detecting the labels. </p> <note>
+     *         <p>
+     *         If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *         orientation correction and the value of OrientationCorrection will be nil.
+     *         </p>
      * @see OrientationCorrection
      */
 
@@ -150,12 +176,22 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
      * the labels.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @param orientationCorrection
      *        Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
      *        your application displays the image, you can use this value to correct the orientation. If Amazon
      *        Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
-     *        orientation before detecting the labels.
+     *        orientation before detecting the labels. </p> <note>
+     *        <p>
+     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
      */
@@ -172,12 +208,22 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
      * the labels.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @param orientationCorrection
      *        Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
      *        your application displays the image, you can use this value to correct the orientation. If Amazon
      *        Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
-     *        orientation before detecting the labels.
+     *        orientation before detecting the labels. </p> <note>
+     *        <p>
+     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        </p>
      * @see OrientationCorrection
      */
 
@@ -192,12 +238,22 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      * that the input image was rotated (for example, by 90 degrees), it first corrects the orientation before detecting
      * the labels.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @param orientationCorrection
      *        Amazon Rekognition returns the orientation of the input image that was detected (clockwise direction). If
      *        your application displays the image, you can use this value to correct the orientation. If Amazon
      *        Rekognition detects that the input image was rotated (for example, by 90 degrees), it first corrects the
-     *        orientation before detecting the labels.
+     *        orientation before detecting the labels. </p> <note>
+     *        <p>
+     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
      */

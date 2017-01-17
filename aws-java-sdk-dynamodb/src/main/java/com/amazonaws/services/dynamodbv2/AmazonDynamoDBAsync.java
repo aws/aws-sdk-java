@@ -1169,6 +1169,49 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * List all tags on an Amazon DynamoDB resource. You can call ListTagsOfResource up to 10 times per second, per
+     * account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsOfResourceRequest
+     * @return A Java Future containing the result of the ListTagsOfResource operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ListTagsOfResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsOfResourceResult> listTagsOfResourceAsync(ListTagsOfResourceRequest listTagsOfResourceRequest);
+
+    /**
+     * <p>
+     * List all tags on an Amazon DynamoDB resource. You can call ListTagsOfResource up to 10 times per second, per
+     * account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsOfResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsOfResource operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ListTagsOfResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsOfResourceResult> listTagsOfResourceAsync(ListTagsOfResourceRequest listTagsOfResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsOfResourceRequest, ListTagsOfResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new item, or replaces an old item with a new item. If an item that has the same primary key as the new
      * item already exists in the specified table, the new item completely replaces the existing item. You can perform a
      * conditional put operation (add a new item if one with the specified primary key doesn't exist), or replace an
@@ -1482,6 +1525,94 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<ScanResult> scanAsync(String tableName, java.util.List<String> attributesToGet, java.util.Map<String, Condition> scanFilter,
             com.amazonaws.handlers.AsyncHandler<ScanRequest, ScanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate a set of tags with an Amazon DynamoDB resource. You can then activate these user-defined tags so that
+     * they appear on the Billing and Cost Management console for cost allocation tracking. You can call TagResource up
+     * to 5 times per second, per account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonDynamoDBAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associate a set of tags with an Amazon DynamoDB resource. You can then activate these user-defined tags so that
+     * they appear on the Billing and Cost Management console for cost allocation tracking. You can call TagResource up
+     * to 5 times per second, per account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the association of tags from an Amazon DynamoDB resource. You can call UntagResource up to 5 times per
+     * second, per account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonDynamoDBAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the association of tags from an Amazon DynamoDB resource. You can call UntagResource up to 5 times per
+     * second, per account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

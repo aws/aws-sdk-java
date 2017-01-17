@@ -30,6 +30,12 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
      * coordinates that are returned.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      */
     private String orientationCorrection;
 
@@ -113,11 +119,21 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
      * coordinates that are returned.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @param orientationCorrection
      *        The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
      *        degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *        bounding box coordinates that are returned.
+     *        bounding box coordinates that are returned. </p> <note>
+     *        <p>
+     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        </p>
      * @see OrientationCorrection
      */
 
@@ -131,10 +147,20 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
      * coordinates that are returned.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @return The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
      *         degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *         bounding box coordinates that are returned.
+     *         bounding box coordinates that are returned. </p> <note>
+     *         <p>
+     *         If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *         orientation correction and the value of OrientationCorrection will be nil.
+     *         </p>
      * @see OrientationCorrection
      */
 
@@ -148,11 +174,21 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
      * coordinates that are returned.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @param orientationCorrection
      *        The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
      *        degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *        bounding box coordinates that are returned.
+     *        bounding box coordinates that are returned. </p> <note>
+     *        <p>
+     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
      */
@@ -168,11 +204,21 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
      * coordinates that are returned.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @param orientationCorrection
      *        The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
      *        degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *        bounding box coordinates that are returned.
+     *        bounding box coordinates that are returned. </p> <note>
+     *        <p>
+     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        </p>
      * @see OrientationCorrection
      */
 
@@ -186,11 +232,21 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
      * coordinates that are returned.
      * </p>
+     * <note>
+     * <p>
+     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     * orientation correction and the value of OrientationCorrection will be nil.
+     * </p>
+     * </note>
      * 
      * @param orientationCorrection
      *        The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
      *        degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *        bounding box coordinates that are returned.
+     *        bounding box coordinates that are returned. </p> <note>
+     *        <p>
+     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
+     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
      */

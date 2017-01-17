@@ -43,12 +43,18 @@ public enum DynamoDBv2Actions implements Action {
     GetItem("dynamodb:GetItem"),
     /** Action for the ListTables operation. */
     ListTables("dynamodb:ListTables"),
+    /** Action for the ListTagsOfResource operation. */
+    ListTagsOfResource("dynamodb:ListTagsOfResource"),
     /** Action for the PutItem operation. */
     PutItem("dynamodb:PutItem"),
     /** Action for the Query operation. */
     Query("dynamodb:Query"),
     /** Action for the Scan operation. */
     Scan("dynamodb:Scan"),
+    /** Action for the TagResource operation. */
+    TagResource("dynamodb:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("dynamodb:UntagResource"),
     /** Action for the UpdateItem operation. */
     UpdateItem("dynamodb:UpdateItem"),
     /** Action for the UpdateTable operation. */

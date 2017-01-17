@@ -1132,6 +1132,59 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * List all tags on an Amazon DynamoDB resource. You can call ListTagsOfResource up to 10 times per second, per
+     * account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsOfResourceRequest
+     * @return Result of the ListTagsOfResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListTagsOfResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsOfResourceResult listTagsOfResource(ListTagsOfResourceRequest listTagsOfResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsOfResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsOfResourceRequest> request = null;
+        Response<ListTagsOfResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsOfResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsOfResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsOfResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsOfResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new item, or replaces an old item with a new item. If an item that has the same primary key as the new
      * item already exists in the specified table, the new item completely replaces the existing item. You can perform a
      * conditional put operation (add a new item if one with the specified primary key doesn't exist), or replace an
@@ -1392,6 +1445,137 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     @Override
     public ScanResult scan(String tableName, java.util.List<String> attributesToGet, java.util.Map<String, Condition> scanFilter) {
         return scan(new ScanRequest().withTableName(tableName).withAttributesToGet(attributesToGet).withScanFilter(scanFilter));
+    }
+
+    /**
+     * <p>
+     * Associate a set of tags with an Amazon DynamoDB resource. You can then activate these user-defined tags so that
+     * they appear on the Billing and Cost Management console for cost allocation tracking. You can call TagResource up
+     * to 5 times per second, per account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @sample AmazonDynamoDB.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the association of tags from an Amazon DynamoDB resource. You can call UntagResource up to 5 times per
+     * second, per account.
+     * </p>
+     * <p>
+     * For an overview on tagging DynamoDB resources, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @sample AmazonDynamoDB.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
