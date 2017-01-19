@@ -17,7 +17,7 @@ package com.amazonaws.services.dynamodbv2.document.api;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.dynamodbv2.document.BatchWriteItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.TableWriteItems;

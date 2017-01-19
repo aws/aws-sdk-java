@@ -17,7 +17,7 @@
 import java.util.Collections;
 import java.util.Map;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 import com.amazonaws.annotation.Beta;
 

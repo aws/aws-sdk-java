@@ -23,7 +23,7 @@ import java.util.TreeMap;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.util.IOUtils;

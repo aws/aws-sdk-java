@@ -18,7 +18,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.annotation.Beta;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;

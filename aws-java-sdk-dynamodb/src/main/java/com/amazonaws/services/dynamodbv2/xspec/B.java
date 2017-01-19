@@ -18,7 +18,7 @@ import java.nio.ByteBuffer;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 import com.amazonaws.annotation.Beta;
 

@@ -17,7 +17,7 @@
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 import com.amazonaws.annotation.Beta;
 

@@ -971,7 +971,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of
-     * another DB cluster.
+     * another DB cluster or Amazon RDS MySQL DB instance.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a

@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.s3.model;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 /**
  * The S3 object identifier for an instruction file.

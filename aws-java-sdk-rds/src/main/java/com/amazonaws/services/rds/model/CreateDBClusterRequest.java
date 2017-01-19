@@ -279,7 +279,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created as a Read Replica.
+     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read
+     * Replica.
      * </p>
      */
     private String replicationSourceIdentifier;
@@ -1917,11 +1918,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created as a Read Replica.
+     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read
+     * Replica.
      * </p>
      * 
      * @param replicationSourceIdentifier
-     *        The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created as a Read Replica.
+     *        The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a
+     *        Read Replica.
      */
 
     public void setReplicationSourceIdentifier(String replicationSourceIdentifier) {
@@ -1930,10 +1933,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created as a Read Replica.
+     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read
+     * Replica.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created as a Read Replica.
+     * @return The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a
+     *         Read Replica.
      */
 
     public String getReplicationSourceIdentifier() {
@@ -1942,11 +1947,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created as a Read Replica.
+     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read
+     * Replica.
      * </p>
      * 
      * @param replicationSourceIdentifier
-     *        The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created as a Read Replica.
+     *        The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a
+     *        Read Replica.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

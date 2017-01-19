@@ -19,7 +19,7 @@ import java.net.URISyntaxException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;

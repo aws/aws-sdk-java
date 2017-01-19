@@ -14,7 +14,7 @@
  */
  package com.amazonaws.services.dynamodbv2.xspec;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 @Immutable
 final class NamedElement extends PathElement {

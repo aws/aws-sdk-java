@@ -30,7 +30,7 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.TimingInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 import java.util.ArrayList;
 import java.util.Collections;

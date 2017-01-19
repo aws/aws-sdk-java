@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.s3.internal.crypto;
 
-import org.apache.http.annotation.GuardedBy;
+import com.amazonaws.annotation.GuardedBy;
 
 import com.amazonaws.SdkClientException;
 

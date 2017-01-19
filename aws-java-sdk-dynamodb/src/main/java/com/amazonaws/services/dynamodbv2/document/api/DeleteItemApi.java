@@ -16,7 +16,7 @@ package com.amazonaws.services.dynamodbv2.document.api;
 
 import java.util.Map;
 
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.dynamodbv2.document.DeleteItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Expected;

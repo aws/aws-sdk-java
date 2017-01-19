@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 /**
  * A PEM object in a PEM file.

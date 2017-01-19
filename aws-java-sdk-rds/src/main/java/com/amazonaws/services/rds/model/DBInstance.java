@@ -215,6 +215,12 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBInstanceIdentifiers;
     /**
      * <p>
+     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> readReplicaDBClusterIdentifiers;
+    /**
+     * <p>
      * License model information for this DB instance.
      * </p>
      */
@@ -1645,6 +1651,79 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * </p>
+     * 
+     * @return Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     */
+
+    public java.util.List<String> getReadReplicaDBClusterIdentifiers() {
+        if (readReplicaDBClusterIdentifiers == null) {
+            readReplicaDBClusterIdentifiers = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return readReplicaDBClusterIdentifiers;
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * </p>
+     * 
+     * @param readReplicaDBClusterIdentifiers
+     *        Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     */
+
+    public void setReadReplicaDBClusterIdentifiers(java.util.Collection<String> readReplicaDBClusterIdentifiers) {
+        if (readReplicaDBClusterIdentifiers == null) {
+            this.readReplicaDBClusterIdentifiers = null;
+            return;
+        }
+
+        this.readReplicaDBClusterIdentifiers = new com.amazonaws.internal.SdkInternalList<String>(readReplicaDBClusterIdentifiers);
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReadReplicaDBClusterIdentifiers(java.util.Collection)} or
+     * {@link #withReadReplicaDBClusterIdentifiers(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param readReplicaDBClusterIdentifiers
+     *        Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withReadReplicaDBClusterIdentifiers(String... readReplicaDBClusterIdentifiers) {
+        if (this.readReplicaDBClusterIdentifiers == null) {
+            setReadReplicaDBClusterIdentifiers(new com.amazonaws.internal.SdkInternalList<String>(readReplicaDBClusterIdentifiers.length));
+        }
+        for (String ele : readReplicaDBClusterIdentifiers) {
+            this.readReplicaDBClusterIdentifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * </p>
+     * 
+     * @param readReplicaDBClusterIdentifiers
+     *        Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withReadReplicaDBClusterIdentifiers(java.util.Collection<String> readReplicaDBClusterIdentifiers) {
+        setReadReplicaDBClusterIdentifiers(readReplicaDBClusterIdentifiers);
+        return this;
+    }
+
+    /**
+     * <p>
      * License model information for this DB instance.
      * </p>
      * 
@@ -2997,6 +3076,8 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("ReadReplicaSourceDBInstanceIdentifier: ").append(getReadReplicaSourceDBInstanceIdentifier()).append(",");
         if (getReadReplicaDBInstanceIdentifiers() != null)
             sb.append("ReadReplicaDBInstanceIdentifiers: ").append(getReadReplicaDBInstanceIdentifiers()).append(",");
+        if (getReadReplicaDBClusterIdentifiers() != null)
+            sb.append("ReadReplicaDBClusterIdentifiers: ").append(getReadReplicaDBClusterIdentifiers()).append(",");
         if (getLicenseModel() != null)
             sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
         if (getIops() != null)
@@ -3155,6 +3236,11 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getReadReplicaDBInstanceIdentifiers() != null
                 && other.getReadReplicaDBInstanceIdentifiers().equals(this.getReadReplicaDBInstanceIdentifiers()) == false)
             return false;
+        if (other.getReadReplicaDBClusterIdentifiers() == null ^ this.getReadReplicaDBClusterIdentifiers() == null)
+            return false;
+        if (other.getReadReplicaDBClusterIdentifiers() != null
+                && other.getReadReplicaDBClusterIdentifiers().equals(this.getReadReplicaDBClusterIdentifiers()) == false)
+            return false;
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
             return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false)
@@ -3280,6 +3366,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaSourceDBInstanceIdentifier() == null) ? 0 : getReadReplicaSourceDBInstanceIdentifier().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaDBInstanceIdentifiers() == null) ? 0 : getReadReplicaDBInstanceIdentifiers().hashCode());
+        hashCode = prime * hashCode + ((getReadReplicaDBClusterIdentifiers() == null) ? 0 : getReadReplicaDBClusterIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupMemberships() == null) ? 0 : getOptionGroupMemberships().hashCode());

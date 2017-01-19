@@ -17,7 +17,7 @@
 import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.attribute_exists;
 import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.attribute_not_exists;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 import com.amazonaws.annotation.Beta;
 

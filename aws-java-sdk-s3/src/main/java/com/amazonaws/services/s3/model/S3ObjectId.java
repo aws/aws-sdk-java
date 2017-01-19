@@ -18,7 +18,7 @@ import java.io.Serializable;
 import static com.amazonaws.services.s3.model.InstructionFileId.DEFAULT_INSTRUCTION_FILE_SUFFIX;
 import static com.amazonaws.services.s3.model.InstructionFileId.DOT;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 /**
  * An Immutable S3 object identifier. Used to uniquely identify an S3 object.

@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.dynamodbv2.document.api;
 
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.dynamodbv2.document.TableCollection;
 import com.amazonaws.services.dynamodbv2.document.spec.ListTablesSpec;
