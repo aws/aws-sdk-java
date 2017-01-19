@@ -109,6 +109,10 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                 if (placement.getGroupName() != null) {
                     request.addParameter("LaunchSpecification.Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
                 }
+
+                if (placement.getTenancy() != null) {
+                    request.addParameter("LaunchSpecification.Placement.Tenancy", StringUtils.fromString(placement.getTenancy()));
+                }
             }
 
             if (launchSpecification.getKernelId() != null) {

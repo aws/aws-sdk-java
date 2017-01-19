@@ -48,7 +48,7 @@ public class Placement implements Serializable, Cloneable {
     private String tenancy;
     /**
      * <p>
-     * The ID of the Dedicted host on which the instance resides. This parameter is not support for the
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
      * <a>ImportInstance</a> command.
      * </p>
      */
@@ -254,12 +254,12 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicted host on which the instance resides. This parameter is not support for the
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
      * <a>ImportInstance</a> command.
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicted host on which the instance resides. This parameter is not support for the
+     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
      *        <a>ImportInstance</a> command.
      */
 
@@ -269,11 +269,11 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicted host on which the instance resides. This parameter is not support for the
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
      * <a>ImportInstance</a> command.
      * </p>
      * 
-     * @return The ID of the Dedicted host on which the instance resides. This parameter is not support for the
+     * @return The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
      *         <a>ImportInstance</a> command.
      */
 
@@ -283,12 +283,12 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicted host on which the instance resides. This parameter is not support for the
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
      * <a>ImportInstance</a> command.
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicted host on which the instance resides. This parameter is not support for the
+     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
      *        <a>ImportInstance</a> command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

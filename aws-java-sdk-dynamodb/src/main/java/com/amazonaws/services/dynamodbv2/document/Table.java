@@ -19,6 +19,13 @@ import java.util.List;
 import java.util.Map;
 
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
+import com.amazonaws.waiters.FixedDelayStrategy;
+import com.amazonaws.waiters.MaxAttemptsRetryStrategy;
+import com.amazonaws.waiters.PollingStrategy;
+import com.amazonaws.waiters.Waiter;
+import com.amazonaws.waiters.WaiterParameters;
 
 import com.amazonaws.annotation.Beta;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
@@ -459,8 +466,9 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
 
     /**
      * A convenient blocking call that can be used, typically during table
-     * creation, to wait for the table to become active by polling the table
-     * every 5 seconds.
+     * creation, to wait for the table to become active. This method uses
+     * {@link com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters}
+     * to poll the status of the table every 5 seconds.
      * 
      * @return the table description when the table has become active
      * 
@@ -468,42 +476,34 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      * @throws ResourceNotFoundException if the table doesn't exist
      */
     public TableDescription waitForActive() throws InterruptedException {
-        for (;;) {
-            TableDescription desc = describe();
-            String status = desc.getTableStatus();
-            switch (TableStatus.fromValue(status)) {
-                case ACTIVE:
-                    return desc;
-                case CREATING:
-                case UPDATING:
-                    Thread.sleep(SLEEP_TIME_MILLIS);
-                    continue;
-                default:
-                    throw new IllegalArgumentException("Table " + tableName
-                        + " is not being created (with status=" + status + ")");
-            }
+        Waiter waiter = client.waiters().tableExists();
+
+        try {
+            waiter.run(new WaiterParameters<DescribeTableRequest>(new DescribeTableRequest(tableName))
+                    .withPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(25), new FixedDelayStrategy(5))));
+            return describe();
+        } catch (Exception exception) {
+            // The additional describe call is to return ResourceNotFoundException if the table doesn't exist.
+            // This is to preserve backwards compatibility.
+            describe();
+            throw new IllegalArgumentException("Table " + tableName + " did not transition into ACTIVE state.", exception);
         }
     }
 
     /**
      * A convenient blocking call that can be used, typically during table
-     * deletion, to wait for the table to become deleted by polling the table
-     * every 5 seconds.
+     * deletion, to wait for the table to become deleted. This method uses
+     * {@link com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters}
+     * to poll the status of the table every 5 seconds.
      */
     public void waitForDelete() throws InterruptedException {
+        Waiter waiter = client.waiters().tableNotExists();
         try {
-            for (;;) {
-                TableDescription desc = describe();
-                String status = desc.getTableStatus();
-                if (TableStatus.fromValue(status) == TableStatus.DELETING) {
-                    Thread.sleep(SLEEP_TIME_MILLIS);
-                } else
-                    throw new IllegalArgumentException("Table " + tableName
-                        + " is not being deleted (with status=" + status + ")");
-            }
-        } catch(ResourceNotFoundException deleted) {
+            waiter.run(new WaiterParameters<DescribeTableRequest>(new DescribeTableRequest(tableName))
+                    .withPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(25), new FixedDelayStrategy(5))));
+        } catch (Exception exception) {
+            throw new IllegalArgumentException("Table " + tableName + " is not deleted.", exception);
         }
-        return;
     }
 
     /**
@@ -513,7 +513,14 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      *
      * @return the table description if the table has become active; or null
      * if the table has been deleted.
+     *
+     * @deprecated If this method is called immediately after
+     * {@link AmazonDynamoDB#createTable(CreateTableRequest)} or
+     * {@link AmazonDynamoDB#deleteTable(DeleteTableRequest)} operation,
+     * the result might be incorrect as all {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB}
+     * operations are eventually consistent and might have a few seconds delay before the status is changed.
      */
+    @Deprecated
     public TableDescription waitForActiveOrDelete() throws InterruptedException {
         try {
             for (;;) {
@@ -537,7 +544,14 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
      * 
      * @return the table description if the table and all it's indexes have
      *         become active; or null if the table has been deleted.
+     *
+     * @deprecated If this method is called immediately after
+     * {@link AmazonDynamoDB#createTable(CreateTableRequest)} or
+     * {@link AmazonDynamoDB#deleteTable(DeleteTableRequest)} operation,
+     * the result might be incorrect as all {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB}
+     * operations are eventually consistent and might have a few seconds delay before the status is changed.
      */
+    @Deprecated
     public TableDescription waitForAllActiveOrDelete() throws InterruptedException {
         try {
             retry: for (;;) {

@@ -139,6 +139,11 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                             request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".Placement.GroupName",
                                     StringUtils.fromString(placement.getGroupName()));
                         }
+
+                        if (placement.getTenancy() != null) {
+                            request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".Placement.Tenancy",
+                                    StringUtils.fromString(placement.getTenancy()));
+                        }
                     }
 
                     if (spotFleetRequestConfigDataLaunchSpecificationsListValue.getKernelId() != null) {

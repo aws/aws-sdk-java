@@ -42,6 +42,14 @@ public class SpotPlacement implements Serializable, Cloneable {
      * </p>
      */
     private String groupName;
+    /**
+     * <p>
+     * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
+     * instances.
+     * </p>
+     */
+    private String tenancy;
 
     /**
      * Default constructor for SpotPlacement object. Callers should use the setter or fluent setter (with...) methods to
@@ -166,6 +174,99 @@ public class SpotPlacement implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
+     * instances.
+     * </p>
+     * 
+     * @param tenancy
+     *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
+     *        Spot instances.
+     * @see Tenancy
+     */
+
+    public void setTenancy(String tenancy) {
+        this.tenancy = tenancy;
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
+     * instances.
+     * </p>
+     * 
+     * @return The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     *         <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
+     *         Spot instances.
+     * @see Tenancy
+     */
+
+    public String getTenancy() {
+        return this.tenancy;
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
+     * instances.
+     * </p>
+     * 
+     * @param tenancy
+     *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
+     *        Spot instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Tenancy
+     */
+
+    public SpotPlacement withTenancy(String tenancy) {
+        setTenancy(tenancy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
+     * instances.
+     * </p>
+     * 
+     * @param tenancy
+     *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
+     *        Spot instances.
+     * @see Tenancy
+     */
+
+    public void setTenancy(Tenancy tenancy) {
+        this.tenancy = tenancy.toString();
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
+     * instances.
+     * </p>
+     * 
+     * @param tenancy
+     *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
+     *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
+     *        Spot instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Tenancy
+     */
+
+    public SpotPlacement withTenancy(Tenancy tenancy) {
+        setTenancy(tenancy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -179,7 +280,9 @@ public class SpotPlacement implements Serializable, Cloneable {
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: ").append(getGroupName());
+            sb.append("GroupName: ").append(getGroupName()).append(",");
+        if (getTenancy() != null)
+            sb.append("Tenancy: ").append(getTenancy());
         sb.append("}");
         return sb.toString();
     }
@@ -202,6 +305,10 @@ public class SpotPlacement implements Serializable, Cloneable {
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
+        if (other.getTenancy() == null ^ this.getTenancy() == null)
+            return false;
+        if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
+            return false;
         return true;
     }
 
@@ -212,6 +319,7 @@ public class SpotPlacement implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         return hashCode;
     }
 

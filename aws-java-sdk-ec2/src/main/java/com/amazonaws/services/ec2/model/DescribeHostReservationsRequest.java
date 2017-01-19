@@ -44,8 +44,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * <li>
@@ -157,8 +157,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * <li>
@@ -178,8 +178,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code>
-     *         | <code>All Upfront</code>).
+     *         <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *         <code>AllUpfront</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -209,8 +209,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * <li>
@@ -231,8 +231,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     *        <code>All Upfront</code>).
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -264,8 +264,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * <li>
@@ -291,8 +291,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     *        <code>All Upfront</code>).
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -326,8 +326,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * <li>
@@ -348,8 +348,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     *        <code>All Upfront</code>).
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
      *        </p>
      *        </li>
      *        <li>

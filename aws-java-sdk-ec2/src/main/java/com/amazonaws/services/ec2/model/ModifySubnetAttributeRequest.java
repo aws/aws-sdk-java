@@ -48,6 +48,10 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the
      * instance therefore receives an IPv6 address).
      * </p>
+     * <p>
+     * If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an
+     * IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.
+     * </p>
      */
     private Boolean assignIpv6AddressOnCreation;
 
@@ -165,11 +169,19 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the
      * instance therefore receives an IPv6 address).
      * </p>
+     * <p>
+     * If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an
+     * IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.
+     * </p>
      * 
      * @param assignIpv6AddressOnCreation
      *        Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
      *        assigned an IPv6 address. This includes a network interface that's created when launching an instance into
-     *        the subnet (the instance therefore receives an IPv6 address).
+     *        the subnet (the instance therefore receives an IPv6 address). </p>
+     *        <p>
+     *        If you enable the IPv6 addressing feature for your subnet, your network interface or instance only
+     *        receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2
+     *        API.
      */
 
     public void setAssignIpv6AddressOnCreation(Boolean assignIpv6AddressOnCreation) {
@@ -182,10 +194,18 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the
      * instance therefore receives an IPv6 address).
      * </p>
+     * <p>
+     * If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an
+     * IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.
+     * </p>
      * 
      * @return Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
      *         assigned an IPv6 address. This includes a network interface that's created when launching an instance
-     *         into the subnet (the instance therefore receives an IPv6 address).
+     *         into the subnet (the instance therefore receives an IPv6 address). </p>
+     *         <p>
+     *         If you enable the IPv6 addressing feature for your subnet, your network interface or instance only
+     *         receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2
+     *         API.
      */
 
     public Boolean getAssignIpv6AddressOnCreation() {
@@ -198,11 +218,19 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the
      * instance therefore receives an IPv6 address).
      * </p>
+     * <p>
+     * If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an
+     * IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.
+     * </p>
      * 
      * @param assignIpv6AddressOnCreation
      *        Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
      *        assigned an IPv6 address. This includes a network interface that's created when launching an instance into
-     *        the subnet (the instance therefore receives an IPv6 address).
+     *        the subnet (the instance therefore receives an IPv6 address). </p>
+     *        <p>
+     *        If you enable the IPv6 addressing feature for your subnet, your network interface or instance only
+     *        receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,10 +245,18 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the
      * instance therefore receives an IPv6 address).
      * </p>
+     * <p>
+     * If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an
+     * IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.
+     * </p>
      * 
      * @return Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
      *         assigned an IPv6 address. This includes a network interface that's created when launching an instance
-     *         into the subnet (the instance therefore receives an IPv6 address).
+     *         into the subnet (the instance therefore receives an IPv6 address). </p>
+     *         <p>
+     *         If you enable the IPv6 addressing feature for your subnet, your network interface or instance only
+     *         receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2
+     *         API.
      */
 
     public Boolean isAssignIpv6AddressOnCreation() {

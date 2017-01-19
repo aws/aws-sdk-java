@@ -52,6 +52,11 @@ public class SpotPlacementStaxUnmarshaller implements Unmarshaller<SpotPlacement
                     spotPlacement.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tenancy", targetDepth)) {
+                    spotPlacement.setTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotPlacement;

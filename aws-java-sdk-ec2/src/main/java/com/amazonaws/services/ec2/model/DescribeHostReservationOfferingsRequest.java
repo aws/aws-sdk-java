@@ -60,8 +60,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * </ul>
@@ -244,8 +244,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * </ul>
@@ -259,8 +259,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code>
-     *         | <code>All Upfront</code>).
+     *         <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *         <code>AllUpfront</code>).
      *         </p>
      *         </li>
      */
@@ -284,8 +284,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * </ul>
@@ -300,8 +300,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     *        <code>All Upfront</code>).
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
      *        </p>
      *        </li>
      */
@@ -327,8 +327,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * </ul>
@@ -348,8 +348,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     *        <code>All Upfront</code>).
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -377,8 +377,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     * <code>All Upfront</code>).
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
      * </p>
      * </li>
      * </ul>
@@ -393,8 +393,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial Upfront</code> |
-     *        <code>All Upfront</code>).
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
