@@ -39,8 +39,9 @@ public class DescribeThingTypeResultJsonUnmarshaller implements Unmarshaller<Des
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeThingTypeResult;
+        }
 
         while (true) {
             if (token == null)

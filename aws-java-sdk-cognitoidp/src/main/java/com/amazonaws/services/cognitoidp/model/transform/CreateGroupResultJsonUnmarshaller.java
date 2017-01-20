@@ -39,8 +39,9 @@ public class CreateGroupResultJsonUnmarshaller implements Unmarshaller<CreateGro
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createGroupResult;
+        }
 
         while (true) {
             if (token == null)

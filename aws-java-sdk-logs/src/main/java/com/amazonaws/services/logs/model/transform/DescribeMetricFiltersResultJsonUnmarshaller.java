@@ -39,8 +39,9 @@ public class DescribeMetricFiltersResultJsonUnmarshaller implements Unmarshaller
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeMetricFiltersResult;
+        }
 
         while (true) {
             if (token == null)

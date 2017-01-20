@@ -39,8 +39,9 @@ public class PeerVpcResultJsonUnmarshaller implements Unmarshaller<PeerVpcResult
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return peerVpcResult;
+        }
 
         while (true) {
             if (token == null)

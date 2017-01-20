@@ -39,8 +39,9 @@ public class GetJobResultJsonUnmarshaller implements Unmarshaller<GetJobResult, 
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getJobResult;
+        }
 
         while (true) {
             if (token == null)

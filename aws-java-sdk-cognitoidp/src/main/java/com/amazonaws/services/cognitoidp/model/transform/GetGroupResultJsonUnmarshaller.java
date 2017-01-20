@@ -39,8 +39,9 @@ public class GetGroupResultJsonUnmarshaller implements Unmarshaller<GetGroupResu
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getGroupResult;
+        }
 
         while (true) {
             if (token == null)

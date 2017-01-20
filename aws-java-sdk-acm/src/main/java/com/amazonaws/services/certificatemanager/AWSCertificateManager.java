@@ -162,10 +162,7 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
-     * Returns a list of the fields contained in the specified ACM Certificate. For example, this action returns the
-     * certificate status, a flag that indicates whether the certificate is associated with any other AWS service, and
-     * the date at which the certificate request was created. You specify the ACM Certificate on input by its Amazon
-     * Resource Name (ARN).
+     * Returns detailed metadata about the specified ACM Certificate.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -279,9 +276,9 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
-     * Lists the tags that have been applied to the ACM Certificate. Use the certificate ARN to specify the certificate.
-     * To add a tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete a tag, use the
-     * <a>RemoveTagsFromCertificate</a> action.
+     * Lists the tags that have been applied to the ACM Certificate. Use the certificate's Amazon Resource Name (ARN) to
+     * specify the certificate. To add a tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To
+     * delete a tag, use the <a>RemoveTagsFromCertificate</a> action.
      * </p>
      * 
      * @param listTagsForCertificateRequest

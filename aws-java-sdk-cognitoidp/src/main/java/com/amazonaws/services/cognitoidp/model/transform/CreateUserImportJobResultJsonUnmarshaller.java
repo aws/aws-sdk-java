@@ -39,8 +39,9 @@ public class CreateUserImportJobResultJsonUnmarshaller implements Unmarshaller<C
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createUserImportJobResult;
+        }
 
         while (true) {
             if (token == null)

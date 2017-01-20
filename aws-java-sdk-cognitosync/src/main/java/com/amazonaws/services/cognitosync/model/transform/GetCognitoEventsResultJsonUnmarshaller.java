@@ -39,8 +39,9 @@ public class GetCognitoEventsResultJsonUnmarshaller implements Unmarshaller<GetC
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getCognitoEventsResult;
+        }
 
         while (true) {
             if (token == null)

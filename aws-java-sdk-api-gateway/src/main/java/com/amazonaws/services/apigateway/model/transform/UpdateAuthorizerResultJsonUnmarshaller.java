@@ -39,8 +39,9 @@ public class UpdateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Upda
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateAuthorizerResult;
+        }
 
         while (true) {
             if (token == null)

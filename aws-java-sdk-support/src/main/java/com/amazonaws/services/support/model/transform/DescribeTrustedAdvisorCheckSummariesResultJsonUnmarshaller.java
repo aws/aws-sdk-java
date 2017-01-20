@@ -40,8 +40,9 @@ public class DescribeTrustedAdvisorCheckSummariesResultJsonUnmarshaller implemen
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeTrustedAdvisorCheckSummariesResult;
+        }
 
         while (true) {
             if (token == null)

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains detailed metadata about an ACM Certificate. This structure is returned in the response to a
+ * Contains metadata about an ACM certificate. This structure is returned in the response to a
  * <a>DescribeCertificate</a> request.
  * </p>
  * 
@@ -52,8 +52,9 @@ public class CertificateDetail implements Serializable, Cloneable {
     private java.util.List<String> subjectAlternativeNames;
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation. This field exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.
+     * Contains information about the initial validation of each domain name that occurs as a result of the
+     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
+     * .
      * </p>
      */
     private java.util.List<DomainValidation> domainValidationOptions;
@@ -168,6 +169,14 @@ public class CertificateDetail implements Serializable, Cloneable {
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate.
+     * This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * </p>
+     */
+    private RenewalSummary renewalSummary;
 
     /**
      * <p>
@@ -357,12 +366,14 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation. This field exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.
+     * Contains information about the initial validation of each domain name that occurs as a result of the
+     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
+     * .
      * </p>
      * 
-     * @return Contains information about the email address or addresses used for domain validation. This field exists
-     *         only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * @return Contains information about the initial validation of each domain name that occurs as a result of the
+     *         <a>RequestCertificate</a> request. This field exists only when the certificate type is
+     *         <code>AMAZON_ISSUED</code>.
      */
 
     public java.util.List<DomainValidation> getDomainValidationOptions() {
@@ -371,13 +382,15 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation. This field exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.
+     * Contains information about the initial validation of each domain name that occurs as a result of the
+     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
+     * .
      * </p>
      * 
      * @param domainValidationOptions
-     *        Contains information about the email address or addresses used for domain validation. This field exists
-     *        only when the certificate type is <code>AMAZON_ISSUED</code>.
+     *        Contains information about the initial validation of each domain name that occurs as a result of the
+     *        <a>RequestCertificate</a> request. This field exists only when the certificate type is
+     *        <code>AMAZON_ISSUED</code>.
      */
 
     public void setDomainValidationOptions(java.util.Collection<DomainValidation> domainValidationOptions) {
@@ -391,8 +404,9 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation. This field exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.
+     * Contains information about the initial validation of each domain name that occurs as a result of the
+     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
+     * .
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -401,8 +415,9 @@ public class CertificateDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param domainValidationOptions
-     *        Contains information about the email address or addresses used for domain validation. This field exists
-     *        only when the certificate type is <code>AMAZON_ISSUED</code>.
+     *        Contains information about the initial validation of each domain name that occurs as a result of the
+     *        <a>RequestCertificate</a> request. This field exists only when the certificate type is
+     *        <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,13 +433,15 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation. This field exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.
+     * Contains information about the initial validation of each domain name that occurs as a result of the
+     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
+     * .
      * </p>
      * 
      * @param domainValidationOptions
-     *        Contains information about the email address or addresses used for domain validation. This field exists
-     *        only when the certificate type is <code>AMAZON_ISSUED</code>.
+     *        Contains information about the initial validation of each domain name that occurs as a result of the
+     *        <a>RequestCertificate</a> request. This field exists only when the certificate type is
+     *        <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1401,6 +1418,58 @@ public class CertificateDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate.
+     * This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * </p>
+     * 
+     * @param renewalSummary
+     *        Contains information about the status of ACM's <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the
+     *        certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     */
+
+    public void setRenewalSummary(RenewalSummary renewalSummary) {
+        this.renewalSummary = renewalSummary;
+    }
+
+    /**
+     * <p>
+     * Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate.
+     * This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * </p>
+     * 
+     * @return Contains information about the status of ACM's <a
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the
+     *         certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     */
+
+    public RenewalSummary getRenewalSummary() {
+        return this.renewalSummary;
+    }
+
+    /**
+     * <p>
+     * Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate.
+     * This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * </p>
+     * 
+     * @param renewalSummary
+     *        Contains information about the status of ACM's <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the
+     *        certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDetail withRenewalSummary(RenewalSummary renewalSummary) {
+        setRenewalSummary(renewalSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1450,7 +1519,9 @@ public class CertificateDetail implements Serializable, Cloneable {
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getRenewalSummary() != null)
+            sb.append("RenewalSummary: ").append(getRenewalSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -1545,6 +1616,10 @@ public class CertificateDetail implements Serializable, Cloneable {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getRenewalSummary() == null ^ this.getRenewalSummary() == null)
+            return false;
+        if (other.getRenewalSummary() != null && other.getRenewalSummary().equals(this.getRenewalSummary()) == false)
+            return false;
         return true;
     }
 
@@ -1573,6 +1648,7 @@ public class CertificateDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInUseBy() == null) ? 0 : getInUseBy().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getRenewalSummary() == null) ? 0 : getRenewalSummary().hashCode());
         return hashCode;
     }
 

@@ -39,8 +39,9 @@ public class RequestCertificateResultJsonUnmarshaller implements Unmarshaller<Re
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return requestCertificateResult;
+        }
 
         while (true) {
             if (token == null)

@@ -42,13 +42,14 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to return in one batch.
+     * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The locale (language) to return information in. The default is English.
+     * The locale (language) to return information in. English (en) is the default and the only supported value at this
+     * time.
      * </p>
      */
     private String locale;
@@ -153,11 +154,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in one batch.
+     * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return in one batch.
+     *        The maximum number of items to return in one batch, between 10 and 100, inclusive.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -166,10 +167,10 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in one batch.
+     * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
      * 
-     * @return The maximum number of items to return in one batch.
+     * @return The maximum number of items to return in one batch, between 10 and 100, inclusive.
      */
 
     public Integer getMaxResults() {
@@ -178,11 +179,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in one batch.
+     * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return in one batch.
+     *        The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +194,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The locale (language) to return information in. The default is English.
+     * The locale (language) to return information in. English (en) is the default and the only supported value at this
+     * time.
      * </p>
      * 
      * @param locale
-     *        The locale (language) to return information in. The default is English.
+     *        The locale (language) to return information in. English (en) is the default and the only supported value
+     *        at this time.
      */
 
     public void setLocale(String locale) {
@@ -206,10 +209,12 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The locale (language) to return information in. The default is English.
+     * The locale (language) to return information in. English (en) is the default and the only supported value at this
+     * time.
      * </p>
      * 
-     * @return The locale (language) to return information in. The default is English.
+     * @return The locale (language) to return information in. English (en) is the default and the only supported value
+     *         at this time.
      */
 
     public String getLocale() {
@@ -218,11 +223,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The locale (language) to return information in. The default is English.
+     * The locale (language) to return information in. English (en) is the default and the only supported value at this
+     * time.
      * </p>
      * 
      * @param locale
-     *        The locale (language) to return information in. The default is English.
+     *        The locale (language) to return information in. English (en) is the default and the only supported value
+     *        at this time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

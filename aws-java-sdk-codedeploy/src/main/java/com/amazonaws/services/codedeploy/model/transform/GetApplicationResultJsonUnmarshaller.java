@@ -39,8 +39,9 @@ public class GetApplicationResultJsonUnmarshaller implements Unmarshaller<GetApp
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getApplicationResult;
+        }
 
         while (true) {
             if (token == null)

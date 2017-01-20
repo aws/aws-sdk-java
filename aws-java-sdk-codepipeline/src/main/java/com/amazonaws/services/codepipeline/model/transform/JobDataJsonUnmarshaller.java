@@ -39,8 +39,9 @@ public class JobDataJsonUnmarshaller implements Unmarshaller<JobData, JsonUnmars
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)

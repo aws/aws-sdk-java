@@ -39,8 +39,9 @@ public class PutIntegrationResultJsonUnmarshaller implements Unmarshaller<PutInt
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return putIntegrationResult;
+        }
 
         while (true) {
             if (token == null)

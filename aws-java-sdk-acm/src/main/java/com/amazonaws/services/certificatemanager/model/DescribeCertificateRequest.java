@@ -27,7 +27,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * String that contains an ACM Certificate ARN. The ARN must be of the form:
+     * The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -42,7 +42,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * String that contains an ACM Certificate ARN. The ARN must be of the form:
+     * The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -54,7 +54,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param certificateArn
-     *        String that contains an ACM Certificate ARN. The ARN must be of the form:</p>
+     *        The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *        </p>
@@ -70,7 +70,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * String that contains an ACM Certificate ARN. The ARN must be of the form:
+     * The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -81,7 +81,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return String that contains an ACM Certificate ARN. The ARN must be of the form:</p>
+     * @return The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:</p>
      *         <p>
      *         <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *         </p>
@@ -97,7 +97,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * String that contains an ACM Certificate ARN. The ARN must be of the form:
+     * The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -109,7 +109,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param certificateArn
-     *        String that contains an ACM Certificate ARN. The ARN must be of the form:</p>
+     *        The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *        </p>

@@ -39,8 +39,9 @@ public class DescribeParametersResultJsonUnmarshaller implements Unmarshaller<De
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeParametersResult;
+        }
 
         while (true) {
             if (token == null)

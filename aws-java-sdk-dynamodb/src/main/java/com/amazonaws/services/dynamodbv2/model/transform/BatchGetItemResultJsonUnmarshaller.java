@@ -41,8 +41,9 @@ public class BatchGetItemResultJsonUnmarshaller implements Unmarshaller<BatchGet
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return batchGetItemResult;
+        }
 
         while (true) {
             if (token == null)

@@ -39,8 +39,9 @@ public class GetDomainNamesResultJsonUnmarshaller implements Unmarshaller<GetDom
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getDomainNamesResult;
+        }
 
         while (true) {
             if (token == null)

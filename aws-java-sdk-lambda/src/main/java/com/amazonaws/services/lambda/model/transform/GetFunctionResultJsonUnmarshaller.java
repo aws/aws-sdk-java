@@ -39,8 +39,9 @@ public class GetFunctionResultJsonUnmarshaller implements Unmarshaller<GetFuncti
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getFunctionResult;
+        }
 
         while (true) {
             if (token == null)

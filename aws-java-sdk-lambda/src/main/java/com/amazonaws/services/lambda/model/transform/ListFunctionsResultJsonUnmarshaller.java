@@ -39,8 +39,9 @@ public class ListFunctionsResultJsonUnmarshaller implements Unmarshaller<ListFun
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listFunctionsResult;
+        }
 
         while (true) {
             if (token == null)

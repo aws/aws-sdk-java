@@ -39,8 +39,9 @@ public class GetEvaluationResultJsonUnmarshaller implements Unmarshaller<GetEval
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getEvaluationResult;
+        }
 
         while (true) {
             if (token == null)

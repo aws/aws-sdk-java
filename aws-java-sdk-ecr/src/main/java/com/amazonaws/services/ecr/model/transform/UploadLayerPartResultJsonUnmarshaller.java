@@ -39,8 +39,9 @@ public class UploadLayerPartResultJsonUnmarshaller implements Unmarshaller<Uploa
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return uploadLayerPartResult;
+        }
 
         while (true) {
             if (token == null)

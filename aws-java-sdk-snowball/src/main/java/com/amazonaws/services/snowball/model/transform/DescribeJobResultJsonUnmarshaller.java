@@ -39,8 +39,9 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeJobResult;
+        }
 
         while (true) {
             if (token == null)

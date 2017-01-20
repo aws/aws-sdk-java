@@ -39,8 +39,9 @@ public class UpdateProductResultJsonUnmarshaller implements Unmarshaller<UpdateP
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateProductResult;
+        }
 
         while (true) {
             if (token == null)

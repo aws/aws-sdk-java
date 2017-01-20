@@ -48,8 +48,9 @@ import com.amazonaws.services.health.model.transform.*;
  * <p>
  * <fullname>AWS Health</fullname>
  * <p>
- * The AWS Health API provides programmatic access to the AWS Health information that is presented in the AWS Personal
- * Health Dashboard. You can get information about events that affect your AWS resources:
+ * The AWS Health API provides programmatic access to the AWS Health information that is presented in the <a
+ * href="https://phd.aws.amazon.com/phd/home#/">AWS Personal Health Dashboard</a>. You can get information about events
+ * that affect your AWS resources:
  * </p>
  * <ul>
  * <li>

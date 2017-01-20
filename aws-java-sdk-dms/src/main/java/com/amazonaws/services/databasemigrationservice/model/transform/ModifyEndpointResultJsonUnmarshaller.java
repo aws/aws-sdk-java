@@ -39,8 +39,9 @@ public class ModifyEndpointResultJsonUnmarshaller implements Unmarshaller<Modify
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return modifyEndpointResult;
+        }
 
         while (true) {
             if (token == null)

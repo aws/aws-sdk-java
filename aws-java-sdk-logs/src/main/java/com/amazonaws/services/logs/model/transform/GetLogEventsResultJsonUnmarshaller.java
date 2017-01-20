@@ -39,8 +39,9 @@ public class GetLogEventsResultJsonUnmarshaller implements Unmarshaller<GetLogEv
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getLogEventsResult;
+        }
 
         while (true) {
             if (token == null)

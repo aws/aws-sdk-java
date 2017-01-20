@@ -39,8 +39,9 @@ public class BulkPublishResultJsonUnmarshaller implements Unmarshaller<BulkPubli
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return bulkPublishResult;
+        }
 
         while (true) {
             if (token == null)

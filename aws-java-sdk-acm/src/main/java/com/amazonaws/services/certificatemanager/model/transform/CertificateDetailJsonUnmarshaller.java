@@ -39,8 +39,9 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -127,6 +128,10 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
                     certificateDetail.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RenewalSummary", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setRenewalSummary(RenewalSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

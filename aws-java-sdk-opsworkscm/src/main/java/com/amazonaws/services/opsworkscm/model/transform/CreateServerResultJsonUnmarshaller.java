@@ -39,8 +39,9 @@ public class CreateServerResultJsonUnmarshaller implements Unmarshaller<CreateSe
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createServerResult;
+        }
 
         while (true) {
             if (token == null)

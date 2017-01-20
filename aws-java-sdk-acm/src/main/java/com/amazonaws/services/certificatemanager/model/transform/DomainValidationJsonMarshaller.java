@@ -56,6 +56,9 @@ public class DomainValidationJsonMarshaller {
             if (domainValidation.getValidationDomain() != null) {
                 jsonGenerator.writeFieldName("ValidationDomain").writeValue(domainValidation.getValidationDomain());
             }
+            if (domainValidation.getValidationStatus() != null) {
+                jsonGenerator.writeFieldName("ValidationStatus").writeValue(domainValidation.getValidationStatus());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

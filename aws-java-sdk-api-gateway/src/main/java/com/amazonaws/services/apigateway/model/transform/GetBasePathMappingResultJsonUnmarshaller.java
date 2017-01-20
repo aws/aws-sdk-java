@@ -39,8 +39,9 @@ public class GetBasePathMappingResultJsonUnmarshaller implements Unmarshaller<Ge
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getBasePathMappingResult;
+        }
 
         while (true) {
             if (token == null)

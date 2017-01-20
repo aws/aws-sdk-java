@@ -39,7 +39,7 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
     private String aggregateField;
     /**
      * <p>
-     * The maximum number of items to return in one batch.
+     * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
      */
     private Integer maxResults;
@@ -168,11 +168,11 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of items to return in one batch.
+     * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return in one batch.
+     *        The maximum number of items to return in one batch, between 10 and 100, inclusive.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -181,10 +181,10 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of items to return in one batch.
+     * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
      * 
-     * @return The maximum number of items to return in one batch.
+     * @return The maximum number of items to return in one batch, between 10 and 100, inclusive.
      */
 
     public Integer getMaxResults() {
@@ -193,11 +193,11 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of items to return in one batch.
+     * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return in one batch.
+     *        The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

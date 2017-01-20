@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example,
- * <code>issue</code>, the service (for example, <code>EC2</code>), and the event type code (for example,
+ * <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example,
  * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
  * </p>
  * 

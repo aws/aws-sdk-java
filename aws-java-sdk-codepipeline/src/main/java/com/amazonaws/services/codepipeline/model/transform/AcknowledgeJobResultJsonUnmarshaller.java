@@ -39,8 +39,9 @@ public class AcknowledgeJobResultJsonUnmarshaller implements Unmarshaller<Acknow
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return acknowledgeJobResult;
+        }
 
         while (true) {
             if (token == null)

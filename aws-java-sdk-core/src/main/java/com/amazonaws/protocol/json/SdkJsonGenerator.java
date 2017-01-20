@@ -90,6 +90,16 @@ public class SdkJsonGenerator implements StructuredJsonGenerator {
     }
 
     @Override
+    public StructuredJsonGenerator writeNull() {
+        try {
+            generator.writeNull();
+        } catch (IOException e) {
+            throw new JsonGenerationException(e);
+        }
+        return this;
+    }
+
+    @Override
     public StructuredJsonGenerator writeStartObject() {
         try {
             generator.writeStartObject();

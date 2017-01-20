@@ -126,6 +126,10 @@ public class CertificateDetailJsonMarshaller {
             if (certificateDetail.getType() != null) {
                 jsonGenerator.writeFieldName("Type").writeValue(certificateDetail.getType());
             }
+            if (certificateDetail.getRenewalSummary() != null) {
+                jsonGenerator.writeFieldName("RenewalSummary");
+                RenewalSummaryJsonMarshaller.getInstance().marshall(certificateDetail.getRenewalSummary(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

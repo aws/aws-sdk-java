@@ -39,8 +39,9 @@ public class GetBundlesResultJsonUnmarshaller implements Unmarshaller<GetBundles
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getBundlesResult;
+        }
 
         while (true) {
             if (token == null)

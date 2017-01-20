@@ -39,8 +39,9 @@ public class DescribeDestinationsResultJsonUnmarshaller implements Unmarshaller<
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeDestinationsResult;
+        }
 
         while (true) {
             if (token == null)

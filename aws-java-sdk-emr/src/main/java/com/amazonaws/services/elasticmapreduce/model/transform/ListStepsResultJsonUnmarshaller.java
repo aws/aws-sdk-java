@@ -39,8 +39,9 @@ public class ListStepsResultJsonUnmarshaller implements Unmarshaller<ListStepsRe
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listStepsResult;
+        }
 
         while (true) {
             if (token == null)

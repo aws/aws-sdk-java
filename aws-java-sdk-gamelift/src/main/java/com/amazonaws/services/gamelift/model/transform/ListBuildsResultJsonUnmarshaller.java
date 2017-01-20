@@ -39,8 +39,9 @@ public class ListBuildsResultJsonUnmarshaller implements Unmarshaller<ListBuilds
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listBuildsResult;
+        }
 
         while (true) {
             if (token == null)

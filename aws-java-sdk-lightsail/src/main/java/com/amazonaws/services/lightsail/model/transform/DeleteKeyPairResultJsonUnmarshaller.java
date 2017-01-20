@@ -39,8 +39,9 @@ public class DeleteKeyPairResultJsonUnmarshaller implements Unmarshaller<DeleteK
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return deleteKeyPairResult;
+        }
 
         while (true) {
             if (token == null)

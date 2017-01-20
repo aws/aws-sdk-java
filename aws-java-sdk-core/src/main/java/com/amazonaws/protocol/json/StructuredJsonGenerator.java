@@ -34,6 +34,8 @@ public interface StructuredJsonGenerator {
 
     StructuredJsonGenerator writeEndArray();
 
+    StructuredJsonGenerator writeNull();
+
     StructuredJsonGenerator writeStartObject();
 
     StructuredJsonGenerator writeEndObject();

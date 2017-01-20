@@ -39,8 +39,9 @@ public class ListTagsLogGroupResultJsonUnmarshaller implements Unmarshaller<List
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listTagsLogGroupResult;
+        }
 
         while (true) {
             if (token == null)

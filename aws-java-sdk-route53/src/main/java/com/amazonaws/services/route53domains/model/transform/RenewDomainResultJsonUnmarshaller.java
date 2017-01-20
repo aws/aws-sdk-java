@@ -39,8 +39,9 @@ public class RenewDomainResultJsonUnmarshaller implements Unmarshaller<RenewDoma
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return renewDomainResult;
+        }
 
         while (true) {
             if (token == null)

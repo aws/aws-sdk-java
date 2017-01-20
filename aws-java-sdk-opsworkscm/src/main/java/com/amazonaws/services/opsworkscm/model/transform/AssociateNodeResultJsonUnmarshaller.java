@@ -39,8 +39,9 @@ public class AssociateNodeResultJsonUnmarshaller implements Unmarshaller<Associa
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return associateNodeResult;
+        }
 
         while (true) {
             if (token == null)

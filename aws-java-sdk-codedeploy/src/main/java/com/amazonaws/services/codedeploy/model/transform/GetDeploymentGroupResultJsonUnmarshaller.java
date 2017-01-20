@@ -39,8 +39,9 @@ public class GetDeploymentGroupResultJsonUnmarshaller implements Unmarshaller<Ge
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getDeploymentGroupResult;
+        }
 
         while (true) {
             if (token == null)

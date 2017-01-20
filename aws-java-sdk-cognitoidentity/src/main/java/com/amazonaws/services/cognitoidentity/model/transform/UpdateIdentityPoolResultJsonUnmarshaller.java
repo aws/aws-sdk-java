@@ -39,8 +39,9 @@ public class UpdateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Up
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateIdentityPoolResult;
+        }
 
         while (true) {
             if (token == null)

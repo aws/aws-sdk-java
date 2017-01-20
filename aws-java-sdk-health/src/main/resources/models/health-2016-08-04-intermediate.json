@@ -48,7 +48,7 @@
     "defaultEndpoint" : "health.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "health.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<fullname>AWS Health</fullname> <p>The AWS Health API provides programmatic access to the AWS Health information that is presented in the AWS Personal Health Dashboard. You can get information about events that affect your AWS resources:</p> <ul> <li> <p> <a>DescribeEvents</a>: Summary information about events.</p> </li> <li> <p> <a>DescribeEventDetails</a>: Detailed information about one or more events.</p> </li> <li> <p> <a>DescribeAffectedEntities</a>: Information about AWS resources that are affected by one or more events.</p> </li> </ul> <p>In addition, these operations provide information about event types and summary counts of events or affected entities:</p> <ul> <li> <p> <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health tracks.</p> </li> <li> <p> <a>DescribeEventAggregates</a>: A count of the number of events that meet specified criteria.</p> </li> <li> <p> <a>DescribeEntityAggregates</a>: A count of the number of affected entities that meet specified criteria.</p> </li> </ul> <p>The Health API requires a Business or Enterprise support plan from <a href=\"http://aws.amazon.com/premiumsupport/\">AWS Support</a>. Calling the Health API from an account that does not have a Business or Enterprise support plan causes a <code>SubscriptionRequiredException</code>. </p> <p>For authentication of requests, AWS Health uses the <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4 Signing Process</a>.</p> <p>See the <a href=\"http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html\">AWS Health User Guide</a> for information about how to use the API.</p> <p> <b>Service Endpoint</b> </p> <p>The HTTP endpoint for the AWS Health API is:</p> <ul> <li> <p>https://health.us-east-1.amazonaws.com </p> </li> </ul>",
+    "documentation" : "<fullname>AWS Health</fullname> <p>The AWS Health API provides programmatic access to the AWS Health information that is presented in the <a href=\"https://phd.aws.amazon.com/phd/home#/\">AWS Personal Health Dashboard</a>. You can get information about events that affect your AWS resources:</p> <ul> <li> <p> <a>DescribeEvents</a>: Summary information about events.</p> </li> <li> <p> <a>DescribeEventDetails</a>: Detailed information about one or more events.</p> </li> <li> <p> <a>DescribeAffectedEntities</a>: Information about AWS resources that are affected by one or more events.</p> </li> </ul> <p>In addition, these operations provide information about event types and summary counts of events or affected entities:</p> <ul> <li> <p> <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health tracks.</p> </li> <li> <p> <a>DescribeEventAggregates</a>: A count of the number of events that meet specified criteria.</p> </li> <li> <p> <a>DescribeEntityAggregates</a>: A count of the number of affected entities that meet specified criteria.</p> </li> </ul> <p>The Health API requires a Business or Enterprise support plan from <a href=\"http://aws.amazon.com/premiumsupport/\">AWS Support</a>. Calling the Health API from an account that does not have a Business or Enterprise support plan causes a <code>SubscriptionRequiredException</code>. </p> <p>For authentication of requests, AWS Health uses the <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4 Signing Process</a>.</p> <p>See the <a href=\"http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html\">AWS Health User Guide</a> for information about how to use the API.</p> <p> <b>Service Endpoint</b> </p> <p>The HTTP endpoint for the AWS Health API is:</p> <ul> <li> <p>https://health.us-east-1.amazonaws.com </p> </li> </ul>",
     "endpointPrefix" : "health",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -1591,11 +1591,11 @@
         "c2jName" : "locale",
         "c2jShape" : "locale",
         "deprecated" : false,
-        "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+        "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withLocale",
-        "getterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@return The locale (language) to return information in. The default is English.*/",
+        "getterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@return The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "getterMethodName" : "getLocale",
         "getterModel" : {
           "returnType" : "String",
@@ -1622,7 +1622,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Locale",
-        "setterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.*/",
+        "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "setterMethodName" : "setLocale",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -1633,12 +1633,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "locale",
           "variableType" : "String",
-          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1703,11 +1703,11 @@
         "c2jName" : "maxResults",
         "c2jShape" : "maxResults",
         "deprecated" : false,
-        "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+        "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@return The maximum number of items to return in one batch.*/",
+        "getterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@return The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -1734,7 +1734,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.*/",
+        "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -1745,12 +1745,12 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -1818,11 +1818,11 @@
           "c2jName" : "locale",
           "c2jShape" : "locale",
           "deprecated" : false,
-          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withLocale",
-          "getterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@return The locale (language) to return information in. The default is English.*/",
+          "getterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@return The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "getterMethodName" : "getLocale",
           "getterModel" : {
             "returnType" : "String",
@@ -1849,7 +1849,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Locale",
-          "setterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.*/",
+          "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "setterMethodName" : "setLocale",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -1860,12 +1860,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "locale",
             "variableType" : "String",
-            "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+            "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1875,11 +1875,11 @@
           "c2jName" : "maxResults",
           "c2jShape" : "maxResults",
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@return The maximum number of items to return in one batch.*/",
+          "getterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@return The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -1906,7 +1906,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.*/",
+          "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -1917,12 +1917,12 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+            "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -3137,11 +3137,11 @@
         "c2jName" : "maxResults",
         "c2jShape" : "maxResults",
         "deprecated" : false,
-        "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+        "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@return The maximum number of items to return in one batch.*/",
+        "getterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@return The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -3168,7 +3168,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.*/",
+        "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -3179,12 +3179,12 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -3365,11 +3365,11 @@
           "c2jName" : "maxResults",
           "c2jShape" : "maxResults",
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@return The maximum number of items to return in one batch.*/",
+          "getterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@return The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -3396,7 +3396,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.*/",
+          "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -3407,12 +3407,12 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+            "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -4052,11 +4052,11 @@
         "c2jName" : "locale",
         "c2jShape" : "locale",
         "deprecated" : false,
-        "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+        "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withLocale",
-        "getterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@return The locale (language) to return information in. The default is English.*/",
+        "getterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@return The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "getterMethodName" : "getLocale",
         "getterModel" : {
           "returnType" : "String",
@@ -4083,7 +4083,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Locale",
-        "setterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.*/",
+        "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "setterMethodName" : "setLocale",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -4094,12 +4094,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "locale",
           "variableType" : "String",
-          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4238,11 +4238,11 @@
           "c2jName" : "locale",
           "c2jShape" : "locale",
           "deprecated" : false,
-          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withLocale",
-          "getterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@return The locale (language) to return information in. The default is English.*/",
+          "getterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@return The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "getterMethodName" : "getLocale",
           "getterModel" : {
             "returnType" : "String",
@@ -4269,7 +4269,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Locale",
-          "setterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.*/",
+          "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "setterMethodName" : "setLocale",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -4280,12 +4280,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "locale",
             "variableType" : "String",
-            "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+            "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4939,11 +4939,11 @@
         "c2jName" : "locale",
         "c2jShape" : "locale",
         "deprecated" : false,
-        "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+        "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withLocale",
-        "getterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@return The locale (language) to return information in. The default is English.*/",
+        "getterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@return The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "getterMethodName" : "getLocale",
         "getterModel" : {
           "returnType" : "String",
@@ -4970,7 +4970,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Locale",
-        "setterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.*/",
+        "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "setterMethodName" : "setLocale",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -4981,12 +4981,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "locale",
           "variableType" : "String",
-          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5051,11 +5051,11 @@
         "c2jName" : "maxResults",
         "c2jShape" : "maxResults",
         "deprecated" : false,
-        "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+        "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@return The maximum number of items to return in one batch.*/",
+        "getterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@return The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -5082,7 +5082,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.*/",
+        "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -5093,12 +5093,12 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -5166,11 +5166,11 @@
           "c2jName" : "locale",
           "c2jShape" : "locale",
           "deprecated" : false,
-          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withLocale",
-          "getterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@return The locale (language) to return information in. The default is English.*/",
+          "getterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@return The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "getterMethodName" : "getLocale",
           "getterModel" : {
             "returnType" : "String",
@@ -5197,7 +5197,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Locale",
-          "setterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.*/",
+          "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "setterMethodName" : "setLocale",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -5208,12 +5208,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "locale",
             "variableType" : "String",
-            "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+            "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5223,11 +5223,11 @@
           "c2jName" : "maxResults",
           "c2jShape" : "maxResults",
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@return The maximum number of items to return in one batch.*/",
+          "getterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@return The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -5254,7 +5254,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.*/",
+          "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -5265,12 +5265,12 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+            "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -5370,11 +5370,11 @@
         "c2jName" : "eventTypes",
         "c2jShape" : "EventTypeList",
         "deprecated" : false,
-        "documentation" : "<p>List of event types to be matched with.</p>",
+        "documentation" : "<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>List of event types to be matched with.</p>\n@param eventTypes List of event types to be matched with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEventTypes",
-        "getterDocumentation" : "/**<p>List of event types to be matched with.</p>\n@return List of event types to be matched with.*/",
+        "getterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n@return A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).*/",
         "getterMethodName" : "getEventTypes",
         "getterModel" : {
           "returnType" : "java.util.List<EventType>",
@@ -5472,7 +5472,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "EventTypes",
-        "setterDocumentation" : "/**<p>List of event types to be matched with.</p>\n@param eventTypes List of event types to be matched with.*/",
+        "setterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).*/",
         "setterMethodName" : "setEventTypes",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<EventType>",
@@ -5483,12 +5483,12 @@
           "variableSetterType" : "java.util.Collection<EventType>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>List of event types to be matched with.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes List of event types to be matched with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<EventType>",
           "variableName" : "eventTypes",
           "variableType" : "java.util.List<EventType>",
-          "documentation" : "<p>List of event types to be matched with.</p>",
+          "documentation" : "<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>",
           "simpleType" : "List<EventType>",
           "variableSetterType" : "java.util.Collection<EventType>"
         },
@@ -5555,11 +5555,11 @@
           "c2jName" : "eventTypes",
           "c2jShape" : "EventTypeList",
           "deprecated" : false,
-          "documentation" : "<p>List of event types to be matched with.</p>",
+          "documentation" : "<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>List of event types to be matched with.</p>\n@param eventTypes List of event types to be matched with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEventTypes",
-          "getterDocumentation" : "/**<p>List of event types to be matched with.</p>\n@return List of event types to be matched with.*/",
+          "getterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n@return A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).*/",
           "getterMethodName" : "getEventTypes",
           "getterModel" : {
             "returnType" : "java.util.List<EventType>",
@@ -5657,7 +5657,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "EventTypes",
-          "setterDocumentation" : "/**<p>List of event types to be matched with.</p>\n@param eventTypes List of event types to be matched with.*/",
+          "setterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).*/",
           "setterMethodName" : "setEventTypes",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<EventType>",
@@ -5668,12 +5668,12 @@
             "variableSetterType" : "java.util.Collection<EventType>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>List of event types to be matched with.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes List of event types to be matched with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<EventType>",
             "variableName" : "eventTypes",
             "variableType" : "java.util.List<EventType>",
-            "documentation" : "<p>List of event types to be matched with.</p>",
+            "documentation" : "<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>",
             "simpleType" : "List<EventType>",
             "variableSetterType" : "java.util.Collection<EventType>"
           },
@@ -5895,11 +5895,11 @@
         "c2jName" : "maxResults",
         "c2jShape" : "maxResults",
         "deprecated" : false,
-        "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+        "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@return The maximum number of items to return in one batch.*/",
+        "getterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@return The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -5926,7 +5926,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.*/",
+        "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -5937,12 +5937,12 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -5951,11 +5951,11 @@
         "c2jName" : "locale",
         "c2jShape" : "locale",
         "deprecated" : false,
-        "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+        "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withLocale",
-        "getterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@return The locale (language) to return information in. The default is English.*/",
+        "getterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@return The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "getterMethodName" : "getLocale",
         "getterModel" : {
           "returnType" : "String",
@@ -5982,7 +5982,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Locale",
-        "setterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.*/",
+        "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "setterMethodName" : "setLocale",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -5993,12 +5993,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "locale",
           "variableType" : "String",
-          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6066,11 +6066,11 @@
           "c2jName" : "locale",
           "c2jShape" : "locale",
           "deprecated" : false,
-          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withLocale",
-          "getterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@return The locale (language) to return information in. The default is English.*/",
+          "getterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@return The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "getterMethodName" : "getLocale",
           "getterModel" : {
             "returnType" : "String",
@@ -6097,7 +6097,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Locale",
-          "setterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.*/",
+          "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "setterMethodName" : "setLocale",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -6108,12 +6108,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. The default is English.</p>\n@param locale The locale (language) to return information in. The default is English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "locale",
             "variableType" : "String",
-            "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+            "documentation" : "<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6123,11 +6123,11 @@
           "c2jName" : "maxResults",
           "c2jShape" : "maxResults",
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@return The maximum number of items to return in one batch.*/",
+          "getterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@return The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -6154,7 +6154,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.*/",
+          "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -6165,12 +6165,12 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch.</p>\n@param maxResults The maximum number of items to return in one batch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+            "documentation" : "<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -14744,7 +14744,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>, the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>",
+      "documentation" : "<p>Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,

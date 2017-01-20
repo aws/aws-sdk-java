@@ -39,8 +39,9 @@ public class PollForJobsResultJsonUnmarshaller implements Unmarshaller<PollForJo
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return pollForJobsResult;
+        }
 
         while (true) {
             if (token == null)

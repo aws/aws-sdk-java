@@ -39,8 +39,9 @@ public class GetBranchResultJsonUnmarshaller implements Unmarshaller<GetBranchRe
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getBranchResult;
+        }
 
         while (true) {
             if (token == null)

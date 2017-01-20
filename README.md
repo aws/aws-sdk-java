@@ -10,7 +10,11 @@ started in minutes using ***Maven*** or by downloading a [single zip file][insta
 * [Forum][sdk-forum]
 * [Issues][sdk-issues]
 * [SDK Blog][blog]
-* [Release Notes][release-notes]
+
+## Release Notes ##
+Beginning with 1.11.82 changes to the SDK are tracked in the [CHANGELOG.md][changes-file] file.
+Release notes for versions prior to 1.11.82 can still be found on the [AWS Release Notes
+Website][release-notes-catalog].
 
 ## Getting Started
 
@@ -40,7 +44,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.82</version>
+      <version>1.11.83</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -123,4 +127,5 @@ mvn clean install -Dgpg.skip=true
 [sdk-license]: http://aws.amazon.com/apache2.0/
 [sdk-website]: http://aws.amazon.com/sdkforjava
 [aws-java-sdk-bom]: https://github.com/aws/aws-sdk-java/tree/master/aws-java-sdk-bom
-[release-notes]: https://aws.amazon.com/releasenotes/Java?browse=1
+[release-notes-catalog]: https://aws.amazon.com/releasenotes/Java?browse=1
+[changes-file]: ./CHANGELOG.md

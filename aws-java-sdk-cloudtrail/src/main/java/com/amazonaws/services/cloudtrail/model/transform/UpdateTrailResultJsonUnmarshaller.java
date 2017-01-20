@@ -39,8 +39,9 @@ public class UpdateTrailResultJsonUnmarshaller implements Unmarshaller<UpdateTra
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateTrailResult;
+        }
 
         while (true) {
             if (token == null)

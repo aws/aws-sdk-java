@@ -39,8 +39,9 @@ public class GetCommitResultJsonUnmarshaller implements Unmarshaller<GetCommitRe
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getCommitResult;
+        }
 
         while (true) {
             if (token == null)

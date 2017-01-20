@@ -39,8 +39,9 @@ public class DescribeMaintenanceWindowTargetsResultJsonUnmarshaller implements U
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeMaintenanceWindowTargetsResult;
+        }
 
         while (true) {
             if (token == null)

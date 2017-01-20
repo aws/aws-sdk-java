@@ -39,8 +39,9 @@ public class SignUpResultJsonUnmarshaller implements Unmarshaller<SignUpResult, 
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return signUpResult;
+        }
 
         while (true) {
             if (token == null)

@@ -39,8 +39,9 @@ public class PutRestApiResultJsonUnmarshaller implements Unmarshaller<PutRestApi
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return putRestApiResult;
+        }
 
         while (true) {
             if (token == null)

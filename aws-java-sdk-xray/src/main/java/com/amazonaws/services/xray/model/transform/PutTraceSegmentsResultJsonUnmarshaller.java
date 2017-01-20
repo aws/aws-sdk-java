@@ -39,8 +39,9 @@ public class PutTraceSegmentsResultJsonUnmarshaller implements Unmarshaller<PutT
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return putTraceSegmentsResult;
+        }
 
         while (true) {
             if (token == null)

@@ -39,8 +39,9 @@ public class GrantAccessResultJsonUnmarshaller implements Unmarshaller<GrantAcce
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return grantAccessResult;
+        }
 
         while (true) {
             if (token == null)

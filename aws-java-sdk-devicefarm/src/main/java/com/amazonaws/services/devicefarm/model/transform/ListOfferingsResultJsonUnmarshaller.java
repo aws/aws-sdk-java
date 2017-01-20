@@ -39,8 +39,9 @@ public class ListOfferingsResultJsonUnmarshaller implements Unmarshaller<ListOff
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listOfferingsResult;
+        }
 
         while (true) {
             if (token == null)

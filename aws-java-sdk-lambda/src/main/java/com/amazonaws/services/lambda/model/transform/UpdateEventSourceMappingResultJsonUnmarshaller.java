@@ -39,8 +39,9 @@ public class UpdateEventSourceMappingResultJsonUnmarshaller implements Unmarshal
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateEventSourceMappingResult;
+        }
 
         while (true) {
             if (token == null)

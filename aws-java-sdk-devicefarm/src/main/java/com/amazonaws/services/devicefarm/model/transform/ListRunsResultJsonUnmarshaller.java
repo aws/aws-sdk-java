@@ -39,8 +39,9 @@ public class ListRunsResultJsonUnmarshaller implements Unmarshaller<ListRunsResu
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listRunsResult;
+        }
 
         while (true) {
             if (token == null)

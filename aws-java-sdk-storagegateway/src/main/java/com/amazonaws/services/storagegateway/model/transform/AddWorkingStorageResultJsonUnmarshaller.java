@@ -39,8 +39,9 @@ public class AddWorkingStorageResultJsonUnmarshaller implements Unmarshaller<Add
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return addWorkingStorageResult;
+        }
 
         while (true) {
             if (token == null)

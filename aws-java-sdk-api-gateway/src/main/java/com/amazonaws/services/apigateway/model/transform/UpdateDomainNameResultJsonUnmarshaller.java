@@ -39,8 +39,9 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateDomainNameResult;
+        }
 
         while (true) {
             if (token == null)

@@ -39,8 +39,9 @@ public class RebootWorkspacesResultJsonUnmarshaller implements Unmarshaller<Rebo
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return rebootWorkspacesResult;
+        }
 
         while (true) {
             if (token == null)

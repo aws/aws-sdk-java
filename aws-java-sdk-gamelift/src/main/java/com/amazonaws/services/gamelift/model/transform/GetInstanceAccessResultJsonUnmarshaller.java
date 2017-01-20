@@ -39,8 +39,9 @@ public class GetInstanceAccessResultJsonUnmarshaller implements Unmarshaller<Get
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getInstanceAccessResult;
+        }
 
         while (true) {
             if (token == null)

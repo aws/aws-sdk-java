@@ -39,8 +39,9 @@ public class ListGroupsResultJsonUnmarshaller implements Unmarshaller<ListGroups
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listGroupsResult;
+        }
 
         while (true) {
             if (token == null)

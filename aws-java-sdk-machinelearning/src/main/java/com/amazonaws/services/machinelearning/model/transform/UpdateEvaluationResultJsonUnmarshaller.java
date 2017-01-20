@@ -39,8 +39,9 @@ public class UpdateEvaluationResultJsonUnmarshaller implements Unmarshaller<Upda
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateEvaluationResult;
+        }
 
         while (true) {
             if (token == null)

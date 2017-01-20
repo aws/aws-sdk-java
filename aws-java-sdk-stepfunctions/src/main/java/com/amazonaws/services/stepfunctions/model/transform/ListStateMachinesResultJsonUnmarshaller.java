@@ -39,8 +39,9 @@ public class ListStateMachinesResultJsonUnmarshaller implements Unmarshaller<Lis
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listStateMachinesResult;
+        }
 
         while (true) {
             if (token == null)

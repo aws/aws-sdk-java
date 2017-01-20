@@ -25,7 +25,10 @@ public class DescribeEventTypesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of event types to be matched with.
+     * A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format
+     * <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      * </p>
      */
     private java.util.List<EventType> eventTypes;
@@ -41,10 +44,17 @@ public class DescribeEventTypesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of event types to be matched with.
+     * A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format
+     * <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      * </p>
      * 
-     * @return List of event types to be matched with.
+     * @return A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     *         <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example,
+     *         <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the
+     *         format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     *         <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      */
 
     public java.util.List<EventType> getEventTypes() {
@@ -53,11 +63,18 @@ public class DescribeEventTypesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of event types to be matched with.
+     * A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format
+     * <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      * </p>
      * 
      * @param eventTypes
-     *        List of event types to be matched with.
+     *        A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     *        <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example,
+     *        <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the
+     *        format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     *        <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      */
 
     public void setEventTypes(java.util.Collection<EventType> eventTypes) {
@@ -71,7 +88,10 @@ public class DescribeEventTypesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of event types to be matched with.
+     * A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format
+     * <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +100,11 @@ public class DescribeEventTypesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param eventTypes
-     *        List of event types to be matched with.
+     *        A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     *        <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example,
+     *        <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the
+     *        format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     *        <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +120,18 @@ public class DescribeEventTypesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of event types to be matched with.
+     * A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     * <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format
+     * <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      * </p>
      * 
      * @param eventTypes
-     *        List of event types to be matched with.
+     *        A list of event types that match the filter criteria. Event types have a category (<code>issue</code>,
+     *        <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example,
+     *        <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the
+     *        format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     *        <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

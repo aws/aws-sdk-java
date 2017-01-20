@@ -39,8 +39,9 @@ public class CreateTapesResultJsonUnmarshaller implements Unmarshaller<CreateTap
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createTapesResult;
+        }
 
         while (true) {
             if (token == null)

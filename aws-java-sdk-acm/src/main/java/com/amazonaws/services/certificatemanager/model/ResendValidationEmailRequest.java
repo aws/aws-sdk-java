@@ -41,7 +41,7 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
     private String certificateArn;
     /**
      * <p>
-     * The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.
+     * The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * </p>
      */
     private String domain;
@@ -170,11 +170,11 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.
+     * The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * </p>
      * 
      * @param domain
-     *        The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.
+     *        The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      */
 
     public void setDomain(String domain) {
@@ -183,10 +183,10 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.
+     * The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * </p>
      * 
-     * @return The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.
+     * @return The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      */
 
     public String getDomain() {
@@ -195,11 +195,11 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.
+     * The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * </p>
      * 
      * @param domain
-     *        The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.
+     *        The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

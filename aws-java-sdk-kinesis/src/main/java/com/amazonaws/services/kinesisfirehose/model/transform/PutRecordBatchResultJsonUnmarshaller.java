@@ -39,8 +39,9 @@ public class PutRecordBatchResultJsonUnmarshaller implements Unmarshaller<PutRec
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return putRecordBatchResult;
+        }
 
         while (true) {
             if (token == null)

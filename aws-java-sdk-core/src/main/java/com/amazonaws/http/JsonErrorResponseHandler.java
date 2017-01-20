@@ -66,8 +66,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         // Throwables, but sometimes the service passes the error message in
         // other JSON fields - handle it here.
         if (ase.getErrorMessage() == null) {
-            ase.setErrorMessage(errorMessageParser
-                    .parseErrorMessage(jsonContent.getJsonNode()));
+            ase.setErrorMessage(errorMessageParser.parseErrorMessage(response, jsonContent.getJsonNode()));
         }
 
         ase.setErrorCode(errorCode);

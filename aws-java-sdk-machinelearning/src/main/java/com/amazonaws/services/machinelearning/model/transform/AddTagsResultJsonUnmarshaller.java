@@ -39,8 +39,9 @@ public class AddTagsResultJsonUnmarshaller implements Unmarshaller<AddTagsResult
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return addTagsResult;
+        }
 
         while (true) {
             if (token == null)

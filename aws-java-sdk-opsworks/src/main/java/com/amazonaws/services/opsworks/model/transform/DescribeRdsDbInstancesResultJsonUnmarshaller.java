@@ -39,8 +39,9 @@ public class DescribeRdsDbInstancesResultJsonUnmarshaller implements Unmarshalle
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeRdsDbInstancesResult;
+        }
 
         while (true) {
             if (token == null)

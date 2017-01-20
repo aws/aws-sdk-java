@@ -39,8 +39,9 @@ public class ReEncryptResultJsonUnmarshaller implements Unmarshaller<ReEncryptRe
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return reEncryptResult;
+        }
 
         while (true) {
             if (token == null)

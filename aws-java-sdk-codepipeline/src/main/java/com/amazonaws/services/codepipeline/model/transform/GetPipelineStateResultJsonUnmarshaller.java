@@ -39,8 +39,9 @@ public class GetPipelineStateResultJsonUnmarshaller implements Unmarshaller<GetP
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getPipelineStateResult;
+        }
 
         while (true) {
             if (token == null)

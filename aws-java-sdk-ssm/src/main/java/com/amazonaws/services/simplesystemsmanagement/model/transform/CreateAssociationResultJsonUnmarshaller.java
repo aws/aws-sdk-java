@@ -39,8 +39,9 @@ public class CreateAssociationResultJsonUnmarshaller implements Unmarshaller<Cre
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createAssociationResult;
+        }
 
         while (true) {
             if (token == null)

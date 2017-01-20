@@ -215,6 +215,9 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      * Put a new custom header to the map of custom header names to custom header values, and return
      * the previous value if the header has already been set in this map.
      * <p>
+     * Any custom headers that are defined are used in the HTTP request to the AWS service. These
+     * headers will be silently ignored in the event that AWS does not recognize them.
+     * <p>
      * NOTE: Custom header values set via this method will overwrite any conflicting values coming
      * from the request parameters.
      *
@@ -245,6 +248,8 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     /**
      * Add a custom query parameter for the request. Since multiple values are allowed for the same
      * query parameter, this method does NOT overwrite any existing parameter values in the request.
+     * <p>
+     * Any custom query parameters that are defined are used in the HTTP request to the AWS service.
      *
      * @param name
      *            The name of the query parameter

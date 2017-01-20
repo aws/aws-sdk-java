@@ -39,8 +39,9 @@ public class CreateClusterResultJsonUnmarshaller implements Unmarshaller<CreateC
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createClusterResult;
+        }
 
         while (true) {
             if (token == null)

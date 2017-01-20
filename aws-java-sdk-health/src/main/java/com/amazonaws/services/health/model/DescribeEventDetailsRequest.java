@@ -34,7 +34,8 @@ public class DescribeEventDetailsRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> eventArns;
     /**
      * <p>
-     * The locale (language) to return information in. The default is English.
+     * The locale (language) to return information in. English (en) is the default and the only supported value at this
+     * time.
      * </p>
      */
     private String locale;
@@ -119,11 +120,13 @@ public class DescribeEventDetailsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The locale (language) to return information in. The default is English.
+     * The locale (language) to return information in. English (en) is the default and the only supported value at this
+     * time.
      * </p>
      * 
      * @param locale
-     *        The locale (language) to return information in. The default is English.
+     *        The locale (language) to return information in. English (en) is the default and the only supported value
+     *        at this time.
      */
 
     public void setLocale(String locale) {
@@ -132,10 +135,12 @@ public class DescribeEventDetailsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The locale (language) to return information in. The default is English.
+     * The locale (language) to return information in. English (en) is the default and the only supported value at this
+     * time.
      * </p>
      * 
-     * @return The locale (language) to return information in. The default is English.
+     * @return The locale (language) to return information in. English (en) is the default and the only supported value
+     *         at this time.
      */
 
     public String getLocale() {
@@ -144,11 +149,13 @@ public class DescribeEventDetailsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The locale (language) to return information in. The default is English.
+     * The locale (language) to return information in. English (en) is the default and the only supported value at this
+     * time.
      * </p>
      * 
      * @param locale
-     *        The locale (language) to return information in. The default is English.
+     *        The locale (language) to return information in. English (en) is the default and the only supported value
+     *        at this time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

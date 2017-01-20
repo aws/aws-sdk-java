@@ -39,8 +39,9 @@ public class ListAttributesResultJsonUnmarshaller implements Unmarshaller<ListAt
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listAttributesResult;
+        }
 
         while (true) {
             if (token == null)

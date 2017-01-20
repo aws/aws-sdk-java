@@ -39,8 +39,9 @@ public class AddAttachmentsToSetResultJsonUnmarshaller implements Unmarshaller<A
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return addAttachmentsToSetResult;
+        }
 
         while (true) {
             if (token == null)

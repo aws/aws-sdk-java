@@ -39,8 +39,9 @@ public class DescribeScalingActivitiesResultJsonUnmarshaller implements Unmarsha
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeScalingActivitiesResult;
+        }
 
         while (true) {
             if (token == null)

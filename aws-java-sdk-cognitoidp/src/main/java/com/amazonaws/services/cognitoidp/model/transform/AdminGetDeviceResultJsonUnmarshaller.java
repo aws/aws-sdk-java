@@ -39,8 +39,9 @@ public class AdminGetDeviceResultJsonUnmarshaller implements Unmarshaller<AdminG
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return adminGetDeviceResult;
+        }
 
         while (true) {
             if (token == null)

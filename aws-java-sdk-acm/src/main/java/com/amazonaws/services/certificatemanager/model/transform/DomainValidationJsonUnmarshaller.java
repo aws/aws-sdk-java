@@ -39,8 +39,9 @@ public class DomainValidationJsonUnmarshaller implements Unmarshaller<DomainVali
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -58,6 +59,10 @@ public class DomainValidationJsonUnmarshaller implements Unmarshaller<DomainVali
                 if (context.testExpression("ValidationDomain", targetDepth)) {
                     context.nextToken();
                     domainValidation.setValidationDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationStatus", targetDepth)) {
+                    context.nextToken();
+                    domainValidation.setValidationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

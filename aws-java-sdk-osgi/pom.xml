@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.83-SNAPSHOT</version>
+    <version>1.11.83</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -1035,9 +1035,7 @@
                               <div id="feedback-section">
                                   <h3>Did this page help you?</h3>
                                   <div id="feedback-link-sectioin">
-                                      <a id="feedback_yes" target="_blank" style="display:inline;">Yes</a>&nbsp;&nbsp;
-                                      <a id="feedback_no" target="_blank" style="display:inline;">No</a>&nbsp;&nbsp;
-                                      <a id="go_cti" target="_blank" style="display:inline;">Tell us about it...</a>
+                                      <a id="go_cti" target="_blank" style="display:inline;">Submit feedback...</a>
                                   </div>
 
                               </div>
@@ -1047,16 +1045,13 @@
                                   var javadoc_root_name = "/javadoc/";
                                   var javadoc_path = location.href.substring(0, location.href.lastIndexOf(javadoc_root_name) + javadoc_root_name.length);
                                   var file_path = location.href.substring(location.href.lastIndexOf(javadoc_root_name) + javadoc_root_name.length);
+                                  var sdk_name = encodeURI("AWS SDK for Java");
+                                  var encoded_path = encodeURI(location.href);
 
-                                  var feedback_yes_url = javadoc_path + "javadoc-resources/feedbackyes.html?topic_id=";
-                                  var feedback_no_url = javadoc_path + "javadoc-resources/feedbackno.html?topic_id=";
-                                  var feedback_tellmore_url = "https://aws-portal.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=Java-Ref&file_name=";
+                                  var feedback_tellmore_url = "https://docs-feedback.aws.amazon.com/feedback.jsp?hidden_service_name=" + sdk_name + "&topic_url=" + encoded_path;
 
                                   if(file_path != "overview-frame.html") {
-                                  var file_name = file_path.replace(/[/.]/g, '_');
-                                  document.getElementById("feedback_yes").setAttribute("href", feedback_yes_url + file_name);
-                                  document.getElementById("feedback_no").setAttribute("href", feedback_no_url + file_name);
-                                  document.getElementById("go_cti").setAttribute("href", feedback_tellmore_url + file_name);
+                                  document.getElementById("go_cti").setAttribute("href", feedback_tellmore_url);
                                   } else {
                                   document.getElementById("feedback-section").outerHTML = "AWS SDK for Java";
                                   document.getElementById("divsearch").outerHTML = "";

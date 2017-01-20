@@ -39,8 +39,9 @@ public class GetKeyPairsResultJsonUnmarshaller implements Unmarshaller<GetKeyPai
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getKeyPairsResult;
+        }
 
         while (true) {
             if (token == null)

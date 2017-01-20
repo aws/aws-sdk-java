@@ -50,6 +50,16 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
     }
 
     @Override
+    public StructuredJsonGenerator writeNull() {
+        try {
+            writer.writeNull();
+        } catch (IOException e) {
+            throw new SdkClientException(e);
+        }
+        return this;
+    }
+
+    @Override
     public StructuredJsonGenerator writeEndArray() {
         try {
             writer.stepOut();

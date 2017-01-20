@@ -112,7 +112,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
                         <@MemberMarshallerMacro.content customConfig member.c2jShape member.variable.variableName shapes/>
                         jsonGenerator.writeEndObject();
                    </#if>
-                    }
+                    } <@ElseWriteExplicitJsonNull.content/>
 
                     byte[] content = jsonGenerator.getBytes();
                     request.setContent(new ByteArrayInputStream(content));

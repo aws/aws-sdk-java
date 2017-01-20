@@ -39,8 +39,9 @@ public class CreateTableResultJsonUnmarshaller implements Unmarshaller<CreateTab
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createTableResult;
+        }
 
         while (true) {
             if (token == null)

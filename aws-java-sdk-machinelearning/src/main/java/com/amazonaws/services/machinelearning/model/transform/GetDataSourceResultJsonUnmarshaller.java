@@ -39,8 +39,9 @@ public class GetDataSourceResultJsonUnmarshaller implements Unmarshaller<GetData
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getDataSourceResult;
+        }
 
         while (true) {
             if (token == null)

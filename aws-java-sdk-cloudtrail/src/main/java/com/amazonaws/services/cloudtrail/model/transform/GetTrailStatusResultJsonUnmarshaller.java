@@ -39,8 +39,9 @@ public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTra
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getTrailStatusResult;
+        }
 
         while (true) {
             if (token == null)

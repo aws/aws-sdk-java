@@ -39,8 +39,9 @@ public class DescribeKeyResultJsonUnmarshaller implements Unmarshaller<DescribeK
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeKeyResult;
+        }
 
         while (true) {
             if (token == null)

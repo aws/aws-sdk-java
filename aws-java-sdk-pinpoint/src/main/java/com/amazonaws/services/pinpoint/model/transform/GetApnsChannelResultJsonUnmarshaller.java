@@ -39,8 +39,9 @@ public class GetApnsChannelResultJsonUnmarshaller implements Unmarshaller<GetApn
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getApnsChannelResult;
+        }
 
         while (true) {
             if (token == null)

@@ -39,8 +39,9 @@ public class UpdateStackResultJsonUnmarshaller implements Unmarshaller<UpdateSta
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateStackResult;
+        }
 
         while (true) {
             if (token == null)

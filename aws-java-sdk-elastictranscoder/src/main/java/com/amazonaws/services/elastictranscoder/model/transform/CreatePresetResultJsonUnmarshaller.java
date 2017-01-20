@@ -39,8 +39,9 @@ public class CreatePresetResultJsonUnmarshaller implements Unmarshaller<CreatePr
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createPresetResult;
+        }
 
         while (true) {
             if (token == null)

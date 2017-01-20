@@ -39,8 +39,9 @@ public class CancelStepsResultJsonUnmarshaller implements Unmarshaller<CancelSte
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return cancelStepsResult;
+        }
 
         while (true) {
             if (token == null)

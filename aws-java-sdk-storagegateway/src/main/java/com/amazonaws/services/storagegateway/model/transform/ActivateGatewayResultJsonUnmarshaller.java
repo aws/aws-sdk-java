@@ -39,8 +39,9 @@ public class ActivateGatewayResultJsonUnmarshaller implements Unmarshaller<Activ
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return activateGatewayResult;
+        }
 
         while (true) {
             if (token == null)

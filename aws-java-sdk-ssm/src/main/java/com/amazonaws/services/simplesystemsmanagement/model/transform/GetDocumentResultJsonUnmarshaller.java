@@ -39,8 +39,9 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getDocumentResult;
+        }
 
         while (true) {
             if (token == null)

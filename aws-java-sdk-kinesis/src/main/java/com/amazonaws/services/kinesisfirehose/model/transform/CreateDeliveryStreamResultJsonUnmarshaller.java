@@ -39,8 +39,9 @@ public class CreateDeliveryStreamResultJsonUnmarshaller implements Unmarshaller<
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createDeliveryStreamResult;
+        }
 
         while (true) {
             if (token == null)

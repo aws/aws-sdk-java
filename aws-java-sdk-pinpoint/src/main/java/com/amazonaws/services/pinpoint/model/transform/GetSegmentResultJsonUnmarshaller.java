@@ -39,8 +39,9 @@ public class GetSegmentResultJsonUnmarshaller implements Unmarshaller<GetSegment
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getSegmentResult;
+        }
 
         while (true) {
             if (token == null)

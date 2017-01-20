@@ -39,8 +39,9 @@ public class DetectFacesResultJsonUnmarshaller implements Unmarshaller<DetectFac
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return detectFacesResult;
+        }
 
         while (true) {
             if (token == null)

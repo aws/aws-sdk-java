@@ -39,8 +39,9 @@ public class UpdateMLModelResultJsonUnmarshaller implements Unmarshaller<UpdateM
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return updateMLModelResult;
+        }
 
         while (true) {
             if (token == null)

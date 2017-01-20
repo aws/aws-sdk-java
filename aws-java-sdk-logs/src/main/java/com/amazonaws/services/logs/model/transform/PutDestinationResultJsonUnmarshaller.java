@@ -39,8 +39,9 @@ public class PutDestinationResultJsonUnmarshaller implements Unmarshaller<PutDes
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return putDestinationResult;
+        }
 
         while (true) {
             if (token == null)

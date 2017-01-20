@@ -39,8 +39,9 @@ public class ListInstancesResultJsonUnmarshaller implements Unmarshaller<ListIns
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listInstancesResult;
+        }
 
         while (true) {
             if (token == null)

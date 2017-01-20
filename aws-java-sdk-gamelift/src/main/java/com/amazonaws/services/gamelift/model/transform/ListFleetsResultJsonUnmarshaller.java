@@ -39,8 +39,9 @@ public class ListFleetsResultJsonUnmarshaller implements Unmarshaller<ListFleets
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listFleetsResult;
+        }
 
         while (true) {
             if (token == null)

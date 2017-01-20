@@ -39,8 +39,9 @@ public class CreateXssMatchSetResultJsonUnmarshaller implements Unmarshaller<Cre
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createXssMatchSetResult;
+        }
 
         while (true) {
             if (token == null)

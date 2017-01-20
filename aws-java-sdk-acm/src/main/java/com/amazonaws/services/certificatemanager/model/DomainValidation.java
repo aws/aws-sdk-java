@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Structure that contains the domain name, the base validation domain to which validation email is sent, and the email
- * addresses used to validate the domain identity.
+ * Contains information about the validation of each domain name in the certificate.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DomainValidation" target="_top">AWS API
@@ -29,30 +28,39 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
+     * A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or
+     * <code>example.com</code>.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * A list of contact address for the domain registrant.
+     * A list of email addresses that ACM used to send domain validation emails.
      * </p>
      */
     private java.util.List<String> validationEmails;
     /**
      * <p>
-     * The base validation domain that acts as the suffix of the email addresses that are used to send the emails.
+     * The domain name that ACM used to send domain validation emails.
      * </p>
      */
     private String validationDomain;
+    /**
+     * <p>
+     * The validation status of the domain name.
+     * </p>
+     */
+    private String validationStatus;
 
     /**
      * <p>
-     * Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
+     * A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or
+     * <code>example.com</code>.
      * </p>
      * 
      * @param domainName
-     *        Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
+     *        A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or
+     *        <code>example.com</code>.
      */
 
     public void setDomainName(String domainName) {
@@ -61,10 +69,12 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
+     * A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or
+     * <code>example.com</code>.
      * </p>
      * 
-     * @return Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
+     * @return A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or
+     *         <code>example.com</code>.
      */
 
     public String getDomainName() {
@@ -73,11 +83,13 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
+     * A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or
+     * <code>example.com</code>.
      * </p>
      * 
      * @param domainName
-     *        Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
+     *        A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or
+     *        <code>example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,10 +100,10 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of contact address for the domain registrant.
+     * A list of email addresses that ACM used to send domain validation emails.
      * </p>
      * 
-     * @return A list of contact address for the domain registrant.
+     * @return A list of email addresses that ACM used to send domain validation emails.
      */
 
     public java.util.List<String> getValidationEmails() {
@@ -100,11 +112,11 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of contact address for the domain registrant.
+     * A list of email addresses that ACM used to send domain validation emails.
      * </p>
      * 
      * @param validationEmails
-     *        A list of contact address for the domain registrant.
+     *        A list of email addresses that ACM used to send domain validation emails.
      */
 
     public void setValidationEmails(java.util.Collection<String> validationEmails) {
@@ -118,7 +130,7 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of contact address for the domain registrant.
+     * A list of email addresses that ACM used to send domain validation emails.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +139,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * </p>
      * 
      * @param validationEmails
-     *        A list of contact address for the domain registrant.
+     *        A list of email addresses that ACM used to send domain validation emails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +155,11 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of contact address for the domain registrant.
+     * A list of email addresses that ACM used to send domain validation emails.
      * </p>
      * 
      * @param validationEmails
-     *        A list of contact address for the domain registrant.
+     *        A list of email addresses that ACM used to send domain validation emails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,12 +170,11 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The base validation domain that acts as the suffix of the email addresses that are used to send the emails.
+     * The domain name that ACM used to send domain validation emails.
      * </p>
      * 
      * @param validationDomain
-     *        The base validation domain that acts as the suffix of the email addresses that are used to send the
-     *        emails.
+     *        The domain name that ACM used to send domain validation emails.
      */
 
     public void setValidationDomain(String validationDomain) {
@@ -172,11 +183,10 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The base validation domain that acts as the suffix of the email addresses that are used to send the emails.
+     * The domain name that ACM used to send domain validation emails.
      * </p>
      * 
-     * @return The base validation domain that acts as the suffix of the email addresses that are used to send the
-     *         emails.
+     * @return The domain name that ACM used to send domain validation emails.
      */
 
     public String getValidationDomain() {
@@ -185,17 +195,89 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The base validation domain that acts as the suffix of the email addresses that are used to send the emails.
+     * The domain name that ACM used to send domain validation emails.
      * </p>
      * 
      * @param validationDomain
-     *        The base validation domain that acts as the suffix of the email addresses that are used to send the
-     *        emails.
+     *        The domain name that ACM used to send domain validation emails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainValidation withValidationDomain(String validationDomain) {
         setValidationDomain(validationDomain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The validation status of the domain name.
+     * </p>
+     * 
+     * @param validationStatus
+     *        The validation status of the domain name.
+     * @see DomainStatus
+     */
+
+    public void setValidationStatus(String validationStatus) {
+        this.validationStatus = validationStatus;
+    }
+
+    /**
+     * <p>
+     * The validation status of the domain name.
+     * </p>
+     * 
+     * @return The validation status of the domain name.
+     * @see DomainStatus
+     */
+
+    public String getValidationStatus() {
+        return this.validationStatus;
+    }
+
+    /**
+     * <p>
+     * The validation status of the domain name.
+     * </p>
+     * 
+     * @param validationStatus
+     *        The validation status of the domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DomainStatus
+     */
+
+    public DomainValidation withValidationStatus(String validationStatus) {
+        setValidationStatus(validationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The validation status of the domain name.
+     * </p>
+     * 
+     * @param validationStatus
+     *        The validation status of the domain name.
+     * @see DomainStatus
+     */
+
+    public void setValidationStatus(DomainStatus validationStatus) {
+        this.validationStatus = validationStatus.toString();
+    }
+
+    /**
+     * <p>
+     * The validation status of the domain name.
+     * </p>
+     * 
+     * @param validationStatus
+     *        The validation status of the domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DomainStatus
+     */
+
+    public DomainValidation withValidationStatus(DomainStatus validationStatus) {
+        setValidationStatus(validationStatus);
         return this;
     }
 
@@ -215,7 +297,9 @@ public class DomainValidation implements Serializable, Cloneable {
         if (getValidationEmails() != null)
             sb.append("ValidationEmails: ").append(getValidationEmails()).append(",");
         if (getValidationDomain() != null)
-            sb.append("ValidationDomain: ").append(getValidationDomain());
+            sb.append("ValidationDomain: ").append(getValidationDomain()).append(",");
+        if (getValidationStatus() != null)
+            sb.append("ValidationStatus: ").append(getValidationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -242,6 +326,10 @@ public class DomainValidation implements Serializable, Cloneable {
             return false;
         if (other.getValidationDomain() != null && other.getValidationDomain().equals(this.getValidationDomain()) == false)
             return false;
+        if (other.getValidationStatus() == null ^ this.getValidationStatus() == null)
+            return false;
+        if (other.getValidationStatus() != null && other.getValidationStatus().equals(this.getValidationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -253,6 +341,7 @@ public class DomainValidation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getValidationEmails() == null) ? 0 : getValidationEmails().hashCode());
         hashCode = prime * hashCode + ((getValidationDomain() == null) ? 0 : getValidationDomain().hashCode());
+        hashCode = prime * hashCode + ((getValidationStatus() == null) ? 0 : getValidationStatus().hashCode());
         return hashCode;
     }
 

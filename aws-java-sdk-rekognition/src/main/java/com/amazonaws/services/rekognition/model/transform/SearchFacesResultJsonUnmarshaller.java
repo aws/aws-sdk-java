@@ -39,8 +39,9 @@ public class SearchFacesResultJsonUnmarshaller implements Unmarshaller<SearchFac
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return searchFacesResult;
+        }
 
         while (true) {
             if (token == null)

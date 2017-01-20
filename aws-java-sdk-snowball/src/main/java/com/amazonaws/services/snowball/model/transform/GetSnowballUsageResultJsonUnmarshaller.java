@@ -39,8 +39,9 @@ public class GetSnowballUsageResultJsonUnmarshaller implements Unmarshaller<GetS
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getSnowballUsageResult;
+        }
 
         while (true) {
             if (token == null)

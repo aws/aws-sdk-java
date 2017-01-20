@@ -113,6 +113,9 @@
         }, {
          "location" : "/macros/marshaller/api-gateway/DefaultRequestCreation.ftl",
          "importAsNamespace" : "DefaultRequestCreation"
+       }, {
+         "location" : "/macros/marshaller/api-gateway/ElseWriteExplicitJsonNull.ftl",
+         "importAsNamespace" : "ElseWriteExplicitJsonNull"
        }
     ]
   },

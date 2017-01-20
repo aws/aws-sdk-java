@@ -39,8 +39,9 @@ public class BatchGetImageResultJsonUnmarshaller implements Unmarshaller<BatchGe
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return batchGetImageResult;
+        }
 
         while (true) {
             if (token == null)

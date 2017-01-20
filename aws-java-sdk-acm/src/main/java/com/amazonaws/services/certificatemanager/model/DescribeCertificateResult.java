@@ -25,18 +25,18 @@ public class DescribeCertificateResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.
+     * Metadata about an ACM certificate.
      * </p>
      */
     private CertificateDetail certificate;
 
     /**
      * <p>
-     * Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.
+     * Metadata about an ACM certificate.
      * </p>
      * 
      * @param certificate
-     *        Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.
+     *        Metadata about an ACM certificate.
      */
 
     public void setCertificate(CertificateDetail certificate) {
@@ -45,10 +45,10 @@ public class DescribeCertificateResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.
+     * Metadata about an ACM certificate.
      * </p>
      * 
-     * @return Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.
+     * @return Metadata about an ACM certificate.
      */
 
     public CertificateDetail getCertificate() {
@@ -57,11 +57,11 @@ public class DescribeCertificateResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.
+     * Metadata about an ACM certificate.
      * </p>
      * 
      * @param certificate
-     *        Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.
+     *        Metadata about an ACM certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

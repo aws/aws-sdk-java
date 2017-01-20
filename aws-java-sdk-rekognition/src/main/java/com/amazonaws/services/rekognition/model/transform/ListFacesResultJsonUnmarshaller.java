@@ -39,8 +39,9 @@ public class ListFacesResultJsonUnmarshaller implements Unmarshaller<ListFacesRe
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listFacesResult;
+        }
 
         while (true) {
             if (token == null)

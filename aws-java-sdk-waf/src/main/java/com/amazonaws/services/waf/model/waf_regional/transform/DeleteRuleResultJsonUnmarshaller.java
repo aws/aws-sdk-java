@@ -39,8 +39,9 @@ public class DeleteRuleResultJsonUnmarshaller implements Unmarshaller<DeleteRule
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return deleteRuleResult;
+        }
 
         while (true) {
             if (token == null)

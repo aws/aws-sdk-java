@@ -39,8 +39,9 @@ public class RetryStageExecutionResultJsonUnmarshaller implements Unmarshaller<R
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return retryStageExecutionResult;
+        }
 
         while (true) {
             if (token == null)

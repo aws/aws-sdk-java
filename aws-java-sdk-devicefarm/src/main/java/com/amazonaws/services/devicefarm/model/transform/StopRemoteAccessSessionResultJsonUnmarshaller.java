@@ -39,8 +39,9 @@ public class StopRemoteAccessSessionResultJsonUnmarshaller implements Unmarshall
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return stopRemoteAccessSessionResult;
+        }
 
         while (true) {
             if (token == null)

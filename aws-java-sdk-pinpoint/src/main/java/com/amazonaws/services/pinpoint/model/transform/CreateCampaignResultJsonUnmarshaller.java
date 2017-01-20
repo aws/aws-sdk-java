@@ -39,8 +39,9 @@ public class CreateCampaignResultJsonUnmarshaller implements Unmarshaller<Create
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createCampaignResult;
+        }
 
         while (true) {
             if (token == null)

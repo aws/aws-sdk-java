@@ -39,8 +39,9 @@ public class DescribeIdentityUsageResultJsonUnmarshaller implements Unmarshaller
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeIdentityUsageResult;
+        }
 
         while (true) {
             if (token == null)

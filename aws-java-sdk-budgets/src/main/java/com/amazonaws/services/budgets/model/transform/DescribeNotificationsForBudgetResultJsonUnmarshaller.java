@@ -39,8 +39,9 @@ public class DescribeNotificationsForBudgetResultJsonUnmarshaller implements Unm
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeNotificationsForBudgetResult;
+        }
 
         while (true) {
             if (token == null)

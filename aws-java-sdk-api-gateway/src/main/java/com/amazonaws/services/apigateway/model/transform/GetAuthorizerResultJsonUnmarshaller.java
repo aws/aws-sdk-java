@@ -39,8 +39,9 @@ public class GetAuthorizerResultJsonUnmarshaller implements Unmarshaller<GetAuth
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getAuthorizerResult;
+        }
 
         while (true) {
             if (token == null)

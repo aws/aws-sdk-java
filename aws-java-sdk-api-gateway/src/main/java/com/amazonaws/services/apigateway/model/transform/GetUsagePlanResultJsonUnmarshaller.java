@@ -39,8 +39,9 @@ public class GetUsagePlanResultJsonUnmarshaller implements Unmarshaller<GetUsage
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getUsagePlanResult;
+        }
 
         while (true) {
             if (token == null)

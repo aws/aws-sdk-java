@@ -39,8 +39,9 @@ public class SearchProductsResultJsonUnmarshaller implements Unmarshaller<Search
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return searchProductsResult;
+        }
 
         while (true) {
             if (token == null)

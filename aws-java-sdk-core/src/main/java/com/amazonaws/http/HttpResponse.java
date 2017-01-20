@@ -14,16 +14,16 @@
  */
 package com.amazonaws.http;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
+import com.amazonaws.Request;
+import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
 
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.protocol.HttpContext;
 
-import com.amazonaws.Request;
-import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Represents an HTTP response returned by an AWS service in response to a
@@ -84,6 +84,21 @@ public class HttpResponse {
      */
     public Map<String, String> getHeaders() {
         return headers;
+    }
+
+    /**
+     * Looks up a header by name and returns it's value. Does case insensitive comparison.
+     *
+     * @param headerName Name of header to get value for.
+     * @return The header value of the given header. Null if header is not present.
+     */
+    public String getHeader(String headerName) {
+        for (Map.Entry<String, String> header : headers.entrySet()) {
+            if (header.getKey().equalsIgnoreCase(headerName)) {
+                return header.getValue();
+            }
+        }
+        return null;
     }
 
     /**

@@ -39,8 +39,9 @@ public class CreateUploadResultJsonUnmarshaller implements Unmarshaller<CreateUp
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createUploadResult;
+        }
 
         while (true) {
             if (token == null)

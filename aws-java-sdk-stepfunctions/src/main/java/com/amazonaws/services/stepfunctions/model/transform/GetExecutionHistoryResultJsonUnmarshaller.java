@@ -39,8 +39,9 @@ public class GetExecutionHistoryResultJsonUnmarshaller implements Unmarshaller<G
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getExecutionHistoryResult;
+        }
 
         while (true) {
             if (token == null)

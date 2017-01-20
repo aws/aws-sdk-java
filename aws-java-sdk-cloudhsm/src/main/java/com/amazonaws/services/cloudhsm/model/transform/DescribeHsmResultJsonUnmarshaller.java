@@ -39,8 +39,9 @@ public class DescribeHsmResultJsonUnmarshaller implements Unmarshaller<DescribeH
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return describeHsmResult;
+        }
 
         while (true) {
             if (token == null)

@@ -39,8 +39,9 @@ public class DiscoverInputSchemaResultJsonUnmarshaller implements Unmarshaller<D
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return discoverInputSchemaResult;
+        }
 
         while (true) {
             if (token == null)

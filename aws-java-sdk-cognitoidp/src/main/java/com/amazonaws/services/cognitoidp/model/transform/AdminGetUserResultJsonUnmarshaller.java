@@ -39,8 +39,9 @@ public class AdminGetUserResultJsonUnmarshaller implements Unmarshaller<AdminGet
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return adminGetUserResult;
+        }
 
         while (true) {
             if (token == null)

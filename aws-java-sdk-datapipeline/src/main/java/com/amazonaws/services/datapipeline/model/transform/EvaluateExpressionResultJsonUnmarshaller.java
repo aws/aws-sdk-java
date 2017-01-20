@@ -39,8 +39,9 @@ public class EvaluateExpressionResultJsonUnmarshaller implements Unmarshaller<Ev
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return evaluateExpressionResult;
+        }
 
         while (true) {
             if (token == null)

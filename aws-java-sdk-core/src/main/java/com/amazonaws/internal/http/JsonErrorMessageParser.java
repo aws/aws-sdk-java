@@ -14,18 +14,26 @@
  */
 package com.amazonaws.internal.http;
 
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkProtectedApi;
+import com.amazonaws.http.HttpResponse;
+import com.fasterxml.jackson.databind.JsonNode;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.amazonaws.annotation.SdkInternalApi;
-import com.fasterxml.jackson.databind.JsonNode;
-
-@SdkInternalApi
+@SdkProtectedApi
 public class JsonErrorMessageParser {
 
     private static final List<String> DEFAULT_ERROR_MESSAGE_LOCATIONS = Arrays
             .asList("message", "Message", "errorMessage");
+
+    /**
+     * x-amzn-error-message may be returned by RESTFUL services that do not send a response
+     * payload (like in a HEAD request).
+     */
+    public static final String X_AMZN_ERROR_MESSAGE = "x-amzn-error-message";
 
     /**
      * Standard JSON Error Message Parser that checks for JSON fields in this order: 'message',
@@ -33,6 +41,8 @@ public class JsonErrorMessageParser {
      */
     public static final JsonErrorMessageParser DEFAULT_ERROR_MESSAGE_PARSER = new JsonErrorMessageParser(
             DEFAULT_ERROR_MESSAGE_LOCATIONS);
+
+    private static final HttpResponse EMPTY_HTTP_RESPONSE = new HttpResponse(null, null);
 
     private final List<String> errorMessageJsonLocations;
 
@@ -45,11 +55,24 @@ public class JsonErrorMessageParser {
     }
 
     /**
+     * @deprecated By {@link #parseErrorMessage(HttpResponse, JsonNode)}
+     */
+    @Deprecated
+    public String parseErrorMessage(JsonNode jsonNode) {
+        return parseErrorMessage(EMPTY_HTTP_RESPONSE, jsonNode);
+    }
+
+    /**
      * Parse the error message from the response.
      *
      * @return Error Code of exceptional response or null if it can't be determined
      */
-    public String parseErrorMessage(JsonNode jsonNode) {
+    public String parseErrorMessage(HttpResponse httpResponse, JsonNode jsonNode) {
+        // If X_AMZN_ERROR_MESSAGE is present, prefer that. Otherwise check the JSON body.
+        final String headerMessage = httpResponse.getHeader(X_AMZN_ERROR_MESSAGE);
+        if (headerMessage != null) {
+            return headerMessage;
+        }
         for (String field : errorMessageJsonLocations) {
             JsonNode value = jsonNode.get(field);
             if (value != null && value.isTextual()) {

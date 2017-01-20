@@ -39,8 +39,9 @@ public class ListImagesResultJsonUnmarshaller implements Unmarshaller<ListImages
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listImagesResult;
+        }
 
         while (true) {
             if (token == null)

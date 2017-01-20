@@ -39,8 +39,9 @@ public class RegisterVolumeResultJsonUnmarshaller implements Unmarshaller<Regist
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return registerVolumeResult;
+        }
 
         while (true) {
             if (token == null)

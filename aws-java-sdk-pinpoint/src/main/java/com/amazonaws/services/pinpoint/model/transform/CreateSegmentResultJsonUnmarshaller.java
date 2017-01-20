@@ -39,8 +39,9 @@ public class CreateSegmentResultJsonUnmarshaller implements Unmarshaller<CreateS
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createSegmentResult;
+        }
 
         while (true) {
             if (token == null)

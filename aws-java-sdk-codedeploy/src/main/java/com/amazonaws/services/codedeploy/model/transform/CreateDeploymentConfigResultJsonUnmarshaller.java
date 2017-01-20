@@ -39,8 +39,9 @@ public class CreateDeploymentConfigResultJsonUnmarshaller implements Unmarshalle
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return createDeploymentConfigResult;
+        }
 
         while (true) {
             if (token == null)

@@ -39,8 +39,9 @@ public class MeterUsageResultJsonUnmarshaller implements Unmarshaller<MeterUsage
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return meterUsageResult;
+        }
 
         while (true) {
             if (token == null)

@@ -39,8 +39,9 @@ public class ListVolumeRecoveryPointsResultJsonUnmarshaller implements Unmarshal
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listVolumeRecoveryPointsResult;
+        }
 
         while (true) {
             if (token == null)

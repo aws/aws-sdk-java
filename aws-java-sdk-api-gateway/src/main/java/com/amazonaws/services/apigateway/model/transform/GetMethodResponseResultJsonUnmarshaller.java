@@ -39,8 +39,9 @@ public class GetMethodResponseResultJsonUnmarshaller implements Unmarshaller<Get
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getMethodResponseResult;
+        }
 
         while (true) {
             if (token == null)
