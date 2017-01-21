@@ -46,7 +46,7 @@ public class CollectionUtils {
      * @return Empty string if collection is null or empty. Otherwise joins all strings in the collection with the separator.
      */
     public static String join(Collection<String> toJoin, String separator) {
-        if (toJoin == null || toJoin.isEmpty()) {
+        if (isNullOrEmpty(toJoin)) {
             return "";
         }
 
