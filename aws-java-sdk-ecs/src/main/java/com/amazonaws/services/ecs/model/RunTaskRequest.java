@@ -78,8 +78,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String startedBy;
     /**
      * <p>
-     * The task group to associate with the task. By default, if you do not specify a task group, the group
-     * <code>family:TASKDEF-FAMILY</code> is applied.
+     * The name of the task group to associate with the task. The default value is the family name of the task
+     * definition (for example, family:my-family-name).
      * </p>
      */
     private String group;
@@ -423,13 +423,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The task group to associate with the task. By default, if you do not specify a task group, the group
-     * <code>family:TASKDEF-FAMILY</code> is applied.
+     * The name of the task group to associate with the task. The default value is the family name of the task
+     * definition (for example, family:my-family-name).
      * </p>
      * 
      * @param group
-     *        The task group to associate with the task. By default, if you do not specify a task group, the group
-     *        <code>family:TASKDEF-FAMILY</code> is applied.
+     *        The name of the task group to associate with the task. The default value is the family name of the task
+     *        definition (for example, family:my-family-name).
      */
 
     public void setGroup(String group) {
@@ -438,12 +438,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The task group to associate with the task. By default, if you do not specify a task group, the group
-     * <code>family:TASKDEF-FAMILY</code> is applied.
+     * The name of the task group to associate with the task. The default value is the family name of the task
+     * definition (for example, family:my-family-name).
      * </p>
      * 
-     * @return The task group to associate with the task. By default, if you do not specify a task group, the group
-     *         <code>family:TASKDEF-FAMILY</code> is applied.
+     * @return The name of the task group to associate with the task. The default value is the family name of the task
+     *         definition (for example, family:my-family-name).
      */
 
     public String getGroup() {
@@ -452,13 +452,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The task group to associate with the task. By default, if you do not specify a task group, the group
-     * <code>family:TASKDEF-FAMILY</code> is applied.
+     * The name of the task group to associate with the task. The default value is the family name of the task
+     * definition (for example, family:my-family-name).
      * </p>
      * 
      * @param group
-     *        The task group to associate with the task. By default, if you do not specify a task group, the group
-     *        <code>family:TASKDEF-FAMILY</code> is applied.
+     *        The name of the task group to associate with the task. The default value is the family name of the task
+     *        definition (for example, family:my-family-name).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

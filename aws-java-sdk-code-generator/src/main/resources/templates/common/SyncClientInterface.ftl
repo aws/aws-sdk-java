@@ -58,7 +58,10 @@ public interface ${metadata.syncInterface} {
      *            including the protocol<#if metadata.defaultEndpoint?has_content> (ex: "${metadata.defaultEndpoint}")</#if> of
      *            the region specific AWS endpoint this client will communicate
      *            with.
+     * @deprecated use {@link AwsClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)} for example:
+     * {@code builder.setEndpointConfiguration(new EndpointConfiguration(endpoint, signingRegion));}
      */
+    @Deprecated
     void setEndpoint(String endpoint);
 
   <#if shapes.Region?has_content>
@@ -89,7 +92,9 @@ public interface ${metadata.syncInterface} {
      * @see Region#getRegion(com.amazonaws.regions.Regions)
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      * @see ${regionClassType}#isServiceSupported(String)
+     * @deprecated use {@link AwsClientBuilder#setRegion(String)}
      */
+    @Deprecated
     void setRegion(${regionClassType} region);
 
   <#list operations?values as operationModel>

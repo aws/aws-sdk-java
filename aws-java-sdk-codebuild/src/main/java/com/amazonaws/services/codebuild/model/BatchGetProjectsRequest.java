@@ -27,17 +27,17 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names of the build projects to get information about.
+     * The names of the build projects.
      * </p>
      */
     private java.util.List<String> names;
 
     /**
      * <p>
-     * The names of the build projects to get information about.
+     * The names of the build projects.
      * </p>
      * 
-     * @return The names of the build projects to get information about.
+     * @return The names of the build projects.
      */
 
     public java.util.List<String> getNames() {
@@ -46,11 +46,11 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names of the build projects to get information about.
+     * The names of the build projects.
      * </p>
      * 
      * @param names
-     *        The names of the build projects to get information about.
+     *        The names of the build projects.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -64,7 +64,7 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names of the build projects to get information about.
+     * The names of the build projects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param names
-     *        The names of the build projects to get information about.
+     *        The names of the build projects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names of the build projects to get information about.
+     * The names of the build projects.
      * </p>
      * 
      * @param names
-     *        The names of the build projects to get information about.
+     *        The names of the build projects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

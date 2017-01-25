@@ -58,12 +58,22 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public GetBlobResult getBlob(GetBlobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetBranchResult getBranch(GetBranchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetCommitResult getCommit(GetCommitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDifferencesResult getDifferences(GetDifferencesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

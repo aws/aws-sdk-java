@@ -25,18 +25,18 @@ public class StopBuildResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the build that was attempted to be stopped.
+     * Information about the build.
      * </p>
      */
     private Build build;
 
     /**
      * <p>
-     * Information about the build that was attempted to be stopped.
+     * Information about the build.
      * </p>
      * 
      * @param build
-     *        Information about the build that was attempted to be stopped.
+     *        Information about the build.
      */
 
     public void setBuild(Build build) {
@@ -45,10 +45,10 @@ public class StopBuildResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the build that was attempted to be stopped.
+     * Information about the build.
      * </p>
      * 
-     * @return Information about the build that was attempted to be stopped.
+     * @return Information about the build.
      */
 
     public Build getBuild() {
@@ -57,11 +57,11 @@ public class StopBuildResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the build that was attempted to be stopped.
+     * Information about the build.
      * </p>
      * 
      * @param build
-     *        Information about the build that was attempted to be stopped.
+     *        Information about the build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

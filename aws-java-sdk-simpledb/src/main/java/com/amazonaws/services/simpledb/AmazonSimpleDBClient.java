@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.simpledb.AmazonSimpleDBClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -94,7 +95,9 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonSimpleDBClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonSimpleDBClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -117,7 +120,9 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonSimpleDBClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSimpleDBClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -131,7 +136,10 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonSimpleDBClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonSimpleDBClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonSimpleDBClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -149,7 +157,10 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon SimpleDB (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonSimpleDBClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSimpleDBClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSimpleDBClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -166,7 +177,9 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonSimpleDBClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonSimpleDBClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -184,7 +197,10 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon SimpleDB (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonSimpleDBClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSimpleDBClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSimpleDBClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -204,7 +220,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonSimpleDBClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSimpleDBClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonSimpleDBClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonSimpleDBClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

@@ -28,24 +28,24 @@ public class EnvironmentImage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Docker image's name.
+     * The name of the Docker image.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The Docker image's description.
+     * The description of the Docker image.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * The Docker image's name.
+     * The name of the Docker image.
      * </p>
      * 
      * @param name
-     *        The Docker image's name.
+     *        The name of the Docker image.
      */
 
     public void setName(String name) {
@@ -54,10 +54,10 @@ public class EnvironmentImage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Docker image's name.
+     * The name of the Docker image.
      * </p>
      * 
-     * @return The Docker image's name.
+     * @return The name of the Docker image.
      */
 
     public String getName() {
@@ -66,11 +66,11 @@ public class EnvironmentImage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Docker image's name.
+     * The name of the Docker image.
      * </p>
      * 
      * @param name
-     *        The Docker image's name.
+     *        The name of the Docker image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class EnvironmentImage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Docker image's description.
+     * The description of the Docker image.
      * </p>
      * 
      * @param description
-     *        The Docker image's description.
+     *        The description of the Docker image.
      */
 
     public void setDescription(String description) {
@@ -94,10 +94,10 @@ public class EnvironmentImage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Docker image's description.
+     * The description of the Docker image.
      * </p>
      * 
-     * @return The Docker image's description.
+     * @return The description of the Docker image.
      */
 
     public String getDescription() {
@@ -106,11 +106,11 @@ public class EnvironmentImage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Docker image's description.
+     * The description of the Docker image.
      * </p>
      * 
      * @param description
-     *        The Docker image's description.
+     *        The description of the Docker image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

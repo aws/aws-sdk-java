@@ -12,11 +12,18 @@
  */
 package com.amazonaws.services.elasticache;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticache.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing Amazon ElastiCache asynchronously. Each asynchronous method will return a Java Future object
@@ -61,9 +68,11 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonElastiCacheAsyncClient() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -85,10 +94,11 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonElastiCacheAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
-                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonElastiCacheAsyncClient(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -101,9 +111,11 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonElastiCacheAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonElastiCacheAsyncClient(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -114,8 +126,11 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElastiCacheAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonElastiCacheAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public AmazonElastiCacheAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -130,10 +145,12 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElastiCacheAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonElastiCacheAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonElastiCacheAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonElastiCacheAsyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -148,9 +165,11 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonElastiCacheAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonElastiCacheAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -167,10 +186,12 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElastiCacheAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonElastiCacheAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonElastiCacheAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -181,9 +202,11 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElastiCacheAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonElastiCacheAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonElastiCacheAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -197,10 +220,12 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonElastiCacheAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElastiCacheAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonElastiCacheAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonElastiCacheAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonElastiCacheAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -222,7 +247,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @return The executor service used by this client to execute async requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
 import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -96,7 +97,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonSimpleEmailServiceClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonSimpleEmailServiceClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -119,7 +122,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonSimpleEmailServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSimpleEmailServiceClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -133,7 +138,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonSimpleEmailServiceClientBuilder#withCredentials(AWSCredentialsProvider)} for
+     *             example:
+     *             {@code AmazonSimpleEmailServiceClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonSimpleEmailServiceClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -151,7 +160,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon SES (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonSimpleEmailServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSimpleEmailServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSimpleEmailServiceClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -168,7 +180,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonSimpleEmailServiceClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonSimpleEmailServiceClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -186,7 +200,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon SES (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonSimpleEmailServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSimpleEmailServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSimpleEmailServiceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -206,7 +223,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonSimpleEmailServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSimpleEmailServiceClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonSimpleEmailServiceClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonSimpleEmailServiceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

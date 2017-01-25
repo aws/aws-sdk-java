@@ -27,7 +27,7 @@ public class Resource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined
+     * The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a user-defined
      * resource.
      * </p>
      */
@@ -68,12 +68,12 @@ public class Resource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined
+     * The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a user-defined
      * resource.
      * </p>
      * 
      * @param name
-     *        The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a
+     *        The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a
      *        user-defined resource.
      */
 
@@ -83,11 +83,11 @@ public class Resource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined
+     * The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a user-defined
      * resource.
      * </p>
      * 
-     * @return The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a
+     * @return The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a
      *         user-defined resource.
      */
 
@@ -97,12 +97,12 @@ public class Resource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a user-defined
+     * The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a user-defined
      * resource.
      * </p>
      * 
      * @param name
-     *        The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, or a
+     *        The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a
      *        user-defined resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

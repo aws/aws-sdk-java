@@ -12,11 +12,18 @@
  */
 package com.amazonaws.services.cloudwatchevents;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing Amazon CloudWatch Events asynchronously. Each asynchronous method will return a Java Future
@@ -64,9 +71,11 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCloudWatchEventsAsyncClient() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -88,10 +97,11 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonCloudWatchEventsAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
-                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonCloudWatchEventsAsyncClient(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -104,9 +114,11 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonCloudWatchEventsAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonCloudWatchEventsAsyncClient(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -117,8 +129,11 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudWatchEventsAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonCloudWatchEventsAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public AmazonCloudWatchEventsAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -133,10 +148,12 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudWatchEventsAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCloudWatchEventsAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonCloudWatchEventsAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonCloudWatchEventsAsyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -151,9 +168,11 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonCloudWatchEventsAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonCloudWatchEventsAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -170,11 +189,12 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudWatchEventsAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonCloudWatchEventsAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonCloudWatchEventsAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -185,10 +205,11 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudWatchEventsAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonCloudWatchEventsAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonCloudWatchEventsAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -202,10 +223,13 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonCloudWatchEventsAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudWatchEventsAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCloudWatchEventsAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonCloudWatchEventsAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonCloudWatchEventsAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
+            ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -227,7 +251,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
      *
      * @return The executor service used by this client to execute async requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.appstream.AmazonAppStreamClientBuilder;
 import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -110,7 +111,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonAppStreamClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonAppStreamClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -133,7 +136,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonAppStreamClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonAppStreamClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -148,7 +153,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonAppStreamClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonAppStreamClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonAppStreamClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -166,7 +174,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon AppStream (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonAppStreamClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonAppStreamClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonAppStreamClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -183,7 +194,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonAppStreamClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonAppStreamClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -201,7 +214,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon AppStream (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonAppStreamClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonAppStreamClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonAppStreamClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -221,7 +237,11 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonAppStreamClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonAppStreamClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonAppStreamClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonAppStreamClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

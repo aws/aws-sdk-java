@@ -27,52 +27,52 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The build project's name.
+     * The name of the build project.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A meaningful description of the build project.
+     * A description that makes the build project easy to identify.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Information about the build project's build input source code.
+     * Information about the build input source code for the build project.
      * </p>
      */
     private ProjectSource source;
     /**
      * <p>
-     * Information about the build project's build output artifacts.
+     * Information about the build output artifacts for the build project.
      * </p>
      */
     private ProjectArtifacts artifacts;
     /**
      * <p>
-     * Information about the build project's build environment.
+     * Information about the build environment for the build project.
      * </p>
      */
     private ProjectEnvironment environment;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
-     * interact with dependent AWS services on behalf of the AWS account.
+     * The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with
+     * dependent AWS services on behalf of the AWS account.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that
-     * does not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any build that has not
+     * been marked as completed. The default is 60 minutes.
      * </p>
      */
     private Integer timeoutInMinutes;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build project's
-     * build output artifacts.
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
      * </p>
      * <p>
      * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
@@ -92,11 +92,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The build project's name.
+     * The name of the build project.
      * </p>
      * 
      * @param name
-     *        The build project's name.
+     *        The name of the build project.
      */
 
     public void setName(String name) {
@@ -105,10 +105,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The build project's name.
+     * The name of the build project.
      * </p>
      * 
-     * @return The build project's name.
+     * @return The name of the build project.
      */
 
     public String getName() {
@@ -117,11 +117,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The build project's name.
+     * The name of the build project.
      * </p>
      * 
      * @param name
-     *        The build project's name.
+     *        The name of the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A meaningful description of the build project.
+     * A description that makes the build project easy to identify.
      * </p>
      * 
      * @param description
-     *        A meaningful description of the build project.
+     *        A description that makes the build project easy to identify.
      */
 
     public void setDescription(String description) {
@@ -145,10 +145,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A meaningful description of the build project.
+     * A description that makes the build project easy to identify.
      * </p>
      * 
-     * @return A meaningful description of the build project.
+     * @return A description that makes the build project easy to identify.
      */
 
     public String getDescription() {
@@ -157,11 +157,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A meaningful description of the build project.
+     * A description that makes the build project easy to identify.
      * </p>
      * 
      * @param description
-     *        A meaningful description of the build project.
+     *        A description that makes the build project easy to identify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build input source code.
+     * Information about the build input source code for the build project.
      * </p>
      * 
      * @param source
-     *        Information about the build project's build input source code.
+     *        Information about the build input source code for the build project.
      */
 
     public void setSource(ProjectSource source) {
@@ -185,10 +185,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build input source code.
+     * Information about the build input source code for the build project.
      * </p>
      * 
-     * @return Information about the build project's build input source code.
+     * @return Information about the build input source code for the build project.
      */
 
     public ProjectSource getSource() {
@@ -197,11 +197,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build input source code.
+     * Information about the build input source code for the build project.
      * </p>
      * 
      * @param source
-     *        Information about the build project's build input source code.
+     *        Information about the build input source code for the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +212,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build output artifacts.
+     * Information about the build output artifacts for the build project.
      * </p>
      * 
      * @param artifacts
-     *        Information about the build project's build output artifacts.
+     *        Information about the build output artifacts for the build project.
      */
 
     public void setArtifacts(ProjectArtifacts artifacts) {
@@ -225,10 +225,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build output artifacts.
+     * Information about the build output artifacts for the build project.
      * </p>
      * 
-     * @return Information about the build project's build output artifacts.
+     * @return Information about the build output artifacts for the build project.
      */
 
     public ProjectArtifacts getArtifacts() {
@@ -237,11 +237,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build output artifacts.
+     * Information about the build output artifacts for the build project.
      * </p>
      * 
      * @param artifacts
-     *        Information about the build project's build output artifacts.
+     *        Information about the build output artifacts for the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,11 +252,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build environment.
+     * Information about the build environment for the build project.
      * </p>
      * 
      * @param environment
-     *        Information about the build project's build environment.
+     *        Information about the build environment for the build project.
      */
 
     public void setEnvironment(ProjectEnvironment environment) {
@@ -265,10 +265,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build environment.
+     * Information about the build environment for the build project.
      * </p>
      * 
-     * @return Information about the build project's build environment.
+     * @return Information about the build environment for the build project.
      */
 
     public ProjectEnvironment getEnvironment() {
@@ -277,11 +277,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the build project's build environment.
+     * Information about the build environment for the build project.
      * </p>
      * 
      * @param environment
-     *        Information about the build project's build environment.
+     *        Information about the build environment for the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,13 +292,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
-     * interact with dependent AWS services on behalf of the AWS account.
+     * The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with
+     * dependent AWS services on behalf of the AWS account.
      * </p>
      * 
      * @param serviceRole
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS
-     *        CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     *        The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with
+     *        dependent AWS services on behalf of the AWS account.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -307,12 +307,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
-     * interact with dependent AWS services on behalf of the AWS account.
+     * The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with
+     * dependent AWS services on behalf of the AWS account.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS
-     *         CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     * @return The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with
+     *         dependent AWS services on behalf of the AWS account.
      */
 
     public String getServiceRole() {
@@ -321,13 +321,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
-     * interact with dependent AWS services on behalf of the AWS account.
+     * The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with
+     * dependent AWS services on behalf of the AWS account.
      * </p>
      * 
      * @param serviceRole
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS
-     *        CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     *        The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with
+     *        dependent AWS services on behalf of the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,13 +338,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that
-     * does not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any build that has not
+     * been marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build
-     *        that does not get marked as completed. The default is 60 minutes.
+     *        How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any build that
+     *        has not been marked as completed. The default is 60 minutes.
      */
 
     public void setTimeoutInMinutes(Integer timeoutInMinutes) {
@@ -353,12 +353,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that
-     * does not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any build that has not
+     * been marked as completed. The default is 60 minutes.
      * </p>
      * 
-     * @return How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related
-     *         build that does not get marked as completed. The default is 60 minutes.
+     * @return How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any build that
+     *         has not been marked as completed. The default is 60 minutes.
      */
 
     public Integer getTimeoutInMinutes() {
@@ -367,13 +367,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that
-     * does not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any build that has not
+     * been marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build
-     *        that does not get marked as completed. The default is 60 minutes.
+     *        How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any build that
+     *        has not been marked as completed. The default is 60 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,8 +384,8 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build project's
-     * build output artifacts.
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
      * </p>
      * <p>
      * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
@@ -394,7 +394,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param encryptionKey
      *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *        project's build output artifacts.</p>
+     *        output artifacts.</p>
      *        <p>
      *        You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
      *        format <code>alias/<i>alias-name</i> </code>).
@@ -406,8 +406,8 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build project's
-     * build output artifacts.
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
      * </p>
      * <p>
      * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
@@ -415,7 +415,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *         project's build output artifacts.</p>
+     *         output artifacts.</p>
      *         <p>
      *         You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
      *         format <code>alias/<i>alias-name</i> </code>).
@@ -427,8 +427,8 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build project's
-     * build output artifacts.
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
      * </p>
      * <p>
      * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
@@ -437,7 +437,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param encryptionKey
      *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *        project's build output artifacts.</p>
+     *        output artifacts.</p>
      *        <p>
      *        You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
      *        format <code>alias/<i>alias-name</i> </code>).

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.opsworks.AWSOpsWorksClientBuilder;
 import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -227,7 +228,9 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSOpsWorksClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSOpsWorksClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -250,7 +253,9 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSOpsWorksClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSOpsWorksClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -264,7 +269,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSOpsWorksClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSOpsWorksClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSOpsWorksClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -282,7 +290,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS OpsWorks (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSOpsWorksClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSOpsWorksClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSOpsWorksClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -299,7 +310,9 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSOpsWorksClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -317,7 +330,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS OpsWorks (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSOpsWorksClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSOpsWorksClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -337,7 +353,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSOpsWorksClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSOpsWorksClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSOpsWorksClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSOpsWorksClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

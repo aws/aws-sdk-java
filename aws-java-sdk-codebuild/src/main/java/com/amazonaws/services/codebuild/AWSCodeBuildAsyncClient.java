@@ -12,11 +12,18 @@
  */
 package com.amazonaws.services.codebuild;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.services.codebuild.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing AWS CodeBuild asynchronously. Each asynchronous method will return a Java Future object
@@ -25,10 +32,10 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * <fullname>AWS CodeBuild</fullname>
  * <p>
- * AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
+ * AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
  * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
  * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
- * and build tools such as Apach Maven, Gradle, and more. You can also fully customize build environments in AWS
+ * and build tools, such as Apach Maven, Gradle, and more. You can also fully customize build environments in AWS
  * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay
  * only for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User
  * Guide</i>.
@@ -123,9 +130,11 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSCodeBuildAsyncClient() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -147,10 +156,11 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AWSCodeBuildAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
-                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AWSCodeBuildAsyncClient(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -163,9 +173,11 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AWSCodeBuildAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AWSCodeBuildAsyncClient(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -176,8 +188,11 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodeBuildAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSCodeBuildAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public AWSCodeBuildAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -192,10 +207,12 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodeBuildAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSCodeBuildAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSCodeBuildAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSCodeBuildAsyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -210,9 +227,11 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AWSCodeBuildAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AWSCodeBuildAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -229,10 +248,12 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodeBuildAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AWSCodeBuildAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AWSCodeBuildAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -243,9 +264,11 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodeBuildAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSCodeBuildAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSCodeBuildAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -259,10 +282,12 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSCodeBuildAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodeBuildAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSCodeBuildAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSCodeBuildAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSCodeBuildAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -283,7 +308,7 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      *
      * @return The executor service used by this client to execute async requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

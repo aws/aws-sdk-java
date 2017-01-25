@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.iotdata.AWSIotDataClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -120,7 +121,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSIotDataClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSIotDataClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -143,7 +146,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSIotDataClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSIotDataClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -158,7 +163,10 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSIotDataClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSIotDataClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSIotDataClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -176,7 +184,10 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS IoT Data Plane (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSIotDataClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSIotDataClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSIotDataClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -193,7 +204,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSIotDataClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSIotDataClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -211,7 +224,10 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS IoT Data Plane (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSIotDataClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSIotDataClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSIotDataClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -231,7 +247,11 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSIotDataClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSIotDataClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSIotDataClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSIotDataClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

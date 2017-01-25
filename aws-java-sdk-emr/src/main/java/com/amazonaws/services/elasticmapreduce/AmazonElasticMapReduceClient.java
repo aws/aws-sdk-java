@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClientBuilder;
 import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -99,7 +100,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonElasticMapReduceClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonElasticMapReduceClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -122,7 +125,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonElasticMapReduceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonElasticMapReduceClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -136,7 +141,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonElasticMapReduceClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonElasticMapReduceClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonElasticMapReduceClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -154,7 +162,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon EMR (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonElasticMapReduceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticMapReduceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonElasticMapReduceClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -171,7 +182,9 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonElasticMapReduceClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonElasticMapReduceClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -189,7 +202,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon EMR (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonElasticMapReduceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticMapReduceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonElasticMapReduceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -209,7 +225,11 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonElasticMapReduceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticMapReduceClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonElasticMapReduceClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonElasticMapReduceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

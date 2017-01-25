@@ -12,11 +12,18 @@
  */
 package com.amazonaws.services.simplesystemsmanagement;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing Amazon SSM asynchronously. Each asynchronous method will return a Java Future object
@@ -64,9 +71,11 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSSimpleSystemsManagementAsyncClient() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -88,10 +97,11 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AWSSimpleSystemsManagementAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
-                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AWSSimpleSystemsManagementAsyncClient(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -104,9 +114,11 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AWSSimpleSystemsManagementAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AWSSimpleSystemsManagementAsyncClient(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -117,8 +129,11 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSSimpleSystemsManagementAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSSimpleSystemsManagementAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public AWSSimpleSystemsManagementAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -133,10 +148,12 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSSimpleSystemsManagementAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSSimpleSystemsManagementAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSSimpleSystemsManagementAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSSimpleSystemsManagementAsyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -151,9 +168,11 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AWSSimpleSystemsManagementAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AWSSimpleSystemsManagementAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -170,11 +189,12 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSSimpleSystemsManagementAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AWSSimpleSystemsManagementAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AWSSimpleSystemsManagementAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -185,10 +205,11 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSSimpleSystemsManagementAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSSimpleSystemsManagementAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSSimpleSystemsManagementAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -202,10 +223,13 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSSimpleSystemsManagementAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSSimpleSystemsManagementAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSSimpleSystemsManagementAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSSimpleSystemsManagementAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSSimpleSystemsManagementAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
+            ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -226,7 +250,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *
      * @return The executor service used by this client to execute async requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

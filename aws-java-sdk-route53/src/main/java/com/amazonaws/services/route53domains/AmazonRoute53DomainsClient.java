@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.route53domains.AmazonRoute53DomainsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -101,7 +102,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonRoute53DomainsClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonRoute53DomainsClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -124,7 +127,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *        proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonRoute53DomainsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRoute53DomainsClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -139,7 +144,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonRoute53DomainsClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonRoute53DomainsClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonRoute53DomainsClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -157,7 +165,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Route 53 Domains (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonRoute53DomainsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRoute53DomainsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRoute53DomainsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -174,7 +185,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonRoute53DomainsClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonRoute53DomainsClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -192,7 +205,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Route 53 Domains (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonRoute53DomainsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRoute53DomainsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRoute53DomainsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -212,7 +228,11 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *        proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonRoute53DomainsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRoute53DomainsClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonRoute53DomainsClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonRoute53DomainsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

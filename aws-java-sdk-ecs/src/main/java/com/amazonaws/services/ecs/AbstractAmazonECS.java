@@ -234,6 +234,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public UpdateContainerInstancesStateResult updateContainerInstancesState(UpdateContainerInstancesStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateServiceResult updateService(UpdateServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

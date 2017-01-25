@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.xray.AWSXRayClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -93,7 +94,9 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSXRayClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSXRayClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -116,7 +119,9 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSXRayClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSXRayClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -130,7 +135,10 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSXRayClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSXRayClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSXRayClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -148,7 +156,10 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS X-Ray (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSXRayClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSXRayClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSXRayClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -165,7 +176,9 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSXRayClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSXRayClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -183,7 +196,10 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS X-Ray (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSXRayClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSXRayClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSXRayClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -203,7 +219,11 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSXRayClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSXRayClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSXRayClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSXRayClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

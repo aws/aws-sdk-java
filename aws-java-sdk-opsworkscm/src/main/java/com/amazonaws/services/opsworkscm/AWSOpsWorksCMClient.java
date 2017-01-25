@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.opsworkscm.AWSOpsWorksCMClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -150,7 +151,9 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSOpsWorksCMClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSOpsWorksCMClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -173,7 +176,9 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSOpsWorksCMClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSOpsWorksCMClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -187,7 +192,10 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSOpsWorksCMClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSOpsWorksCMClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSOpsWorksCMClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -205,7 +213,10 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to OpsWorksCM (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSOpsWorksCMClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSOpsWorksCMClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSOpsWorksCMClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -222,7 +233,9 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSOpsWorksCMClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSOpsWorksCMClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -240,7 +253,10 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to OpsWorksCM (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSOpsWorksCMClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSOpsWorksCMClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSOpsWorksCMClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -260,7 +276,11 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSOpsWorksCMClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSOpsWorksCMClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSOpsWorksCMClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSOpsWorksCMClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

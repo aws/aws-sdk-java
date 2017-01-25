@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.directconnect.AmazonDirectConnectClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -104,7 +105,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonDirectConnectClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonDirectConnectClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -127,7 +130,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonDirectConnectClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDirectConnectClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -142,7 +147,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonDirectConnectClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonDirectConnectClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonDirectConnectClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -160,7 +168,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Direct Connect (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonDirectConnectClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDirectConnectClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDirectConnectClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -177,7 +188,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonDirectConnectClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonDirectConnectClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -195,7 +208,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Direct Connect (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonDirectConnectClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDirectConnectClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDirectConnectClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -215,7 +231,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonDirectConnectClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDirectConnectClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonDirectConnectClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonDirectConnectClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

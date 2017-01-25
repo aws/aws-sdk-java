@@ -80,6 +80,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetBlobResult> getBlobAsync(GetBlobRequest request) {
+
+        return getBlobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBlobResult> getBlobAsync(GetBlobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetBlobRequest, GetBlobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBranchResult> getBranchAsync(GetBranchRequest request) {
 
         return getBranchAsync(request, null);
@@ -101,6 +114,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     @Override
     public java.util.concurrent.Future<GetCommitResult> getCommitAsync(GetCommitRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCommitRequest, GetCommitResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDifferencesResult> getDifferencesAsync(GetDifferencesRequest request) {
+
+        return getDifferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDifferencesResult> getDifferencesAsync(GetDifferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDifferencesRequest, GetDifferencesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

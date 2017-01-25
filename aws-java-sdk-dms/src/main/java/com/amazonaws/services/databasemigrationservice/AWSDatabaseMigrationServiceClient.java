@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.databasemigrationservice.AWSDatabaseMigrationServiceClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -129,7 +130,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSDatabaseMigrationServiceClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSDatabaseMigrationServiceClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -152,7 +155,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *        (ex: proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSDatabaseMigrationServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSDatabaseMigrationServiceClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -167,7 +172,11 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSDatabaseMigrationServiceClientBuilder#withCredentials(AWSCredentialsProvider)} for
+     *             example:
+     *             {@code AWSDatabaseMigrationServiceClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSDatabaseMigrationServiceClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -185,7 +194,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Database Migration Service
      *        (ex: proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSDatabaseMigrationServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSDatabaseMigrationServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSDatabaseMigrationServiceClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -202,7 +214,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSDatabaseMigrationServiceClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSDatabaseMigrationServiceClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -220,7 +234,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Database Migration Service
      *        (ex: proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSDatabaseMigrationServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSDatabaseMigrationServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSDatabaseMigrationServiceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -240,7 +257,11 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *        (ex: proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSDatabaseMigrationServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSDatabaseMigrationServiceClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSDatabaseMigrationServiceClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSDatabaseMigrationServiceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

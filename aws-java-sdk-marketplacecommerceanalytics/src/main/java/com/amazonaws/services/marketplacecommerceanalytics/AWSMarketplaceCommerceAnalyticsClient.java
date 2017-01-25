@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.marketplacecommerceanalytics.AWSMarketplaceCommerceAnalyticsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -86,7 +87,9 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSMarketplaceCommerceAnalyticsClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSMarketplaceCommerceAnalyticsClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -109,7 +112,9 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *        Analytics (ex: proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSMarketplaceCommerceAnalyticsClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -124,7 +129,11 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)} for
+     *             example:
+     *             {@code AWSMarketplaceCommerceAnalyticsClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSMarketplaceCommerceAnalyticsClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -142,7 +151,10 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Marketplace Commerce
      *        Analytics (ex: proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSMarketplaceCommerceAnalyticsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -159,7 +171,9 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSMarketplaceCommerceAnalyticsClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -177,7 +191,10 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Marketplace Commerce
      *        Analytics (ex: proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSMarketplaceCommerceAnalyticsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -197,7 +214,11 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *        Analytics (ex: proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSMarketplaceCommerceAnalyticsClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSMarketplaceCommerceAnalyticsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

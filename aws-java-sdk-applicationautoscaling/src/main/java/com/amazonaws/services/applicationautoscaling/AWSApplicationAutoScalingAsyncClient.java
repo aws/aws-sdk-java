@@ -12,11 +12,18 @@
  */
 package com.amazonaws.services.applicationautoscaling;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.services.applicationautoscaling.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing Application Auto Scaling asynchronously. Each asynchronous method will return a Java Future
@@ -100,9 +107,11 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSApplicationAutoScalingAsyncClient() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -124,10 +133,11 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AWSApplicationAutoScalingAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
-                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AWSApplicationAutoScalingAsyncClient(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -140,9 +150,11 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AWSApplicationAutoScalingAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AWSApplicationAutoScalingAsyncClient(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -153,8 +165,11 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationAutoScalingAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSApplicationAutoScalingAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public AWSApplicationAutoScalingAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -169,10 +184,12 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationAutoScalingAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSApplicationAutoScalingAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSApplicationAutoScalingAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSApplicationAutoScalingAsyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -187,9 +204,11 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AWSApplicationAutoScalingAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AWSApplicationAutoScalingAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -206,11 +225,12 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationAutoScalingAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AWSApplicationAutoScalingAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AWSApplicationAutoScalingAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -221,10 +241,11 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationAutoScalingAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSApplicationAutoScalingAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSApplicationAutoScalingAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -238,10 +259,13 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AWSApplicationAutoScalingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationAutoScalingAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSApplicationAutoScalingAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AWSApplicationAutoScalingAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AWSApplicationAutoScalingAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
+            ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -263,7 +287,7 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *
      * @return The executor service used by this client to execute async requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

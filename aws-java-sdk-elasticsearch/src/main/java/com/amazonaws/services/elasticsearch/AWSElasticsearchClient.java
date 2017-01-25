@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.elasticsearch.AWSElasticsearchClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -117,7 +118,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSElasticsearchClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSElasticsearchClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -140,7 +143,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      *        proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSElasticsearchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSElasticsearchClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -155,7 +160,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSElasticsearchClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSElasticsearchClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSElasticsearchClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -173,7 +181,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Elasticsearch Service (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSElasticsearchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSElasticsearchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSElasticsearchClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -190,7 +201,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSElasticsearchClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSElasticsearchClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -208,7 +221,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Elasticsearch Service (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSElasticsearchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSElasticsearchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSElasticsearchClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -228,7 +244,11 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      *        proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSElasticsearchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSElasticsearchClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSElasticsearchClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSElasticsearchClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

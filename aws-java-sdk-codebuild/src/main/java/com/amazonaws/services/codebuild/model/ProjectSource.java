@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about the build project's build input source code.
+ * Information about the build input source code for the build project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectSource" target="_top">AWS API
@@ -83,12 +83,12 @@ public class ProjectSource implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For source code in a GitHub repository, the HTTPS clone URL, including the user name and personal access token,
-     * to the repository that contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>
-     * ). For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating an Access Token
-     * for Command-Line Use</a> on the GitHub Help website.
+     * For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your
+     * GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not
+     * need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
+     * CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
+     * <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -96,7 +96,7 @@ public class ProjectSource implements Serializable, Cloneable {
     private String location;
     /**
      * <p>
-     * The build spec declaration to use for this build project's related builds.
+     * The build spec declaration to use for the builds in this build project.
      * </p>
      * <p>
      * If this value is not specified, a build spec must be included along with the source code to be built.
@@ -108,8 +108,8 @@ public class ProjectSource implements Serializable, Cloneable {
      * Information about the authorization settings for AWS CodeBuild to access the source code to be built.
      * </p>
      * <p>
-     * This information is only for the AWS CodeBuild console's use. Your code should not get or set this information
-     * directly.
+     * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
+     * directly (unless the build project's source <code>type</code> value is <code>GITHUB</code>).
      * </p>
      */
     private SourceAuth auth;
@@ -440,12 +440,12 @@ public class ProjectSource implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For source code in a GitHub repository, the HTTPS clone URL, including the user name and personal access token,
-     * to the repository that contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>
-     * ). For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating an Access Token
-     * for Command-Line Use</a> on the GitHub Help website.
+     * For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your
+     * GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not
+     * need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
+     * CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
+     * <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -476,12 +476,12 @@ public class ProjectSource implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in a GitHub repository, the HTTPS clone URL, including the user name and personal access
-     *        token, to the repository that contains the source code and the build spec (for example,
-     *        <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>
-     *        ). For more information, see <a
-     *        href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating an Access
-     *        Token for Command-Line Use</a> on the GitHub Help website.
+     *        For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account
+     *        to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and
+     *        follow the on-screen instructions to complete the connection. (After you have connected to your GitHub
+     *        account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild
+     *        console.) To instruct AWS CodeBuild to then use this connection, in the <code>source</code> object, set
+     *        the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      *        </p>
      *        </li>
      */
@@ -518,12 +518,12 @@ public class ProjectSource implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For source code in a GitHub repository, the HTTPS clone URL, including the user name and personal access token,
-     * to the repository that contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>
-     * ). For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating an Access Token
-     * for Command-Line Use</a> on the GitHub Help website.
+     * For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your
+     * GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not
+     * need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
+     * CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
+     * <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -553,12 +553,12 @@ public class ProjectSource implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         For source code in a GitHub repository, the HTTPS clone URL, including the user name and personal access
-     *         token, to the repository that contains the source code and the build spec (for example,
-     *         <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>
-     *         ). For more information, see <a
-     *         href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating an Access
-     *         Token for Command-Line Use</a> on the GitHub Help website.
+     *         For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account
+     *         to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and
+     *         follow the on-screen instructions to complete the connection. (After you have connected to your GitHub
+     *         account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild
+     *         console.) To instruct AWS CodeBuild to then use this connection, in the <code>source</code> object, set
+     *         the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      *         </p>
      *         </li>
      */
@@ -595,12 +595,12 @@ public class ProjectSource implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For source code in a GitHub repository, the HTTPS clone URL, including the user name and personal access token,
-     * to the repository that contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>
-     * ). For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating an Access Token
-     * for Command-Line Use</a> on the GitHub Help website.
+     * For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your
+     * GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not
+     * need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
+     * CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
+     * <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -631,12 +631,12 @@ public class ProjectSource implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in a GitHub repository, the HTTPS clone URL, including the user name and personal access
-     *        token, to the repository that contains the source code and the build spec (for example,
-     *        <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>
-     *        ). For more information, see <a
-     *        href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating an Access
-     *        Token for Command-Line Use</a> on the GitHub Help website.
+     *        For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account
+     *        to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and
+     *        follow the on-screen instructions to complete the connection. (After you have connected to your GitHub
+     *        account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild
+     *        console.) To instruct AWS CodeBuild to then use this connection, in the <code>source</code> object, set
+     *        the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -649,14 +649,14 @@ public class ProjectSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build spec declaration to use for this build project's related builds.
+     * The build spec declaration to use for the builds in this build project.
      * </p>
      * <p>
      * If this value is not specified, a build spec must be included along with the source code to be built.
      * </p>
      * 
      * @param buildspec
-     *        The build spec declaration to use for this build project's related builds.</p>
+     *        The build spec declaration to use for the builds in this build project.</p>
      *        <p>
      *        If this value is not specified, a build spec must be included along with the source code to be built.
      */
@@ -667,13 +667,13 @@ public class ProjectSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build spec declaration to use for this build project's related builds.
+     * The build spec declaration to use for the builds in this build project.
      * </p>
      * <p>
      * If this value is not specified, a build spec must be included along with the source code to be built.
      * </p>
      * 
-     * @return The build spec declaration to use for this build project's related builds.</p>
+     * @return The build spec declaration to use for the builds in this build project.</p>
      *         <p>
      *         If this value is not specified, a build spec must be included along with the source code to be built.
      */
@@ -684,14 +684,14 @@ public class ProjectSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build spec declaration to use for this build project's related builds.
+     * The build spec declaration to use for the builds in this build project.
      * </p>
      * <p>
      * If this value is not specified, a build spec must be included along with the source code to be built.
      * </p>
      * 
      * @param buildspec
-     *        The build spec declaration to use for this build project's related builds.</p>
+     *        The build spec declaration to use for the builds in this build project.</p>
      *        <p>
      *        If this value is not specified, a build spec must be included along with the source code to be built.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -707,15 +707,15 @@ public class ProjectSource implements Serializable, Cloneable {
      * Information about the authorization settings for AWS CodeBuild to access the source code to be built.
      * </p>
      * <p>
-     * This information is only for the AWS CodeBuild console's use. Your code should not get or set this information
-     * directly.
+     * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
+     * directly (unless the build project's source <code>type</code> value is <code>GITHUB</code>).
      * </p>
      * 
      * @param auth
      *        Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *        <p>
-     *        This information is only for the AWS CodeBuild console's use. Your code should not get or set this
-     *        information directly.
+     *        This information is for the AWS CodeBuild console's use only. Your code should not get or set this
+     *        information directly (unless the build project's source <code>type</code> value is <code>GITHUB</code>).
      */
 
     public void setAuth(SourceAuth auth) {
@@ -727,14 +727,14 @@ public class ProjectSource implements Serializable, Cloneable {
      * Information about the authorization settings for AWS CodeBuild to access the source code to be built.
      * </p>
      * <p>
-     * This information is only for the AWS CodeBuild console's use. Your code should not get or set this information
-     * directly.
+     * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
+     * directly (unless the build project's source <code>type</code> value is <code>GITHUB</code>).
      * </p>
      * 
      * @return Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *         <p>
-     *         This information is only for the AWS CodeBuild console's use. Your code should not get or set this
-     *         information directly.
+     *         This information is for the AWS CodeBuild console's use only. Your code should not get or set this
+     *         information directly (unless the build project's source <code>type</code> value is <code>GITHUB</code>).
      */
 
     public SourceAuth getAuth() {
@@ -746,15 +746,15 @@ public class ProjectSource implements Serializable, Cloneable {
      * Information about the authorization settings for AWS CodeBuild to access the source code to be built.
      * </p>
      * <p>
-     * This information is only for the AWS CodeBuild console's use. Your code should not get or set this information
-     * directly.
+     * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
+     * directly (unless the build project's source <code>type</code> value is <code>GITHUB</code>).
      * </p>
      * 
      * @param auth
      *        Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *        <p>
-     *        This information is only for the AWS CodeBuild console's use. Your code should not get or set this
-     *        information directly.
+     *        This information is for the AWS CodeBuild console's use only. Your code should not get or set this
+     *        information directly (unless the build project's source <code>type</code> value is <code>GITHUB</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

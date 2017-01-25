@@ -29,6 +29,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import ${metadata.packageName}.${metadata.syncClientBuilderClassName};
 <#if hasWaiters>
 import ${metadata.packageName}.waiters.${metadata.syncInterface}Waiters;
 </#if>
@@ -92,7 +93,9 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      * return until the service call completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link ${metadata.syncClientBuilderClassName}#defaultClient()}
      */
+    @Deprecated
     public ${metadata.syncClient}() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -116,7 +119,9 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      *                       (ex: proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link ${metadata.syncClientBuilderClassName}#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public ${metadata.syncClient}(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -131,7 +136,10 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      *
      * @param awsCredentials The AWS credentials (access key ID and secret key) to use
      *                       when authenticating with AWS services.
+     * @deprecated use {@link ${metadata.syncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)} for example:
+     * {@code ${metadata.syncClientBuilderClassName}.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public ${metadata.syncClient}(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -150,7 +158,10 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      * @param clientConfiguration The client configuration options controlling how this
      *                       client connects to ${serviceAbbreviation}
      *                       (ex: proxy settings, retry counts, etc.).
+     * @deprecated use {@link ${metadata.syncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)} and
+     *             {@link ${metadata.syncClientBuilderClassName}#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public ${metadata.syncClient}(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -168,7 +179,9 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
+     * @deprecated use {@link ${metadata.syncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public ${metadata.syncClient}(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -188,7 +201,10 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      * @param clientConfiguration The client configuration options controlling how this
      *                       client connects to ${serviceAbbreviation}
      *                       (ex: proxy settings, retry counts, etc.).
+     * @deprecated use {@link ${metadata.syncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)} and
+     *             {@link ${metadata.syncClientBuilderClassName}#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public ${metadata.syncClient}(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -209,7 +225,11 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      *                       client connects to ${serviceAbbreviation}
      *                       (ex: proxy settings, retry counts, etc.).
      * @param requestMetricCollector optional request metric collector
+     * @deprecated use {@link ${metadata.syncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)} and
+     *             {@link ${metadata.syncClientBuilderClassName}#withClientConfiguration(ClientConfiguration)} and
+     *             {@link ${metadata.syncClientBuilderClassName}#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public ${metadata.syncClient}(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {

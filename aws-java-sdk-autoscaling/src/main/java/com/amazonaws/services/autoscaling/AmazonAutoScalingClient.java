@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.autoscaling.AmazonAutoScalingClientBuilder;
 import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -89,7 +90,9 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonAutoScalingClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonAutoScalingClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -112,7 +115,9 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonAutoScalingClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonAutoScalingClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -126,7 +131,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonAutoScalingClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonAutoScalingClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -144,7 +152,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Auto Scaling (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonAutoScalingClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonAutoScalingClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -161,7 +172,9 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonAutoScalingClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -179,7 +192,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Auto Scaling (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonAutoScalingClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonAutoScalingClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -199,7 +215,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonAutoScalingClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonAutoScalingClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonAutoScalingClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

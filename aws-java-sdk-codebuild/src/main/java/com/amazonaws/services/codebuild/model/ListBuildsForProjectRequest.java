@@ -27,7 +27,7 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the build project to get a list of build IDs for.
+     * The name of the build project.
      * </p>
      */
     private String projectName;
@@ -61,11 +61,11 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the build project to get a list of build IDs for.
+     * The name of the build project.
      * </p>
      * 
      * @param projectName
-     *        The name of the build project to get a list of build IDs for.
+     *        The name of the build project.
      */
 
     public void setProjectName(String projectName) {
@@ -74,10 +74,10 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the build project to get a list of build IDs for.
+     * The name of the build project.
      * </p>
      * 
-     * @return The name of the build project to get a list of build IDs for.
+     * @return The name of the build project.
      */
 
     public String getProjectName() {
@@ -86,11 +86,11 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the build project to get a list of build IDs for.
+     * The name of the build project.
      * </p>
      * 
      * @param projectName
-     *        The name of the build project to get a list of build IDs for.
+     *        The name of the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

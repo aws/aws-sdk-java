@@ -28,46 +28,120 @@ import com.amazonaws.services.codecommit.model.*;
  * <fullname>AWS CodeCommit</fullname>
  * <p>
  * This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data
- * types for AWS CodeCommit API.
+ * types for AWS CodeCommit API along with usage examples.
  * </p>
  * <p>
  * You can use the AWS CodeCommit API to work with the following objects:
  * </p>
+ * <p>
+ * Repositories, by calling the following:
+ * </p>
  * <ul>
- * <li>Repositories, by calling the following:
- * <ul>
- * <li><a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS
- * account</li>
- * <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li>
- * <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li>
- * <li><a>GetRepository</a>, which returns information about a specified repository</li>
- * <li><a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account</li>
- * <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository</li>
- * <li><a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no
- * other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.</li>
- * </ul>
+ * <li>
+ * <p>
+ * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS
+ * account
+ * </p>
  * </li>
- * <li>Branches, by calling the following:
- * <ul>
- * <li><a>CreateBranch</a>, which creates a new branch in a specified repository</li>
- * <li><a>GetBranch</a>, which returns information about a specified branch</li>
- * <li><a>ListBranches</a>, which lists all branches for a specified repository</li>
- * <li><a>UpdateDefaultBranch</a>, which changes the default branch for a repository</li>
- * </ul>
+ * <li>
+ * <p>
+ * <a>CreateRepository</a>, which creates an AWS CodeCommit repository
+ * </p>
  * </li>
- * <li>Information about committed code in a repository, by calling the following:
- * <ul>
- * <li><a>GetCommit</a>, which returns information about a commit, including commit messages and committer information.</li>
- * </ul>
+ * <li>
+ * <p>
+ * <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository
+ * </p>
  * </li>
- * <li>Triggers, by calling the following:
- * <ul>
- * <li><a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository</li>
- * <li><a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete
- * triggers</li>
- * <li><a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the
- * trigger target</li>
+ * <li>
+ * <p>
+ * <a>GetRepository</a>, which returns information about a specified repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no
+ * other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.
+ * </p>
+ * </li>
  * </ul>
+ * <p>
+ * Branches, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateBranch</a>, which creates a new branch in a specified repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetBranch</a>, which returns information about a specified branch
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListBranches</a>, which lists all branches for a specified repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateDefaultBranch</a>, which changes the default branch for a repository
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Information about committed code in a repository, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetCommit</a>, which returns information about a commit, including commit messages and author and committer
+ * information
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetDifferences</a>, which returns information about the differences in a valid commit specifier (such as a branch,
+ * tag, HEAD, commit ID or other fully qualified reference)
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Triggers, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete
+ * triggers
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the trigger
+ * target
+ * </p>
  * </li>
  * </ul>
  * <p>
@@ -209,8 +283,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.
      * </p>
-     * <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted,
-     * all future push calls to the deleted repository will fail.</important>
+     * <important>
+     * <p>
+     * Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future
+     * push calls to the deleted repository will fail.
+     * </p>
+     * </important>
      * 
      * @param deleteRepositoryRequest
      *        Represents the input of a delete repository operation.
@@ -225,8 +303,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.
      * </p>
-     * <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted,
-     * all future push calls to the deleted repository will fail.</important>
+     * <important>
+     * <p>
+     * Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future
+     * push calls to the deleted repository will fail.
+     * </p>
+     * </important>
      * 
      * @param deleteRepositoryRequest
      *        Represents the input of a delete repository operation.
@@ -241,6 +323,39 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(DeleteRepositoryRequest deleteRepositoryRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the base-64 encoded content of an individual blob within a repository.
+     * </p>
+     * 
+     * @param getBlobRequest
+     *        Represents the input of a get blob operation.
+     * @return A Java Future containing the result of the GetBlob operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBlobResult> getBlobAsync(GetBlobRequest getBlobRequest);
+
+    /**
+     * <p>
+     * Returns the base-64 encoded content of an individual blob within a repository.
+     * </p>
+     * 
+     * @param getBlobRequest
+     *        Represents the input of a get blob operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBlob operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBlobResult> getBlobAsync(GetBlobRequest getBlobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBlobRequest, GetBlobResult> asyncHandler);
 
     /**
      * <p>
@@ -307,6 +422,39 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<GetCommitResult> getCommitAsync(GetCommitRequest getCommitRequest,
             com.amazonaws.handlers.AsyncHandler<GetCommitRequest, GetCommitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or
+     * other fully qualified reference). Results can be limited to a specified path.
+     * </p>
+     * 
+     * @param getDifferencesRequest
+     * @return A Java Future containing the result of the GetDifferences operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetDifferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDifferencesResult> getDifferencesAsync(GetDifferencesRequest getDifferencesRequest);
+
+    /**
+     * <p>
+     * Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or
+     * other fully qualified reference). Results can be limited to a specified path.
+     * </p>
+     * 
+     * @param getDifferencesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDifferences operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetDifferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDifferencesResult> getDifferencesAsync(GetDifferencesRequest getDifferencesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDifferencesRequest, GetDifferencesResult> asyncHandler);
 
     /**
      * <p>

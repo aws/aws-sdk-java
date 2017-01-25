@@ -67,6 +67,9 @@ public class ListContainerInstancesRequestMarshaller implements Marshaller<Reque
             if (listContainerInstancesRequest.getMaxResults() != null) {
                 jsonGenerator.writeFieldName("maxResults").writeValue(listContainerInstancesRequest.getMaxResults());
             }
+            if (listContainerInstancesRequest.getStatus() != null) {
+                jsonGenerator.writeFieldName("status").writeValue(listContainerInstancesRequest.getStatus());
+            }
 
             jsonGenerator.writeEndObject();
 

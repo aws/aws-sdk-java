@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.applicationautoscaling.AWSApplicationAutoScalingClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -156,7 +157,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSApplicationAutoScalingClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSApplicationAutoScalingClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -179,7 +182,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *        proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSApplicationAutoScalingClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSApplicationAutoScalingClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -194,7 +199,11 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSApplicationAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)} for
+     *             example:
+     *             {@code AWSApplicationAutoScalingClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSApplicationAutoScalingClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -212,7 +221,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Application Auto Scaling (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSApplicationAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationAutoScalingClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSApplicationAutoScalingClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -229,7 +241,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSApplicationAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSApplicationAutoScalingClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -247,7 +261,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Application Auto Scaling (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSApplicationAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationAutoScalingClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSApplicationAutoScalingClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -267,7 +284,11 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *        proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSApplicationAutoScalingClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationAutoScalingClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSApplicationAutoScalingClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSApplicationAutoScalingClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

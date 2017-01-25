@@ -28,7 +28,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the build artifacts' location.
+     * Information about the location of the build artifacts.
      * </p>
      */
     private String location;
@@ -41,8 +41,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This value is available only if the related build project's <code>packaging</code> value is set to
-     * <code>ZIP</code>.
+     * This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.
      * </p>
      * </note>
      */
@@ -56,8 +55,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This value is available only if the related build project's <code>packaging</code> value is set to
-     * <code>ZIP</code>.
+     * This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.
      * </p>
      * </note>
      */
@@ -65,11 +63,11 @@ public class BuildArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the build artifacts' location.
+     * Information about the location of the build artifacts.
      * </p>
      * 
      * @param location
-     *        Information about the build artifacts' location.
+     *        Information about the location of the build artifacts.
      */
 
     public void setLocation(String location) {
@@ -78,10 +76,10 @@ public class BuildArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the build artifacts' location.
+     * Information about the location of the build artifacts.
      * </p>
      * 
-     * @return Information about the build artifacts' location.
+     * @return Information about the location of the build artifacts.
      */
 
     public String getLocation() {
@@ -90,11 +88,11 @@ public class BuildArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the build artifacts' location.
+     * Information about the location of the build artifacts.
      * </p>
      * 
      * @param location
-     *        Information about the build artifacts' location.
+     *        Information about the location of the build artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,8 +110,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This value is available only if the related build project's <code>packaging</code> value is set to
-     * <code>ZIP</code>.
+     * This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.
      * </p>
      * </note>
      * 
@@ -124,7 +121,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        This value is available only if the related build project's <code>packaging</code> value is set to
+     *        This value is available only if the build project's <code>packaging</code> value is set to
      *        <code>ZIP</code>.
      *        </p>
      */
@@ -142,8 +139,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This value is available only if the related build project's <code>packaging</code> value is set to
-     * <code>ZIP</code>.
+     * This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.
      * </p>
      * </note>
      * 
@@ -153,7 +149,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      *         </p>
      *         <note>
      *         <p>
-     *         This value is available only if the related build project's <code>packaging</code> value is set to
+     *         This value is available only if the build project's <code>packaging</code> value is set to
      *         <code>ZIP</code>.
      *         </p>
      */
@@ -171,8 +167,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This value is available only if the related build project's <code>packaging</code> value is set to
-     * <code>ZIP</code>.
+     * This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.
      * </p>
      * </note>
      * 
@@ -183,7 +178,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        This value is available only if the related build project's <code>packaging</code> value is set to
+     *        This value is available only if the build project's <code>packaging</code> value is set to
      *        <code>ZIP</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -203,8 +198,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This value is available only if the related build project's <code>packaging</code> value is set to
-     * <code>ZIP</code>.
+     * This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.
      * </p>
      * </note>
      * 
@@ -215,7 +209,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        This value is available only if the related build project's <code>packaging</code> value is set to
+     *        This value is available only if the build project's <code>packaging</code> value is set to
      *        <code>ZIP</code>.
      *        </p>
      */
@@ -233,8 +227,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This value is available only if the related build project's <code>packaging</code> value is set to
-     * <code>ZIP</code>.
+     * This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.
      * </p>
      * </note>
      * 
@@ -244,7 +237,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      *         </p>
      *         <note>
      *         <p>
-     *         This value is available only if the related build project's <code>packaging</code> value is set to
+     *         This value is available only if the build project's <code>packaging</code> value is set to
      *         <code>ZIP</code>.
      *         </p>
      */
@@ -262,8 +255,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * This value is available only if the related build project's <code>packaging</code> value is set to
-     * <code>ZIP</code>.
+     * This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.
      * </p>
      * </note>
      * 
@@ -274,7 +266,7 @@ public class BuildArtifacts implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        This value is available only if the related build project's <code>packaging</code> value is set to
+     *        This value is available only if the build project's <code>packaging</code> value is set to
      *        <code>ZIP</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

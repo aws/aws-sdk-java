@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Additional information about a build phase that has an error, which you can use to help troubleshoot a failed build.
+ * Additional information about a build phase that has an error. You can use this information to help troubleshoot a
+ * failed build.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PhaseContext" target="_top">AWS API
@@ -34,7 +35,7 @@ public class PhaseContext implements Serializable, Cloneable {
     private String statusCode;
     /**
      * <p>
-     * An explanation of the build phase's context. This explanation may include a command ID and an exit code.
+     * An explanation of the build phase's context. This explanation might include a command ID and an exit code.
      * </p>
      */
     private String message;
@@ -81,11 +82,11 @@ public class PhaseContext implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An explanation of the build phase's context. This explanation may include a command ID and an exit code.
+     * An explanation of the build phase's context. This explanation might include a command ID and an exit code.
      * </p>
      * 
      * @param message
-     *        An explanation of the build phase's context. This explanation may include a command ID and an exit code.
+     *        An explanation of the build phase's context. This explanation might include a command ID and an exit code.
      */
 
     public void setMessage(String message) {
@@ -94,10 +95,11 @@ public class PhaseContext implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An explanation of the build phase's context. This explanation may include a command ID and an exit code.
+     * An explanation of the build phase's context. This explanation might include a command ID and an exit code.
      * </p>
      * 
-     * @return An explanation of the build phase's context. This explanation may include a command ID and an exit code.
+     * @return An explanation of the build phase's context. This explanation might include a command ID and an exit
+     *         code.
      */
 
     public String getMessage() {
@@ -106,11 +108,11 @@ public class PhaseContext implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An explanation of the build phase's context. This explanation may include a command ID and an exit code.
+     * An explanation of the build phase's context. This explanation might include a command ID and an exit code.
      * </p>
      * 
      * @param message
-     *        An explanation of the build phase's context. This explanation may include a command ID and an exit code.
+     *        An explanation of the build phase's context. This explanation might include a command ID and an exit code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

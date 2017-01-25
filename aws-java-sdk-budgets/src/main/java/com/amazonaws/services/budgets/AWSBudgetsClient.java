@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.budgets.AWSBudgetsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -104,7 +105,9 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSBudgetsClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSBudgetsClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -127,7 +130,9 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSBudgetsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSBudgetsClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -141,7 +146,10 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSBudgetsClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSBudgetsClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSBudgetsClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -159,7 +167,10 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWSBudgets (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSBudgetsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSBudgetsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSBudgetsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -176,7 +187,9 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSBudgetsClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSBudgetsClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -194,7 +207,10 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWSBudgets (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSBudgetsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSBudgetsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSBudgetsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -214,7 +230,11 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSBudgetsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSBudgetsClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSBudgetsClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSBudgetsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

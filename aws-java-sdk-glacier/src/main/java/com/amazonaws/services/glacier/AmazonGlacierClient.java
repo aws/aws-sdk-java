@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.glacier.AmazonGlacierClientBuilder;
 import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -150,7 +151,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonGlacierClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonGlacierClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -173,7 +176,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonGlacierClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonGlacierClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -187,7 +192,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonGlacierClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonGlacierClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonGlacierClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -205,7 +213,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Glacier (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonGlacierClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonGlacierClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonGlacierClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -222,7 +233,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonGlacierClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonGlacierClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -240,7 +253,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Glacier (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonGlacierClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonGlacierClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonGlacierClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -260,7 +276,11 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonGlacierClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonGlacierClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonGlacierClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonGlacierClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

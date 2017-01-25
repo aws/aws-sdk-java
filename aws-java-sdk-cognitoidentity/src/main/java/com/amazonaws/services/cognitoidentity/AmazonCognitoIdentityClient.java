@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.cognitoidentity.AmazonCognitoIdentityClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -149,7 +150,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCognitoIdentityClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCognitoIdentityClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -172,7 +175,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *        proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCognitoIdentityClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCognitoIdentityClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -187,7 +192,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonCognitoIdentityClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonCognitoIdentityClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonCognitoIdentityClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -205,7 +213,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Cognito Identity (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCognitoIdentityClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoIdentityClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCognitoIdentityClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -222,7 +233,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonCognitoIdentityClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonCognitoIdentityClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -240,7 +253,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Cognito Identity (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCognitoIdentityClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoIdentityClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCognitoIdentityClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -260,7 +276,11 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *        proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonCognitoIdentityClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoIdentityClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCognitoIdentityClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonCognitoIdentityClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.directory.AWSDirectoryServiceClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -141,7 +142,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSDirectoryServiceClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSDirectoryServiceClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -164,7 +167,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSDirectoryServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSDirectoryServiceClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -179,7 +184,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSDirectoryServiceClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSDirectoryServiceClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSDirectoryServiceClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -197,7 +205,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Directory Service (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSDirectoryServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSDirectoryServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSDirectoryServiceClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -214,7 +225,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSDirectoryServiceClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSDirectoryServiceClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -232,7 +245,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Directory Service (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSDirectoryServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSDirectoryServiceClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSDirectoryServiceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -252,7 +268,11 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSDirectoryServiceClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSDirectoryServiceClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSDirectoryServiceClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSDirectoryServiceClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

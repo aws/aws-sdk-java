@@ -173,7 +173,9 @@ public class TransferManager {
      * them throughout applications.
      * <p>
      * TransferManager and all AWS client objects are thread safe.
+     * @deprecated use {@link TransferManagerBuilder#defaultTransferManager()}
      */
+    @Deprecated
     public TransferManager(){
         this(new AmazonS3Client(new DefaultAWSCredentialsProviderChain()));
     }
@@ -191,7 +193,10 @@ public class TransferManager {
      * @param credentialsProvider
      *            The AWS security credentials provider to use when making
      *            authenticated requests.
+     * @deprecated use {@link TransferManagerBuilder#withS3Client(AmazonS3)} for example:
+     * {@code TransferManagerBuilder.standard().withS3Client(AmazonS3ClientBuilder.standard.withCredentials(credentialsProvider).build()).build(); }
      */
+    @Deprecated
     public TransferManager(AWSCredentialsProvider credentialsProvider) {
         this(new AmazonS3Client(credentialsProvider));
     }
@@ -210,7 +215,10 @@ public class TransferManager {
      * @param credentials
      *            The AWS security credentials to use when making authenticated
      *            requests.
+     * @deprecated use {@link TransferManagerBuilder#withS3Client(AmazonS3)} for example:
+     * {@code TransferManagerBuilder.standard().withS3Client(AmazonS3ClientBuilder.standard.withCredentials(credentials).build()).build(); }
      */
+    @Deprecated
     public TransferManager(AWSCredentials credentials) {
         this(new AmazonS3Client(credentials));
     }
@@ -230,7 +238,9 @@ public class TransferManager {
      *
      * @param s3
      *            The client to use when making requests to Amazon S3.
+     * @deprecated use {@link TransferManagerBuilder#withS3Client(AmazonS3)}
      */
+    @Deprecated
     public TransferManager(AmazonS3 s3) {
         this(s3, TransferManagerUtils.createDefaultExecutorService());
     }
@@ -260,7 +270,10 @@ public class TransferManager {
      *
      * @see TransferManager#TransferManager(AmazonS3 s3, ExecutorService
      *      executorService, boolean shutDownThreadPools)
+     * @deprecated use {@link TransferManagerBuilder#withS3Client(AmazonS3)} and
+     *                 {@link TransferManagerBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
+    @Deprecated
     public TransferManager(AmazonS3 s3, ExecutorService executorService) {
         this(s3, executorService, true);
     }
@@ -287,7 +300,11 @@ public class TransferManager {
      * @param shutDownThreadPools
      *            If set to true, the thread pool will be shutdown when transfer
      *            manager instance is garbage collected.
+     * @deprecated use {@link TransferManagerBuilder#withS3Client(AmazonS3)} and
+     *                 {@link TransferManagerBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)} and
+     *                 {@link TransferManagerBuilder#withShutDownThreadPools(Boolean)}
      */
+    @Deprecated
     public TransferManager(AmazonS3 s3, ExecutorService executorService, boolean shutDownThreadPools) {
         this.s3 = s3;
         this.executorService = executorService;
@@ -313,7 +330,10 @@ public class TransferManager {
      *            The new configuration specifying how
      *            this <code>TransferManager</code>
      *            processes requests.
+     * @deprecated use appropriate method on the {@link TransferManagerBuilder} for example:
+     * {@code TransferManagerBuilder.standard().withMinimumUploadPartSize(100L).build(); }
      */
+    @Deprecated
     public void setConfiguration(TransferManagerConfiguration configuration) {
         checkMutability();
         this.configuration = configuration;

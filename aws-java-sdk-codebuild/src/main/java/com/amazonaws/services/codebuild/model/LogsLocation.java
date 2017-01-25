@@ -28,13 +28,13 @@ public class LogsLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs group for the associated build logs.
+     * The name of the Amazon CloudWatch Logs group for the build logs.
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs stream for the associated build logs.
+     * The name of the Amazon CloudWatch Logs stream for the build logs.
      * </p>
      */
     private String streamName;
@@ -47,11 +47,11 @@ public class LogsLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs group for the associated build logs.
+     * The name of the Amazon CloudWatch Logs group for the build logs.
      * </p>
      * 
      * @param groupName
-     *        The name of the Amazon CloudWatch Logs group for the associated build logs.
+     *        The name of the Amazon CloudWatch Logs group for the build logs.
      */
 
     public void setGroupName(String groupName) {
@@ -60,10 +60,10 @@ public class LogsLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs group for the associated build logs.
+     * The name of the Amazon CloudWatch Logs group for the build logs.
      * </p>
      * 
-     * @return The name of the Amazon CloudWatch Logs group for the associated build logs.
+     * @return The name of the Amazon CloudWatch Logs group for the build logs.
      */
 
     public String getGroupName() {
@@ -72,11 +72,11 @@ public class LogsLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs group for the associated build logs.
+     * The name of the Amazon CloudWatch Logs group for the build logs.
      * </p>
      * 
      * @param groupName
-     *        The name of the Amazon CloudWatch Logs group for the associated build logs.
+     *        The name of the Amazon CloudWatch Logs group for the build logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class LogsLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs stream for the associated build logs.
+     * The name of the Amazon CloudWatch Logs stream for the build logs.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon CloudWatch Logs stream for the associated build logs.
+     *        The name of the Amazon CloudWatch Logs stream for the build logs.
      */
 
     public void setStreamName(String streamName) {
@@ -100,10 +100,10 @@ public class LogsLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs stream for the associated build logs.
+     * The name of the Amazon CloudWatch Logs stream for the build logs.
      * </p>
      * 
-     * @return The name of the Amazon CloudWatch Logs stream for the associated build logs.
+     * @return The name of the Amazon CloudWatch Logs stream for the build logs.
      */
 
     public String getStreamName() {
@@ -112,11 +112,11 @@ public class LogsLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs stream for the associated build logs.
+     * The name of the Amazon CloudWatch Logs stream for the build logs.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon CloudWatch Logs stream for the associated build logs.
+     *        The name of the Amazon CloudWatch Logs stream for the build logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

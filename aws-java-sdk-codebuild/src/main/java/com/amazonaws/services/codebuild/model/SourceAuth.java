@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * Information about the authorization settings for AWS CodeBuild to access the source code to be built.
  * </p>
  * <p>
- * This information is only for the AWS CodeBuild console's use. Your code should not get or set this information
- * directly.
+ * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
+ * directly (unless the build project's source <code>type</code> value is <code>GITHUB</code>).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth" target="_top">AWS API

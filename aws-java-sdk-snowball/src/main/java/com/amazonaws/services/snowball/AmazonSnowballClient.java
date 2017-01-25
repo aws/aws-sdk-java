@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.snowball.AmazonSnowballClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -111,7 +112,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonSnowballClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonSnowballClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -134,7 +137,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonSnowballClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSnowballClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -148,7 +153,10 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonSnowballClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonSnowballClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonSnowballClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -166,7 +174,10 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Snowball (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonSnowballClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSnowballClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSnowballClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -183,7 +194,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonSnowballClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonSnowballClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -201,7 +214,10 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Snowball (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonSnowballClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSnowballClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSnowballClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -221,7 +237,11 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonSnowballClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSnowballClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonSnowballClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonSnowballClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

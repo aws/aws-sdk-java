@@ -117,7 +117,7 @@ public class Task implements Serializable, Cloneable {
     private java.util.Date stoppedAt;
     /**
      * <p>
-     * The task group associated with the task.
+     * The name of the task group associated with the task.
      * </p>
      */
     private String group;
@@ -756,11 +756,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The task group associated with the task.
+     * The name of the task group associated with the task.
      * </p>
      * 
      * @param group
-     *        The task group associated with the task.
+     *        The name of the task group associated with the task.
      */
 
     public void setGroup(String group) {
@@ -769,10 +769,10 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The task group associated with the task.
+     * The name of the task group associated with the task.
      * </p>
      * 
-     * @return The task group associated with the task.
+     * @return The name of the task group associated with the task.
      */
 
     public String getGroup() {
@@ -781,11 +781,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The task group associated with the task.
+     * The name of the task group associated with the task.
      * </p>
      * 
      * @param group
-     *        The task group associated with the task.
+     *        The name of the task group associated with the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

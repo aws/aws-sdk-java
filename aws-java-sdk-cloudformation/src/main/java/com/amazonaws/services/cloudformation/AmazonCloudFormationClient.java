@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.cloudformation.AmazonCloudFormationClientBuilder;
 import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -103,7 +104,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCloudFormationClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCloudFormationClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -126,7 +129,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCloudFormationClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudFormationClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -141,7 +146,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonCloudFormationClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonCloudFormationClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonCloudFormationClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -159,7 +167,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS CloudFormation (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCloudFormationClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudFormationClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudFormationClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -176,7 +187,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonCloudFormationClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonCloudFormationClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -194,7 +207,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS CloudFormation (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCloudFormationClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudFormationClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudFormationClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -214,7 +230,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonCloudFormationClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudFormationClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCloudFormationClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonCloudFormationClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.codedeploy.AmazonCodeDeployClientBuilder;
 import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -362,7 +363,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCodeDeployClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCodeDeployClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -385,7 +388,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCodeDeployClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCodeDeployClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -399,7 +404,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonCodeDeployClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonCodeDeployClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonCodeDeployClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -417,7 +425,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to CodeDeploy (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonCodeDeployClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCodeDeployClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCodeDeployClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -434,7 +445,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonCodeDeployClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonCodeDeployClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -452,7 +465,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to CodeDeploy (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonCodeDeployClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCodeDeployClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCodeDeployClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -472,7 +488,11 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonCodeDeployClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCodeDeployClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCodeDeployClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonCodeDeployClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

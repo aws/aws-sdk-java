@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.waf.AWSWAFClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -123,7 +124,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSWAFClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSWAFClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -146,7 +149,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *        counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSWAFClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSWAFClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -160,7 +165,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSWAFClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSWAFClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSWAFClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -178,7 +186,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to WAF (ex: proxy settings, retry
      *        counts, etc.).
+     * @deprecated use {@link AWSWAFClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSWAFClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSWAFClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -194,7 +205,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSWAFClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSWAFClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -212,7 +225,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to WAF (ex: proxy settings, retry
      *        counts, etc.).
+     * @deprecated use {@link AWSWAFClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSWAFClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSWAFClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -232,7 +248,11 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *        counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSWAFClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSWAFClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSWAFClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSWAFClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

@@ -19,7 +19,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Returns information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+      "documentation" : "<p>Returns information about one or more repositories.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -92,7 +92,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates a new branch in a repository and points the branch to a commit.</p> <note><p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p></note>",
+      "documentation" : "<p>Creates a new branch in a repository and points the branch to a commit.</p> <note> <p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -281,7 +281,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>",
+      "documentation" : "<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important><p>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</p> </important>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -342,6 +342,103 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DeleteRepositoryOutput"
+      }
+    },
+    "GetBlob" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns the base-64 encoded content of an individual blob within a repository.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BlobIdRequiredException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidBlobIdException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BlobIdDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FileTooLargeException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetBlobInput",
+        "xmlNamespace" : null
+      },
+      "name" : "GetBlob",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetBlobOutput"
       }
     },
     "GetBranch" : {
@@ -526,11 +623,132 @@
         "shape" : "GetCommitOutput"
       }
     },
+    "GetDifferences" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified reference). Results can be limited to a specified path.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidContinuationTokenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidMaxResultsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidCommitIdException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "CommitRequiredException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidCommitException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "CommitDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidPathException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "PathDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetDifferencesInput",
+        "xmlNamespace" : null
+      },
+      "name" : "GetDifferences",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetDifferencesOutput"
+      }
+    },
     "GetRepository" : {
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Returns information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+      "documentation" : "<p>Returns information about a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1100,7 +1318,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Sets or changes the default branch name for the specified repository.</p> <note><p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p></note>",
+      "documentation" : "<p>Sets or changes the default branch name for the specified repository.</p> <note> <p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1186,7 +1404,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+      "documentation" : "<p>Sets or changes the comment or description for a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1448,6 +1666,109 @@
       "value" : null,
       "wrapper" : false
     },
+    "BlobIdDoesNotExistException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified blob does not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "BlobIdRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A blob ID is required but was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "BlobMetadata" : {
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about a specific Git blob object.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "blobId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The full ID of the blob.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "mode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The file mode permissions of the blob. File mode permission codes include:</p> <ul> <li> <p> <code>100644</code> indicates read/write</p> </li> <li> <p> <code>100755</code> indicates read/write/execute</p> </li> <li> <p> <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code> indicates a symlink</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Mode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "path" : {
+          "deprecated" : false,
+          "documentation" : "<p>The path to the blob and any associated file name, if any.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Path",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "BranchDoesNotExistException" : {
       "deprecated" : false,
       "documentation" : "<p>The specified branch does not exist.</p>",
@@ -1613,6 +1934,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "ChangeTypeEnum" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "A", "M", "D" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "CloneUrlHttp" : {
       "deprecated" : false,
       "documentation" : null,
@@ -1682,7 +2024,7 @@
         },
         "author" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the author of the specified commit.</p>",
+          "documentation" : "<p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1695,7 +2037,7 @@
         },
         "committer" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the person who committed the specified commit, also known as the committer. For more information about the difference between an author and a committer in Git, see <a href=\"http://git-scm.com/book/ch2-3.html\">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>",
+          "documentation" : "<p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> <p>For more information about the difference between an author and a committer in Git, see <a href=\"http://git-scm.com/book/ch2-3.html\">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1708,7 +2050,7 @@
         },
         "message" : {
           "deprecated" : false,
-          "documentation" : "<p>The message associated with the specified commit.</p>",
+          "documentation" : "<p>The commit message associated with the specified commit.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1839,6 +2181,48 @@
       "value" : null,
       "wrapper" : false
     },
+    "CommitName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CommitRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A commit was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "CreateBranchInput" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the input of a create branch operation.</p>",
@@ -1914,7 +2298,7 @@
       "members" : {
         "repositoryDescription" : {
           "deprecated" : false,
-          "documentation" : "<p>A comment or description about the new repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+          "documentation" : "<p>A comment or description about the new repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1927,7 +2311,7 @@
         },
         "repositoryName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the new repository to be created.</p> <note><p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p></note>",
+          "documentation" : "<p>The name of the new repository to be created.</p> <note> <p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2095,6 +2479,100 @@
       "value" : null,
       "wrapper" : false
     },
+    "Difference" : {
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about a set of differences for a commit specifier.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "afterBlob" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BlobMetadata",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "beforeBlob" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BlobMetadata",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "changeType" : {
+          "deprecated" : false,
+          "documentation" : "<p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ChangeTypeEnum",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DifferenceList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Difference",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "Email" : {
       "deprecated" : false,
       "documentation" : null,
@@ -2216,6 +2694,110 @@
       "pattern" : null,
       "payload" : null,
       "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FileTooLargeException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">AWS CodeCommit User Guide</a>.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetBlobInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a get blob operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "blobId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the blob, which is its SHA-1 pointer.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository that contains the blob.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName", "blobId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetBlobOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a get blob operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "content" : {
+          "deprecated" : false,
+          "documentation" : "<p>The content of the blob, usually a file.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "blob",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "content" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -2366,7 +2948,7 @@
       "members" : {
         "commit" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the specified commit.</p>",
+          "documentation" : "<p>A commit data type object that contains information about the specified commit.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2382,6 +2964,167 @@
       "pattern" : null,
       "payload" : null,
       "required" : [ "commit" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetDifferencesInput" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>A non-negative integer used to limit the number of returned results.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Limit",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An enumeration token that when provided in a request, returns the next batch of the results.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "afterCommitSpecifier" : {
+          "deprecated" : false,
+          "documentation" : "<p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommitName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "afterPath" : {
+          "deprecated" : false,
+          "documentation" : "<p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all paths.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Path",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "beforeCommitSpecifier" : {
+          "deprecated" : false,
+          "documentation" : "<p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommitName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "beforePath" : {
+          "deprecated" : false,
+          "documentation" : "<p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences will be shown for all paths.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Path",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository where you want to get differences.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName", "afterCommitSpecifier" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetDifferencesOutput" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An enumeration token that can be used in a request to return the next batch of the results.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "differences" : {
+          "deprecated" : false,
+          "documentation" : "<p>A differences data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DifferenceList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -2486,7 +3229,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : null,
+      "required" : [ "repositoryName" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -2540,9 +3283,51 @@
       "value" : null,
       "wrapper" : false
     },
+    "InvalidBlobIdException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified blob is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "InvalidBranchNameException" : {
       "deprecated" : false,
       "documentation" : "<p>The specified branch name is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidCommitException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified commit is not valid.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -2603,9 +3388,51 @@
       "value" : null,
       "wrapper" : false
     },
+    "InvalidMaxResultsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified number of maximum results is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "InvalidOrderException" : {
       "deprecated" : false,
       "documentation" : "<p>The specified sort order is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidPathException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified path is not valid.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -2647,7 +3474,7 @@
     },
     "InvalidRepositoryNameException" : {
       "deprecated" : false,
-      "documentation" : "<p>At least one specified repository name is not valid.</p> <note><p>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p></note>",
+      "documentation" : "<p>At least one specified repository name is not valid.</p> <note> <p>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p> </note>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -2834,6 +3661,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "Limit" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
     "ListBranchesInput" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the input of a list branches operation.</p>",
@@ -2848,7 +3696,7 @@
       "members" : {
         "nextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>An enumeration token that allows the operation to batch the results. </p>",
+          "documentation" : "<p>An enumeration token that allows the operation to batch the results.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2909,7 +3757,7 @@
         },
         "nextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>An enumeration token that returns the batch of the results. </p>",
+          "documentation" : "<p>An enumeration token that returns the batch of the results.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3041,7 +3889,7 @@
     },
     "MaximumBranchesExceededException" : {
       "deprecated" : false,
-      "documentation" : "<p>The number of branches for the trigger was exceeded. </p>",
+      "documentation" : "<p>The number of branches for the trigger was exceeded.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -3103,6 +3951,27 @@
       "wrapper" : false
     },
     "Message" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Mode" : {
       "deprecated" : false,
       "documentation" : null,
       "enum" : null,
@@ -3240,9 +4109,51 @@
       "value" : null,
       "wrapper" : false
     },
+    "Path" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PathDoesNotExistException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified path does not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "PutRepositoryTriggersInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input ofa put repository triggers operation. </p>",
+      "documentation" : "<p>Represents the input ofa put repository triggers operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3254,7 +4165,7 @@
       "members" : {
         "repositoryName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the repository where you want to create or update the trigger. </p>",
+          "documentation" : "<p>The name of the repository where you want to create or update the trigger.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3267,7 +4178,7 @@
         },
         "triggers" : {
           "deprecated" : false,
-          "documentation" : "<p>The JSON block of configuration information for each trigger. </p>",
+          "documentation" : "<p>The JSON block of configuration information for each trigger.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3282,7 +4193,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : null,
+      "required" : [ "repositoryName", "triggers" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -3290,7 +4201,7 @@
     },
     "PutRepositoryTriggersOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a put repository triggers operation. </p>",
+      "documentation" : "<p>Represents the output of a put repository triggers operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3302,7 +4213,7 @@
       "members" : {
         "configurationId" : {
           "deprecated" : false,
-          "documentation" : "<p>The system-generated unique ID for the create or update operation. </p>",
+          "documentation" : "<p>The system-generated unique ID for the create or update operation.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3605,7 +4516,7 @@
       "member" : null,
       "members" : { },
       "min" : 1,
-      "pattern" : "[\\\\w\\\\.-]+",
+      "pattern" : "[\\w\\.-]+",
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -3876,7 +4787,7 @@
         },
         "events" : {
           "deprecated" : false,
-          "documentation" : "<p>The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run for all repository events.</p>",
+          "documentation" : "<p>The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). </p> <note> <p>The valid value \"all\" cannot be used with any other values.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3904,7 +4815,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : null,
+      "required" : [ "name", "destinationArn", "events" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -3954,7 +4865,7 @@
     },
     "RepositoryTriggerDestinationArnRequiredException" : {
       "deprecated" : false,
-      "documentation" : "<p>A destination ARN for the target service for the trigger is required but was not specified. </p>",
+      "documentation" : "<p>A destination ARN for the target service for the trigger is required but was not specified.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -4363,7 +5274,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : null,
+      "required" : [ "repositoryName", "triggers" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -4621,7 +5532,28 @@
       "type" : "structure",
       "value" : null,
       "wrapper" : false
+    },
+    "blob" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "blob",
+      "value" : null,
+      "wrapper" : false
     }
   },
-  "documentation" : "<fullname>AWS CodeCommit</fullname> <p>This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types for AWS CodeCommit API.</p> <p>You can use the AWS CodeCommit API to work with the following objects:</p> <ul> <li>Repositories, by calling the following: <ul> <li><a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS account</li> <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li> <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li> <li><a>GetRepository</a>, which returns information about a specified repository</li> <li><a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account</li> <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository</li> <li><a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.</li> </ul></li> <li>Branches, by calling the following: <ul> <li><a>CreateBranch</a>, which creates a new branch in a specified repository</li> <li><a>GetBranch</a>, which returns information about a specified branch</li> <li><a>ListBranches</a>, which lists all branches for a specified repository</li> <li><a>UpdateDefaultBranch</a>, which changes the default branch for a repository</li> </ul></li> <li>Information about committed code in a repository, by calling the following: <ul> <li><a>GetCommit</a>, which returns information about a commit, including commit messages and committer information.</li> </ul></li> <li>Triggers, by calling the following: <ul> <li><a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository</li> <li><a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete triggers</li> <li><a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the trigger target</li> </ul> </li> </ul> <p>For information about how to use AWS CodeCommit, see the <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html\">AWS CodeCommit User Guide</a>.</p>"
+  "documentation" : "<fullname>AWS CodeCommit</fullname> <p>This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types for AWS CodeCommit API along with usage examples.</p> <p>You can use the AWS CodeCommit API to work with the following objects:</p> <p>Repositories, by calling the following:</p> <ul> <li> <p> <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS account</p> </li> <li> <p> <a>CreateRepository</a>, which creates an AWS CodeCommit repository</p> </li> <li> <p> <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</p> </li> <li> <p> <a>GetRepository</a>, which returns information about a specified repository</p> </li> <li> <p> <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account</p> </li> <li> <p> <a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository</p> </li> <li> <p> <a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.</p> </li> </ul> <p>Branches, by calling the following:</p> <ul> <li> <p> <a>CreateBranch</a>, which creates a new branch in a specified repository</p> </li> <li> <p> <a>GetBranch</a>, which returns information about a specified branch</p> </li> <li> <p> <a>ListBranches</a>, which lists all branches for a specified repository</p> </li> <li> <p> <a>UpdateDefaultBranch</a>, which changes the default branch for a repository</p> </li> </ul> <p>Information about committed code in a repository, by calling the following:</p> <ul> <li> <p> <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository</p> </li> <li> <p> <a>GetCommit</a>, which returns information about a commit, including commit messages and author and committer information</p> </li> <li> <p> <a>GetDifferences</a>, which returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified reference)</p> </li> </ul> <p>Triggers, by calling the following:</p> <ul> <li> <p> <a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository</p> </li> <li> <p> <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete triggers</p> </li> <li> <p> <a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the trigger target</p> </li> </ul> <p>For information about how to use AWS CodeCommit, see the <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html\">AWS CodeCommit User Guide</a>.</p>"
 }

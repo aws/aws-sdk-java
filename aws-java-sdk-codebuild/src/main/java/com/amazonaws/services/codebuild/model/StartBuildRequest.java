@@ -53,29 +53,29 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String sourceVersion;
     /**
      * <p>
-     * Build output artifact settings that override, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * Build output artifact settings that override, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      */
     private ProjectArtifacts artifactsOverride;
     /**
      * <p>
-     * A set of environment variables that overrides, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * A set of environment variables that overrides, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      */
     private java.util.List<EnvironmentVariable> environmentVariablesOverride;
     /**
      * <p>
-     * A build spec declaration that overrides, for this build only, the latest one already defined in the corresponding
-     * build project.
+     * A build spec declaration that overrides, for this build only, the latest one already defined in the build
+     * project.
      * </p>
      */
     private String buildspecOverride;
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours) that overrides, for this build only, the latest
-     * setting already defined in the corresponding build project.
+     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * setting already defined in the build project.
      * </p>
      */
     private Integer timeoutInMinutesOverride;
@@ -243,13 +243,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Build output artifact settings that override, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * Build output artifact settings that override, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      * 
      * @param artifactsOverride
      *        Build output artifact settings that override, for this build only, the latest ones already defined in the
-     *        corresponding build project.
+     *        build project.
      */
 
     public void setArtifactsOverride(ProjectArtifacts artifactsOverride) {
@@ -258,12 +258,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Build output artifact settings that override, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * Build output artifact settings that override, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      * 
      * @return Build output artifact settings that override, for this build only, the latest ones already defined in the
-     *         corresponding build project.
+     *         build project.
      */
 
     public ProjectArtifacts getArtifactsOverride() {
@@ -272,13 +272,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Build output artifact settings that override, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * Build output artifact settings that override, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      * 
      * @param artifactsOverride
      *        Build output artifact settings that override, for this build only, the latest ones already defined in the
-     *        corresponding build project.
+     *        build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,12 +289,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A set of environment variables that overrides, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * A set of environment variables that overrides, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      * 
      * @return A set of environment variables that overrides, for this build only, the latest ones already defined in
-     *         the corresponding build project.
+     *         the build project.
      */
 
     public java.util.List<EnvironmentVariable> getEnvironmentVariablesOverride() {
@@ -303,13 +303,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A set of environment variables that overrides, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * A set of environment variables that overrides, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      * 
      * @param environmentVariablesOverride
      *        A set of environment variables that overrides, for this build only, the latest ones already defined in the
-     *        corresponding build project.
+     *        build project.
      */
 
     public void setEnvironmentVariablesOverride(java.util.Collection<EnvironmentVariable> environmentVariablesOverride) {
@@ -323,8 +323,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A set of environment variables that overrides, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * A set of environment variables that overrides, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -334,7 +334,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param environmentVariablesOverride
      *        A set of environment variables that overrides, for this build only, the latest ones already defined in the
-     *        corresponding build project.
+     *        build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,13 +350,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A set of environment variables that overrides, for this build only, the latest ones already defined in the
-     * corresponding build project.
+     * A set of environment variables that overrides, for this build only, the latest ones already defined in the build
+     * project.
      * </p>
      * 
      * @param environmentVariablesOverride
      *        A set of environment variables that overrides, for this build only, the latest ones already defined in the
-     *        corresponding build project.
+     *        build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,13 +367,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A build spec declaration that overrides, for this build only, the latest one already defined in the corresponding
-     * build project.
+     * A build spec declaration that overrides, for this build only, the latest one already defined in the build
+     * project.
      * </p>
      * 
      * @param buildspecOverride
-     *        A build spec declaration that overrides, for this build only, the latest one already defined in the
-     *        corresponding build project.
+     *        A build spec declaration that overrides, for this build only, the latest one already defined in the build
+     *        project.
      */
 
     public void setBuildspecOverride(String buildspecOverride) {
@@ -382,12 +382,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A build spec declaration that overrides, for this build only, the latest one already defined in the corresponding
-     * build project.
+     * A build spec declaration that overrides, for this build only, the latest one already defined in the build
+     * project.
      * </p>
      * 
-     * @return A build spec declaration that overrides, for this build only, the latest one already defined in the
-     *         corresponding build project.
+     * @return A build spec declaration that overrides, for this build only, the latest one already defined in the build
+     *         project.
      */
 
     public String getBuildspecOverride() {
@@ -396,13 +396,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A build spec declaration that overrides, for this build only, the latest one already defined in the corresponding
-     * build project.
+     * A build spec declaration that overrides, for this build only, the latest one already defined in the build
+     * project.
      * </p>
      * 
      * @param buildspecOverride
-     *        A build spec declaration that overrides, for this build only, the latest one already defined in the
-     *        corresponding build project.
+     *        A build spec declaration that overrides, for this build only, the latest one already defined in the build
+     *        project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,13 +413,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours) that overrides, for this build only, the latest
-     * setting already defined in the corresponding build project.
+     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * setting already defined in the build project.
      * </p>
      * 
      * @param timeoutInMinutesOverride
-     *        The number of build timeout minutes, from 5 to 480 (8 hours) that overrides, for this build only, the
-     *        latest setting already defined in the corresponding build project.
+     *        The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     *        latest setting already defined in the build project.
      */
 
     public void setTimeoutInMinutesOverride(Integer timeoutInMinutesOverride) {
@@ -428,12 +428,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours) that overrides, for this build only, the latest
-     * setting already defined in the corresponding build project.
+     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * setting already defined in the build project.
      * </p>
      * 
-     * @return The number of build timeout minutes, from 5 to 480 (8 hours) that overrides, for this build only, the
-     *         latest setting already defined in the corresponding build project.
+     * @return The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     *         latest setting already defined in the build project.
      */
 
     public Integer getTimeoutInMinutesOverride() {
@@ -442,13 +442,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours) that overrides, for this build only, the latest
-     * setting already defined in the corresponding build project.
+     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * setting already defined in the build project.
      * </p>
      * 
      * @param timeoutInMinutesOverride
-     *        The number of build timeout minutes, from 5 to 480 (8 hours) that overrides, for this build only, the
-     *        latest setting already defined in the corresponding build project.
+     *        The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     *        latest setting already defined in the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

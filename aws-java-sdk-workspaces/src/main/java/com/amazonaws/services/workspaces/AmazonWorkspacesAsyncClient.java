@@ -12,11 +12,18 @@
  */
 package com.amazonaws.services.workspaces;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing Amazon WorkSpaces asynchronously. Each asynchronous method will return a Java Future object
@@ -51,9 +58,11 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonWorkspacesAsyncClient() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -75,10 +84,11 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonWorkspacesAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
-                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonWorkspacesAsyncClient(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -91,9 +101,11 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonWorkspacesAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonWorkspacesAsyncClient(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -104,8 +116,11 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonWorkspacesAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonWorkspacesAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public AmazonWorkspacesAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -120,10 +135,12 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonWorkspacesAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonWorkspacesAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonWorkspacesAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonWorkspacesAsyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -138,9 +155,11 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonWorkspacesAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonWorkspacesAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -157,10 +176,12 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonWorkspacesAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonWorkspacesAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonWorkspacesAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -171,9 +192,11 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonWorkspacesAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonWorkspacesAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonWorkspacesAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -187,10 +210,12 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonWorkspacesAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonWorkspacesAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonWorkspacesAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonWorkspacesAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonWorkspacesAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -212,7 +237,7 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
      *
      * @return The executor service used by this client to execute async requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

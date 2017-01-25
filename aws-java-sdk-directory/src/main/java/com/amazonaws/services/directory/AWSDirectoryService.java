@@ -76,7 +76,11 @@ public interface AWSDirectoryService {
      *        The endpoint (ex: "ds.us-east-1.amazonaws.com") or a full URL, including the protocol (ex:
      *        "https://ds.us-east-1.amazonaws.com") of the region specific AWS endpoint this client will communicate
      *        with.
+     * @deprecated use {@link AwsClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)} for
+     *             example:
+     *             {@code builder.setEndpointConfiguration(new EndpointConfiguration(endpoint, signingRegion));}
      */
+    @Deprecated
     void setEndpoint(String endpoint);
 
     /**
@@ -97,7 +101,9 @@ public interface AWSDirectoryService {
      * @see Region#getRegion(com.amazonaws.regions.Regions)
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      * @see Region#isServiceSupported(String)
+     * @deprecated use {@link AwsClientBuilder#setRegion(String)}
      */
+    @Deprecated
     void setRegion(Region region);
 
     /**

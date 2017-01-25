@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.servermigration.AWSServerMigrationClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -113,7 +114,9 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSServerMigrationClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSServerMigrationClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -136,7 +139,9 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *        counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSServerMigrationClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSServerMigrationClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -150,7 +155,10 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSServerMigrationClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSServerMigrationClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSServerMigrationClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -168,7 +176,10 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to SMS (ex: proxy settings, retry
      *        counts, etc.).
+     * @deprecated use {@link AWSServerMigrationClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSServerMigrationClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSServerMigrationClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -184,7 +195,9 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSServerMigrationClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSServerMigrationClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -202,7 +215,10 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to SMS (ex: proxy settings, retry
      *        counts, etc.).
+     * @deprecated use {@link AWSServerMigrationClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSServerMigrationClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSServerMigrationClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -222,7 +238,11 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *        counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSServerMigrationClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSServerMigrationClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSServerMigrationClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSServerMigrationClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

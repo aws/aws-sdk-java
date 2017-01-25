@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.codepipeline.AWSCodePipelineClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -327,7 +328,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSCodePipelineClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSCodePipelineClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -350,7 +353,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSCodePipelineClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCodePipelineClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -364,7 +369,10 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSCodePipelineClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSCodePipelineClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSCodePipelineClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -382,7 +390,10 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to CodePipeline (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSCodePipelineClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodePipelineClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCodePipelineClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -399,7 +410,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSCodePipelineClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSCodePipelineClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -417,7 +430,10 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to CodePipeline (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSCodePipelineClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodePipelineClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCodePipelineClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -437,7 +453,11 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSCodePipelineClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodePipelineClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSCodePipelineClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSCodePipelineClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

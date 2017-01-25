@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -95,7 +96,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonSNSClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonSNSClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -118,7 +121,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonSNSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSNSClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -132,7 +137,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonSNSClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonSNSClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonSNSClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -150,7 +158,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon SNS (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonSNSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSNSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSNSClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -167,7 +178,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonSNSClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonSNSClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -185,7 +198,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon SNS (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonSNSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSNSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonSNSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -205,7 +221,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonSNSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonSNSClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonSNSClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonSNSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

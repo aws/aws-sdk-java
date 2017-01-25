@@ -27,18 +27,18 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the build project to delete.
+     * The name of the build project.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the build project to delete.
+     * The name of the build project.
      * </p>
      * 
      * @param name
-     *        The name of the build project to delete.
+     *        The name of the build project.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the build project to delete.
+     * The name of the build project.
      * </p>
      * 
-     * @return The name of the build project to delete.
+     * @return The name of the build project.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the build project to delete.
+     * The name of the build project.
      * </p>
      * 
      * @param name
-     *        The name of the build project to delete.
+     *        The name of the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

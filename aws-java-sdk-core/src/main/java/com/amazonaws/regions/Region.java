@@ -135,7 +135,11 @@ public class Region {
      *                     credentials provider
      * @param config       The configuration to use, or null for the default
      *                     configuration
+     * @deprecated use appropriate {@link com.amazonaws.client.builder.AwsClientBuilder} implementation
+     *             for the service being constructed. For example:
+     *             {@code AmazonSNSClientBuilder.standard().withRegion(region).build();}
      */
+    @Deprecated
     public <T extends AmazonWebServiceClient> T createClient(Class<T> serviceClass,
                                                              AWSCredentialsProvider credentials,
                                                              ClientConfiguration config) {

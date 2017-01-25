@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.marketplacemetering.AWSMarketplaceMeteringClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -147,7 +148,9 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSMarketplaceMeteringClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSMarketplaceMeteringClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -170,7 +173,9 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *        proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSMarketplaceMeteringClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSMarketplaceMeteringClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -185,7 +190,10 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSMarketplaceMeteringClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSMarketplaceMeteringClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSMarketplaceMeteringClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -203,7 +211,10 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWSMarketplace Metering (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSMarketplaceMeteringClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSMarketplaceMeteringClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSMarketplaceMeteringClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -220,7 +231,9 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSMarketplaceMeteringClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSMarketplaceMeteringClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -238,7 +251,10 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWSMarketplace Metering (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSMarketplaceMeteringClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSMarketplaceMeteringClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSMarketplaceMeteringClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -258,7 +274,11 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *        proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSMarketplaceMeteringClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSMarketplaceMeteringClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSMarketplaceMeteringClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSMarketplaceMeteringClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

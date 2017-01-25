@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.cloudsearchv2.AmazonCloudSearchClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -92,7 +93,9 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCloudSearchClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCloudSearchClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -115,7 +118,9 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCloudSearchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudSearchClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -130,7 +135,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonCloudSearchClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonCloudSearchClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonCloudSearchClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -148,7 +156,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon CloudSearch (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCloudSearchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudSearchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudSearchClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -165,7 +176,9 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonCloudSearchClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonCloudSearchClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -183,7 +196,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon CloudSearch (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCloudSearchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudSearchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudSearchClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -203,7 +219,11 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonCloudSearchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudSearchClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCloudSearchClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonCloudSearchClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

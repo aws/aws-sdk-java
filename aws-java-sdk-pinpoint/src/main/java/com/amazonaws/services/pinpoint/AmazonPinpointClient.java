@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.pinpoint.AmazonPinpointClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -102,7 +103,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonPinpointClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonPinpointClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -125,7 +128,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonPinpointClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonPinpointClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -139,7 +144,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonPinpointClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonPinpointClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonPinpointClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -157,7 +165,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Pinpoint (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonPinpointClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonPinpointClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonPinpointClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -174,7 +185,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonPinpointClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonPinpointClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -192,7 +205,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Pinpoint (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonPinpointClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonPinpointClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonPinpointClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -212,7 +228,11 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonPinpointClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonPinpointClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonPinpointClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonPinpointClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

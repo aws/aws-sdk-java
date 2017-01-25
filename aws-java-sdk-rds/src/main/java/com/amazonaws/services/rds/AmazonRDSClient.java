@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.rds.AmazonRDSClientBuilder;
 import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -155,7 +156,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonRDSClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonRDSClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -178,7 +181,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonRDSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRDSClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -192,7 +197,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonRDSClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonRDSClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonRDSClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -210,7 +218,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon RDS (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonRDSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRDSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRDSClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -227,7 +238,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonRDSClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonRDSClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -245,7 +258,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon RDS (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonRDSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRDSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRDSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -265,7 +281,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonRDSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRDSClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonRDSClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonRDSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

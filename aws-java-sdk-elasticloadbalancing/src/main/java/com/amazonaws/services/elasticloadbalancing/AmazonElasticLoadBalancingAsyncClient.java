@@ -12,11 +12,18 @@
  */
 package com.amazonaws.services.elasticloadbalancing;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing Elastic Load Balancing asynchronously. Each asynchronous method will return a Java Future object
@@ -75,9 +82,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonElasticLoadBalancingAsyncClient() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -99,10 +108,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonElasticLoadBalancingAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
-                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonElasticLoadBalancingAsyncClient(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -115,9 +125,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonElasticLoadBalancingAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonElasticLoadBalancingAsyncClient(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -128,8 +140,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticLoadBalancingAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonElasticLoadBalancingAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public AmazonElasticLoadBalancingAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -144,10 +159,12 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticLoadBalancingAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonElasticLoadBalancingAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonElasticLoadBalancingAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonElasticLoadBalancingAsyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -162,9 +179,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonElasticLoadBalancingAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonElasticLoadBalancingAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -181,11 +200,12 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticLoadBalancingAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonElasticLoadBalancingAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonElasticLoadBalancingAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -196,10 +216,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticLoadBalancingAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonElasticLoadBalancingAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonElasticLoadBalancingAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -213,10 +234,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonElasticLoadBalancingAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticLoadBalancingAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonElasticLoadBalancingAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonElasticLoadBalancingAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonElasticLoadBalancingAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
+            ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -238,7 +262,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *
      * @return The executor service used by this client to execute async requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

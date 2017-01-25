@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -128,7 +129,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonDynamoDBClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonDynamoDBClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -151,7 +154,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonDynamoDBClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDynamoDBClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -165,7 +170,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonDynamoDBClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonDynamoDBClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonDynamoDBClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -183,7 +191,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to DynamoDB (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonDynamoDBClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDynamoDBClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDynamoDBClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -200,7 +211,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonDynamoDBClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -218,7 +231,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to DynamoDB (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonDynamoDBClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDynamoDBClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -238,7 +254,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonDynamoDBClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDynamoDBClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonDynamoDBClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

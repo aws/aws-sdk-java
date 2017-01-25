@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.servicecatalog.AWSServiceCatalogClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -125,7 +126,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSServiceCatalogClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSServiceCatalogClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -148,7 +151,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSServiceCatalogClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSServiceCatalogClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -163,7 +168,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSServiceCatalogClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSServiceCatalogClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSServiceCatalogClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -181,7 +189,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Service Catalog (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSServiceCatalogClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSServiceCatalogClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSServiceCatalogClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -198,7 +209,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSServiceCatalogClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSServiceCatalogClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -216,7 +229,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Service Catalog (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSServiceCatalogClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSServiceCatalogClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSServiceCatalogClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -236,7 +252,11 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSServiceCatalogClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSServiceCatalogClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSServiceCatalogClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSServiceCatalogClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

@@ -27,11 +27,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the existing build project to change settings.
+     * The name of the build project.
      * </p>
      * <note>
      * <p>
-     * You cannot change an existing build project's name.
+     * You cannot change a build project's name.
      * </p>
      * </note>
      */
@@ -44,40 +44,40 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String description;
     /**
      * <p>
-     * Information to be changed about the build project's build input source code.
+     * Information to be changed about the build input source code for the build project.
      * </p>
      */
     private ProjectSource source;
     /**
      * <p>
-     * Information to be changed about the build project's build output artifacts.
+     * Information to be changed about the build output artifacts for the build project.
      * </p>
      */
     private ProjectArtifacts artifacts;
     /**
      * <p>
-     * Information to be changed about the build project's build environment.
+     * Information to be changed about the build environment for the build project.
      * </p>
      */
     private ProjectEnvironment environment;
     /**
      * <p>
-     * The replacement Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     * The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
+     * with dependent AWS services on behalf of the AWS account.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait to timeout any related build
-     * that did not get marked as completed.
+     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
+     * related build that did not get marked as completed.
      * </p>
      */
     private Integer timeoutInMinutes;
     /**
      * <p>
      * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
-     * build project's build output artifacts.
+     * build output artifacts.
      * </p>
      * <p>
      * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
@@ -97,18 +97,18 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the existing build project to change settings.
+     * The name of the build project.
      * </p>
      * <note>
      * <p>
-     * You cannot change an existing build project's name.
+     * You cannot change a build project's name.
      * </p>
      * </note>
      * 
      * @param name
-     *        The name of the existing build project to change settings.</p> <note>
+     *        The name of the build project.</p> <note>
      *        <p>
-     *        You cannot change an existing build project's name.
+     *        You cannot change a build project's name.
      *        </p>
      */
 
@@ -118,17 +118,17 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the existing build project to change settings.
+     * The name of the build project.
      * </p>
      * <note>
      * <p>
-     * You cannot change an existing build project's name.
+     * You cannot change a build project's name.
      * </p>
      * </note>
      * 
-     * @return The name of the existing build project to change settings.</p> <note>
+     * @return The name of the build project.</p> <note>
      *         <p>
-     *         You cannot change an existing build project's name.
+     *         You cannot change a build project's name.
      *         </p>
      */
 
@@ -138,18 +138,18 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the existing build project to change settings.
+     * The name of the build project.
      * </p>
      * <note>
      * <p>
-     * You cannot change an existing build project's name.
+     * You cannot change a build project's name.
      * </p>
      * </note>
      * 
      * @param name
-     *        The name of the existing build project to change settings.</p> <note>
+     *        The name of the build project.</p> <note>
      *        <p>
-     *        You cannot change an existing build project's name.
+     *        You cannot change a build project's name.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -201,11 +201,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build input source code.
+     * Information to be changed about the build input source code for the build project.
      * </p>
      * 
      * @param source
-     *        Information to be changed about the build project's build input source code.
+     *        Information to be changed about the build input source code for the build project.
      */
 
     public void setSource(ProjectSource source) {
@@ -214,10 +214,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build input source code.
+     * Information to be changed about the build input source code for the build project.
      * </p>
      * 
-     * @return Information to be changed about the build project's build input source code.
+     * @return Information to be changed about the build input source code for the build project.
      */
 
     public ProjectSource getSource() {
@@ -226,11 +226,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build input source code.
+     * Information to be changed about the build input source code for the build project.
      * </p>
      * 
      * @param source
-     *        Information to be changed about the build project's build input source code.
+     *        Information to be changed about the build input source code for the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +241,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build output artifacts.
+     * Information to be changed about the build output artifacts for the build project.
      * </p>
      * 
      * @param artifacts
-     *        Information to be changed about the build project's build output artifacts.
+     *        Information to be changed about the build output artifacts for the build project.
      */
 
     public void setArtifacts(ProjectArtifacts artifacts) {
@@ -254,10 +254,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build output artifacts.
+     * Information to be changed about the build output artifacts for the build project.
      * </p>
      * 
-     * @return Information to be changed about the build project's build output artifacts.
+     * @return Information to be changed about the build output artifacts for the build project.
      */
 
     public ProjectArtifacts getArtifacts() {
@@ -266,11 +266,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build output artifacts.
+     * Information to be changed about the build output artifacts for the build project.
      * </p>
      * 
      * @param artifacts
-     *        Information to be changed about the build project's build output artifacts.
+     *        Information to be changed about the build output artifacts for the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,11 +281,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build environment.
+     * Information to be changed about the build environment for the build project.
      * </p>
      * 
      * @param environment
-     *        Information to be changed about the build project's build environment.
+     *        Information to be changed about the build environment for the build project.
      */
 
     public void setEnvironment(ProjectEnvironment environment) {
@@ -294,10 +294,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build environment.
+     * Information to be changed about the build environment for the build project.
      * </p>
      * 
-     * @return Information to be changed about the build project's build environment.
+     * @return Information to be changed about the build environment for the build project.
      */
 
     public ProjectEnvironment getEnvironment() {
@@ -306,11 +306,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information to be changed about the build project's build environment.
+     * Information to be changed about the build environment for the build project.
      * </p>
      * 
      * @param environment
-     *        Information to be changed about the build project's build environment.
+     *        Information to be changed about the build environment for the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,13 +321,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     * The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
+     * with dependent AWS services on behalf of the AWS account.
      * </p>
      * 
      * @param serviceRole
-     *        The replacement Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-     *        enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     *        The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
+     *        interact with dependent AWS services on behalf of the AWS account.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -336,12 +336,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     * The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
+     * with dependent AWS services on behalf of the AWS account.
      * </p>
      * 
-     * @return The replacement Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-     *         enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     * @return The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
+     *         interact with dependent AWS services on behalf of the AWS account.
      */
 
     public String getServiceRole() {
@@ -350,13 +350,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS
-     * CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     * The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
+     * with dependent AWS services on behalf of the AWS account.
      * </p>
      * 
      * @param serviceRole
-     *        The replacement Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-     *        enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+     *        The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
+     *        interact with dependent AWS services on behalf of the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,12 +367,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait to timeout any related build
-     * that did not get marked as completed.
+     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
+     * related build that did not get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait to timeout any
+     *        The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
      *        related build that did not get marked as completed.
      */
 
@@ -382,12 +382,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait to timeout any related build
-     * that did not get marked as completed.
+     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
+     * related build that did not get marked as completed.
      * </p>
      * 
-     * @return The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait to timeout any
-     *         related build that did not get marked as completed.
+     * @return The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out
+     *         any related build that did not get marked as completed.
      */
 
     public Integer getTimeoutInMinutes() {
@@ -396,12 +396,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait to timeout any related build
-     * that did not get marked as completed.
+     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
+     * related build that did not get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait to timeout any
+     *        The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
      *        related build that did not get marked as completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -414,7 +414,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
-     * build project's build output artifacts.
+     * build output artifacts.
      * </p>
      * <p>
      * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
@@ -423,7 +423,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param encryptionKey
      *        The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
-     *        the build project's build output artifacts.</p>
+     *        the build output artifacts.</p>
      *        <p>
      *        You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
      *        format <code>alias/<i>alias-name</i> </code>).
@@ -436,7 +436,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
-     * build project's build output artifacts.
+     * build output artifacts.
      * </p>
      * <p>
      * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
@@ -444,7 +444,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
-     *         the build project's build output artifacts.</p>
+     *         the build output artifacts.</p>
      *         <p>
      *         You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
      *         format <code>alias/<i>alias-name</i> </code>).
@@ -457,7 +457,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
-     * build project's build output artifacts.
+     * build output artifacts.
      * </p>
      * <p>
      * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
@@ -466,7 +466,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param encryptionKey
      *        The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
-     *        the build project's build output artifacts.</p>
+     *        the build output artifacts.</p>
      *        <p>
      *        You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
      *        format <code>alias/<i>alias-name</i> </code>).

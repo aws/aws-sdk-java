@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about the build project's build environment.
+ * Information about the build environment of the build project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectEnvironment" target="_top">AWS API
@@ -29,9 +29,6 @@ public class ProjectEnvironment implements Serializable, Cloneable {
     /**
      * <p>
      * The type of build environment to use for related builds.
-     * </p>
-     * <p>
-     * The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
      * </p>
      */
     private String type;
@@ -75,14 +72,9 @@ public class ProjectEnvironment implements Serializable, Cloneable {
      * <p>
      * The type of build environment to use for related builds.
      * </p>
-     * <p>
-     * The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
-     * </p>
      * 
      * @param type
-     *        The type of build environment to use for related builds.</p>
-     *        <p>
-     *        The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
+     *        The type of build environment to use for related builds.
      * @see EnvironmentType
      */
 
@@ -94,13 +86,8 @@ public class ProjectEnvironment implements Serializable, Cloneable {
      * <p>
      * The type of build environment to use for related builds.
      * </p>
-     * <p>
-     * The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
-     * </p>
      * 
-     * @return The type of build environment to use for related builds.</p>
-     *         <p>
-     *         The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
+     * @return The type of build environment to use for related builds.
      * @see EnvironmentType
      */
 
@@ -112,14 +99,9 @@ public class ProjectEnvironment implements Serializable, Cloneable {
      * <p>
      * The type of build environment to use for related builds.
      * </p>
-     * <p>
-     * The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
-     * </p>
      * 
      * @param type
-     *        The type of build environment to use for related builds.</p>
-     *        <p>
-     *        The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
+     *        The type of build environment to use for related builds.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentType
      */
@@ -133,14 +115,9 @@ public class ProjectEnvironment implements Serializable, Cloneable {
      * <p>
      * The type of build environment to use for related builds.
      * </p>
-     * <p>
-     * The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
-     * </p>
      * 
      * @param type
-     *        The type of build environment to use for related builds.</p>
-     *        <p>
-     *        The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
+     *        The type of build environment to use for related builds.
      * @see EnvironmentType
      */
 
@@ -152,14 +129,9 @@ public class ProjectEnvironment implements Serializable, Cloneable {
      * <p>
      * The type of build environment to use for related builds.
      * </p>
-     * <p>
-     * The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
-     * </p>
      * 
      * @param type
-     *        The type of build environment to use for related builds.</p>
-     *        <p>
-     *        The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based build environment.
+     *        The type of build environment to use for related builds.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentType
      */

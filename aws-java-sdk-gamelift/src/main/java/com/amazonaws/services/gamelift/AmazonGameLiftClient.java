@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.gamelift.AmazonGameLiftClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -453,7 +454,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonGameLiftClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonGameLiftClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -476,7 +479,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonGameLiftClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonGameLiftClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -490,7 +495,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonGameLiftClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonGameLiftClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonGameLiftClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -508,7 +516,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon GameLift (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonGameLiftClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonGameLiftClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonGameLiftClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -525,7 +536,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonGameLiftClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonGameLiftClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -543,7 +556,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon GameLift (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonGameLiftClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonGameLiftClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonGameLiftClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -563,7 +579,11 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonGameLiftClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonGameLiftClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonGameLiftClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonGameLiftClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

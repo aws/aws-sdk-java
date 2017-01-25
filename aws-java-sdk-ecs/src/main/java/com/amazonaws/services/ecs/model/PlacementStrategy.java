@@ -44,7 +44,8 @@ public class PlacementStrategy implements Serializable, Cloneable {
      * The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values
      * are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the
-     * <code>binpack</code> placement strategy, valid values are <code>CPU and MEMORY</code>.
+     * <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the
+     * <code>random</code> placement strategy, this field is not used.
      * </p>
      */
     private String field;
@@ -177,7 +178,8 @@ public class PlacementStrategy implements Serializable, Cloneable {
      * The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values
      * are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the
-     * <code>binpack</code> placement strategy, valid values are <code>CPU and MEMORY</code>.
+     * <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the
+     * <code>random</code> placement strategy, this field is not used.
      * </p>
      * 
      * @param field
@@ -185,7 +187,8 @@ public class PlacementStrategy implements Serializable, Cloneable {
      *        values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or
      *        custom attribute that is applied to a container instance, such as
      *        <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code> placement strategy, valid
-     *        values are <code>CPU and MEMORY</code>.
+     *        values are <code>cpu</code> and <code>memory</code>. For the <code>random</code> placement strategy, this
+     *        field is not used.
      */
 
     public void setField(String field) {
@@ -197,14 +200,16 @@ public class PlacementStrategy implements Serializable, Cloneable {
      * The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values
      * are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the
-     * <code>binpack</code> placement strategy, valid values are <code>CPU and MEMORY</code>.
+     * <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the
+     * <code>random</code> placement strategy, this field is not used.
      * </p>
      * 
      * @return The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid
      *         values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or
      *         custom attribute that is applied to a container instance, such as
      *         <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code> placement strategy, valid
-     *         values are <code>CPU and MEMORY</code>.
+     *         values are <code>cpu</code> and <code>memory</code>. For the <code>random</code> placement strategy, this
+     *         field is not used.
      */
 
     public String getField() {
@@ -216,7 +221,8 @@ public class PlacementStrategy implements Serializable, Cloneable {
      * The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values
      * are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the
-     * <code>binpack</code> placement strategy, valid values are <code>CPU and MEMORY</code>.
+     * <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the
+     * <code>random</code> placement strategy, this field is not used.
      * </p>
      * 
      * @param field
@@ -224,7 +230,8 @@ public class PlacementStrategy implements Serializable, Cloneable {
      *        values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or
      *        custom attribute that is applied to a container instance, such as
      *        <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code> placement strategy, valid
-     *        values are <code>CPU and MEMORY</code>.
+     *        values are <code>cpu</code> and <code>memory</code>. For the <code>random</code> placement strategy, this
+     *        field is not used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.health.AWSHealthClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -158,7 +159,9 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSHealthClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSHealthClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -181,7 +184,9 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSHealthClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSHealthClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -195,7 +200,10 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSHealthClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSHealthClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSHealthClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -213,7 +221,10 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWSHealth (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSHealthClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSHealthClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSHealthClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -230,7 +241,9 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSHealthClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSHealthClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -248,7 +261,10 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWSHealth (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSHealthClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSHealthClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSHealthClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -268,7 +284,11 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSHealthClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSHealthClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSHealthClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSHealthClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

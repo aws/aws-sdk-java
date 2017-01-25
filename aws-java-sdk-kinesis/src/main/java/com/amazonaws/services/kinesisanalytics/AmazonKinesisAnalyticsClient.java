@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.kinesisanalytics.AmazonKinesisAnalyticsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -110,7 +111,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonKinesisAnalyticsClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonKinesisAnalyticsClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -133,7 +136,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonKinesisAnalyticsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonKinesisAnalyticsClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -148,7 +153,10 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonKinesisAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonKinesisAnalyticsClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonKinesisAnalyticsClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -166,7 +174,10 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Kinesis Analytics (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonKinesisAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonKinesisAnalyticsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonKinesisAnalyticsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -183,7 +194,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonKinesisAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonKinesisAnalyticsClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -201,7 +214,10 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Kinesis Analytics (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonKinesisAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonKinesisAnalyticsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonKinesisAnalyticsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -221,7 +237,11 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonKinesisAnalyticsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonKinesisAnalyticsClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonKinesisAnalyticsClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonKinesisAnalyticsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

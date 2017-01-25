@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.cloudfront.AmazonCloudFrontClientBuilder;
 import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -89,7 +90,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCloudFrontClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCloudFrontClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -112,7 +115,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCloudFrontClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudFrontClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -126,7 +131,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonCloudFrontClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonCloudFrontClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonCloudFrontClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -144,7 +152,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to CloudFront (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonCloudFrontClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudFrontClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudFrontClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -161,7 +172,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonCloudFrontClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonCloudFrontClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -179,7 +192,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to CloudFront (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonCloudFrontClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudFrontClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudFrontClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -199,7 +215,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonCloudFrontClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudFrontClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCloudFrontClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonCloudFrontClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

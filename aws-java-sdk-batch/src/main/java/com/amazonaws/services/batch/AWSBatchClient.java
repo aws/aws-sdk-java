@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.batch.AWSBatchClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -104,7 +105,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSBatchClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSBatchClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -127,7 +130,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSBatchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSBatchClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -141,7 +146,10 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSBatchClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSBatchClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSBatchClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -159,7 +167,10 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Batch (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSBatchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSBatchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSBatchClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -176,7 +187,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSBatchClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSBatchClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -194,7 +207,10 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Batch (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSBatchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSBatchClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSBatchClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -214,7 +230,11 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSBatchClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSBatchClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSBatchClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSBatchClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

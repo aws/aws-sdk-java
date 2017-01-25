@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.certificatemanager.AWSCertificateManagerClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -118,7 +119,9 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSCertificateManagerClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSCertificateManagerClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -141,7 +144,9 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *        counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSCertificateManagerClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCertificateManagerClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -155,7 +160,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSCertificateManagerClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSCertificateManagerClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSCertificateManagerClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -173,7 +181,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to ACM (ex: proxy settings, retry
      *        counts, etc.).
+     * @deprecated use {@link AWSCertificateManagerClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCertificateManagerClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCertificateManagerClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -189,7 +200,9 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSCertificateManagerClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSCertificateManagerClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -207,7 +220,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to ACM (ex: proxy settings, retry
      *        counts, etc.).
+     * @deprecated use {@link AWSCertificateManagerClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCertificateManagerClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCertificateManagerClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -227,7 +243,11 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *        counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSCertificateManagerClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCertificateManagerClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSCertificateManagerClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSCertificateManagerClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

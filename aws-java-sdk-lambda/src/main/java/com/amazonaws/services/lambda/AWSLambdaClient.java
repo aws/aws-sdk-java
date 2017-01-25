@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.lambda.AWSLambdaClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -160,7 +161,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSLambdaClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSLambdaClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -183,7 +186,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSLambdaClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSLambdaClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -197,7 +202,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSLambdaClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSLambdaClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSLambdaClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -215,7 +223,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Lambda (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSLambdaClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSLambdaClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSLambdaClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -232,7 +243,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSLambdaClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSLambdaClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -250,7 +263,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Lambda (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSLambdaClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSLambdaClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSLambdaClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -270,7 +286,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSLambdaClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSLambdaClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSLambdaClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSLambdaClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

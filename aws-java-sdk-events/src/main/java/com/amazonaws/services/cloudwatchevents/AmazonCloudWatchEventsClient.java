@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.cloudwatchevents.AmazonCloudWatchEventsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -114,7 +115,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCloudWatchEventsClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCloudWatchEventsClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -137,7 +140,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *        proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCloudWatchEventsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudWatchEventsClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -152,7 +157,10 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonCloudWatchEventsClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonCloudWatchEventsClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonCloudWatchEventsClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -170,7 +178,10 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon CloudWatch Events (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCloudWatchEventsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudWatchEventsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudWatchEventsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -187,7 +198,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonCloudWatchEventsClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonCloudWatchEventsClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -205,7 +218,10 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon CloudWatch Events (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCloudWatchEventsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudWatchEventsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCloudWatchEventsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -225,7 +241,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *        proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonCloudWatchEventsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCloudWatchEventsClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCloudWatchEventsClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonCloudWatchEventsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

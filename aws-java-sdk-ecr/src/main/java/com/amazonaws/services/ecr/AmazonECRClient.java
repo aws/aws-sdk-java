@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.ecr.AmazonECRClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -140,7 +141,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonECRClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonECRClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -163,7 +166,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonECRClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonECRClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -177,7 +182,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonECRClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonECRClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonECRClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -195,7 +203,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon ECR (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonECRClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonECRClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonECRClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -212,7 +223,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonECRClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonECRClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -230,7 +243,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon ECR (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonECRClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonECRClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonECRClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -250,7 +266,11 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonECRClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonECRClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonECRClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonECRClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

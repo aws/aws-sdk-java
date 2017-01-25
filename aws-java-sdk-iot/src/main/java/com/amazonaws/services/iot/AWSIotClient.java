@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.iot.AWSIotClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -155,7 +156,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSIotClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSIotClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -178,7 +181,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSIotClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSIotClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -192,7 +197,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSIotClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSIotClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSIotClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -210,7 +218,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS IoT (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSIotClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSIotClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSIotClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -227,7 +238,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSIotClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSIotClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -245,7 +258,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS IoT (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSIotClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSIotClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSIotClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -265,7 +281,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSIotClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSIotClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSIotClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSIotClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

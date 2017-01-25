@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.ec2.AmazonEC2ClientBuilder;
 import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -89,7 +90,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonEC2ClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonEC2Client() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -112,7 +115,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonEC2ClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonEC2Client(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -126,7 +131,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonEC2ClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonEC2ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonEC2Client(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -144,7 +152,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon EC2 (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonEC2ClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonEC2ClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonEC2Client(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -161,7 +172,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonEC2ClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonEC2Client(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -179,7 +192,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon EC2 (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonEC2ClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonEC2ClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonEC2Client(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -199,7 +215,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonEC2ClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonEC2ClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonEC2ClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonEC2Client(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

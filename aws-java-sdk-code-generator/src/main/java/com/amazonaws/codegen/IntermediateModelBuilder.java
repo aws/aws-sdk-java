@@ -199,6 +199,9 @@ public class IntermediateModelBuilder {
                     Operation c2jOperation = service.getOperation(operation.getOperationName());
 
                     ShapeModel shape = operation.getInputShape();
+                    if (shape == null) {
+                        throw new RuntimeException(String.format("Operation %s has unknown input shape", operation.getOperationName()));
+                    }
                     if(AuthType.CUSTOM.equals(c2jOperation.getAuthType())) {
                         AuthorizerModel auth = model.getCustomAuthorizers().get(c2jOperation.getAuthorizer());
                         if (auth == null) {

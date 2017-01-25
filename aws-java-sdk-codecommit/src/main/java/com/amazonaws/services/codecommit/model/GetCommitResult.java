@@ -28,18 +28,18 @@ public class GetCommitResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the specified commit.
+     * A commit data type object that contains information about the specified commit.
      * </p>
      */
     private Commit commit;
 
     /**
      * <p>
-     * Information about the specified commit.
+     * A commit data type object that contains information about the specified commit.
      * </p>
      * 
      * @param commit
-     *        Information about the specified commit.
+     *        A commit data type object that contains information about the specified commit.
      */
 
     public void setCommit(Commit commit) {
@@ -48,10 +48,10 @@ public class GetCommitResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the specified commit.
+     * A commit data type object that contains information about the specified commit.
      * </p>
      * 
-     * @return Information about the specified commit.
+     * @return A commit data type object that contains information about the specified commit.
      */
 
     public Commit getCommit() {
@@ -60,11 +60,11 @@ public class GetCommitResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the specified commit.
+     * A commit data type object that contains information about the specified commit.
      * </p>
      * 
      * @param commit
-     *        Information about the specified commit.
+     *        A commit data type object that contains information about the specified commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.elastictranscoder.AmazonElasticTranscoderClientBuilder;
 import com.amazonaws.services.elastictranscoder.waiters.AmazonElasticTranscoderWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -111,7 +112,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonElasticTranscoderClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonElasticTranscoderClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -134,7 +137,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *        proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonElasticTranscoderClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonElasticTranscoderClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -149,7 +154,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonElasticTranscoderClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonElasticTranscoderClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonElasticTranscoderClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -167,7 +175,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Elastic Transcoder (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonElasticTranscoderClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticTranscoderClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonElasticTranscoderClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -184,7 +195,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonElasticTranscoderClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonElasticTranscoderClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -202,7 +215,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Elastic Transcoder (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonElasticTranscoderClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticTranscoderClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonElasticTranscoderClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -222,7 +238,11 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *        proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonElasticTranscoderClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonElasticTranscoderClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonElasticTranscoderClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonElasticTranscoderClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

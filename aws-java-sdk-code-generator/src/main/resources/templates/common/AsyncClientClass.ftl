@@ -1,11 +1,18 @@
 ${fileHeader}
 package ${metadata.packageName};
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import ${metadata.packageName}.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing ${metadata.serviceName} asynchronously. Each
@@ -43,9 +50,11 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#defaultClient()}
      */
+    @Deprecated
     public ${metadata.asyncClient}() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -69,11 +78,13 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#withClientConfiguration(ClientConfiguration)}
      */
-    public ${metadata.asyncClient}(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(),
+    @Deprecated
+    public ${metadata.asyncClient}(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(),
                 clientConfiguration,
-                java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+                newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -87,9 +98,11 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      * @param awsCredentials The AWS credentials (access key ID and secret key)
      *            to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)}
      */
-    public ${metadata.asyncClient}(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public ${metadata.asyncClient}(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -101,10 +114,11 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *            to use when authenticating with AWS services.
      * @param executorService The executor service by which all asynchronous
      *            requests will be executed.
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)}
+     *             and {@link ${metadata.asyncClientBuilderClassName}#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public ${metadata.asyncClient}(
-            com.amazonaws.auth.AWSCredentials awsCredentials,
-            java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public ${metadata.asyncClient}(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -120,12 +134,12 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *            limit, proxy settings, etc).
      * @param executorService The executor service by which all asynchronous
      *            requests will be executed.
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)}
+     *             and {@link ${metadata.asyncClientBuilderClassName}#withClientConfiguration(ClientConfiguration)}
+     *             and {@link ${metadata.asyncClientBuilderClassName}#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public ${metadata.asyncClient}(
-            com.amazonaws.auth.AWSCredentials awsCredentials,
-            com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public ${metadata.asyncClient}(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -143,9 +157,11 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *            provide credentials to authenticate requests with AWS
      *            services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)}
      */
-    public ${metadata.asyncClient}(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public ${metadata.asyncClient}(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -165,14 +181,12 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)}
+     *             and {@link ${metadata.asyncClientBuilderClassName}#withClientConfiguration(ClientConfiguration)}
      */
-    public ${metadata.asyncClient}(
-            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider,
-                clientConfiguration,
-                java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public ${metadata.asyncClient}(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -185,11 +199,11 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *            services.
      * @param executorService The executor service by which all asynchronous
      *            requests will be executed.
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)}
+     *             and {@link ${metadata.asyncClientBuilderClassName}#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public ${metadata.asyncClient}(
-            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public ${metadata.asyncClient}(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -205,12 +219,12 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *            limit, proxy settings, etc).
      * @param executorService The executor service by which all asynchronous
      *            requests will be executed.
+     * @deprecated use {@link ${metadata.asyncClientBuilderClassName}#withCredentials(AWSCredentialsProvider)}
+     *             and {@link ${metadata.asyncClientBuilderClassName}#withClientConfiguration(ClientConfiguration)}
+     *             and {@link ${metadata.asyncClientBuilderClassName}#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public ${metadata.asyncClient}(
-            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public ${metadata.asyncClient}(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -233,7 +247,7 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      * @return The executor service used by this client to execute async
      *             requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

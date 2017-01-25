@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.importexport.AmazonImportExportClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -85,7 +86,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonImportExportClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonImportExportClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -108,7 +111,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonImportExportClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonImportExportClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -123,7 +128,10 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonImportExportClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonImportExportClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonImportExportClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -141,7 +149,10 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Import/Export (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonImportExportClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonImportExportClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonImportExportClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -158,7 +169,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonImportExportClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonImportExportClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -176,7 +189,10 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Import/Export (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonImportExportClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonImportExportClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonImportExportClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -196,7 +212,11 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonImportExportClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonImportExportClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonImportExportClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonImportExportClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

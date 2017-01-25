@@ -28,24 +28,24 @@ public class EnvironmentVariable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The environment variable's name or key.
+     * The name or key of the environment variable.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The environment variable's value.
+     * The value of the environment variable.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The environment variable's name or key.
+     * The name or key of the environment variable.
      * </p>
      * 
      * @param name
-     *        The environment variable's name or key.
+     *        The name or key of the environment variable.
      */
 
     public void setName(String name) {
@@ -54,10 +54,10 @@ public class EnvironmentVariable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The environment variable's name or key.
+     * The name or key of the environment variable.
      * </p>
      * 
-     * @return The environment variable's name or key.
+     * @return The name or key of the environment variable.
      */
 
     public String getName() {
@@ -66,11 +66,11 @@ public class EnvironmentVariable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The environment variable's name or key.
+     * The name or key of the environment variable.
      * </p>
      * 
      * @param name
-     *        The environment variable's name or key.
+     *        The name or key of the environment variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class EnvironmentVariable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The environment variable's value.
+     * The value of the environment variable.
      * </p>
      * 
      * @param value
-     *        The environment variable's value.
+     *        The value of the environment variable.
      */
 
     public void setValue(String value) {
@@ -94,10 +94,10 @@ public class EnvironmentVariable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The environment variable's value.
+     * The value of the environment variable.
      * </p>
      * 
-     * @return The environment variable's value.
+     * @return The value of the environment variable.
      */
 
     public String getValue() {
@@ -106,11 +106,11 @@ public class EnvironmentVariable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The environment variable's value.
+     * The value of the environment variable.
      * </p>
      * 
      * @param value
-     *        The environment variable's value.
+     *        The value of the environment variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

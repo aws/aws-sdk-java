@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.codebuild.AWSCodeBuildClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -48,10 +49,10 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <p>
  * <fullname>AWS CodeBuild</fullname>
  * <p>
- * AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
+ * AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
  * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
  * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
- * and build tools such as Apach Maven, Gradle, and more. You can also fully customize build environments in AWS
+ * and build tools, such as Apach Maven, Gradle, and more. You can also fully customize build environments in AWS
  * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay
  * only for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User
  * Guide</i>.
@@ -170,7 +171,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSCodeBuildClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSCodeBuildClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -193,7 +196,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSCodeBuildClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCodeBuildClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -207,7 +212,10 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSCodeBuildClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSCodeBuildClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSCodeBuildClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -225,7 +233,10 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS CodeBuild (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSCodeBuildClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodeBuildClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCodeBuildClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -242,7 +253,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSCodeBuildClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSCodeBuildClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -260,7 +273,10 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS CodeBuild (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSCodeBuildClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodeBuildClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCodeBuildClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -280,7 +296,11 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSCodeBuildClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCodeBuildClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSCodeBuildClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSCodeBuildClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
@@ -317,7 +337,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Gets information about one or more builds.
+     * Gets information about builds.
      * </p>
      * 
      * @param batchGetBuildsRequest
@@ -361,7 +381,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Gets information about one or more build projects.
+     * Gets information about build projects.
      * </p>
      * 
      * @param batchGetProjectsRequest
@@ -726,11 +746,6 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * <p>
      * Attempts to stop running a build.
      * </p>
-     * <note>
-     * <p>
-     * Completed builds cannot be stopped.
-     * </p>
-     * </note>
      * 
      * @param stopBuildRequest
      * @return Result of the StopBuild operation returned by the service.
@@ -775,7 +790,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Changes the settings of an existing build project.
+     * Changes the settings of a build project.
      * </p>
      * 
      * @param updateProjectRequest

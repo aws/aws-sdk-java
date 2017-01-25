@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.kms.AWSKMSClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -244,7 +245,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSKMSClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSKMSClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -267,7 +270,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *        counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSKMSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSKMSClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -281,7 +286,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSKMSClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSKMSClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSKMSClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -299,7 +307,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to KMS (ex: proxy settings, retry
      *        counts, etc.).
+     * @deprecated use {@link AWSKMSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSKMSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSKMSClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -315,7 +326,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSKMSClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSKMSClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -333,7 +346,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to KMS (ex: proxy settings, retry
      *        counts, etc.).
+     * @deprecated use {@link AWSKMSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSKMSClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSKMSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -353,7 +369,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *        counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSKMSClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSKMSClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSKMSClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSKMSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

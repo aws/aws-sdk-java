@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBStreamsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -130,7 +131,9 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonDynamoDBStreamsClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonDynamoDBStreamsClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -153,7 +156,9 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *        proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonDynamoDBStreamsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDynamoDBStreamsClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -168,7 +173,10 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonDynamoDBStreamsClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonDynamoDBStreamsClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonDynamoDBStreamsClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -186,7 +194,10 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon DynamoDB Streams (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonDynamoDBStreamsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDynamoDBStreamsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDynamoDBStreamsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -203,7 +214,9 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonDynamoDBStreamsClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonDynamoDBStreamsClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -221,7 +234,10 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon DynamoDB Streams (ex:
      *        proxy settings, retry counts, etc.).
+     * @deprecated use {@link AmazonDynamoDBStreamsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDynamoDBStreamsClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonDynamoDBStreamsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -241,7 +257,11 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *        proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonDynamoDBStreamsClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonDynamoDBStreamsClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonDynamoDBStreamsClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonDynamoDBStreamsClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

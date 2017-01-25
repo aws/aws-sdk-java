@@ -28,7 +28,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's name. Valid values include:
+     * The name of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -38,7 +38,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETED</code>: The build has completed.
+     * <code>COMPLETED</code>: The build has been completed.
      * </p>
      * </li>
      * <li>
@@ -78,7 +78,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      * </p>
      * </li>
      * </ul>
@@ -86,7 +86,7 @@ public class BuildPhase implements Serializable, Cloneable {
     private String phaseType;
     /**
      * <p>
-     * The build phase's current status. Valid values include:
+     * The current status of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -136,7 +136,7 @@ public class BuildPhase implements Serializable, Cloneable {
     private java.util.Date endTime;
     /**
      * <p>
-     * How long, in seconds, between the build's phase starting and ending times.
+     * How long, in seconds, between the starting and ending times of the build's phase.
      * </p>
      */
     private Long durationInSeconds;
@@ -149,7 +149,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's name. Valid values include:
+     * The name of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -159,7 +159,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETED</code>: The build has completed.
+     * <code>COMPLETED</code>: The build has been completed.
      * </p>
      * </li>
      * <li>
@@ -199,13 +199,13 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      * </p>
      * </li>
      * </ul>
      * 
      * @param phaseType
-     *        The build phase's name. Valid values include:</p>
+     *        The name of the build phase. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -214,7 +214,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COMPLETED</code>: The build has completed.
+     *        <code>COMPLETED</code>: The build has been completed.
      *        </p>
      *        </li>
      *        <li>
@@ -254,7 +254,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     *        <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      *        </p>
      *        </li>
      * @see BuildPhaseType
@@ -266,7 +266,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's name. Valid values include:
+     * The name of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -276,7 +276,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETED</code>: The build has completed.
+     * <code>COMPLETED</code>: The build has been completed.
      * </p>
      * </li>
      * <li>
@@ -316,12 +316,12 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The build phase's name. Valid values include:</p>
+     * @return The name of the build phase. Valid values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -330,7 +330,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>COMPLETED</code>: The build has completed.
+     *         <code>COMPLETED</code>: The build has been completed.
      *         </p>
      *         </li>
      *         <li>
@@ -370,7 +370,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     *         <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      *         </p>
      *         </li>
      * @see BuildPhaseType
@@ -382,7 +382,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's name. Valid values include:
+     * The name of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -392,7 +392,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETED</code>: The build has completed.
+     * <code>COMPLETED</code>: The build has been completed.
      * </p>
      * </li>
      * <li>
@@ -432,13 +432,13 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      * </p>
      * </li>
      * </ul>
      * 
      * @param phaseType
-     *        The build phase's name. Valid values include:</p>
+     *        The name of the build phase. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -447,7 +447,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COMPLETED</code>: The build has completed.
+     *        <code>COMPLETED</code>: The build has been completed.
      *        </p>
      *        </li>
      *        <li>
@@ -487,7 +487,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     *        <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -501,7 +501,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's name. Valid values include:
+     * The name of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -511,7 +511,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETED</code>: The build has completed.
+     * <code>COMPLETED</code>: The build has been completed.
      * </p>
      * </li>
      * <li>
@@ -551,13 +551,13 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      * </p>
      * </li>
      * </ul>
      * 
      * @param phaseType
-     *        The build phase's name. Valid values include:</p>
+     *        The name of the build phase. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -566,7 +566,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COMPLETED</code>: The build has completed.
+     *        <code>COMPLETED</code>: The build has been completed.
      *        </p>
      *        </li>
      *        <li>
@@ -606,7 +606,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     *        <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      *        </p>
      *        </li>
      * @see BuildPhaseType
@@ -618,7 +618,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's name. Valid values include:
+     * The name of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -628,7 +628,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETED</code>: The build has completed.
+     * <code>COMPLETED</code>: The build has been completed.
      * </p>
      * </li>
      * <li>
@@ -668,13 +668,13 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      * </p>
      * </li>
      * </ul>
      * 
      * @param phaseType
-     *        The build phase's name. Valid values include:</p>
+     *        The name of the build phase. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -683,7 +683,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COMPLETED</code>: The build has completed.
+     *        <code>COMPLETED</code>: The build has been completed.
      *        </p>
      *        </li>
      *        <li>
@@ -723,7 +723,7 @@ public class BuildPhase implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output location.
+     *        <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output location.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -737,7 +737,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's current status. Valid values include:
+     * The current status of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -773,7 +773,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </ul>
      * 
      * @param phaseStatus
-     *        The build phase's current status. Valid values include:</p>
+     *        The current status of the build phase. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -814,7 +814,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's current status. Valid values include:
+     * The current status of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -849,7 +849,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The build phase's current status. Valid values include:</p>
+     * @return The current status of the build phase. Valid values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -890,7 +890,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's current status. Valid values include:
+     * The current status of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -926,7 +926,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </ul>
      * 
      * @param phaseStatus
-     *        The build phase's current status. Valid values include:</p>
+     *        The current status of the build phase. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -969,7 +969,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's current status. Valid values include:
+     * The current status of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -1005,7 +1005,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </ul>
      * 
      * @param phaseStatus
-     *        The build phase's current status. Valid values include:</p>
+     *        The current status of the build phase. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1046,7 +1046,7 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build phase's current status. Valid values include:
+     * The current status of the build phase. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -1082,7 +1082,7 @@ public class BuildPhase implements Serializable, Cloneable {
      * </ul>
      * 
      * @param phaseStatus
-     *        The build phase's current status. Valid values include:</p>
+     *        The current status of the build phase. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1205,11 +1205,11 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How long, in seconds, between the build's phase starting and ending times.
+     * How long, in seconds, between the starting and ending times of the build's phase.
      * </p>
      * 
      * @param durationInSeconds
-     *        How long, in seconds, between the build's phase starting and ending times.
+     *        How long, in seconds, between the starting and ending times of the build's phase.
      */
 
     public void setDurationInSeconds(Long durationInSeconds) {
@@ -1218,10 +1218,10 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How long, in seconds, between the build's phase starting and ending times.
+     * How long, in seconds, between the starting and ending times of the build's phase.
      * </p>
      * 
-     * @return How long, in seconds, between the build's phase starting and ending times.
+     * @return How long, in seconds, between the starting and ending times of the build's phase.
      */
 
     public Long getDurationInSeconds() {
@@ -1230,11 +1230,11 @@ public class BuildPhase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How long, in seconds, between the build's phase starting and ending times.
+     * How long, in seconds, between the starting and ending times of the build's phase.
      * </p>
      * 
      * @param durationInSeconds
-     *        How long, in seconds, between the build's phase starting and ending times.
+     *        How long, in seconds, between the starting and ending times of the build's phase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

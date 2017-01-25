@@ -27,18 +27,18 @@ public class StopBuildRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the build to attempt to stop running.
+     * The ID of the build.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The ID of the build to attempt to stop running.
+     * The ID of the build.
      * </p>
      * 
      * @param id
-     *        The ID of the build to attempt to stop running.
+     *        The ID of the build.
      */
 
     public void setId(String id) {
@@ -47,10 +47,10 @@ public class StopBuildRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the build to attempt to stop running.
+     * The ID of the build.
      * </p>
      * 
-     * @return The ID of the build to attempt to stop running.
+     * @return The ID of the build.
      */
 
     public String getId() {
@@ -59,11 +59,11 @@ public class StopBuildRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the build to attempt to stop running.
+     * The ID of the build.
      * </p>
      * 
      * @param id
-     *        The ID of the build to attempt to stop running.
+     *        The ID of the build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about the build project's build output artifacts.
+ * Information about the build output artifacts for the build project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectArtifacts" target="_top">AWS API
@@ -28,12 +28,12 @@ public class ProjectArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build output artifact's type. Valid values include:
+     * The type of build output artifact. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
@@ -68,9 +68,7 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket. If <code>path</code> is
-     * not also specified, then <code>location</code> can also specify the path of the output artifact in the output
-     * bucket.
+     * If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -224,12 +222,12 @@ public class ProjectArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build output artifact's type. Valid values include:
+     * The type of build output artifact. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
@@ -245,11 +243,11 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </ul>
      * 
      * @param type
-     *        The build output artifact's type. Valid values include:</p>
+     *        The type of build output artifact. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     *        <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      *        </p>
      *        </li>
      *        <li>
@@ -271,12 +269,12 @@ public class ProjectArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build output artifact's type. Valid values include:
+     * The type of build output artifact. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
@@ -291,11 +289,11 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The build output artifact's type. Valid values include:</p>
+     * @return The type of build output artifact. Valid values include:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     *         <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      *         </p>
      *         </li>
      *         <li>
@@ -317,12 +315,12 @@ public class ProjectArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build output artifact's type. Valid values include:
+     * The type of build output artifact. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
@@ -338,11 +336,11 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </ul>
      * 
      * @param type
-     *        The build output artifact's type. Valid values include:</p>
+     *        The type of build output artifact. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     *        <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      *        </p>
      *        </li>
      *        <li>
@@ -366,12 +364,12 @@ public class ProjectArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build output artifact's type. Valid values include:
+     * The type of build output artifact. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
@@ -387,11 +385,11 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </ul>
      * 
      * @param type
-     *        The build output artifact's type. Valid values include:</p>
+     *        The type of build output artifact. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     *        <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      *        </p>
      *        </li>
      *        <li>
@@ -413,12 +411,12 @@ public class ProjectArtifacts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build output artifact's type. Valid values include:
+     * The type of build output artifact. Valid values include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
@@ -434,11 +432,11 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </ul>
      * 
      * @param type
-     *        The build output artifact's type. Valid values include:</p>
+     *        The type of build output artifact. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CODEPIPELINE</code>: The build project with have build output generated through AWS CodePipeline.
+     *        <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
      *        </p>
      *        </li>
      *        <li>
@@ -479,9 +477,7 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket. If <code>path</code> is
-     * not also specified, then <code>location</code> can also specify the path of the output artifact in the output
-     * bucket.
+     * If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -503,9 +499,7 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket. If
-     *        <code>path</code> is not also specified, then <code>location</code> can also specify the path of the
-     *        output artifact in the output bucket.
+     *        If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.
      *        </p>
      *        </li>
      */
@@ -533,9 +527,7 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket. If <code>path</code> is
-     * not also specified, then <code>location</code> can also specify the path of the output artifact in the output
-     * bucket.
+     * If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -556,9 +548,7 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket. If
-     *         <code>path</code> is not also specified, then <code>location</code> can also specify the path of the
-     *         output artifact in the output bucket.
+     *         If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.
      *         </p>
      *         </li>
      */
@@ -586,9 +576,7 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket. If <code>path</code> is
-     * not also specified, then <code>location</code> can also specify the path of the output artifact in the output
-     * bucket.
+     * If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -610,9 +598,7 @@ public class ProjectArtifacts implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket. If
-     *        <code>path</code> is not also specified, then <code>location</code> can also specify the path of the
-     *        output artifact in the output bucket.
+     *        If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

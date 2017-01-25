@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.event;
 
 import java.util.List;
 
+import com.amazonaws.util.SdkHttpUtils;
 import org.joda.time.DateTime;
 
 import com.amazonaws.internal.DateTimeJsonSerializer;
@@ -155,6 +156,15 @@ public class S3EventNotification {
 
         public String getKey() {
             return key;
+        }
+
+        /**
+         * S3 URL encodes the key of the object involved in the event. This is
+         * a convenience method to automatically URL decode the key.
+         * @return The URL decoded object key.
+         */
+        public String getUrlDecodedKey() {
+            return SdkHttpUtils.urlDecode(getKey());
         }
 
         /**

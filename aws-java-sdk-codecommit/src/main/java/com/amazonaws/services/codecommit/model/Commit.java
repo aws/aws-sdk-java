@@ -40,20 +40,25 @@ public class Commit implements Serializable, Cloneable {
     private java.util.List<String> parents;
     /**
      * <p>
-     * The message associated with the specified commit.
+     * The commit message associated with the specified commit.
      * </p>
      */
     private String message;
     /**
      * <p>
-     * Information about the author of the specified commit.
+     * Information about the author of the specified commit. Information includes the date in timestamp format with GMT
+     * offset, the name of the author, and the email address for the author, as configured in Git.
      * </p>
      */
     private UserInfo author;
     /**
      * <p>
-     * Information about the person who committed the specified commit, also known as the committer. For more
-     * information about the difference between an author and a committer in Git, see <a
+     * Information about the person who committed the specified commit, also known as the committer. Information
+     * includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the
+     * committer, as configured in Git.
+     * </p>
+     * <p>
+     * For more information about the difference between an author and a committer in Git, see <a
      * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben
      * Straub.
      * </p>
@@ -178,11 +183,11 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message associated with the specified commit.
+     * The commit message associated with the specified commit.
      * </p>
      * 
      * @param message
-     *        The message associated with the specified commit.
+     *        The commit message associated with the specified commit.
      */
 
     public void setMessage(String message) {
@@ -191,10 +196,10 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message associated with the specified commit.
+     * The commit message associated with the specified commit.
      * </p>
      * 
-     * @return The message associated with the specified commit.
+     * @return The commit message associated with the specified commit.
      */
 
     public String getMessage() {
@@ -203,11 +208,11 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message associated with the specified commit.
+     * The commit message associated with the specified commit.
      * </p>
      * 
      * @param message
-     *        The message associated with the specified commit.
+     *        The commit message associated with the specified commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +223,13 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the author of the specified commit.
+     * Information about the author of the specified commit. Information includes the date in timestamp format with GMT
+     * offset, the name of the author, and the email address for the author, as configured in Git.
      * </p>
      * 
      * @param author
-     *        Information about the author of the specified commit.
+     *        Information about the author of the specified commit. Information includes the date in timestamp format
+     *        with GMT offset, the name of the author, and the email address for the author, as configured in Git.
      */
 
     public void setAuthor(UserInfo author) {
@@ -231,10 +238,12 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the author of the specified commit.
+     * Information about the author of the specified commit. Information includes the date in timestamp format with GMT
+     * offset, the name of the author, and the email address for the author, as configured in Git.
      * </p>
      * 
-     * @return Information about the author of the specified commit.
+     * @return Information about the author of the specified commit. Information includes the date in timestamp format
+     *         with GMT offset, the name of the author, and the email address for the author, as configured in Git.
      */
 
     public UserInfo getAuthor() {
@@ -243,11 +252,13 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the author of the specified commit.
+     * Information about the author of the specified commit. Information includes the date in timestamp format with GMT
+     * offset, the name of the author, and the email address for the author, as configured in Git.
      * </p>
      * 
      * @param author
-     *        Information about the author of the specified commit.
+     *        Information about the author of the specified commit. Information includes the date in timestamp format
+     *        with GMT offset, the name of the author, and the email address for the author, as configured in Git.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,15 +269,22 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the person who committed the specified commit, also known as the committer. For more
-     * information about the difference between an author and a committer in Git, see <a
+     * Information about the person who committed the specified commit, also known as the committer. Information
+     * includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the
+     * committer, as configured in Git.
+     * </p>
+     * <p>
+     * For more information about the difference between an author and a committer in Git, see <a
      * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben
      * Straub.
      * </p>
      * 
      * @param committer
-     *        Information about the person who committed the specified commit, also known as the committer. For more
-     *        information about the difference between an author and a committer in Git, see <a
+     *        Information about the person who committed the specified commit, also known as the committer. Information
+     *        includes the date in timestamp format with GMT offset, the name of the committer, and the email address
+     *        for the committer, as configured in Git.</p>
+     *        <p>
+     *        For more information about the difference between an author and a committer in Git, see <a
      *        href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and
      *        Ben Straub.
      */
@@ -277,14 +295,21 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the person who committed the specified commit, also known as the committer. For more
-     * information about the difference between an author and a committer in Git, see <a
+     * Information about the person who committed the specified commit, also known as the committer. Information
+     * includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the
+     * committer, as configured in Git.
+     * </p>
+     * <p>
+     * For more information about the difference between an author and a committer in Git, see <a
      * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben
      * Straub.
      * </p>
      * 
-     * @return Information about the person who committed the specified commit, also known as the committer. For more
-     *         information about the difference between an author and a committer in Git, see <a
+     * @return Information about the person who committed the specified commit, also known as the committer. Information
+     *         includes the date in timestamp format with GMT offset, the name of the committer, and the email address
+     *         for the committer, as configured in Git.</p>
+     *         <p>
+     *         For more information about the difference between an author and a committer in Git, see <a
      *         href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and
      *         Ben Straub.
      */
@@ -295,15 +320,22 @@ public class Commit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the person who committed the specified commit, also known as the committer. For more
-     * information about the difference between an author and a committer in Git, see <a
+     * Information about the person who committed the specified commit, also known as the committer. Information
+     * includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the
+     * committer, as configured in Git.
+     * </p>
+     * <p>
+     * For more information about the difference between an author and a committer in Git, see <a
      * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben
      * Straub.
      * </p>
      * 
      * @param committer
-     *        Information about the person who committed the specified commit, also known as the committer. For more
-     *        information about the difference between an author and a committer in Git, see <a
+     *        Information about the person who committed the specified commit, also known as the committer. Information
+     *        includes the date in timestamp format with GMT offset, the name of the committer, and the email address
+     *        for the committer, as configured in Git.</p>
+     *        <p>
+     *        For more information about the difference between an author and a committer in Git, see <a
      *        href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and
      *        Ben Straub.
      * @return Returns a reference to this object so that method calls can be chained together.

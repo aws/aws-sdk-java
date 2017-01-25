@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.applicationdiscovery.AWSApplicationDiscoveryClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -165,7 +166,9 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSApplicationDiscoveryClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSApplicationDiscoveryClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -188,7 +191,9 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *        (ex: proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSApplicationDiscoveryClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSApplicationDiscoveryClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -203,7 +208,10 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSApplicationDiscoveryClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSApplicationDiscoveryClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSApplicationDiscoveryClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -221,7 +229,10 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Application Discovery Service
      *        (ex: proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSApplicationDiscoveryClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationDiscoveryClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSApplicationDiscoveryClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -238,7 +249,9 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSApplicationDiscoveryClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSApplicationDiscoveryClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -256,7 +269,10 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Application Discovery Service
      *        (ex: proxy settings, retry counts, etc.).
+     * @deprecated use {@link AWSApplicationDiscoveryClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationDiscoveryClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSApplicationDiscoveryClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -276,7 +292,11 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *        (ex: proxy settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSApplicationDiscoveryClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSApplicationDiscoveryClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSApplicationDiscoveryClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSApplicationDiscoveryClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

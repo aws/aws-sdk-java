@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.config.AmazonConfigClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -195,7 +196,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonConfigClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonConfigClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -218,7 +221,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonConfigClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonConfigClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -232,7 +237,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonConfigClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonConfigClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonConfigClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -250,7 +258,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Config Service (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonConfigClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonConfigClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonConfigClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -267,7 +278,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonConfigClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonConfigClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -285,7 +298,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Config Service (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonConfigClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonConfigClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonConfigClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -305,7 +321,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonConfigClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonConfigClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonConfigClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonConfigClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

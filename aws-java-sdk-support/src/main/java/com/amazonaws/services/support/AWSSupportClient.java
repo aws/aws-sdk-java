@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.support.AWSSupportClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -185,7 +186,9 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSSupportClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSSupportClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -208,7 +211,9 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSSupportClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSSupportClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -222,7 +227,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSSupportClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSSupportClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSSupportClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -240,7 +248,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Support (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSSupportClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSSupportClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSSupportClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -257,7 +268,9 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSSupportClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSSupportClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -275,7 +288,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Support (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSSupportClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSSupportClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSSupportClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -295,7 +311,11 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSSupportClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSSupportClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSSupportClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSSupportClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

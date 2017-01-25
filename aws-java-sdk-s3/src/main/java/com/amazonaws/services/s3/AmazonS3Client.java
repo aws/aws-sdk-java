@@ -36,6 +36,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.Presigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
+import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.event.ProgressListener;
@@ -459,7 +460,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
      * @sample AmazonS3.CreateClient
+     * @deprecated use {@link AmazonS3ClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonS3Client() {
         this(new S3CredentialsProviderChain());
     }
@@ -474,7 +477,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *
      * @see AmazonS3Client#AmazonS3Client()
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
+     * @deprecated use {@link AmazonS3ClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonS3Client(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -492,7 +497,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *
      * @see AmazonS3Client#AmazonS3Client()
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
+     * @deprecated use {@link AmazonS3ClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonS3ClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonS3Client(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         this(new StaticCredentialsProvider(awsCredentials), clientConfiguration);
     }
@@ -504,7 +512,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @param credentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonS3ClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonS3Client(AWSCredentialsProvider credentialsProvider) {
         this(credentialsProvider, configFactory.getConfig());
     }
@@ -519,7 +529,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @param clientConfiguration
      *            The client configuration options controlling how this client
      *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
+     * @deprecated use {@link AmazonS3ClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonS3ClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonS3Client(AWSCredentialsProvider credentialsProvider,
             ClientConfiguration clientConfiguration) {
         this(credentialsProvider, clientConfiguration, null);
@@ -536,7 +549,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The client configuration options controlling how this client
      *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
      * @param requestMetricCollector request metric collector
+     * @deprecated use {@link AmazonS3ClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonS3ClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonS3ClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonS3Client(AWSCredentialsProvider credentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
@@ -608,7 +625,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
+     * @deprecated use {@link AmazonS3ClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonS3Client(ClientConfiguration clientConfiguration) {
         this(new S3CredentialsProviderChain(), clientConfiguration);
     }
@@ -652,15 +671,19 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         /** Dualstack mode requires setting the region */
         if (clientOptions.isDualstackEnabled()) {
             if (getRegion() == null) {
-                throw new IllegalStateException("The dualstack mode of Amazon S3 cannot be used without specifiying a region");
+                throw new IllegalStateException("The dualstack mode of Amazon S3 cannot be used without specifying a region");
             }
         }
     }
 
+    /**
+     * @deprecated use {@link AmazonS3ClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)}
+     */
     @Override
+    @Deprecated
     public synchronized void setEndpoint(String endpoint) {
         if (ServiceUtils.isS3AccelerateEndpoint(endpoint)) {
-            throw new IllegalStateException("To enable accelerate mode, please use AmazonS3Client.setS3ClientOptions(S3ClientOptions.builder().setAccelerateModeEnabled(true).build());");
+            throw new IllegalStateException("To enable accelerate mode, please use AmazonS3ClientBuilder.withAccelerateModeEnabled(true)");
         } else {
             super.setEndpoint(endpoint);
             /*
@@ -673,7 +696,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
+    /**
+     * @deprecated use {@link AmazonS3ClientBuilder#setRegion(String)}
+     */
     @Override
+    @Deprecated
     public synchronized void setRegion(com.amazonaws.regions.Region region) {
         super.setRegion(region);
         /*

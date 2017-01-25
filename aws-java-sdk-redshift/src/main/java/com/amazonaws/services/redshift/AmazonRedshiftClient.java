@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.redshift.AmazonRedshiftClientBuilder;
 import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -111,7 +112,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonRedshiftClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonRedshiftClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -134,7 +137,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonRedshiftClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRedshiftClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -148,7 +153,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonRedshiftClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonRedshiftClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonRedshiftClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -166,7 +174,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Redshift (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonRedshiftClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRedshiftClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRedshiftClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -183,7 +194,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonRedshiftClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonRedshiftClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -201,7 +214,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Redshift (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonRedshiftClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRedshiftClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonRedshiftClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -221,7 +237,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonRedshiftClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonRedshiftClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonRedshiftClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonRedshiftClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

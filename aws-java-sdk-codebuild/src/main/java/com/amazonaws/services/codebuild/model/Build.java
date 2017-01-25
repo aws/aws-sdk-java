@@ -28,13 +28,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's unique ID.
+     * The unique ID for the build.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The build's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the build.
      * </p>
      */
     private String arn;
@@ -52,13 +52,13 @@ public class Build implements Serializable, Cloneable {
     private java.util.Date endTime;
     /**
      * <p>
-     * The build's current build phase.
+     * The current build phase.
      * </p>
      */
     private String currentPhase;
     /**
      * <p>
-     * The build's current status. Valid values include:
+     * The current status of the build. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -102,14 +102,14 @@ public class Build implements Serializable, Cloneable {
     private String sourceVersion;
     /**
      * <p>
-     * The build project's name.
+     * The name of the build project.
      * </p>
      */
     private String projectName;
     /**
      * <p>
-     * Information about all previous build phases that have completed, and information about any current build phase
-     * that has not yet completed.
+     * Information about all previous build phases that are completed and information about any current build phase that
+     * is not yet complete.
      * </p>
      */
     private java.util.List<BuildPhase> phases;
@@ -121,7 +121,7 @@ public class Build implements Serializable, Cloneable {
     private ProjectSource source;
     /**
      * <p>
-     * Information about the build's output artifacts.
+     * Information about the output artifacts for the build.
      * </p>
      */
     private BuildArtifacts artifacts;
@@ -139,13 +139,14 @@ public class Build implements Serializable, Cloneable {
     private LogsLocation logs;
     /**
      * <p>
-     * How long in minutes for AWS CodeBuild to wait to timeout this build if it does not get marked as completed.
+     * How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as
+     * completed.
      * </p>
      */
     private Integer timeoutInMinutes;
     /**
      * <p>
-     * Whether the build has finished. Valid values include true if completed; otherwise, false.
+     * Whether the build has finished. True if completed; otherwise, false.
      * </p>
      */
     private Boolean buildComplete;
@@ -156,14 +157,14 @@ public class Build implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.
+     * If AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If an AWS Identity and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.
+     * If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example
+     * <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -177,11 +178,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's unique ID.
+     * The unique ID for the build.
      * </p>
      * 
      * @param id
-     *        The build's unique ID.
+     *        The unique ID for the build.
      */
 
     public void setId(String id) {
@@ -190,10 +191,10 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's unique ID.
+     * The unique ID for the build.
      * </p>
      * 
-     * @return The build's unique ID.
+     * @return The unique ID for the build.
      */
 
     public String getId() {
@@ -202,11 +203,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's unique ID.
+     * The unique ID for the build.
      * </p>
      * 
      * @param id
-     *        The build's unique ID.
+     *        The unique ID for the build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +218,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the build.
      * </p>
      * 
      * @param arn
-     *        The build's Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the build.
      */
 
     public void setArn(String arn) {
@@ -230,10 +231,10 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the build.
      * </p>
      * 
-     * @return The build's Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the build.
      */
 
     public String getArn() {
@@ -242,11 +243,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the build.
      * </p>
      * 
      * @param arn
-     *        The build's Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,11 +338,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's current build phase.
+     * The current build phase.
      * </p>
      * 
      * @param currentPhase
-     *        The build's current build phase.
+     *        The current build phase.
      */
 
     public void setCurrentPhase(String currentPhase) {
@@ -350,10 +351,10 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's current build phase.
+     * The current build phase.
      * </p>
      * 
-     * @return The build's current build phase.
+     * @return The current build phase.
      */
 
     public String getCurrentPhase() {
@@ -362,11 +363,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's current build phase.
+     * The current build phase.
      * </p>
      * 
      * @param currentPhase
-     *        The build's current build phase.
+     *        The current build phase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,7 +378,7 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's current status. Valid values include:
+     * The current status of the build. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -413,7 +414,7 @@ public class Build implements Serializable, Cloneable {
      * </ul>
      * 
      * @param buildStatus
-     *        The build's current status. Valid values include:</p>
+     *        The current status of the build. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -454,7 +455,7 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's current status. Valid values include:
+     * The current status of the build. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -489,7 +490,7 @@ public class Build implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The build's current status. Valid values include:</p>
+     * @return The current status of the build. Valid values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -530,7 +531,7 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's current status. Valid values include:
+     * The current status of the build. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -566,7 +567,7 @@ public class Build implements Serializable, Cloneable {
      * </ul>
      * 
      * @param buildStatus
-     *        The build's current status. Valid values include:</p>
+     *        The current status of the build. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -609,7 +610,7 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's current status. Valid values include:
+     * The current status of the build. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -645,7 +646,7 @@ public class Build implements Serializable, Cloneable {
      * </ul>
      * 
      * @param buildStatus
-     *        The build's current status. Valid values include:</p>
+     *        The current status of the build. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -686,7 +687,7 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build's current status. Valid values include:
+     * The current status of the build. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -722,7 +723,7 @@ public class Build implements Serializable, Cloneable {
      * </ul>
      * 
      * @param buildStatus
-     *        The build's current status. Valid values include:</p>
+     *        The current status of the build. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -805,11 +806,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build project's name.
+     * The name of the build project.
      * </p>
      * 
      * @param projectName
-     *        The build project's name.
+     *        The name of the build project.
      */
 
     public void setProjectName(String projectName) {
@@ -818,10 +819,10 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build project's name.
+     * The name of the build project.
      * </p>
      * 
-     * @return The build project's name.
+     * @return The name of the build project.
      */
 
     public String getProjectName() {
@@ -830,11 +831,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The build project's name.
+     * The name of the build project.
      * </p>
      * 
      * @param projectName
-     *        The build project's name.
+     *        The name of the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -845,12 +846,12 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about all previous build phases that have completed, and information about any current build phase
-     * that has not yet completed.
+     * Information about all previous build phases that are completed and information about any current build phase that
+     * is not yet complete.
      * </p>
      * 
-     * @return Information about all previous build phases that have completed, and information about any current build
-     *         phase that has not yet completed.
+     * @return Information about all previous build phases that are completed and information about any current build
+     *         phase that is not yet complete.
      */
 
     public java.util.List<BuildPhase> getPhases() {
@@ -859,13 +860,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about all previous build phases that have completed, and information about any current build phase
-     * that has not yet completed.
+     * Information about all previous build phases that are completed and information about any current build phase that
+     * is not yet complete.
      * </p>
      * 
      * @param phases
-     *        Information about all previous build phases that have completed, and information about any current build
-     *        phase that has not yet completed.
+     *        Information about all previous build phases that are completed and information about any current build
+     *        phase that is not yet complete.
      */
 
     public void setPhases(java.util.Collection<BuildPhase> phases) {
@@ -879,8 +880,8 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about all previous build phases that have completed, and information about any current build phase
-     * that has not yet completed.
+     * Information about all previous build phases that are completed and information about any current build phase that
+     * is not yet complete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -889,8 +890,8 @@ public class Build implements Serializable, Cloneable {
      * </p>
      * 
      * @param phases
-     *        Information about all previous build phases that have completed, and information about any current build
-     *        phase that has not yet completed.
+     *        Information about all previous build phases that are completed and information about any current build
+     *        phase that is not yet complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -906,13 +907,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about all previous build phases that have completed, and information about any current build phase
-     * that has not yet completed.
+     * Information about all previous build phases that are completed and information about any current build phase that
+     * is not yet complete.
      * </p>
      * 
      * @param phases
-     *        Information about all previous build phases that have completed, and information about any current build
-     *        phase that has not yet completed.
+     *        Information about all previous build phases that are completed and information about any current build
+     *        phase that is not yet complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -963,11 +964,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the build's output artifacts.
+     * Information about the output artifacts for the build.
      * </p>
      * 
      * @param artifacts
-     *        Information about the build's output artifacts.
+     *        Information about the output artifacts for the build.
      */
 
     public void setArtifacts(BuildArtifacts artifacts) {
@@ -976,10 +977,10 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the build's output artifacts.
+     * Information about the output artifacts for the build.
      * </p>
      * 
-     * @return Information about the build's output artifacts.
+     * @return Information about the output artifacts for the build.
      */
 
     public BuildArtifacts getArtifacts() {
@@ -988,11 +989,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the build's output artifacts.
+     * Information about the output artifacts for the build.
      * </p>
      * 
      * @param artifacts
-     *        Information about the build's output artifacts.
+     *        Information about the output artifacts for the build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1083,11 +1084,12 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How long in minutes for AWS CodeBuild to wait to timeout this build if it does not get marked as completed.
+     * How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as
+     * completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long in minutes for AWS CodeBuild to wait to timeout this build if it does not get marked as
+     *        How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as
      *        completed.
      */
 
@@ -1097,10 +1099,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How long in minutes for AWS CodeBuild to wait to timeout this build if it does not get marked as completed.
+     * How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as
+     * completed.
      * </p>
      * 
-     * @return How long in minutes for AWS CodeBuild to wait to timeout this build if it does not get marked as
+     * @return How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as
      *         completed.
      */
 
@@ -1110,11 +1113,12 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How long in minutes for AWS CodeBuild to wait to timeout this build if it does not get marked as completed.
+     * How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as
+     * completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long in minutes for AWS CodeBuild to wait to timeout this build if it does not get marked as
+     *        How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as
      *        completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1126,11 +1130,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the build has finished. Valid values include true if completed; otherwise, false.
+     * Whether the build has finished. True if completed; otherwise, false.
      * </p>
      * 
      * @param buildComplete
-     *        Whether the build has finished. Valid values include true if completed; otherwise, false.
+     *        Whether the build has finished. True if completed; otherwise, false.
      */
 
     public void setBuildComplete(Boolean buildComplete) {
@@ -1139,10 +1143,10 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the build has finished. Valid values include true if completed; otherwise, false.
+     * Whether the build has finished. True if completed; otherwise, false.
      * </p>
      * 
-     * @return Whether the build has finished. Valid values include true if completed; otherwise, false.
+     * @return Whether the build has finished. True if completed; otherwise, false.
      */
 
     public Boolean getBuildComplete() {
@@ -1151,11 +1155,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the build has finished. Valid values include true if completed; otherwise, false.
+     * Whether the build has finished. True if completed; otherwise, false.
      * </p>
      * 
      * @param buildComplete
-     *        Whether the build has finished. Valid values include true if completed; otherwise, false.
+     *        Whether the build has finished. True if completed; otherwise, false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1166,10 +1170,10 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the build has finished. Valid values include true if completed; otherwise, false.
+     * Whether the build has finished. True if completed; otherwise, false.
      * </p>
      * 
-     * @return Whether the build has finished. Valid values include true if completed; otherwise, false.
+     * @return Whether the build has finished. True if completed; otherwise, false.
      */
 
     public Boolean isBuildComplete() {
@@ -1183,14 +1187,14 @@ public class Build implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.
+     * If AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If an AWS Identity and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.
+     * If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example
+     * <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -1205,14 +1209,14 @@ public class Build implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If AWS CodePipeline started the build, the pipeline's name, for example
-     *        <code>codepipeline/my-demo-pipeline</code>.
+     *        If AWS CodePipeline started the build, the pipeline's name (for example,
+     *        <code>codepipeline/my-demo-pipeline</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If an AWS Identity and Access Management (IAM) user started the build, the user's name, for example
-     *        <code>MyUserName</code>.
+     *        If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example
+     *        <code>MyUserName</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1234,14 +1238,14 @@ public class Build implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.
+     * If AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If an AWS Identity and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.
+     * If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example
+     * <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -1255,14 +1259,14 @@ public class Build implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         If AWS CodePipeline started the build, the pipeline's name, for example
-     *         <code>codepipeline/my-demo-pipeline</code>.
+     *         If AWS CodePipeline started the build, the pipeline's name (for example,
+     *         <code>codepipeline/my-demo-pipeline</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If an AWS Identity and Access Management (IAM) user started the build, the user's name, for example
-     *         <code>MyUserName</code>.
+     *         If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example
+     *         <code>MyUserName</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1284,14 +1288,14 @@ public class Build implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.
+     * If AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If an AWS Identity and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.
+     * If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example
+     * <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -1306,14 +1310,14 @@ public class Build implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If AWS CodePipeline started the build, the pipeline's name, for example
-     *        <code>codepipeline/my-demo-pipeline</code>.
+     *        If AWS CodePipeline started the build, the pipeline's name (for example,
+     *        <code>codepipeline/my-demo-pipeline</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If an AWS Identity and Access Management (IAM) user started the build, the user's name, for example
-     *        <code>MyUserName</code>.
+     *        If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example
+     *        <code>MyUserName</code>).
      *        </p>
      *        </li>
      *        <li>

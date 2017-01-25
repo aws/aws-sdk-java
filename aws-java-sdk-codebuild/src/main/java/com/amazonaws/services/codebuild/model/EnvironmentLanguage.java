@@ -28,7 +28,7 @@ public class EnvironmentLanguage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The programming language for the related set of Docker images.
+     * The programming language for the Docker images.
      * </p>
      */
     private String language;
@@ -41,11 +41,11 @@ public class EnvironmentLanguage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The programming language for the related set of Docker images.
+     * The programming language for the Docker images.
      * </p>
      * 
      * @param language
-     *        The programming language for the related set of Docker images.
+     *        The programming language for the Docker images.
      * @see LanguageType
      */
 
@@ -55,10 +55,10 @@ public class EnvironmentLanguage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The programming language for the related set of Docker images.
+     * The programming language for the Docker images.
      * </p>
      * 
-     * @return The programming language for the related set of Docker images.
+     * @return The programming language for the Docker images.
      * @see LanguageType
      */
 
@@ -68,11 +68,11 @@ public class EnvironmentLanguage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The programming language for the related set of Docker images.
+     * The programming language for the Docker images.
      * </p>
      * 
      * @param language
-     *        The programming language for the related set of Docker images.
+     *        The programming language for the Docker images.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageType
      */
@@ -84,11 +84,11 @@ public class EnvironmentLanguage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The programming language for the related set of Docker images.
+     * The programming language for the Docker images.
      * </p>
      * 
      * @param language
-     *        The programming language for the related set of Docker images.
+     *        The programming language for the Docker images.
      * @see LanguageType
      */
 
@@ -98,11 +98,11 @@ public class EnvironmentLanguage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The programming language for the related set of Docker images.
+     * The programming language for the Docker images.
      * </p>
      * 
      * @param language
-     *        The programming language for the related set of Docker images.
+     *        The programming language for the Docker images.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageType
      */

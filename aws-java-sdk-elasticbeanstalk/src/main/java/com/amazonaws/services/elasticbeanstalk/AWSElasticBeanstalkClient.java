@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalkClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -101,7 +102,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSElasticBeanstalkClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSElasticBeanstalkClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -124,7 +127,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSElasticBeanstalkClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSElasticBeanstalkClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -139,7 +144,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSElasticBeanstalkClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSElasticBeanstalkClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSElasticBeanstalkClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -157,7 +165,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Elastic Beanstalk (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSElasticBeanstalkClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSElasticBeanstalkClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSElasticBeanstalkClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -174,7 +185,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSElasticBeanstalkClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSElasticBeanstalkClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -192,7 +205,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Elastic Beanstalk (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AWSElasticBeanstalkClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSElasticBeanstalkClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSElasticBeanstalkClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -212,7 +228,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSElasticBeanstalkClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSElasticBeanstalkClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSElasticBeanstalkClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSElasticBeanstalkClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

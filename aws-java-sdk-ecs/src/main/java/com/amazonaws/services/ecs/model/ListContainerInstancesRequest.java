@@ -67,6 +67,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
+     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
+     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -334,6 +342,99 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
+     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
+     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * </p>
+     * 
+     * @param status
+     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
+     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
+     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * @see ContainerInstanceStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
+     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
+     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * </p>
+     * 
+     * @return The container instance status with which to filter the <code>ListContainerInstances</code> results.
+     *         Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
+     *         that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * @see ContainerInstanceStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
+     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
+     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * </p>
+     * 
+     * @param status
+     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
+     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
+     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContainerInstanceStatus
+     */
+
+    public ListContainerInstancesRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
+     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
+     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * </p>
+     * 
+     * @param status
+     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
+     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
+     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * @see ContainerInstanceStatus
+     */
+
+    public void setStatus(ContainerInstanceStatus status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * <p>
+     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
+     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
+     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * </p>
+     * 
+     * @param status
+     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
+     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
+     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContainerInstanceStatus
+     */
+
+    public ListContainerInstancesRequest withStatus(ContainerInstanceStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -351,7 +452,9 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -382,6 +485,10 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -394,6 +501,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.cognitosync.AmazonCognitoSyncClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -144,7 +145,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCognitoSyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCognitoSyncClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -167,7 +170,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonCognitoSyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCognitoSyncClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -182,7 +187,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonCognitoSyncClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonCognitoSyncClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonCognitoSyncClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -200,7 +208,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Cognito Sync (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCognitoSyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoSyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCognitoSyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -217,7 +228,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonCognitoSyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonCognitoSyncClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -235,7 +248,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Amazon Cognito Sync (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link AmazonCognitoSyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoSyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonCognitoSyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -255,7 +271,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonCognitoSyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoSyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCognitoSyncClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonCognitoSyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

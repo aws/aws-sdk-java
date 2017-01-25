@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.kinesis.AmazonKinesisClientBuilder;
 import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
 
 import com.amazonaws.AmazonServiceException;
@@ -107,7 +108,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonKinesisClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonKinesisClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -130,7 +133,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AmazonKinesisClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonKinesisClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -144,7 +149,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AmazonKinesisClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AmazonKinesisClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AmazonKinesisClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -162,7 +170,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Kinesis (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonKinesisClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonKinesisClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonKinesisClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -179,7 +190,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AmazonKinesisClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonKinesisClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -197,7 +210,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to Kinesis (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AmazonKinesisClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonKinesisClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonKinesisClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -217,7 +233,11 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AmazonKinesisClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonKinesisClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonKinesisClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AmazonKinesisClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

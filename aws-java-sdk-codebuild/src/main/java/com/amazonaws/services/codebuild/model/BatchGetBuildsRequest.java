@@ -27,17 +27,17 @@ public class BatchGetBuildsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the builds to get information about.
+     * The IDs of the builds.
      * </p>
      */
     private java.util.List<String> ids;
 
     /**
      * <p>
-     * The IDs of the builds to get information about.
+     * The IDs of the builds.
      * </p>
      * 
-     * @return The IDs of the builds to get information about.
+     * @return The IDs of the builds.
      */
 
     public java.util.List<String> getIds() {
@@ -46,11 +46,11 @@ public class BatchGetBuildsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the builds to get information about.
+     * The IDs of the builds.
      * </p>
      * 
      * @param ids
-     *        The IDs of the builds to get information about.
+     *        The IDs of the builds.
      */
 
     public void setIds(java.util.Collection<String> ids) {
@@ -64,7 +64,7 @@ public class BatchGetBuildsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the builds to get information about.
+     * The IDs of the builds.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchGetBuildsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param ids
-     *        The IDs of the builds to get information about.
+     *        The IDs of the builds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchGetBuildsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the builds to get information about.
+     * The IDs of the builds.
      * </p>
      * 
      * @param ids
-     *        The IDs of the builds to get information about.
+     *        The IDs of the builds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

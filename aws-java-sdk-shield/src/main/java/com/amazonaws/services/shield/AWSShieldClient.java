@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.shield.AWSShieldClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -116,7 +117,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSShieldClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSShieldClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -139,7 +142,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSShieldClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSShieldClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -153,7 +158,10 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSShieldClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSShieldClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSShieldClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -171,7 +179,10 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Shield (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSShieldClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSShieldClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSShieldClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -188,7 +199,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSShieldClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSShieldClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -206,7 +219,10 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Shield (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSShieldClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSShieldClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSShieldClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -226,7 +242,11 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSShieldClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSShieldClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSShieldClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSShieldClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;

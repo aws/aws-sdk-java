@@ -12,11 +12,18 @@
  */
 package com.amazonaws.services.cognitoidentity;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import java.util.concurrent.ExecutorService;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 /**
  * Client for accessing Amazon Cognito Identity asynchronously. Each asynchronous method will return a Java Future
@@ -81,9 +88,11 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AmazonCognitoIdentityAsyncClient() {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
+        this(DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -105,10 +114,11 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonCognitoIdentityAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
-                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonCognitoIdentityAsyncClient(ClientConfiguration clientConfiguration) {
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -121,9 +131,11 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonCognitoIdentityAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonCognitoIdentityAsyncClient(AWSCredentials awsCredentials) {
+        this(awsCredentials, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -134,8 +146,11 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoIdentityAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonCognitoIdentityAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
+    @Deprecated
+    public AmazonCognitoIdentityAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
@@ -150,10 +165,12 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoIdentityAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCognitoIdentityAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonCognitoIdentityAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonCognitoIdentityAsyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
@@ -168,9 +185,11 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
-    public AmazonCognitoIdentityAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    @Deprecated
+    public AmazonCognitoIdentityAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
@@ -187,11 +206,12 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoIdentityAsyncClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
-    public AmazonCognitoIdentityAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration) {
-
-        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    @Deprecated
+    public AmazonCognitoIdentityAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
@@ -202,10 +222,11 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoIdentityAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonCognitoIdentityAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonCognitoIdentityAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
@@ -219,10 +240,13 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
      *        The executor service by which all asynchronous requests will be executed.
+     * @deprecated use {@link AmazonCognitoIdentityAsyncClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AmazonCognitoIdentityAsyncClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AmazonCognitoIdentityAsyncClientBuilder#withExecutorFactory(com.amazonaws.client.builder.ExecutorFactory)}
      */
-    public AmazonCognitoIdentityAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration, java.util.concurrent.ExecutorService executorService) {
-
+    @Deprecated
+    public AmazonCognitoIdentityAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
+            ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
@@ -244,7 +268,7 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *
      * @return The executor service used by this client to execute async requests.
      */
-    public java.util.concurrent.ExecutorService getExecutorService() {
+    public ExecutorService getExecutorService() {
         return executorService;
     }
 

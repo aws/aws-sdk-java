@@ -27,10 +27,10 @@ import com.amazonaws.services.codebuild.model.*;
  * <p>
  * <fullname>AWS CodeBuild</fullname>
  * <p>
- * AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
+ * AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
  * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
  * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
- * and build tools such as Apach Maven, Gradle, and more. You can also fully customize build environments in AWS
+ * and build tools, such as Apach Maven, Gradle, and more. You can also fully customize build environments in AWS
  * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay
  * only for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User
  * Guide</i>.
@@ -107,7 +107,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets information about one or more builds.
+     * Gets information about builds.
      * </p>
      * 
      * @param batchGetBuildsRequest
@@ -120,7 +120,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets information about one or more builds.
+     * Gets information about builds.
      * </p>
      * 
      * @param batchGetBuildsRequest
@@ -138,7 +138,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets information about one or more build projects.
+     * Gets information about build projects.
      * </p>
      * 
      * @param batchGetProjectsRequest
@@ -151,7 +151,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets information about one or more build projects.
+     * Gets information about build projects.
      * </p>
      * 
      * @param batchGetProjectsRequest
@@ -392,11 +392,6 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * <p>
      * Attempts to stop running a build.
      * </p>
-     * <note>
-     * <p>
-     * Completed builds cannot be stopped.
-     * </p>
-     * </note>
      * 
      * @param stopBuildRequest
      * @return A Java Future containing the result of the StopBuild operation returned by the service.
@@ -410,11 +405,6 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * <p>
      * Attempts to stop running a build.
      * </p>
-     * <note>
-     * <p>
-     * Completed builds cannot be stopped.
-     * </p>
-     * </note>
      * 
      * @param stopBuildRequest
      * @param asyncHandler
@@ -431,7 +421,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Changes the settings of an existing build project.
+     * Changes the settings of a build project.
      * </p>
      * 
      * @param updateProjectRequest
@@ -444,7 +434,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Changes the settings of an existing build project.
+     * Changes the settings of a build project.
      * </p>
      * 
      * @param updateProjectRequest

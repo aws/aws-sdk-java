@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.cloudtrail.AWSCloudTrailClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -207,7 +208,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSCloudTrailClientBuilder#defaultClient()}
      */
+    @Deprecated
     public AWSCloudTrailClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -230,7 +233,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *        retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link AWSCloudTrailClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCloudTrailClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -244,7 +249,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link AWSCloudTrailClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code AWSCloudTrailClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public AWSCloudTrailClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -262,7 +270,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to CloudTrail (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSCloudTrailClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCloudTrailClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCloudTrailClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -279,7 +290,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link AWSCloudTrailClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AWSCloudTrailClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -297,7 +310,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to CloudTrail (ex: proxy settings,
      *        retry counts, etc.).
+     * @deprecated use {@link AWSCloudTrailClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCloudTrailClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AWSCloudTrailClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -317,7 +333,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *        retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link AWSCloudTrailClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link AWSCloudTrailClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link AWSCloudTrailClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public AWSCloudTrailClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.datapipeline.DataPipelineClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -117,7 +118,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * completes.
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link DataPipelineClientBuilder#defaultClient()}
      */
+    @Deprecated
     public DataPipelineClient() {
         this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
@@ -140,7 +143,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *        settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
+     * @deprecated use {@link DataPipelineClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public DataPipelineClient(ClientConfiguration clientConfiguration) {
         this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
@@ -155,7 +160,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *
      * @param awsCredentials
      *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
+     * @deprecated use {@link DataPipelineClientBuilder#withCredentials(AWSCredentialsProvider)} for example:
+     *             {@code DataPipelineClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();}
      */
+    @Deprecated
     public DataPipelineClient(AWSCredentials awsCredentials) {
         this(awsCredentials, configFactory.getConfig());
     }
@@ -173,7 +181,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Data Pipeline (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link DataPipelineClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link DataPipelineClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public DataPipelineClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
@@ -190,7 +201,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *
      * @param awsCredentialsProvider
      *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @deprecated use {@link DataPipelineClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public DataPipelineClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, configFactory.getConfig());
     }
@@ -208,7 +221,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @param clientConfiguration
      *        The client configuration options controlling how this client connects to AWS Data Pipeline (ex: proxy
      *        settings, retry counts, etc.).
+     * @deprecated use {@link DataPipelineClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link DataPipelineClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public DataPipelineClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
@@ -228,7 +244,11 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *        settings, retry counts, etc.).
      * @param requestMetricCollector
      *        optional request metric collector
+     * @deprecated use {@link DataPipelineClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *             {@link DataPipelineClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *             {@link DataPipelineClientBuilder#withMetricsCollector(RequestMetricCollector)}
      */
+    @Deprecated
     public DataPipelineClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);

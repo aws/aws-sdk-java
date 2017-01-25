@@ -623,6 +623,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateContainerInstancesStateResult> updateContainerInstancesStateAsync(UpdateContainerInstancesStateRequest request) {
+
+        return updateContainerInstancesStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContainerInstancesStateResult> updateContainerInstancesStateAsync(UpdateContainerInstancesStateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContainerInstancesStateRequest, UpdateContainerInstancesStateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest request) {
 
         return updateServiceAsync(request, null);
