@@ -14,9 +14,10 @@
  */
 package com.amazonaws.http.impl.client;
 
+import com.amazonaws.annotation.ThreadSafe;
+
 import java.io.IOException;
 
-import org.apache.http.annotation.ThreadSafe;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.protocol.HttpContext;
 

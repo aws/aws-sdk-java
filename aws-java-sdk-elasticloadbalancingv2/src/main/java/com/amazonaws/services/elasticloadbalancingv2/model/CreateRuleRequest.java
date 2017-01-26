@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for CreateRule.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule" target="_top">AWS
  *      API Documentation</a>
@@ -37,8 +34,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
-     * characters:
+     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters in a path pattern.
      * </p>
      * <ul>
      * <li>
@@ -125,8 +122,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
-     * characters:
+     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters in a path pattern.
      * </p>
      * <ul>
      * <li>
@@ -157,8 +154,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * 
      * @return A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A
-     *         path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the
-     *         following characters:</p>
+     *         path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the
+     *         following characters. Note that you can include up to three wildcard characters in a path pattern.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -194,8 +191,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
-     * characters:
+     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters in a path pattern.
      * </p>
      * <ul>
      * <li>
@@ -227,8 +224,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param conditions
      *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     *        pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
-     *        characters:</p>
+     *        pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     *        characters. Note that you can include up to three wildcard characters in a path pattern.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -269,8 +266,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
-     * characters:
+     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters in a path pattern.
      * </p>
      * <ul>
      * <li>
@@ -307,8 +304,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param conditions
      *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     *        pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
-     *        characters:</p>
+     *        pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     *        characters. Note that you can include up to three wildcard characters in a path pattern.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -351,8 +348,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
-     * characters:
+     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters in a path pattern.
      * </p>
      * <ul>
      * <li>
@@ -384,8 +381,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param conditions
      *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     *        pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
-     *        characters:</p>
+     *        pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     *        characters. Note that you can include up to three wildcard characters in a path pattern.</p>
      *        <ul>
      *        <li>
      *        <p>

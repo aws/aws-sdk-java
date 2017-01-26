@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
-        <version>1.11.85-SNAPSHOT</version>
+        <version>1.11.85</version>
     </parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-bundle</artifactId>
@@ -24,7 +24,7 @@
         <artifactId>aws-java-sdk</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.11.85-SNAPSHOT</version>
+        <version>1.11.85</version>
     </dependency>
 </dependencies>
 
@@ -89,16 +89,14 @@
             </plugin>
         </plugins>
     </build>
-
     <profiles>
         <profile>
-        <id>publishing</id>
+            <id>publishing</id>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-shade-plugin</artifactId>
-                        <version>2.4.3</version>
                         <configuration>
                             <createSourcesJar>true</createSourcesJar>
                         </configuration>

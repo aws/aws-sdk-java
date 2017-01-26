@@ -14,10 +14,10 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.annotation.NotThreadSafe;
+
 import java.io.InputStream;
 import java.util.EnumMap;
-
-import org.apache.http.annotation.NotThreadSafe;
 
 /**
  * Client request options such as client markers for individual

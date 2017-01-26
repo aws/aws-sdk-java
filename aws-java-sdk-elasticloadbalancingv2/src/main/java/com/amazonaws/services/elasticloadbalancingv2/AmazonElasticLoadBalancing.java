@@ -177,7 +177,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param addTagsRequest
-     *        Contains the parameters for AddTags.
      * @return Result of the AddTags operation returned by the service.
      * @throws DuplicateTagKeysException
      *         A tag key was specified more than once.
@@ -212,7 +211,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param createListenerRequest
-     *        Contains the parameters for CreateListener.
      * @return Result of the CreateListener operation returned by the service.
      * @throws DuplicateListenerException
      *         A listener with the specified port already exists.
@@ -249,13 +247,14 @@ public interface AmazonElasticLoadBalancing {
      * Creates an Application Load Balancer.
      * </p>
      * <p>
-     * To create listeners for your load balancer, use <a>CreateListener</a>. You can add security groups, subnets, and
-     * tags when you create your load balancer, or you can add them later using <a>SetSecurityGroups</a>,
-     * <a>SetSubnets</a>, and <a>AddTags</a>.
+     * When you create a load balancer, you can specify security groups, subnets, IP address type, and tags. Otherwise,
+     * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+     * <a>AddTags</a>.
      * </p>
      * <p>
-     * To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
-     * balancer, you can delete it using <a>DeleteLoadBalancer</a>.
+     * To create listeners for your load balancer, use <a>CreateListener</a>. To describe your current load balancers,
+     * see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using
+     * <a>DeleteLoadBalancer</a>.
      * </p>
      * <p>
      * You can create up to 20 load balancers per region per account. You can request an increase for the number of load
@@ -270,7 +269,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param createLoadBalancerRequest
-     *        Contains the parameters for CreateLoadBalancer.
      * @return Result of the CreateLoadBalancer operation returned by the service.
      * @throws DuplicateLoadBalancerNameException
      *         A load balancer with the specified name already exists for this account.
@@ -313,7 +311,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param createRuleRequest
-     *        Contains the parameters for CreateRule.
      * @return Result of the CreateRule operation returned by the service.
      * @throws PriorityInUseException
      *         The specified priority is in use.
@@ -360,7 +357,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param createTargetGroupRequest
-     *        Contains the parameters for CreateTargetGroup.
      * @return Result of the CreateTargetGroup operation returned by the service.
      * @throws DuplicateTargetGroupNameException
      *         A target group with the specified name already exists.
@@ -382,7 +378,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param deleteListenerRequest
-     *        Contains the parameters for DeleteListener.
      * @return Result of the DeleteListener operation returned by the service.
      * @throws ListenerNotFoundException
      *         The specified listener does not exist.
@@ -407,7 +402,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param deleteLoadBalancerRequest
-     *        Contains the parameters for DeleteLoadBalancer.
      * @return Result of the DeleteLoadBalancer operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -425,7 +419,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param deleteRuleRequest
-     *        Contains the parameters for DeleteRule.
      * @return Result of the DeleteRule operation returned by the service.
      * @throws RuleNotFoundException
      *         The specified rule does not exist.
@@ -447,7 +440,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param deleteTargetGroupRequest
-     *        Contains the parameters for DeleteTargetGroup.
      * @return Result of the DeleteTargetGroup operation returned by the service.
      * @throws ResourceInUseException
      *         A specified resource is in use.
@@ -464,7 +456,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param deregisterTargetsRequest
-     *        Contains the parameters for DeregisterTargets.
      * @return Result of the DeregisterTargets operation returned by the service.
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
@@ -483,7 +474,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeListenersRequest
-     *        Contains the parameters for DescribeListeners.
      * @return Result of the DescribeListeners operation returned by the service.
      * @throws ListenerNotFoundException
      *         The specified listener does not exist.
@@ -501,7 +491,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeLoadBalancerAttributesRequest
-     *        Contains the parameters for DescribeLoadBalancerAttributes.
      * @return Result of the DescribeLoadBalancerAttributes operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -522,7 +511,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeLoadBalancersRequest
-     *        Contains the parameters for DescribeLoadBalancers.
      * @return Result of the DescribeLoadBalancers operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -539,7 +527,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeRulesRequest
-     *        Contains the parameters for DescribeRules.
      * @return Result of the DescribeRules operation returned by the service.
      * @throws ListenerNotFoundException
      *         The specified listener does not exist.
@@ -560,7 +547,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeSSLPoliciesRequest
-     *        Contains the parameters for DescribeSSLPolicies.
      * @return Result of the DescribeSSLPolicies operation returned by the service.
      * @throws SSLPolicyNotFoundException
      *         The specified SSL policy does not exist.
@@ -576,7 +562,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeTagsRequest
-     *        Contains the parameters for DescribeTags.
      * @return Result of the DescribeTags operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -598,7 +583,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeTargetGroupAttributesRequest
-     *        Contains the parameters for DescribeTargetGroupAttributes.
      * @return Result of the DescribeTargetGroupAttributes operation returned by the service.
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
@@ -621,7 +605,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeTargetGroupsRequest
-     *        Contains the parameters for DescribeTargetGroups.
      * @return Result of the DescribeTargetGroups operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -639,7 +622,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param describeTargetHealthRequest
-     *        Contains the parameters for DescribeTargetHealth.
      * @return Result of the DescribeTargetHealth operation returned by the service.
      * @throws InvalidTargetException
      *         The specified target does not exist or is not in the same VPC as the target group.
@@ -664,7 +646,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param modifyListenerRequest
-     *        Contains the parameters for ModifyListener.
      * @return Result of the ModifyListener operation returned by the service.
      * @throws DuplicateListenerException
      *         A listener with the specified port already exists.
@@ -706,7 +687,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param modifyLoadBalancerAttributesRequest
-     *        Contains the parameters for ModifyLoadBalancerAttributes.
      * @return Result of the ModifyLoadBalancerAttributes operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -731,7 +711,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param modifyRuleRequest
-     *        Contains the parameters for ModifyRules.
      * @return Result of the ModifyRule operation returned by the service.
      * @throws TargetGroupAssociationLimitException
      *         You've reached the limit on the number of load balancers per target group.
@@ -756,7 +735,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param modifyTargetGroupRequest
-     *        Contains the parameters for ModifyTargetGroup.
      * @return Result of the ModifyTargetGroup operation returned by the service.
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
@@ -772,7 +750,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param modifyTargetGroupAttributesRequest
-     *        Contains the parameters for ModifyTargetGroupAttributes.
      * @return Result of the ModifyTargetGroupAttributes operation returned by the service.
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
@@ -793,14 +770,13 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * <p>
      * The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is
-     * an EC2 instance, it can't be in the <code>stopped</code> or <code>running</code> state when you register it.
+     * an EC2 instance, it must be in the <code>running</code> state when you register it.
      * </p>
      * <p>
      * To remove a target from a target group, use <a>DeregisterTargets</a>.
      * </p>
      * 
      * @param registerTargetsRequest
-     *        Contains the parameters for RegisterTargets.
      * @return Result of the RegisterTargets operation returned by the service.
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
@@ -825,7 +801,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param removeTagsRequest
-     *        Contains the parameters for RemoveTags.
      * @return Result of the RemoveTags operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -845,6 +820,25 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
+     * Sets the type of IP addresses used by the subnets of the specified Application Load Balancer.
+     * </p>
+     * 
+     * @param setIpAddressTypeRequest
+     * @return Result of the SetIpAddressType operation returned by the service.
+     * @throws LoadBalancerNotFoundException
+     *         The specified load balancer does not exist.
+     * @throws InvalidConfigurationRequestException
+     *         The requested configuration is not valid.
+     * @throws InvalidSubnetException
+     *         The specified subnet is out of available addresses.
+     * @sample AmazonElasticLoadBalancing.SetIpAddressType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetIpAddressTypeResult setIpAddressType(SetIpAddressTypeRequest setIpAddressTypeRequest);
+
+    /**
+     * <p>
      * Sets the priorities of the specified rules.
      * </p>
      * <p>
@@ -853,7 +847,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param setRulePrioritiesRequest
-     *        Contains the parameters for SetRulePriorities.
      * @return Result of the SetRulePriorities operation returned by the service.
      * @throws RuleNotFoundException
      *         The specified rule does not exist.
@@ -874,7 +867,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param setSecurityGroupsRequest
-     *        Contains the parameters for SetSecurityGroups.
      * @return Result of the SetSecurityGroups operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -895,7 +887,6 @@ public interface AmazonElasticLoadBalancing {
      * </p>
      * 
      * @param setSubnetsRequest
-     *        Contains the parameters for SetSubnets.
      * @return Result of the SetSubnets operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.

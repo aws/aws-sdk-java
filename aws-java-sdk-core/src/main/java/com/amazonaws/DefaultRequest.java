@@ -14,13 +14,12 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.json.Jackson;
-
-import org.apache.http.annotation.NotThreadSafe;
 
 import java.io.InputStream;
 import java.net.URI;

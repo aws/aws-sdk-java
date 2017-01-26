@@ -168,6 +168,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     }
 
     @Override
+    public SetIpAddressTypeResult setIpAddressType(SetIpAddressTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetRulePrioritiesResult setRulePriorities(SetRulePrioritiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

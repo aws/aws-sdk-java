@@ -15,10 +15,9 @@
 package com.amazonaws.event;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.SdkFilterInputStream;
-
-import org.apache.http.annotation.NotThreadSafe;
 
 import java.io.IOException;
 import java.io.InputStream;

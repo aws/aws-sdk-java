@@ -24,13 +24,13 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 
-import org.apache.http.annotation.GuardedBy;
+import com.amazonaws.annotation.GuardedBy;
 
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
  * Reflection assistant for {@link DynamoDBMapper}
- * 
+ *
  * @deprecated This class is internal only and should not be used. It will be removed in the next
  *             major version of the SDK.
  */

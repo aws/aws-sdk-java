@@ -17,8 +17,7 @@ package com.amazonaws.auth.profile.internal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.apache.http.annotation.Immutable;
-
+import com.amazonaws.annotation.Immutable;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSSessionCredentials;

@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Contains the output of SetSubnets.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets" target="_top">AWS
  *      API Documentation</a>

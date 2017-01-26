@@ -215,7 +215,7 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBInstanceIdentifiers;
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBClusterIdentifiers;
@@ -1651,10 +1651,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      * </p>
      * 
-     * @return Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * @return Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      */
 
     public java.util.List<String> getReadReplicaDBClusterIdentifiers() {
@@ -1666,11 +1666,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      * </p>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      */
 
     public void setReadReplicaDBClusterIdentifiers(java.util.Collection<String> readReplicaDBClusterIdentifiers) {
@@ -1684,7 +1684,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1693,7 +1693,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1709,11 +1709,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      * </p>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are read replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

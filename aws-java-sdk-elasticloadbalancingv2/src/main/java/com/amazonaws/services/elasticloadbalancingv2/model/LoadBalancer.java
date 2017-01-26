@@ -99,6 +99,13 @@ public class LoadBalancer implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> securityGroups;
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * </p>
+     */
+    private String ipAddressType;
 
     /**
      * <p>
@@ -732,6 +739,89 @@ public class LoadBalancer implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * </p>
+     * 
+     * @return The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *         <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public LoadBalancer withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public LoadBalancer withIpAddressType(IpAddressType ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -763,7 +853,9 @@ public class LoadBalancer implements Serializable, Cloneable {
         if (getAvailabilityZones() != null)
             sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: ").append(getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType());
         sb.append("}");
         return sb.toString();
     }
@@ -822,6 +914,10 @@ public class LoadBalancer implements Serializable, Cloneable {
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
         return true;
     }
 
@@ -841,6 +937,7 @@ public class LoadBalancer implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         return hashCode;
     }
 

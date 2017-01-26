@@ -14,9 +14,9 @@
  */
 package com.amazonaws;
 
-import org.apache.http.annotation.NotThreadSafe;
+import com.amazonaws.annotation.NotThreadSafe;
+
 import org.apache.http.conn.socket.ConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLSocketFactory;
 
 /**
  * Used for Apache HTTP client specific custom configurations.

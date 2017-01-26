@@ -14,12 +14,12 @@
  */
 package com.amazonaws.util;
 
+import com.amazonaws.annotation.NotThreadSafe;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.http.annotation.NotThreadSafe;
 
 /**
  * Used both as a base class and a minimal support of timing info.

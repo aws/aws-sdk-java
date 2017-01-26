@@ -146,7 +146,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance. To determine the instance classes that are available for
-     * a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action.
+     * a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines.
      * </p>
      * <p>
      * Passing a value for this setting causes an outage during the change and is applied during the next maintenance
@@ -1481,7 +1482,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance. To determine the instance classes that are available for
-     * a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action.
+     * a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines.
      * </p>
      * <p>
      * Passing a value for this setting causes an outage during the change and is applied during the next maintenance
@@ -1497,7 +1499,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the DB instance. To determine the instance classes that are
-     *        available for a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. </p>
+     *        available for a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. Note that
+     *        not all instance classes are available in all regions for all DB engines. </p>
      *        <p>
      *        Passing a value for this setting causes an outage during the change and is applied during the next
      *        maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -1518,7 +1521,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance. To determine the instance classes that are available for
-     * a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action.
+     * a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines.
      * </p>
      * <p>
      * Passing a value for this setting causes an outage during the change and is applied during the next maintenance
@@ -1533,7 +1537,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The new compute and memory capacity of the DB instance. To determine the instance classes that are
-     *         available for a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. </p>
+     *         available for a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. Note that
+     *         not all instance classes are available in all regions for all DB engines. </p>
      *         <p>
      *         Passing a value for this setting causes an outage during the change and is applied during the next
      *         maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -1554,7 +1559,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance. To determine the instance classes that are available for
-     * a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action.
+     * a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines.
      * </p>
      * <p>
      * Passing a value for this setting causes an outage during the change and is applied during the next maintenance
@@ -1570,7 +1576,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the DB instance. To determine the instance classes that are
-     *        available for a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. </p>
+     *        available for a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a> action. Note that
+     *        not all instance classes are available in all regions for all DB engines. </p>
      *        <p>
      *        Passing a value for this setting causes an outage during the change and is applied during the next
      *        maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this

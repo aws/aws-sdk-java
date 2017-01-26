@@ -106,6 +106,10 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             }
         }
 
+        if (createLoadBalancerRequest.getIpAddressType() != null) {
+            request.addParameter("IpAddressType", StringUtils.fromString(createLoadBalancerRequest.getIpAddressType()));
+        }
+
         return request;
     }
 

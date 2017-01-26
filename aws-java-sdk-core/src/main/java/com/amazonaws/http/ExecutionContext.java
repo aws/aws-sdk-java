@@ -15,6 +15,7 @@
 package com.amazonaws.http;
 
 import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.Signer;
@@ -26,7 +27,6 @@ import com.amazonaws.internal.auth.SignerProvider;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetricsFullSupport;
-import org.apache.http.annotation.NotThreadSafe;
 
 import java.net.URI;
 import java.util.List;

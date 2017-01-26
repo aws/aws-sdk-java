@@ -15,9 +15,9 @@
 
 package com.amazonaws.util;
 
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.metrics.MetricType;
 import com.amazonaws.metrics.RequestMetricType;
-import org.apache.http.annotation.NotThreadSafe;
 
 import java.util.Collections;
 import java.util.List;

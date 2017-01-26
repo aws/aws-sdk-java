@@ -366,6 +366,19 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
     }
 
     @Override
+    public java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(SetIpAddressTypeRequest request) {
+
+        return setIpAddressTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(SetIpAddressTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetIpAddressTypeRequest, SetIpAddressTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SetRulePrioritiesResult> setRulePrioritiesAsync(SetRulePrioritiesRequest request) {
 
         return setRulePrioritiesAsync(request, null);

@@ -16,8 +16,7 @@ package com.amazonaws.retry.internal;
 
 import java.net.URI;
 
-import org.apache.http.annotation.Immutable;
-
+import com.amazonaws.annotation.Immutable;
 import com.amazonaws.auth.Signer;
 
 /**

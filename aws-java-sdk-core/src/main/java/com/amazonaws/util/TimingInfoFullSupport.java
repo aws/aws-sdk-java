@@ -14,13 +14,14 @@
  */
 package com.amazonaws.util;
 
+import com.amazonaws.annotation.NotThreadSafe;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.NotThreadSafe;
 
 /**
  * In contrast to {@link TimingInfo}, which is intended to be a minimal support

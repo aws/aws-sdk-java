@@ -165,7 +165,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates an Application Load Balancer.</p> <p>To create listeners for your load balancer, use <a>CreateListener</a>. You can add security groups, subnets, and tags when you create your load balancer, or you can add them later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html\">Limits for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html\">Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>",
+      "documentation" : "<p>Creates an Application Load Balancer.</p> <p>When you create a load balancer, you can specify security groups, subnets, IP address type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your load balancer, use <a>CreateListener</a>. To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html\">Limits for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html\">Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1099,7 +1099,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Registers the specified targets with the specified target group.</p> <p>By default, the load balancer routes requests to registered targets using the protocol and port number for the target group. Alternatively, you can override the port for a target when you register it.</p> <p>The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is an EC2 instance, it can't be in the <code>stopped</code> or <code>running</code> state when you register it.</p> <p>To remove a target from a target group, use <a>DeregisterTargets</a>.</p>",
+      "documentation" : "<p>Registers the specified targets with the specified target group.</p> <p>By default, the load balancer routes requests to registered targets using the protocol and port number for the target group. Alternatively, you can override the port for a target when you register it.</p> <p>The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.</p> <p>To remove a target from a target group, use <a>DeregisterTargets</a>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1197,6 +1197,49 @@
         "locationName" : null,
         "resultWrapper" : "RemoveTagsResult",
         "shape" : "RemoveTagsOutput"
+      }
+    },
+    "SetIpAddressType" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Sets the type of IP addresses used by the subnets of the specified Application Load Balancer.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LoadBalancerNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidConfigurationRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidSubnetException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "SetIpAddressTypeInput",
+        "xmlNamespace" : null
+      },
+      "name" : "SetIpAddressType",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : "SetIpAddressTypeResult",
+        "shape" : "SetIpAddressTypeOutput"
       }
     },
     "SetRulePriorities" : {
@@ -1440,7 +1483,7 @@
     },
     "AddTagsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for AddTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1488,7 +1531,7 @@
     },
     "AddTagsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of AddTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1868,7 +1911,7 @@
     },
     "CreateListenerInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateListener.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1968,7 +2011,7 @@
     },
     "CreateListenerOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CreateListener.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2003,7 +2046,7 @@
     },
     "CreateLoadBalancerInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateLoadBalancer.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2013,6 +2056,19 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "IpAddressType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IpAddressType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Name" : {
           "deprecated" : false,
           "documentation" : "<p>The name of the load balancer.</p> <p>This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>",
@@ -2090,7 +2146,7 @@
     },
     "CreateLoadBalancerOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CreateLoadBalancer.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2125,7 +2181,7 @@
     },
     "CreateRuleInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateRule.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2150,7 +2206,7 @@
         },
         "Conditions" : {
           "deprecated" : false,
-          "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+          "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2199,7 +2255,7 @@
     },
     "CreateRuleOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CreateRule.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2234,7 +2290,7 @@
     },
     "CreateTargetGroupInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateTargetGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2412,7 +2468,7 @@
     },
     "CreateTargetGroupOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CreateTargetGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2489,7 +2545,7 @@
     },
     "DeleteListenerInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteListener.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2524,7 +2580,7 @@
     },
     "DeleteListenerOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteListener.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2545,7 +2601,7 @@
     },
     "DeleteLoadBalancerInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteLoadBalancer.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2580,7 +2636,7 @@
     },
     "DeleteLoadBalancerOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteLoadBalancer.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2601,7 +2657,7 @@
     },
     "DeleteRuleInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteRule.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2636,7 +2692,7 @@
     },
     "DeleteRuleOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteRule.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2657,7 +2713,7 @@
     },
     "DeleteTargetGroupInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteTargetGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2692,7 +2748,7 @@
     },
     "DeleteTargetGroupOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteTargetGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2713,7 +2769,7 @@
     },
     "DeregisterTargetsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeregisterTargets.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2761,7 +2817,7 @@
     },
     "DeregisterTargetsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeregisterTargets.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2782,7 +2838,7 @@
     },
     "DescribeListenersInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeListeners.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2856,7 +2912,7 @@
     },
     "DescribeListenersOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeListeners.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2904,7 +2960,7 @@
     },
     "DescribeLoadBalancerAttributesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeLoadBalancerAttributes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2939,7 +2995,7 @@
     },
     "DescribeLoadBalancerAttributesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLoadBalancerAttributes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2974,7 +3030,7 @@
     },
     "DescribeLoadBalancersInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeLoadBalancers.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3048,7 +3104,7 @@
     },
     "DescribeLoadBalancersOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLoadBalancers.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3096,7 +3152,7 @@
     },
     "DescribeRulesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeRules.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3144,7 +3200,7 @@
     },
     "DescribeRulesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeRules.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3179,7 +3235,7 @@
     },
     "DescribeSSLPoliciesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeSSLPolicies.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3240,7 +3296,7 @@
     },
     "DescribeSSLPoliciesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeSSLPolicies.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3288,7 +3344,7 @@
     },
     "DescribeTagsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3323,7 +3379,7 @@
     },
     "DescribeTagsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3358,7 +3414,7 @@
     },
     "DescribeTargetGroupAttributesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTargetGroupAttributes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3393,7 +3449,7 @@
     },
     "DescribeTargetGroupAttributesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTargetGroupAttributes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3428,7 +3484,7 @@
     },
     "DescribeTargetGroupsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTargetGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3515,7 +3571,7 @@
     },
     "DescribeTargetGroupsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTargetGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3563,7 +3619,7 @@
     },
     "DescribeTargetHealthInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTargetHealth.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3611,7 +3667,7 @@
     },
     "DescribeTargetHealthOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTargetHealth.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4034,6 +4090,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "IpAddressType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "ipv4", "dualstack" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "IsDefault" : {
       "deprecated" : false,
       "documentation" : null,
@@ -4373,6 +4450,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "DNSName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IpAddressType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IpAddressType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -4934,7 +5024,7 @@
     },
     "ModifyListenerInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyListener.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5034,7 +5124,7 @@
     },
     "ModifyListenerOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyListener.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5069,7 +5159,7 @@
     },
     "ModifyLoadBalancerAttributesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyLoadBalancerAttributes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5117,7 +5207,7 @@
     },
     "ModifyLoadBalancerAttributesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyLoadBalancerAttributes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5152,7 +5242,7 @@
     },
     "ModifyRuleInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyRules.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5213,7 +5303,7 @@
     },
     "ModifyRuleOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyRules.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5248,7 +5338,7 @@
     },
     "ModifyTargetGroupAttributesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyTargetGroupAttributes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5296,7 +5386,7 @@
     },
     "ModifyTargetGroupAttributesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyTargetGroupAttributes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5331,7 +5421,7 @@
     },
     "ModifyTargetGroupInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyTargetGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5470,7 +5560,7 @@
     },
     "ModifyTargetGroupOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyTargetGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5637,7 +5727,7 @@
     },
     "RegisterTargetsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for RegisterTargets.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5685,7 +5775,7 @@
     },
     "RegisterTargetsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of RegisterTargets.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5706,7 +5796,7 @@
     },
     "RemoveTagsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for RemoveTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5754,7 +5844,7 @@
     },
     "RemoveTagsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of RemoveTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6019,7 +6109,7 @@
         },
         "Values" : {
           "deprecated" : false,
-          "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+          "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6310,9 +6400,92 @@
       "value" : null,
       "wrapper" : false
     },
+    "SetIpAddressTypeInput" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IpAddressType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IpAddressType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LoadBalancerArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the load balancer.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LoadBalancerArn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "LoadBalancerArn", "IpAddressType" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SetIpAddressTypeOutput" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IpAddressType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The IP address type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IpAddressType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "SetRulePrioritiesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetRulePriorities.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6347,7 +6520,7 @@
     },
     "SetRulePrioritiesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of SetRulePriorities.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6382,7 +6555,7 @@
     },
     "SetSecurityGroupsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetSecurityGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6430,7 +6603,7 @@
     },
     "SetSecurityGroupsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of SetSecurityGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6465,7 +6638,7 @@
     },
     "SetSubnetsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetSubnets.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6513,7 +6686,7 @@
     },
     "SetSubnetsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of SetSubnets.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,

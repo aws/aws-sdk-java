@@ -106,7 +106,7 @@
         "variableDeclarationType" : "AddTagsRequest",
         "variableName" : "addTagsRequest",
         "variableType" : "AddTagsRequest",
-        "documentation" : "<p>Contains the parameters for AddTags.</p>",
+        "documentation" : "",
         "simpleType" : "AddTagsRequest",
         "variableSetterType" : "AddTagsRequest"
       },
@@ -115,7 +115,7 @@
       "operationName" : "AddTags",
       "returnType" : {
         "returnType" : "AddTagsResult",
-        "documentation" : "<p>Contains the output of AddTags.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "AddTagsResult"
     },
@@ -181,7 +181,7 @@
         "variableDeclarationType" : "CreateListenerRequest",
         "variableName" : "createListenerRequest",
         "variableType" : "CreateListenerRequest",
-        "documentation" : "<p>Contains the parameters for CreateListener.</p>",
+        "documentation" : "",
         "simpleType" : "CreateListenerRequest",
         "variableSetterType" : "CreateListenerRequest"
       },
@@ -190,7 +190,7 @@
       "operationName" : "CreateListener",
       "returnType" : {
         "returnType" : "CreateListenerResult",
-        "documentation" : "<p>Contains the output of CreateListener.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "CreateListenerResult"
     },
@@ -201,7 +201,7 @@
       "asyncReturnType" : "CreateLoadBalancerResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an Application Load Balancer.</p> <p>To create listeners for your load balancer, use <a>CreateListener</a>. You can add security groups, subnets, and tags when you create your load balancer, or you can add them later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html\">Limits for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html\">Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>",
+      "documentation" : "<p>Creates an Application Load Balancer.</p> <p>When you create a load balancer, you can specify security groups, subnets, IP address type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your load balancer, use <a>CreateListener</a>. To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html\">Limits for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html\">Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>",
       "exceptions" : [ {
         "exceptionName" : "DuplicateLoadBalancerNameException",
         "documentation" : "<p>A load balancer with the specified name already exists for this account.</p>",
@@ -244,7 +244,7 @@
         "variableDeclarationType" : "CreateLoadBalancerRequest",
         "variableName" : "createLoadBalancerRequest",
         "variableType" : "CreateLoadBalancerRequest",
-        "documentation" : "<p>Contains the parameters for CreateLoadBalancer.</p>",
+        "documentation" : "",
         "simpleType" : "CreateLoadBalancerRequest",
         "variableSetterType" : "CreateLoadBalancerRequest"
       },
@@ -253,7 +253,7 @@
       "operationName" : "CreateLoadBalancer",
       "returnType" : {
         "returnType" : "CreateLoadBalancerResult",
-        "documentation" : "<p>Contains the output of CreateLoadBalancer.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "CreateLoadBalancerResult"
     },
@@ -303,7 +303,7 @@
         "variableDeclarationType" : "CreateRuleRequest",
         "variableName" : "createRuleRequest",
         "variableType" : "CreateRuleRequest",
-        "documentation" : "<p>Contains the parameters for CreateRule.</p>",
+        "documentation" : "",
         "simpleType" : "CreateRuleRequest",
         "variableSetterType" : "CreateRuleRequest"
       },
@@ -312,7 +312,7 @@
       "operationName" : "CreateRule",
       "returnType" : {
         "returnType" : "CreateRuleResult",
-        "documentation" : "<p>Contains the output of CreateRule.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "CreateRuleResult"
     },
@@ -338,7 +338,7 @@
         "variableDeclarationType" : "CreateTargetGroupRequest",
         "variableName" : "createTargetGroupRequest",
         "variableType" : "CreateTargetGroupRequest",
-        "documentation" : "<p>Contains the parameters for CreateTargetGroup.</p>",
+        "documentation" : "",
         "simpleType" : "CreateTargetGroupRequest",
         "variableSetterType" : "CreateTargetGroupRequest"
       },
@@ -347,7 +347,7 @@
       "operationName" : "CreateTargetGroup",
       "returnType" : {
         "returnType" : "CreateTargetGroupResult",
-        "documentation" : "<p>Contains the output of CreateTargetGroup.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "CreateTargetGroupResult"
     },
@@ -369,7 +369,7 @@
         "variableDeclarationType" : "DeleteListenerRequest",
         "variableName" : "deleteListenerRequest",
         "variableType" : "DeleteListenerRequest",
-        "documentation" : "<p>Contains the parameters for DeleteListener.</p>",
+        "documentation" : "",
         "simpleType" : "DeleteListenerRequest",
         "variableSetterType" : "DeleteListenerRequest"
       },
@@ -378,7 +378,7 @@
       "operationName" : "DeleteListener",
       "returnType" : {
         "returnType" : "DeleteListenerResult",
-        "documentation" : "<p>Contains the output of DeleteListener.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DeleteListenerResult"
     },
@@ -404,7 +404,7 @@
         "variableDeclarationType" : "DeleteLoadBalancerRequest",
         "variableName" : "deleteLoadBalancerRequest",
         "variableType" : "DeleteLoadBalancerRequest",
-        "documentation" : "<p>Contains the parameters for DeleteLoadBalancer.</p>",
+        "documentation" : "",
         "simpleType" : "DeleteLoadBalancerRequest",
         "variableSetterType" : "DeleteLoadBalancerRequest"
       },
@@ -413,7 +413,7 @@
       "operationName" : "DeleteLoadBalancer",
       "returnType" : {
         "returnType" : "DeleteLoadBalancerResult",
-        "documentation" : "<p>Contains the output of DeleteLoadBalancer.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DeleteLoadBalancerResult"
     },
@@ -439,7 +439,7 @@
         "variableDeclarationType" : "DeleteRuleRequest",
         "variableName" : "deleteRuleRequest",
         "variableType" : "DeleteRuleRequest",
-        "documentation" : "<p>Contains the parameters for DeleteRule.</p>",
+        "documentation" : "",
         "simpleType" : "DeleteRuleRequest",
         "variableSetterType" : "DeleteRuleRequest"
       },
@@ -448,7 +448,7 @@
       "operationName" : "DeleteRule",
       "returnType" : {
         "returnType" : "DeleteRuleResult",
-        "documentation" : "<p>Contains the output of DeleteRule.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DeleteRuleResult"
     },
@@ -470,7 +470,7 @@
         "variableDeclarationType" : "DeleteTargetGroupRequest",
         "variableName" : "deleteTargetGroupRequest",
         "variableType" : "DeleteTargetGroupRequest",
-        "documentation" : "<p>Contains the parameters for DeleteTargetGroup.</p>",
+        "documentation" : "",
         "simpleType" : "DeleteTargetGroupRequest",
         "variableSetterType" : "DeleteTargetGroupRequest"
       },
@@ -479,7 +479,7 @@
       "operationName" : "DeleteTargetGroup",
       "returnType" : {
         "returnType" : "DeleteTargetGroupResult",
-        "documentation" : "<p>Contains the output of DeleteTargetGroup.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DeleteTargetGroupResult"
     },
@@ -505,7 +505,7 @@
         "variableDeclarationType" : "DeregisterTargetsRequest",
         "variableName" : "deregisterTargetsRequest",
         "variableType" : "DeregisterTargetsRequest",
-        "documentation" : "<p>Contains the parameters for DeregisterTargets.</p>",
+        "documentation" : "",
         "simpleType" : "DeregisterTargetsRequest",
         "variableSetterType" : "DeregisterTargetsRequest"
       },
@@ -514,7 +514,7 @@
       "operationName" : "DeregisterTargets",
       "returnType" : {
         "returnType" : "DeregisterTargetsResult",
-        "documentation" : "<p>Contains the output of DeregisterTargets.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DeregisterTargetsResult"
     },
@@ -540,7 +540,7 @@
         "variableDeclarationType" : "DescribeListenersRequest",
         "variableName" : "describeListenersRequest",
         "variableType" : "DescribeListenersRequest",
-        "documentation" : "<p>Contains the parameters for DescribeListeners.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeListenersRequest",
         "variableSetterType" : "DescribeListenersRequest"
       },
@@ -549,7 +549,7 @@
       "operationName" : "DescribeListeners",
       "returnType" : {
         "returnType" : "DescribeListenersResult",
-        "documentation" : "<p>Contains the output of DescribeListeners.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeListenersResult"
     },
@@ -571,7 +571,7 @@
         "variableDeclarationType" : "DescribeLoadBalancerAttributesRequest",
         "variableName" : "describeLoadBalancerAttributesRequest",
         "variableType" : "DescribeLoadBalancerAttributesRequest",
-        "documentation" : "<p>Contains the parameters for DescribeLoadBalancerAttributes.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeLoadBalancerAttributesRequest",
         "variableSetterType" : "DescribeLoadBalancerAttributesRequest"
       },
@@ -580,7 +580,7 @@
       "operationName" : "DescribeLoadBalancerAttributes",
       "returnType" : {
         "returnType" : "DescribeLoadBalancerAttributesResult",
-        "documentation" : "<p>Contains the output of DescribeLoadBalancerAttributes.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeLoadBalancerAttributesResult"
     },
@@ -602,7 +602,7 @@
         "variableDeclarationType" : "DescribeLoadBalancersRequest",
         "variableName" : "describeLoadBalancersRequest",
         "variableType" : "DescribeLoadBalancersRequest",
-        "documentation" : "<p>Contains the parameters for DescribeLoadBalancers.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeLoadBalancersRequest",
         "variableSetterType" : "DescribeLoadBalancersRequest"
       },
@@ -611,7 +611,7 @@
       "operationName" : "DescribeLoadBalancers",
       "returnType" : {
         "returnType" : "DescribeLoadBalancersResult",
-        "documentation" : "<p>Contains the output of DescribeLoadBalancers.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeLoadBalancersResult"
     },
@@ -637,7 +637,7 @@
         "variableDeclarationType" : "DescribeRulesRequest",
         "variableName" : "describeRulesRequest",
         "variableType" : "DescribeRulesRequest",
-        "documentation" : "<p>Contains the parameters for DescribeRules.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeRulesRequest",
         "variableSetterType" : "DescribeRulesRequest"
       },
@@ -646,7 +646,7 @@
       "operationName" : "DescribeRules",
       "returnType" : {
         "returnType" : "DescribeRulesResult",
-        "documentation" : "<p>Contains the output of DescribeRules.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeRulesResult"
     },
@@ -668,7 +668,7 @@
         "variableDeclarationType" : "DescribeSSLPoliciesRequest",
         "variableName" : "describeSSLPoliciesRequest",
         "variableType" : "DescribeSSLPoliciesRequest",
-        "documentation" : "<p>Contains the parameters for DescribeSSLPolicies.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeSSLPoliciesRequest",
         "variableSetterType" : "DescribeSSLPoliciesRequest"
       },
@@ -677,7 +677,7 @@
       "operationName" : "DescribeSSLPolicies",
       "returnType" : {
         "returnType" : "DescribeSSLPoliciesResult",
-        "documentation" : "<p>Contains the output of DescribeSSLPolicies.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeSSLPoliciesResult"
     },
@@ -711,7 +711,7 @@
         "variableDeclarationType" : "DescribeTagsRequest",
         "variableName" : "describeTagsRequest",
         "variableType" : "DescribeTagsRequest",
-        "documentation" : "<p>Contains the parameters for DescribeTags.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeTagsRequest",
         "variableSetterType" : "DescribeTagsRequest"
       },
@@ -720,7 +720,7 @@
       "operationName" : "DescribeTags",
       "returnType" : {
         "returnType" : "DescribeTagsResult",
-        "documentation" : "<p>Contains the output of DescribeTags.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeTagsResult"
     },
@@ -742,7 +742,7 @@
         "variableDeclarationType" : "DescribeTargetGroupAttributesRequest",
         "variableName" : "describeTargetGroupAttributesRequest",
         "variableType" : "DescribeTargetGroupAttributesRequest",
-        "documentation" : "<p>Contains the parameters for DescribeTargetGroupAttributes.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeTargetGroupAttributesRequest",
         "variableSetterType" : "DescribeTargetGroupAttributesRequest"
       },
@@ -751,7 +751,7 @@
       "operationName" : "DescribeTargetGroupAttributes",
       "returnType" : {
         "returnType" : "DescribeTargetGroupAttributesResult",
-        "documentation" : "<p>Contains the output of DescribeTargetGroupAttributes.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeTargetGroupAttributesResult"
     },
@@ -777,7 +777,7 @@
         "variableDeclarationType" : "DescribeTargetGroupsRequest",
         "variableName" : "describeTargetGroupsRequest",
         "variableType" : "DescribeTargetGroupsRequest",
-        "documentation" : "<p>Contains the parameters for DescribeTargetGroups.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeTargetGroupsRequest",
         "variableSetterType" : "DescribeTargetGroupsRequest"
       },
@@ -786,7 +786,7 @@
       "operationName" : "DescribeTargetGroups",
       "returnType" : {
         "returnType" : "DescribeTargetGroupsResult",
-        "documentation" : "<p>Contains the output of DescribeTargetGroups.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeTargetGroupsResult"
     },
@@ -816,7 +816,7 @@
         "variableDeclarationType" : "DescribeTargetHealthRequest",
         "variableName" : "describeTargetHealthRequest",
         "variableType" : "DescribeTargetHealthRequest",
-        "documentation" : "<p>Contains the parameters for DescribeTargetHealth.</p>",
+        "documentation" : "",
         "simpleType" : "DescribeTargetHealthRequest",
         "variableSetterType" : "DescribeTargetHealthRequest"
       },
@@ -825,7 +825,7 @@
       "operationName" : "DescribeTargetHealth",
       "returnType" : {
         "returnType" : "DescribeTargetHealthResult",
-        "documentation" : "<p>Contains the output of DescribeTargetHealth.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "DescribeTargetHealthResult"
     },
@@ -891,7 +891,7 @@
         "variableDeclarationType" : "ModifyListenerRequest",
         "variableName" : "modifyListenerRequest",
         "variableType" : "ModifyListenerRequest",
-        "documentation" : "<p>Contains the parameters for ModifyListener.</p>",
+        "documentation" : "",
         "simpleType" : "ModifyListenerRequest",
         "variableSetterType" : "ModifyListenerRequest"
       },
@@ -900,7 +900,7 @@
       "operationName" : "ModifyListener",
       "returnType" : {
         "returnType" : "ModifyListenerResult",
-        "documentation" : "<p>Contains the output of ModifyListener.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "ModifyListenerResult"
     },
@@ -926,7 +926,7 @@
         "variableDeclarationType" : "ModifyLoadBalancerAttributesRequest",
         "variableName" : "modifyLoadBalancerAttributesRequest",
         "variableType" : "ModifyLoadBalancerAttributesRequest",
-        "documentation" : "<p>Contains the parameters for ModifyLoadBalancerAttributes.</p>",
+        "documentation" : "",
         "simpleType" : "ModifyLoadBalancerAttributesRequest",
         "variableSetterType" : "ModifyLoadBalancerAttributesRequest"
       },
@@ -935,7 +935,7 @@
       "operationName" : "ModifyLoadBalancerAttributes",
       "returnType" : {
         "returnType" : "ModifyLoadBalancerAttributesResult",
-        "documentation" : "<p>Contains the output of ModifyLoadBalancerAttributes.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "ModifyLoadBalancerAttributesResult"
     },
@@ -969,7 +969,7 @@
         "variableDeclarationType" : "ModifyRuleRequest",
         "variableName" : "modifyRuleRequest",
         "variableType" : "ModifyRuleRequest",
-        "documentation" : "<p>Contains the parameters for ModifyRules.</p>",
+        "documentation" : "",
         "simpleType" : "ModifyRuleRequest",
         "variableSetterType" : "ModifyRuleRequest"
       },
@@ -978,7 +978,7 @@
       "operationName" : "ModifyRule",
       "returnType" : {
         "returnType" : "ModifyRuleResult",
-        "documentation" : "<p>Contains the output of ModifyRules.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "ModifyRuleResult"
     },
@@ -1000,7 +1000,7 @@
         "variableDeclarationType" : "ModifyTargetGroupRequest",
         "variableName" : "modifyTargetGroupRequest",
         "variableType" : "ModifyTargetGroupRequest",
-        "documentation" : "<p>Contains the parameters for ModifyTargetGroup.</p>",
+        "documentation" : "",
         "simpleType" : "ModifyTargetGroupRequest",
         "variableSetterType" : "ModifyTargetGroupRequest"
       },
@@ -1009,7 +1009,7 @@
       "operationName" : "ModifyTargetGroup",
       "returnType" : {
         "returnType" : "ModifyTargetGroupResult",
-        "documentation" : "<p>Contains the output of ModifyTargetGroup.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "ModifyTargetGroupResult"
     },
@@ -1031,7 +1031,7 @@
         "variableDeclarationType" : "ModifyTargetGroupAttributesRequest",
         "variableName" : "modifyTargetGroupAttributesRequest",
         "variableType" : "ModifyTargetGroupAttributesRequest",
-        "documentation" : "<p>Contains the parameters for ModifyTargetGroupAttributes.</p>",
+        "documentation" : "",
         "simpleType" : "ModifyTargetGroupAttributesRequest",
         "variableSetterType" : "ModifyTargetGroupAttributesRequest"
       },
@@ -1040,7 +1040,7 @@
       "operationName" : "ModifyTargetGroupAttributes",
       "returnType" : {
         "returnType" : "ModifyTargetGroupAttributesResult",
-        "documentation" : "<p>Contains the output of ModifyTargetGroupAttributes.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "ModifyTargetGroupAttributesResult"
     },
@@ -1051,7 +1051,7 @@
       "asyncReturnType" : "RegisterTargetsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Registers the specified targets with the specified target group.</p> <p>By default, the load balancer routes requests to registered targets using the protocol and port number for the target group. Alternatively, you can override the port for a target when you register it.</p> <p>The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is an EC2 instance, it can't be in the <code>stopped</code> or <code>running</code> state when you register it.</p> <p>To remove a target from a target group, use <a>DeregisterTargets</a>.</p>",
+      "documentation" : "<p>Registers the specified targets with the specified target group.</p> <p>By default, the load balancer routes requests to registered targets using the protocol and port number for the target group. Alternatively, you can override the port for a target when you register it.</p> <p>The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.</p> <p>To remove a target from a target group, use <a>DeregisterTargets</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "TargetGroupNotFoundException",
         "documentation" : "<p>The specified target group does not exist.</p>",
@@ -1074,7 +1074,7 @@
         "variableDeclarationType" : "RegisterTargetsRequest",
         "variableName" : "registerTargetsRequest",
         "variableType" : "RegisterTargetsRequest",
-        "documentation" : "<p>Contains the parameters for RegisterTargets.</p>",
+        "documentation" : "",
         "simpleType" : "RegisterTargetsRequest",
         "variableSetterType" : "RegisterTargetsRequest"
       },
@@ -1083,7 +1083,7 @@
       "operationName" : "RegisterTargets",
       "returnType" : {
         "returnType" : "RegisterTargetsResult",
-        "documentation" : "<p>Contains the output of RegisterTargets.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "RegisterTargetsResult"
     },
@@ -1121,7 +1121,7 @@
         "variableDeclarationType" : "RemoveTagsRequest",
         "variableName" : "removeTagsRequest",
         "variableType" : "RemoveTagsRequest",
-        "documentation" : "<p>Contains the parameters for RemoveTags.</p>",
+        "documentation" : "",
         "simpleType" : "RemoveTagsRequest",
         "variableSetterType" : "RemoveTagsRequest"
       },
@@ -1130,9 +1130,48 @@
       "operationName" : "RemoveTags",
       "returnType" : {
         "returnType" : "RemoveTagsResult",
-        "documentation" : "<p>Contains the output of RemoveTags.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "RemoveTagsResult"
+    },
+    "SetIpAddressType" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<SetIpAddressTypeResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<SetIpAddressTypeResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIpAddressTypeRequest, SetIpAddressTypeResult>",
+      "asyncReturnType" : "SetIpAddressTypeResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Sets the type of IP addresses used by the subnets of the specified Application Load Balancer.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "LoadBalancerNotFoundException",
+        "documentation" : "<p>The specified load balancer does not exist.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidConfigurationRequestException",
+        "documentation" : "<p>The requested configuration is not valid.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidSubnetException",
+        "documentation" : "<p>The specified subnet is out of available addresses.</p>",
+        "httpStatusCode" : 400
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "SetIpAddressTypeRequest",
+        "variableName" : "setIpAddressTypeRequest",
+        "variableType" : "SetIpAddressTypeRequest",
+        "documentation" : "",
+        "simpleType" : "SetIpAddressTypeRequest",
+        "variableSetterType" : "SetIpAddressTypeRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "setIpAddressType",
+      "operationName" : "SetIpAddressType",
+      "returnType" : {
+        "returnType" : "SetIpAddressTypeResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "SetIpAddressTypeResult"
     },
     "SetRulePriorities" : {
       "asyncCallableType" : "java.util.concurrent.Callable<SetRulePrioritiesResult>",
@@ -1160,7 +1199,7 @@
         "variableDeclarationType" : "SetRulePrioritiesRequest",
         "variableName" : "setRulePrioritiesRequest",
         "variableType" : "SetRulePrioritiesRequest",
-        "documentation" : "<p>Contains the parameters for SetRulePriorities.</p>",
+        "documentation" : "",
         "simpleType" : "SetRulePrioritiesRequest",
         "variableSetterType" : "SetRulePrioritiesRequest"
       },
@@ -1169,7 +1208,7 @@
       "operationName" : "SetRulePriorities",
       "returnType" : {
         "returnType" : "SetRulePrioritiesResult",
-        "documentation" : "<p>Contains the output of SetRulePriorities.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "SetRulePrioritiesResult"
     },
@@ -1199,7 +1238,7 @@
         "variableDeclarationType" : "SetSecurityGroupsRequest",
         "variableName" : "setSecurityGroupsRequest",
         "variableType" : "SetSecurityGroupsRequest",
-        "documentation" : "<p>Contains the parameters for SetSecurityGroups.</p>",
+        "documentation" : "",
         "simpleType" : "SetSecurityGroupsRequest",
         "variableSetterType" : "SetSecurityGroupsRequest"
       },
@@ -1208,7 +1247,7 @@
       "operationName" : "SetSecurityGroups",
       "returnType" : {
         "returnType" : "SetSecurityGroupsResult",
-        "documentation" : "<p>Contains the output of SetSecurityGroups.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "SetSecurityGroupsResult"
     },
@@ -1242,7 +1281,7 @@
         "variableDeclarationType" : "SetSubnetsRequest",
         "variableName" : "setSubnetsRequest",
         "variableType" : "SetSubnetsRequest",
-        "documentation" : "<p>Contains the parameters for SetSubnets.</p>",
+        "documentation" : "",
         "simpleType" : "SetSubnetsRequest",
         "variableSetterType" : "SetSubnetsRequest"
       },
@@ -1251,7 +1290,7 @@
       "operationName" : "SetSubnets",
       "returnType" : {
         "returnType" : "SetSubnetsResult",
-        "documentation" : "<p>Contains the output of SetSubnets.</p>"
+        "documentation" : null
       },
       "syncReturnType" : "SetSubnetsResult"
     }
@@ -1570,7 +1609,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for AddTags.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -2122,7 +2161,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of AddTags.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -2872,7 +2911,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateListener.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -3876,7 +3915,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CreateListener.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -4169,7 +4208,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateLoadBalancer.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -4677,8 +4716,121 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IpAddressType",
+        "c2jShape" : "IpAddressType",
+        "deprecated" : false,
+        "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+        "enumType" : "IpAddressType",
+        "fluentSetterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+        "fluentSetterMethodName" : "withIpAddressType",
+        "getterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@return The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@see IpAddressType*/",
+        "getterMethodName" : "getIpAddressType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "IpAddressType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IpAddressType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "IpAddressType",
+        "setterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@see IpAddressType*/",
+        "setterMethodName" : "setIpAddressType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ipAddressType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ipAddressType",
+          "variableType" : "String",
+          "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "IpAddressType" : {
+          "c2jName" : "IpAddressType",
+          "c2jShape" : "IpAddressType",
+          "deprecated" : false,
+          "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+          "enumType" : "IpAddressType",
+          "fluentSetterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+          "fluentSetterMethodName" : "withIpAddressType",
+          "getterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@return The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@see IpAddressType*/",
+          "getterMethodName" : "getIpAddressType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "IpAddressType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IpAddressType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "IpAddressType",
+          "setterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@see IpAddressType*/",
+          "setterMethodName" : "setIpAddressType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ipAddressType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ipAddressType",
+            "variableType" : "String",
+            "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Name" : {
           "c2jName" : "Name",
           "c2jShape" : "LoadBalancerName",
@@ -5202,7 +5354,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CreateLoadBalancer.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -5495,7 +5647,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateRule.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -5570,11 +5722,11 @@
         "c2jName" : "Conditions",
         "c2jShape" : "RuleConditionList",
         "deprecated" : false,
-        "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+        "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withConditions",
-        "getterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@return A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
+        "getterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@return A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
         "getterMethodName" : "getConditions",
         "getterModel" : {
           "returnType" : "java.util.List<RuleCondition>",
@@ -5672,7 +5824,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Conditions",
-        "setterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
+        "setterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
         "setterMethodName" : "setConditions",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<RuleCondition>",
@@ -5683,12 +5835,12 @@
           "variableSetterType" : "java.util.Collection<RuleCondition>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConditions(java.util.Collection)} or {@link #withConditions(java.util.Collection)} if you want to override the existing values.</p>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConditions(java.util.Collection)} or {@link #withConditions(java.util.Collection)} if you want to override the existing values.</p>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<RuleCondition>",
           "variableName" : "conditions",
           "variableType" : "java.util.List<RuleCondition>",
-          "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+          "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
           "simpleType" : "List<RuleCondition>",
           "variableSetterType" : "java.util.Collection<RuleCondition>"
         },
@@ -6010,11 +6162,11 @@
           "c2jName" : "Conditions",
           "c2jShape" : "RuleConditionList",
           "deprecated" : false,
-          "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+          "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withConditions",
-          "getterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@return A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
+          "getterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@return A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
           "getterMethodName" : "getConditions",
           "getterModel" : {
             "returnType" : "java.util.List<RuleCondition>",
@@ -6112,7 +6264,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Conditions",
-          "setterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
+          "setterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
           "setterMethodName" : "setConditions",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<RuleCondition>",
@@ -6123,12 +6275,12 @@
             "variableSetterType" : "java.util.Collection<RuleCondition>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConditions(java.util.Collection)} or {@link #withConditions(java.util.Collection)} if you want to override the existing values.</p>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConditions(java.util.Collection)} or {@link #withConditions(java.util.Collection)} if you want to override the existing values.</p>\n@param conditions A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<RuleCondition>",
             "variableName" : "conditions",
             "variableType" : "java.util.List<RuleCondition>",
-            "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+            "documentation" : "<p>A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
             "simpleType" : "List<RuleCondition>",
             "variableSetterType" : "java.util.Collection<RuleCondition>"
           },
@@ -6273,7 +6425,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CreateRule.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -6566,7 +6718,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateTargetGroup.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -7964,7 +8116,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CreateTargetGroup.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8257,7 +8409,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteListener.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8412,7 +8564,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteListener.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8449,7 +8601,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteLoadBalancer.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8604,7 +8756,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteLoadBalancer.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8641,7 +8793,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteRule.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8796,7 +8948,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteRule.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8833,7 +8985,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteTargetGroup.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8988,7 +9140,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteTargetGroup.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -9025,7 +9177,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeregisterTargets.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -9435,7 +9587,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeregisterTargets.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -9472,7 +9624,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeListeners.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10108,7 +10260,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeListeners.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10514,7 +10666,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeLoadBalancerAttributes.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10669,7 +10821,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLoadBalancerAttributes.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10962,7 +11114,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeLoadBalancers.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -11740,7 +11892,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLoadBalancers.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -12146,7 +12298,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeRules.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -12556,7 +12708,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeRules.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -12849,7 +13001,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeSSLPolicies.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -13372,7 +13524,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeSSLPolicies.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -13778,7 +13930,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTags.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14075,7 +14227,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTags.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14368,7 +14520,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTargetGroupAttributes.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14523,7 +14675,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTargetGroupAttributes.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14816,7 +14968,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTargetGroups.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15707,7 +15859,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTargetGroups.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -16113,7 +16265,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTargetHealth.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -16523,7 +16675,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTargetHealth.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -17178,6 +17330,49 @@
         "documentation" : null,
         "simpleType" : "InvalidTargetException",
         "variableSetterType" : "InvalidTargetException"
+      },
+      "wrapper" : false
+    },
+    "IpAddressType" : {
+      "c2jName" : "IpAddressType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "Ipv4",
+        "value" : "ipv4"
+      }, {
+        "name" : "Dualstack",
+        "value" : "dualstack"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "IpAddressType",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "IpAddressType",
+        "variableName" : "ipAddressType",
+        "variableType" : "IpAddressType",
+        "documentation" : null,
+        "simpleType" : "IpAddressType",
+        "variableSetterType" : "IpAddressType"
       },
       "wrapper" : false
     },
@@ -19103,6 +19298,62 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IpAddressType",
+        "c2jShape" : "IpAddressType",
+        "deprecated" : false,
+        "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>",
+        "enumType" : "IpAddressType",
+        "fluentSetterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+        "fluentSetterMethodName" : "withIpAddressType",
+        "getterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>\n@return The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).\n@see IpAddressType*/",
+        "getterMethodName" : "getIpAddressType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "IpAddressType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IpAddressType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "IpAddressType",
+        "setterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).\n@see IpAddressType*/",
+        "setterMethodName" : "setIpAddressType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ipAddressType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ipAddressType",
+          "variableType" : "String",
+          "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "AvailabilityZones" : {
@@ -19399,6 +19650,63 @@
             "variableName" : "dNSName",
             "variableType" : "String",
             "documentation" : "<p>The public DNS name of the load balancer.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "IpAddressType" : {
+          "c2jName" : "IpAddressType",
+          "c2jShape" : "IpAddressType",
+          "deprecated" : false,
+          "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>",
+          "enumType" : "IpAddressType",
+          "fluentSetterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+          "fluentSetterMethodName" : "withIpAddressType",
+          "getterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>\n@return The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).\n@see IpAddressType*/",
+          "getterMethodName" : "getIpAddressType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "IpAddressType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IpAddressType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "IpAddressType",
+          "setterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).\n@see IpAddressType*/",
+          "setterMethodName" : "setIpAddressType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ipAddressType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>\n@param ipAddressType The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ipAddressType",
+            "variableType" : "String",
+            "documentation" : "<p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -20744,7 +21052,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyListener.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -21748,7 +22056,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyListener.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -22041,7 +22349,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyLoadBalancerAttributes.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -22451,7 +22759,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyLoadBalancerAttributes.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -22744,7 +23052,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyRules.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -23409,7 +23717,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyRules.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -23702,7 +24010,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyTargetGroupAttributes.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -24112,7 +24420,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyTargetGroupAttributes.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -24405,7 +24713,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ModifyTargetGroup.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -25464,7 +25772,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of ModifyTargetGroup.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -25868,7 +26176,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for RegisterTargets.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -26278,7 +26586,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of RegisterTargets.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -26315,7 +26623,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for RemoveTags.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -26867,7 +27175,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of RemoveTags.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -27893,11 +28201,11 @@
         "c2jName" : "Values",
         "c2jShape" : "ListOfString",
         "deprecated" : false,
-        "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+        "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withValues",
-        "getterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@return The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
+        "getterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@return The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
         "getterMethodName" : "getValues",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -27995,7 +28303,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Values",
-        "setterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
+        "setterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -28006,12 +28314,12 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "values",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+          "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -28079,11 +28387,11 @@
           "c2jName" : "Values",
           "c2jShape" : "ListOfString",
           "deprecated" : false,
-          "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+          "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withValues",
-          "getterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@return The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
+          "getterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@return The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
           "getterMethodName" : "getValues",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -28181,7 +28489,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Values",
-          "setterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
+          "setterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -28192,12 +28500,12 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "values",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
+            "documentation" : "<p>The path pattern. You can specify a single path pattern.</p> <p>A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you can include up to three wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ \" ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -28554,6 +28862,425 @@
       },
       "wrapper" : false
     },
+    "SetIpAddressTypeRequest" : {
+      "c2jName" : "SetIpAddressTypeInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "SetIpAddressType",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : null,
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "LoadBalancerArn",
+        "c2jShape" : "LoadBalancerArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the load balancer.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the load balancer.</p>\n@param loadBalancerArn The Amazon Resource Name (ARN) of the load balancer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLoadBalancerArn",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the load balancer.</p>\n@return The Amazon Resource Name (ARN) of the load balancer.*/",
+        "getterMethodName" : "getLoadBalancerArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "LoadBalancerArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "LoadBalancerArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "LoadBalancerArn",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the load balancer.</p>\n@param loadBalancerArn The Amazon Resource Name (ARN) of the load balancer.*/",
+        "setterMethodName" : "setLoadBalancerArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "loadBalancerArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the load balancer.</p>\n@param loadBalancerArn The Amazon Resource Name (ARN) of the load balancer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "loadBalancerArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the load balancer.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IpAddressType",
+        "c2jShape" : "IpAddressType",
+        "deprecated" : false,
+        "documentation" : "<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+        "enumType" : "IpAddressType",
+        "fluentSetterDocumentation" : "/**<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+        "fluentSetterMethodName" : "withIpAddressType",
+        "getterDocumentation" : "/**<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@return The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@see IpAddressType*/",
+        "getterMethodName" : "getIpAddressType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "IpAddressType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IpAddressType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "IpAddressType",
+        "setterDocumentation" : "/**<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@see IpAddressType*/",
+        "setterMethodName" : "setIpAddressType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ipAddressType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ipAddressType",
+          "variableType" : "String",
+          "documentation" : "<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "IpAddressType" : {
+          "c2jName" : "IpAddressType",
+          "c2jShape" : "IpAddressType",
+          "deprecated" : false,
+          "documentation" : "<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+          "enumType" : "IpAddressType",
+          "fluentSetterDocumentation" : "/**<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+          "fluentSetterMethodName" : "withIpAddressType",
+          "getterDocumentation" : "/**<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@return The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@see IpAddressType*/",
+          "getterMethodName" : "getIpAddressType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "IpAddressType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IpAddressType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "IpAddressType",
+          "setterDocumentation" : "/**<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@see IpAddressType*/",
+          "setterMethodName" : "setIpAddressType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ipAddressType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>\n@param ipAddressType The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ipAddressType",
+            "variableType" : "String",
+            "documentation" : "<p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "LoadBalancerArn" : {
+          "c2jName" : "LoadBalancerArn",
+          "c2jShape" : "LoadBalancerArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the load balancer.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the load balancer.</p>\n@param loadBalancerArn The Amazon Resource Name (ARN) of the load balancer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLoadBalancerArn",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the load balancer.</p>\n@return The Amazon Resource Name (ARN) of the load balancer.*/",
+          "getterMethodName" : "getLoadBalancerArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "LoadBalancerArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "LoadBalancerArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "LoadBalancerArn",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the load balancer.</p>\n@param loadBalancerArn The Amazon Resource Name (ARN) of the load balancer.*/",
+          "setterMethodName" : "setLoadBalancerArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "loadBalancerArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the load balancer.</p>\n@param loadBalancerArn The Amazon Resource Name (ARN) of the load balancer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "loadBalancerArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the load balancer.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "LoadBalancerArn", "IpAddressType" ],
+      "shapeName" : "SetIpAddressTypeRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "SetIpAddressTypeRequest",
+        "variableName" : "setIpAddressTypeRequest",
+        "variableType" : "SetIpAddressTypeRequest",
+        "documentation" : null,
+        "simpleType" : "SetIpAddressTypeRequest",
+        "variableSetterType" : "SetIpAddressTypeRequest"
+      },
+      "wrapper" : false
+    },
+    "SetIpAddressTypeResult" : {
+      "c2jName" : "SetIpAddressTypeOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "IpAddressType",
+        "c2jShape" : "IpAddressType",
+        "deprecated" : false,
+        "documentation" : "<p>The IP address type.</p>",
+        "enumType" : "IpAddressType",
+        "fluentSetterDocumentation" : "/**<p>The IP address type.</p>\n@param ipAddressType The IP address type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+        "fluentSetterMethodName" : "withIpAddressType",
+        "getterDocumentation" : "/**<p>The IP address type.</p>\n@return The IP address type.\n@see IpAddressType*/",
+        "getterMethodName" : "getIpAddressType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "IpAddressType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IpAddressType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "IpAddressType",
+        "setterDocumentation" : "/**<p>The IP address type.</p>\n@param ipAddressType The IP address type.\n@see IpAddressType*/",
+        "setterMethodName" : "setIpAddressType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ipAddressType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The IP address type.</p>\n@param ipAddressType The IP address type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ipAddressType",
+          "variableType" : "String",
+          "documentation" : "<p>The IP address type.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "IpAddressType" : {
+          "c2jName" : "IpAddressType",
+          "c2jShape" : "IpAddressType",
+          "deprecated" : false,
+          "documentation" : "<p>The IP address type.</p>",
+          "enumType" : "IpAddressType",
+          "fluentSetterDocumentation" : "/**<p>The IP address type.</p>\n@param ipAddressType The IP address type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+          "fluentSetterMethodName" : "withIpAddressType",
+          "getterDocumentation" : "/**<p>The IP address type.</p>\n@return The IP address type.\n@see IpAddressType*/",
+          "getterMethodName" : "getIpAddressType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "IpAddressType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IpAddressType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "IpAddressType",
+          "setterDocumentation" : "/**<p>The IP address type.</p>\n@param ipAddressType The IP address type.\n@see IpAddressType*/",
+          "setterMethodName" : "setIpAddressType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ipAddressType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The IP address type.</p>\n@param ipAddressType The IP address type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IpAddressType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ipAddressType",
+            "variableType" : "String",
+            "documentation" : "<p>The IP address type.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "SetIpAddressTypeResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : "SetIpAddressTypeResult"
+      },
+      "variable" : {
+        "variableDeclarationType" : "SetIpAddressTypeResult",
+        "variableName" : "setIpAddressTypeResult",
+        "variableType" : "SetIpAddressTypeResult",
+        "documentation" : null,
+        "simpleType" : "SetIpAddressTypeResult",
+        "variableSetterType" : "SetIpAddressTypeResult"
+      },
+      "wrapper" : false
+    },
     "SetRulePrioritiesRequest" : {
       "c2jName" : "SetRulePrioritiesInput",
       "customization" : {
@@ -28563,7 +29290,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetRulePriorities.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -28860,7 +29587,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of SetRulePriorities.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29153,7 +29880,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetSecurityGroups.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29563,7 +30290,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of SetSecurityGroups.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29856,7 +30583,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetSubnets.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -30266,7 +30993,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of SetSubnets.</p>",
+      "documentation" : "",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,

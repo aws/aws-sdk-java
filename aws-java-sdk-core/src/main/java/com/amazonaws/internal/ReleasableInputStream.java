@@ -17,12 +17,13 @@
  */
 package com.amazonaws.internal;
 
+import com.amazonaws.annotation.NotThreadSafe;
+
 import java.io.FileInputStream;
 import java.io.InputStream;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.NotThreadSafe;
 
 /**
  * An input stream that can have the close operation disabled (to avoid

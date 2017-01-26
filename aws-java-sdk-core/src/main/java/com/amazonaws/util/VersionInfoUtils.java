@@ -20,8 +20,8 @@ import java.util.jar.JarInputStream;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
 
+import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.internal.config.InternalConfig;
 
 import static com.amazonaws.util.IOUtils.closeQuietly;

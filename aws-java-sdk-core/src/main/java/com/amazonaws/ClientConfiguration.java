@@ -14,11 +14,11 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.VersionInfoUtils;
-import org.apache.http.annotation.NotThreadSafe;
 
 import java.net.InetAddress;
 import java.security.SecureRandom;

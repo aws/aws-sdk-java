@@ -16,10 +16,10 @@ package com.amazonaws.http.impl.client;
 
 import java.io.IOException;
 
-import org.apache.http.annotation.ThreadSafe;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.protocol.HttpContext;
 
+import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 

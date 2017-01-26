@@ -14,6 +14,7 @@
  */
 package com.amazonaws.http.conn.ssl;
 
+import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.internal.SdkMetricsSocket;
 import com.amazonaws.internal.SdkSSLMetricsSocket;
 import com.amazonaws.internal.SdkSSLSocket;
@@ -23,7 +24,6 @@ import com.amazonaws.util.JavaVersionParser;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpHost;
-import org.apache.http.annotation.ThreadSafe;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.protocol.HttpContext;
 

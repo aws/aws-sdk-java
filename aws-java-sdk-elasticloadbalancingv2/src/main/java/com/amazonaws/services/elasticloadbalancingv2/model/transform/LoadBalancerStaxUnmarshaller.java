@@ -110,6 +110,10 @@ public class LoadBalancerStaxUnmarshaller implements Unmarshaller<LoadBalancer, 
                     continue;
                 }
 
+                if (context.testExpression("IpAddressType", targetDepth)) {
+                    loadBalancer.setIpAddressType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return loadBalancer;

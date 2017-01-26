@@ -1145,6 +1145,38 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     }
 
     @Override
+    public java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(SetIpAddressTypeRequest request) {
+
+        return setIpAddressTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(final SetIpAddressTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetIpAddressTypeRequest, SetIpAddressTypeResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<SetIpAddressTypeResult>() {
+            @Override
+            public SetIpAddressTypeResult call() throws Exception {
+                SetIpAddressTypeResult result;
+
+                try {
+                    result = setIpAddressType(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetRulePrioritiesResult> setRulePrioritiesAsync(SetRulePrioritiesRequest request) {
 
         return setRulePrioritiesAsync(request, null);

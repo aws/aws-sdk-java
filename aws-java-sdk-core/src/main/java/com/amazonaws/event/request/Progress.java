@@ -14,7 +14,7 @@
  */
 package com.amazonaws.event.request;
 
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Base class used to represent the progress of a logical request/response,

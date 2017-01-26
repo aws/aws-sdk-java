@@ -14,10 +14,10 @@
  */
 package com.amazonaws.event;
 
+import com.amazonaws.annotation.Immutable;
+
 import java.util.EnumMap;
 import java.util.Map;
-
-import org.apache.http.annotation.Immutable;
 
 /**
  * A progress event. Typically this is used to notify a chunk of bytes has been

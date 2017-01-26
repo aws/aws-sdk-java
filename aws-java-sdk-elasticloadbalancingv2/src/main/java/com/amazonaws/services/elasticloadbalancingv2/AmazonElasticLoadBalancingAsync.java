@@ -116,7 +116,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param addTagsRequest
-     *        Contains the parameters for AddTags.
      * @return A Java Future containing the result of the AddTags operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.AddTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags" target="_top">AWS
@@ -139,7 +138,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param addTagsRequest
-     *        Contains the parameters for AddTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -171,7 +169,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param createListenerRequest
-     *        Contains the parameters for CreateListener.
      * @return A Java Future containing the result of the CreateListener operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.CreateListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener"
@@ -198,7 +195,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param createListenerRequest
-     *        Contains the parameters for CreateListener.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -216,13 +212,14 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates an Application Load Balancer.
      * </p>
      * <p>
-     * To create listeners for your load balancer, use <a>CreateListener</a>. You can add security groups, subnets, and
-     * tags when you create your load balancer, or you can add them later using <a>SetSecurityGroups</a>,
-     * <a>SetSubnets</a>, and <a>AddTags</a>.
+     * When you create a load balancer, you can specify security groups, subnets, IP address type, and tags. Otherwise,
+     * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+     * <a>AddTags</a>.
      * </p>
      * <p>
-     * To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
-     * balancer, you can delete it using <a>DeleteLoadBalancer</a>.
+     * To create listeners for your load balancer, use <a>CreateListener</a>. To describe your current load balancers,
+     * see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using
+     * <a>DeleteLoadBalancer</a>.
      * </p>
      * <p>
      * You can create up to 20 load balancers per region per account. You can request an increase for the number of load
@@ -237,7 +234,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param createLoadBalancerRequest
-     *        Contains the parameters for CreateLoadBalancer.
      * @return A Java Future containing the result of the CreateLoadBalancer operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.CreateLoadBalancer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer"
@@ -250,13 +246,14 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates an Application Load Balancer.
      * </p>
      * <p>
-     * To create listeners for your load balancer, use <a>CreateListener</a>. You can add security groups, subnets, and
-     * tags when you create your load balancer, or you can add them later using <a>SetSecurityGroups</a>,
-     * <a>SetSubnets</a>, and <a>AddTags</a>.
+     * When you create a load balancer, you can specify security groups, subnets, IP address type, and tags. Otherwise,
+     * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+     * <a>AddTags</a>.
      * </p>
      * <p>
-     * To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
-     * balancer, you can delete it using <a>DeleteLoadBalancer</a>.
+     * To create listeners for your load balancer, use <a>CreateListener</a>. To describe your current load balancers,
+     * see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using
+     * <a>DeleteLoadBalancer</a>.
      * </p>
      * <p>
      * You can create up to 20 load balancers per region per account. You can request an increase for the number of load
@@ -271,7 +268,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param createLoadBalancerRequest
-     *        Contains the parameters for CreateLoadBalancer.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -301,7 +297,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param createRuleRequest
-     *        Contains the parameters for CreateRule.
      * @return A Java Future containing the result of the CreateRule operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule"
@@ -326,7 +321,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param createRuleRequest
-     *        Contains the parameters for CreateRule.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -362,7 +356,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param createTargetGroupRequest
-     *        Contains the parameters for CreateTargetGroup.
      * @return A Java Future containing the result of the CreateTargetGroup operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.CreateTargetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup"
@@ -393,7 +386,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param createTargetGroupRequest
-     *        Contains the parameters for CreateTargetGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -416,7 +408,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deleteListenerRequest
-     *        Contains the parameters for DeleteListener.
      * @return A Java Future containing the result of the DeleteListener operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DeleteListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener"
@@ -434,7 +425,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deleteListenerRequest
-     *        Contains the parameters for DeleteListener.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -462,7 +452,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deleteLoadBalancerRequest
-     *        Contains the parameters for DeleteLoadBalancer.
      * @return A Java Future containing the result of the DeleteLoadBalancer operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DeleteLoadBalancer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer"
@@ -485,7 +474,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deleteLoadBalancerRequest
-     *        Contains the parameters for DeleteLoadBalancer.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -504,7 +492,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deleteRuleRequest
-     *        Contains the parameters for DeleteRule.
      * @return A Java Future containing the result of the DeleteRule operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DeleteRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule"
@@ -518,7 +505,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deleteRuleRequest
-     *        Contains the parameters for DeleteRule.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -541,7 +527,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deleteTargetGroupRequest
-     *        Contains the parameters for DeleteTargetGroup.
      * @return A Java Future containing the result of the DeleteTargetGroup operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DeleteTargetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup"
@@ -559,7 +544,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deleteTargetGroupRequest
-     *        Contains the parameters for DeleteTargetGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -579,7 +563,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deregisterTargetsRequest
-     *        Contains the parameters for DeregisterTargets.
      * @return A Java Future containing the result of the DeregisterTargets operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DeregisterTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets"
@@ -594,7 +577,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param deregisterTargetsRequest
-     *        Contains the parameters for DeregisterTargets.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -614,7 +596,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeListenersRequest
-     *        Contains the parameters for DescribeListeners.
      * @return A Java Future containing the result of the DescribeListeners operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeListeners
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners"
@@ -629,7 +610,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeListenersRequest
-     *        Contains the parameters for DescribeListeners.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -648,7 +628,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeLoadBalancerAttributesRequest
-     *        Contains the parameters for DescribeLoadBalancerAttributes.
      * @return A Java Future containing the result of the DescribeLoadBalancerAttributes operation returned by the
      *         service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeLoadBalancerAttributes
@@ -665,7 +644,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeLoadBalancerAttributesRequest
-     *        Contains the parameters for DescribeLoadBalancerAttributes.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -691,7 +669,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeLoadBalancersRequest
-     *        Contains the parameters for DescribeLoadBalancers.
      * @return A Java Future containing the result of the DescribeLoadBalancers operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeLoadBalancers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers"
@@ -709,7 +686,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeLoadBalancersRequest
-     *        Contains the parameters for DescribeLoadBalancers.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -729,7 +705,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeRulesRequest
-     *        Contains the parameters for DescribeRules.
      * @return A Java Future containing the result of the DescribeRules operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules"
@@ -744,7 +719,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeRulesRequest
-     *        Contains the parameters for DescribeRules.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -766,7 +740,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeSSLPoliciesRequest
-     *        Contains the parameters for DescribeSSLPolicies.
      * @return A Java Future containing the result of the DescribeSSLPolicies operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeSSLPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies"
@@ -783,7 +756,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeSSLPoliciesRequest
-     *        Contains the parameters for DescribeSSLPolicies.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -802,7 +774,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeTagsRequest
-     *        Contains the parameters for DescribeTags.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags"
@@ -816,7 +787,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeTagsRequest
-     *        Contains the parameters for DescribeTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -835,7 +805,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeTargetGroupAttributesRequest
-     *        Contains the parameters for DescribeTargetGroupAttributes.
      * @return A Java Future containing the result of the DescribeTargetGroupAttributes operation returned by the
      *         service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeTargetGroupAttributes
@@ -852,7 +821,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeTargetGroupAttributesRequest
-     *        Contains the parameters for DescribeTargetGroupAttributes.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -880,7 +848,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeTargetGroupsRequest
-     *        Contains the parameters for DescribeTargetGroups.
      * @return A Java Future containing the result of the DescribeTargetGroups operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeTargetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups"
@@ -900,7 +867,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeTargetGroupsRequest
-     *        Contains the parameters for DescribeTargetGroups.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -919,7 +885,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeTargetHealthRequest
-     *        Contains the parameters for DescribeTargetHealth.
      * @return A Java Future containing the result of the DescribeTargetHealth operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.DescribeTargetHealth
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth"
@@ -933,7 +898,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param describeTargetHealthRequest
-     *        Contains the parameters for DescribeTargetHealth.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -957,7 +921,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyListenerRequest
-     *        Contains the parameters for ModifyListener.
      * @return A Java Future containing the result of the ModifyListener operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.ModifyListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener"
@@ -976,7 +939,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyListenerRequest
-     *        Contains the parameters for ModifyListener.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -999,7 +961,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyLoadBalancerAttributesRequest
-     *        Contains the parameters for ModifyLoadBalancerAttributes.
      * @return A Java Future containing the result of the ModifyLoadBalancerAttributes operation returned by the
      *         service.
      * @sample AmazonElasticLoadBalancingAsync.ModifyLoadBalancerAttributes
@@ -1020,7 +981,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyLoadBalancerAttributesRequest
-     *        Contains the parameters for ModifyLoadBalancerAttributes.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1048,7 +1008,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyRuleRequest
-     *        Contains the parameters for ModifyRules.
      * @return A Java Future containing the result of the ModifyRule operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.ModifyRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule"
@@ -1068,7 +1027,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyRuleRequest
-     *        Contains the parameters for ModifyRules.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1090,7 +1048,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyTargetGroupRequest
-     *        Contains the parameters for ModifyTargetGroup.
      * @return A Java Future containing the result of the ModifyTargetGroup operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.ModifyTargetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup"
@@ -1107,7 +1064,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyTargetGroupRequest
-     *        Contains the parameters for ModifyTargetGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1126,7 +1082,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyTargetGroupAttributesRequest
-     *        Contains the parameters for ModifyTargetGroupAttributes.
      * @return A Java Future containing the result of the ModifyTargetGroupAttributes operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.ModifyTargetGroupAttributes
      * @see <a
@@ -1142,7 +1097,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param modifyTargetGroupAttributesRequest
-     *        Contains the parameters for ModifyTargetGroupAttributes.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1167,14 +1121,13 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is
-     * an EC2 instance, it can't be in the <code>stopped</code> or <code>running</code> state when you register it.
+     * an EC2 instance, it must be in the <code>running</code> state when you register it.
      * </p>
      * <p>
      * To remove a target from a target group, use <a>DeregisterTargets</a>.
      * </p>
      * 
      * @param registerTargetsRequest
-     *        Contains the parameters for RegisterTargets.
      * @return A Java Future containing the result of the RegisterTargets operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.RegisterTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets"
@@ -1192,14 +1145,13 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is
-     * an EC2 instance, it can't be in the <code>stopped</code> or <code>running</code> state when you register it.
+     * an EC2 instance, it must be in the <code>running</code> state when you register it.
      * </p>
      * <p>
      * To remove a target from a target group, use <a>DeregisterTargets</a>.
      * </p>
      * 
      * @param registerTargetsRequest
-     *        Contains the parameters for RegisterTargets.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1221,7 +1173,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param removeTagsRequest
-     *        Contains the parameters for RemoveTags.
      * @return A Java Future containing the result of the RemoveTags operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.RemoveTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags"
@@ -1238,7 +1189,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param removeTagsRequest
-     *        Contains the parameters for RemoveTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1253,6 +1203,37 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
+     * Sets the type of IP addresses used by the subnets of the specified Application Load Balancer.
+     * </p>
+     * 
+     * @param setIpAddressTypeRequest
+     * @return A Java Future containing the result of the SetIpAddressType operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.SetIpAddressType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(SetIpAddressTypeRequest setIpAddressTypeRequest);
+
+    /**
+     * <p>
+     * Sets the type of IP addresses used by the subnets of the specified Application Load Balancer.
+     * </p>
+     * 
+     * @param setIpAddressTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetIpAddressType operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.SetIpAddressType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetIpAddressTypeResult> setIpAddressTypeAsync(SetIpAddressTypeRequest setIpAddressTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<SetIpAddressTypeRequest, SetIpAddressTypeResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the priorities of the specified rules.
      * </p>
      * <p>
@@ -1261,7 +1242,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param setRulePrioritiesRequest
-     *        Contains the parameters for SetRulePriorities.
      * @return A Java Future containing the result of the SetRulePriorities operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.SetRulePriorities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities"
@@ -1279,7 +1259,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param setRulePrioritiesRequest
-     *        Contains the parameters for SetRulePriorities.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1299,7 +1278,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param setSecurityGroupsRequest
-     *        Contains the parameters for SetSecurityGroups.
      * @return A Java Future containing the result of the SetSecurityGroups operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.SetSecurityGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups"
@@ -1314,7 +1292,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param setSecurityGroupsRequest
-     *        Contains the parameters for SetSecurityGroups.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1334,7 +1311,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param setSubnetsRequest
-     *        Contains the parameters for SetSubnets.
      * @return A Java Future containing the result of the SetSubnets operation returned by the service.
      * @sample AmazonElasticLoadBalancingAsync.SetSubnets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets"
@@ -1349,7 +1325,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * 
      * @param setSubnetsRequest
-     *        Contains the parameters for SetSubnets.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

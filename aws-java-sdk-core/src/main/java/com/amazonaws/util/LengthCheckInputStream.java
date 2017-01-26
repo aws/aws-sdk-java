@@ -17,9 +17,8 @@ package com.amazonaws.util;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.http.annotation.NotThreadSafe;
-
 import com.amazonaws.SdkClientException;
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.internal.SdkFilterInputStream;
 
 /**

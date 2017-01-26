@@ -14,7 +14,7 @@
  */
 package com.amazonaws.util;
 
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * A {@link TimingInfo} that is unmodifiable.

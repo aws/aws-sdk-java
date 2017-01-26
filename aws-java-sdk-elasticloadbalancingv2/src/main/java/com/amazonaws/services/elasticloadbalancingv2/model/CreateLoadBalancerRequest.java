@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for CreateLoadBalancer.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer"
  *      target="_top">AWS API Documentation</a>
@@ -73,6 +70,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
+     * </p>
+     */
+    private String ipAddressType;
 
     /**
      * <p>
@@ -522,6 +527,99 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *        load balancers must use <code>ipv4</code>.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
+     * </p>
+     * 
+     * @return The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *         <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *         load balancers must use <code>ipv4</code>.
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *        load balancers must use <code>ipv4</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public CreateLoadBalancerRequest withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *        load balancers must use <code>ipv4</code>.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *        load balancers must use <code>ipv4</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public CreateLoadBalancerRequest withIpAddressType(IpAddressType ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -541,7 +639,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
         if (getScheme() != null)
             sb.append("Scheme: ").append(getScheme()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType());
         sb.append("}");
         return sb.toString();
     }
@@ -576,6 +676,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
         return true;
     }
 
@@ -589,6 +693,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         return hashCode;
     }
 

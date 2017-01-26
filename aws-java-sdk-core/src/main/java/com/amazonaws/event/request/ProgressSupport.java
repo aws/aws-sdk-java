@@ -14,7 +14,7 @@
  */
 package com.amazonaws.event.request;
 
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * An actual implementation to represent the progress of a request/response.

@@ -24,9 +24,9 @@ import java.nio.channels.FileChannel;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.SdkClientException;
+import com.amazonaws.annotation.NotThreadSafe;
 
 /**
  * A mark-and-resettable input stream that can be used on files or file input

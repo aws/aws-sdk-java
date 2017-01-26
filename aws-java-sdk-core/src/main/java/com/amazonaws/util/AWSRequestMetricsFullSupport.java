@@ -23,8 +23,8 @@ import java.util.Map.Entry;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.MetricType;
 import com.amazonaws.metrics.RequestMetricCollector;

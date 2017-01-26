@@ -115,6 +115,18 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("MonitoringRoleArn", StringUtils.fromString(createDBInstanceReadReplicaRequest.getMonitoringRoleArn()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(createDBInstanceReadReplicaRequest.getKmsKeyId()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getPreSignedUrl() != null) {
+            request.addParameter("PreSignedUrl", StringUtils.fromString(createDBInstanceReadReplicaRequest.getPreSignedUrl()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceRegion()));
+        }
+
         return request;
     }
 
