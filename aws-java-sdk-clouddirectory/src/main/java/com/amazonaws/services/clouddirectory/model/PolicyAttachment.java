@@ -1,0 +1,233 @@
+/*
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.clouddirectory.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * <p>
+ * Contains the PolicyType, PolicyId, and the ObjectIdentifier to which it is attached.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PolicyAttachment" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PolicyAttachment implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The ID of PolicyAttachment.
+     * </p>
+     */
+    private String policyId;
+    /**
+     * <p>
+     * The ObjectIdentifier associated with PolicyAttachment.
+     * </p>
+     */
+    private String objectIdentifier;
+    /**
+     * <p>
+     * The type of policy that can be associated with PolicyAttachment.
+     * </p>
+     */
+    private String policyType;
+
+    /**
+     * <p>
+     * The ID of PolicyAttachment.
+     * </p>
+     * 
+     * @param policyId
+     *        The ID of PolicyAttachment.
+     */
+
+    public void setPolicyId(String policyId) {
+        this.policyId = policyId;
+    }
+
+    /**
+     * <p>
+     * The ID of PolicyAttachment.
+     * </p>
+     * 
+     * @return The ID of PolicyAttachment.
+     */
+
+    public String getPolicyId() {
+        return this.policyId;
+    }
+
+    /**
+     * <p>
+     * The ID of PolicyAttachment.
+     * </p>
+     * 
+     * @param policyId
+     *        The ID of PolicyAttachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyAttachment withPolicyId(String policyId) {
+        setPolicyId(policyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ObjectIdentifier associated with PolicyAttachment.
+     * </p>
+     * 
+     * @param objectIdentifier
+     *        The ObjectIdentifier associated with PolicyAttachment.
+     */
+
+    public void setObjectIdentifier(String objectIdentifier) {
+        this.objectIdentifier = objectIdentifier;
+    }
+
+    /**
+     * <p>
+     * The ObjectIdentifier associated with PolicyAttachment.
+     * </p>
+     * 
+     * @return The ObjectIdentifier associated with PolicyAttachment.
+     */
+
+    public String getObjectIdentifier() {
+        return this.objectIdentifier;
+    }
+
+    /**
+     * <p>
+     * The ObjectIdentifier associated with PolicyAttachment.
+     * </p>
+     * 
+     * @param objectIdentifier
+     *        The ObjectIdentifier associated with PolicyAttachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyAttachment withObjectIdentifier(String objectIdentifier) {
+        setObjectIdentifier(objectIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of policy that can be associated with PolicyAttachment.
+     * </p>
+     * 
+     * @param policyType
+     *        The type of policy that can be associated with PolicyAttachment.
+     */
+
+    public void setPolicyType(String policyType) {
+        this.policyType = policyType;
+    }
+
+    /**
+     * <p>
+     * The type of policy that can be associated with PolicyAttachment.
+     * </p>
+     * 
+     * @return The type of policy that can be associated with PolicyAttachment.
+     */
+
+    public String getPolicyType() {
+        return this.policyType;
+    }
+
+    /**
+     * <p>
+     * The type of policy that can be associated with PolicyAttachment.
+     * </p>
+     * 
+     * @param policyType
+     *        The type of policy that can be associated with PolicyAttachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyAttachment withPolicyType(String policyType) {
+        setPolicyType(policyType);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getPolicyId() != null)
+            sb.append("PolicyId: ").append(getPolicyId()).append(",");
+        if (getObjectIdentifier() != null)
+            sb.append("ObjectIdentifier: ").append(getObjectIdentifier()).append(",");
+        if (getPolicyType() != null)
+            sb.append("PolicyType: ").append(getPolicyType());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PolicyAttachment == false)
+            return false;
+        PolicyAttachment other = (PolicyAttachment) obj;
+        if (other.getPolicyId() == null ^ this.getPolicyId() == null)
+            return false;
+        if (other.getPolicyId() != null && other.getPolicyId().equals(this.getPolicyId()) == false)
+            return false;
+        if (other.getObjectIdentifier() == null ^ this.getObjectIdentifier() == null)
+            return false;
+        if (other.getObjectIdentifier() != null && other.getObjectIdentifier().equals(this.getObjectIdentifier()) == false)
+            return false;
+        if (other.getPolicyType() == null ^ this.getPolicyType() == null)
+            return false;
+        if (other.getPolicyType() != null && other.getPolicyType().equals(this.getPolicyType()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getPolicyId() == null) ? 0 : getPolicyId().hashCode());
+        hashCode = prime * hashCode + ((getObjectIdentifier() == null) ? 0 : getObjectIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public PolicyAttachment clone() {
+        try {
+            return (PolicyAttachment) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+}

@@ -600,6 +600,38 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest request) {
+
+        return continueDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(final ContinueDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ContinueDeploymentRequest, ContinueDeploymentResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ContinueDeploymentResult>() {
+            @Override
+            public ContinueDeploymentResult call() throws Exception {
+                ContinueDeploymentResult result;
+
+                try {
+                    result = continueDeployment(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
 
         return createApplicationAsync(request, null);
@@ -1474,6 +1506,40 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = removeTagsFromOnPremisesInstances(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest request) {
+
+        return skipWaitTimeForInstanceTerminationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            final SkipWaitTimeForInstanceTerminationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SkipWaitTimeForInstanceTerminationRequest, SkipWaitTimeForInstanceTerminationResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<SkipWaitTimeForInstanceTerminationResult>() {
+            @Override
+            public SkipWaitTimeForInstanceTerminationResult call() throws Exception {
+                SkipWaitTimeForInstanceTerminationResult result;
+
+                try {
+                    result = skipWaitTimeForInstanceTermination(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

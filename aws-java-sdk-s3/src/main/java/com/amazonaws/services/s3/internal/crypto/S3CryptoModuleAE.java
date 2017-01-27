@@ -34,7 +34,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.internal.SdkFilterInputStream;
-import com.amazonaws.services.kms.AWSKMSClient;
+import com.amazonaws.services.kms.AWSKMS;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.CryptoMode;
@@ -61,10 +61,10 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     /**
      * @param cryptoConfig a read-only copy of the crypto configuration.
      */
-    S3CryptoModuleAE(AWSKMSClient kms, S3Direct s3,
-            AWSCredentialsProvider credentialsProvider,
-            EncryptionMaterialsProvider encryptionMaterialsProvider,
-            CryptoConfiguration cryptoConfig) {
+    S3CryptoModuleAE(AWSKMS kms, S3Direct s3,
+                     AWSCredentialsProvider credentialsProvider,
+                     EncryptionMaterialsProvider encryptionMaterialsProvider,
+                     CryptoConfiguration cryptoConfig) {
         super(kms, s3, credentialsProvider, encryptionMaterialsProvider,
                 cryptoConfig);
         CryptoMode mode = cryptoConfig.getCryptoMode();
@@ -86,9 +86,9 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     /**
      * Used for testing purposes only.
      */
-    S3CryptoModuleAE(AWSKMSClient kms, S3Direct s3,
-            EncryptionMaterialsProvider encryptionMaterialsProvider,
-            CryptoConfiguration cryptoConfig) {
+    S3CryptoModuleAE(AWSKMS kms, S3Direct s3,
+                     EncryptionMaterialsProvider encryptionMaterialsProvider,
+                     CryptoConfiguration cryptoConfig) {
         this(kms, s3, new DefaultAWSCredentialsProviderChain(),
                 encryptionMaterialsProvider, cryptoConfig);
     }

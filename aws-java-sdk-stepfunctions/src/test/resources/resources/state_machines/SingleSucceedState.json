@@ -1,0 +1,13 @@
+{
+  "StartAt": "InitialState",
+  "Comment": "My Simple State Machine",
+  "TimeoutSeconds": 30,
+  "States": {
+    "InitialState": {
+      "Type": "Succeed",
+      "Comment": "Initial State",
+      "InputPath": "$.input",
+      "OutputPath": "$.output"
+    }
+  }
+}

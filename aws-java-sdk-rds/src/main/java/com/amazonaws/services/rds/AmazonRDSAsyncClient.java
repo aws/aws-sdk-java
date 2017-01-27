@@ -2909,6 +2909,38 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DBSnapshot> modifyDBSnapshotAsync(ModifyDBSnapshotRequest request) {
+
+        return modifyDBSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBSnapshot> modifyDBSnapshotAsync(final ModifyDBSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyDBSnapshotRequest, DBSnapshot> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DBSnapshot>() {
+            @Override
+            public DBSnapshot call() throws Exception {
+                DBSnapshot result;
+
+                try {
+                    result = modifyDBSnapshot(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBSnapshotAttributesResult> modifyDBSnapshotAttributeAsync(ModifyDBSnapshotAttributeRequest request) {
 
         return modifyDBSnapshotAttributeAsync(request, null);

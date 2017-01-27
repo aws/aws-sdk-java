@@ -126,6 +126,32 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The Amazon States Language definition of the state machine.
+     * </p>
+     * 
+     * @param definition
+     *        The Amazon States Language definition of the state machine.
+     */
+    public void setDefinition(com.amazonaws.services.stepfunctions.builder.StateMachine definition) {
+        setDefinition(new com.amazonaws.services.stepfunctions.builder.StateMachineAdapter().adapt(definition));
+    }
+
+    /**
+     * <p>
+     * The Amazon States Language definition of the state machine.
+     * </p>
+     * 
+     * @param definition
+     *        The Amazon States Language definition of the state machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    public CreateStateMachineRequest withDefinition(com.amazonaws.services.stepfunctions.builder.StateMachine definition) {
+        setDefinition(new com.amazonaws.services.stepfunctions.builder.StateMachineAdapter().adapt(definition));
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the IAM role to use for this state machine.
      * </p>
      * 

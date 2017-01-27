@@ -118,6 +118,6 @@ public class ConvenienceTypeOverload {
      * @return True if the {@link ConvenienceTypeOverload} applies. False otherwise
      */
     public boolean accepts(ShapeModel shape, MemberModel member) {
-        return shape.getC2jName().equals(shapeName) && member.getName().equals(memberName);
+        return shape.getC2jName().equals(shapeName) && member.getC2jName().equals(memberName);
     }
 }

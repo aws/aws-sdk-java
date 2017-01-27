@@ -130,6 +130,19 @@ public class CreateDeploymentGroupRequestMarshaller implements Marshaller<Reques
                 jsonGenerator.writeFieldName("autoRollbackConfiguration");
                 AutoRollbackConfigurationJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getAutoRollbackConfiguration(), jsonGenerator);
             }
+            if (createDeploymentGroupRequest.getDeploymentStyle() != null) {
+                jsonGenerator.writeFieldName("deploymentStyle");
+                DeploymentStyleJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getDeploymentStyle(), jsonGenerator);
+            }
+            if (createDeploymentGroupRequest.getBlueGreenDeploymentConfiguration() != null) {
+                jsonGenerator.writeFieldName("blueGreenDeploymentConfiguration");
+                BlueGreenDeploymentConfigurationJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getBlueGreenDeploymentConfiguration(),
+                        jsonGenerator);
+            }
+            if (createDeploymentGroupRequest.getLoadBalancerInfo() != null) {
+                jsonGenerator.writeFieldName("loadBalancerInfo");
+                LoadBalancerInfoJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getLoadBalancerInfo(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

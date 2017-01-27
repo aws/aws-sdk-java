@@ -116,6 +116,30 @@ public class DeploymentInfoJsonUnmarshaller implements Unmarshaller<DeploymentIn
                     context.nextToken();
                     deploymentInfo.setRollbackInfo(RollbackInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("deploymentStyle", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setDeploymentStyle(DeploymentStyleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("targetInstances", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setTargetInstances(TargetInstancesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("instanceTerminationWaitTimeStarted", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setInstanceTerminationWaitTimeStarted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("blueGreenDeploymentConfiguration", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("loadBalancerInfo", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setLoadBalancerInfo(LoadBalancerInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("additionalDeploymentStatusInfo", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setAdditionalDeploymentStatusInfo(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

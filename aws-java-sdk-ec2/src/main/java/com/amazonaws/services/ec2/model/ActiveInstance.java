@@ -44,6 +44,14 @@ public class ActiveInstance implements Serializable, Cloneable {
      * </p>
      */
     private String spotInstanceRequestId;
+    /**
+     * <p>
+     * The health status of the instance. If the status of both the instance status check and the system status check is
+     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.
+     * </p>
+     */
+    private String instanceHealth;
 
     /**
      * <p>
@@ -166,6 +174,99 @@ public class ActiveInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The health status of the instance. If the status of both the instance status check and the system status check is
+     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.
+     * </p>
+     * 
+     * @param instanceHealth
+     *        The health status of the instance. If the status of both the instance status check and the system status
+     *        check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
+     *        the health status is <code>healthy</code>.
+     * @see InstanceHealthStatus
+     */
+
+    public void setInstanceHealth(String instanceHealth) {
+        this.instanceHealth = instanceHealth;
+    }
+
+    /**
+     * <p>
+     * The health status of the instance. If the status of both the instance status check and the system status check is
+     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.
+     * </p>
+     * 
+     * @return The health status of the instance. If the status of both the instance status check and the system status
+     *         check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
+     *         the health status is <code>healthy</code>.
+     * @see InstanceHealthStatus
+     */
+
+    public String getInstanceHealth() {
+        return this.instanceHealth;
+    }
+
+    /**
+     * <p>
+     * The health status of the instance. If the status of both the instance status check and the system status check is
+     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.
+     * </p>
+     * 
+     * @param instanceHealth
+     *        The health status of the instance. If the status of both the instance status check and the system status
+     *        check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
+     *        the health status is <code>healthy</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceHealthStatus
+     */
+
+    public ActiveInstance withInstanceHealth(String instanceHealth) {
+        setInstanceHealth(instanceHealth);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The health status of the instance. If the status of both the instance status check and the system status check is
+     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.
+     * </p>
+     * 
+     * @param instanceHealth
+     *        The health status of the instance. If the status of both the instance status check and the system status
+     *        check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
+     *        the health status is <code>healthy</code>.
+     * @see InstanceHealthStatus
+     */
+
+    public void setInstanceHealth(InstanceHealthStatus instanceHealth) {
+        this.instanceHealth = instanceHealth.toString();
+    }
+
+    /**
+     * <p>
+     * The health status of the instance. If the status of both the instance status check and the system status check is
+     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.
+     * </p>
+     * 
+     * @param instanceHealth
+     *        The health status of the instance. If the status of both the instance status check and the system status
+     *        check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
+     *        the health status is <code>healthy</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceHealthStatus
+     */
+
+    public ActiveInstance withInstanceHealth(InstanceHealthStatus instanceHealth) {
+        setInstanceHealth(instanceHealth);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -181,7 +282,9 @@ public class ActiveInstance implements Serializable, Cloneable {
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getSpotInstanceRequestId() != null)
-            sb.append("SpotInstanceRequestId: ").append(getSpotInstanceRequestId());
+            sb.append("SpotInstanceRequestId: ").append(getSpotInstanceRequestId()).append(",");
+        if (getInstanceHealth() != null)
+            sb.append("InstanceHealth: ").append(getInstanceHealth());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +311,10 @@ public class ActiveInstance implements Serializable, Cloneable {
             return false;
         if (other.getSpotInstanceRequestId() != null && other.getSpotInstanceRequestId().equals(this.getSpotInstanceRequestId()) == false)
             return false;
+        if (other.getInstanceHealth() == null ^ this.getInstanceHealth() == null)
+            return false;
+        if (other.getInstanceHealth() != null && other.getInstanceHealth().equals(this.getInstanceHealth()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +326,7 @@ public class ActiveInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getSpotInstanceRequestId() == null) ? 0 : getSpotInstanceRequestId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceHealth() == null) ? 0 : getInstanceHealth().hashCode());
         return hashCode;
     }
 

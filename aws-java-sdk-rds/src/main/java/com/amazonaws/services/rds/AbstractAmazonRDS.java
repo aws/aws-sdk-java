@@ -474,6 +474,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBSnapshot modifyDBSnapshot(ModifyDBSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBSnapshotAttributesResult modifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

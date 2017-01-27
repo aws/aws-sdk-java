@@ -75,6 +75,19 @@ public class ListDeploymentInstancesRequestMarshaller implements Marshaller<Requ
                 jsonGenerator.writeEndArray();
             }
 
+            com.amazonaws.internal.SdkInternalList<String> instanceTypeFilterList = (com.amazonaws.internal.SdkInternalList<String>) listDeploymentInstancesRequest
+                    .getInstanceTypeFilter();
+            if (!instanceTypeFilterList.isEmpty() || !instanceTypeFilterList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("instanceTypeFilter");
+                jsonGenerator.writeStartArray();
+                for (String instanceTypeFilterListValue : instanceTypeFilterList) {
+                    if (instanceTypeFilterListValue != null) {
+                        jsonGenerator.writeValue(instanceTypeFilterListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

@@ -159,6 +159,8 @@ public enum RDSActions implements Action {
     ModifyDBInstance("rds:ModifyDBInstance"),
     /** Action for the ModifyDBParameterGroup operation. */
     ModifyDBParameterGroup("rds:ModifyDBParameterGroup"),
+    /** Action for the ModifyDBSnapshot operation. */
+    ModifyDBSnapshot("rds:ModifyDBSnapshot"),
     /** Action for the ModifyDBSnapshotAttribute operation. */
     ModifyDBSnapshotAttribute("rds:ModifyDBSnapshotAttribute"),
     /** Action for the ModifyDBSubnetGroup operation. */

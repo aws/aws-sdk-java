@@ -78,6 +78,12 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean ignoreApplicationStopFailures;
     /**
      * <p>
+     * Information about the instances that will belong to the replacement environment in a blue/green deployment.
+     * </p>
+     */
+    private TargetInstances targetInstances;
+    /**
+     * <p>
      * Configuration information for an automatic rollback that is added when a deployment is created.
      * </p>
      */
@@ -423,6 +429,49 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Information about the instances that will belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @param targetInstances
+     *        Information about the instances that will belong to the replacement environment in a blue/green
+     *        deployment.
+     */
+
+    public void setTargetInstances(TargetInstances targetInstances) {
+        this.targetInstances = targetInstances;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that will belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @return Information about the instances that will belong to the replacement environment in a blue/green
+     *         deployment.
+     */
+
+    public TargetInstances getTargetInstances() {
+        return this.targetInstances;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that will belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @param targetInstances
+     *        Information about the instances that will belong to the replacement environment in a blue/green
+     *        deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentRequest withTargetInstances(TargetInstances targetInstances) {
+        setTargetInstances(targetInstances);
+        return this;
+    }
+
+    /**
+     * <p>
      * Configuration information for an automatic rollback that is added when a deployment is created.
      * </p>
      * 
@@ -544,6 +593,8 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Description: ").append(getDescription()).append(",");
         if (getIgnoreApplicationStopFailures() != null)
             sb.append("IgnoreApplicationStopFailures: ").append(getIgnoreApplicationStopFailures()).append(",");
+        if (getTargetInstances() != null)
+            sb.append("TargetInstances: ").append(getTargetInstances()).append(",");
         if (getAutoRollbackConfiguration() != null)
             sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration()).append(",");
         if (getUpdateOutdatedInstancesOnly() != null)
@@ -587,6 +638,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getIgnoreApplicationStopFailures() != null
                 && other.getIgnoreApplicationStopFailures().equals(this.getIgnoreApplicationStopFailures()) == false)
             return false;
+        if (other.getTargetInstances() == null ^ this.getTargetInstances() == null)
+            return false;
+        if (other.getTargetInstances() != null && other.getTargetInstances().equals(this.getTargetInstances()) == false)
+            return false;
         if (other.getAutoRollbackConfiguration() == null ^ this.getAutoRollbackConfiguration() == null)
             return false;
         if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
@@ -609,6 +664,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getIgnoreApplicationStopFailures() == null) ? 0 : getIgnoreApplicationStopFailures().hashCode());
+        hashCode = prime * hashCode + ((getTargetInstances() == null) ? 0 : getTargetInstances().hashCode());
         hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getUpdateOutdatedInstancesOnly() == null) ? 0 : getUpdateOutdatedInstancesOnly().hashCode());
         return hashCode;

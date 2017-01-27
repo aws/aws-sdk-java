@@ -79,6 +79,13 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceStatusFilter;
+    /**
+     * <p>
+     * The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in
+     * the replacement environment ("GREEN"), for which you want to view instance information.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> instanceTypeFilter;
 
     /**
      * <p>
@@ -584,6 +591,117 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in
+     * the replacement environment ("GREEN"), for which you want to view instance information.
+     * </p>
+     * 
+     * @return The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or
+     *         those in the replacement environment ("GREEN"), for which you want to view instance information.
+     * @see InstanceType
+     */
+
+    public java.util.List<String> getInstanceTypeFilter() {
+        if (instanceTypeFilter == null) {
+            instanceTypeFilter = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return instanceTypeFilter;
+    }
+
+    /**
+     * <p>
+     * The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in
+     * the replacement environment ("GREEN"), for which you want to view instance information.
+     * </p>
+     * 
+     * @param instanceTypeFilter
+     *        The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or
+     *        those in the replacement environment ("GREEN"), for which you want to view instance information.
+     * @see InstanceType
+     */
+
+    public void setInstanceTypeFilter(java.util.Collection<String> instanceTypeFilter) {
+        if (instanceTypeFilter == null) {
+            this.instanceTypeFilter = null;
+            return;
+        }
+
+        this.instanceTypeFilter = new com.amazonaws.internal.SdkInternalList<String>(instanceTypeFilter);
+    }
+
+    /**
+     * <p>
+     * The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in
+     * the replacement environment ("GREEN"), for which you want to view instance information.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceTypeFilter(java.util.Collection)} or {@link #withInstanceTypeFilter(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param instanceTypeFilter
+     *        The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or
+     *        those in the replacement environment ("GREEN"), for which you want to view instance information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public ListDeploymentInstancesRequest withInstanceTypeFilter(String... instanceTypeFilter) {
+        if (this.instanceTypeFilter == null) {
+            setInstanceTypeFilter(new com.amazonaws.internal.SdkInternalList<String>(instanceTypeFilter.length));
+        }
+        for (String ele : instanceTypeFilter) {
+            this.instanceTypeFilter.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in
+     * the replacement environment ("GREEN"), for which you want to view instance information.
+     * </p>
+     * 
+     * @param instanceTypeFilter
+     *        The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or
+     *        those in the replacement environment ("GREEN"), for which you want to view instance information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public ListDeploymentInstancesRequest withInstanceTypeFilter(java.util.Collection<String> instanceTypeFilter) {
+        setInstanceTypeFilter(instanceTypeFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in
+     * the replacement environment ("GREEN"), for which you want to view instance information.
+     * </p>
+     * 
+     * @param instanceTypeFilter
+     *        The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or
+     *        those in the replacement environment ("GREEN"), for which you want to view instance information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public ListDeploymentInstancesRequest withInstanceTypeFilter(InstanceType... instanceTypeFilter) {
+        com.amazonaws.internal.SdkInternalList<String> instanceTypeFilterCopy = new com.amazonaws.internal.SdkInternalList<String>(instanceTypeFilter.length);
+        for (InstanceType value : instanceTypeFilter) {
+            instanceTypeFilterCopy.add(value.toString());
+        }
+        if (getInstanceTypeFilter() == null) {
+            setInstanceTypeFilter(instanceTypeFilterCopy);
+        } else {
+            getInstanceTypeFilter().addAll(instanceTypeFilterCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -599,7 +717,9 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getInstanceStatusFilter() != null)
-            sb.append("InstanceStatusFilter: ").append(getInstanceStatusFilter());
+            sb.append("InstanceStatusFilter: ").append(getInstanceStatusFilter()).append(",");
+        if (getInstanceTypeFilter() != null)
+            sb.append("InstanceTypeFilter: ").append(getInstanceTypeFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -626,6 +746,10 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getInstanceStatusFilter() != null && other.getInstanceStatusFilter().equals(this.getInstanceStatusFilter()) == false)
             return false;
+        if (other.getInstanceTypeFilter() == null ^ this.getInstanceTypeFilter() == null)
+            return false;
+        if (other.getInstanceTypeFilter() != null && other.getInstanceTypeFilter().equals(this.getInstanceTypeFilter()) == false)
+            return false;
         return true;
     }
 
@@ -637,6 +761,7 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getInstanceStatusFilter() == null) ? 0 : getInstanceStatusFilter().hashCode());
+        hashCode = prime * hashCode + ((getInstanceTypeFilter() == null) ? 0 : getInstanceTypeFilter().hashCode());
         return hashCode;
     }
 

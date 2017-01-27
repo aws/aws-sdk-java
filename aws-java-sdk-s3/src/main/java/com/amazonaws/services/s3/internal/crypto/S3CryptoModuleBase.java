@@ -42,6 +42,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import com.amazonaws.services.kms.AWSKMS;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -52,7 +53,6 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.SdkFilterInputStream;
-import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.kms.model.GenerateDataKeyRequest;
 import com.amazonaws.services.kms.model.GenerateDataKeyResult;
 import com.amazonaws.services.s3.Headers;
@@ -106,12 +106,12 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     protected final  Map<String, T> multipartUploadContexts =
         Collections.synchronizedMap(new HashMap<String,T>());
     protected final S3Direct s3;
-    protected final AWSKMSClient kms;
+    protected final AWSKMS kms;
 
     /**
      * @param cryptoConfig a read-only copy of the crypto configuration.
      */
-    protected S3CryptoModuleBase(AWSKMSClient kms, S3Direct s3,
+    protected S3CryptoModuleBase(AWSKMS kms, S3Direct s3,
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider kekMaterialsProvider,
             CryptoConfiguration cryptoConfig) {

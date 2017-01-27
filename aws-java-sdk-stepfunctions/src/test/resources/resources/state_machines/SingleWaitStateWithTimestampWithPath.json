@@ -1,0 +1,10 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Wait",
+      "TimestampPath": "$.timestamp",
+      "End": true
+    }
+  }
+}

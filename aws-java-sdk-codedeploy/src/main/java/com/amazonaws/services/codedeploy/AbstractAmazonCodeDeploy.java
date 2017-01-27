@@ -89,6 +89,11 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    public ContinueDeploymentResult continueDeployment(ContinueDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -230,6 +235,11 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
 
     @Override
     public RemoveTagsFromOnPremisesInstancesResult removeTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SkipWaitTimeForInstanceTerminationResult skipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -63,6 +63,9 @@ public class InstanceSummaryJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (instanceSummary.getInstanceType() != null) {
+                jsonGenerator.writeFieldName("instanceType").writeValue(instanceSummary.getInstanceType());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

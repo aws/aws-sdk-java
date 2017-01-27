@@ -74,6 +74,10 @@ public class CreateDeploymentRequestMarshaller implements Marshaller<Request<Cre
             if (createDeploymentRequest.getIgnoreApplicationStopFailures() != null) {
                 jsonGenerator.writeFieldName("ignoreApplicationStopFailures").writeValue(createDeploymentRequest.getIgnoreApplicationStopFailures());
             }
+            if (createDeploymentRequest.getTargetInstances() != null) {
+                jsonGenerator.writeFieldName("targetInstances");
+                TargetInstancesJsonMarshaller.getInstance().marshall(createDeploymentRequest.getTargetInstances(), jsonGenerator);
+            }
             if (createDeploymentRequest.getAutoRollbackConfiguration() != null) {
                 jsonGenerator.writeFieldName("autoRollbackConfiguration");
                 AutoRollbackConfigurationJsonMarshaller.getInstance().marshall(createDeploymentRequest.getAutoRollbackConfiguration(), jsonGenerator);

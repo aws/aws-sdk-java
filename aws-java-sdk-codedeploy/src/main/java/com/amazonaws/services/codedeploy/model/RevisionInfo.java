@@ -34,7 +34,7 @@ public class RevisionInfo implements Serializable, Cloneable {
     private RevisionLocation revisionLocation;
     /**
      * <p>
-     * Information about an application revision, including usage details and currently associated deployment groups.
+     * Information about an application revision, including usage details and associated deployment groups.
      * </p>
      */
     private GenericRevisionInfo genericRevisionInfo;
@@ -81,12 +81,11 @@ public class RevisionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about an application revision, including usage details and currently associated deployment groups.
+     * Information about an application revision, including usage details and associated deployment groups.
      * </p>
      * 
      * @param genericRevisionInfo
-     *        Information about an application revision, including usage details and currently associated deployment
-     *        groups.
+     *        Information about an application revision, including usage details and associated deployment groups.
      */
 
     public void setGenericRevisionInfo(GenericRevisionInfo genericRevisionInfo) {
@@ -95,11 +94,10 @@ public class RevisionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about an application revision, including usage details and currently associated deployment groups.
+     * Information about an application revision, including usage details and associated deployment groups.
      * </p>
      * 
-     * @return Information about an application revision, including usage details and currently associated deployment
-     *         groups.
+     * @return Information about an application revision, including usage details and associated deployment groups.
      */
 
     public GenericRevisionInfo getGenericRevisionInfo() {
@@ -108,12 +106,11 @@ public class RevisionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about an application revision, including usage details and currently associated deployment groups.
+     * Information about an application revision, including usage details and associated deployment groups.
      * </p>
      * 
      * @param genericRevisionInfo
-     *        Information about an application revision, including usage details and currently associated deployment
-     *        groups.
+     *        Information about an application revision, including usage details and associated deployment groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

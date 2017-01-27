@@ -25,7 +25,8 @@ public enum InstanceStatus {
     Succeeded("Succeeded"),
     Failed("Failed"),
     Skipped("Skipped"),
-    Unknown("Unknown");
+    Unknown("Unknown"),
+    Ready("Ready");
 
     private String value;
 

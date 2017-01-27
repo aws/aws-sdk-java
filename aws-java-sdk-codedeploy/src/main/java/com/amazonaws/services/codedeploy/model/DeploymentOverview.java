@@ -56,6 +56,12 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * </p>
      */
     private Long skipped;
+    /**
+     * <p>
+     * The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.
+     * </p>
+     */
+    private Long ready;
 
     /**
      * <p>
@@ -258,6 +264,46 @@ public class DeploymentOverview implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.
+     * </p>
+     * 
+     * @param ready
+     *        The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.
+     */
+
+    public void setReady(Long ready) {
+        this.ready = ready;
+    }
+
+    /**
+     * <p>
+     * The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.
+     * </p>
+     * 
+     * @return The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.
+     */
+
+    public Long getReady() {
+        return this.ready;
+    }
+
+    /**
+     * <p>
+     * The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.
+     * </p>
+     * 
+     * @param ready
+     *        The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentOverview withReady(Long ready) {
+        setReady(ready);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -277,7 +323,9 @@ public class DeploymentOverview implements Serializable, Cloneable {
         if (getFailed() != null)
             sb.append("Failed: ").append(getFailed()).append(",");
         if (getSkipped() != null)
-            sb.append("Skipped: ").append(getSkipped());
+            sb.append("Skipped: ").append(getSkipped()).append(",");
+        if (getReady() != null)
+            sb.append("Ready: ").append(getReady());
         sb.append("}");
         return sb.toString();
     }
@@ -312,6 +360,10 @@ public class DeploymentOverview implements Serializable, Cloneable {
             return false;
         if (other.getSkipped() != null && other.getSkipped().equals(this.getSkipped()) == false)
             return false;
+        if (other.getReady() == null ^ this.getReady() == null)
+            return false;
+        if (other.getReady() != null && other.getReady().equals(this.getReady()) == false)
+            return false;
         return true;
     }
 
@@ -325,6 +377,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSucceeded() == null) ? 0 : getSucceeded().hashCode());
         hashCode = prime * hashCode + ((getFailed() == null) ? 0 : getFailed().hashCode());
         hashCode = prime * hashCode + ((getSkipped() == null) ? 0 : getSkipped().hashCode());
+        hashCode = prime * hashCode + ((getReady() == null) ? 0 : getReady().hashCode());
         return hashCode;
     }
 

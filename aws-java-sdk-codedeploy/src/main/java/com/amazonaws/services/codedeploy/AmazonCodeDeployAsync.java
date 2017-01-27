@@ -392,6 +392,43 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
+     * Starts the process of rerouting traffic from instances in the original environment to instances in thereplacement
+     * environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by
+     * registering instances in the replacement environment with the load balancer, can start as soon as all instances
+     * have a status of Ready.)
+     * </p>
+     * 
+     * @param continueDeploymentRequest
+     * @return A Java Future containing the result of the ContinueDeployment operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ContinueDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest continueDeploymentRequest);
+
+    /**
+     * <p>
+     * Starts the process of rerouting traffic from instances in the original environment to instances in thereplacement
+     * environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by
+     * registering instances in the replacement environment with the load balancer, can start as soon as all instances
+     * have a status of Ready.)
+     * </p>
+     * 
+     * @param continueDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ContinueDeployment operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ContinueDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest continueDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<ContinueDeploymentRequest, ContinueDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an application.
      * </p>
      * 
@@ -1318,6 +1355,43 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
     java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, RemoveTagsFromOnPremisesInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after
+     * the traffic routing is completed.
+     * </p>
+     * 
+     * @param skipWaitTimeForInstanceTerminationRequest
+     * @return A Java Future containing the result of the SkipWaitTimeForInstanceTermination operation returned by the
+     *         service.
+     * @sample AmazonCodeDeployAsync.SkipWaitTimeForInstanceTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest skipWaitTimeForInstanceTerminationRequest);
+
+    /**
+     * <p>
+     * In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after
+     * the traffic routing is completed.
+     * </p>
+     * 
+     * @param skipWaitTimeForInstanceTerminationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SkipWaitTimeForInstanceTermination operation returned by the
+     *         service.
+     * @sample AmazonCodeDeployAsyncHandler.SkipWaitTimeForInstanceTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest skipWaitTimeForInstanceTerminationRequest,
+            com.amazonaws.handlers.AsyncHandler<SkipWaitTimeForInstanceTerminationRequest, SkipWaitTimeForInstanceTerminationResult> asyncHandler);
 
     /**
      * <p>

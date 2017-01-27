@@ -28,6 +28,11 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a>
+     * in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
@@ -114,6 +119,11 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a>
+     * in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
@@ -191,7 +201,13 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param code
-     *        The error code:</p>
+     *        For information about additional error codes, see <a
+     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     *        Guide</a>.</p>
+     *        <p>
+     *        The error code:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -273,6 +289,11 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a>
+     * in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
@@ -349,7 +370,13 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The error code:</p>
+     * @return For information about additional error codes, see <a
+     *         href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *         CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *         User Guide</a>.</p>
+     *         <p>
+     *         The error code:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -431,6 +458,11 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a>
+     * in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
@@ -508,7 +540,13 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param code
-     *        The error code:</p>
+     *        For information about additional error codes, see <a
+     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     *        Guide</a>.</p>
+     *        <p>
+     *        The error code:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -592,6 +630,11 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a>
+     * in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
@@ -669,7 +712,13 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param code
-     *        The error code:</p>
+     *        For information about additional error codes, see <a
+     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     *        Guide</a>.</p>
+     *        <p>
+     *        The error code:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -751,6 +800,11 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS CodeDeploy</a>
+     * in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
@@ -828,7 +882,13 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param code
-     *        The error code:</p>
+     *        For information about additional error codes, see <a
+     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     *        Guide</a>.</p>
+     *        <p>
+     *        The error code:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>

@@ -68,6 +68,10 @@ public class DeploymentOverviewJsonUnmarshaller implements Unmarshaller<Deployme
                     context.nextToken();
                     deploymentOverview.setSkipped(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("Ready", targetDepth)) {
+                    context.nextToken();
+                    deploymentOverview.setReady(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

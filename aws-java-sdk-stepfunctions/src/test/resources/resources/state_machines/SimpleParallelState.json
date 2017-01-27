@@ -1,0 +1,36 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Parallel",
+      "Comment": "My parallel state",
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "ResultPath": "$.result",
+      "Next": "NextState",
+      "Branches": [
+        {
+          "StartAt": "BranchOneInitial",
+          "Comment": "Branch one",
+          "States": {
+            "BranchOneInitial": {
+              "Type": "Succeed"
+            }
+          }
+        },
+        {
+          "StartAt": "BranchTwoInitial",
+          "Comment": "Branch two",
+          "States": {
+            "BranchTwoInitial": {
+              "Type": "Succeed"
+            }
+          }
+        }
+      ]
+    },
+    "NextState": {
+      "Type": "Succeed"
+    }
+  }
+}

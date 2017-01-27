@@ -5605,6 +5605,19 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "InstanceHealth" : {
+          "deprecated" : false,
+          "documentation" : "<p>The health status of the instance. If the status of both the instance status check and the system status check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : "instanceHealth",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "InstanceHealthStatus",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "InstanceId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the instance.</p>",
@@ -29536,6 +29549,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "InstanceHealthStatus" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "healthy", "unhealthy" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "InstanceIdSet" : {
       "deprecated" : false,
       "documentation" : null,
@@ -46660,6 +46694,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "LaunchSpecsList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ReplaceUnhealthyInstances" : {
+          "deprecated" : false,
+          "documentation" : "<p>Indicates whether Spot fleet should replace unhealthy instances.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : "replaceUnhealthyInstances",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
           "streaming" : false,
           "xmlNamespace" : null
         },

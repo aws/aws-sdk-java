@@ -1,0 +1,19 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Task",
+      "Comment": "Initial State",
+      "TimeoutSeconds": 10,
+      "HeartbeatSeconds": 1,
+      "Next": "NextState",
+      "Resource": "resource-arn",
+      "InputPath": "$.input",
+      "ResultPath": "$.result",
+      "OutputPath": "$.output"
+    },
+    "NextState": {
+      "Type": "Succeed"
+    }
+  }
+}

@@ -52,6 +52,9 @@ public class DeploymentOverviewJsonMarshaller {
             if (deploymentOverview.getSkipped() != null) {
                 jsonGenerator.writeFieldName("Skipped").writeValue(deploymentOverview.getSkipped());
             }
+            if (deploymentOverview.getReady() != null) {
+                jsonGenerator.writeFieldName("Ready").writeValue(deploymentOverview.getReady());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

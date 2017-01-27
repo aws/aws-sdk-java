@@ -352,6 +352,34 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
+     * Starts the process of rerouting traffic from instances in the original environment to instances in thereplacement
+     * environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by
+     * registering instances in the replacement environment with the load balancer, can start as soon as all instances
+     * have a status of Ready.)
+     * </p>
+     * 
+     * @param continueDeploymentRequest
+     * @return Result of the ContinueDeployment operation returned by the service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS account.
+     * @throws DeploymentAlreadyCompletedException
+     *         The deployment is already complete.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid format.
+     * @throws DeploymentIsNotInReadyStateException
+     *         The deployment does not have a status of Ready and can't continue yet.
+     * @throws UnsupportedActionForDeploymentTypeException
+     *         A call was submitted that is not supported for the specified deployment type.
+     * @sample AmazonCodeDeploy.ContinueDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ContinueDeploymentResult continueDeployment(ContinueDeploymentRequest continueDeploymentRequest);
+
+    /**
+     * <p>
      * Creates an application.
      * </p>
      * 
@@ -406,9 +434,34 @@ public interface AmazonCodeDeploy {
      *         The description is too long.
      * @throws DeploymentLimitExceededException
      *         The number of allowed deployments was exceeded.
+     * @throws InvalidTargetInstancesException
+     *         The target instance configuration is invalid. Possible causes include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Configuration data for target instances was entered for an in-place deployment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The limit of 10 tags for a tag type was exceeded.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The combined length of the tag names exceeded the limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A specified tag is not currently applied to any instances.
+     *         </p>
+     *         </li>
      * @throws InvalidAutoRollbackConfigException
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
+     * @throws InvalidLoadBalancerInfoException
+     *         An invalid load balancer name, or no load balancer name, was specified.
      * @sample AmazonCodeDeploy.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
      *      API Documentation</a>
@@ -516,6 +569,15 @@ public interface AmazonCodeDeploy {
      * @throws InvalidAutoRollbackConfigException
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
+     * @throws InvalidLoadBalancerInfoException
+     *         An invalid load balancer name, or no load balancer name, was specified.
+     * @throws InvalidDeploymentStyleException
+     *         An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN".
+     *         Valid deployment options for blue/green deployments include "WITH_TRAFFIC_CONTROL" and
+     *         "WITHOUT_TRAFFIC_CONTROL".
+     * @throws InvalidBlueGreenDeploymentConfigurationException
+     *         The configuration for the blue/green deployment group was provided in an invalid format. For information
+     *         about deployment configuration format, see <a>CreateDeploymentConfig</a>.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>
@@ -891,6 +953,9 @@ public interface AmazonCodeDeploy {
      *         At least one of the deployment IDs was specified in an invalid format.
      * @throws InvalidInstanceStatusException
      *         The specified instance status does not exist.
+     * @throws InvalidInstanceTypeException
+     *         An invalid instance type was specified for instances in a blue/green deployment. Valid values include
+     *         "Blue" for an original environment and "Green" for a replacement environment.
      * @sample AmazonCodeDeploy.ListDeploymentInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
@@ -1061,6 +1126,33 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
+     * In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after
+     * the traffic routing is completed.
+     * </p>
+     * 
+     * @param skipWaitTimeForInstanceTerminationRequest
+     * @return Result of the SkipWaitTimeForInstanceTermination operation returned by the service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS account.
+     * @throws DeploymentAlreadyCompletedException
+     *         The deployment is already complete.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid format.
+     * @throws DeploymentNotStartedException
+     *         The specified deployment has not started.
+     * @throws UnsupportedActionForDeploymentTypeException
+     *         A call was submitted that is not supported for the specified deployment type.
+     * @sample AmazonCodeDeploy.SkipWaitTimeForInstanceTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SkipWaitTimeForInstanceTerminationResult skipWaitTimeForInstanceTermination(
+            SkipWaitTimeForInstanceTerminationRequest skipWaitTimeForInstanceTerminationRequest);
+
+    /**
+     * <p>
      * Attempts to stop an ongoing deployment.
      * </p>
      * 
@@ -1184,6 +1276,15 @@ public interface AmazonCodeDeploy {
      * @throws InvalidAutoRollbackConfigException
      *         The automatic rollback configuration was specified in an invalid format. For example, automatic rollback
      *         is enabled but an invalid triggering event type or no event types were listed.
+     * @throws InvalidLoadBalancerInfoException
+     *         An invalid load balancer name, or no load balancer name, was specified.
+     * @throws InvalidDeploymentStyleException
+     *         An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN".
+     *         Valid deployment options for blue/green deployments include "WITH_TRAFFIC_CONTROL" and
+     *         "WITHOUT_TRAFFIC_CONTROL".
+     * @throws InvalidBlueGreenDeploymentConfigurationException
+     *         The configuration for the blue/green deployment group was provided in an invalid format. For information
+     *         about deployment configuration format, see <a>CreateDeploymentConfig</a>.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>

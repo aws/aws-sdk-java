@@ -1,0 +1,16 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Wait",
+      "Comment": "My wait state",
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "Seconds": 10,
+      "Next": "NextState"
+    },
+    "NextState": {
+      "Type": "Succeed"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Pass",
+      "Comment": "Pass through state",
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "ResultPath": "$.result",
+      "Next": "NextState",
+      "Result": {
+        "Foo": "Bar"
+      }
+    },
+    "NextState": {
+      "Type": "Succeed"
+    }
+  }
+}

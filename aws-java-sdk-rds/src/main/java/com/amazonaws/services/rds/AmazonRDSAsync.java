@@ -857,6 +857,84 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * The source DB instance must have backup retention enabled.
      * </p>
      * </important>
+     * <p>
+     * You can create an encrypted Read Replica in a different AWS Region than the source DB instance. In that case, the
+     * region where you call the <code>CreateDBInstanceReadReplica</code> action is the destination region of the
+     * encrypted Read Replica. The source DB instance must be encrypted.
+     * </p>
+     * <p>
+     * To create an encrypted Read Replica in another AWS Region, you must provide the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the key to use to encrypt the Read
+     * Replica in the destination region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
+     * <code> CreateDBInstanceReadReplica</code> API action in the AWS region that contains the source DB instance. The
+     * <code>PreSignedUrl</code> parameter must be used when encrypting a Read Replica from another AWS region.
+     * </p>
+     * <p>
+     * The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be
+     * executed in the source region that contains the encrypted DB instance. The presigned URL request must contain the
+     * following parameter values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DestinationRegion</code> - The AWS Region that the Read Replica is created in. This region is the same one
+     * where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.
+     * </p>
+     * <p>
+     * For example, if you create an encrypted Read Replica in the us-east-1 region, and the source DB instance is in
+     * the west-2 region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 region and
+     * provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the
+     * us-west-2 region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the
+     * us-east-1 region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the Read Replica in the destination
+     * region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action that is called
+     * in the destination region, and the action contained in the presigned URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted Read Replica to be
+     * created. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if
+     * you create an encrypted Read Replica from a DB instance in the us-west-2 region, then your
+     * <code>SourceDBInstanceIdentifier</code> would look like this example:
+     * <code> arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To learn how to generate a Signature Version 4 signed request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * Process</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DBInstanceIdentifier</code> - The identifier for the encrypted Read Replica in the destination region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted Read Replica. This
+     * identifier must be in the ARN format for the source region and is the same value as the
+     * <code>SourceDBInstanceIdentifier</code> in the presigned URL.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createDBInstanceReadReplicaRequest
      * @return A Java Future containing the result of the CreateDBInstanceReadReplica operation returned by the service.
@@ -881,6 +959,84 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * The source DB instance must have backup retention enabled.
      * </p>
      * </important>
+     * <p>
+     * You can create an encrypted Read Replica in a different AWS Region than the source DB instance. In that case, the
+     * region where you call the <code>CreateDBInstanceReadReplica</code> action is the destination region of the
+     * encrypted Read Replica. The source DB instance must be encrypted.
+     * </p>
+     * <p>
+     * To create an encrypted Read Replica in another AWS Region, you must provide the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the key to use to encrypt the Read
+     * Replica in the destination region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
+     * <code> CreateDBInstanceReadReplica</code> API action in the AWS region that contains the source DB instance. The
+     * <code>PreSignedUrl</code> parameter must be used when encrypting a Read Replica from another AWS region.
+     * </p>
+     * <p>
+     * The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be
+     * executed in the source region that contains the encrypted DB instance. The presigned URL request must contain the
+     * following parameter values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DestinationRegion</code> - The AWS Region that the Read Replica is created in. This region is the same one
+     * where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.
+     * </p>
+     * <p>
+     * For example, if you create an encrypted Read Replica in the us-east-1 region, and the source DB instance is in
+     * the west-2 region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 region and
+     * provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the
+     * us-west-2 region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the
+     * us-east-1 region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the Read Replica in the destination
+     * region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action that is called
+     * in the destination region, and the action contained in the presigned URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted Read Replica to be
+     * created. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if
+     * you create an encrypted Read Replica from a DB instance in the us-west-2 region, then your
+     * <code>SourceDBInstanceIdentifier</code> would look like this example:
+     * <code> arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To learn how to generate a Signature Version 4 signed request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * Process</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DBInstanceIdentifier</code> - The identifier for the encrypted Read Replica in the destination region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted Read Replica. This
+     * identifier must be in the ARN format for the source region and is the same value as the
+     * <code>SourceDBInstanceIdentifier</code> in the presigned URL.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createDBInstanceReadReplicaRequest
      * @param asyncHandler
@@ -3382,6 +3538,45 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<ModifyDBParameterGroupResult> modifyDBParameterGroupAsync(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyDBParameterGroupRequest, ModifyDBParameterGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version. You can update
+     * the engine version to either a new major or minor engine version.
+     * </p>
+     * <p>
+     * Amazon RDS supports upgrading a MySQL DB snapshot from MySQL 5.1 to MySQL 5.5.
+     * </p>
+     * 
+     * @param modifyDBSnapshotRequest
+     * @return A Java Future containing the result of the ModifyDBSnapshot operation returned by the service.
+     * @sample AmazonRDSAsync.ModifyDBSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBSnapshot> modifyDBSnapshotAsync(ModifyDBSnapshotRequest modifyDBSnapshotRequest);
+
+    /**
+     * <p>
+     * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version. You can update
+     * the engine version to either a new major or minor engine version.
+     * </p>
+     * <p>
+     * Amazon RDS supports upgrading a MySQL DB snapshot from MySQL 5.1 to MySQL 5.5.
+     * </p>
+     * 
+     * @param modifyDBSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyDBSnapshot operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ModifyDBSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBSnapshot> modifyDBSnapshotAsync(ModifyDBSnapshotRequest modifyDBSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBSnapshotRequest, DBSnapshot> asyncHandler);
 
     /**
      * <p>

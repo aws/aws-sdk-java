@@ -115,6 +115,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * Indicates whether Spot fleet should replace unhealthy instances.
+     * </p>
+     */
+    private Boolean replaceUnhealthyInstances;
 
     /**
      * <p>
@@ -872,6 +878,58 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether Spot fleet should replace unhealthy instances.
+     * </p>
+     * 
+     * @param replaceUnhealthyInstances
+     *        Indicates whether Spot fleet should replace unhealthy instances.
+     */
+
+    public void setReplaceUnhealthyInstances(Boolean replaceUnhealthyInstances) {
+        this.replaceUnhealthyInstances = replaceUnhealthyInstances;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Spot fleet should replace unhealthy instances.
+     * </p>
+     * 
+     * @return Indicates whether Spot fleet should replace unhealthy instances.
+     */
+
+    public Boolean getReplaceUnhealthyInstances() {
+        return this.replaceUnhealthyInstances;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Spot fleet should replace unhealthy instances.
+     * </p>
+     * 
+     * @param replaceUnhealthyInstances
+     *        Indicates whether Spot fleet should replace unhealthy instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetRequestConfigData withReplaceUnhealthyInstances(Boolean replaceUnhealthyInstances) {
+        setReplaceUnhealthyInstances(replaceUnhealthyInstances);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Spot fleet should replace unhealthy instances.
+     * </p>
+     * 
+     * @return Indicates whether Spot fleet should replace unhealthy instances.
+     */
+
+    public Boolean isReplaceUnhealthyInstances() {
+        return this.replaceUnhealthyInstances;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -905,7 +963,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         if (getFulfilledCapacity() != null)
             sb.append("FulfilledCapacity: ").append(getFulfilledCapacity()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getReplaceUnhealthyInstances() != null)
+            sb.append("ReplaceUnhealthyInstances: ").append(getReplaceUnhealthyInstances());
         sb.append("}");
         return sb.toString();
     }
@@ -970,6 +1030,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getReplaceUnhealthyInstances() == null ^ this.getReplaceUnhealthyInstances() == null)
+            return false;
+        if (other.getReplaceUnhealthyInstances() != null && other.getReplaceUnhealthyInstances().equals(this.getReplaceUnhealthyInstances()) == false)
+            return false;
         return true;
     }
 
@@ -990,6 +1054,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
         hashCode = prime * hashCode + ((getFulfilledCapacity() == null) ? 0 : getFulfilledCapacity().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getReplaceUnhealthyInstances() == null) ? 0 : getReplaceUnhealthyInstances().hashCode());
         return hashCode;
     }
 

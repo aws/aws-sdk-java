@@ -57,6 +57,11 @@ public class ActiveInstanceStaxUnmarshaller implements Unmarshaller<ActiveInstan
                     activeInstance.setSpotInstanceRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("instanceHealth", targetDepth)) {
+                    activeInstance.setInstanceHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return activeInstance;

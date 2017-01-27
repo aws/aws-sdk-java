@@ -389,6 +389,62 @@
         "shape" : "BatchGetOnPremisesInstancesOutput"
       }
     },
+    "ContinueDeployment" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Starts the process of rerouting traffic from instances in the original environment to instances in thereplacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DeploymentIdRequiredException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DeploymentDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DeploymentAlreadyCompletedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidDeploymentIdException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DeploymentIsNotInReadyStateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedActionForDeploymentTypeException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ContinueDeploymentInput",
+        "xmlNamespace" : null
+      },
+      "name" : "ContinueDeployment",
+      "output" : null
+    },
     "CreateApplication" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -526,7 +582,19 @@
         "error" : null,
         "exception" : false,
         "fault" : false,
+        "shape" : "InvalidTargetInstancesException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
         "shape" : "InvalidAutoRollbackConfigException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidLoadBalancerInfoException"
       } ],
       "http" : {
         "method" : "POST",
@@ -727,6 +795,24 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidAutoRollbackConfigException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidLoadBalancerInfoException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidDeploymentStyleException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidBlueGreenDeploymentConfigurationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -1502,6 +1588,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInstanceStatusException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidInstanceTypeException"
       } ],
       "http" : {
         "method" : "POST",
@@ -1836,6 +1928,62 @@
       "name" : "RemoveTagsFromOnPremisesInstances",
       "output" : null
     },
+    "SkipWaitTimeForInstanceTermination" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is completed.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DeploymentIdRequiredException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DeploymentDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DeploymentAlreadyCompletedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidDeploymentIdException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DeploymentNotStartedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedActionForDeploymentTypeException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "SkipWaitTimeForInstanceTerminationInput",
+        "xmlNamespace" : null
+      },
+      "name" : "SkipWaitTimeForInstanceTermination",
+      "output" : null
+    },
     "StopDeployment" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2048,6 +2196,24 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidAutoRollbackConfigException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidLoadBalancerInfoException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidDeploymentStyleException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidBlueGreenDeploymentConfigurationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -2115,6 +2281,27 @@
       "required" : [ "tags", "instanceNames" ],
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AdditionalDeploymentStatusInfo" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -3366,6 +3553,115 @@
       "value" : null,
       "wrapper" : false
     },
+    "BlueGreenDeploymentConfiguration" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about blue/green deployment options for a deployment group.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "deploymentReadyOption" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentReadyOption",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "greenFleetProvisioningOption" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about how instances are provisioned for a replacement environment in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GreenFleetProvisioningOption",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "terminateBlueInstancesOnDeploymentSuccess" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BlueInstanceTerminationOption",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "BlueInstanceTerminationOption" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about whether instances in the original environment are terminated when a blue/green deployment is successful.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "action" : {
+          "deprecated" : false,
+          "documentation" : "<p>The action to take on instances in the original environment after a successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are terminated after a specified wait time.</p> </li> <li> <p>KEEP_ALIVE: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "InstanceAction",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "terminationWaitTimeInMinutes" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Duration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "Boolean" : {
       "deprecated" : false,
       "documentation" : null,
@@ -3447,6 +3743,41 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ContinueDeploymentInput" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "deploymentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the replacement environment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -3667,6 +3998,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "blueGreenDeploymentConfiguration" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about blue/green deployment options for a deployment group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BlueGreenDeploymentConfiguration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "deploymentConfigName" : {
           "deprecated" : false,
           "documentation" : "<p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment configuration. It is used if a configuration isn't specified for the deployment or the deployment group.</p> <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html\">Working with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.</p>",
@@ -3693,6 +4037,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "deploymentStyle" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the type of deployment, standard or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentStyle",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ec2TagFilters" : {
           "deprecated" : false,
           "documentation" : "<p>The Amazon EC2 tags on which to filter.</p>",
@@ -3703,6 +4060,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "EC2TagFilterList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "loadBalancerInfo" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the load balancer used in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LoadBalancerInfo",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -3890,6 +4260,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "RevisionLocation",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "targetInstances" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the instances that will belong to the replacement environment in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TargetInstances",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -4548,6 +4931,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "blueGreenDeploymentConfiguration" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about blue/green deployment options for a deployment group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BlueGreenDeploymentConfiguration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "deploymentConfigName" : {
           "deprecated" : false,
           "documentation" : "<p>The deployment configuration name.</p>",
@@ -4587,6 +4983,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "deploymentStyle" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the type of deployment, either standard or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentStyle",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ec2TagFilters" : {
           "deprecated" : false,
           "documentation" : "<p>The Amazon EC2 tags on which to filter.</p>",
@@ -4597,6 +5006,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "EC2TagFilterList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "loadBalancerInfo" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the load balancer to use in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LoadBalancerInfo",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -4845,6 +5267,19 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "additionalDeploymentStatusInfo" : {
+          "deprecated" : false,
+          "documentation" : "<p>Provides information about the results of a deployment, such as whether instances in the original environment in a blue/green deployment were not terminated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AdditionalDeploymentStatusInfo",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "applicationName" : {
           "deprecated" : false,
           "documentation" : "<p>The application name.</p>",
@@ -4868,6 +5303,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "AutoRollbackConfiguration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "blueGreenDeploymentConfiguration" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about blue/green deployment options for this deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BlueGreenDeploymentConfiguration",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -4962,6 +5410,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "deploymentStyle" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the type of deployment, either standard or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentStyle",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "description" : {
           "deprecated" : false,
           "documentation" : "<p>A comment about the deployment.</p>",
@@ -4998,6 +5459,32 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "instanceTerminationWaitTimeStarted" : {
+          "deprecated" : false,
+          "documentation" : "<p>Indicates whether the wait period set for the termination of instances in the original environment has started. Status is 'false' if the KEEP_ALIVE option is specified; otherwise, 'true' as soon as the termination wait period starts.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "loadBalancerInfo" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the load balancer used in this blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LoadBalancerInfo",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -5053,6 +5540,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "targetInstances" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TargetInstances",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "updateOutdatedInstancesOnly" : {
           "deprecated" : false,
           "documentation" : "<p>Indicates whether only instances that are not running the latest application revision are to be deployed to.</p>",
@@ -5067,6 +5567,27 @@
           "xmlNamespace" : null
         }
       },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeploymentIsNotInReadyStateException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The deployment does not have a status of Ready and can't continue yet.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5115,6 +5636,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeploymentOption" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "WITH_TRAFFIC_CONTROL", "WITHOUT_TRAFFIC_CONTROL" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -5169,6 +5711,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "Ready" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "InstanceCount",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Skipped" : {
           "deprecated" : false,
           "documentation" : "<p>The number of instances in the deployment in a skipped state.</p>",
@@ -5205,10 +5760,79 @@
       "value" : null,
       "wrapper" : false
     },
+    "DeploymentReadyAction" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "CONTINUE_DEPLOYMENT", "STOP_DEPLOYMENT" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeploymentReadyOption" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "actionOnTimeout" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p> <ul> <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If traffic is not rerouted manually before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentReadyAction",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "waitTimeInMinutes" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of minutes to wait before the status of a blue/green deployment changed to Stopped if rerouting is not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Duration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DeploymentStatus" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "Created", "Queued", "InProgress", "Succeeded", "Failed", "Stopped" ],
+      "enum" : [ "Created", "Queued", "InProgress", "Succeeded", "Failed", "Stopped", "Ready" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -5256,6 +5880,75 @@
       "required" : null,
       "streaming" : false,
       "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeploymentStyle" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about the type of deployment, either standard or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "deploymentOption" : {
+          "deprecated" : false,
+          "documentation" : "<p>Indicates whether to route deployment traffic behind a load balancer.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentOption",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "deploymentType" : {
+          "deprecated" : false,
+          "documentation" : "<p>Indicates whether to run a standard deployment or a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeploymentType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "IN_PLACE", "BLUE_GREEN" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -5476,6 +6169,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "Duration" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
     "EC2TagFilter" : {
       "deprecated" : false,
       "documentation" : "<p>Information about a tag filter.</p>",
@@ -5591,6 +6305,95 @@
       "value" : null,
       "wrapper" : false
     },
+    "ELBInfo" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about a load balancer in Elastic Load Balancing to use in a blue/green deployment.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the load balancer that will be used to route traffic from original instances to replacement instances in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ELBName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ELBInfoList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "ELBInfo",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ELBName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "ETag" : {
       "deprecated" : false,
       "documentation" : null,
@@ -5647,7 +6450,7 @@
       "members" : {
         "code" : {
           "deprecated" : false,
-          "documentation" : "<p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application is deleted after the deployment is created but before it is started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the deployment group is deleted after the deployment is created but before it is started.</p> </li> <li> <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be successfully deployed within the instance health constraints specified.</p> </li> <li> <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully deployed within the instance health constraints specified.</p> </li> <li> <p>IAM_ROLE_MISSING: The service role cannot be accessed.</p> </li> <li> <p>IAM_ROLE_PERMISSIONS: The service role does not have the correct permissions.</p> </li> <li> <p>INTERNAL_ERROR: There was an internal error.</p> </li> <li> <p>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.</p> </li> <li> <p>NO_INSTANCES: No instance were specified, or no instance can be found.</p> </li> <li> <p>OVER_MAX_INSTANCES: The maximum number of instance was exceeded.</p> </li> <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</p> </li> <li> <p>TIMEOUT: The deployment has timed out.</p> </li> <li> <p>REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is deleted after the deployment is created but before it is started.</p> </li> </ul>",
+          "documentation" : "<p>For information about additional error codes, see <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html\">Error Codes for AWS CodeDeploy</a> in the <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide\">AWS CodeDeploy User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application is deleted after the deployment is created but before it is started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the deployment group is deleted after the deployment is created but before it is started.</p> </li> <li> <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be successfully deployed within the instance health constraints specified.</p> </li> <li> <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully deployed within the instance health constraints specified.</p> </li> <li> <p>IAM_ROLE_MISSING: The service role cannot be accessed.</p> </li> <li> <p>IAM_ROLE_PERMISSIONS: The service role does not have the correct permissions.</p> </li> <li> <p>INTERNAL_ERROR: There was an internal error.</p> </li> <li> <p>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.</p> </li> <li> <p>NO_INSTANCES: No instance were specified, or no instance can be found.</p> </li> <li> <p>OVER_MAX_INSTANCES: The maximum number of instance was exceeded.</p> </li> <li> <p>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</p> </li> <li> <p>TIMEOUT: The deployment has timed out.</p> </li> <li> <p>REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is deleted after the deployment is created but before it is started.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6392,6 +7195,62 @@
       "value" : null,
       "wrapper" : false
     },
+    "GreenFleetProvisioningAction" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "DISCOVER_EXISTING", "COPY_AUTO_SCALING_GROUP" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GreenFleetProvisioningOption" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "action" : {
+          "deprecated" : false,
+          "documentation" : "<p>The method used to add instances to a replacement environment.</p> <ul> <li> <p>DISCOVER_EXISTING: Use instances that already exist or will be created manually.</p> </li> <li> <p>COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GreenFleetProvisioningAction",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "IamArnRequiredException" : {
       "deprecated" : false,
       "documentation" : "<p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>",
@@ -6515,6 +7374,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InstanceAction" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "TERMINATE", "KEEP_ALIVE" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -6910,7 +7790,7 @@
     "InstanceStatus" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "Pending", "InProgress", "Succeeded", "Failed", "Skipped", "Unknown" ],
+      "enum" : [ "Pending", "InProgress", "Succeeded", "Failed", "Skipped", "Unknown", "Ready" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -6999,6 +7879,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "instanceType" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about which environment an instance belongs to in a blue/green deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement environment.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "InstanceType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "lastUpdatedAt" : {
           "deprecated" : false,
           "documentation" : "<p>A timestamp indicating when the instance information was last updated.</p>",
@@ -7068,6 +7961,60 @@
         "payload" : false,
         "queryName" : null,
         "shape" : "InstanceSummary",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InstanceType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "Blue", "Green" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InstanceTypeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "InstanceType",
         "streaming" : false,
         "xmlNamespace" : null
       },
@@ -7180,6 +8127,27 @@
     "InvalidAutoScalingGroupException" : {
       "deprecated" : false,
       "documentation" : "<p>The Auto Scaling group was specified in an invalid format or does not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidBlueGreenDeploymentConfigurationException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <a>CreateDeploymentConfig</a>.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -7324,6 +8292,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "InvalidDeploymentStyleException" : {
+      "deprecated" : false,
+      "documentation" : "<p>An invalid deployment style was specified. Valid deployment types include \"IN_PLACE\" and \"BLUE_GREEN\". Valid deployment options for blue/green deployments include \"WITH_TRAFFIC_CONTROL\" and \"WITHOUT_TRAFFIC_CONTROL\".</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "InvalidEC2TagException" : {
       "deprecated" : false,
       "documentation" : "<p>The tag was specified in an invalid format.</p>",
@@ -7429,9 +8418,51 @@
       "value" : null,
       "wrapper" : false
     },
+    "InvalidInstanceTypeException" : {
+      "deprecated" : false,
+      "documentation" : "<p>An invalid instance type was specified for instances in a blue/green deployment. Valid values include \"Blue\" for an original environment and \"Green\" for a replacement environment.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "InvalidKeyPrefixFilterException" : {
       "deprecated" : false,
       "documentation" : "<p>The specified key prefix filter was specified in an invalid format.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidLoadBalancerInfoException" : {
+      "deprecated" : false,
+      "documentation" : "<p>An invalid load balancer name, or no load balancer name, was specified.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -7642,6 +8673,27 @@
     "InvalidTagFilterException" : {
       "deprecated" : false,
       "documentation" : "<p>The specified tag filter was specified in an invalid format.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidTargetInstancesException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The target instance configuration is invalid. Possible causes include:</p> <ul> <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li> <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li> <li> <p>The combined length of the tag names exceeded the limit. </p> </li> <li> <p>A specified tag is not currently applied to any instances.</p> </li> </ul>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -8422,6 +9474,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "instanceTypeFilter" : {
+          "deprecated" : false,
+          "documentation" : "<p>The set of instances in a blue/green deployment, either those in the original environment (\"BLUE\") or those in the replacement environment (\"GREEN\"), for which you want to view instance information.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "InstanceTypeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "nextToken" : {
           "deprecated" : false,
           "documentation" : "<p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>",
@@ -8755,6 +9820,41 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "LoadBalancerInfo" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about the load balancer used in a blue/green deployment.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "elbInfoList" : {
+          "deprecated" : false,
+          "documentation" : "<p>An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ELBInfoList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -9200,7 +10300,7 @@
       "members" : {
         "genericRevisionInfo" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about an application revision, including usage details and currently associated deployment groups.</p>",
+          "documentation" : "<p>Information about an application revision, including usage details and associated deployment groups.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -9656,6 +10756,41 @@
       "value" : null,
       "wrapper" : false
     },
+    "SkipWaitTimeForInstanceTerminationInput" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "deploymentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the blue/green deployment for which you want to skip the instance termination wait time.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "SortOrder" : {
       "deprecated" : false,
       "documentation" : null,
@@ -10032,6 +11167,54 @@
       "value" : null,
       "wrapper" : false
     },
+    "TargetInstances" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about the instances to be used in the replacement environment in a blue/green deployment.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "autoScalingGroups" : {
+          "deprecated" : false,
+          "documentation" : "<p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AutoScalingGroupNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "tagFilters" : {
+          "deprecated" : false,
+          "documentation" : "<p>The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EC2TagFilterList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "TimeRange" : {
       "deprecated" : false,
       "documentation" : "<p>Information about a time range.</p>",
@@ -10198,7 +11381,7 @@
     "TriggerEventType" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "DeploymentStart", "DeploymentSuccess", "DeploymentFailure", "DeploymentStop", "DeploymentRollback", "InstanceStart", "InstanceSuccess", "InstanceFailure" ],
+      "enum" : [ "DeploymentStart", "DeploymentSuccess", "DeploymentFailure", "DeploymentStop", "DeploymentRollback", "DeploymentReady", "InstanceStart", "InstanceSuccess", "InstanceFailure", "InstanceReady" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -10294,6 +11477,27 @@
     "TriggerTargetsLimitExceededException" : {
       "deprecated" : false,
       "documentation" : "<p>The maximum allowed number of triggers was exceeded.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UnsupportedActionForDeploymentTypeException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A call was submitted that is not supported for the specified deployment type.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -10424,6 +11628,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "blueGreenDeploymentConfiguration" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about blue/green deployment options for a deployment group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BlueGreenDeploymentConfiguration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "currentDeploymentGroupName" : {
           "deprecated" : false,
           "documentation" : "<p>The current name of the deployment group.</p>",
@@ -10450,6 +11667,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "deploymentStyle" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the type of deployment, either standard or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentStyle",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ec2TagFilters" : {
           "deprecated" : false,
           "documentation" : "<p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>",
@@ -10460,6 +11690,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "EC2TagFilterList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "loadBalancerInfo" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the load balancer used in a blue/green deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LoadBalancerInfo",
           "streaming" : false,
           "xmlNamespace" : null
         },

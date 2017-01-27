@@ -120,6 +120,18 @@ public class DeploymentGroupInfoJsonMarshaller {
                 jsonGenerator.writeFieldName("autoRollbackConfiguration");
                 AutoRollbackConfigurationJsonMarshaller.getInstance().marshall(deploymentGroupInfo.getAutoRollbackConfiguration(), jsonGenerator);
             }
+            if (deploymentGroupInfo.getDeploymentStyle() != null) {
+                jsonGenerator.writeFieldName("deploymentStyle");
+                DeploymentStyleJsonMarshaller.getInstance().marshall(deploymentGroupInfo.getDeploymentStyle(), jsonGenerator);
+            }
+            if (deploymentGroupInfo.getBlueGreenDeploymentConfiguration() != null) {
+                jsonGenerator.writeFieldName("blueGreenDeploymentConfiguration");
+                BlueGreenDeploymentConfigurationJsonMarshaller.getInstance().marshall(deploymentGroupInfo.getBlueGreenDeploymentConfiguration(), jsonGenerator);
+            }
+            if (deploymentGroupInfo.getLoadBalancerInfo() != null) {
+                jsonGenerator.writeFieldName("loadBalancerInfo");
+                LoadBalancerInfoJsonMarshaller.getInstance().marshall(deploymentGroupInfo.getLoadBalancerInfo(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

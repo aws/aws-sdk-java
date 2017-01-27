@@ -1,3 +1,24 @@
+# __1.11.86__ __2017-01-26__
+## __AWS CodeDeploy__
+  - <h3>Features</h3>
+    - This release of AWS CodeDeploy introduces support for blue/green deployments. In a blue/green deployment, the current set of instances in a deployment group is replaced by new instances that have the latest application revision installed on them. After traffic is rerouted behind a load balancer to the replacement instances, the original instances can be terminated automatically or kept running for other uses.
+
+## __Amazon CloudDirectory__
+  - <h3>Features</h3>
+    - **(New Service)** Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of cloud-scale web, mobile and IoT applications. This guide describes the Cloud Directory operations that you can call programatically and includes detailed information on data types and errors. For information about AWS Directory Services features, see [AWS Directory Service](https://aws.amazon.com/directoryservice/) and the [AWS Directory Service Administration Guide](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html).
+
+## __Amazon Elastic Compute Cloud__
+  - <h3>Features</h3>
+    - Adds instance health check functionality to replace unhealthy EC2 Spot fleet instances with fresh ones.
+
+## __Amazon Relational Database Service__
+  - <h3>Features</h3>
+    - Snapshot Engine Version Upgrade
+
+## __AWS Step Functions__
+  - <h3>Features</h3>
+    - Initial release of a fluent builder API to create state machine JSON documents.
+
 # __1.11.85__ __2017-01-25__
 ## __Amazon Relational Database Service__
   - <h3>Features</h3>

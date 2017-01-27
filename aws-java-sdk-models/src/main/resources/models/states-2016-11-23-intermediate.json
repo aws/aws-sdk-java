@@ -7,7 +7,12 @@
       "skip" : true
     },
     "calculateCRC32FromCompressedData" : false,
-    "convenienceTypeOverloads" : [ ],
+    "convenienceTypeOverloads" : [ {
+      "convenienceType" : "com.amazonaws.services.stepfunctions.builder.StateMachine",
+      "memberName" : "definition",
+      "shapeName" : "CreateStateMachineInput",
+      "typeAdapterFqcn" : "com.amazonaws.services.stepfunctions.builder.StateMachineAdapter"
+    } ],
     "customClientConfigFactory" : null,
     "customCodeTemplates" : null,
     "customErrorCodeFieldName" : null,

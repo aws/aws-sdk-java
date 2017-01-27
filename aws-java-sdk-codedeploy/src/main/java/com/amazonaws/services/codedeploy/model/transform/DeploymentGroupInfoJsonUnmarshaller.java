@@ -99,6 +99,18 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                     context.nextToken();
                     deploymentGroupInfo.setAutoRollbackConfiguration(AutoRollbackConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("deploymentStyle", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setDeploymentStyle(DeploymentStyleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("blueGreenDeploymentConfiguration", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("loadBalancerInfo", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setLoadBalancerInfo(LoadBalancerInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -1,0 +1,10 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Task",
+      "Resource": "resource-arn",
+      "End": true
+    }
+  }
+}

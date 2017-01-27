@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.85</version>
+    <version>1.11.86</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.85</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.86</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.85</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.86</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -202,6 +202,10 @@
                     <group>
                       <title>Amazon CloudFront</title>
                       <packages>com.amazonaws.services.cloudfront*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon CloudDirectory</title>
+                      <packages>com.amazonaws.services.clouddirectory*</packages>
                     </group>
                     <group>
                       <title>Amazon Cognito</title>
@@ -583,10 +587,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.85</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.86</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.85</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.86</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -671,6 +675,10 @@
                     <group>
                       <title>Amazon CloudFront</title>
                       <packages>com.amazonaws.services.cloudfront*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon CloudDirectory</title>
+                      <packages>com.amazonaws.services.clouddirectory*</packages>
                     </group>
                     <group>
                       <title>Amazon Cognito</title>
@@ -1048,10 +1056,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.85</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.86</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.85</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.86</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1136,6 +1144,10 @@
                 <group>
                   <title>Amazon CloudFront</title>
                   <packages>com.amazonaws.services.cloudfront*</packages>
+                </group>
+                <group>
+                  <title>Amazon CloudDirectory</title>
+                  <packages>com.amazonaws.services.clouddirectory*</packages>
                 </group>
                 <group>
                   <title>Amazon Cognito</title>
@@ -1710,7 +1722,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.85-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.86-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>
@@ -1722,6 +1734,24 @@
     </profile>
   </profiles>
   <dependencies>
+    <dependency>
+      <groupId>com.jayway.jsonpath</groupId>
+      <artifactId>json-path</artifactId>
+      <version>2.2.0</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>json-smart</artifactId>
+          <groupId>net.minidev</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.16</version>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>

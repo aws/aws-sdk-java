@@ -185,6 +185,19 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    public java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest request) {
+
+        return continueDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest request,
+            com.amazonaws.handlers.AsyncHandler<ContinueDeploymentRequest, ContinueDeploymentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
 
         return createApplicationAsync(request, null);
@@ -595,6 +608,21 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     public java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, RemoveTagsFromOnPremisesInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest request) {
+
+        return skipWaitTimeForInstanceTerminationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest request,
+            com.amazonaws.handlers.AsyncHandler<SkipWaitTimeForInstanceTerminationRequest, SkipWaitTimeForInstanceTerminationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

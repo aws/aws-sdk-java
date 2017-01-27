@@ -401,13 +401,12 @@ public class CustomizationConfig {
                 .add(stringOverloadForByteBufferMember.getConvenienceTypeOverload());
     }
 
-    /**
-     * Only meant to be used by templates/macros. When customizing a service use one of the
-     * pre-canned options like {@link #setStringOverloadForInputStreamMember(StringOverloadForInputStreamMember)}
-     * or {@link #setStringOverloadForByteBufferMember(StringOverloadForByteBufferMember)}
-     */
     public List<ConvenienceTypeOverload> getConvenienceTypeOverloads() {
         return this.convenienceTypeOverloads;
+    }
+
+    public void setConvenienceTypeOverloads(List<ConvenienceTypeOverload> convenienceTypeOverloads) {
+        this.convenienceTypeOverloads.addAll(convenienceTypeOverloads);
     }
 
     public MetadataConfig getCustomServiceMetadata() {

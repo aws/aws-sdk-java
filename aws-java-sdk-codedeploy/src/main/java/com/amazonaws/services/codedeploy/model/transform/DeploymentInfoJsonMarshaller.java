@@ -93,6 +93,28 @@ public class DeploymentInfoJsonMarshaller {
                 jsonGenerator.writeFieldName("rollbackInfo");
                 RollbackInfoJsonMarshaller.getInstance().marshall(deploymentInfo.getRollbackInfo(), jsonGenerator);
             }
+            if (deploymentInfo.getDeploymentStyle() != null) {
+                jsonGenerator.writeFieldName("deploymentStyle");
+                DeploymentStyleJsonMarshaller.getInstance().marshall(deploymentInfo.getDeploymentStyle(), jsonGenerator);
+            }
+            if (deploymentInfo.getTargetInstances() != null) {
+                jsonGenerator.writeFieldName("targetInstances");
+                TargetInstancesJsonMarshaller.getInstance().marshall(deploymentInfo.getTargetInstances(), jsonGenerator);
+            }
+            if (deploymentInfo.getInstanceTerminationWaitTimeStarted() != null) {
+                jsonGenerator.writeFieldName("instanceTerminationWaitTimeStarted").writeValue(deploymentInfo.getInstanceTerminationWaitTimeStarted());
+            }
+            if (deploymentInfo.getBlueGreenDeploymentConfiguration() != null) {
+                jsonGenerator.writeFieldName("blueGreenDeploymentConfiguration");
+                BlueGreenDeploymentConfigurationJsonMarshaller.getInstance().marshall(deploymentInfo.getBlueGreenDeploymentConfiguration(), jsonGenerator);
+            }
+            if (deploymentInfo.getLoadBalancerInfo() != null) {
+                jsonGenerator.writeFieldName("loadBalancerInfo");
+                LoadBalancerInfoJsonMarshaller.getInstance().marshall(deploymentInfo.getLoadBalancerInfo(), jsonGenerator);
+            }
+            if (deploymentInfo.getAdditionalDeploymentStatusInfo() != null) {
+                jsonGenerator.writeFieldName("additionalDeploymentStatusInfo").writeValue(deploymentInfo.getAdditionalDeploymentStatusInfo());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

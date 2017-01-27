@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.86-SNAPSHOT</version>
+  <version>1.11.86</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -71,6 +71,7 @@
     <module>aws-java-sdk-directconnect</module>
     <module>aws-java-sdk-cloudformation</module>
     <module>aws-java-sdk-cloudfront</module>
+    <module>aws-java-sdk-clouddirectory</module>
     <module>aws-java-sdk-kinesis</module>
     <module>aws-java-sdk-opsworks</module>
     <module>aws-java-sdk-ses</module>

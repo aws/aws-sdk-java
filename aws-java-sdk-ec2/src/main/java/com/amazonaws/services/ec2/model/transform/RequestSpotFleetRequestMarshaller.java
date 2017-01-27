@@ -409,6 +409,11 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
             if (spotFleetRequestConfig.getType() != null) {
                 request.addParameter("SpotFleetRequestConfig.Type", StringUtils.fromString(spotFleetRequestConfig.getType()));
             }
+
+            if (spotFleetRequestConfig.getReplaceUnhealthyInstances() != null) {
+                request.addParameter("SpotFleetRequestConfig.ReplaceUnhealthyInstances",
+                        StringUtils.fromBoolean(spotFleetRequestConfig.getReplaceUnhealthyInstances()));
+            }
         }
 
         return request;
