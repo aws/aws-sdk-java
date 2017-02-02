@@ -1323,7 +1323,7 @@ public class TransferManager {
      *            files found in subdirectories will be included with an
      *            appropriate concatenation to the key prefix.
      * @param metadataProvider
-     * 			  A callback of type <code>ObjectMetadataProvider</code> which
+     *            A callback of type <code>ObjectMetadataProvider</code> which
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider) {
@@ -1359,10 +1359,10 @@ public class TransferManager {
      *            files found in subdirectories will be included with an
      *            appropriate concatenation to the key prefix.
      * @param metadataProvider
-     * 			  A callback of type <code>ObjectMetadataProvider</code> which
+     *            A callback of type <code>ObjectMetadataProvider</code> which
      *            is used to provide metadata for each file being uploaded.
      * @param taggingProvider
-     * 			  A callback of type <code>ObjectTaggingProvider</code> which
+     *            A callback of type <code>ObjectTaggingProvider</code> which
      *            is used to provide the tags for each file being uploaded.
      * @return
      */
@@ -1526,8 +1526,7 @@ public class TransferManager {
                             .replaceAll("\\\\", "/");
 
                     ObjectMetadata metadata = new ObjectMetadata();
-                    List<Tag> listTags = new ArrayList<Tag>();
-                    ObjectTagging tagSet = new ObjectTagging(listTags);
+                    ObjectTagging objectTagging = new ObjectTagging();
 
                     // Invoke the callback if it's present.
                     // The callback allows the user to customize the metadata
@@ -1539,7 +1538,7 @@ public class TransferManager {
                     // The callback allows the user to customize the tags
                     // for each file being uploaded.
                     if(taggingProvider != null) {
-                        taggingProvider.provideObjectTags(f, tagSet);
+                        objectTagging = taggingProvider.provideObjectTags(f);
                     }
 
                     // All the single-file uploads share the same
@@ -1549,7 +1548,7 @@ public class TransferManager {
                             new PutObjectRequest(bucketName,
                                     virtualDirectoryKeyPrefix + key, f)
                                     .withMetadata(metadata)
-                                    .withTagging(tagSet)
+                                    .withTagging(objectTagging)
                                     .<PutObjectRequest> withGeneralProgressListener(
                                             listener), transferListener, null, null));
                 }
