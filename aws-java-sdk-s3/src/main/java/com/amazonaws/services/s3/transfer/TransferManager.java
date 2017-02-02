@@ -1327,21 +1327,27 @@ public class TransferManager {
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider) {
-        if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
-            throw new IllegalArgumentException("Must provide a directory to upload");
-        }
-
-        List<File> files = new LinkedList<File>();
-        listFiles(directory, files, includeSubdirectories);
-
-        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider);
+        return uploadDirectory( bucketName,  virtualDirectoryKeyPrefix,  directory,  includeSubdirectories, metadataProvider, null);
     }
 
 
     /**
-     *
+     * Uploads all files in the directory given to the bucket named, optionally
+     * recursing for all subdirectories.
+     * <p>
+     * S3 will overwrite any existing objects that happen to have the same key,
+     * just as when uploading individual files, so use with caution.
+     * </p>
+     * <p>
+     * If you are uploading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
      * @param bucketName
-     *          The name of the bucket to upload objects to.
+     *            The name of the bucket to upload objects to.
      * @param virtualDirectoryKeyPrefix
      *            The key prefix of the virtual directory to upload to. Use the
      *            null or empty string to upload files to the root of the
@@ -1441,87 +1447,8 @@ public class TransferManager {
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files,ObjectMetadataProvider metadataProvider) {
-
-        if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
-            throw new IllegalArgumentException("Must provide a common base directory for uploaded files");
-        }
-
-        if (virtualDirectoryKeyPrefix == null || virtualDirectoryKeyPrefix.length() == 0) {
-            virtualDirectoryKeyPrefix = "";
-        } else if ( !virtualDirectoryKeyPrefix.endsWith("/") ) {
-            virtualDirectoryKeyPrefix = virtualDirectoryKeyPrefix + "/";
-        }
-
-        /* This is the hook for adding additional progress listeners */
-        ProgressListenerChain additionalListeners = new ProgressListenerChain();
-        TransferProgress progress = new TransferProgress();
-        /*
-         * Bind additional progress listeners to this
-         * MultipleFileTransferProgressUpdatingListener to receive
-         * ByteTransferred events from each single-file upload implementation.
-         */
-        ProgressListener listener = new MultipleFileTransferProgressUpdatingListener(
-                progress, additionalListeners);
-
-        List<UploadImpl> uploads = new LinkedList<UploadImpl>();
-        MultipleFileUploadImpl multipleFileUpload = new MultipleFileUploadImpl("Uploading etc", progress, additionalListeners, virtualDirectoryKeyPrefix, bucketName, uploads);
-        multipleFileUpload.setMonitor(new MultipleFileTransferMonitor(multipleFileUpload, uploads));
-        final CountDownLatch latch = new CountDownLatch(1);
-        MultipleFileTransferStateChangeListener transferListener =
-            new MultipleFileTransferStateChangeListener(latch, multipleFileUpload);
-        if (files == null || files.isEmpty()) {
-            multipleFileUpload.setState(TransferState.Completed);
-        } else {
-            /*
-             * If the absolute path for the common/base directory does NOT end
-             * in a separator (which is the case for anything but root
-             * directories), then we know there's still a separator between the
-             * base directory and the rest of the file's path, so we increment
-             * the starting position by one.
-             */
-            int startingPosition = directory.getAbsolutePath().length();
-            if (!(directory.getAbsolutePath().endsWith(File.separator)))
-                startingPosition++;
-
-            long totalSize = 0;
-            for (File f : files) {
-                // Check, if file, since only files can be uploaded.
-                if (f.isFile()) {
-                    totalSize += f.length();
-
-                    String key = f.getAbsolutePath()
-                            .substring(startingPosition)
-                            .replaceAll("\\\\", "/");
-
-                    ObjectMetadata metadata = new ObjectMetadata();
-
-                    // Invoke the callback if it's present.
-                    // The callback allows the user to customize the metadata
-                    // for each file being uploaded.
-                    if (metadataProvider != null) {
-                        metadataProvider.provideObjectMetadata(f, metadata);
-                    }
-
-                    // All the single-file uploads share the same
-                    // MultipleFileTransferProgressUpdatingListener and
-                    // MultipleFileTransferStateChangeListener
-                    uploads.add((UploadImpl) doUpload(
-                            new PutObjectRequest(bucketName,
-                                    virtualDirectoryKeyPrefix + key, f)
-                                    .withMetadata(metadata)
-                                    .<PutObjectRequest> withGeneralProgressListener(
-                                            listener), transferListener, null, null));
-                }
-            }
-            progress.setTotalBytesToTransfer(totalSize);
-        }
-
-        // Notify all state changes waiting for the uploads to all be queued
-        // to wake up and continue
-        latch.countDown();
-        return multipleFileUpload;
+        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider,null);
     }
-
 
     /**
      *
