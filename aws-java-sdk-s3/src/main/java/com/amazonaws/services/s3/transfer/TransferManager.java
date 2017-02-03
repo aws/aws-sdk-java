@@ -1526,7 +1526,7 @@ public class TransferManager {
                             .replaceAll("\\\\", "/");
 
                     ObjectMetadata metadata = new ObjectMetadata();
-                    ObjectTagging objectTagging = new ObjectTagging(new ArrayList<Tag>());
+                    ObjectTagging objectTagging = null;
 
                     // Invoke the callback if it's present.
                     // The callback allows the user to customize the metadata
