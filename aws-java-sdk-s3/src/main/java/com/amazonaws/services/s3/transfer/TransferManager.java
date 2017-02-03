@@ -42,7 +42,6 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.ObjectTagging;
-import com.amazonaws.services.s3.model.Tag;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.services.s3.transfer.internal.CopyCallable;

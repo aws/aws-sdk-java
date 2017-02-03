@@ -20,8 +20,10 @@ import java.io.File;
 import java.util.List;
 
 /**
- * This is the callback interface which is used by TransferManager.uploadDirectory {@link TransferManager#uploadDirectory(String, String, File, boolean, ObjectMetadataProvider, ObjectTaggingProvider)} and
- * TransferManager.uploadFileList {@link TransferManager#uploadFileList(String, String, File, List, ObjectMetadataProvider, ObjectTaggingProvider)}. The callback is invoked for each file that is uploaded by
+ * This is the callback interface which is used by {@link TransferManager#uploadDirectory(String,
+ * String, File, boolean, ObjectMetadataProvider, ObjectTaggingProvider)} and
+ * {@link TransferManager#uploadFileList(String, String, File, List, ObjectMetadataProvider,
+ * ObjectTaggingProvider)}. The callback is invoked for each file that is uploaded by
  * <code>TransferManager</code> and given an opportunity to specify the tags for each file.
  */
 public interface ObjectTaggingProvider {
