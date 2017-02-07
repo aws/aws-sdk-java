@@ -22,6 +22,7 @@ public class JsonDocumentFields {
      public static final String EFFECT_VALUE_ALLOW = "Allow";
      public static final String STATEMENT_ID = "Sid";
      public static final String PRINCIPAL = "Principal";
+     public static final String NOT_PRINCIPAL = "NotPrincipal";
      public static final String ACTION = "Action";
      public static final String RESOURCE = "Resource";
      public static final String CONDITION = "Condition";

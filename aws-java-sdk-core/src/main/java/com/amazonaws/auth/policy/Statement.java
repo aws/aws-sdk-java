@@ -70,6 +70,7 @@ public class Statement {
     private String id;
     private Effect effect;
     private List<Principal> principals = new ArrayList<Principal>();
+    private List<Principal> notPrincipals = new ArrayList<Principal>();
     private List<Action> actions = new ArrayList<Action>();
     private List<Resource> resources;
     private List<Condition> conditions = new ArrayList<Condition>();
@@ -406,6 +407,65 @@ public class Statement {
      */
     public Statement withPrincipals(Principal... principals) {
         setPrincipals(principals);
+        return this;
+    }
+
+    /**
+     * Returns the excluded principals associated with this policy statement, indicating
+     * which AWS accounts are not affected by this policy statement.
+     *
+     * @return The list of principals not associated with this policy statement.
+     */
+    public List<Principal> getNotPrincipals() {
+        return notPrincipals;
+    }
+
+    /**
+     * Sets the excluded principals associated with this policy statement, indicating
+     * which AWS accounts are not affected by this policy statement.
+     * <p>
+     * If you don't want to restrict your policy to specific users, you can use
+     * {@link Principal#AllUsers} to apply the policy to any user trying to
+     * access your resource.
+     *
+     * @param principals
+     *            The list of principals not associated with this policy statement.
+     */
+    public void setNotPrincipals(Collection<Principal> principals) {
+        this.notPrincipals = new ArrayList<Principal>(principals);
+    }
+
+    /**
+     * Sets the excluded principals associated with this policy statement, indicating
+     * which AWS accounts are not affected by this policy statement.
+     * <p>
+     * If you don't want to restrict your policy to specific users, you can use
+     * {@link Principal#AllUsers} to apply the policy to any user trying to
+     * access your resource.
+     *
+     * @param principals
+     *            The list of principals not associated with this policy statement.
+     */
+    public void setNotPrincipals(Principal... principals) {
+        setNotPrincipals(new ArrayList<Principal>(Arrays.asList(principals)));
+    }
+
+    /**
+     * Sets the excluded principals associated with this policy statement, indicating
+     * which AWS accounts are not affected by this policy statement.
+     * <p>
+     * If you don't want to restrict your policy to specific users, you can use
+     * {@link Principal#AllUsers} to apply the policy to any user trying to
+     * access your resource.
+     *
+     * @param principals
+     *            The list of principals not associated with this policy statement.
+     *
+     * @return The updated Statement object so that additional method calls can
+     *         be chained together.
+     */
+    public Statement withNotPrincipals(Principal... principals) {
+        setNotPrincipals(principals);
         return this;
     }
 
