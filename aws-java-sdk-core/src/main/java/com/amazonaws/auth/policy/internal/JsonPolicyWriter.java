@@ -219,6 +219,9 @@ public class JsonPolicyWriter {
      *
      * @param principals
      *            the list of principals to be written.
+     * @param jsonDocumentField
+     *            the json field to write the principals under either 
+     *            JsonDocumentFields.PRINCIPAL or JsonDocumentFields.NOT_PRINCIPAL.
      */
     private void writePrincipals(List<Principal> principals, String jsonDocumentField)
             throws JsonGenerationException, IOException {
