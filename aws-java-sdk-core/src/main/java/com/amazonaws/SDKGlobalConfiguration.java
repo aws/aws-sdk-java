@@ -138,6 +138,28 @@ public class SDKGlobalConfiguration {
         "com.amazonaws.services.s3.enforceV4";
 
     /**
+     * By default, the S3 client constructor does not set a region.
+     * <p>
+     * If the client is not configured with an explicit region, bucket operations
+     * (eg. {@code listObjects}) will attempt to determine the bucket's region the first
+     * time that bucket is seen. This may result in a cross-region call.
+     * <p>
+     * Setting this system property to anything other than {@code null} or
+     * {@code false} will <i>disable</i> this implicit fixed-region invocation,
+     * and any attempt to use a regionless client will fail with an IllegalStateException.
+     * This allows SDK users to force all S3 clients to be created with a region defined,
+     * so that calls to unintended regions are avoided.
+     * <p>
+     * Note: Even with this option enabled, SDK users can still create clients not
+     * attached to fixed regions using specific opt-in methods on the S3 client builder.
+     * For instance, the {@code enableGlobalBucketAccess} option explicitly allows
+     * creation of a client that will automatically identify the location of a bucket via
+     * a call to a single, fixed region.
+     */
+    public static final String DISABLE_S3_IMPLICIT_GLOBAL_CLIENTS_SYSTEM_PROPERTY =
+            "com.amazonaws.services.s3.disableImplicitGlobalClients";
+
+    /**
      * Overrides the client default {@link ClientConfiguration} to use
      * configuration with values tailored towards clients operating in the
      * same AWS region as the service endpoint they call.  Timeouts in

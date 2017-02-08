@@ -226,6 +226,10 @@ public class AWSCertificateManagerAsyncClient extends AWSCertificateManagerClien
         this.executorService = executorService;
     }
 
+    public static AWSCertificateManagerAsyncClientBuilder asyncBuilder() {
+        return AWSCertificateManagerAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on ACM using the specified parameters.
      *

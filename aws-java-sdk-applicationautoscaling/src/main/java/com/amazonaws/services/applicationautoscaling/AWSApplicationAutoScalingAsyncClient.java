@@ -270,6 +270,10 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
         this.executorService = executorService;
     }
 
+    public static AWSApplicationAutoScalingAsyncClientBuilder asyncBuilder() {
+        return AWSApplicationAutoScalingAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Application Auto Scaling using the specified
      * parameters.

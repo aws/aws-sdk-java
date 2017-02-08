@@ -217,6 +217,10 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
         this.executorService = executorService;
     }
 
+    public static AWSCloudHSMAsyncClientBuilder asyncBuilder() {
+        return AWSCloudHSMAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CloudHSM using the specified parameters.
      *

@@ -272,6 +272,10 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         this.executorService = executorService;
     }
 
+    public static AWSSecurityTokenServiceAsyncClientBuilder asyncBuilder() {
+        return AWSSecurityTokenServiceAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS STS using the specified parameters.
      *

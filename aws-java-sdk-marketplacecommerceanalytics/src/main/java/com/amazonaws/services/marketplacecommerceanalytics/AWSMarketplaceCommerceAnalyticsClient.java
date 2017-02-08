@@ -226,6 +226,10 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
         init();
     }
 
+    public static AWSMarketplaceCommerceAnalyticsClientBuilder builder() {
+        return AWSMarketplaceCommerceAnalyticsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Marketplace Commerce Analytics using the specified
      * parameters.

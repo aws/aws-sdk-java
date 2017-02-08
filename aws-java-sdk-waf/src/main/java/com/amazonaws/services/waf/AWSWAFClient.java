@@ -259,6 +259,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         init();
     }
 
+    public static AWSWAFClientBuilder builder() {
+        return AWSWAFClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on WAF using the specified parameters.
      *

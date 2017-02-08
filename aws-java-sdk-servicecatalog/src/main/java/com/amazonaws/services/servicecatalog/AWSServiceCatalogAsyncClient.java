@@ -244,6 +244,10 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
         this.executorService = executorService;
     }
 
+    public static AWSServiceCatalogAsyncClientBuilder asyncBuilder() {
+        return AWSServiceCatalogAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Service Catalog using the specified
      * parameters.

@@ -224,6 +224,10 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
         this.executorService = executorService;
     }
 
+    public static AWSWAFAsyncClientBuilder asyncBuilder() {
+        return AWSWAFAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on WAF using the specified parameters.
      *

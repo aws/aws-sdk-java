@@ -235,6 +235,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         init();
     }
 
+    public static AmazonSimpleEmailServiceClientBuilder builder() {
+        return AmazonSimpleEmailServiceClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon SES using the specified parameters.
      *

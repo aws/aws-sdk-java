@@ -354,7 +354,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         return new SyncBuilderParams();
     }
 
-    private <ClientClass extends AmazonWebServiceClient> void setRegion(ClientClass client) {
+    private void setRegion(AmazonWebServiceClient client) {
         if (region != null && endpointConfiguration != null) {
             throw new IllegalStateException("Only one of Region or EndpointConfiguration may be set.");
         }
@@ -364,7 +364,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         } else if (region != null) {
             client.setRegion(region);
         } else {
-            final String region = regionProvider.getRegion();
+            final String region = determineRegionFromRegionProvider();
             if (region != null) {
                 client.setRegion(RegionUtils.getRegion(region));
             } else {
@@ -372,6 +372,22 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
                         "Unable to find a region via the region provider chain. " +
                         "Must provide an explicit region in the builder or setup environment to supply a region.");
             }
+        }
+    }
+
+    /**
+     * Attempt to determine the region from the configured region provider. This will return null in the event that the
+     * region provider could not determine the region automatically.
+     */
+    private String determineRegionFromRegionProvider() {
+        try {
+            return regionProvider.getRegion();
+        }
+        catch (SdkClientException e) {
+            // The AwsRegionProviderChain that is used by default throws an exception instead of returning null when
+            // the region is not defined. For that reason, we have to support both throwing an exception and returning
+            // null as the region not being defined.
+            return null;
         }
     }
 

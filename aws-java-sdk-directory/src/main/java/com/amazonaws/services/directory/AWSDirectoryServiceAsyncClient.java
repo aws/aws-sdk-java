@@ -234,6 +234,10 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
         this.executorService = executorService;
     }
 
+    public static AWSDirectoryServiceAsyncClientBuilder asyncBuilder() {
+        return AWSDirectoryServiceAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Directory Service using the specified
      * parameters.

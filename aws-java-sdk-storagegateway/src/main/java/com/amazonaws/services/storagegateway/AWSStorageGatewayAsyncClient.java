@@ -292,6 +292,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
         this.executorService = executorService;
     }
 
+    public static AWSStorageGatewayAsyncClientBuilder asyncBuilder() {
+        return AWSStorageGatewayAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Storage Gateway using the specified
      * parameters.

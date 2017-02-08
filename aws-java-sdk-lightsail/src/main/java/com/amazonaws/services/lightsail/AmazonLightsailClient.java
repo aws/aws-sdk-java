@@ -258,6 +258,10 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         init();
     }
 
+    public static AmazonLightsailClientBuilder builder() {
+        return AmazonLightsailClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Lightsail using the specified parameters.
      *

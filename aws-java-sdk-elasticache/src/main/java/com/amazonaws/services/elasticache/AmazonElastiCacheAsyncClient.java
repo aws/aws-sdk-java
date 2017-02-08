@@ -230,6 +230,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
         this.executorService = executorService;
     }
 
+    public static AmazonElastiCacheAsyncClientBuilder asyncBuilder() {
+        return AmazonElastiCacheAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon ElastiCache using the specified
      * parameters.

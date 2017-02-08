@@ -221,6 +221,10 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
         this.executorService = executorService;
     }
 
+    public static AmazonImportExportAsyncClientBuilder asyncBuilder() {
+        return AmazonImportExportAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Import/Export using the specified
      * parameters.

@@ -323,6 +323,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         init();
     }
 
+    public static AWSSupportClientBuilder builder() {
+        return AWSSupportClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Support using the specified parameters.
      *

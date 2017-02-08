@@ -256,6 +256,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
         this.executorService = executorService;
     }
 
+    public static AmazonGlacierAsyncClientBuilder asyncBuilder() {
+        return AmazonGlacierAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Glacier using the specified parameters.
      *

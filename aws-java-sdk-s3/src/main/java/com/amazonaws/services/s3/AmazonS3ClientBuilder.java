@@ -14,10 +14,12 @@
  */
 package com.amazonaws.services.s3;
 
+import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.internal.SdkFunction;
+import com.amazonaws.regions.AwsRegionProvider;
 
 /**
  * Fluent builder for AmazonS3. Capable of building synchronous and asynchronous clients. Use of the
@@ -31,8 +33,10 @@ public final class AmazonS3ClientBuilder extends AmazonS3Builder<AmazonS3ClientB
     }
 
     @SdkTestInternalApi
-    AmazonS3ClientBuilder(SdkFunction<AmazonS3ClientParamsWrapper, AmazonS3> clientFactory) {
-        super(clientFactory);
+    AmazonS3ClientBuilder(SdkFunction<AmazonS3ClientParamsWrapper, AmazonS3> clientFactory,
+                          ClientConfigurationFactory clientConfigFactory,
+                          AwsRegionProvider regionProvider) {
+        super(clientFactory, clientConfigFactory, regionProvider);
     }
 
     /**

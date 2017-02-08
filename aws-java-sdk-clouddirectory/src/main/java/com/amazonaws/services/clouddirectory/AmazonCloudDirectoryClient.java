@@ -333,6 +333,10 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         init();
     }
 
+    public static AmazonCloudDirectoryClientBuilder builder() {
+        return AmazonCloudDirectoryClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon CloudDirectory using the specified parameters.
      *

@@ -256,6 +256,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         init();
     }
 
+    public static AWSElasticsearchClientBuilder builder() {
+        return AWSElasticsearchClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Elasticsearch Service using the specified parameters.
      *

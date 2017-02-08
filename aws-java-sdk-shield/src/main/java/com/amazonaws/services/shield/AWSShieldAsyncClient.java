@@ -223,6 +223,10 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
         this.executorService = executorService;
     }
 
+    public static AWSShieldAsyncClientBuilder asyncBuilder() {
+        return AWSShieldAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Shield using the specified parameters.
      *

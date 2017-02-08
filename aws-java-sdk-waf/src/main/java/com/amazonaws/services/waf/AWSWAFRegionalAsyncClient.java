@@ -225,6 +225,10 @@ public class AWSWAFRegionalAsyncClient extends AWSWAFRegionalClient implements A
         this.executorService = executorService;
     }
 
+    public static AWSWAFRegionalAsyncClientBuilder asyncBuilder() {
+        return AWSWAFRegionalAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on WAF Regional using the specified parameters.
      *

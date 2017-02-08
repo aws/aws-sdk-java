@@ -288,6 +288,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         init();
     }
 
+    public static AmazonGlacierClientBuilder builder() {
+        return AmazonGlacierClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Glacier using the specified parameters.
      *

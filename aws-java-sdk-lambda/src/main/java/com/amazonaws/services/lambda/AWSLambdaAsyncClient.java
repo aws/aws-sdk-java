@@ -227,6 +227,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
         this.executorService = executorService;
     }
 
+    public static AWSLambdaAsyncClientBuilder asyncBuilder() {
+        return AWSLambdaAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Lambda using the specified parameters.
      *

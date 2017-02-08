@@ -306,6 +306,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AWSStorageGatewayClientBuilder builder() {
+        return AWSStorageGatewayClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Storage Gateway using the specified parameters.
      *

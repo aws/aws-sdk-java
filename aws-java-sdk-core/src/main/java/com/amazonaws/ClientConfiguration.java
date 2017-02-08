@@ -18,6 +18,7 @@ import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
+import com.amazonaws.util.ValidationUtils;
 import com.amazonaws.util.VersionInfoUtils;
 
 import java.net.InetAddress;
@@ -94,6 +95,11 @@ public class ClientConfiguration {
     public static final long DEFAULT_CONNECTION_MAX_IDLE_MILLIS = 60 * 1000;
 
     /**
+     * The default time a connection can be idle in the connection pool before it must be validated that it's still open.
+     */
+    public static final int DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS = 5 * 1000;
+
+    /**
      * The default on whether to use TCP KeepAlive.
      */
     public static final boolean DEFAULT_TCP_KEEP_ALIVE = false;
@@ -112,6 +118,8 @@ public class ClientConfiguration {
      * The default response metadata cache size.
      */
     public static final int DEFAULT_RESPONSE_METADATA_CACHE_SIZE = 50;
+
+    public static final int DEFAULT_MAX_CONSECUTIVE_RETRIES_BEFORE_THROTTLING = 100;
 
 
     /** A prefix to the HTTP user agent header passed with all HTTP requests.  */
@@ -239,6 +247,8 @@ public class ClientConfiguration {
      */
     private long connectionMaxIdleMillis = DEFAULT_CONNECTION_MAX_IDLE_MILLIS;
 
+    private int validateAfterInactivityMillis = DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS;
+
     /**
      * Optional override to enable support for TCP KeepAlive (not to be confused with HTTP
      * KeepAlive). TCP KeepAlive can be used to detect misbehaving routers or down servers through
@@ -299,6 +309,12 @@ public class ClientConfiguration {
     private boolean useExpectContinue = DEFAULT_USE_EXPECT_CONTINUE;
 
     /**
+     * The maximum number of throttled retries if the initial request
+     * fails.
+     */
+    private int maxConsecutiveRetriesBeforeThrottling = DEFAULT_MAX_CONSECUTIVE_RETRIES_BEFORE_THROTTLING;
+
+    /**
      * Can be used to specify custom specific Apache HTTP client configurations.
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
@@ -340,10 +356,12 @@ public class ClientConfiguration {
         this.cacheResponseMetadata = other.cacheResponseMetadata;
         this.connectionTTL = other.connectionTTL;
         this.connectionMaxIdleMillis = other.connectionMaxIdleMillis;
+        this.validateAfterInactivityMillis = other.validateAfterInactivityMillis;
         this.tcpKeepAlive = other.tcpKeepAlive;
         this.secureRandom = other.secureRandom;
         this.headers.clear();
         this.headers.putAll(other.headers);
+        this.maxConsecutiveRetriesBeforeThrottling = other.maxConsecutiveRetriesBeforeThrottling;
     }
 
     /**
@@ -1333,6 +1351,49 @@ public class ClientConfiguration {
     }
 
     /**
+     * Set the maximum number of consecutive failed retries that the client will permit before
+     * throttling all subsequent retries of failed requests.
+     * <p>
+     * Note: This does not guarantee that each failed request will be retried up to this many times.
+     * Depending on the configured {@link RetryPolicy} and the number of past failed and successful
+     * requests, the actual number of retries attempted may be less.
+     * <p>
+     * This has a default value of {@link #DEFAULT_MAX_CONSECUTIVE_RETRIES_BEFORE_THROTTLING}.
+     *
+     * @param maxConsecutiveRetriesBeforeThrottling The maximum number of consecutive retries.
+     */
+    public void setMaxConsecutiveRetriesBeforeThrottling(int maxConsecutiveRetriesBeforeThrottling) {
+        this.maxConsecutiveRetriesBeforeThrottling = ValidationUtils.assertIsPositive(maxConsecutiveRetriesBeforeThrottling,
+                "maxConsecutiveRetriesBeforeThrottling");
+    }
+    /**
+     * Set the maximum number of consecutive failed retries that the client will permit before
+     * throttling all subsequent retries of failed requests.
+     * <p>
+     * Note: This does not guarantee that each failed request will be retried up to this many times.
+     * Depending on the configured {@link RetryPolicy} and the number of past failed and successful
+     * requests, the actual number of retries attempted may be less.
+     * <p>
+     * This has a default value of {@link #DEFAULT_MAX_CONSECUTIVE_RETRIES_BEFORE_THROTTLING}.
+     *
+     * @param maxConsecutiveRetriesBeforeThrottling The maximum number of consecutive retries.
+     *
+     * @return This object for chaining.
+     */
+    public ClientConfiguration withMaxConsecutiveRetriesBeforeThrottling(int maxConsecutiveRetriesBeforeThrottling) {
+        setMaxConsecutiveRetriesBeforeThrottling(maxConsecutiveRetriesBeforeThrottling);
+        return this;
+    }
+
+    /**
+     * @return Set the maximum number of consecutive failed retries that the client will permit
+     * before throttling all subsequent retries of failed requests.
+     */
+    public int getMaxConsecutiveRetriesBeforeThrottling() {
+        return maxConsecutiveRetriesBeforeThrottling;
+    }
+
+    /**
      * Checks if gzip compression is used
      *
      * @return if gzip compression is used
@@ -1703,6 +1764,62 @@ public class ClientConfiguration {
     public ClientConfiguration withConnectionMaxIdleMillis(long connectionMaxIdleMillis) {
 
         setConnectionMaxIdleMillis(connectionMaxIdleMillis);
+        return this;
+    }
+
+    /**
+     * Returns the amount of time (in milliseconds) that a connection can be idle in the connection pool before it must be
+     * validated to ensure it's still open. This "stale connection check" adds a small bit of overhead to validate the
+     * connection. Setting this value to larger values may increase the likelihood that the connection is not usable, potentially
+     * resulting in a {@link org.apache.http.NoHttpResponseException}. Lowering this setting increases the overhead when leasing
+     * connections from the connection pool. It is recommended to tune this setting based on how long a service allows a
+     * connection to be idle before closing.
+     *
+     * <p>A non positive value disables validation of connections.</p>
+     *
+     * <p>The default value is {@value #DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS} milliseconds.</p>
+     */
+    public int getValidateAfterInactivityMillis() {
+        return validateAfterInactivityMillis;
+    }
+
+    /**
+     * Sets the amount of time (in milliseconds) that a connection can be idle in the connection pool before it must be validated
+     * to ensure it's still open. This "stale connection check" adds a small bit of overhead to validate the connection. Setting
+     * this value to larger values may increase the likelihood that the connection is not usable, potentially resulting in a
+     * {@link org.apache.http.NoHttpResponseException}. Lowering this setting increases the overhead when leasing connections
+     * from the connection pool. It is recommended to tune this setting based on how long a service allows a connection to be
+     * idle before closing.
+     *
+     * <p>A non positive value disables validation of connections.</p>
+     *
+     * <p>The default value is {@value #DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS} milliseconds.</p>
+     *
+     * @param validateAfterInactivityMillis The allowed time, in milliseconds, a connection can be idle before it must be
+     *                                      re-validated.
+     */
+    public void setValidateAfterInactivityMillis(int validateAfterInactivityMillis) {
+        this.validateAfterInactivityMillis = validateAfterInactivityMillis;
+    }
+
+    /**
+     * Sets the amount of time (in milliseconds) that a connection can be idle in the connection pool before it must be validated
+     * to ensure it's still open. This "stale connection check" adds a small bit of overhead to validate the connection. Setting
+     * this value to larger values may increase the likelihood that the connection is not usable, potentially resulting in a
+     * {@link org.apache.http.NoHttpResponseException}. Lowering this setting increases the overhead when leasing connections
+     * from the connection pool. It is recommended to tune this setting based on how long a service allows a connection to be
+     * idle before closing.
+     *
+     * <p>A non positive value disables validation of connections.</p>
+     *
+     * <p>The default value is {@value #DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS} milliseconds.</p>
+     *
+     * @param validateAfterInactivityMillis The allowed time, in milliseconds, a connection can be idle before it must be
+     *                                      re-validated.
+     * @return The updated {@link ClientConfiguration} object.
+     */
+    public ClientConfiguration withValidateAfterInactivityMillis(int validateAfterInactivityMillis) {
+        setValidateAfterInactivityMillis(validateAfterInactivityMillis);
         return this;
     }
 

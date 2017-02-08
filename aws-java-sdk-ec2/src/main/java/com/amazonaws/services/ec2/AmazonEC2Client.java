@@ -226,6 +226,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         init();
     }
 
+    public static AmazonEC2ClientBuilder builder() {
+        return AmazonEC2ClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon EC2 using the specified parameters.
      *

@@ -301,6 +301,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         init();
     }
 
+    public static AmazonSQSClientBuilder builder() {
+        return AmazonSQSClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon SQS using the specified parameters.
      *

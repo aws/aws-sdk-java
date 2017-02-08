@@ -218,6 +218,10 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
         this.executorService = executorService;
     }
 
+    public static AmazonMachineLearningAsyncClientBuilder asyncBuilder() {
+        return AmazonMachineLearningAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Machine Learning using the specified
      * parameters.

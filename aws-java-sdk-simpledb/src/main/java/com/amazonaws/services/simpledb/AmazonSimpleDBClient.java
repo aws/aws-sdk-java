@@ -232,6 +232,10 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonSimpleDBClientBuilder builder() {
+        return AmazonSimpleDBClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon SimpleDB using the specified parameters.
      *

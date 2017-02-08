@@ -234,6 +234,10 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
         this.executorService = executorService;
     }
 
+    public static AWSSimpleSystemsManagementAsyncClientBuilder asyncBuilder() {
+        return AWSSimpleSystemsManagementAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon SSM using the specified parameters.
      *

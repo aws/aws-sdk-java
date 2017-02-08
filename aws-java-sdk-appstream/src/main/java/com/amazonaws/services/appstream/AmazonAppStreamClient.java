@@ -249,6 +249,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         init();
     }
 
+    public static AmazonAppStreamClientBuilder builder() {
+        return AmazonAppStreamClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon AppStream using the specified parameters.
      *

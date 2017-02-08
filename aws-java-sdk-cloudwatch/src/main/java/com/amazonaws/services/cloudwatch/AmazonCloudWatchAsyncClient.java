@@ -232,6 +232,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
         this.executorService = executorService;
     }
 
+    public static AmazonCloudWatchAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudWatchAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CloudWatch using the specified parameters.
      *

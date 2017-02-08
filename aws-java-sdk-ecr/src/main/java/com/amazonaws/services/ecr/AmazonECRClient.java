@@ -277,6 +277,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         init();
     }
 
+    public static AmazonECRClientBuilder builder() {
+        return AmazonECRClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon ECR using the specified parameters.
      *

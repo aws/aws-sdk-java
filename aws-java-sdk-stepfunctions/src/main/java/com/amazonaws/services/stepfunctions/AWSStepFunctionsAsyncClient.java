@@ -231,6 +231,10 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
         this.executorService = executorService;
     }
 
+    public static AWSStepFunctionsAsyncClientBuilder asyncBuilder() {
+        return AWSStepFunctionsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS SFN using the specified parameters.
      *

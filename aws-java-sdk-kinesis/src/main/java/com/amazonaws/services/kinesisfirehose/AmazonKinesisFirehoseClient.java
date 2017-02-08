@@ -243,6 +243,10 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         init();
     }
 
+    public static AmazonKinesisFirehoseClientBuilder builder() {
+        return AmazonKinesisFirehoseClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Firehose using the specified parameters.
      *

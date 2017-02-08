@@ -269,6 +269,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         init();
     }
 
+    public static AWSDatabaseMigrationServiceClientBuilder builder() {
+        return AWSDatabaseMigrationServiceClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Database Migration Service using the specified
      * parameters.

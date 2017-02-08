@@ -220,6 +220,10 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
         this.executorService = executorService;
     }
 
+    public static AWSDeviceFarmAsyncClientBuilder asyncBuilder() {
+        return AWSDeviceFarmAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Device Farm using the specified parameters.
      *

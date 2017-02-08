@@ -283,6 +283,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AmazonCognitoSyncClientBuilder builder() {
+        return AmazonCognitoSyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Sync using the specified parameters.
      *

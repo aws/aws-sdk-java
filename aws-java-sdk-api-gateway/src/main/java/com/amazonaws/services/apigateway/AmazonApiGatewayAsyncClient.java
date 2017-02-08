@@ -222,6 +222,10 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
         this.executorService = executorService;
     }
 
+    public static AmazonApiGatewayAsyncClientBuilder asyncBuilder() {
+        return AmazonApiGatewayAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon API Gateway using the specified
      * parameters.

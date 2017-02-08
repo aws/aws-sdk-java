@@ -253,6 +253,10 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         init();
     }
 
+    public static AmazonCloudWatchEventsClientBuilder builder() {
+        return AmazonCloudWatchEventsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch Events using the specified parameters.
      *

@@ -222,6 +222,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
         this.executorService = executorService;
     }
 
+    public static AmazonEC2AsyncClientBuilder asyncBuilder() {
+        return AmazonEC2AsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon EC2 using the specified parameters.
      *

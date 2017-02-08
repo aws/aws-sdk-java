@@ -286,6 +286,10 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
         init();
     }
 
+    public static AWSMarketplaceMeteringClientBuilder builder() {
+        return AWSMarketplaceMeteringClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWSMarketplace Metering using the specified parameters.
      *

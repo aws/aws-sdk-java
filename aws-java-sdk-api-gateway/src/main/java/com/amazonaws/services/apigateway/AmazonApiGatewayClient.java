@@ -249,6 +249,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         init();
     }
 
+    public static AmazonApiGatewayClientBuilder builder() {
+        return AmazonApiGatewayClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon API Gateway using the specified parameters.
      *

@@ -33,6 +33,7 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
 
     private final java.util.concurrent.ExecutorService executorService;
 
+<#if customizationConfig.emitClientConstructors()>
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * ${metadata.serviceName}. A credentials provider chain will be used
@@ -227,6 +228,11 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
     public ${metadata.asyncClient}(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+</#if>
+
+    public static ${metadata.asyncClientBuilderClassName} asyncBuilder() {
+        return ${metadata.asyncClientBuilderClassName}.standard();
     }
 
     /**

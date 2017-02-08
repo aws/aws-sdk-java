@@ -238,6 +238,10 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
         this.executorService = executorService;
     }
 
+    public static AWSElasticBeanstalkAsyncClientBuilder asyncBuilder() {
+        return AWSElasticBeanstalkAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Elastic Beanstalk using the specified
      * parameters.

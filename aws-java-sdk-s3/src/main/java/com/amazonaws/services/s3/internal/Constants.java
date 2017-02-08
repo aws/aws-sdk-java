@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 

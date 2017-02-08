@@ -289,6 +289,10 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         init();
     }
 
+    public static AWSStepFunctionsClientBuilder builder() {
+        return AWSStepFunctionsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS SFN using the specified parameters.
      *

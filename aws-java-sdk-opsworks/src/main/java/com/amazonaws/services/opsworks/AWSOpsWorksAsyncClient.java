@@ -352,6 +352,10 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements AWSOpsW
         this.executorService = executorService;
     }
 
+    public static AWSOpsWorksAsyncClientBuilder asyncBuilder() {
+        return AWSOpsWorksAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS OpsWorks using the specified parameters.
      *

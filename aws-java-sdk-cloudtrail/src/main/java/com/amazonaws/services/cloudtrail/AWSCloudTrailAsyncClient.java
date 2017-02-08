@@ -239,6 +239,10 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
         this.executorService = executorService;
     }
 
+    public static AWSCloudTrailAsyncClientBuilder asyncBuilder() {
+        return AWSCloudTrailAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CloudTrail using the specified parameters.
      *

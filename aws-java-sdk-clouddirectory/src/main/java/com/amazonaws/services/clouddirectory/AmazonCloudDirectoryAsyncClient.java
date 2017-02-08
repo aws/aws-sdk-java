@@ -226,6 +226,10 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
         this.executorService = executorService;
     }
 
+    public static AmazonCloudDirectoryAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudDirectoryAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon CloudDirectory using the specified
      * parameters.

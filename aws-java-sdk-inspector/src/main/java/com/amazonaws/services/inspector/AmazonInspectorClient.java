@@ -252,6 +252,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         init();
     }
 
+    public static AmazonInspectorClientBuilder builder() {
+        return AmazonInspectorClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Inspector using the specified parameters.
      *

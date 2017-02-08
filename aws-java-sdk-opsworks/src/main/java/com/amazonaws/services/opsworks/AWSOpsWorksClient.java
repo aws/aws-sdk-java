@@ -365,6 +365,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         init();
     }
 
+    public static AWSOpsWorksClientBuilder builder() {
+        return AWSOpsWorksClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS OpsWorks using the specified parameters.
      *

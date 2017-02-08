@@ -297,6 +297,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         init();
     }
 
+    public static AWSLambdaClientBuilder builder() {
+        return AWSLambdaClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Lambda using the specified parameters.
      *

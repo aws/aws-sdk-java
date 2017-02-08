@@ -224,6 +224,10 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
         this.executorService = executorService;
     }
 
+    public static AmazonPollyAsyncClientBuilder asyncBuilder() {
+        return AmazonPollyAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Polly using the specified parameters.
      *

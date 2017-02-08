@@ -230,6 +230,10 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         this.executorService = executorService;
     }
 
+    public static AmazonSimpleEmailServiceAsyncClientBuilder asyncBuilder() {
+        return AmazonSimpleEmailServiceAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon SES using the specified parameters.
      *

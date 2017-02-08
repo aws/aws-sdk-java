@@ -219,6 +219,10 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
         this.executorService = executorService;
     }
 
+    public static AmazonRekognitionAsyncClientBuilder asyncBuilder() {
+        return AmazonRekognitionAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Rekognition using the specified
      * parameters.

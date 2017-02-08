@@ -222,6 +222,10 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
         this.executorService = executorService;
     }
 
+    public static AmazonKinesisFirehoseAsyncClientBuilder asyncBuilder() {
+        return AmazonKinesisFirehoseAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Firehose using the specified parameters.
      *

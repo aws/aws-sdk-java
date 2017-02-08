@@ -240,6 +240,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         init();
     }
 
+    public static AmazonRoute53DomainsClientBuilder builder() {
+        return AmazonRoute53DomainsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Route 53 Domains using the specified parameters.
      *

@@ -266,6 +266,10 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
         this.executorService = executorService;
     }
 
+    public static AWSOpsWorksCMAsyncClientBuilder asyncBuilder() {
+        return AWSOpsWorksCMAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on OpsWorksCM using the specified parameters.
      *

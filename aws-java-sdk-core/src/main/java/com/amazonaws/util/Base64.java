@@ -15,8 +15,14 @@
 package com.amazonaws.util;
 
 import javax.xml.bind.DatatypeConverter;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
+import com.amazonaws.log.InternalLogApi;
 import com.amazonaws.log.InternalLogFactory;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A Base 64 codec API.
@@ -27,7 +33,24 @@ import com.amazonaws.log.InternalLogFactory;
  */
 public enum Base64 {
     ;
+    private static final InternalLogApi LOG = InternalLogFactory.getLog(Base64.class);
     private static final Base64Codec codec = new Base64Codec();
+
+    static {
+        Map<String,String> inconsistentJaxbImpls = new HashMap<String, String>();
+        inconsistentJaxbImpls.put("org.apache.ws.jaxme.impl.JAXBContextImpl", "Apache JaxMe");
+
+        try {
+            String className = JAXBContext.newInstance().getClass().getName();
+            if (inconsistentJaxbImpls.values().contains(className)) {
+                LOG.warn("A JAXB implementation known to produce base64 encodings that are " +
+                        "inconsistent with the reference implementation has been detected. The " +
+                        "results of the encodeAsString() method may be incorrect. Implementation: " +
+                        inconsistentJaxbImpls.get(className));
+            }
+        } catch (JAXBException ignored) {
+        }
+    }
 
     /**
      * Returns a base 64 encoded string of the given bytes.
@@ -42,8 +65,7 @@ public enum Base64 {
             // https://issues.apache.org/jira/browse/CAMEL-4893
 
             // Note the converter should eventually be initialized and printBase64Binary should start working again
-            InternalLogFactory.getLog(Base64.class)
-                .debug("Recovering from JAXB bug: https://netbeans.org/bugzilla/show_bug.cgi?id=224923", ex);
+            LOG.debug("Recovering from JAXB bug: https://netbeans.org/bugzilla/show_bug.cgi?id=224923", ex);
         }
         return bytes.length == 0 ? "" : CodecUtils.toStringDirect(codec.encode(bytes));
     }

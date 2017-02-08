@@ -308,6 +308,10 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         init();
     }
 
+    public static AWSCodeBuildClientBuilder builder() {
+        return AWSCodeBuildClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS CodeBuild using the specified parameters.
      *

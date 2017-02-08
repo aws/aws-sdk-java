@@ -245,6 +245,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         init();
     }
 
+    public static AmazonKinesisClientBuilder builder() {
+        return AmazonKinesisClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Kinesis using the specified parameters.
      *

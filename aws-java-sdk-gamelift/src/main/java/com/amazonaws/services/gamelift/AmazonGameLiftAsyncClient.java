@@ -551,6 +551,10 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
         this.executorService = executorService;
     }
 
+    public static AmazonGameLiftAsyncClientBuilder asyncBuilder() {
+        return AmazonGameLiftAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon GameLift using the specified parameters.
      *

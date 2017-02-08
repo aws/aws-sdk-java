@@ -292,6 +292,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         init();
     }
 
+    public static AmazonRDSClientBuilder builder() {
+        return AmazonRDSClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon RDS using the specified parameters.
      *

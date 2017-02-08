@@ -283,6 +283,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         this.executorService = executorService;
     }
 
+    public static AmazonIdentityManagementAsyncClientBuilder asyncBuilder() {
+        return AmazonIdentityManagementAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on IAM using the specified parameters.
      *

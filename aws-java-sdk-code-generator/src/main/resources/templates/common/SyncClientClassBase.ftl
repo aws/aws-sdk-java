@@ -78,6 +78,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 
     <@AdditionalSyncClientFieldsMacro.content .data_model />
 
+<#if customizationConfig.emitClientConstructors()>
     /**
      * Constructs a new client to invoke service methods on
      * ${serviceAbbreviation}.  A credentials provider chain will be used
@@ -236,6 +237,11 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+</#if>
+
+    public static ${metadata.syncClientBuilderClassName} builder() {
+        return ${metadata.syncClientBuilderClassName}.standard();
     }
 
     /**

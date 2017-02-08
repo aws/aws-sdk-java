@@ -222,6 +222,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
         this.executorService = executorService;
     }
 
+    public static AmazonAutoScalingAsyncClientBuilder asyncBuilder() {
+        return AmazonAutoScalingAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Auto Scaling using the specified parameters.
      *

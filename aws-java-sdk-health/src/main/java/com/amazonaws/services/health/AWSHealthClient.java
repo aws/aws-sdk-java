@@ -295,6 +295,10 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         init();
     }
 
+    public static AWSHealthClientBuilder builder() {
+        return AWSHealthClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWSHealth using the specified parameters.
      *

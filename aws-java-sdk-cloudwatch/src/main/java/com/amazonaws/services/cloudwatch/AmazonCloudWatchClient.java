@@ -237,6 +237,10 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
         init();
     }
 
+    public static AmazonCloudWatchClientBuilder builder() {
+        return AmazonCloudWatchClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on CloudWatch using the specified parameters.
      *

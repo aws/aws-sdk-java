@@ -217,6 +217,10 @@ public class AWSBudgetsAsyncClient extends AWSBudgetsClient implements AWSBudget
         this.executorService = executorService;
     }
 
+    public static AWSBudgetsAsyncClientBuilder asyncBuilder() {
+        return AWSBudgetsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWSBudgets using the specified parameters.
      *

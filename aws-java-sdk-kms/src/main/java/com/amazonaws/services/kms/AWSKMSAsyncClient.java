@@ -318,6 +318,10 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
         this.executorService = executorService;
     }
 
+    public static AWSKMSAsyncClientBuilder asyncBuilder() {
+        return AWSKMSAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on KMS using the specified parameters.
      *

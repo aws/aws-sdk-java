@@ -220,6 +220,10 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
         this.executorService = executorService;
     }
 
+    public static AWSXRayAsyncClientBuilder asyncBuilder() {
+        return AWSXRayAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS X-Ray using the specified parameters.
      *

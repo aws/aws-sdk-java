@@ -1,7 +1,25 @@
+# __1.11.87__ __2017-02-08__
+## __Amazon Lex__
+  - <h3>Features</h3>
+    - **(NewService)** Amazon Lex is a service for building conversational interactions into any application using voice or text.
+
+## __Amazon S3__
+  - <h3>Bugfixes</h3>
+    - Fix a bug in `TransferManager` where the [`TransferManager#copy`](http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/transfer/TransferManager.html#copy-com.amazonaws.services.s3.model.CopyObjectRequest-) method was retrieving the metadata for the latest version of the source object even when supplying a specific version via `CopyObjectRequest#withSourceVersionId`.
+
+      This fixes Issue [#1009](https://github.com/aws/aws-sdk-java/issues/1009).
+    - Fix an integer overflow bug in [`LegacyS3ProgressListener`](http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/model/LegacyS3ProgressListener.html). Note that this class is deprecated and users are discouraged from using it.
+
+      This fixes Issue [#1008](https://github.com/aws/aws-sdk-java/issues/1008).
+
 # __1.11.86__ __2017-01-26__
 ## __AWS CodeDeploy__
   - <h3>Features</h3>
     - This release of AWS CodeDeploy introduces support for blue/green deployments. In a blue/green deployment, the current set of instances in a deployment group is replaced by new instances that have the latest application revision installed on them. After traffic is rerouted behind a load balancer to the replacement instances, the original instances can be terminated automatically or kept running for other uses.
+
+## __AWS Step Functions__
+  - <h3>Features</h3>
+    - Initial release of a fluent builder API to create state machine JSON documents.
 
 ## __Amazon CloudDirectory__
   - <h3>Features</h3>
@@ -15,9 +33,13 @@
   - <h3>Features</h3>
     - Snapshot Engine Version Upgrade
 
-## __AWS Step Functions__
+## __Amazon S3__
   - <h3>Features</h3>
-    - Initial release of a fluent builder API to create state machine JSON documents.
+    - Adding [builder](https://github.com/aws/aws-sdk-java/blob/master/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/AmazonS3EncryptionClientBuilder.java) for AmazonS3EncryptionClient.
+    - Adding `disableParallelDownloads` option to [TransferManagerBuilder](https://github.com/aws/aws-sdk-java/blob/master/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManagerBuilder.java#L400).
+
+  - <h3>Deprecations</h3>
+    - Constructors on the AmazonS3EncryptionClient have been deprecated in favor of using the AmazonS3EncryptionClientBuilder.
 
 # __1.11.85__ __2017-01-25__
 ## __Amazon Relational Database Service__

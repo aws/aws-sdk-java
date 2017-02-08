@@ -322,6 +322,10 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         init();
     }
 
+    public static AWSCognitoIdentityProviderClientBuilder builder() {
+        return AWSCognitoIdentityProviderClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Identity Provider using the specified
      * parameters.

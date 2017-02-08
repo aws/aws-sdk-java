@@ -266,6 +266,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonDynamoDBClientBuilder builder() {
+        return AmazonDynamoDBClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on DynamoDB using the specified parameters.
      *

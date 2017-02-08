@@ -222,6 +222,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         this.executorService = executorService;
     }
 
+    public static AmazonElasticMapReduceAsyncClientBuilder asyncBuilder() {
+        return AmazonElasticMapReduceAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon EMR using the specified parameters.
      *

@@ -234,6 +234,10 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
         this.executorService = executorService;
     }
 
+    public static AmazonCloudWatchEventsAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudWatchEventsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon CloudWatch Events using the specified
      * parameters.

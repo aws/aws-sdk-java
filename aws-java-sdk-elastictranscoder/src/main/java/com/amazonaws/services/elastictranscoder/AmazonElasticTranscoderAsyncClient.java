@@ -221,6 +221,10 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
         this.executorService = executorService;
     }
 
+    public static AmazonElasticTranscoderAsyncClientBuilder asyncBuilder() {
+        return AmazonElasticTranscoderAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Elastic Transcoder using the specified
      * parameters.

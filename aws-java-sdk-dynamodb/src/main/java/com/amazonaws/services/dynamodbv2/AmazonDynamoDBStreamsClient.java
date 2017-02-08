@@ -269,6 +269,10 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         init();
     }
 
+    public static AmazonDynamoDBStreamsClientBuilder builder() {
+        return AmazonDynamoDBStreamsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon DynamoDB Streams using the specified parameters.
      *

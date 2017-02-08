@@ -288,6 +288,10 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
         this.executorService = executorService;
     }
 
+    public static AmazonRDSAsyncClientBuilder asyncBuilder() {
+        return AmazonRDSAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon RDS using the specified parameters.
      *

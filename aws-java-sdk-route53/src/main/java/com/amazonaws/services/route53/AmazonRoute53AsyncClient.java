@@ -215,6 +215,10 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
         this.executorService = executorService;
     }
 
+    public static AmazonRoute53AsyncClientBuilder asyncBuilder() {
+        return AmazonRoute53AsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Route 53 using the specified parameters.
      *

@@ -143,6 +143,10 @@ public class HttpClientSettings {
         return config.getConnectionMaxIdleMillis();
     }
 
+    public int getValidateAfterInactivityMillis() {
+        return config.getValidateAfterInactivityMillis();
+    }
+
     public String getProxyWorkstation() {
         return config.getProxyWorkstation();
     }

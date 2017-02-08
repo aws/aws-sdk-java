@@ -392,6 +392,10 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
         this.executorService = executorService;
     }
 
+    public static AWSCodePipelineAsyncClientBuilder asyncBuilder() {
+        return AWSCodePipelineAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CodePipeline using the specified parameters.
      *

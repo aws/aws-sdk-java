@@ -288,6 +288,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
         init();
     }
 
+    public static AmazonCognitoIdentityClientBuilder builder() {
+        return AmazonCognitoIdentityClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Identity using the specified parameters.
      *

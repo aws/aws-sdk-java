@@ -231,6 +231,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AmazonCloudSearchClientBuilder builder() {
+        return AmazonCloudSearchClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon CloudSearch using the specified parameters.
      *

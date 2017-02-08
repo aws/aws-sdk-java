@@ -230,6 +230,10 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient implements A
         this.executorService = executorService;
     }
 
+    public static AmazonSimpleDBAsyncClientBuilder asyncBuilder() {
+        return AmazonSimpleDBAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon SimpleDB using the specified parameters.
      *

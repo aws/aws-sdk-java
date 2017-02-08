@@ -232,6 +232,10 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
         this.executorService = executorService;
     }
 
+    public static AmazonSimpleWorkflowAsyncClientBuilder asyncBuilder() {
+        return AmazonSimpleWorkflowAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon SWF using the specified parameters.
      *

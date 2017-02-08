@@ -216,6 +216,10 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
         this.executorService = executorService;
     }
 
+    public static AmazonKinesisAnalyticsAsyncClientBuilder asyncBuilder() {
+        return AmazonKinesisAnalyticsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Kinesis Analytics using the specified
      * parameters.

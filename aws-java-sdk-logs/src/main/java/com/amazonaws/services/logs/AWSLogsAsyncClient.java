@@ -251,6 +251,10 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
         this.executorService = executorService;
     }
 
+    public static AWSLogsAsyncClientBuilder asyncBuilder() {
+        return AWSLogsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon CloudWatch Logs using the specified
      * parameters.

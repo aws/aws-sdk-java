@@ -265,6 +265,10 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         init();
     }
 
+    public static AmazonPollyClientBuilder builder() {
+        return AmazonPollyClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Polly using the specified parameters.
      *

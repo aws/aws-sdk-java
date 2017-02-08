@@ -238,6 +238,10 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
         this.executorService = executorService;
     }
 
+    public static AmazonCognitoSyncAsyncClientBuilder asyncBuilder() {
+        return AmazonCognitoSyncAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Cognito Sync using the specified
      * parameters.

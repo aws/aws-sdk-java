@@ -95,8 +95,6 @@ public class ApacheHttpRequestFactory implements
                 .setConnectionRequestTimeout(settings.getConnectionPoolRequestTimeout())
                 .setConnectTimeout(settings.getConnectionTimeout())
                 .setSocketTimeout(settings.getSocketTimeout())
-                .setStaleConnectionCheckEnabled(true) // TODO Handle
-                        // deprecation here.
                 .setLocalAddress(settings.getLocalAddress());
 
         /*

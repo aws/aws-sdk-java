@@ -228,6 +228,10 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
         this.executorService = executorService;
     }
 
+    public static AWSIotAsyncClientBuilder asyncBuilder() {
+        return AWSIotAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS IoT using the specified parameters.
      *

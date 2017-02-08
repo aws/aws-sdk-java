@@ -215,6 +215,10 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
         this.executorService = executorService;
     }
 
+    public static AmazonPinpointAsyncClientBuilder asyncBuilder() {
+        return AmazonPinpointAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Pinpoint using the specified parameters.
      *

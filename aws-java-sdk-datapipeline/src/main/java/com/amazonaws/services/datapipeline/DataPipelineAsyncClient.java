@@ -236,6 +236,10 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
         this.executorService = executorService;
     }
 
+    public static DataPipelineAsyncClientBuilder asyncBuilder() {
+        return DataPipelineAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Data Pipeline using the specified
      * parameters.

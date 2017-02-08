@@ -304,6 +304,10 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         init();
     }
 
+    public static AWSApplicationDiscoveryClientBuilder builder() {
+        return AWSApplicationDiscoveryClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Application Discovery Service using the specified
      * parameters.

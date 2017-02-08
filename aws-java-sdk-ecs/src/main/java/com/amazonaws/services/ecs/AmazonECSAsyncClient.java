@@ -229,6 +229,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
         this.executorService = executorService;
     }
 
+    public static AmazonECSAsyncClientBuilder asyncBuilder() {
+        return AmazonECSAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon ECS using the specified parameters.
      *

@@ -242,6 +242,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         init();
     }
 
+    public static AmazonCloudFormationClientBuilder builder() {
+        return AmazonCloudFormationClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS CloudFormation using the specified parameters.
      *

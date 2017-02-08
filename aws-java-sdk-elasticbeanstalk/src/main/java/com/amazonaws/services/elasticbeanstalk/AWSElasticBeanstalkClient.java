@@ -240,6 +240,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         init();
     }
 
+    public static AWSElasticBeanstalkClientBuilder builder() {
+        return AWSElasticBeanstalkClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Elastic Beanstalk using the specified parameters.
      *

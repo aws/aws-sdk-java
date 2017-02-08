@@ -227,6 +227,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         init();
     }
 
+    public static AmazonCloudFrontClientBuilder builder() {
+        return AmazonCloudFrontClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on CloudFront using the specified parameters.
      *

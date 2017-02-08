@@ -339,6 +339,10 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
         this.executorService = executorService;
     }
 
+    public static AWSCodeCommitAsyncClientBuilder asyncBuilder() {
+        return AWSCodeCommitAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CodeCommit using the specified parameters.
      *

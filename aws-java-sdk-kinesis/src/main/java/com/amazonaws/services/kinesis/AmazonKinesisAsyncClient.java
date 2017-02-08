@@ -220,6 +220,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements Ama
         this.executorService = executorService;
     }
 
+    public static AmazonKinesisAsyncClientBuilder asyncBuilder() {
+        return AmazonKinesisAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Kinesis using the specified parameters.
      *

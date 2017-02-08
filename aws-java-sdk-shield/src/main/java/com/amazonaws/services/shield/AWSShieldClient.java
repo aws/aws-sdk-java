@@ -253,6 +253,10 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         init();
     }
 
+    public static AWSShieldClientBuilder builder() {
+        return AWSShieldClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Shield using the specified parameters.
      *

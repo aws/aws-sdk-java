@@ -380,6 +380,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         init();
     }
 
+    public static AWSKMSClientBuilder builder() {
+        return AWSKMSClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on KMS using the specified parameters.
      *

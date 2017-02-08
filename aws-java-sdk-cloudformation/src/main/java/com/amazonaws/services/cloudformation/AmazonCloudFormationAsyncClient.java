@@ -237,6 +237,10 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
         this.executorService = executorService;
     }
 
+    public static AmazonCloudFormationAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudFormationAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS CloudFormation using the specified
      * parameters.
