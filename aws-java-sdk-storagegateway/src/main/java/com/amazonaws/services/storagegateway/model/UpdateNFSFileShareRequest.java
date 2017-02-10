@@ -61,6 +61,13 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String defaultStorageClass;
+    /**
+     * <p>
+     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
+     * or valid CIDR blocks.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> clientList;
 
     /**
      * <p>
@@ -298,6 +305,87 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
+     * or valid CIDR blocks.
+     * </p>
+     * 
+     * @return The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *         addresses or valid CIDR blocks.
+     */
+
+    public java.util.List<String> getClientList() {
+        if (clientList == null) {
+            clientList = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return clientList;
+    }
+
+    /**
+     * <p>
+     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
+     * or valid CIDR blocks.
+     * </p>
+     * 
+     * @param clientList
+     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        addresses or valid CIDR blocks.
+     */
+
+    public void setClientList(java.util.Collection<String> clientList) {
+        if (clientList == null) {
+            this.clientList = null;
+            return;
+        }
+
+        this.clientList = new com.amazonaws.internal.SdkInternalList<String>(clientList);
+    }
+
+    /**
+     * <p>
+     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
+     * or valid CIDR blocks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClientList(java.util.Collection)} or {@link #withClientList(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param clientList
+     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        addresses or valid CIDR blocks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNFSFileShareRequest withClientList(String... clientList) {
+        if (this.clientList == null) {
+            setClientList(new com.amazonaws.internal.SdkInternalList<String>(clientList.length));
+        }
+        for (String ele : clientList) {
+            this.clientList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
+     * or valid CIDR blocks.
+     * </p>
+     * 
+     * @param clientList
+     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        addresses or valid CIDR blocks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNFSFileShareRequest withClientList(java.util.Collection<String> clientList) {
+        setClientList(clientList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -317,7 +405,9 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getNFSFileShareDefaults() != null)
             sb.append("NFSFileShareDefaults: ").append(getNFSFileShareDefaults()).append(",");
         if (getDefaultStorageClass() != null)
-            sb.append("DefaultStorageClass: ").append(getDefaultStorageClass());
+            sb.append("DefaultStorageClass: ").append(getDefaultStorageClass()).append(",");
+        if (getClientList() != null)
+            sb.append("ClientList: ").append(getClientList());
         sb.append("}");
         return sb.toString();
     }
@@ -352,6 +442,10 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getDefaultStorageClass() != null && other.getDefaultStorageClass().equals(this.getDefaultStorageClass()) == false)
             return false;
+        if (other.getClientList() == null ^ this.getClientList() == null)
+            return false;
+        if (other.getClientList() != null && other.getClientList().equals(this.getClientList()) == false)
+            return false;
         return true;
     }
 
@@ -365,6 +459,7 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         hashCode = prime * hashCode + ((getNFSFileShareDefaults() == null) ? 0 : getNFSFileShareDefaults().hashCode());
         hashCode = prime * hashCode + ((getDefaultStorageClass() == null) ? 0 : getDefaultStorageClass().hashCode());
+        hashCode = prime * hashCode + ((getClientList() == null) ? 0 : getClientList().hashCode());
         return hashCode;
     }
 

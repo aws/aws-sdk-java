@@ -1,3 +1,8 @@
+# __1.11.89__ __2017-02-10__
+## __AWS Storage Gateway__
+  - <h3>Features</h3>
+    - File gateway mode in AWS Storage gateway provides access to objects in S3 as files on a Network File System (NFS) mount point. This is done by creating Nfs file shares using existing APIs CreateNfsFileShare. Using the feature in this update, the customer can restrict the clients that have read/write access to the gateway by specifying the list of clients as a list of IP addresses or CIDR blocks. This list can be specified using the API CreateNfsFileShare while creating new file shares, or UpdateNfsFileShare while update existing file shares. To find out the list of clients that have access, the existing API DescribeNfsFileShare will now output the list of clients that have access.
+
 # __1.11.88__ __2017-02-09__
 ## __Amazon EC2__
   - <h3>Features</h3>

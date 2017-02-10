@@ -92,6 +92,10 @@ public class NFSFileShareInfoJsonUnmarshaller implements Unmarshaller<NFSFileSha
                     context.nextToken();
                     nFSFileShareInfo.setDefaultStorageClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ClientList", targetDepth)) {
+                    context.nextToken();
+                    nFSFileShareInfo.setClientList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

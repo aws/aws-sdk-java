@@ -81,6 +81,19 @@ public class CreateNFSFileShareRequestMarshaller implements Marshaller<Request<C
                 jsonGenerator.writeFieldName("DefaultStorageClass").writeValue(createNFSFileShareRequest.getDefaultStorageClass());
             }
 
+            com.amazonaws.internal.SdkInternalList<String> clientListList = (com.amazonaws.internal.SdkInternalList<String>) createNFSFileShareRequest
+                    .getClientList();
+            if (!clientListList.isEmpty() || !clientListList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("ClientList");
+                jsonGenerator.writeStartArray();
+                for (String clientListListValue : clientListList) {
+                    if (clientListListValue != null) {
+                        jsonGenerator.writeValue(clientListListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

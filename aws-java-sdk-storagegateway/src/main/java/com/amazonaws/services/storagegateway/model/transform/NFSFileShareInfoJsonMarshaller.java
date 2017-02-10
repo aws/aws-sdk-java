@@ -72,6 +72,18 @@ public class NFSFileShareInfoJsonMarshaller {
                 jsonGenerator.writeFieldName("DefaultStorageClass").writeValue(nFSFileShareInfo.getDefaultStorageClass());
             }
 
+            com.amazonaws.internal.SdkInternalList<String> clientListList = (com.amazonaws.internal.SdkInternalList<String>) nFSFileShareInfo.getClientList();
+            if (!clientListList.isEmpty() || !clientListList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("ClientList");
+                jsonGenerator.writeStartArray();
+                for (String clientListListValue : clientListList) {
+                    if (clientListListValue != null) {
+                        jsonGenerator.writeValue(clientListListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
