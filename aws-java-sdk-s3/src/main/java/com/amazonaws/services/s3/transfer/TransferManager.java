@@ -41,6 +41,7 @@ import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
+import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.services.s3.transfer.internal.CopyCallable;
@@ -1334,10 +1335,50 @@ public class TransferManager {
      *            files found in subdirectories will be included with an
      *            appropriate concatenation to the key prefix.
      * @param metadataProvider
-     * 			  A callback of type <code>ObjectMetadataProvider</code> which
+     *            A callback of type <code>ObjectMetadataProvider</code> which
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider) {
+        return uploadDirectory( bucketName,  virtualDirectoryKeyPrefix,  directory,  includeSubdirectories, metadataProvider, null);
+    }
+
+
+    /**
+     * Uploads all files in the directory given to the bucket named, optionally
+     * recursing for all subdirectories.
+     * <p>
+     * S3 will overwrite any existing objects that happen to have the same key,
+     * just as when uploading individual files, so use with caution.
+     * </p>
+     * <p>
+     * If you are uploading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     * @param bucketName
+     *            The name of the bucket to upload objects to.
+     * @param virtualDirectoryKeyPrefix
+     *            The key prefix of the virtual directory to upload to. Use the
+     *            null or empty string to upload files to the root of the
+     *            bucket.
+     * @param directory
+     *            The directory to upload.
+     * @param includeSubdirectories
+     *            Whether to include subdirectories in the upload. If true,
+     *            files found in subdirectories will be included with an
+     *            appropriate concatenation to the key prefix.
+     * @param metadataProvider
+     *            A callback of type <code>ObjectMetadataProvider</code> which
+     *            is used to provide metadata for each file being uploaded.
+     * @param taggingProvider
+     *            A callback of type <code>ObjectTaggingProvider</code> which
+     *            is used to provide the tags for each file being uploaded.
+     * @return
+     */
+    public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider, ObjectTaggingProvider taggingProvider) {
         if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
             throw new IllegalArgumentException("Must provide a directory to upload");
         }
@@ -1345,7 +1386,7 @@ public class TransferManager {
         List<File> files = new LinkedList<File>();
         listFiles(directory, files, includeSubdirectories);
 
-        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider);
+        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider, taggingProvider);
     }
 
     /**
@@ -1418,6 +1459,46 @@ public class TransferManager {
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files,ObjectMetadataProvider metadataProvider) {
+        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider,null);
+    }
+
+    /**
+     * Uploads all specified files to the bucket named, constructing
+     * relative keys depending on the commonParentDirectory given.
+     * <p>
+     * S3 will overwrite any existing objects that happen to have the same key,
+     * just as when uploading individual files, so use with caution.
+     * </p>
+     * <p>
+     * If you are uploading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param bucketName
+     *            The name of the bucket to upload objects to.
+     * @param virtualDirectoryKeyPrefix
+     *            The key prefix of the virtual directory to upload to. Use the
+     *            null or empty string to upload files to the root of the
+     *            bucket.
+     * @param directory
+     *            The common parent directory of files to upload. The keys
+     *            of the files in the list of files are constructed relative to
+     *            this directory and the virtualDirectoryKeyPrefix.
+     * @param files
+     *            A list of files to upload. The keys of the files are
+     *            calculated relative to the common parent directory and the
+     *            virtualDirectoryKeyPrefix.
+     * @param metadataProvider
+     * 			  A callback of type <code>ObjectMetadataProvider</code> which
+     *            is used to provide metadata for each file being uploaded.
+     * @param taggingProvider
+     * @return
+     */
+    public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files, ObjectMetadataProvider metadataProvider, ObjectTaggingProvider taggingProvider) {
 
         if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
             throw new IllegalArgumentException("Must provide a common base directory for uploaded files");
@@ -1445,9 +1526,9 @@ public class TransferManager {
         multipleFileUpload.setMonitor(new MultipleFileTransferMonitor(multipleFileUpload, uploads));
         final CountDownLatch latch = new CountDownLatch(1);
         MultipleFileTransferStateChangeListener transferListener =
-            new MultipleFileTransferStateChangeListener(latch, multipleFileUpload);
+                new MultipleFileTransferStateChangeListener(latch, multipleFileUpload);
         if (files == null || files.isEmpty()) {
-            multipleFileUpload.setState(TransferState.Completed);
+            multipleFileUpload.setState(Transfer.TransferState.Completed);
         } else {
             /*
              * If the absolute path for the common/base directory does NOT end
@@ -1471,12 +1552,19 @@ public class TransferManager {
                             .replaceAll("\\\\", "/");
 
                     ObjectMetadata metadata = new ObjectMetadata();
+                    ObjectTagging objectTagging = null;
 
                     // Invoke the callback if it's present.
                     // The callback allows the user to customize the metadata
                     // for each file being uploaded.
                     if (metadataProvider != null) {
                         metadataProvider.provideObjectMetadata(f, metadata);
+                    }
+                    // Invoke the callback if it's present.
+                    // The callback allows the user to customize the tags
+                    // for each file being uploaded.
+                    if(taggingProvider != null) {
+                        objectTagging = taggingProvider.provideObjectTags(f);
                     }
 
                     // All the single-file uploads share the same
@@ -1486,6 +1574,7 @@ public class TransferManager {
                             new PutObjectRequest(bucketName,
                                     virtualDirectoryKeyPrefix + key, f)
                                     .withMetadata(metadata)
+                                    .withTagging(objectTagging)
                                     .<PutObjectRequest> withGeneralProgressListener(
                                             listener), transferListener, null, null));
                 }
@@ -1498,6 +1587,7 @@ public class TransferManager {
         latch.countDown();
         return multipleFileUpload;
     }
+
 
     /**
      * Lists files in the directory given and adds them to the result list
