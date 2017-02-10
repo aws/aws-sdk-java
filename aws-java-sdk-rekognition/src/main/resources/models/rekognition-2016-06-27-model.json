@@ -793,6 +793,54 @@
       "value" : null,
       "wrapper" : false
     },
+    "AgeRange" : {
+      "deprecated" : false,
+      "documentation" : "<p>Structure containing the estimated age range, in years, for a face.</p> <p>Rekognition estimates an age-range for faces detected in the input image. Estimated age ranges can overlap; a face of a 5 year old may have an estimated range of 4-6 whilst the face of a 6 year old may have an estimated range of 4-8.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "High" : {
+          "deprecated" : false,
+          "documentation" : "<p>The highest estimated age.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Low" : {
+          "deprecated" : false,
+          "documentation" : "<p>The lowest estimated age.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "Attribute" : {
       "deprecated" : false,
       "documentation" : null,
@@ -2110,6 +2158,19 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AgeRange" : {
+          "deprecated" : false,
+          "documentation" : "<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AgeRange",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Beard" : {
           "deprecated" : false,
           "documentation" : "<p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>",

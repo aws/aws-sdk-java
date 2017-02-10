@@ -1,3 +1,12 @@
+# __1.11.88__ __2017-02-09__
+## __Amazon EC2__
+  - <h3>Features</h3>
+    - This feature allows customers to associate an IAM profile to running instances that do not have any.
+
+## __Amazon Rekognition__
+  - <h3>Features</h3>
+    - DetectFaces and IndexFaces operations now return an estimate of the age of the face as an age range.
+
 # __1.11.87__ __2017-02-08__
 ## __Amazon Lex__
   - <h3>Features</h3>

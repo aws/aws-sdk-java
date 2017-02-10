@@ -451,6 +451,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Associates an IAM instance profile with a running or stopped instance. You cannot associate more than one IAM
+     * instance profile with an instance.
+     * </p>
+     * 
+     * @param associateIamInstanceProfileRequest
+     * @return A Java Future containing the result of the AssociateIamInstanceProfile operation returned by the service.
+     * @sample AmazonEC2Async.AssociateIamInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(
+            AssociateIamInstanceProfileRequest associateIamInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Associates an IAM instance profile with a running or stopped instance. You cannot associate more than one IAM
+     * instance profile with an instance.
+     * </p>
+     * 
+     * @param associateIamInstanceProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateIamInstanceProfile operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AssociateIamInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(
+            AssociateIamInstanceProfileRequest associateIamInstanceProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateIamInstanceProfileRequest, AssociateIamInstanceProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association
      * causes traffic originating from the subnet to be routed according to the routes in the route table. The action
      * returns an association ID, which you need in order to disassociate the route table from the subnet later. A route
@@ -5146,6 +5181,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes your IAM instance profile associations.
+     * </p>
+     * 
+     * @param describeIamInstanceProfileAssociationsRequest
+     * @return A Java Future containing the result of the DescribeIamInstanceProfileAssociations operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.DescribeIamInstanceProfileAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIamInstanceProfileAssociationsResult> describeIamInstanceProfileAssociationsAsync(
+            DescribeIamInstanceProfileAssociationsRequest describeIamInstanceProfileAssociationsRequest);
+
+    /**
+     * <p>
+     * Describes your IAM instance profile associations.
+     * </p>
+     * 
+     * @param describeIamInstanceProfileAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIamInstanceProfileAssociations operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.DescribeIamInstanceProfileAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIamInstanceProfileAssociationsResult> describeIamInstanceProfileAssociationsAsync(
+            DescribeIamInstanceProfileAssociationsRequest describeIamInstanceProfileAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIamInstanceProfileAssociationsRequest, DescribeIamInstanceProfileAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the ID format settings for your resources on a per-region basis, for example, to view which resource
      * types are enabled for longer IDs. This request only returns information about resource types whose ID formats can
      * be modified; it does not return information about other resource types.
@@ -8495,6 +8565,47 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Disassociates an IAM instance profile from a running or stopped instance.
+     * </p>
+     * <p>
+     * Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+     * </p>
+     * 
+     * @param disassociateIamInstanceProfileRequest
+     * @return A Java Future containing the result of the DisassociateIamInstanceProfile operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisassociateIamInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(
+            DisassociateIamInstanceProfileRequest disassociateIamInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Disassociates an IAM instance profile from a running or stopped instance.
+     * </p>
+     * <p>
+     * Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+     * </p>
+     * 
+     * @param disassociateIamInstanceProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateIamInstanceProfile operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisassociateIamInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(
+            DisassociateIamInstanceProfileRequest disassociateIamInstanceProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIamInstanceProfileRequest, DisassociateIamInstanceProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates a subnet from a route table.
      * </p>
      * <p>
@@ -10610,6 +10721,51 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Replaces an IAM instance profile for the specified instance. You can use this action to change the IAM instance
+     * profile that's associated with an instance without having to disassociate the existing IAM instance profile
+     * first.
+     * </p>
+     * <p>
+     * Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+     * </p>
+     * 
+     * @param replaceIamInstanceProfileAssociationRequest
+     * @return A Java Future containing the result of the ReplaceIamInstanceProfileAssociation operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ReplaceIamInstanceProfileAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ReplaceIamInstanceProfileAssociationResult> replaceIamInstanceProfileAssociationAsync(
+            ReplaceIamInstanceProfileAssociationRequest replaceIamInstanceProfileAssociationRequest);
+
+    /**
+     * <p>
+     * Replaces an IAM instance profile for the specified instance. You can use this action to change the IAM instance
+     * profile that's associated with an instance without having to disassociate the existing IAM instance profile
+     * first.
+     * </p>
+     * <p>
+     * Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+     * </p>
+     * 
+     * @param replaceIamInstanceProfileAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplaceIamInstanceProfileAssociation operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ReplaceIamInstanceProfileAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ReplaceIamInstanceProfileAssociationResult> replaceIamInstanceProfileAssociationAsync(
+            ReplaceIamInstanceProfileAssociationRequest replaceIamInstanceProfileAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<ReplaceIamInstanceProfileAssociationRequest, ReplaceIamInstanceProfileAssociationResult> asyncHandler);
+
+    /**
+     * <p>
      * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically
      * associated with the default network ACL. For more information about network ACLs, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
@@ -11317,7 +11473,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <li>
      * <p>
      * Not all instance types support IPv6 addresses. For more information, see <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>.
      * </p>
      * </li>
      * <li>
@@ -11401,7 +11557,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <li>
      * <p>
      * Not all instance types support IPv6 addresses. For more information, see <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>.
      * </p>
      * </li>
      * <li>

@@ -673,6 +673,49 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Associates an IAM instance profile with a running or stopped instance. You cannot associate more than one IAM
+     * instance profile with an instance.
+     * </p>
+     * 
+     * @param associateIamInstanceProfileRequest
+     * @return Result of the AssociateIamInstanceProfile operation returned by the service.
+     * @sample AmazonEC2.AssociateIamInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateIamInstanceProfileResult associateIamInstanceProfile(AssociateIamInstanceProfileRequest associateIamInstanceProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateIamInstanceProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateIamInstanceProfileRequest> request = null;
+        Response<AssociateIamInstanceProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateIamInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(associateIamInstanceProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AssociateIamInstanceProfileResult> responseHandler = new StaxResponseHandler<AssociateIamInstanceProfileResult>(
+                    new AssociateIamInstanceProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association
      * causes traffic originating from the subnet to be routed according to the routes in the route table. The action
      * returns an association ID, which you need in order to disassociate the route table from the subnet later. A route
@@ -5300,6 +5343,50 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes your IAM instance profile associations.
+     * </p>
+     * 
+     * @param describeIamInstanceProfileAssociationsRequest
+     * @return Result of the DescribeIamInstanceProfileAssociations operation returned by the service.
+     * @sample AmazonEC2.DescribeIamInstanceProfileAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeIamInstanceProfileAssociationsResult describeIamInstanceProfileAssociations(
+            DescribeIamInstanceProfileAssociationsRequest describeIamInstanceProfileAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeIamInstanceProfileAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeIamInstanceProfileAssociationsRequest> request = null;
+        Response<DescribeIamInstanceProfileAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeIamInstanceProfileAssociationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeIamInstanceProfileAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeIamInstanceProfileAssociationsResult> responseHandler = new StaxResponseHandler<DescribeIamInstanceProfileAssociationsResult>(
+                    new DescribeIamInstanceProfileAssociationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the ID format settings for your resources on a per-region basis, for example, to view which resource
      * types are enabled for longer IDs. This request only returns information about resource types whose ID formats can
      * be modified; it does not return information about other resource types.
@@ -8445,6 +8532,51 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Disassociates an IAM instance profile from a running or stopped instance.
+     * </p>
+     * <p>
+     * Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+     * </p>
+     * 
+     * @param disassociateIamInstanceProfileRequest
+     * @return Result of the DisassociateIamInstanceProfile operation returned by the service.
+     * @sample AmazonEC2.DisassociateIamInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateIamInstanceProfileResult disassociateIamInstanceProfile(DisassociateIamInstanceProfileRequest disassociateIamInstanceProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateIamInstanceProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateIamInstanceProfileRequest> request = null;
+        Response<DisassociateIamInstanceProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateIamInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(disassociateIamInstanceProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisassociateIamInstanceProfileResult> responseHandler = new StaxResponseHandler<DisassociateIamInstanceProfileResult>(
+                    new DisassociateIamInstanceProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates a subnet from a route table.
      * </p>
      * <p>
@@ -10593,6 +10725,55 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Replaces an IAM instance profile for the specified instance. You can use this action to change the IAM instance
+     * profile that's associated with an instance without having to disassociate the existing IAM instance profile
+     * first.
+     * </p>
+     * <p>
+     * Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+     * </p>
+     * 
+     * @param replaceIamInstanceProfileAssociationRequest
+     * @return Result of the ReplaceIamInstanceProfileAssociation operation returned by the service.
+     * @sample AmazonEC2.ReplaceIamInstanceProfileAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ReplaceIamInstanceProfileAssociationResult replaceIamInstanceProfileAssociation(
+            ReplaceIamInstanceProfileAssociationRequest replaceIamInstanceProfileAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(replaceIamInstanceProfileAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReplaceIamInstanceProfileAssociationRequest> request = null;
+        Response<ReplaceIamInstanceProfileAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReplaceIamInstanceProfileAssociationRequestMarshaller().marshall(super
+                        .beforeMarshalling(replaceIamInstanceProfileAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ReplaceIamInstanceProfileAssociationResult> responseHandler = new StaxResponseHandler<ReplaceIamInstanceProfileAssociationResult>(
+                    new ReplaceIamInstanceProfileAssociationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically
      * associated with the default network ACL. For more information about network ACLs, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
@@ -11323,7 +11504,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <li>
      * <p>
      * Not all instance types support IPv6 addresses. For more information, see <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>.
      * </p>
      * </li>
      * <li>

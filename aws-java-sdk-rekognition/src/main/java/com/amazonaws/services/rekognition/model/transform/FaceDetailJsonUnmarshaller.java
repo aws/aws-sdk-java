@@ -52,6 +52,10 @@ public class FaceDetailJsonUnmarshaller implements Unmarshaller<FaceDetail, Json
                     context.nextToken();
                     faceDetail.setBoundingBox(BoundingBoxJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AgeRange", targetDepth)) {
+                    context.nextToken();
+                    faceDetail.setAgeRange(AgeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Smile", targetDepth)) {
                     context.nextToken();
                     faceDetail.setSmile(SmileJsonUnmarshaller.getInstance().unmarshall(context));

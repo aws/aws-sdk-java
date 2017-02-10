@@ -42,6 +42,10 @@ public class FaceDetailJsonMarshaller {
                 jsonGenerator.writeFieldName("BoundingBox");
                 BoundingBoxJsonMarshaller.getInstance().marshall(faceDetail.getBoundingBox(), jsonGenerator);
             }
+            if (faceDetail.getAgeRange() != null) {
+                jsonGenerator.writeFieldName("AgeRange");
+                AgeRangeJsonMarshaller.getInstance().marshall(faceDetail.getAgeRange(), jsonGenerator);
+            }
             if (faceDetail.getSmile() != null) {
                 jsonGenerator.writeFieldName("Smile");
                 SmileJsonMarshaller.getInstance().marshall(faceDetail.getSmile(), jsonGenerator);

@@ -89,6 +89,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public AssociateIamInstanceProfileResult associateIamInstanceProfile(AssociateIamInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateRouteTableResult associateRouteTable(AssociateRouteTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -609,6 +614,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeIamInstanceProfileAssociationsResult describeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeIdFormatResult describeIdFormat(DescribeIdFormatRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1089,6 +1099,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DisassociateIamInstanceProfileResult disassociateIamInstanceProfile(DisassociateIamInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateRouteTableResult disassociateRouteTable(DisassociateRouteTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1305,6 +1320,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ReleaseHostsResult releaseHosts(ReleaseHostsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ReplaceIamInstanceProfileAssociationResult replaceIamInstanceProfileAssociation(ReplaceIamInstanceProfileAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

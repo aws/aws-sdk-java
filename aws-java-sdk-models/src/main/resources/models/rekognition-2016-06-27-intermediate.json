@@ -730,6 +730,270 @@
       },
       "wrapper" : false
     },
+    "AgeRange" : {
+      "c2jName" : "AgeRange",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Structure containing the estimated age range, in years, for a face.</p> <p>Rekognition estimates an age-range for faces detected in the input image. Estimated age ranges can overlap; a face of a 5 year old may have an estimated range of 4-6 whilst the face of a 6 year old may have an estimated range of 4-8.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Low",
+        "c2jShape" : "UInteger",
+        "deprecated" : false,
+        "documentation" : "<p>The lowest estimated age.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The lowest estimated age.</p>\n@param low The lowest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLow",
+        "getterDocumentation" : "/**<p>The lowest estimated age.</p>\n@return The lowest estimated age.*/",
+        "getterMethodName" : "getLow",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "Low",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Low",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Low",
+        "setterDocumentation" : "/**<p>The lowest estimated age.</p>\n@param low The lowest estimated age.*/",
+        "setterMethodName" : "setLow",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "low",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The lowest estimated age.</p>\n@param low The lowest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "low",
+          "variableType" : "Integer",
+          "documentation" : "<p>The lowest estimated age.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "High",
+        "c2jShape" : "UInteger",
+        "deprecated" : false,
+        "documentation" : "<p>The highest estimated age.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The highest estimated age.</p>\n@param high The highest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withHigh",
+        "getterDocumentation" : "/**<p>The highest estimated age.</p>\n@return The highest estimated age.*/",
+        "getterMethodName" : "getHigh",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "High",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "High",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "High",
+        "setterDocumentation" : "/**<p>The highest estimated age.</p>\n@param high The highest estimated age.*/",
+        "setterMethodName" : "setHigh",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "high",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The highest estimated age.</p>\n@param high The highest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "high",
+          "variableType" : "Integer",
+          "documentation" : "<p>The highest estimated age.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "High" : {
+          "c2jName" : "High",
+          "c2jShape" : "UInteger",
+          "deprecated" : false,
+          "documentation" : "<p>The highest estimated age.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The highest estimated age.</p>\n@param high The highest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withHigh",
+          "getterDocumentation" : "/**<p>The highest estimated age.</p>\n@return The highest estimated age.*/",
+          "getterMethodName" : "getHigh",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "High",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "High",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "High",
+          "setterDocumentation" : "/**<p>The highest estimated age.</p>\n@param high The highest estimated age.*/",
+          "setterMethodName" : "setHigh",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "high",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The highest estimated age.</p>\n@param high The highest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "high",
+            "variableType" : "Integer",
+            "documentation" : "<p>The highest estimated age.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Low" : {
+          "c2jName" : "Low",
+          "c2jShape" : "UInteger",
+          "deprecated" : false,
+          "documentation" : "<p>The lowest estimated age.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The lowest estimated age.</p>\n@param low The lowest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLow",
+          "getterDocumentation" : "/**<p>The lowest estimated age.</p>\n@return The lowest estimated age.*/",
+          "getterMethodName" : "getLow",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "Low",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Low",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Low",
+          "setterDocumentation" : "/**<p>The lowest estimated age.</p>\n@param low The lowest estimated age.*/",
+          "setterMethodName" : "setLow",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "low",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The lowest estimated age.</p>\n@param low The lowest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "low",
+            "variableType" : "Integer",
+            "documentation" : "<p>The lowest estimated age.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "AgeRange",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "AgeRange",
+        "variableName" : "ageRange",
+        "variableType" : "AgeRange",
+        "documentation" : null,
+        "simpleType" : "AgeRange",
+        "variableSetterType" : "AgeRange"
+      },
+      "wrapper" : false
+    },
     "Attribute" : {
       "c2jName" : "Attribute",
       "customization" : {
@@ -7667,6 +7931,62 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "AgeRange",
+        "c2jShape" : "AgeRange",
+        "deprecated" : false,
+        "documentation" : "<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>\n@param ageRange The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAgeRange",
+        "getterDocumentation" : "/**<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>\n@return The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.*/",
+        "getterMethodName" : "getAgeRange",
+        "getterModel" : {
+          "returnType" : "AgeRange",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "AgeRange",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AgeRange",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "AgeRange",
+        "setterDocumentation" : "/**<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>\n@param ageRange The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.*/",
+        "setterMethodName" : "setAgeRange",
+        "setterModel" : {
+          "variableDeclarationType" : "AgeRange",
+          "variableName" : "ageRange",
+          "variableType" : "AgeRange",
+          "documentation" : "",
+          "simpleType" : "AgeRange",
+          "variableSetterType" : "AgeRange"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>\n@param ageRange The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "AgeRange",
+          "variableName" : "ageRange",
+          "variableType" : "AgeRange",
+          "documentation" : "<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>",
+          "simpleType" : "AgeRange",
+          "variableSetterType" : "AgeRange"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Smile",
         "c2jShape" : "Smile",
         "deprecated" : false,
@@ -8538,6 +8858,63 @@
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "AgeRange" : {
+          "c2jName" : "AgeRange",
+          "c2jShape" : "AgeRange",
+          "deprecated" : false,
+          "documentation" : "<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>\n@param ageRange The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAgeRange",
+          "getterDocumentation" : "/**<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>\n@return The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.*/",
+          "getterMethodName" : "getAgeRange",
+          "getterModel" : {
+            "returnType" : "AgeRange",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "AgeRange",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AgeRange",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "AgeRange",
+          "setterDocumentation" : "/**<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>\n@param ageRange The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.*/",
+          "setterMethodName" : "setAgeRange",
+          "setterModel" : {
+            "variableDeclarationType" : "AgeRange",
+            "variableName" : "ageRange",
+            "variableType" : "AgeRange",
+            "documentation" : "",
+            "simpleType" : "AgeRange",
+            "variableSetterType" : "AgeRange"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>\n@param ageRange The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "AgeRange",
+            "variableName" : "ageRange",
+            "variableType" : "AgeRange",
+            "documentation" : "<p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>",
+            "simpleType" : "AgeRange",
+            "variableSetterType" : "AgeRange"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Beard" : {
           "c2jName" : "Beard",
           "c2jShape" : "Beard",
