@@ -1496,6 +1496,8 @@ public class TransferManager {
      * 			  A callback of type <code>ObjectMetadataProvider</code> which
      *            is used to provide metadata for each file being uploaded.
      * @param taggingProvider
+     *             A callback of type <code>ObjectTaggingProvider</code> which
+     *            is used to provide the tags for each file being uploaded.
      * @return
      */
     public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files, ObjectMetadataProvider metadataProvider, ObjectTaggingProvider taggingProvider) {
@@ -1528,7 +1530,7 @@ public class TransferManager {
         MultipleFileTransferStateChangeListener transferListener =
                 new MultipleFileTransferStateChangeListener(latch, multipleFileUpload);
         if (files == null || files.isEmpty()) {
-            multipleFileUpload.setState(Transfer.TransferState.Completed);
+            multipleFileUpload.setState(TransferState.Completed);
         } else {
             /*
              * If the absolute path for the common/base directory does NOT end
@@ -1551,6 +1553,7 @@ public class TransferManager {
                             .substring(startingPosition)
                             .replaceAll("\\\\", "/");
 
+                    UploadContext uploadContext = new UploadContext(f, bucketName, key);
                     ObjectMetadata metadata = new ObjectMetadata();
                     ObjectTagging objectTagging = null;
 
@@ -1563,8 +1566,8 @@ public class TransferManager {
                     // Invoke the callback if it's present.
                     // The callback allows the user to customize the tags
                     // for each file being uploaded.
-                    if(taggingProvider != null) {
-                        objectTagging = taggingProvider.provideObjectTags(f);
+                    if (taggingProvider != null) {
+                        objectTagging = taggingProvider.provideObjectTags(uploadContext);
                     }
 
                     // All the single-file uploads share the same
@@ -1587,7 +1590,6 @@ public class TransferManager {
         latch.countDown();
         return multipleFileUpload;
     }
-
 
     /**
      * Lists files in the directory given and adds them to the result list

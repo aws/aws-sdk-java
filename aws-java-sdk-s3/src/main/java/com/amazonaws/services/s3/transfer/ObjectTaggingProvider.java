@@ -32,12 +32,12 @@ public interface ObjectTaggingProvider {
      * This method is called for every file that is uploaded by <code>TransferManager</code>
      * and gives an opportunity to specify the tags for the file.
      *
-     * @param file
-	 * 			The file being uploaded.
-	 *
-	 * @return ObjectTagging
-	 *          The ObjectTagging to be used in the PutObjectRequest withTagging call.
-	 *
-	 */
-    public ObjectTagging provideObjectTags(final File file);
+     * @param uploadContext
+     *          The context object providing information about the file being uploaded.
+     *
+     * @return ObjectTagging
+     *          The ObjectTagging to be used in the PutObjectRequest withTagging call.
+     *
+     */
+    public ObjectTagging provideObjectTags(UploadContext uploadContext);
 }
