@@ -231,6 +231,10 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
         this.executorService = executorService;
     }
 
+    public static AWSBatchAsyncClientBuilder asyncBuilder() {
+        return AWSBatchAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Batch using the specified parameters.
      *

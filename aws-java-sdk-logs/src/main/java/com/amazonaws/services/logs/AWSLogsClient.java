@@ -282,6 +282,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         init();
     }
 
+    public static AWSLogsClientBuilder builder() {
+        return AWSLogsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch Logs using the specified parameters.
      *

@@ -292,6 +292,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         init();
     }
 
+    public static AWSIotClientBuilder builder() {
+        return AWSIotClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS IoT using the specified parameters.
      *

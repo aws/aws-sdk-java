@@ -243,6 +243,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         init();
     }
 
+    public static AmazonDirectConnectClientBuilder builder() {
+        return AmazonDirectConnectClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Direct Connect using the specified parameters.
      *

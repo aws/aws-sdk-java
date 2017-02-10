@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
@@ -55,6 +56,7 @@ import com.amazonaws.internal.auth.SignerProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.services.s3.internal.AWSS3V4Signer;
@@ -370,7 +372,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static final RequestPaymentConfigurationXmlFactory requestPaymentConfigurationXmlFactory = new RequestPaymentConfigurationXmlFactory();
 
     /** S3 specific client configuration options */
-    private volatile S3ClientOptions clientOptions = new S3ClientOptions();
+    private volatile S3ClientOptions clientOptions = S3ClientOptions.builder().build();
 
     /**
      * The S3 client region that is set by either (a) calling
@@ -649,6 +651,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         init();
     }
 
+    public static AmazonS3ClientBuilder builder() {
+        return AmazonS3ClientBuilder.standard();
+    }
+
     private void init() {
 
         // calling this.setEndpoint(...) will also modify the signer accordingly
@@ -662,19 +668,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
     }
 
-    /**
-     * Validates whether the supplied client options are a valid instantiation
-     * of an AmazonS3Client.
-     */
-    private void validateClientOptions() {
-
-        /** Dualstack mode requires setting the region */
-        if (clientOptions.isDualstackEnabled()) {
-            if (getRegion() == null) {
-                throw new IllegalStateException("The dualstack mode of Amazon S3 cannot be used without specifying a region");
-            }
-        }
-    }
 
     /**
      * @deprecated use {@link AmazonS3ClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)}
@@ -805,7 +798,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addParameterIfNotNull(request, "version-id-marker", listVersionsRequest.getVersionIdMarker());
         addParameterIfNotNull(request, "delimiter", listVersionsRequest.getDelimiter());
 
-        if (listVersionsRequest.getMaxResults() != null && listVersionsRequest.getMaxResults().intValue() >= 0) request.addParameter("max-keys", listVersionsRequest.getMaxResults().toString());
+        if (listVersionsRequest.getMaxResults() != null && listVersionsRequest.getMaxResults() >= 0) request.addParameter("max-keys", listVersionsRequest.getMaxResults().toString());
         request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listVersionsRequest.getEncodingType());
 
         return invoke(request, new Unmarshallers.VersionListUnmarshaller(shouldSDKDecodeResponse), listVersionsRequest.getBucketName(), null);
@@ -983,21 +976,22 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public Bucket createBucket(CreateBucketRequest createBucketRequest)
             throws SdkClientException, AmazonServiceException {
         rejectNull(createBucketRequest,
-                "The CreateBucketRequest parameter must be specified when creating a bucket");
+                   "The CreateBucketRequest parameter must be specified when creating a bucket");
 
         String bucketName = createBucketRequest.getBucketName();
-        String region = createBucketRequest.getRegion();
-        rejectNull(bucketName,
-                "The bucket name parameter must be specified when creating a bucket");
+        rejectNull(bucketName, "The bucket name parameter must be specified when creating a bucket");
+        bucketName = bucketName.trim();
 
-        if (bucketName != null) bucketName = bucketName.trim();
+        String requestRegion = createBucketRequest.getRegion();
+        URI requestEndpoint = getCreateBucketEndpoint(requestRegion);
+
         BucketNameUtils.validateBucketName(bucketName);
 
-        Request<CreateBucketRequest> request = createRequest(bucketName, null, createBucketRequest, HttpMethodName.PUT);
+        Request<CreateBucketRequest> request = createRequest(bucketName, null, createBucketRequest, HttpMethodName.PUT, requestEndpoint);
 
-        if ( createBucketRequest.getAccessControlList() != null ) {
+        if (createBucketRequest.getAccessControlList() != null) {
             addAclHeaders(request, createBucketRequest.getAccessControlList());
-        } else if ( createBucketRequest.getCannedAcl() != null ) {
+        } else if (createBucketRequest.getCannedAcl() != null) {
             request.addHeader(Headers.S3_CANNED_ACL, createBucketRequest.getCannedAcl().toString());
         }
 
@@ -1006,18 +1000,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-        if (!(getSignerRegion() == null || getSignerRegion().equals("us-east-1")) && StringUtils.isNullOrEmpty(region)) {
-            region = AwsHostNameUtils.parseRegion(endpoint.getHost(), S3_SERVICE_NAME);
+        if (getSignerRegion() != null && !getSignerRegion().equals("us-east-1") && StringUtils.isNullOrEmpty(requestRegion)) {
+            requestRegion = AwsHostNameUtils.parseRegion(requestEndpoint.getHost(), S3_SERVICE_NAME);
         }
 
         /*
          * We can only send the CreateBucketConfiguration if we're *not*
          * creating a bucket in the US region.
          */
-        if (region != null && !StringUtils.upperCase(region).equals(Region.US_Standard.toString())) {
+        if (requestRegion != null && !StringUtils.upperCase(requestRegion).equals(Region.US_Standard.toString())) {
             XmlWriter xml = new XmlWriter();
             xml.start("CreateBucketConfiguration", "xmlns", Constants.XML_NAMESPACE);
-            xml.start("LocationConstraint").value(region).end();
+            xml.start("LocationConstraint").value(requestRegion).end();
             xml.end();
 
             request.setContent(new ByteArrayInputStream(xml.getBytes()));
@@ -1026,6 +1020,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         invoke(request, voidResponseHandler, bucketName, null);
 
         return new Bucket(bucketName);
+    }
+
+    private URI getCreateBucketEndpoint(String requestRegion) {
+        // Route to the default endpoint if they're not trying to specify a different one in the request.
+        if(requestRegion == null || requestRegion.equals(clientRegion) || !clientOptions.isForceGlobalBucketAccessEnabled()) {
+            return endpoint;
+        }
+
+        // If they enabled global bucket access and they're trying to create a bucket in a region different than the default
+        // one specified when they created the client, it will probably fail because only us-east-1 (actually the global
+        // endpoint) is capable of creating buckets outside of its region. Override the endpoint to which the request
+        // is routed so that it will succeed.
+
+        com.amazonaws.regions.Region targetRegion = com.amazonaws.regions.Region.getRegion(Regions.fromName(requestRegion));
+        return new DefaultServiceEndpointBuilder(getEndpointPrefix(),
+                                                 clientConfiguration.getProtocol().toString()).withRegion(targetRegion)
+                                                                                              .getServiceEndpoint();
     }
 
     @Override
@@ -3433,7 +3444,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (!isSignerOverridden()) {
 
-            if ((signer instanceof AWSS3V4Signer) && noExplicitRegionProvided(request)) {
+            if ((signer instanceof AWSS3V4Signer) && bucketRegionShouldBeCached(request)) {
 
                 String region = bucketRegionCache.get(bucketName);
                 if (region != null) {
@@ -4071,9 +4082,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
-        /** Validates the specified client options before creating the request */
-        validateClientOptions();
-
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
         request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED,
@@ -4081,6 +4089,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED,
                 Boolean.valueOf(clientOptions.isPayloadSigningEnabled()));
         resolveRequestEndpoint(request, bucketName, key, endpoint);
+
         return request;
     }
 
@@ -4165,8 +4174,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
 
             // Update the bucketRegionCache if we can't find region for the request
-            if (bucket != null && !(request.getOriginalRequest() instanceof CreateBucketRequest)
-                    && !isAdditionalHeadRequestToFindRegion && noExplicitRegionProvided(request)) {
+            if (!isAdditionalHeadRequestToFindRegion && shouldPerformHeadRequestToFindRegion(request, bucket)) {
                 fetchRegionFromCache(bucket);
             }
 
@@ -4182,8 +4190,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-            response = client.execute(request, responseHandler,
-                    errorResponseHandler, executionContext);
+            validateRequestBeforeTransmit(request);
+            response = client.execute(request, responseHandler, errorResponseHandler, executionContext);
 
             return response.getAwsResponse();
         } catch (ResetException ex) {
@@ -4210,6 +4218,42 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
+    }
+
+    private void validateRequestBeforeTransmit(Request<?> request) {
+        boolean implicitCrossRegionForbidden = areImplicitGlobalClientsDisabled();
+        boolean explicitCrossRegionEnabled = clientOptions.isForceGlobalBucketAccessEnabled();
+
+        // The region must be set if implicit cross region clients are not allowed
+        if (noExplicitRegionProvided(request) && implicitCrossRegionForbidden && !explicitCrossRegionEnabled) {
+            String error = String.format("While the %s system property is enabled, Amazon S3 clients cannot be used without " +
+                                         "first configuring a region or explicitly enabling global bucket access discovery " +
+                                         "in the S3 client builder.",
+                                         SDKGlobalConfiguration.DISABLE_S3_IMPLICIT_GLOBAL_CLIENTS_SYSTEM_PROPERTY);
+            throw new IllegalStateException(error);
+        }
+    }
+
+    /**
+     * Returns true in the event that the {@link SDKGlobalConfiguration#DISABLE_S3_IMPLICIT_GLOBAL_CLIENTS_SYSTEM_PROPERTY}
+     * is non-null and not "false".
+     *
+     * If this system property is set, S3 clients may not act in a cross-region manner unless cross-region behavior is
+     * explicitly enabled, using options like {@link AmazonS3ClientBuilder#enableForceGlobalBucketAccess()}.
+     */
+    private boolean areImplicitGlobalClientsDisabled() {
+        String setting = System.getProperty(SDKGlobalConfiguration.DISABLE_S3_IMPLICIT_GLOBAL_CLIENTS_SYSTEM_PROPERTY);
+        return setting != null && !setting.equals("false");
+    }
+
+    private boolean shouldPerformHeadRequestToFindRegion(Request<?> request, String bucket) {
+        return bucket != null &&
+               !(request.getOriginalRequest() instanceof CreateBucketRequest) &&
+               bucketRegionShouldBeCached(request);
+    }
+
+    private boolean bucketRegionShouldBeCached(Request<?> request) {
+        return clientOptions.isForceGlobalBucketAccessEnabled() || noExplicitRegionProvided(request);
     }
 
     @Override
@@ -4875,7 +4919,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 log.debug("Bucket region cache doesn't have an entry for " + bucketName
                         + ". Trying to get bucket region from Amazon S3.");
             }
+
             bucketRegion = getBucketRegionViaHeadRequest(bucketName);
+
             if (bucketRegion != null) {
                 bucketRegionCache.put(bucketName, bucketRegion);
             }

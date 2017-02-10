@@ -250,6 +250,10 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
         this.executorService = executorService;
     }
 
+    public static AmazonDynamoDBStreamsAsyncClientBuilder asyncBuilder() {
+        return AmazonDynamoDBStreamsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon DynamoDB Streams using the specified
      * parameters.

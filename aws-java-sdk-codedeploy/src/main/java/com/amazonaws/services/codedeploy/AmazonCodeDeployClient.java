@@ -521,6 +521,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         init();
     }
 
+    public static AmazonCodeDeployClientBuilder builder() {
+        return AmazonCodeDeployClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on CodeDeploy using the specified parameters.
      *

@@ -234,6 +234,10 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
         this.executorService = executorService;
     }
 
+    public static AmazonDynamoDBAsyncClientBuilder asyncBuilder() {
+        return AmazonDynamoDBAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on DynamoDB using the specified parameters.
      *

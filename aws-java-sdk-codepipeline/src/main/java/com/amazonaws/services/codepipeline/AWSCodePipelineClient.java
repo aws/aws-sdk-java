@@ -465,6 +465,10 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
         init();
     }
 
+    public static AWSCodePipelineClientBuilder builder() {
+        return AWSCodePipelineClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on CodePipeline using the specified parameters.
      *

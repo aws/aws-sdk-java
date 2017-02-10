@@ -259,6 +259,10 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         init();
     }
 
+    public static AWSIotDataClientBuilder builder() {
+        return AWSIotDataClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS IoT Data Plane using the specified parameters.
      *

@@ -250,6 +250,10 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         init();
     }
 
+    public static AWSServerMigrationClientBuilder builder() {
+        return AWSServerMigrationClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on SMS using the specified parameters.
      *

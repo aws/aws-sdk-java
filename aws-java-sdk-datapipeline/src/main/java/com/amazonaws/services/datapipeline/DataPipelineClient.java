@@ -256,6 +256,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         init();
     }
 
+    public static DataPipelineClientBuilder builder() {
+        return DataPipelineClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Data Pipeline using the specified parameters.
      *

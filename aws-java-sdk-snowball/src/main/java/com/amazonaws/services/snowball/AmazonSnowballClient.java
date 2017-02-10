@@ -249,6 +249,10 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonSnowballClientBuilder builder() {
+        return AmazonSnowballClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Snowball using the specified parameters.
      *

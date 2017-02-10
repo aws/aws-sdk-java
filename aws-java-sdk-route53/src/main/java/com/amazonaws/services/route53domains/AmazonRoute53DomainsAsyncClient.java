@@ -216,6 +216,10 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
         this.executorService = executorService;
     }
 
+    public static AmazonRoute53DomainsAsyncClientBuilder asyncBuilder() {
+        return AmazonRoute53DomainsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Route 53 Domains using the specified
      * parameters.

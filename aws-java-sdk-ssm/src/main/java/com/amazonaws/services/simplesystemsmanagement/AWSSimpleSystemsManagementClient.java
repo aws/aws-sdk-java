@@ -436,6 +436,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         init();
     }
 
+    public static AWSSimpleSystemsManagementClientBuilder builder() {
+        return AWSSimpleSystemsManagementClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon SSM using the specified parameters.
      *

@@ -220,6 +220,10 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
         this.executorService = executorService;
     }
 
+    public static AmazonAppStreamAsyncClientBuilder asyncBuilder() {
+        return AmazonAppStreamAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon AppStream using the specified
      * parameters.

@@ -223,6 +223,10 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
         this.executorService = executorService;
     }
 
+    public static AmazonECRAsyncClientBuilder asyncBuilder() {
+        return AmazonECRAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon ECR using the specified parameters.
      *

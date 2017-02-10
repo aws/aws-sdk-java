@@ -222,6 +222,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
         this.executorService = executorService;
     }
 
+    public static AmazonEC2AsyncClientBuilder asyncBuilder() {
+        return AmazonEC2AsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon EC2 using the specified parameters.
      *
@@ -529,6 +533,38 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = associateDhcpOptions(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(AssociateIamInstanceProfileRequest request) {
+
+        return associateIamInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(final AssociateIamInstanceProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateIamInstanceProfileRequest, AssociateIamInstanceProfileResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateIamInstanceProfileResult>() {
+            @Override
+            public AssociateIamInstanceProfileResult call() throws Exception {
+                AssociateIamInstanceProfileResult result;
+
+                try {
+                    result = associateIamInstanceProfile(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3737,6 +3773,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeIamInstanceProfileAssociationsResult> describeIamInstanceProfileAssociationsAsync(
+            DescribeIamInstanceProfileAssociationsRequest request) {
+
+        return describeIamInstanceProfileAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIamInstanceProfileAssociationsResult> describeIamInstanceProfileAssociationsAsync(
+            final DescribeIamInstanceProfileAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeIamInstanceProfileAssociationsRequest, DescribeIamInstanceProfileAssociationsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeIamInstanceProfileAssociationsResult>() {
+            @Override
+            public DescribeIamInstanceProfileAssociationsResult call() throws Exception {
+                DescribeIamInstanceProfileAssociationsResult result;
+
+                try {
+                    result = describeIamInstanceProfileAssociations(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeIdFormatResult> describeIdFormatAsync(DescribeIdFormatRequest request) {
 
         return describeIdFormatAsync(request, null);
@@ -6475,6 +6545,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request) {
+
+        return disassociateIamInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(
+            final DisassociateIamInstanceProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateIamInstanceProfileRequest, DisassociateIamInstanceProfileResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateIamInstanceProfileResult>() {
+            @Override
+            public DisassociateIamInstanceProfileResult call() throws Exception {
+                DisassociateIamInstanceProfileResult result;
+
+                try {
+                    result = disassociateIamInstanceProfile(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateRouteTableResult> disassociateRouteTableAsync(DisassociateRouteTableRequest request) {
 
         return disassociateRouteTableAsync(request, null);
@@ -7858,6 +7961,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = releaseHosts(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplaceIamInstanceProfileAssociationResult> replaceIamInstanceProfileAssociationAsync(
+            ReplaceIamInstanceProfileAssociationRequest request) {
+
+        return replaceIamInstanceProfileAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplaceIamInstanceProfileAssociationResult> replaceIamInstanceProfileAssociationAsync(
+            final ReplaceIamInstanceProfileAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReplaceIamInstanceProfileAssociationRequest, ReplaceIamInstanceProfileAssociationResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ReplaceIamInstanceProfileAssociationResult>() {
+            @Override
+            public ReplaceIamInstanceProfileAssociationResult call() throws Exception {
+                ReplaceIamInstanceProfileAssociationResult result;
+
+                try {
+                    result = replaceIamInstanceProfileAssociation(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

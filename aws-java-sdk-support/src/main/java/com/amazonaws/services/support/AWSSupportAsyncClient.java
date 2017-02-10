@@ -292,6 +292,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
         this.executorService = executorService;
     }
 
+    public static AWSSupportAsyncClientBuilder asyncBuilder() {
+        return AWSSupportAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Support using the specified parameters.
      *

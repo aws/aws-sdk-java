@@ -250,6 +250,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         init();
     }
 
+    public static AmazonElasticTranscoderClientBuilder builder() {
+        return AmazonElasticTranscoderClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Elastic Transcoder using the specified parameters.
      *

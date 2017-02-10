@@ -292,6 +292,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         init();
     }
 
+    public static AmazonElasticLoadBalancingClientBuilder builder() {
+        return AmazonElasticLoadBalancingClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Elastic Load Balancing v2 using the specified parameters.
      *

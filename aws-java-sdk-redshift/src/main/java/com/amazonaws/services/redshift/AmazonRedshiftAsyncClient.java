@@ -244,6 +244,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
         this.executorService = executorService;
     }
 
+    public static AmazonRedshiftAsyncClientBuilder asyncBuilder() {
+        return AmazonRedshiftAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Redshift using the specified parameters.
      *

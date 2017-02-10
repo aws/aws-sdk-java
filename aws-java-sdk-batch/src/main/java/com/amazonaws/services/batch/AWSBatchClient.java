@@ -241,6 +241,10 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         init();
     }
 
+    public static AWSBatchClientBuilder builder() {
+        return AWSBatchClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Batch using the specified parameters.
      *

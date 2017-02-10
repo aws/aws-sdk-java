@@ -236,6 +236,10 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AmazonElastiCacheClientBuilder builder() {
+        return AmazonElastiCacheClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon ElastiCache using the specified parameters.
      *

@@ -274,6 +274,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         init();
     }
 
+    public static AmazonECSClientBuilder builder() {
+        return AmazonECSClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon ECS using the specified parameters.
      *

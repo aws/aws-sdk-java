@@ -242,6 +242,10 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         init();
     }
 
+    public static AWSBudgetsClientBuilder builder() {
+        return AWSBudgetsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWSBudgets using the specified parameters.
      *

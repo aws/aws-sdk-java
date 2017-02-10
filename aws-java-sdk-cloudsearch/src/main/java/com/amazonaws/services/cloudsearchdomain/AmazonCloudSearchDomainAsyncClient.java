@@ -230,6 +230,10 @@ public class AmazonCloudSearchDomainAsyncClient extends AmazonCloudSearchDomainC
         this.executorService = executorService;
     }
 
+    public static AmazonCloudSearchDomainAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudSearchDomainAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon CloudSearch Domain using the specified
      * parameters.

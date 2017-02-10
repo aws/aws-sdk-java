@@ -228,6 +228,10 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient implem
         this.executorService = executorService;
     }
 
+    public static AmazonCloudSearchAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudSearchAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon CloudSearch using the specified
      * parameters.

@@ -222,6 +222,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         init();
     }
 
+    public static AmazonRoute53ClientBuilder builder() {
+        return AmazonRoute53ClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Route 53 using the specified parameters.
      *

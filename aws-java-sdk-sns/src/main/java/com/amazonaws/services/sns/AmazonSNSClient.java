@@ -232,6 +232,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         init();
     }
 
+    public static AmazonSNSClientBuilder builder() {
+        return AmazonSNSClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon SNS using the specified parameters.
      *

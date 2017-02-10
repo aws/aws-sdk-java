@@ -252,6 +252,10 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
         this.executorService = executorService;
     }
 
+    public static AWSMarketplaceMeteringAsyncClientBuilder asyncBuilder() {
+        return AWSMarketplaceMeteringAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWSMarketplace Metering using the specified
      * parameters.

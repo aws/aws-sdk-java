@@ -13,6 +13,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
+    "deprecatedSuppressions" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : "com.amazonaws.services.polly.presign.AmazonPollyPresigners",

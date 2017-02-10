@@ -264,6 +264,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AWSServiceCatalogClientBuilder builder() {
+        return AWSServiceCatalogClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Service Catalog using the specified parameters.
      *

@@ -17,7 +17,10 @@ package com.amazonaws.services.s3.model;
 /**
  * Listener interface for transfer progress events.
  * 
- * @deprecated Replaced by {@link com.amazonaws.event.ProgressListener}.
+ * @deprecated Use {@link com.amazonaws.event.ProgressListener} instead. Using
+ * this class is <b>dangerous</b> as it uses the deprecated {@link
+ * ProgressEvent}, which performs an unsafe cast from {@code long} to {@code
+ * int} in {@link ProgressEvent#getBytesTransfered()}.
  *
  * @see ProgressEvent
  * @see PutObjectRequest#setProgressListener(ProgressListener)

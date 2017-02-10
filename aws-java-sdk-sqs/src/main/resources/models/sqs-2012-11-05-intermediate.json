@@ -78,6 +78,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : "com.amazonaws.services.sqs.internal.auth.SQSSignerProvider",
+    "deprecatedSuppressions" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,

@@ -230,6 +230,10 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         init();
     }
 
+    public static AWSXRayClientBuilder builder() {
+        return AWSXRayClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS X-Ray using the specified parameters.
      *

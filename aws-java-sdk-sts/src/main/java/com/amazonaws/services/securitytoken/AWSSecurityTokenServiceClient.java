@@ -273,6 +273,10 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         init();
     }
 
+    public static AWSSecurityTokenServiceClientBuilder builder() {
+        return AWSSecurityTokenServiceClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS STS using the specified parameters.
      *

@@ -177,6 +177,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(AssociateIamInstanceProfileRequest request) {
+
+        return associateIamInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(AssociateIamInstanceProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateIamInstanceProfileRequest, AssociateIamInstanceProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateRouteTableResult> associateRouteTableAsync(AssociateRouteTableRequest request) {
 
         return associateRouteTableAsync(request, null);
@@ -1670,6 +1683,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
             com.amazonaws.handlers.AsyncHandler<DescribeHostsRequest, DescribeHostsResult> asyncHandler) {
 
         return describeHostsAsync(new DescribeHostsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIamInstanceProfileAssociationsResult> describeIamInstanceProfileAssociationsAsync(
+            DescribeIamInstanceProfileAssociationsRequest request) {
+
+        return describeIamInstanceProfileAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIamInstanceProfileAssociationsResult> describeIamInstanceProfileAssociationsAsync(
+            DescribeIamInstanceProfileAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeIamInstanceProfileAssociationsRequest, DescribeIamInstanceProfileAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -3270,6 +3298,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request) {
+
+        return disassociateIamInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIamInstanceProfileRequest, DisassociateIamInstanceProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateRouteTableResult> disassociateRouteTableAsync(DisassociateRouteTableRequest request) {
 
         return disassociateRouteTableAsync(request, null);
@@ -3865,6 +3906,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ReleaseHostsResult> releaseHostsAsync(ReleaseHostsRequest request,
             com.amazonaws.handlers.AsyncHandler<ReleaseHostsRequest, ReleaseHostsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplaceIamInstanceProfileAssociationResult> replaceIamInstanceProfileAssociationAsync(
+            ReplaceIamInstanceProfileAssociationRequest request) {
+
+        return replaceIamInstanceProfileAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplaceIamInstanceProfileAssociationResult> replaceIamInstanceProfileAssociationAsync(
+            ReplaceIamInstanceProfileAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReplaceIamInstanceProfileAssociationRequest, ReplaceIamInstanceProfileAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

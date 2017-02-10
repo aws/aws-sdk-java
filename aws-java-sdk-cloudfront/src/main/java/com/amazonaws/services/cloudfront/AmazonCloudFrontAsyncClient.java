@@ -222,6 +222,10 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
         this.executorService = executorService;
     }
 
+    public static AmazonCloudFrontAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudFrontAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CloudFront using the specified parameters.
      *

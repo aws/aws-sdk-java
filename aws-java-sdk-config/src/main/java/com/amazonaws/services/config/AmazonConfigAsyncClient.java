@@ -245,6 +245,10 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
         this.executorService = executorService;
     }
 
+    public static AmazonConfigAsyncClientBuilder asyncBuilder() {
+        return AmazonConfigAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Config Service using the specified parameters.
      *

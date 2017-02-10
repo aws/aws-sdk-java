@@ -287,6 +287,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         init();
     }
 
+    public static AmazonIdentityManagementClientBuilder builder() {
+        return AmazonIdentityManagementClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on IAM using the specified parameters.
      *

@@ -292,6 +292,10 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
         this.executorService = executorService;
     }
 
+    public static AWSCodeBuildAsyncClientBuilder asyncBuilder() {
+        return AWSCodeBuildAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS CodeBuild using the specified parameters.
      *

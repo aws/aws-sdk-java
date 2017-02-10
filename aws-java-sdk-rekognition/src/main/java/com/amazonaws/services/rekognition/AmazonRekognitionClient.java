@@ -257,6 +257,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AmazonRekognitionClientBuilder builder() {
+        return AmazonRekognitionClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Rekognition using the specified parameters.
      *

@@ -237,6 +237,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         init();
     }
 
+    public static AmazonElasticMapReduceClientBuilder builder() {
+        return AmazonElasticMapReduceClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon EMR using the specified parameters.
      *

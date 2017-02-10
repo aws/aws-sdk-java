@@ -218,6 +218,10 @@ public class AWSCostAndUsageReportAsyncClient extends AWSCostAndUsageReportClien
         this.executorService = executorService;
     }
 
+    public static AWSCostAndUsageReportAsyncClientBuilder asyncBuilder() {
+        return AWSCostAndUsageReportAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Cost and Usage Report Service using the
      * specified parameters.

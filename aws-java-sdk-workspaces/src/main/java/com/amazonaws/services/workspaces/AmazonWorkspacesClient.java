@@ -249,6 +249,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         init();
     }
 
+    public static AmazonWorkspacesClientBuilder builder() {
+        return AmazonWorkspacesClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon WorkSpaces using the specified parameters.
      *

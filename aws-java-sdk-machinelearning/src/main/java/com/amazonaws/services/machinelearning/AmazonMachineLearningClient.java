@@ -249,6 +249,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
         init();
     }
 
+    public static AmazonMachineLearningClientBuilder builder() {
+        return AmazonMachineLearningClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Machine Learning using the specified parameters.
      *

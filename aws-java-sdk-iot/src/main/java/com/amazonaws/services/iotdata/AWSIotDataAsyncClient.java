@@ -223,6 +223,10 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
         this.executorService = executorService;
     }
 
+    public static AWSIotDataAsyncClientBuilder asyncBuilder() {
+        return AWSIotDataAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS IoT Data Plane using the specified
      * parameters.

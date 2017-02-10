@@ -255,6 +255,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         init();
     }
 
+    public static AWSCertificateManagerClientBuilder builder() {
+        return AWSCertificateManagerClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on ACM using the specified parameters.
      *

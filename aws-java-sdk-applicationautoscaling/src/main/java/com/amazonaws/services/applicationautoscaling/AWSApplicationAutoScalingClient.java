@@ -296,6 +296,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         init();
     }
 
+    public static AWSApplicationAutoScalingClientBuilder builder() {
+        return AWSApplicationAutoScalingClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Application Auto Scaling using the specified parameters.
      *

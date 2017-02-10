@@ -282,6 +282,10 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
         this.executorService = executorService;
     }
 
+    public static AWSApplicationDiscoveryAsyncClientBuilder asyncBuilder() {
+        return AWSApplicationDiscoveryAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Application Discovery Service using the
      * specified parameters.

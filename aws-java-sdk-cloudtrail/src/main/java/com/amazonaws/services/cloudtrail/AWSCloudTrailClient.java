@@ -345,6 +345,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         init();
     }
 
+    public static AWSCloudTrailClientBuilder builder() {
+        return AWSCloudTrailClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on CloudTrail using the specified parameters.
      *

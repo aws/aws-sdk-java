@@ -217,6 +217,10 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
         this.executorService = executorService;
     }
 
+    public static AWSServerMigrationAsyncClientBuilder asyncBuilder() {
+        return AWSServerMigrationAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on SMS using the specified parameters.
      *

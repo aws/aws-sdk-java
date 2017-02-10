@@ -223,6 +223,10 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
         this.executorService = executorService;
     }
 
+    public static AmazonInspectorAsyncClientBuilder asyncBuilder() {
+        return AmazonInspectorAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Inspector using the specified
      * parameters.

@@ -289,6 +289,10 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
         this.executorService = executorService;
     }
 
+    public static AmazonCodeDeployAsyncClientBuilder asyncBuilder() {
+        return AmazonCodeDeployAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CodeDeploy using the specified parameters.
      *

@@ -227,6 +227,10 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
         this.executorService = executorService;
     }
 
+    public static AmazonDirectConnectAsyncClientBuilder asyncBuilder() {
+        return AmazonDirectConnectAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the specified
      * parameters.

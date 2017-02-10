@@ -280,6 +280,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         init();
     }
 
+    public static AWSDirectoryServiceClientBuilder builder() {
+        return AWSDirectoryServiceClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Directory Service using the specified parameters.
      *

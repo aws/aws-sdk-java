@@ -224,6 +224,10 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
         this.executorService = executorService;
     }
 
+    public static AmazonElasticFileSystemAsyncClientBuilder asyncBuilder() {
+        return AmazonElasticFileSystemAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on EFS using the specified parameters.
      *

@@ -220,6 +220,10 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
         this.executorService = executorService;
     }
 
+    public static AmazonWorkspacesAsyncClientBuilder asyncBuilder() {
+        return AmazonWorkspacesAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon WorkSpaces using the specified
      * parameters.

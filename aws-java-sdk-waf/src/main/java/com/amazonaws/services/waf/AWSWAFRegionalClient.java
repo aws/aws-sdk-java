@@ -265,6 +265,10 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
         init();
     }
 
+    public static AWSWAFRegionalClientBuilder builder() {
+        return AWSWAFRegionalClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on WAF Regional using the specified parameters.
      *

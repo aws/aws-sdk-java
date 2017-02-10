@@ -245,6 +245,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
         this.executorService = executorService;
     }
 
+    public static AmazonElasticLoadBalancingAsyncClientBuilder asyncBuilder() {
+        return AmazonElasticLoadBalancingAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Elastic Load Balancing using the specified
      * parameters.

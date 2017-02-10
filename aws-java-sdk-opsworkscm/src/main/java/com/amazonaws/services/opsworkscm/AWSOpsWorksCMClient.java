@@ -288,6 +288,10 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         init();
     }
 
+    public static AWSOpsWorksCMClientBuilder builder() {
+        return AWSOpsWorksCMClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on OpsWorksCM using the specified parameters.
      *

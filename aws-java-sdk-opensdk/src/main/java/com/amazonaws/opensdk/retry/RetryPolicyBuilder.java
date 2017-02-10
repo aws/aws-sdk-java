@@ -74,6 +74,9 @@ public final class RetryPolicyBuilder {
     /**
      * The default value for max number of retries is {@value PredefinedRetryPolicies#DEFAULT_MAX_ERROR_RETRY}.
      *
+     * <p>Note that the actual max allowed retries may be less due to retry throttling. See this <a
+     * href="https://aws.amazon.com/blogs/developer/introducing-retry-throttling/">blog</a> for more details.</p>
+     *
      * @param maxNumberOfRetries Max number of retries to allow.
      * @return This object for method chaining.
      */

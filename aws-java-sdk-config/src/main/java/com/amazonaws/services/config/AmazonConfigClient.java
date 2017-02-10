@@ -333,6 +333,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         init();
     }
 
+    public static AmazonConfigClientBuilder builder() {
+        return AmazonConfigClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Config Service using the specified parameters.
      *

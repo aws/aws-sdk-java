@@ -4205,6 +4205,13 @@ public interface AmazonS3 extends S3DirectSpi {
      * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
      * specify-signature-version
      * </p>
+     * <p>
+     * When supplying an {@link InputStream} using {@link
+     * UploadPartRequest#withInputStream(InputStream)} or {@link
+     * UploadPartRequest#setInputStream(InputStream)}, the stream will only be
+     * closed by the client if {@link UploadPartRequest#isLastPart()} is {@code
+     * true}. If this is not the last part, the stream will be left open.
+     * </p>
      * @param request
      *            The UploadPartRequest object that specifies all the parameters
      *            of this operation.

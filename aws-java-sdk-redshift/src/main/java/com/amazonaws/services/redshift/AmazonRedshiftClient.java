@@ -249,6 +249,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonRedshiftClientBuilder builder() {
+        return AmazonRedshiftClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Redshift using the specified parameters.
      *

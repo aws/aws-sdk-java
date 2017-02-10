@@ -231,6 +231,10 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
         this.executorService = executorService;
     }
 
+    public static AmazonSNSAsyncClientBuilder asyncBuilder() {
+        return AmazonSNSAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon SNS using the specified parameters.
      *

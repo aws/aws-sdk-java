@@ -228,6 +228,10 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
         this.executorService = executorService;
     }
 
+    public static AWSDatabaseMigrationServiceAsyncClientBuilder asyncBuilder() {
+        return AWSDatabaseMigrationServiceAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Database Migration Service using the
      * specified parameters.

@@ -224,6 +224,10 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
         this.executorService = executorService;
     }
 
+    public static AmazonSnowballAsyncClientBuilder asyncBuilder() {
+        return AmazonSnowballAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Snowball using the specified parameters.
      *

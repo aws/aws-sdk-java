@@ -242,6 +242,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
         init();
     }
 
+    public static AWSDeviceFarmClientBuilder builder() {
+        return AWSDeviceFarmClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Device Farm using the specified parameters.
      *

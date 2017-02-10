@@ -232,6 +232,10 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
         this.executorService = executorService;
     }
 
+    public static AmazonLightsailAsyncClientBuilder asyncBuilder() {
+        return AmazonLightsailAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Lightsail using the specified
      * parameters.

@@ -251,6 +251,10 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
         this.executorService = executorService;
     }
 
+    public static AmazonCognitoIdentityAsyncClientBuilder asyncBuilder() {
+        return AmazonCognitoIdentityAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Cognito Identity using the specified
      * parameters.

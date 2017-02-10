@@ -528,6 +528,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
                 params.getClientParams().getCredentialsProvider(), params.getEncryptionMaterials(), params.getCryptoConfiguration());
     }
 
+    public static AmazonS3EncryptionClientBuilder encryptionBuilder() {
+        return AmazonS3EncryptionClientBuilder.standard();
+    }
+
     /**
      * Creates and returns a new instance of AWS KMS client in the case when
      * an explicit AWS KMS client is not specified.

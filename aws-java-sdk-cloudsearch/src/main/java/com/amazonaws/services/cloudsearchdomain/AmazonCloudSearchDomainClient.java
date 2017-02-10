@@ -241,6 +241,10 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         init();
     }
 
+    public static AmazonCloudSearchDomainClientBuilder builder() {
+        return AmazonCloudSearchDomainClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon CloudSearch Domain using the specified parameters.
      *

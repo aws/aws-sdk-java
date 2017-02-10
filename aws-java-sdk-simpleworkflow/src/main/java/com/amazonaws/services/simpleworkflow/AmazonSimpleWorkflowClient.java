@@ -262,6 +262,10 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         init();
     }
 
+    public static AmazonSimpleWorkflowClientBuilder builder() {
+        return AmazonSimpleWorkflowClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon SWF using the specified parameters.
      *

@@ -286,6 +286,10 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
         this.executorService = executorService;
     }
 
+    public static AWSHealthAsyncClientBuilder asyncBuilder() {
+        return AWSHealthAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWSHealth using the specified parameters.
      *

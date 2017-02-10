@@ -323,6 +323,16 @@ public class TransferManager {
         this.isImmutable = true;
     }
 
+
+    /**
+     * Constructor for use by classes that need to extend the TransferManager.
+     *
+     * @param builder - transfer manager builder with the required configuration
+     */
+    protected TransferManager(TransferManagerBuilder builder) {
+        this(builder.getParams());
+    }
+
     /**
      * Sets the configuration which specifies how
      * this <code>TransferManager</code> processes requests.
@@ -1087,6 +1097,9 @@ public class TransferManager {
                 throw new AmazonClientException("The requested object in bucket " + getObjectRequest.getBucketName()
                         + " with key " + getObjectRequest.getKey() + " is modified on Amazon S3 since the last pause.");
             }
+            // There's still a chance the object is modified while the request
+            // is in flight. Set this header so S3 fails the request if this happens.
+            getObjectRequest.setUnmodifiedSinceConstraint(new Date(lastModifiedTime));
 
             if (!isDownloadParallel) {
                 if (!FileLocks.lock(file)) {
@@ -1899,7 +1912,8 @@ public class TransferManager {
         GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
                 copyObjectRequest.getSourceBucketName(), copyObjectRequest.getSourceKey())
                 .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey())
-                .withRequesterPays(copyObjectRequest.isRequesterPays());
+                .withRequesterPays(copyObjectRequest.isRequesterPays())
+                .withVersionId(copyObjectRequest.getSourceVersionId());
 
         ObjectMetadata metadata = srcS3.getObjectMetadata(getObjectMetadataRequest);
 

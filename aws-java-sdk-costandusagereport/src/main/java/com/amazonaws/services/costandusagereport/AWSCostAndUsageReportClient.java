@@ -234,6 +234,10 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
         init();
     }
 
+    public static AWSCostAndUsageReportClientBuilder builder() {
+        return AWSCostAndUsageReportClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Cost and Usage Report Service using the specified
      * parameters.

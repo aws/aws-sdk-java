@@ -226,6 +226,10 @@ public class AWSMarketplaceCommerceAnalyticsAsyncClient extends AWSMarketplaceCo
         this.executorService = executorService;
     }
 
+    public static AWSMarketplaceCommerceAnalyticsAsyncClientBuilder asyncBuilder() {
+        return AWSMarketplaceCommerceAnalyticsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Marketplace Commerce Analytics using the
      * specified parameters.

@@ -226,6 +226,10 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
         this.executorService = executorService;
     }
 
+    public static AWSElasticsearchAsyncClientBuilder asyncBuilder() {
+        return AWSElasticsearchAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Elasticsearch Service using the
      * specified parameters.

@@ -422,17 +422,20 @@ public final class TransferManagerBuilder {
         return configuration;
     }
 
+    TransferManagerParams getParams() {
+        return new TransferManagerParams().withS3Client(resolveS3Client())
+                .withExecutorService(resolveExecutorService())
+                .withShutDownThreadPools(resolveShutDownThreadPools())
+                .withTransferManagerConfiguration(resolveConfiguration());
+    }
+
     /**
      * Construct a TransferManager with the default ExecutorService.
      *
      * @return TransferManager with configured AmazonS3 client.
      */
     public final TransferManager build() {
-        return transferManagerFactory
-                .apply(new TransferManagerParams().withS3Client(resolveS3Client())
-                               .withExecutorService(resolveExecutorService())
-                               .withShutDownThreadPools(resolveShutDownThreadPools())
-                               .withTransferManagerConfiguration(resolveConfiguration()));
+        return transferManagerFactory.apply(getParams());
     }
 
 }

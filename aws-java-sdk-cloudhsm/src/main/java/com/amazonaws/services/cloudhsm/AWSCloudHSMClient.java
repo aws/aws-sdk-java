@@ -230,6 +230,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         init();
     }
 
+    public static AWSCloudHSMClientBuilder builder() {
+        return AWSCloudHSMClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on CloudHSM using the specified parameters.
      *

@@ -20,6 +20,7 @@ public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} 
     protected ${metadata.syncAbstractClass}() {
     }
 
+<#if customizationConfig.emitClientMutationMethods() >
     @Override
     public void setEndpoint(String endpoint) {
         throw new java.lang.UnsupportedOperationException();
@@ -29,6 +30,7 @@ public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} 
     public void setRegion(com.amazonaws.regions.Region region) {
         throw new java.lang.UnsupportedOperationException();
     }
+</#if>
 
   <#list operations?values as operationModel>
     <@ClientMethodForUnsupportedOperation.content operationModel />

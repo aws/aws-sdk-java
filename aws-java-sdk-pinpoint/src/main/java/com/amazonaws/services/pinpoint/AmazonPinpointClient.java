@@ -240,6 +240,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonPinpointClientBuilder builder() {
+        return AmazonPinpointClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Pinpoint using the specified parameters.
      *

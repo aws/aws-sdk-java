@@ -249,6 +249,10 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         init();
     }
 
+    public static AmazonKinesisAnalyticsClientBuilder builder() {
+        return AmazonKinesisAnalyticsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Kinesis Analytics using the specified parameters.
      *

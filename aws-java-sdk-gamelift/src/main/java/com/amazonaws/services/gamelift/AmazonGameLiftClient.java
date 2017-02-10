@@ -591,6 +591,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonGameLiftClientBuilder builder() {
+        return AmazonGameLiftClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon GameLift using the specified parameters.
      *

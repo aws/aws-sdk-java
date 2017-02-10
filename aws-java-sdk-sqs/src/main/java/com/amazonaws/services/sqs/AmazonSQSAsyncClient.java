@@ -300,6 +300,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAs
         this.executorService = executorService;
     }
 
+    public static AmazonSQSAsyncClientBuilder asyncBuilder() {
+        return AmazonSQSAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon SQS using the specified parameters.
      *

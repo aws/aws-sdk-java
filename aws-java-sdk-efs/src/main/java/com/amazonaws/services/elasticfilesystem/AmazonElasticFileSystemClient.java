@@ -281,6 +281,10 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         init();
     }
 
+    public static AmazonElasticFileSystemClientBuilder builder() {
+        return AmazonElasticFileSystemClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on EFS using the specified parameters.
      *

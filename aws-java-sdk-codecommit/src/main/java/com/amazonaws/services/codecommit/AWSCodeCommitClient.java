@@ -481,6 +481,10 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         init();
     }
 
+    public static AWSCodeCommitClientBuilder builder() {
+        return AWSCodeCommitClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on CodeCommit using the specified parameters.
      *

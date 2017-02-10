@@ -224,6 +224,10 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         init();
     }
 
+    public static AmazonImportExportClientBuilder builder() {
+        return AmazonImportExportClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Import/Export using the specified parameters.
      *
