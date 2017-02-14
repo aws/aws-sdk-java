@@ -974,6 +974,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeVolumesModificationsResult describeVolumesModifications(DescribeVolumesModificationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeVpcAttributeResult describeVpcAttribute(DescribeVpcAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1250,6 +1255,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifySubnetAttributeResult modifySubnetAttribute(ModifySubnetAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVolumeResult modifyVolume(ModifyVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -7748,6 +7748,71 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Reports the current modification status of EBS volumes.
+     * </p>
+     * <p>
+     * Current-generation EBS volumes support modification of attributes including type, size, and (for <code>io1</code>
+     * volumes) IOPS provisioning while either attached to or detached from an instance. Following an action from the
+     * API or the console to modify a volume, the status of the modification may be <code>modifying</code>,
+     * <code>optimizing</code>, <code>completed</code>, or <code>failed</code>. If a volume has never been modified,
+     * then certain elements of the returned <code>VolumeModification</code> objects are null.
+     * </p>
+     * <p>
+     * You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about
+     * CloudWatch Events, see the <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html"
+     * >Amazon CloudWatch Events User Guide</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+     * Volume Modifications"</a>.
+     * </p>
+     * 
+     * @param describeVolumesModificationsRequest
+     * @return A Java Future containing the result of the DescribeVolumesModifications operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVolumesModifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVolumesModificationsResult> describeVolumesModificationsAsync(
+            DescribeVolumesModificationsRequest describeVolumesModificationsRequest);
+
+    /**
+     * <p>
+     * Reports the current modification status of EBS volumes.
+     * </p>
+     * <p>
+     * Current-generation EBS volumes support modification of attributes including type, size, and (for <code>io1</code>
+     * volumes) IOPS provisioning while either attached to or detached from an instance. Following an action from the
+     * API or the console to modify a volume, the status of the modification may be <code>modifying</code>,
+     * <code>optimizing</code>, <code>completed</code>, or <code>failed</code>. If a volume has never been modified,
+     * then certain elements of the returned <code>VolumeModification</code> objects are null.
+     * </p>
+     * <p>
+     * You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about
+     * CloudWatch Events, see the <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html"
+     * >Amazon CloudWatch Events User Guide</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+     * Volume Modifications"</a>.
+     * </p>
+     * 
+     * @param describeVolumesModificationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVolumesModifications operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVolumesModifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVolumesModificationsResult> describeVolumesModificationsAsync(
+            DescribeVolumesModificationsRequest describeVolumesModificationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVolumesModificationsRequest, DescribeVolumesModificationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified attribute of the specified VPC. You can specify only one attribute at a time.
      * </p>
      * 
@@ -9955,6 +10020,121 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
+     * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you may be able to apply
+     * these changes without stopping the instance or detaching the volume from it. For more information about modifying
+     * an EBS volume running Linux, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
+     * Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Expanding
+     * the Storage Space of an EBS Volume on Windows</a>.
+     * </p>
+     * <p>
+     * When you complete a resize operation on your volume, you need to extend the volume's file-system size to take
+     * advantage of the new storage capacity. For information about extending a Linux file system, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux"
+     * >Extending a Linux File System</a>. For information about extending a Windows file system, see <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows"
+     * >Extending a Windows File System</a>.
+     * </p>
+     * <p>
+     * You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about
+     * CloudWatch Events, see the <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html"
+     * >Amazon CloudWatch Events User Guide</a>. You can also track the status of a modification using the <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html"
+     * > <code>DescribeVolumesModifications</code> API</a>. For information about tracking status changes using either
+     * method, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+     * Volume Modifications"</a>.
+     * </p>
+     * <note>
+     * <p>
+     * With previous-generation volumes and instance types, resizing an EBS volume may require detaching and reattaching
+     * the volume or stopping and restarting the instance. For more information about modifying an EBS volume running
+     * Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the
+     * Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running
+     * Windows, see <a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+     * the Size, IOPS, or Type of an EBS Volume on Windows</a>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * If you reach the maximum volume modification rate per volume limit, you will need to wait at least six hours
+     * before applying further modifications to the affected EBS volume.
+     * </p>
+     * </note>
+     * 
+     * @param modifyVolumeRequest
+     * @return A Java Future containing the result of the ModifyVolume operation returned by the service.
+     * @sample AmazonEC2Async.ModifyVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVolumeResult> modifyVolumeAsync(ModifyVolumeRequest modifyVolumeRequest);
+
+    /**
+     * <p>
+     * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
+     * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you may be able to apply
+     * these changes without stopping the instance or detaching the volume from it. For more information about modifying
+     * an EBS volume running Linux, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
+     * Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Expanding
+     * the Storage Space of an EBS Volume on Windows</a>.
+     * </p>
+     * <p>
+     * When you complete a resize operation on your volume, you need to extend the volume's file-system size to take
+     * advantage of the new storage capacity. For information about extending a Linux file system, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux"
+     * >Extending a Linux File System</a>. For information about extending a Windows file system, see <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows"
+     * >Extending a Windows File System</a>.
+     * </p>
+     * <p>
+     * You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about
+     * CloudWatch Events, see the <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html"
+     * >Amazon CloudWatch Events User Guide</a>. You can also track the status of a modification using the <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html"
+     * > <code>DescribeVolumesModifications</code> API</a>. For information about tracking status changes using either
+     * method, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+     * Volume Modifications"</a>.
+     * </p>
+     * <note>
+     * <p>
+     * With previous-generation volumes and instance types, resizing an EBS volume may require detaching and reattaching
+     * the volume or stopping and restarting the instance. For more information about modifying an EBS volume running
+     * Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the
+     * Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running
+     * Windows, see <a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+     * the Size, IOPS, or Type of an EBS Volume on Windows</a>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * If you reach the maximum volume modification rate per volume limit, you will need to wait at least six hours
+     * before applying further modifications to the affected EBS volume.
+     * </p>
+     * </note>
+     * 
+     * @param modifyVolumeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVolume operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVolumeResult> modifyVolumeAsync(ModifyVolumeRequest modifyVolumeRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVolumeRequest, ModifyVolumeResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies a volume attribute.
      * </p>
      * <p>
@@ -10721,9 +10901,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Replaces an IAM instance profile for the specified instance. You can use this action to change the IAM instance
-     * profile that's associated with an instance without having to disassociate the existing IAM instance profile
-     * first.
+     * Replaces an IAM instance profile for the specified running instance. You can use this action to change the IAM
+     * instance profile that's associated with an instance without having to disassociate the existing IAM instance
+     * profile first.
      * </p>
      * <p>
      * Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
@@ -10741,9 +10921,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Replaces an IAM instance profile for the specified instance. You can use this action to change the IAM instance
-     * profile that's associated with an instance without having to disassociate the existing IAM instance profile
-     * first.
+     * Replaces an IAM instance profile for the specified running instance. You can use this action to change the IAM
+     * instance profile that's associated with an instance without having to disassociate the existing IAM instance
+     * profile first.
      * </p>
      * <p>
      * Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.

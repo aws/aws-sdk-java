@@ -5809,6 +5809,38 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeVolumesModificationsResult> describeVolumesModificationsAsync(DescribeVolumesModificationsRequest request) {
+
+        return describeVolumesModificationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVolumesModificationsResult> describeVolumesModificationsAsync(final DescribeVolumesModificationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeVolumesModificationsRequest, DescribeVolumesModificationsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVolumesModificationsResult>() {
+            @Override
+            public DescribeVolumesModificationsResult call() throws Exception {
+                DescribeVolumesModificationsResult result;
+
+                try {
+                    result = describeVolumesModifications(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeVpcAttributeResult> describeVpcAttributeAsync(DescribeVpcAttributeRequest request) {
 
         return describeVpcAttributeAsync(request, null);
@@ -7509,6 +7541,38 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = modifySubnetAttribute(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyVolumeResult> modifyVolumeAsync(ModifyVolumeRequest request) {
+
+        return modifyVolumeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyVolumeResult> modifyVolumeAsync(final ModifyVolumeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyVolumeRequest, ModifyVolumeResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyVolumeResult>() {
+            @Override
+            public ModifyVolumeResult call() throws Exception {
+                ModifyVolumeResult result;
+
+                try {
+                    result = modifyVolume(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
