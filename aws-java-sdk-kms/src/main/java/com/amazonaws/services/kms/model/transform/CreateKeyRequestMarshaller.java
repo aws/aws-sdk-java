@@ -71,6 +71,19 @@ public class CreateKeyRequestMarshaller implements Marshaller<Request<CreateKeyR
                 jsonGenerator.writeFieldName("BypassPolicyLockoutSafetyCheck").writeValue(createKeyRequest.getBypassPolicyLockoutSafetyCheck());
             }
 
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createKeyRequest.getTags();
+            if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
+                for (Tag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
+
+                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

@@ -46,8 +46,8 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
     private String keyId;
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a
@@ -60,8 +60,8 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer limit;
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      */
     private String marker;
@@ -183,8 +183,8 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a
@@ -195,9 +195,8 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param limit
-     *        When paginating results, specify the maximum number of items to return in the response. If additional
-     *        items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *        true.</p>
+     *        Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *        does not return more than the specified number of items, but it might return fewer.</p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not
      *        include a value, it defaults to 100.
@@ -212,8 +211,8 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a
@@ -223,9 +222,8 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      * Currently only 1 policy can be attached to a key.
      * </p>
      * 
-     * @return When paginating results, specify the maximum number of items to return in the response. If additional
-     *         items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *         true.</p>
+     * @return Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *         does not return more than the specified number of items, but it might return fewer.</p>
      *         <p>
      *         This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not
      *         include a value, it defaults to 100.
@@ -240,8 +238,8 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a
@@ -252,9 +250,8 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param limit
-     *        When paginating results, specify the maximum number of items to return in the response. If additional
-     *        items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *        true.</p>
+     *        Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *        does not return more than the specified number of items, but it might return fewer.</p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not
      *        include a value, it defaults to 100.
@@ -271,14 +268,13 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *        response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just
-     *        received.
+     *        Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *        the value of <code>NextMarker</code> from the truncated response you just received.
      */
 
     public void setMarker(String marker) {
@@ -287,13 +283,12 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
-     * @return Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *         response with truncated results. Set it to the value of <code>NextMarker</code> from the response you
-     *         just received.
+     * @return Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *         the value of <code>NextMarker</code> from the truncated response you just received.
      */
 
     public String getMarker() {
@@ -302,14 +297,13 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *        response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just
-     *        received.
+     *        Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *        the value of <code>NextMarker</code> from the truncated response you just received.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

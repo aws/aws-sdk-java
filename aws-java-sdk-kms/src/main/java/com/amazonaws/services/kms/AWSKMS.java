@@ -348,6 +348,8 @@ public interface AWSKMS {
      *         The request was rejected because a limit was exceeded. For more information, see <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
      *         Management Service Developer Guide</i>.
+     * @throws TagException
+     *         The request was rejected because one or more tags are not valid.
      * @sample AWSKMS.CreateKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey" target="_top">AWS API
      *      Documentation</a>
@@ -1131,6 +1133,28 @@ public interface AWSKMS {
 
     /**
      * <p>
+     * Returns a list of all tags for the specified customer master key (CMK).
+     * </p>
+     * 
+     * @param listResourceTagsRequest
+     * @return Result of the ListResourceTags operation returned by the service.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws InvalidMarkerException
+     *         The request was rejected because the marker that specifies where pagination should next begin is not
+     *         valid.
+     * @sample AWSKMS.ListResourceTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListResourceTagsResult listResourceTags(ListResourceTagsRequest listResourceTagsRequest);
+
+    /**
+     * <p>
      * Returns a list of all grants for which the grant's <code>RetiringPrincipal</code> matches the one specified.
      * </p>
      * <p>
@@ -1373,6 +1397,78 @@ public interface AWSKMS {
      *      Documentation</a>
      */
     ScheduleKeyDeletionResult scheduleKeyDeletion(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be
+     * empty (null) strings.
+     * </p>
+     * <p>
+     * You cannot use the same tag key more than once per CMK. For example, consider a CMK with one tag whose tag key is
+     * <code>Purpose</code> and tag value is <code>Test</code>. If you send a <code>TagResource</code> request for this
+     * CMK with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it does not create a second tag.
+     * Instead, the original tag is overwritten with the new tag value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a CMK, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+     *         Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws LimitExceededException
+     *         The request was rejected because a limit was exceeded. For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
+     *         Management Service Developer Guide</i>.
+     * @throws TagException
+     *         The request was rejected because one or more tags are not valid.
+     * @sample AWSKMS.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the specified tag or tags from the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * To remove a tag, you specify the tag key for each tag to remove. You do not specify the tag value. To overwrite
+     * the tag value for an existing tag, use <a>TagResource</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a CMK, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+     *         Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws TagException
+     *         The request was rejected because one or more tags are not valid.
+     * @sample AWSKMS.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

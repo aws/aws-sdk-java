@@ -1,3 +1,19 @@
+# __1.11.91__ __2017-02-15__
+## __AWS Key Management Service__
+  - <h3>Features</h3>
+    - This release of AWS Key Management Service introduces the ability to tag keys. Tagging keys can help you organize your keys and track your KMS costs in the cost allocation report. This release also increases the maximum length of a key ID to accommodate ARNs that include a long key alias.
+
+## __AWS SDK for Java for OSGi__
+  - <h3>Bugfixes</h3>
+    - Fixing [Issue #979](https://github.com/aws/aws-sdk-java/issues/979) by including the jmespath-java module in the OSGi bundle.
+
+## __Amazon Glacier__
+  - <h3>Features</h3>
+    - Introduce `ArchiveTransferManaggerBuilder`. This builder allows using references to `AmazonGlacier`, `AmazonSNS` and AmazonSQS` rather than the concrete implementations.
+
+  - <h3>Deprecations</h3>
+    - Deprecate all constructors for `ArchiveTransferManager`.
+
 # __1.11.90__ __2017-02-14__
 ## __Amazon EC2__
   - <h3>Features</h3>

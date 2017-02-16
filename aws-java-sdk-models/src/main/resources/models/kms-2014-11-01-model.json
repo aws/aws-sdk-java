@@ -246,6 +246,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TagException"
       } ],
       "http" : {
         "method" : "POST",
@@ -1438,6 +1444,55 @@
         "shape" : "ListKeysResponse"
       }
     },
+    "ListResourceTags" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns a list of all tags for the specified customer master key (CMK).</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "KMSInternalException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidMarkerException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListResourceTagsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListResourceTags",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListResourceTagsResponse"
+      }
+    },
     "ListRetirableGrants" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -1806,6 +1861,112 @@
         "resultWrapper" : null,
         "shape" : "ScheduleKeyDeletionResponse"
       }
+    },
+    "TagResource" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Adds or overwrites one or more tags for the specified customer master key (CMK). </p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p> <p>You cannot use the same tag key more than once per CMK. For example, consider a CMK with one tag whose tag key is <code>Purpose</code> and tag value is <code>Test</code>. If you send a <code>TagResource</code> request for this CMK with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it does not create a second tag. Instead, the original tag is overwritten with the new tag value.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "KMSInternalException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "KMSInvalidStateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TagException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "TagResourceRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "TagResource",
+      "output" : null
+    },
+    "UntagResource" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Removes the specified tag or tags from the specified customer master key (CMK). </p> <p>To remove a tag, you specify the tag key for each tag to remove. You do not specify the tag value. To overwrite the tag value for an existing tag, use <a>TagResource</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "KMSInternalException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "KMSInvalidStateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TagException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UntagResourceRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UntagResource",
+      "output" : null
     },
     "UpdateAlias" : {
       "authorizer" : null,
@@ -2451,7 +2612,7 @@
       "members" : {
         "BypassPolicyLockoutSafetyCheck" : {
           "deprecated" : false,
-          "documentation" : "<p>A flag to indicate whether to bypass the key policy lockout safety check.</p> <important> <p>Setting this value to true increases the likelihood that the CMK becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For more information, refer to the scenario in the <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam\">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p> </important> <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p> <p>The default value is false.</p>",
+          "documentation" : "<p>A flag to indicate whether to bypass the key policy lockout safety check.</p> <important> <p>Setting this value to true increases the likelihood that the CMK becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For more information, refer to the scenario in the <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam\">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p> </important> <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p> <p>The default value is false.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2503,7 +2664,7 @@
         },
         "Policy" : {
           "deprecated" : false,
-          "documentation" : "<p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the following criteria:</p> <ul> <li> <p>It must allow the principal making the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam\">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency\">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>.</p> </li> </ul> <p>If you do not specify a policy, AWS KMS attaches a default key policy to the CMK. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default\">Default Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The policy size limit is 32 KiB (32768 bytes).</p>",
+          "documentation" : "<p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the following criteria:</p> <ul> <li> <p>It must allow the principal that is making the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam\">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p> </li> <li> <p>The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency\">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>.</p> </li> </ul> <p>If you do not specify a policy, AWS KMS attaches a default key policy to the CMK. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default\">Default Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The policy size limit is 32 KiB (32768 bytes).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2511,6 +2672,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "PolicyType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p> <p>Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead tag the CMK after it is created using <a>TagResource</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TagList",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4893,7 +5067,7 @@
       "fault" : false,
       "flattened" : false,
       "key" : null,
-      "max" : 256,
+      "max" : 2048,
       "member" : null,
       "members" : { },
       "min" : 1,
@@ -5311,7 +5485,7 @@
       "members" : {
         "Limit" : {
           "deprecated" : false,
-          "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p> <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
+          "documentation" : "<p>Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not return more than the specified number of items, but it might return fewer.</p> <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5324,7 +5498,7 @@
         },
         "Marker" : {
           "deprecated" : false,
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5372,7 +5546,7 @@
         },
         "NextMarker" : {
           "deprecated" : false,
-          "documentation" : "<p>When <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>",
+          "documentation" : "<p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5385,7 +5559,7 @@
         },
         "Truncated" : {
           "deprecated" : false,
-          "documentation" : "<p>A flag that indicates whether there are more items in the list. If your results were truncated, you can use the <code>Marker</code> parameter to make a subsequent pagination request to retrieve more items in the list.</p>",
+          "documentation" : "<p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To retrieve more items, pass the value of the <code>NextMarker</code> element in this response to the <code>Marker</code> parameter in a subsequent request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5433,7 +5607,7 @@
         },
         "Limit" : {
           "deprecated" : false,
-          "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p> <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
+          "documentation" : "<p>Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not return more than the specified number of items, but it might return fewer.</p> <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5446,7 +5620,7 @@
         },
         "Marker" : {
           "deprecated" : false,
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5494,7 +5668,7 @@
         },
         "NextMarker" : {
           "deprecated" : false,
-          "documentation" : "<p>When <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>",
+          "documentation" : "<p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5507,7 +5681,7 @@
         },
         "Truncated" : {
           "deprecated" : false,
-          "documentation" : "<p>A flag that indicates whether there are more items in the list. If your results were truncated, you can use the <code>Marker</code> parameter to make a subsequent pagination request to retrieve more items in the list.</p>",
+          "documentation" : "<p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To retrieve more items, pass the value of the <code>NextMarker</code> element in this response to the <code>Marker</code> parameter in a subsequent request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5555,7 +5729,7 @@
         },
         "Limit" : {
           "deprecated" : false,
-          "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p> <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a key.</p>",
+          "documentation" : "<p>Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not return more than the specified number of items, but it might return fewer.</p> <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a key.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5568,7 +5742,7 @@
         },
         "Marker" : {
           "deprecated" : false,
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5603,7 +5777,7 @@
       "members" : {
         "NextMarker" : {
           "deprecated" : false,
-          "documentation" : "<p>When <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>",
+          "documentation" : "<p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5629,7 +5803,7 @@
         },
         "Truncated" : {
           "deprecated" : false,
-          "documentation" : "<p>A flag that indicates whether there are more items in the list. If your results were truncated, you can use the <code>Marker</code> parameter to make a subsequent pagination request to retrieve more items in the list.</p>",
+          "documentation" : "<p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To retrieve more items, pass the value of the <code>NextMarker</code> element in this response to the <code>Marker</code> parameter in a subsequent request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5664,7 +5838,7 @@
       "members" : {
         "Limit" : {
           "deprecated" : false,
-          "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p> <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>",
+          "documentation" : "<p>Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not return more than the specified number of items, but it might return fewer.</p> <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5677,7 +5851,7 @@
         },
         "Marker" : {
           "deprecated" : false,
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5725,7 +5899,7 @@
         },
         "NextMarker" : {
           "deprecated" : false,
-          "documentation" : "<p>When <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>",
+          "documentation" : "<p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5738,7 +5912,129 @@
         },
         "Truncated" : {
           "deprecated" : false,
-          "documentation" : "<p>A flag that indicates whether there are more items in the list. If your results were truncated, you can use the <code>Marker</code> parameter to make a subsequent pagination request to retrieve more items in the list.</p>",
+          "documentation" : "<p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To retrieve more items, pass the value of the <code>NextMarker</code> element in this response to the <code>Marker</code> parameter in a subsequent request.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListResourceTagsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "KeyId" : {
+          "deprecated" : false,
+          "documentation" : "<p>A unique identifier for the CMK whose tags you are listing. You can use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:</p> <ul> <li> <p>Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "KeyIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Limit" : {
+          "deprecated" : false,
+          "documentation" : "<p>Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not return more than the specified number of items, but it might return fewer.</p> <p>This value is optional. If you include a value, it must be between 1 and 50, inclusive. If you do not include a value, it defaults to 50.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LimitType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Marker" : {
+          "deprecated" : false,
+          "documentation" : "<p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p> <p>Do not attempt to construct this value. Use only the value of <code>NextMarker</code> from the truncated response you just received.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MarkerType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "KeyId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListResourceTagsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextMarker" : {
+          "deprecated" : false,
+          "documentation" : "<p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p> <p>Do not assume or infer any information from this value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MarkerType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of tags. Each tag consists of a tag key and a tag value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TagList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Truncated" : {
+          "deprecated" : false,
+          "documentation" : "<p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To retrieve more items, pass the value of the <code>NextMarker</code> element in this response to the <code>Marker</code> parameter in a subsequent request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5773,7 +6069,7 @@
       "members" : {
         "Limit" : {
           "deprecated" : false,
-          "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p> <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
+          "documentation" : "<p>Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not return more than the specified number of items, but it might return fewer.</p> <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5786,7 +6082,7 @@
         },
         "Marker" : {
           "deprecated" : false,
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6105,7 +6401,7 @@
       "members" : {
         "BypassPolicyLockoutSafetyCheck" : {
           "deprecated" : false,
-          "documentation" : "<p>A flag to indicate whether to bypass the key policy lockout safety check.</p> <important> <p>Setting this value to true increases the likelihood that the CMK becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For more information, refer to the scenario in the <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam\">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p> </important> <p>Use this parameter only when you intend to prevent the principal making the request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is false.</p>",
+          "documentation" : "<p>A flag to indicate whether to bypass the key policy lockout safety check.</p> <important> <p>Setting this value to true increases the likelihood that the CMK becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For more information, refer to the scenario in the <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam\">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p> </important> <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is false.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6131,7 +6427,7 @@
         },
         "Policy" : {
           "deprecated" : false,
-          "documentation" : "<p>The key policy to attach to the CMK.</p> <p>If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the following criteria:</p> <ul> <li> <p>It must allow the principal making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam\">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency\">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>",
+          "documentation" : "<p>The key policy to attach to the CMK.</p> <p>If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the following criteria:</p> <ul> <li> <p>It must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam\">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p> </li> <li> <p>The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency\">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6518,6 +6814,245 @@
       "value" : null,
       "wrapper" : false
     },
+    "Tag" : {
+      "deprecated" : false,
+      "documentation" : "<p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "TagKey" : {
+          "deprecated" : false,
+          "documentation" : "<p>The key of the tag.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TagKeyType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TagValue" : {
+          "deprecated" : false,
+          "documentation" : "<p>The value of the tag.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TagValueType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "TagKey", "TagValue" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The request was rejected because one or more tags are not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagKeyList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TagKeyType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagKeyType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 128,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Tag",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagResourceRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "KeyId" : {
+          "deprecated" : false,
+          "documentation" : "<p>A unique identifier for the CMK you are tagging. You can use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:</p> <ul> <li> <p>Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "KeyIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>One or more tags. Each tag consists of a tag key and a tag value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TagList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "KeyId", "Tags" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagValueType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 256,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "UnsupportedOperationException" : {
       "deprecated" : false,
       "documentation" : "<p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>",
@@ -6548,6 +7083,54 @@
       "pattern" : null,
       "payload" : null,
       "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UntagResourceRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "KeyId" : {
+          "deprecated" : false,
+          "documentation" : "<p>A unique identifier for the CMK from which you are removing tags. You can use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:</p> <ul> <li> <p>Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "KeyIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TagKeys" : {
+          "deprecated" : false,
+          "documentation" : "<p>One or more tag keys. Specify only the tag keys, not the tag values.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TagKeyList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "KeyId", "TagKeys" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,

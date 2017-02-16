@@ -1368,6 +1368,37 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
+     * Returns a list of all tags for the specified customer master key (CMK).
+     * </p>
+     * 
+     * @param listResourceTagsRequest
+     * @return A Java Future containing the result of the ListResourceTags operation returned by the service.
+     * @sample AWSKMSAsync.ListResourceTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceTagsResult> listResourceTagsAsync(ListResourceTagsRequest listResourceTagsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all tags for the specified customer master key (CMK).
+     * </p>
+     * 
+     * @param listResourceTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceTags operation returned by the service.
+     * @sample AWSKMSAsyncHandler.ListResourceTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceTagsResult> listResourceTagsAsync(ListResourceTagsRequest listResourceTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceTagsRequest, ListResourceTagsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of all grants for which the grant's <code>RetiringPrincipal</code> matches the one specified.
      * </p>
      * <p>
@@ -1681,6 +1712,96 @@ public interface AWSKMSAsync extends AWSKMS {
      */
     java.util.concurrent.Future<ScheduleKeyDeletionResult> scheduleKeyDeletionAsync(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest,
             com.amazonaws.handlers.AsyncHandler<ScheduleKeyDeletionRequest, ScheduleKeyDeletionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be
+     * empty (null) strings.
+     * </p>
+     * <p>
+     * You cannot use the same tag key more than once per CMK. For example, consider a CMK with one tag whose tag key is
+     * <code>Purpose</code> and tag value is <code>Test</code>. If you send a <code>TagResource</code> request for this
+     * CMK with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it does not create a second tag.
+     * Instead, the original tag is overwritten with the new tag value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSKMSAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be
+     * empty (null) strings.
+     * </p>
+     * <p>
+     * You cannot use the same tag key more than once per CMK. For example, consider a CMK with one tag whose tag key is
+     * <code>Purpose</code> and tag value is <code>Test</code>. If you send a <code>TagResource</code> request for this
+     * CMK with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it does not create a second tag.
+     * Instead, the original tag is overwritten with the new tag value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSKMSAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified tag or tags from the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * To remove a tag, you specify the tag key for each tag to remove. You do not specify the tag value. To overwrite
+     * the tag value for an existing tag, use <a>TagResource</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSKMSAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the specified tag or tags from the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * To remove a tag, you specify the tag key for each tag to remove. You do not specify the tag value. To overwrite
+     * the tag value for an existing tag, use <a>TagResource</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSKMSAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>
