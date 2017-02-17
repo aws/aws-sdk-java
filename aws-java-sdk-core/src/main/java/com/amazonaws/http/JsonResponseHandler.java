@@ -118,6 +118,10 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);
 
+            while(response.getContent().read() != -1) {
+                // Make sure we read all the content to get an accurate CRC32.
+            }
+
             if (CRC32Checksum != null) {
                 long serverSideCRC = Long.parseLong(CRC32Checksum);
                 long clientSideCRC = response.getCRC32Checksum();
