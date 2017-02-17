@@ -43,6 +43,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<AllocateHostedConnectionResult> allocateHostedConnectionAsync(AllocateHostedConnectionRequest request) {
+
+        return allocateHostedConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AllocateHostedConnectionResult> allocateHostedConnectionAsync(AllocateHostedConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<AllocateHostedConnectionRequest, AllocateHostedConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AllocatePrivateVirtualInterfaceResult> allocatePrivateVirtualInterfaceAsync(
             AllocatePrivateVirtualInterfaceRequest request) {
 
@@ -66,6 +79,45 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(AllocatePublicVirtualInterfaceRequest request,
             com.amazonaws.handlers.AsyncHandler<AllocatePublicVirtualInterfaceRequest, AllocatePublicVirtualInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(AssociateConnectionWithLagRequest request) {
+
+        return associateConnectionWithLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(AssociateConnectionWithLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateConnectionWithLagRequest, AssociateConnectionWithLagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateHostedConnectionResult> associateHostedConnectionAsync(AssociateHostedConnectionRequest request) {
+
+        return associateHostedConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateHostedConnectionResult> associateHostedConnectionAsync(AssociateHostedConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateHostedConnectionRequest, AssociateHostedConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(AssociateVirtualInterfaceRequest request) {
+
+        return associateVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(AssociateVirtualInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateVirtualInterfaceRequest, AssociateVirtualInterfaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -149,6 +201,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLagResult> createLagAsync(CreateLagRequest request) {
+
+        return createLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLagResult> createLagAsync(CreateLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLagRequest, CreateLagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult> createPrivateVirtualInterfaceAsync(CreatePrivateVirtualInterfaceRequest request) {
 
         return createPrivateVirtualInterfaceAsync(request, null);
@@ -209,6 +274,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInterconnectRequest, DeleteInterconnectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLagResult> deleteLagAsync(DeleteLagRequest request) {
+
+        return deleteLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLagResult> deleteLagAsync(DeleteLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLagRequest, DeleteLagResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -290,6 +368,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeHostedConnectionsResult> describeHostedConnectionsAsync(DescribeHostedConnectionsRequest request) {
+
+        return describeHostedConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostedConnectionsResult> describeHostedConnectionsAsync(DescribeHostedConnectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostedConnectionsRequest, DescribeHostedConnectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(DescribeInterconnectLoaRequest request) {
 
         return describeInterconnectLoaAsync(request, null);
@@ -335,6 +426,32 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult> asyncHandler) {
 
         return describeInterconnectsAsync(new DescribeInterconnectsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLagsResult> describeLagsAsync(DescribeLagsRequest request) {
+
+        return describeLagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLagsResult> describeLagsAsync(DescribeLagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLagsRequest, DescribeLagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLoaResult> describeLoaAsync(DescribeLoaRequest request) {
+
+        return describeLoaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLoaResult> describeLoaAsync(DescribeLoaRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLoaRequest, DescribeLoaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -456,6 +573,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateConnectionFromLagResult> disassociateConnectionFromLagAsync(DisassociateConnectionFromLagRequest request) {
+
+        return disassociateConnectionFromLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConnectionFromLagResult> disassociateConnectionFromLagAsync(DisassociateConnectionFromLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateConnectionFromLagRequest, DisassociateConnectionFromLagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -477,6 +607,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLagResult> updateLagAsync(UpdateLagRequest request) {
+
+        return updateLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLagResult> updateLagAsync(UpdateLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLagRequest, UpdateLagResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

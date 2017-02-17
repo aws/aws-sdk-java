@@ -41,6 +41,9 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Deprecated in favor of <a>AllocateHostedConnection</a>.
+     * </p>
+     * <p>
      * Creates a hosted connection on an interconnect.
      * </p>
      * <p>
@@ -65,6 +68,9 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
             AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest);
 
     /**
+     * <p>
+     * Deprecated in favor of <a>AllocateHostedConnection</a>.
+     * </p>
      * <p>
      * Creates a hosted connection on an interconnect.
      * </p>
@@ -96,16 +102,63 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Provisions a private virtual interface to be owned by a different customer.
+     * Creates a hosted connection on an interconnect or a link aggregation group (LAG).
      * </p>
      * <p>
-     * The owner of a connection calls this function to provision a private virtual interface which will be owned by
-     * another AWS customer.
+     * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the given
+     * interconnect or LAG.
+     * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
+     * 
+     * @param allocateHostedConnectionRequest
+     *        Container for the parameters to theHostedConnection operation.
+     * @return A Java Future containing the result of the AllocateHostedConnection operation returned by the service.
+     * @sample AmazonDirectConnectAsync.AllocateHostedConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AllocateHostedConnectionResult> allocateHostedConnectionAsync(AllocateHostedConnectionRequest allocateHostedConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a hosted connection on an interconnect or a link aggregation group (LAG).
      * </p>
      * <p>
-     * Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling
-     * ConfirmPrivateVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming'
-     * state, and will not be available for handling traffic.
+     * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the given
+     * interconnect or LAG.
+     * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
+     * 
+     * @param allocateHostedConnectionRequest
+     *        Container for the parameters to theHostedConnection operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AllocateHostedConnection operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.AllocateHostedConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AllocateHostedConnectionResult> allocateHostedConnectionAsync(AllocateHostedConnectionRequest allocateHostedConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<AllocateHostedConnectionRequest, AllocateHostedConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provisions a private virtual interface to be owned by another AWS customer.
+     * </p>
+     * <p>
+     * Virtual interfaces created using this action must be confirmed by the virtual interface owner by using the
+     * <a>ConfirmPrivateVirtualInterface</a> action. Until then, the virtual interface will be in 'Confirming' state,
+     * and will not be available for handling traffic.
      * </p>
      * 
      * @param allocatePrivateVirtualInterfaceRequest
@@ -121,16 +174,12 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Provisions a private virtual interface to be owned by a different customer.
+     * Provisions a private virtual interface to be owned by another AWS customer.
      * </p>
      * <p>
-     * The owner of a connection calls this function to provision a private virtual interface which will be owned by
-     * another AWS customer.
-     * </p>
-     * <p>
-     * Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling
-     * ConfirmPrivateVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming'
-     * state, and will not be available for handling traffic.
+     * Virtual interfaces created using this action must be confirmed by the virtual interface owner by using the
+     * <a>ConfirmPrivateVirtualInterface</a> action. Until then, the virtual interface will be in 'Confirming' state,
+     * and will not be available for handling traffic.
      * </p>
      * 
      * @param allocatePrivateVirtualInterfaceRequest
@@ -211,6 +260,179 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(
             AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest,
             com.amazonaws.handlers.AsyncHandler<AllocatePublicVirtualInterfaceRequest, AllocatePublicVirtualInterfaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates an existing connection with a link aggregation group (LAG). The connection is interrupted and
+     * re-established as a member of the LAG (connectivity to AWS will be interrupted). The connection must be hosted on
+     * the same AWS Direct Connect endpoint as the LAG, and its bandwidth must match the bandwidth for the LAG. You can
+     * reassociate a connection that's currently associated with a different LAG; however, if removing the connection
+     * will cause the original LAG to fall below its setting for minimum number of operational connections, the request
+     * fails.
+     * </p>
+     * <p>
+     * Virtual interfaces that are directly associated with the connection are not automatically migrated. You can
+     * delete them or associate them with the target LAG using <a>AssociateVirtualInterface</a>. If the connection was
+     * originally associated with a different LAG, the virtual interfaces remain associated with the original LAG.
+     * </p>
+     * <p>
+     * For interconnects, hosted connections are not automatically migrated. You can delete them, or the owner of the
+     * physical connection can associate them with the target LAG using <a>AssociateHostedConnection</a>. After all
+     * hosted connections have been migrated, the interconnect can be migrated into the LAG. If the interconnect is
+     * already associated with a LAG, the hosted connections remain associated with the original LAG.
+     * </p>
+     * 
+     * @param associateConnectionWithLagRequest
+     *        Container for the parameters to the AssociateConnectionWithLag operation.
+     * @return A Java Future containing the result of the AssociateConnectionWithLag operation returned by the service.
+     * @sample AmazonDirectConnectAsync.AssociateConnectionWithLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(
+            AssociateConnectionWithLagRequest associateConnectionWithLagRequest);
+
+    /**
+     * <p>
+     * Associates an existing connection with a link aggregation group (LAG). The connection is interrupted and
+     * re-established as a member of the LAG (connectivity to AWS will be interrupted). The connection must be hosted on
+     * the same AWS Direct Connect endpoint as the LAG, and its bandwidth must match the bandwidth for the LAG. You can
+     * reassociate a connection that's currently associated with a different LAG; however, if removing the connection
+     * will cause the original LAG to fall below its setting for minimum number of operational connections, the request
+     * fails.
+     * </p>
+     * <p>
+     * Virtual interfaces that are directly associated with the connection are not automatically migrated. You can
+     * delete them or associate them with the target LAG using <a>AssociateVirtualInterface</a>. If the connection was
+     * originally associated with a different LAG, the virtual interfaces remain associated with the original LAG.
+     * </p>
+     * <p>
+     * For interconnects, hosted connections are not automatically migrated. You can delete them, or the owner of the
+     * physical connection can associate them with the target LAG using <a>AssociateHostedConnection</a>. After all
+     * hosted connections have been migrated, the interconnect can be migrated into the LAG. If the interconnect is
+     * already associated with a LAG, the hosted connections remain associated with the original LAG.
+     * </p>
+     * 
+     * @param associateConnectionWithLagRequest
+     *        Container for the parameters to the AssociateConnectionWithLag operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateConnectionWithLag operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.AssociateConnectionWithLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(
+            AssociateConnectionWithLagRequest associateConnectionWithLagRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateConnectionWithLagRequest, AssociateConnectionWithLagResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect. If
+     * the target interconnect or LAG has an existing hosted connection with a conflicting VLAN number or IP address,
+     * the operation fails. This action temporarily interrupts the hosted connection's connectivity to AWS as it is
+     * being migrated.
+     * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
+     * 
+     * @param associateHostedConnectionRequest
+     *        Container for the parameters to the AssociateHostedConnection operation.
+     * @return A Java Future containing the result of the AssociateHostedConnection operation returned by the service.
+     * @sample AmazonDirectConnectAsync.AssociateHostedConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateHostedConnectionResult> associateHostedConnectionAsync(
+            AssociateHostedConnectionRequest associateHostedConnectionRequest);
+
+    /**
+     * <p>
+     * Associates a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect. If
+     * the target interconnect or LAG has an existing hosted connection with a conflicting VLAN number or IP address,
+     * the operation fails. This action temporarily interrupts the hosted connection's connectivity to AWS as it is
+     * being migrated.
+     * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
+     * 
+     * @param associateHostedConnectionRequest
+     *        Container for the parameters to the AssociateHostedConnection operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateHostedConnection operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.AssociateHostedConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateHostedConnectionResult> associateHostedConnectionAsync(
+            AssociateHostedConnectionRequest associateHostedConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateHostedConnectionRequest, AssociateHostedConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to AWS
+     * is temporarily interrupted as the virtual interface is being migrated. If the target connection or LAG has an
+     * associated virtual interface with a conflicting VLAN number or a conflicting IP address, the operation fails.
+     * </p>
+     * <p>
+     * Virtual interfaces associated with a hosted connection cannot be associated with a LAG; hosted connections must
+     * be migrated along with their virtual interfaces using <a>AssociateHostedConnection</a>.
+     * </p>
+     * <p>
+     * Hosted virtual interfaces (an interface for which the owner of the connection is not the owner of physical
+     * connection) can only be reassociated by the owner of the physical connection.
+     * </p>
+     * 
+     * @param associateVirtualInterfaceRequest
+     *        Container for the parameters to the AssociateVirtualInterface operation.
+     * @return A Java Future containing the result of the AssociateVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsync.AssociateVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(
+            AssociateVirtualInterfaceRequest associateVirtualInterfaceRequest);
+
+    /**
+     * <p>
+     * Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to AWS
+     * is temporarily interrupted as the virtual interface is being migrated. If the target connection or LAG has an
+     * associated virtual interface with a conflicting VLAN number or a conflicting IP address, the operation fails.
+     * </p>
+     * <p>
+     * Virtual interfaces associated with a hosted connection cannot be associated with a LAG; hosted connections must
+     * be migrated along with their virtual interfaces using <a>AssociateHostedConnection</a>.
+     * </p>
+     * <p>
+     * Hosted virtual interfaces (an interface for which the owner of the connection is not the owner of physical
+     * connection) can only be reassociated by the owner of the physical connection.
+     * </p>
+     * 
+     * @param associateVirtualInterfaceRequest
+     *        Container for the parameters to the AssociateVirtualInterface operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.AssociateVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(
+            AssociateVirtualInterfaceRequest associateVirtualInterfaceRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateVirtualInterfaceRequest, AssociateVirtualInterfaceResult> asyncHandler);
 
     /**
      * <p>
@@ -413,6 +635,12 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a
      * connection in one region does not provide connectivity to other regions.
      * </p>
+     * <p>
+     * You can automatically add the new connection to a link aggregation group (LAG) by specifying a LAG ID in the
+     * request. This ensures that the new connection is allocated on the same AWS Direct Connect endpoint that hosts the
+     * specified LAG. If there are no available ports on the endpoint, the request fails and no connection will be
+     * created.
+     * </p>
      * 
      * @param createConnectionRequest
      *        Container for the parameters to the CreateConnection operation.
@@ -433,6 +661,12 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * Connect router. An AWS Direct Connect location provides access to Amazon Web Services in the region it is
      * associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a
      * connection in one region does not provide connectivity to other regions.
+     * </p>
+     * <p>
+     * You can automatically add the new connection to a link aggregation group (LAG) by specifying a LAG ID in the
+     * request. This ensures that the new connection is allocated on the same AWS Direct Connect endpoint that hosts the
+     * specified LAG. If there are no available ports on the endpoint, the request fails and no connection will be
+     * created.
      * </p>
      * 
      * @param createConnectionRequest
@@ -460,6 +694,12 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * connections. Like a standard connection, an interconnect links the AWS Direct Connect partner's network to an AWS
      * Direct Connect location over a standard 1 Gbps or 10 Gbps Ethernet fiber-optic cable. One end is connected to the
      * partner's router, the other to an AWS Direct Connect router.
+     * </p>
+     * <p>
+     * You can automatically add the new interconnect to a link aggregation group (LAG) by specifying a LAG ID in the
+     * request. This ensures that the new interconnect is allocated on the same AWS Direct Connect endpoint that hosts
+     * the specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect will be
+     * created.
      * </p>
      * <p>
      * For each end customer, the AWS Direct Connect partner provisions a connection on their interconnect by calling
@@ -494,6 +734,12 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * partner's router, the other to an AWS Direct Connect router.
      * </p>
      * <p>
+     * You can automatically add the new interconnect to a link aggregation group (LAG) by specifying a LAG ID in the
+     * request. This ensures that the new interconnect is allocated on the same AWS Direct Connect endpoint that hosts
+     * the specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect will be
+     * created.
+     * </p>
+     * <p>
      * For each end customer, the AWS Direct Connect partner provisions a connection on their interconnect by calling
      * AllocateConnectionOnInterconnect. The end customer can then connect to AWS resources by creating a virtual
      * interface on their connection, using the VLAN assigned to them by the AWS Direct Connect partner.
@@ -517,6 +763,85 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      */
     java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(CreateInterconnectRequest createInterconnectRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInterconnectRequest, CreateInterconnectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new link aggregation group (LAG) with the specified number of bundled physical connections between the
+     * customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses the Link
+     * Aggregation Control Protocol (LACP) to aggregate multiple 1 gigabit or 10 gigabit interfaces, allowing you to
+     * treat them as a single interface.
+     * </p>
+     * <p>
+     * All connections in a LAG must use the same bandwidth (for example, 10 Gbps), and must terminate at the same AWS
+     * Direct Connect endpoint.
+     * </p>
+     * <p>
+     * You can have up to 10 connections per LAG. Regardless of this limit, if you request more connections for the LAG
+     * than AWS Direct Connect can allocate on a single endpoint, no LAG is created.
+     * </p>
+     * <p>
+     * You can specify an existing physical connection or interconnect to include in the LAG (which counts towards the
+     * total number of connections). Doing so interrupts the current physical connection or hosted connections, and
+     * re-establishes them as a member of the LAG. The LAG will be created on the same AWS Direct Connect endpoint to
+     * which the connection terminates. Any virtual interfaces associated with the connection are automatically
+     * disassociated and re-associated with the LAG. The connection ID does not change.
+     * </p>
+     * <p>
+     * If the AWS account used to create a LAG is a registered AWS Direct Connect partner, the LAG is automatically
+     * enabled to host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be
+     * directly configured.
+     * </p>
+     * 
+     * @param createLagRequest
+     *        Container for the parameters to the CreateLag operation.
+     * @return A Java Future containing the result of the CreateLag operation returned by the service.
+     * @sample AmazonDirectConnectAsync.CreateLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLagResult> createLagAsync(CreateLagRequest createLagRequest);
+
+    /**
+     * <p>
+     * Creates a new link aggregation group (LAG) with the specified number of bundled physical connections between the
+     * customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses the Link
+     * Aggregation Control Protocol (LACP) to aggregate multiple 1 gigabit or 10 gigabit interfaces, allowing you to
+     * treat them as a single interface.
+     * </p>
+     * <p>
+     * All connections in a LAG must use the same bandwidth (for example, 10 Gbps), and must terminate at the same AWS
+     * Direct Connect endpoint.
+     * </p>
+     * <p>
+     * You can have up to 10 connections per LAG. Regardless of this limit, if you request more connections for the LAG
+     * than AWS Direct Connect can allocate on a single endpoint, no LAG is created.
+     * </p>
+     * <p>
+     * You can specify an existing physical connection or interconnect to include in the LAG (which counts towards the
+     * total number of connections). Doing so interrupts the current physical connection or hosted connections, and
+     * re-establishes them as a member of the LAG. The LAG will be created on the same AWS Direct Connect endpoint to
+     * which the connection terminates. Any virtual interfaces associated with the connection are automatically
+     * disassociated and re-associated with the LAG. The connection ID does not change.
+     * </p>
+     * <p>
+     * If the AWS account used to create a LAG is a registered AWS Direct Connect partner, the LAG is automatically
+     * enabled to host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be
+     * directly configured.
+     * </p>
+     * 
+     * @param createLagRequest
+     *        Container for the parameters to the CreateLag operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLag operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.CreateLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLagResult> createLagAsync(CreateLagRequest createLagRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLagRequest, CreateLagResult> asyncHandler);
 
     /**
      * <p>
@@ -729,6 +1054,41 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Deletes a link aggregation group (LAG). You cannot delete a LAG if it has active virtual interfaces or hosted
+     * connections.
+     * </p>
+     * 
+     * @param deleteLagRequest
+     *        Container for the parameters to the DeleteLag operation.
+     * @return A Java Future containing the result of the DeleteLag operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DeleteLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLagResult> deleteLagAsync(DeleteLagRequest deleteLagRequest);
+
+    /**
+     * <p>
+     * Deletes a link aggregation group (LAG). You cannot delete a LAG if it has active virtual interfaces or hosted
+     * connections.
+     * </p>
+     * 
+     * @param deleteLagRequest
+     *        Container for the parameters to the DeleteLag operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLag operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DeleteLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLagResult> deleteLagAsync(DeleteLagRequest deleteLagRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLagRequest, DeleteLagResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a virtual interface.
      * </p>
      * 
@@ -762,6 +1122,9 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Deprecated in favor of <a>DescribeLoa</a>.
+     * </p>
+     * <p>
      * Returns the LOA-CFA for a Connection.
      * </p>
      * <p>
@@ -781,6 +1144,9 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(DescribeConnectionLoaRequest describeConnectionLoaRequest);
 
     /**
+     * <p>
+     * Deprecated in favor of <a>DescribeLoa</a>.
+     * </p>
      * <p>
      * Returns the LOA-CFA for a Connection.
      * </p>
@@ -861,7 +1227,10 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Return a list of connections that have been provisioned on the given interconnect.
+     * Deprecated in favor of <a>DescribeHostedConnections</a>.
+     * </p>
+     * <p>
+     * Returns a list of connections that have been provisioned on the given interconnect.
      * </p>
      * <note>
      * <p>
@@ -882,7 +1251,10 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Return a list of connections that have been provisioned on the given interconnect.
+     * Deprecated in favor of <a>DescribeHostedConnections</a>.
+     * </p>
+     * <p>
+     * Returns a list of connections that have been provisioned on the given interconnect.
      * </p>
      * <note>
      * <p>
@@ -908,6 +1280,56 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Returns a list of hosted connections that have been provisioned on the given interconnect or link aggregation
+     * group (LAG).
+     * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
+     * 
+     * @param describeHostedConnectionsRequest
+     *        Container for the parameters to the DescribeHostedConnections operation.
+     * @return A Java Future containing the result of the DescribeHostedConnections operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeHostedConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHostedConnectionsResult> describeHostedConnectionsAsync(
+            DescribeHostedConnectionsRequest describeHostedConnectionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of hosted connections that have been provisioned on the given interconnect or link aggregation
+     * group (LAG).
+     * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
+     * 
+     * @param describeHostedConnectionsRequest
+     *        Container for the parameters to the DescribeHostedConnections operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHostedConnections operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeHostedConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHostedConnectionsResult> describeHostedConnectionsAsync(
+            DescribeHostedConnectionsRequest describeHostedConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostedConnectionsRequest, DescribeHostedConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deprecated in favor of <a>DescribeLoa</a>.
+     * </p>
+     * <p>
      * Returns the LOA-CFA for an Interconnect.
      * </p>
      * <p>
@@ -927,6 +1349,9 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(DescribeInterconnectLoaRequest describeInterconnectLoaRequest);
 
     /**
+     * <p>
+     * Deprecated in favor of <a>DescribeLoa</a>.
+     * </p>
      * <p>
      * Returns the LOA-CFA for an Interconnect.
      * </p>
@@ -1004,6 +1429,90 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      */
     java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the link aggregation groups (LAGs) in your account.
+     * </p>
+     * <p>
+     * If a LAG ID is provided, only information about the specified LAG is returned.
+     * </p>
+     * 
+     * @param describeLagsRequest
+     *        Container for the parameters to the DescribeLags operation.
+     * @return A Java Future containing the result of the DescribeLags operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeLags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLagsResult> describeLagsAsync(DescribeLagsRequest describeLagsRequest);
+
+    /**
+     * <p>
+     * Describes the link aggregation groups (LAGs) in your account.
+     * </p>
+     * <p>
+     * If a LAG ID is provided, only information about the specified LAG is returned.
+     * </p>
+     * 
+     * @param describeLagsRequest
+     *        Container for the parameters to the DescribeLags operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLags operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeLags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLagsResult> describeLagsAsync(DescribeLagsRequest describeLagsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLagsRequest, DescribeLagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).
+     * </p>
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
+     * establishing your cross connect to AWS at the colocation facility. For more information, see <a
+     * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at AWS
+     * Direct Connect Locations</a> in the AWS Direct Connect user guide.
+     * </p>
+     * 
+     * @param describeLoaRequest
+     *        Container for the parameters to the DescribeLoa operation.
+     * @return A Java Future containing the result of the DescribeLoa operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeLoa
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLoaResult> describeLoaAsync(DescribeLoaRequest describeLoaRequest);
+
+    /**
+     * <p>
+     * Returns the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).
+     * </p>
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
+     * establishing your cross connect to AWS at the colocation facility. For more information, see <a
+     * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at AWS
+     * Direct Connect Locations</a> in the AWS Direct Connect user guide.
+     * </p>
+     * 
+     * @param describeLoaRequest
+     *        Container for the parameters to the DescribeLoa operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLoa operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeLoa
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLoaResult> describeLoaAsync(DescribeLoaRequest describeLoaRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLoaRequest, DescribeLoaResult> asyncHandler);
 
     /**
      * <p>
@@ -1146,17 +1655,13 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before
-     * DescribeVirtualInterfaces is called are also returned. If a connection ID is included then only virtual
-     * interfaces associated with this connection will be returned. If a virtual interface ID is included then only a
-     * single virtual interface will be returned.
+     * Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before you
+     * make the request are also returned. If you specify a connection ID, only the virtual interfaces associated with
+     * the connection are returned. If you specify a virtual interface ID, then only a single virtual interface is
+     * returned.
      * </p>
      * <p>
      * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.
-     * </p>
-     * <p>
-     * If a connection ID is provided, only virtual interfaces provisioned on the specified connection will be returned.
-     * If a virtual interface ID is provided, only this particular virtual interface will be returned.
      * </p>
      * 
      * @param describeVirtualInterfacesRequest
@@ -1171,17 +1676,13 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before
-     * DescribeVirtualInterfaces is called are also returned. If a connection ID is included then only virtual
-     * interfaces associated with this connection will be returned. If a virtual interface ID is included then only a
-     * single virtual interface will be returned.
+     * Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before you
+     * make the request are also returned. If you specify a connection ID, only the virtual interfaces associated with
+     * the connection are returned. If you specify a virtual interface ID, then only a single virtual interface is
+     * returned.
      * </p>
      * <p>
      * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.
-     * </p>
-     * <p>
-     * If a connection ID is provided, only virtual interfaces provisioned on the specified connection will be returned.
-     * If a virtual interface ID is provided, only this particular virtual interface will be returned.
      * </p>
      * 
      * @param describeVirtualInterfacesRequest
@@ -1213,6 +1714,61 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      */
     java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a connection from a link aggregation group (LAG). The connection is interrupted and re-established
+     * as a standalone connection (the connection is not deleted; to delete the connection, use the
+     * <a>DeleteConnection</a> request). If the LAG has associated virtual interfaces or hosted connections, they remain
+     * associated with the LAG. A disassociated connection owned by an AWS Direct Connect partner is automatically
+     * converted to an interconnect.
+     * </p>
+     * <p>
+     * If disassociating the connection will cause the LAG to fall below its setting for minimum number of operational
+     * connections, the request fails, except when it's the last member of the LAG. If all connections are
+     * disassociated, the LAG continues to exist as an empty LAG with no physical connections.
+     * </p>
+     * 
+     * @param disassociateConnectionFromLagRequest
+     *        Container for the parameters to the DisassociateConnectionFromLag operation.
+     * @return A Java Future containing the result of the DisassociateConnectionFromLag operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsync.DisassociateConnectionFromLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateConnectionFromLagResult> disassociateConnectionFromLagAsync(
+            DisassociateConnectionFromLagRequest disassociateConnectionFromLagRequest);
+
+    /**
+     * <p>
+     * Disassociates a connection from a link aggregation group (LAG). The connection is interrupted and re-established
+     * as a standalone connection (the connection is not deleted; to delete the connection, use the
+     * <a>DeleteConnection</a> request). If the LAG has associated virtual interfaces or hosted connections, they remain
+     * associated with the LAG. A disassociated connection owned by an AWS Direct Connect partner is automatically
+     * converted to an interconnect.
+     * </p>
+     * <p>
+     * If disassociating the connection will cause the LAG to fall below its setting for minimum number of operational
+     * connections, the request fails, except when it's the last member of the LAG. If all connections are
+     * disassociated, the LAG continues to exist as an empty LAG with no physical connections.
+     * </p>
+     * 
+     * @param disassociateConnectionFromLagRequest
+     *        Container for the parameters to the DisassociateConnectionFromLag operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateConnectionFromLag operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsyncHandler.DisassociateConnectionFromLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateConnectionFromLagResult> disassociateConnectionFromLagAsync(
+            DisassociateConnectionFromLagRequest disassociateConnectionFromLagRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateConnectionFromLagRequest, DisassociateConnectionFromLagResult> asyncHandler);
 
     /**
      * <p>
@@ -1289,5 +1845,82 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the attributes of a link aggregation group (LAG).
+     * </p>
+     * <p>
+     * You can update the following attributes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name of the LAG.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value for the minimum number of connections that must be operational for the LAG itself to be operational.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you create a LAG, the default value for the minimum number of operational connections is zero (0). If you
+     * update this value, and the number of operational connections falls below the specified value, the LAG will
+     * automatically go down to avoid overutilization of the remaining connections. Adjusting this value should be done
+     * with care as it could force the LAG down if the value is set higher than the current number of operational
+     * connections.
+     * </p>
+     * 
+     * @param updateLagRequest
+     *        Container for the parameters to the UpdateLag operation.
+     * @return A Java Future containing the result of the UpdateLag operation returned by the service.
+     * @sample AmazonDirectConnectAsync.UpdateLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLagResult> updateLagAsync(UpdateLagRequest updateLagRequest);
+
+    /**
+     * <p>
+     * Updates the attributes of a link aggregation group (LAG).
+     * </p>
+     * <p>
+     * You can update the following attributes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name of the LAG.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value for the minimum number of connections that must be operational for the LAG itself to be operational.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you create a LAG, the default value for the minimum number of operational connections is zero (0). If you
+     * update this value, and the number of operational connections falls below the specified value, the LAG will
+     * automatically go down to avoid overutilization of the remaining connections. Adjusting this value should be done
+     * with care as it could force the LAG down if the value is set higher than the current number of operational
+     * connections.
+     * </p>
+     * 
+     * @param updateLagRequest
+     *        Container for the parameters to the UpdateLag operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLag operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.UpdateLag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLagResult> updateLagAsync(UpdateLagRequest updateLagRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLagRequest, UpdateLagResult> asyncHandler);
 
 }

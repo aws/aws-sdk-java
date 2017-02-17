@@ -58,6 +58,12 @@ public class InterconnectJsonMarshaller {
             if (interconnect.getLoaIssueTime() != null) {
                 jsonGenerator.writeFieldName("loaIssueTime").writeValue(interconnect.getLoaIssueTime());
             }
+            if (interconnect.getLagId() != null) {
+                jsonGenerator.writeFieldName("lagId").writeValue(interconnect.getLagId());
+            }
+            if (interconnect.getAwsDevice() != null) {
+                jsonGenerator.writeFieldName("awsDevice").writeValue(interconnect.getAwsDevice());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

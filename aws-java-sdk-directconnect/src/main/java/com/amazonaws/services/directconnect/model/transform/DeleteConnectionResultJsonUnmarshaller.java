@@ -88,6 +88,14 @@ public class DeleteConnectionResultJsonUnmarshaller implements Unmarshaller<Dele
                     context.nextToken();
                     deleteConnectionResult.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("lagId", targetDepth)) {
+                    context.nextToken();
+                    deleteConnectionResult.setLagId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDevice", targetDepth)) {
+                    context.nextToken();
+                    deleteConnectionResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

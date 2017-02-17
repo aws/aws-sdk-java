@@ -287,6 +287,38 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<AllocateHostedConnectionResult> allocateHostedConnectionAsync(AllocateHostedConnectionRequest request) {
+
+        return allocateHostedConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AllocateHostedConnectionResult> allocateHostedConnectionAsync(final AllocateHostedConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AllocateHostedConnectionRequest, AllocateHostedConnectionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AllocateHostedConnectionResult>() {
+            @Override
+            public AllocateHostedConnectionResult call() throws Exception {
+                AllocateHostedConnectionResult result;
+
+                try {
+                    result = allocateHostedConnection(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AllocatePrivateVirtualInterfaceResult> allocatePrivateVirtualInterfaceAsync(
             AllocatePrivateVirtualInterfaceRequest request) {
 
@@ -338,6 +370,102 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = allocatePublicVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(AssociateConnectionWithLagRequest request) {
+
+        return associateConnectionWithLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(final AssociateConnectionWithLagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateConnectionWithLagRequest, AssociateConnectionWithLagResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateConnectionWithLagResult>() {
+            @Override
+            public AssociateConnectionWithLagResult call() throws Exception {
+                AssociateConnectionWithLagResult result;
+
+                try {
+                    result = associateConnectionWithLag(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateHostedConnectionResult> associateHostedConnectionAsync(AssociateHostedConnectionRequest request) {
+
+        return associateHostedConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateHostedConnectionResult> associateHostedConnectionAsync(final AssociateHostedConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateHostedConnectionRequest, AssociateHostedConnectionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateHostedConnectionResult>() {
+            @Override
+            public AssociateHostedConnectionResult call() throws Exception {
+                AssociateHostedConnectionResult result;
+
+                try {
+                    result = associateHostedConnection(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(AssociateVirtualInterfaceRequest request) {
+
+        return associateVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(final AssociateVirtualInterfaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateVirtualInterfaceRequest, AssociateVirtualInterfaceResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateVirtualInterfaceResult>() {
+            @Override
+            public AssociateVirtualInterfaceResult call() throws Exception {
+                AssociateVirtualInterfaceResult result;
+
+                try {
+                    result = associateVirtualInterface(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -548,6 +676,38 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLagResult> createLagAsync(CreateLagRequest request) {
+
+        return createLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLagResult> createLagAsync(final CreateLagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLagRequest, CreateLagResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLagResult>() {
+            @Override
+            public CreateLagResult call() throws Exception {
+                CreateLagResult result;
+
+                try {
+                    result = createLag(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult> createPrivateVirtualInterfaceAsync(CreatePrivateVirtualInterfaceRequest request) {
 
         return createPrivateVirtualInterfaceAsync(request, null);
@@ -693,6 +853,38 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = deleteInterconnect(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLagResult> deleteLagAsync(DeleteLagRequest request) {
+
+        return deleteLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLagResult> deleteLagAsync(final DeleteLagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLagRequest, DeleteLagResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLagResult>() {
+            @Override
+            public DeleteLagResult call() throws Exception {
+                DeleteLagResult result;
+
+                try {
+                    result = deleteLag(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -861,6 +1053,38 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeHostedConnectionsResult> describeHostedConnectionsAsync(DescribeHostedConnectionsRequest request) {
+
+        return describeHostedConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostedConnectionsResult> describeHostedConnectionsAsync(final DescribeHostedConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHostedConnectionsRequest, DescribeHostedConnectionsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeHostedConnectionsResult>() {
+            @Override
+            public DescribeHostedConnectionsResult call() throws Exception {
+                DescribeHostedConnectionsResult result;
+
+                try {
+                    result = describeHostedConnections(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(DescribeInterconnectLoaRequest request) {
 
         return describeInterconnectLoaAsync(request, null);
@@ -944,6 +1168,70 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult> asyncHandler) {
 
         return describeInterconnectsAsync(new DescribeInterconnectsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLagsResult> describeLagsAsync(DescribeLagsRequest request) {
+
+        return describeLagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLagsResult> describeLagsAsync(final DescribeLagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLagsRequest, DescribeLagsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLagsResult>() {
+            @Override
+            public DescribeLagsResult call() throws Exception {
+                DescribeLagsResult result;
+
+                try {
+                    result = describeLags(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLoaResult> describeLoaAsync(DescribeLoaRequest request) {
+
+        return describeLoaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLoaResult> describeLoaAsync(final DescribeLoaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLoaRequest, DescribeLoaResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLoaResult>() {
+            @Override
+            public DescribeLoaResult call() throws Exception {
+                DescribeLoaResult result;
+
+                try {
+                    result = describeLoa(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -1141,6 +1429,39 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateConnectionFromLagResult> disassociateConnectionFromLagAsync(DisassociateConnectionFromLagRequest request) {
+
+        return disassociateConnectionFromLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConnectionFromLagResult> disassociateConnectionFromLagAsync(
+            final DisassociateConnectionFromLagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateConnectionFromLagRequest, DisassociateConnectionFromLagResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateConnectionFromLagResult>() {
+            @Override
+            public DisassociateConnectionFromLagResult call() throws Exception {
+                DisassociateConnectionFromLagResult result;
+
+                try {
+                    result = disassociateConnectionFromLag(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1189,6 +1510,38 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = untagResource(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLagResult> updateLagAsync(UpdateLagRequest request) {
+
+        return updateLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLagResult> updateLagAsync(final UpdateLagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLagRequest, UpdateLagResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLagResult>() {
+            @Override
+            public UpdateLagResult call() throws Exception {
+                UpdateLagResult result;
+
+                try {
+                    result = updateLag(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,3 +1,8 @@
+# __1.11.93__ __2017-02-17__
+## __AWS Direct Connect__
+  - <h3>Features</h3>
+    - This update will introduce the ability for Direct Connect customers to take advantage of Link Aggregation (LAG). This allows you to bundle many individual physical interfaces into a single logical interface, referred to as a LAG. This makes administration much simpler as the majority of configuration is done on the LAG while you are free to add or remove physical interfaces from the bundle as bandwidth demand increases or decreases. A concrete example of the simplification added by LAG is that customers need only a single BGP session as opposed to one session per physical connection.
+
 # __1.11.92__ __2017-02-16__
 ## __AWS Config__
   - <h3>Features</h3>

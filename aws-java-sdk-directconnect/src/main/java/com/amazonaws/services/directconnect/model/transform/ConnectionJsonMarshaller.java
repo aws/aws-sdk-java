@@ -67,6 +67,12 @@ public class ConnectionJsonMarshaller {
             if (connection.getLoaIssueTime() != null) {
                 jsonGenerator.writeFieldName("loaIssueTime").writeValue(connection.getLoaIssueTime());
             }
+            if (connection.getLagId() != null) {
+                jsonGenerator.writeFieldName("lagId").writeValue(connection.getLagId());
+            }
+            if (connection.getAwsDevice() != null) {
+                jsonGenerator.writeFieldName("awsDevice").writeValue(connection.getAwsDevice());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

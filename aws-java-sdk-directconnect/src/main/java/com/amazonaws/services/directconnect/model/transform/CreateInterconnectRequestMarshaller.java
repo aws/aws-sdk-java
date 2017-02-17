@@ -64,6 +64,9 @@ public class CreateInterconnectRequestMarshaller implements Marshaller<Request<C
             if (createInterconnectRequest.getLocation() != null) {
                 jsonGenerator.writeFieldName("location").writeValue(createInterconnectRequest.getLocation());
             }
+            if (createInterconnectRequest.getLagId() != null) {
+                jsonGenerator.writeFieldName("lagId").writeValue(createInterconnectRequest.getLagId());
+            }
 
             jsonGenerator.writeEndObject();
 

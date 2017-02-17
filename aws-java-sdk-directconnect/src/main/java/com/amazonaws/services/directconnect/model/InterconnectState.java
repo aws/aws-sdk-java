@@ -27,7 +27,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * <b>Pending</b>&gt;: The interconnect has been approved, and is being initialized.
+ * <b>Pending</b>: The interconnect has been approved, and is being initialized.
  * </p>
  * </li>
  * <li>

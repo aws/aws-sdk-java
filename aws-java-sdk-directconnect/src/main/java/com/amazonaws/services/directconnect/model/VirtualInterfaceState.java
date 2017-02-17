@@ -50,7 +50,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * <b>Deleting</b>: A virtual interface is in this state immediately after calling <i>DeleteVirtualInterface</i> until
+ * <b>Deleting</b>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until
  * it can no longer forward traffic.
  * </p>
  * </li>

@@ -64,6 +64,9 @@ public class CreateConnectionRequestMarshaller implements Marshaller<Request<Cre
             if (createConnectionRequest.getConnectionName() != null) {
                 jsonGenerator.writeFieldName("connectionName").writeValue(createConnectionRequest.getConnectionName());
             }
+            if (createConnectionRequest.getLagId() != null) {
+                jsonGenerator.writeFieldName("lagId").writeValue(createConnectionRequest.getLagId());
+            }
 
             jsonGenerator.writeEndObject();
 

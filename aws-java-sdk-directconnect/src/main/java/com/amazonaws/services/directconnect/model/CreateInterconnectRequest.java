@@ -68,6 +68,8 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
      */
     private String location;
 
+    private String lagId;
+
     /**
      * <p>
      * The name of the interconnect.
@@ -306,6 +308,32 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * @param lagId
+     */
+
+    public void setLagId(String lagId) {
+        this.lagId = lagId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getLagId() {
+        return this.lagId;
+    }
+
+    /**
+     * @param lagId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInterconnectRequest withLagId(String lagId) {
+        setLagId(lagId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -321,7 +349,9 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
         if (getBandwidth() != null)
             sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation());
+            sb.append("Location: ").append(getLocation()).append(",");
+        if (getLagId() != null)
+            sb.append("LagId: ").append(getLagId());
         sb.append("}");
         return sb.toString();
     }
@@ -348,6 +378,10 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getLagId() == null ^ this.getLagId() == null)
+            return false;
+        if (other.getLagId() != null && other.getLagId().equals(this.getLagId()) == false)
+            return false;
         return true;
     }
 
@@ -359,6 +393,7 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getInterconnectName() == null) ? 0 : getInterconnectName().hashCode());
         hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getLagId() == null) ? 0 : getLagId().hashCode());
         return hashCode;
     }
 

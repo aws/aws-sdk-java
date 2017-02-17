@@ -43,12 +43,32 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public AllocateHostedConnectionResult allocateHostedConnection(AllocateHostedConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateConnectionWithLagResult associateConnectionWithLag(AssociateConnectionWithLagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateHostedConnectionResult associateHostedConnection(AssociateHostedConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateVirtualInterfaceResult associateVirtualInterface(AssociateVirtualInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,6 +103,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public CreateLagResult createLag(CreateLagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +129,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
 
     @Override
     public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLagResult deleteLag(DeleteLagRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,6 +163,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public DescribeHostedConnectionsResult describeHostedConnections(DescribeHostedConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +180,16 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     @Override
     public DescribeInterconnectsResult describeInterconnects() {
         return describeInterconnects(new DescribeInterconnectsRequest());
+    }
+
+    @Override
+    public DescribeLagsResult describeLags(DescribeLagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLoaResult describeLoa(DescribeLoaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -183,12 +228,22 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public DisassociateConnectionFromLagResult disassociateConnectionFromLag(DisassociateConnectionFromLagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLagResult updateLag(UpdateLagRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
