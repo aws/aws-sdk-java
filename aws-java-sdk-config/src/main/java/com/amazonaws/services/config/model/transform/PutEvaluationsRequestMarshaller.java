@@ -71,6 +71,9 @@ public class PutEvaluationsRequestMarshaller implements Marshaller<Request<PutEv
             if (putEvaluationsRequest.getResultToken() != null) {
                 jsonGenerator.writeFieldName("ResultToken").writeValue(putEvaluationsRequest.getResultToken());
             }
+            if (putEvaluationsRequest.getTestMode() != null) {
+                jsonGenerator.writeFieldName("TestMode").writeValue(putEvaluationsRequest.getTestMode());
+            }
 
             jsonGenerator.writeEndObject();
 

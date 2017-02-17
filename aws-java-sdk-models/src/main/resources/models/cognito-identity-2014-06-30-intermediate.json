@@ -1173,6 +1173,62 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ServerSideTokenCheck",
+        "c2jShape" : "CognitoIdentityProviderTokenCheck",
+        "deprecated" : false,
+        "documentation" : "<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withServerSideTokenCheck",
+        "getterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@return TRUE if server-side token validation is enabled for the identity provider’s token.*/",
+        "getterMethodName" : "getServerSideTokenCheck",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "ServerSideTokenCheck",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ServerSideTokenCheck",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ServerSideTokenCheck",
+        "setterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.*/",
+        "setterMethodName" : "setServerSideTokenCheck",
+        "setterModel" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "serverSideTokenCheck",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "serverSideTokenCheck",
+          "variableType" : "Boolean",
+          "documentation" : "<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ClientId" : {
@@ -1286,6 +1342,63 @@
             "documentation" : "<p>The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ServerSideTokenCheck" : {
+          "c2jName" : "ServerSideTokenCheck",
+          "c2jShape" : "CognitoIdentityProviderTokenCheck",
+          "deprecated" : false,
+          "documentation" : "<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withServerSideTokenCheck",
+          "getterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@return TRUE if server-side token validation is enabled for the identity provider’s token.*/",
+          "getterMethodName" : "getServerSideTokenCheck",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "ServerSideTokenCheck",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ServerSideTokenCheck",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ServerSideTokenCheck",
+          "setterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.*/",
+          "setterMethodName" : "setServerSideTokenCheck",
+          "setterModel" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "serverSideTokenCheck",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "serverSideTokenCheck",
+            "variableType" : "Boolean",
+            "documentation" : "<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         }

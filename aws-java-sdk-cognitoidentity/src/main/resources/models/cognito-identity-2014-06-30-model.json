@@ -1264,6 +1264,19 @@
           "shape" : "CognitoIdentityProviderName",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "ServerSideTokenCheck" : {
+          "deprecated" : false,
+          "documentation" : "<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CognitoIdentityProviderTokenCheck",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
@@ -1347,6 +1360,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CognitoIdentityProviderTokenCheck" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "boolean",
       "value" : null,
       "wrapper" : false
     },

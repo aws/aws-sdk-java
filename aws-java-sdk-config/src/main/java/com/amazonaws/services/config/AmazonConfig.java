@@ -876,7 +876,7 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidResultTokenException
-     *         The speNexcified token is invalid.
+     *         The specified <code>ResultToken</code> is invalid.
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.

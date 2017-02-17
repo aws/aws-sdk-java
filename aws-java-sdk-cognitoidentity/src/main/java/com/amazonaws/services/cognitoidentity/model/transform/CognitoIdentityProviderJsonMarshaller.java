@@ -43,6 +43,9 @@ public class CognitoIdentityProviderJsonMarshaller {
             if (cognitoIdentityProvider.getClientId() != null) {
                 jsonGenerator.writeFieldName("ClientId").writeValue(cognitoIdentityProvider.getClientId());
             }
+            if (cognitoIdentityProvider.getServerSideTokenCheck() != null) {
+                jsonGenerator.writeFieldName("ServerSideTokenCheck").writeValue(cognitoIdentityProvider.getServerSideTokenCheck());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

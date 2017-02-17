@@ -1,3 +1,12 @@
+# __1.11.92__ __2017-02-16__
+## __AWS Config__
+  - <h3>Features</h3>
+    - AWS Config now supports a new test mode for the PutEvaluations API. Set the TestMode parameter to true in your custom rule to verify whether your AWS Lambda function will deliver evaluation results to AWS Config. No updates occur to your existing evaluations, and evaluation results are not sent to AWS Config.
+
+## __Amazon Cognito Identity__
+  - <h3>Features</h3>
+    - Allow createIdentityPool and updateIdentityPool API to set server side token check value on identity pool.
+
 # __1.11.91__ __2017-02-15__
 ## __AWS Key Management Service__
   - <h3>Features</h3>
