@@ -325,7 +325,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AcceptPortfolioShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptPortfolioShareRequest));
+                request = new AcceptPortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -374,7 +374,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociatePrincipalWithPortfolioRequestMarshaller(protocolFactory).marshall(super
+                request = new AssociatePrincipalWithPortfolioRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(associatePrincipalWithPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -425,7 +425,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateProductWithPortfolioRequestMarshaller(protocolFactory).marshall(super
+                request = new AssociateProductWithPortfolioRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(associateProductWithPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -478,7 +478,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateConstraintRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConstraintRequest));
+                request = new CreateConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -525,7 +525,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioRequest));
+                request = new CreatePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -574,7 +574,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePortfolioShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioShareRequest));
+                request = new CreatePortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -621,7 +621,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProductRequest));
+                request = new CreateProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -671,7 +671,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateProvisioningArtifactRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProvisioningArtifactRequest));
+                request = new CreateProvisioningArtifactRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -718,7 +719,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteConstraintRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConstraintRequest));
+                request = new DeleteConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -768,7 +769,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioRequest));
+                request = new DeletePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -812,7 +813,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePortfolioShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioShareRequest));
+                request = new DeletePortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -862,7 +863,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProductRequest));
+                request = new DeleteProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -913,7 +914,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteProvisioningArtifactRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProvisioningArtifactRequest));
+                request = new DeleteProvisioningArtifactRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -958,7 +960,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConstraintRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConstraintRequest));
+                request = new DescribeConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1002,7 +1004,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePortfolioRequest));
+                request = new DescribePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1052,7 +1054,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductRequest));
+                request = new DescribeProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1096,7 +1098,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeProductAsAdminRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductAsAdminRequest));
+                request = new DescribeProductAsAdminRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductAsAdminRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1147,7 +1149,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeProductViewRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductViewRequest));
+                request = new DescribeProductViewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductViewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1191,7 +1193,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeProvisioningArtifactRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeProvisioningArtifactRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1241,7 +1243,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeProvisioningParametersRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeProvisioningParametersRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeProvisioningParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1288,7 +1290,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRecordRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRecordRequest));
+                request = new DescribeRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1336,7 +1338,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociatePrincipalFromPortfolioRequestMarshaller(protocolFactory).marshall(super
+                request = new DisassociatePrincipalFromPortfolioRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(disassociatePrincipalFromPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1385,7 +1387,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateProductFromPortfolioRequestMarshaller(protocolFactory).marshall(super
+                request = new DisassociateProductFromPortfolioRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(disassociateProductFromPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1431,7 +1433,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAcceptedPortfolioSharesRequestMarshaller(protocolFactory).marshall(super
+                request = new ListAcceptedPortfolioSharesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(listAcceptedPortfolioSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1479,7 +1481,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListConstraintsForPortfolioRequestMarshaller(protocolFactory).marshall(super
+                request = new ListConstraintsForPortfolioRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(listConstraintsForPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1528,7 +1530,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLaunchPathsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLaunchPathsRequest));
+                request = new ListLaunchPathsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLaunchPathsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1572,7 +1574,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPortfolioAccessRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfolioAccessRequest));
+                request = new ListPortfolioAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfolioAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1616,7 +1618,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPortfoliosRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfoliosRequest));
+                request = new ListPortfoliosRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfoliosRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1662,7 +1664,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPortfoliosForProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfoliosForProductRequest));
+                request = new ListPortfoliosForProductRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPortfoliosForProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1709,7 +1712,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPrincipalsForPortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPrincipalsForPortfolioRequest));
+                request = new ListPrincipalsForPortfolioRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPrincipalsForPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1756,7 +1760,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListProvisioningArtifactsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProvisioningArtifactsRequest));
+                request = new ListProvisioningArtifactsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listProvisioningArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1802,7 +1807,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRecordHistoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordHistoryRequest));
+                request = new ListRecordHistoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1855,7 +1860,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ProvisionProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(provisionProductRequest));
+                request = new ProvisionProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(provisionProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1899,7 +1904,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RejectPortfolioShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectPortfolioShareRequest));
+                request = new RejectPortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1943,7 +1948,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ScanProvisionedProductsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(scanProvisionedProductsRequest));
+                request = new ScanProvisionedProductsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(scanProvisionedProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1991,7 +1997,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchProductsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsRequest));
+                request = new SearchProductsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2039,7 +2045,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchProductsAsAdminRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsAsAdminRequest));
+                request = new SearchProductsAsAdminRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsAsAdminRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2091,7 +2097,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TerminateProvisionedProductRequestMarshaller(protocolFactory).marshall(super
+                request = new TerminateProvisionedProductRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(terminateProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2139,7 +2145,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateConstraintRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConstraintRequest));
+                request = new UpdateConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2189,7 +2195,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePortfolioRequest));
+                request = new UpdatePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2235,7 +2241,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProductRequest));
+                request = new UpdateProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2287,7 +2293,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateProvisionedProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProvisionedProductRequest));
+                request = new UpdateProvisionedProductRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2335,7 +2342,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateProvisioningArtifactRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProvisioningArtifactRequest));
+                request = new UpdateProvisioningArtifactRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

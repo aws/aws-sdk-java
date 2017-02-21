@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeActivityTypeRequest Marshaller
+ * DescribeActivityTypeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeActivityTypeRequestMarshaller implements Marshaller<Request<DescribeActivityTypeRequest>, DescribeActivityTypeRequest> {
+@SdkInternalApi
+public class DescribeActivityTypeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+    private static final MarshallingInfo<StructuredPojo> ACTIVITYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activityType").build();
 
-    public DescribeActivityTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeActivityTypeRequestMarshaller instance = new DescribeActivityTypeRequestMarshaller();
+
+    public static DescribeActivityTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeActivityTypeRequest> marshall(DescribeActivityTypeRequest describeActivityTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeActivityTypeRequest describeActivityTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeActivityTypeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeActivityTypeRequest> request = new DefaultRequest<DescribeActivityTypeRequest>(describeActivityTypeRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.DescribeActivityType");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeActivityTypeRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(describeActivityTypeRequest.getDomain());
-            }
-            if (describeActivityTypeRequest.getActivityType() != null) {
-                jsonGenerator.writeFieldName("activityType");
-                ActivityTypeJsonMarshaller.getInstance().marshall(describeActivityTypeRequest.getActivityType(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeActivityTypeRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(describeActivityTypeRequest.getActivityType(), ACTIVITYTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

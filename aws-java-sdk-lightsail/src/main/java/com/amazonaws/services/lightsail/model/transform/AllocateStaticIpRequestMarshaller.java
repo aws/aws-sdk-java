@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AllocateStaticIpRequest Marshaller
+ * AllocateStaticIpRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AllocateStaticIpRequestMarshaller implements Marshaller<Request<AllocateStaticIpRequest>, AllocateStaticIpRequest> {
+@SdkInternalApi
+public class AllocateStaticIpRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STATICIPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("staticIpName").build();
 
-    public AllocateStaticIpRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AllocateStaticIpRequestMarshaller instance = new AllocateStaticIpRequestMarshaller();
+
+    public static AllocateStaticIpRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AllocateStaticIpRequest> marshall(AllocateStaticIpRequest allocateStaticIpRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AllocateStaticIpRequest allocateStaticIpRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (allocateStaticIpRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AllocateStaticIpRequest> request = new DefaultRequest<AllocateStaticIpRequest>(allocateStaticIpRequest, "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.AllocateStaticIp");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (allocateStaticIpRequest.getStaticIpName() != null) {
-                jsonGenerator.writeFieldName("staticIpName").writeValue(allocateStaticIpRequest.getStaticIpName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(allocateStaticIpRequest.getStaticIpName(), STATICIPNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

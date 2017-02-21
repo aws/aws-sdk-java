@@ -70,4 +70,5 @@ public class DeleteLoadBalancerResult extends com.amazonaws.AmazonWebServiceResu
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteCertificateRequest Marshaller
+ * DeleteCertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteCertificateRequestMarshaller implements Marshaller<Request<DeleteCertificateRequest>, DeleteCertificateRequest> {
+@SdkInternalApi
+public class DeleteCertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("certificateId").build();
 
-    public DeleteCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteCertificateRequestMarshaller instance = new DeleteCertificateRequestMarshaller();
+
+    public static DeleteCertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteCertificateRequest> marshall(DeleteCertificateRequest deleteCertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteCertificateRequest deleteCertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteCertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteCertificateRequest> request = new DefaultRequest<DeleteCertificateRequest>(deleteCertificateRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/certificates/{certificateId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "certificateId",
-                deleteCertificateRequest.getCertificateId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteCertificateRequest.getCertificateId(), CERTIFICATEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

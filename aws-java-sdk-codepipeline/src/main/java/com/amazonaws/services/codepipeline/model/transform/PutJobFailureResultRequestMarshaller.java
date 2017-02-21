@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codepipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutJobFailureResultRequest Marshaller
+ * PutJobFailureResultRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutJobFailureResultRequestMarshaller implements Marshaller<Request<PutJobFailureResultRequest>, PutJobFailureResultRequest> {
+@SdkInternalApi
+public class PutJobFailureResultRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobId").build();
+    private static final MarshallingInfo<StructuredPojo> FAILUREDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureDetails").build();
 
-    public PutJobFailureResultRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutJobFailureResultRequestMarshaller instance = new PutJobFailureResultRequestMarshaller();
+
+    public static PutJobFailureResultRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutJobFailureResultRequest> marshall(PutJobFailureResultRequest putJobFailureResultRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutJobFailureResultRequest putJobFailureResultRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putJobFailureResultRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutJobFailureResultRequest> request = new DefaultRequest<PutJobFailureResultRequest>(putJobFailureResultRequest, "AWSCodePipeline");
-        request.addHeader("X-Amz-Target", "CodePipeline_20150709.PutJobFailureResult");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putJobFailureResultRequest.getJobId() != null) {
-                jsonGenerator.writeFieldName("jobId").writeValue(putJobFailureResultRequest.getJobId());
-            }
-            if (putJobFailureResultRequest.getFailureDetails() != null) {
-                jsonGenerator.writeFieldName("failureDetails");
-                FailureDetailsJsonMarshaller.getInstance().marshall(putJobFailureResultRequest.getFailureDetails(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putJobFailureResultRequest.getJobId(), JOBID_BINDING);
+            protocolMarshaller.marshall(putJobFailureResultRequest.getFailureDetails(), FAILUREDETAILS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

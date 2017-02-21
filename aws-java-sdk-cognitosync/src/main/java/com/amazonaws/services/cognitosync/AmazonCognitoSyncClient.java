@@ -357,7 +357,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BulkPublishRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(bulkPublishRequest));
+                request = new BulkPublishRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(bulkPublishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -419,7 +419,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDatasetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
+                request = new DeleteDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -478,7 +478,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDatasetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
+                request = new DescribeDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -535,7 +535,8 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityPoolUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityPoolUsageRequest));
+                request = new DescribeIdentityPoolUsageRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeIdentityPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -593,7 +594,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityUsageRequest));
+                request = new DescribeIdentityUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -649,7 +650,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBulkPublishDetailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBulkPublishDetailsRequest));
+                request = new GetBulkPublishDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBulkPublishDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -707,7 +708,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCognitoEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCognitoEventsRequest));
+                request = new GetCognitoEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCognitoEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -764,7 +765,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIdentityPoolConfigurationRequestMarshaller(protocolFactory).marshall(super
+                request = new GetIdentityPoolConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getIdentityPoolConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -822,7 +823,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDatasetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetsRequest));
+                request = new ListDatasetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -877,7 +878,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIdentityPoolUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityPoolUsageRequest));
+                request = new ListIdentityPoolUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -935,7 +936,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRecordsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordsRequest));
+                request = new ListRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -993,7 +994,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDeviceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDeviceRequest));
+                request = new RegisterDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1052,7 +1053,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetCognitoEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setCognitoEventsRequest));
+                request = new SetCognitoEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setCognitoEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1111,7 +1112,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetIdentityPoolConfigurationRequestMarshaller(protocolFactory).marshall(super
+                request = new SetIdentityPoolConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(setIdentityPoolConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1171,7 +1172,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubscribeToDatasetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToDatasetRequest));
+                request = new SubscribeToDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1229,7 +1230,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnsubscribeFromDatasetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromDatasetRequest));
+                request = new UnsubscribeFromDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1308,7 +1309,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRecordsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRecordsRequest));
+                request = new UpdateRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

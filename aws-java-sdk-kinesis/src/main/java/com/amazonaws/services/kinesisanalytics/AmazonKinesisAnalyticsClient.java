@@ -325,7 +325,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddApplicationInputRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationInputRequest));
+                request = new AddApplicationInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -400,7 +400,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddApplicationOutputRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationOutputRequest));
+                request = new AddApplicationOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -468,7 +468,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddApplicationReferenceDataSourceRequestMarshaller(protocolFactory).marshall(super
+                request = new AddApplicationReferenceDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(addApplicationReferenceDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -547,7 +547,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
+                request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -601,7 +601,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
+                request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -654,7 +654,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationOutputRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationOutputRequest));
+                request = new DeleteApplicationOutputRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteApplicationOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -716,7 +717,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationReferenceDataSourceRequestMarshaller(protocolFactory).marshall(super
+                request = new DeleteApplicationReferenceDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(deleteApplicationReferenceDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -770,7 +771,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApplicationRequest));
+                request = new DescribeApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -831,7 +832,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DiscoverInputSchemaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverInputSchemaRequest));
+                request = new DiscoverInputSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverInputSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -883,7 +884,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListApplicationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
+                request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -949,7 +950,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startApplicationRequest));
+                request = new StartApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1001,7 +1002,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopApplicationRequest));
+                request = new StopApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1062,7 +1063,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
+                request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

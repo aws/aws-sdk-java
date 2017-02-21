@@ -12,75 +12,53 @@
  */
 package com.amazonaws.services.budgets.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.budgets.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeNotificationsForBudgetRequest Marshaller
+ * DescribeNotificationsForBudgetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeNotificationsForBudgetRequestMarshaller implements
-        Marshaller<Request<DescribeNotificationsForBudgetRequest>, DescribeNotificationsForBudgetRequest> {
+@SdkInternalApi
+public class DescribeNotificationsForBudgetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
+    private static final MarshallingInfo<String> BUDGETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BudgetName").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public DescribeNotificationsForBudgetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeNotificationsForBudgetRequestMarshaller instance = new DescribeNotificationsForBudgetRequestMarshaller();
+
+    public static DescribeNotificationsForBudgetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeNotificationsForBudgetRequest> marshall(DescribeNotificationsForBudgetRequest describeNotificationsForBudgetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeNotificationsForBudgetRequest describeNotificationsForBudgetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeNotificationsForBudgetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeNotificationsForBudgetRequest> request = new DefaultRequest<DescribeNotificationsForBudgetRequest>(
-                describeNotificationsForBudgetRequest, "AWSBudgets");
-        request.addHeader("X-Amz-Target", "AWSBudgetServiceGateway.DescribeNotificationsForBudget");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeNotificationsForBudgetRequest.getAccountId() != null) {
-                jsonGenerator.writeFieldName("AccountId").writeValue(describeNotificationsForBudgetRequest.getAccountId());
-            }
-            if (describeNotificationsForBudgetRequest.getBudgetName() != null) {
-                jsonGenerator.writeFieldName("BudgetName").writeValue(describeNotificationsForBudgetRequest.getBudgetName());
-            }
-            if (describeNotificationsForBudgetRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(describeNotificationsForBudgetRequest.getMaxResults());
-            }
-            if (describeNotificationsForBudgetRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeNotificationsForBudgetRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeNotificationsForBudgetRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(describeNotificationsForBudgetRequest.getBudgetName(), BUDGETNAME_BINDING);
+            protocolMarshaller.marshall(describeNotificationsForBudgetRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeNotificationsForBudgetRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

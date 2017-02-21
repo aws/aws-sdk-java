@@ -12,79 +12,48 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.rekognition.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DetectFacesRequest Marshaller
+ * DetectFacesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DetectFacesRequestMarshaller implements Marshaller<Request<DetectFacesRequest>, DetectFacesRequest> {
+@SdkInternalApi
+public class DetectFacesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<StructuredPojo> IMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Image").build();
+    private static final MarshallingInfo<List> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Attributes").build();
 
-    public DetectFacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DetectFacesRequestMarshaller instance = new DetectFacesRequestMarshaller();
+
+    public static DetectFacesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DetectFacesRequest> marshall(DetectFacesRequest detectFacesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DetectFacesRequest detectFacesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (detectFacesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DetectFacesRequest> request = new DefaultRequest<DetectFacesRequest>(detectFacesRequest, "AmazonRekognition");
-        request.addHeader("X-Amz-Target", "RekognitionService.DetectFaces");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (detectFacesRequest.getImage() != null) {
-                jsonGenerator.writeFieldName("Image");
-                ImageJsonMarshaller.getInstance().marshall(detectFacesRequest.getImage(), jsonGenerator);
-            }
-
-            java.util.List<String> attributesList = detectFacesRequest.getAttributes();
-            if (attributesList != null) {
-                jsonGenerator.writeFieldName("Attributes");
-                jsonGenerator.writeStartArray();
-                for (String attributesListValue : attributesList) {
-                    if (attributesListValue != null) {
-                        jsonGenerator.writeValue(attributesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(detectFacesRequest.getImage(), IMAGE_BINDING);
+            protocolMarshaller.marshall(detectFacesRequest.getAttributes(), ATTRIBUTES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,69 +12,53 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListPolicyPrincipalsRequest Marshaller
+ * ListPolicyPrincipalsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListPolicyPrincipalsRequestMarshaller implements Marshaller<Request<ListPolicyPrincipalsRequest>, ListPolicyPrincipalsRequest> {
+@SdkInternalApi
+public class ListPolicyPrincipalsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> POLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amzn-iot-policy").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("marker").build();
+    private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("pageSize").build();
+    private static final MarshallingInfo<Boolean> ASCENDINGORDER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("isAscendingOrder").build();
 
-    public ListPolicyPrincipalsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListPolicyPrincipalsRequestMarshaller instance = new ListPolicyPrincipalsRequestMarshaller();
+
+    public static ListPolicyPrincipalsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListPolicyPrincipalsRequest> marshall(ListPolicyPrincipalsRequest listPolicyPrincipalsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListPolicyPrincipalsRequest listPolicyPrincipalsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listPolicyPrincipalsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPolicyPrincipalsRequest> request = new DefaultRequest<ListPolicyPrincipalsRequest>(listPolicyPrincipalsRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        if (listPolicyPrincipalsRequest.getPolicyName() != null) {
-            request.addHeader("x-amzn-iot-policy", StringUtils.fromString(listPolicyPrincipalsRequest.getPolicyName()));
+        try {
+            protocolMarshaller.marshall(listPolicyPrincipalsRequest.getPolicyName(), POLICYNAME_BINDING);
+            protocolMarshaller.marshall(listPolicyPrincipalsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listPolicyPrincipalsRequest.getPageSize(), PAGESIZE_BINDING);
+            protocolMarshaller.marshall(listPolicyPrincipalsRequest.getAscendingOrder(), ASCENDINGORDER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/policy-principals";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listPolicyPrincipalsRequest.getMarker() != null) {
-            request.addParameter("marker", StringUtils.fromString(listPolicyPrincipalsRequest.getMarker()));
-        }
-
-        if (listPolicyPrincipalsRequest.getPageSize() != null) {
-            request.addParameter("pageSize", StringUtils.fromInteger(listPolicyPrincipalsRequest.getPageSize()));
-        }
-
-        if (listPolicyPrincipalsRequest.getAscendingOrder() != null) {
-            request.addParameter("isAscendingOrder", StringUtils.fromBoolean(listPolicyPrincipalsRequest.getAscendingOrder()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

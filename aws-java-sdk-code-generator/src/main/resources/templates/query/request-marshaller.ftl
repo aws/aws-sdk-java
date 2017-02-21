@@ -34,7 +34,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
 
        <#assign serviceNameForRequest = customConfig.customServiceNameForRequest!metadata.syncInterface />
 
-        <@DefaultRequestCreation.content shape serviceNameForRequest/>
+        Request<${shape.shapeName}> request = new DefaultRequest<${shape.shapeName}>(${shape.variable.variableName}, "${serviceNameForRequest}");
         request.addParameter("Action", "${shape.marshaller.action}");
         <#if metadata.apiVersion?has_content>request.addParameter("Version", "${metadata.apiVersion}");</#if>
         <#if shape.marshaller.verb?has_content>request.setHttpMethod(HttpMethodName.${shape.marshaller.verb});</#if>

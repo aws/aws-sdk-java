@@ -12,83 +12,62 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateCachediSCSIVolumeRequest Marshaller
+ * CreateCachediSCSIVolumeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateCachediSCSIVolumeRequestMarshaller implements Marshaller<Request<CreateCachediSCSIVolumeRequest>, CreateCachediSCSIVolumeRequest> {
+@SdkInternalApi
+public class CreateCachediSCSIVolumeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
+    private static final MarshallingInfo<Long> VOLUMESIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInBytes").build();
+    private static final MarshallingInfo<String> SNAPSHOTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotId").build();
+    private static final MarshallingInfo<String> TARGETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetName").build();
+    private static final MarshallingInfo<String> SOURCEVOLUMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceVolumeARN").build();
+    private static final MarshallingInfo<String> NETWORKINTERFACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkInterfaceId").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken").build();
 
-    public CreateCachediSCSIVolumeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateCachediSCSIVolumeRequestMarshaller instance = new CreateCachediSCSIVolumeRequestMarshaller();
+
+    public static CreateCachediSCSIVolumeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateCachediSCSIVolumeRequest> marshall(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createCachediSCSIVolumeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateCachediSCSIVolumeRequest> request = new DefaultRequest<CreateCachediSCSIVolumeRequest>(createCachediSCSIVolumeRequest,
-                "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.CreateCachediSCSIVolume");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createCachediSCSIVolumeRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(createCachediSCSIVolumeRequest.getGatewayARN());
-            }
-            if (createCachediSCSIVolumeRequest.getVolumeSizeInBytes() != null) {
-                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(createCachediSCSIVolumeRequest.getVolumeSizeInBytes());
-            }
-            if (createCachediSCSIVolumeRequest.getSnapshotId() != null) {
-                jsonGenerator.writeFieldName("SnapshotId").writeValue(createCachediSCSIVolumeRequest.getSnapshotId());
-            }
-            if (createCachediSCSIVolumeRequest.getTargetName() != null) {
-                jsonGenerator.writeFieldName("TargetName").writeValue(createCachediSCSIVolumeRequest.getTargetName());
-            }
-            if (createCachediSCSIVolumeRequest.getSourceVolumeARN() != null) {
-                jsonGenerator.writeFieldName("SourceVolumeARN").writeValue(createCachediSCSIVolumeRequest.getSourceVolumeARN());
-            }
-            if (createCachediSCSIVolumeRequest.getNetworkInterfaceId() != null) {
-                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(createCachediSCSIVolumeRequest.getNetworkInterfaceId());
-            }
-            if (createCachediSCSIVolumeRequest.getClientToken() != null) {
-                jsonGenerator.writeFieldName("ClientToken").writeValue(createCachediSCSIVolumeRequest.getClientToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getGatewayARN(), GATEWAYARN_BINDING);
+            protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getVolumeSizeInBytes(), VOLUMESIZEINBYTES_BINDING);
+            protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getSnapshotId(), SNAPSHOTID_BINDING);
+            protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getTargetName(), TARGETNAME_BINDING);
+            protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getSourceVolumeARN(), SOURCEVOLUMEARN_BINDING);
+            protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getNetworkInterfaceId(), NETWORKINTERFACEID_BINDING);
+            protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getClientToken(), CLIENTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

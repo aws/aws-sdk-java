@@ -12,54 +12,47 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteCampaignRequest Marshaller
+ * DeleteCampaignRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteCampaignRequestMarshaller implements Marshaller<Request<DeleteCampaignRequest>, DeleteCampaignRequest> {
+@SdkInternalApi
+public class DeleteCampaignRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> CAMPAIGNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("campaign-id").build();
 
-    public DeleteCampaignRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteCampaignRequestMarshaller instance = new DeleteCampaignRequestMarshaller();
+
+    public static DeleteCampaignRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteCampaignRequest> marshall(DeleteCampaignRequest deleteCampaignRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteCampaignRequest deleteCampaignRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteCampaignRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteCampaignRequest> request = new DefaultRequest<DeleteCampaignRequest>(deleteCampaignRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                deleteCampaignRequest.getApplicationId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "campaign-id", deleteCampaignRequest.getCampaignId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteCampaignRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(deleteCampaignRequest.getCampaignId(), CAMPAIGNID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

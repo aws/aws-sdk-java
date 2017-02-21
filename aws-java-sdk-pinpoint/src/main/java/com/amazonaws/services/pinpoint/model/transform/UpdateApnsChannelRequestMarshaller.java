@@ -12,73 +12,47 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateApnsChannelRequest Marshaller
+ * UpdateApnsChannelRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateApnsChannelRequestMarshaller implements Marshaller<Request<UpdateApnsChannelRequest>, UpdateApnsChannelRequest> {
+@SdkInternalApi
+public class UpdateApnsChannelRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<StructuredPojo> APNSCHANNELREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
 
-    public UpdateApnsChannelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateApnsChannelRequestMarshaller instance = new UpdateApnsChannelRequestMarshaller();
+
+    public static UpdateApnsChannelRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateApnsChannelRequest> marshall(UpdateApnsChannelRequest updateApnsChannelRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateApnsChannelRequest updateApnsChannelRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateApnsChannelRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateApnsChannelRequest> request = new DefaultRequest<UpdateApnsChannelRequest>(updateApnsChannelRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/v1/apps/{application-id}/channels/apns";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                updateApnsChannelRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            APNSChannelRequest aPNSChannelRequest = updateApnsChannelRequest.getAPNSChannelRequest();
-            if (aPNSChannelRequest != null) {
-                jsonGenerator.writeStartObject();
-                if (aPNSChannelRequest.getCertificate() != null) {
-                    jsonGenerator.writeFieldName("Certificate").writeValue(aPNSChannelRequest.getCertificate());
-                }
-                if (aPNSChannelRequest.getPrivateKey() != null) {
-                    jsonGenerator.writeFieldName("PrivateKey").writeValue(aPNSChannelRequest.getPrivateKey());
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateApnsChannelRequest.getAPNSChannelRequest(), APNSCHANNELREQUEST_BINDING);
+            protocolMarshaller.marshall(updateApnsChannelRequest.getApplicationId(), APPLICATIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

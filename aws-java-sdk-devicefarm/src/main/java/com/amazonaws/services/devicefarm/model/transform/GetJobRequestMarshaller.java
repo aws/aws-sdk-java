@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetJobRequest Marshaller
+ * GetJobRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetJobRequestMarshaller implements Marshaller<Request<GetJobRequest>, GetJobRequest> {
+@SdkInternalApi
+public class GetJobRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
 
-    public GetJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetJobRequestMarshaller instance = new GetJobRequestMarshaller();
+
+    public static GetJobRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetJobRequest> marshall(GetJobRequest getJobRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetJobRequest getJobRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getJobRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetJobRequest> request = new DefaultRequest<GetJobRequest>(getJobRequest, "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.GetJob");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getJobRequest.getArn() != null) {
-                jsonGenerator.writeFieldName("arn").writeValue(getJobRequest.getArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getJobRequest.getArn(), ARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

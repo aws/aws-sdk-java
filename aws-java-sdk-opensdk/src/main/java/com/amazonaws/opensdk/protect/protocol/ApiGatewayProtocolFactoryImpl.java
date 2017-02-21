@@ -15,17 +15,20 @@
 package com.amazonaws.opensdk.protect.protocol;
 
 import com.amazonaws.SdkBaseException;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.opensdk.BaseResult;
 import com.amazonaws.opensdk.internal.BaseException;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayErrorResponseHandler;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayErrorUnmarshaller;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayResponseHandler;
-import com.amazonaws.http.HttpResponseHandler;
-import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.protocol.OperationInfo;
+import com.amazonaws.protocol.ProtocolRequestMarshaller;
 import com.amazonaws.protocol.json.JsonClientMetadata;
 import com.amazonaws.protocol.json.JsonErrorResponseMetadata;
 import com.amazonaws.protocol.json.JsonErrorShapeMetadata;
 import com.amazonaws.protocol.json.JsonOperationMetadata;
+import com.amazonaws.protocol.json.JsonProtocolMarshallerBuilder;
 import com.amazonaws.protocol.json.SdkJsonMarshallerFactory;
 import com.amazonaws.protocol.json.SdkStructuredJsonFactory;
 import com.amazonaws.protocol.json.SdkStructuredPlainJsonFactory;
@@ -60,6 +63,16 @@ public final class ApiGatewayProtocolFactoryImpl implements SdkJsonMarshallerFac
     @Override
     public String getContentType() {
         return CONTENT_TYPE;
+    }
+
+    public <T> ProtocolRequestMarshaller<T> createProtocolMarshaller(OperationInfo operationInfo, T origRequest) {
+        return JsonProtocolMarshallerBuilder.<T>standard()
+                .jsonGenerator(operationInfo.hasPayloadMembers() ? createGenerator() : StructuredJsonGenerator.NO_OP)
+                .contentType(getContentType())
+                .operationInfo(operationInfo)
+                .originalRequest(origRequest)
+                .sendExplicitNullForPayload(true)
+                .build();
     }
 
     /**

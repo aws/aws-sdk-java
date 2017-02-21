@@ -323,7 +323,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
+                request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -383,7 +383,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
+                request = new CreateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -437,7 +437,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPipelineRequest));
+                request = new CreatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -504,7 +504,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePresetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPresetRequest));
+                request = new CreatePresetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPresetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -562,7 +562,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePipelineRequest));
+                request = new DeletePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -618,7 +618,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePresetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePresetRequest));
+                request = new DeletePresetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePresetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -673,7 +673,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsByPipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsByPipelineRequest));
+                request = new ListJobsByPipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsByPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -725,7 +725,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsByStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsByStatusRequest));
+                request = new ListJobsByStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsByStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -773,7 +773,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPipelinesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPipelinesRequest));
+                request = new ListPipelinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -827,7 +827,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPresetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPresetsRequest));
+                request = new ListPresetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPresetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -883,7 +883,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReadJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(readJobRequest));
+                request = new ReadJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(readJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -934,7 +934,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReadPipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(readPipelineRequest));
+                request = new ReadPipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(readPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -985,7 +985,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReadPresetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(readPresetRequest));
+                request = new ReadPresetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(readPresetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1043,7 +1043,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestRoleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(testRoleRequest));
+                request = new TestRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1104,7 +1104,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineRequest));
+                request = new UpdatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1163,7 +1163,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePipelineNotificationsRequestMarshaller(protocolFactory).marshall(super
+                request = new UpdatePipelineNotificationsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(updatePipelineNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1225,7 +1225,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePipelineStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineStatusRequest));
+                request = new UpdatePipelineStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

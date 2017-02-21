@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeprecateActivityTypeRequest Marshaller
+ * DeprecateActivityTypeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeprecateActivityTypeRequestMarshaller implements Marshaller<Request<DeprecateActivityTypeRequest>, DeprecateActivityTypeRequest> {
+@SdkInternalApi
+public class DeprecateActivityTypeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+    private static final MarshallingInfo<StructuredPojo> ACTIVITYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activityType").build();
 
-    public DeprecateActivityTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeprecateActivityTypeRequestMarshaller instance = new DeprecateActivityTypeRequestMarshaller();
+
+    public static DeprecateActivityTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeprecateActivityTypeRequest> marshall(DeprecateActivityTypeRequest deprecateActivityTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeprecateActivityTypeRequest deprecateActivityTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deprecateActivityTypeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeprecateActivityTypeRequest> request = new DefaultRequest<DeprecateActivityTypeRequest>(deprecateActivityTypeRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.DeprecateActivityType");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deprecateActivityTypeRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(deprecateActivityTypeRequest.getDomain());
-            }
-            if (deprecateActivityTypeRequest.getActivityType() != null) {
-                jsonGenerator.writeFieldName("activityType");
-                ActivityTypeJsonMarshaller.getInstance().marshall(deprecateActivityTypeRequest.getActivityType(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deprecateActivityTypeRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(deprecateActivityTypeRequest.getActivityType(), ACTIVITYTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

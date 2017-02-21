@@ -12,69 +12,47 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeregisterPatchBaselineForPatchGroupRequest Marshaller
+ * DeregisterPatchBaselineForPatchGroupRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeregisterPatchBaselineForPatchGroupRequestMarshaller implements
-        Marshaller<Request<DeregisterPatchBaselineForPatchGroupRequest>, DeregisterPatchBaselineForPatchGroupRequest> {
+@SdkInternalApi
+public class DeregisterPatchBaselineForPatchGroupRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BASELINEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaselineId").build();
+    private static final MarshallingInfo<String> PATCHGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PatchGroup").build();
 
-    public DeregisterPatchBaselineForPatchGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeregisterPatchBaselineForPatchGroupRequestMarshaller instance = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
+
+    public static DeregisterPatchBaselineForPatchGroupRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeregisterPatchBaselineForPatchGroupRequest> marshall(DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deregisterPatchBaselineForPatchGroupRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeregisterPatchBaselineForPatchGroupRequest> request = new DefaultRequest<DeregisterPatchBaselineForPatchGroupRequest>(
-                deregisterPatchBaselineForPatchGroupRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.DeregisterPatchBaselineForPatchGroup");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deregisterPatchBaselineForPatchGroupRequest.getBaselineId() != null) {
-                jsonGenerator.writeFieldName("BaselineId").writeValue(deregisterPatchBaselineForPatchGroupRequest.getBaselineId());
-            }
-            if (deregisterPatchBaselineForPatchGroupRequest.getPatchGroup() != null) {
-                jsonGenerator.writeFieldName("PatchGroup").writeValue(deregisterPatchBaselineForPatchGroupRequest.getPatchGroup());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deregisterPatchBaselineForPatchGroupRequest.getBaselineId(), BASELINEID_BINDING);
+            protocolMarshaller.marshall(deregisterPatchBaselineForPatchGroupRequest.getPatchGroup(), PATCHGROUP_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

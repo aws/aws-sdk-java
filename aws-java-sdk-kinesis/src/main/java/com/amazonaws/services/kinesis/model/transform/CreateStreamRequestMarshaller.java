@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateStreamRequest Marshaller
+ * CreateStreamRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateStreamRequestMarshaller implements Marshaller<Request<CreateStreamRequest>, CreateStreamRequest> {
+@SdkInternalApi
+public class CreateStreamRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<Integer> SHARDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShardCount").build();
 
-    public CreateStreamRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateStreamRequestMarshaller instance = new CreateStreamRequestMarshaller();
+
+    public static CreateStreamRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateStreamRequest> marshall(CreateStreamRequest createStreamRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateStreamRequest createStreamRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createStreamRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateStreamRequest> request = new DefaultRequest<CreateStreamRequest>(createStreamRequest, "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.CreateStream");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createStreamRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(createStreamRequest.getStreamName());
-            }
-            if (createStreamRequest.getShardCount() != null) {
-                jsonGenerator.writeFieldName("ShardCount").writeValue(createStreamRequest.getShardCount());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createStreamRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(createStreamRequest.getShardCount(), SHARDCOUNT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

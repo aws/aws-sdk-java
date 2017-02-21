@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetRestApiRequest Marshaller
+ * GetRestApiRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetRestApiRequestMarshaller implements Marshaller<Request<GetRestApiRequest>, GetRestApiRequest> {
+@SdkInternalApi
+public class GetRestApiRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
 
-    public GetRestApiRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetRestApiRequestMarshaller instance = new GetRestApiRequestMarshaller();
+
+    public static GetRestApiRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetRestApiRequest> marshall(GetRestApiRequest getRestApiRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetRestApiRequest getRestApiRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getRestApiRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetRestApiRequest> request = new DefaultRequest<GetRestApiRequest>(getRestApiRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/restapis/{restapi_id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getRestApiRequest.getRestApiId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getRestApiRequest.getRestApiId(), RESTAPIID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

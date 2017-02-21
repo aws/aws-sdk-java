@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53domains.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ViewBillingRequest Marshaller
+ * ViewBillingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ViewBillingRequestMarshaller implements Marshaller<Request<ViewBillingRequest>, ViewBillingRequest> {
+@SdkInternalApi
+public class ViewBillingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<java.util.Date> START_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Start").build();
+    private static final MarshallingInfo<java.util.Date> END_BINDING = MarshallingInfo.builder(MarshallingType.DATE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("End").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
+    private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxItems").build();
 
-    public ViewBillingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ViewBillingRequestMarshaller instance = new ViewBillingRequestMarshaller();
+
+    public static ViewBillingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ViewBillingRequest> marshall(ViewBillingRequest viewBillingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ViewBillingRequest viewBillingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (viewBillingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ViewBillingRequest> request = new DefaultRequest<ViewBillingRequest>(viewBillingRequest, "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.ViewBilling");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (viewBillingRequest.getStart() != null) {
-                jsonGenerator.writeFieldName("Start").writeValue(viewBillingRequest.getStart());
-            }
-            if (viewBillingRequest.getEnd() != null) {
-                jsonGenerator.writeFieldName("End").writeValue(viewBillingRequest.getEnd());
-            }
-            if (viewBillingRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(viewBillingRequest.getMarker());
-            }
-            if (viewBillingRequest.getMaxItems() != null) {
-                jsonGenerator.writeFieldName("MaxItems").writeValue(viewBillingRequest.getMaxItems());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(viewBillingRequest.getStart(), START_BINDING);
+            protocolMarshaller.marshall(viewBillingRequest.getEnd(), END_BINDING);
+            protocolMarshaller.marshall(viewBillingRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(viewBillingRequest.getMaxItems(), MAXITEMS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

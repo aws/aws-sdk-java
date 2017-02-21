@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.ecr.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecr.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteRepositoryPolicyRequest Marshaller
+ * DeleteRepositoryPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteRepositoryPolicyRequestMarshaller implements Marshaller<Request<DeleteRepositoryPolicyRequest>, DeleteRepositoryPolicyRequest> {
+@SdkInternalApi
+public class DeleteRepositoryPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REGISTRYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryId").build();
+    private static final MarshallingInfo<String> REPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryName").build();
 
-    public DeleteRepositoryPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteRepositoryPolicyRequestMarshaller instance = new DeleteRepositoryPolicyRequestMarshaller();
+
+    public static DeleteRepositoryPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteRepositoryPolicyRequest> marshall(DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteRepositoryPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteRepositoryPolicyRequest> request = new DefaultRequest<DeleteRepositoryPolicyRequest>(deleteRepositoryPolicyRequest, "AmazonECR");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerRegistry_V20150921.DeleteRepositoryPolicy");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteRepositoryPolicyRequest.getRegistryId() != null) {
-                jsonGenerator.writeFieldName("registryId").writeValue(deleteRepositoryPolicyRequest.getRegistryId());
-            }
-            if (deleteRepositoryPolicyRequest.getRepositoryName() != null) {
-                jsonGenerator.writeFieldName("repositoryName").writeValue(deleteRepositoryPolicyRequest.getRepositoryName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteRepositoryPolicyRequest.getRegistryId(), REGISTRYID_BINDING);
+            protocolMarshaller.marshall(deleteRepositoryPolicyRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

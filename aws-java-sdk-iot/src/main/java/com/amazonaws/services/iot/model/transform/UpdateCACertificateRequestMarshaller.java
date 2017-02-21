@@ -12,63 +12,50 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateCACertificateRequest Marshaller
+ * UpdateCACertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateCACertificateRequestMarshaller implements Marshaller<Request<UpdateCACertificateRequest>, UpdateCACertificateRequest> {
+@SdkInternalApi
+public class UpdateCACertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("caCertificateId").build();
+    private static final MarshallingInfo<String> NEWSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("newStatus").build();
+    private static final MarshallingInfo<String> NEWAUTOREGISTRATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("newAutoRegistrationStatus").build();
 
-    public UpdateCACertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateCACertificateRequestMarshaller instance = new UpdateCACertificateRequestMarshaller();
+
+    public static UpdateCACertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateCACertificateRequest> marshall(UpdateCACertificateRequest updateCACertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateCACertificateRequest updateCACertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateCACertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateCACertificateRequest> request = new DefaultRequest<UpdateCACertificateRequest>(updateCACertificateRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/cacertificate/{caCertificateId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "caCertificateId",
-                updateCACertificateRequest.getCertificateId());
-        request.setResourcePath(uriResourcePath);
-
-        if (updateCACertificateRequest.getNewStatus() != null) {
-            request.addParameter("newStatus", StringUtils.fromString(updateCACertificateRequest.getNewStatus()));
+        try {
+            protocolMarshaller.marshall(updateCACertificateRequest.getCertificateId(), CERTIFICATEID_BINDING);
+            protocolMarshaller.marshall(updateCACertificateRequest.getNewStatus(), NEWSTATUS_BINDING);
+            protocolMarshaller.marshall(updateCACertificateRequest.getNewAutoRegistrationStatus(), NEWAUTOREGISTRATIONSTATUS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (updateCACertificateRequest.getNewAutoRegistrationStatus() != null) {
-            request.addParameter("newAutoRegistrationStatus", StringUtils.fromString(updateCACertificateRequest.getNewAutoRegistrationStatus()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

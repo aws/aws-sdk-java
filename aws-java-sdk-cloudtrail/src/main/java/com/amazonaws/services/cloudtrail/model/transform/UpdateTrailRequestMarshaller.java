@@ -12,91 +12,71 @@
  */
 package com.amazonaws.services.cloudtrail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudtrail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateTrailRequest Marshaller
+ * UpdateTrailRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateTrailRequestMarshaller implements Marshaller<Request<UpdateTrailRequest>, UpdateTrailRequest> {
+@SdkInternalApi
+public class UpdateTrailRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> S3BUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3BucketName").build();
+    private static final MarshallingInfo<String> S3KEYPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3KeyPrefix").build();
+    private static final MarshallingInfo<String> SNSTOPICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnsTopicName").build();
+    private static final MarshallingInfo<Boolean> INCLUDEGLOBALSERVICEEVENTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeGlobalServiceEvents").build();
+    private static final MarshallingInfo<Boolean> ISMULTIREGIONTRAIL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsMultiRegionTrail").build();
+    private static final MarshallingInfo<Boolean> ENABLELOGFILEVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableLogFileValidation").build();
+    private static final MarshallingInfo<String> CLOUDWATCHLOGSLOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogsLogGroupArn").build();
+    private static final MarshallingInfo<String> CLOUDWATCHLOGSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogsRoleArn").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
-    public UpdateTrailRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateTrailRequestMarshaller instance = new UpdateTrailRequestMarshaller();
+
+    public static UpdateTrailRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateTrailRequest> marshall(UpdateTrailRequest updateTrailRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateTrailRequest updateTrailRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateTrailRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateTrailRequest> request = new DefaultRequest<UpdateTrailRequest>(updateTrailRequest, "AWSCloudTrail");
-        request.addHeader("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateTrail");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateTrailRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(updateTrailRequest.getName());
-            }
-            if (updateTrailRequest.getS3BucketName() != null) {
-                jsonGenerator.writeFieldName("S3BucketName").writeValue(updateTrailRequest.getS3BucketName());
-            }
-            if (updateTrailRequest.getS3KeyPrefix() != null) {
-                jsonGenerator.writeFieldName("S3KeyPrefix").writeValue(updateTrailRequest.getS3KeyPrefix());
-            }
-            if (updateTrailRequest.getSnsTopicName() != null) {
-                jsonGenerator.writeFieldName("SnsTopicName").writeValue(updateTrailRequest.getSnsTopicName());
-            }
-            if (updateTrailRequest.getIncludeGlobalServiceEvents() != null) {
-                jsonGenerator.writeFieldName("IncludeGlobalServiceEvents").writeValue(updateTrailRequest.getIncludeGlobalServiceEvents());
-            }
-            if (updateTrailRequest.getIsMultiRegionTrail() != null) {
-                jsonGenerator.writeFieldName("IsMultiRegionTrail").writeValue(updateTrailRequest.getIsMultiRegionTrail());
-            }
-            if (updateTrailRequest.getEnableLogFileValidation() != null) {
-                jsonGenerator.writeFieldName("EnableLogFileValidation").writeValue(updateTrailRequest.getEnableLogFileValidation());
-            }
-            if (updateTrailRequest.getCloudWatchLogsLogGroupArn() != null) {
-                jsonGenerator.writeFieldName("CloudWatchLogsLogGroupArn").writeValue(updateTrailRequest.getCloudWatchLogsLogGroupArn());
-            }
-            if (updateTrailRequest.getCloudWatchLogsRoleArn() != null) {
-                jsonGenerator.writeFieldName("CloudWatchLogsRoleArn").writeValue(updateTrailRequest.getCloudWatchLogsRoleArn());
-            }
-            if (updateTrailRequest.getKmsKeyId() != null) {
-                jsonGenerator.writeFieldName("KmsKeyId").writeValue(updateTrailRequest.getKmsKeyId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateTrailRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getS3BucketName(), S3BUCKETNAME_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getS3KeyPrefix(), S3KEYPREFIX_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getSnsTopicName(), SNSTOPICNAME_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getIncludeGlobalServiceEvents(), INCLUDEGLOBALSERVICEEVENTS_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getIsMultiRegionTrail(), ISMULTIREGIONTRAIL_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getEnableLogFileValidation(), ENABLELOGFILEVALIDATION_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getCloudWatchLogsLogGroupArn(), CLOUDWATCHLOGSLOGGROUPARN_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getCloudWatchLogsRoleArn(), CLOUDWATCHLOGSROLEARN_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getKmsKeyId(), KMSKEYID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

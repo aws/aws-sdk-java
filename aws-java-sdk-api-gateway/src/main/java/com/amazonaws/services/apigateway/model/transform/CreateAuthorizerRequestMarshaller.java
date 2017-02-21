@@ -12,102 +12,72 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateAuthorizerRequest Marshaller
+ * CreateAuthorizerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateAuthorizerRequestMarshaller implements Marshaller<Request<CreateAuthorizerRequest>, CreateAuthorizerRequest> {
+@SdkInternalApi
+public class CreateAuthorizerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
+    private static final MarshallingInfo<List> PROVIDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("providerARNs").build();
+    private static final MarshallingInfo<String> AUTHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("authType").build();
+    private static final MarshallingInfo<String> AUTHORIZERURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerUri").build();
+    private static final MarshallingInfo<String> AUTHORIZERCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerCredentials").build();
+    private static final MarshallingInfo<String> IDENTITYSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identitySource").build();
+    private static final MarshallingInfo<String> IDENTITYVALIDATIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identityValidationExpression").build();
+    private static final MarshallingInfo<Integer> AUTHORIZERRESULTTTLINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerResultTtlInSeconds").build();
 
-    public CreateAuthorizerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateAuthorizerRequestMarshaller instance = new CreateAuthorizerRequestMarshaller();
+
+    public static CreateAuthorizerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateAuthorizerRequest> marshall(CreateAuthorizerRequest createAuthorizerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateAuthorizerRequest createAuthorizerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createAuthorizerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateAuthorizerRequest> request = new DefaultRequest<CreateAuthorizerRequest>(createAuthorizerRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis/{restapi_id}/authorizers";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", createAuthorizerRequest.getRestApiId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createAuthorizerRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(createAuthorizerRequest.getName());
-            }
-            if (createAuthorizerRequest.getType() != null) {
-                jsonGenerator.writeFieldName("type").writeValue(createAuthorizerRequest.getType());
-            }
-
-            java.util.List<String> providerARNsList = createAuthorizerRequest.getProviderARNs();
-            if (providerARNsList != null) {
-                jsonGenerator.writeFieldName("providerARNs");
-                jsonGenerator.writeStartArray();
-                for (String providerARNsListValue : providerARNsList) {
-                    if (providerARNsListValue != null) {
-                        jsonGenerator.writeValue(providerARNsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createAuthorizerRequest.getAuthType() != null) {
-                jsonGenerator.writeFieldName("authType").writeValue(createAuthorizerRequest.getAuthType());
-            }
-            if (createAuthorizerRequest.getAuthorizerUri() != null) {
-                jsonGenerator.writeFieldName("authorizerUri").writeValue(createAuthorizerRequest.getAuthorizerUri());
-            }
-            if (createAuthorizerRequest.getAuthorizerCredentials() != null) {
-                jsonGenerator.writeFieldName("authorizerCredentials").writeValue(createAuthorizerRequest.getAuthorizerCredentials());
-            }
-            if (createAuthorizerRequest.getIdentitySource() != null) {
-                jsonGenerator.writeFieldName("identitySource").writeValue(createAuthorizerRequest.getIdentitySource());
-            }
-            if (createAuthorizerRequest.getIdentityValidationExpression() != null) {
-                jsonGenerator.writeFieldName("identityValidationExpression").writeValue(createAuthorizerRequest.getIdentityValidationExpression());
-            }
-            if (createAuthorizerRequest.getAuthorizerResultTtlInSeconds() != null) {
-                jsonGenerator.writeFieldName("authorizerResultTtlInSeconds").writeValue(createAuthorizerRequest.getAuthorizerResultTtlInSeconds());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createAuthorizerRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getProviderARNs(), PROVIDERARNS_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getAuthType(), AUTHTYPE_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerUri(), AUTHORIZERURI_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerCredentials(), AUTHORIZERCREDENTIALS_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getIdentitySource(), IDENTITYSOURCE_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getIdentityValidationExpression(), IDENTITYVALIDATIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerResultTtlInSeconds(), AUTHORIZERRESULTTTLINSECONDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

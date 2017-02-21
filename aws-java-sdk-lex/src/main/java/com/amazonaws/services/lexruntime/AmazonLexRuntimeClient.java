@@ -211,7 +211,7 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PostTextRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(postTextRequest));
+                request = new PostTextRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(postTextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

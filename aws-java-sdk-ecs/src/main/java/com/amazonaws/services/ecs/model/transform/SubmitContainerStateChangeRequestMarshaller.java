@@ -12,94 +12,63 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SubmitContainerStateChangeRequest Marshaller
+ * SubmitContainerStateChangeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubmitContainerStateChangeRequestMarshaller implements Marshaller<Request<SubmitContainerStateChangeRequest>, SubmitContainerStateChangeRequest> {
+@SdkInternalApi
+public class SubmitContainerStateChangeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
+    private static final MarshallingInfo<String> TASK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("task").build();
+    private static final MarshallingInfo<String> CONTAINERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerName").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<Integer> EXITCODE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exitCode").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("reason").build();
+    private static final MarshallingInfo<List> NETWORKBINDINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkBindings").build();
 
-    public SubmitContainerStateChangeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SubmitContainerStateChangeRequestMarshaller instance = new SubmitContainerStateChangeRequestMarshaller();
+
+    public static SubmitContainerStateChangeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SubmitContainerStateChangeRequest> marshall(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SubmitContainerStateChangeRequest submitContainerStateChangeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (submitContainerStateChangeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SubmitContainerStateChangeRequest> request = new DefaultRequest<SubmitContainerStateChangeRequest>(submitContainerStateChangeRequest,
-                "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (submitContainerStateChangeRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(submitContainerStateChangeRequest.getCluster());
-            }
-            if (submitContainerStateChangeRequest.getTask() != null) {
-                jsonGenerator.writeFieldName("task").writeValue(submitContainerStateChangeRequest.getTask());
-            }
-            if (submitContainerStateChangeRequest.getContainerName() != null) {
-                jsonGenerator.writeFieldName("containerName").writeValue(submitContainerStateChangeRequest.getContainerName());
-            }
-            if (submitContainerStateChangeRequest.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(submitContainerStateChangeRequest.getStatus());
-            }
-            if (submitContainerStateChangeRequest.getExitCode() != null) {
-                jsonGenerator.writeFieldName("exitCode").writeValue(submitContainerStateChangeRequest.getExitCode());
-            }
-            if (submitContainerStateChangeRequest.getReason() != null) {
-                jsonGenerator.writeFieldName("reason").writeValue(submitContainerStateChangeRequest.getReason());
-            }
-
-            com.amazonaws.internal.SdkInternalList<NetworkBinding> networkBindingsList = (com.amazonaws.internal.SdkInternalList<NetworkBinding>) submitContainerStateChangeRequest
-                    .getNetworkBindings();
-            if (!networkBindingsList.isEmpty() || !networkBindingsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("networkBindings");
-                jsonGenerator.writeStartArray();
-                for (NetworkBinding networkBindingsListValue : networkBindingsList) {
-                    if (networkBindingsListValue != null) {
-
-                        NetworkBindingJsonMarshaller.getInstance().marshall(networkBindingsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(submitContainerStateChangeRequest.getCluster(), CLUSTER_BINDING);
+            protocolMarshaller.marshall(submitContainerStateChangeRequest.getTask(), TASK_BINDING);
+            protocolMarshaller.marshall(submitContainerStateChangeRequest.getContainerName(), CONTAINERNAME_BINDING);
+            protocolMarshaller.marshall(submitContainerStateChangeRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(submitContainerStateChangeRequest.getExitCode(), EXITCODE_BINDING);
+            protocolMarshaller.marshall(submitContainerStateChangeRequest.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(submitContainerStateChangeRequest.getNetworkBindings(), NETWORKBINDINGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

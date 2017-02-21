@@ -669,7 +669,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -740,7 +740,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBuildRequest));
+                request = new CreateBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -871,7 +871,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
+                request = new CreateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -958,7 +958,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGameSessionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGameSessionRequest));
+                request = new CreateGameSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGameSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1029,7 +1029,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePlayerSessionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionRequest));
+                request = new CreatePlayerSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1101,7 +1101,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePlayerSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionsRequest));
+                request = new CreatePlayerSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1156,7 +1156,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1214,7 +1214,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBuildRequest));
+                request = new DeleteBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1276,7 +1276,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
+                request = new DeleteFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1331,7 +1331,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteScalingPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
+                request = new DeleteScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1386,7 +1386,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAliasRequest));
+                request = new DescribeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1441,7 +1441,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBuildRequest));
+                request = new DescribeBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1508,7 +1508,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEC2InstanceLimitsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEC2InstanceLimitsRequest));
+                request = new DescribeEC2InstanceLimitsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEC2InstanceLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1573,7 +1574,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetAttributesRequest));
+                request = new DescribeFleetAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1639,7 +1641,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetCapacityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetCapacityRequest));
+                request = new DescribeFleetCapacityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1696,7 +1698,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetEventsRequest));
+                request = new DescribeFleetEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1753,7 +1755,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetPortSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetPortSettingsRequest));
+                request = new DescribeFleetPortSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetPortSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1818,7 +1821,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetUtilizationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetUtilizationRequest));
+                request = new DescribeFleetUtilizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetUtilizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1887,7 +1891,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGameSessionDetailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGameSessionDetailsRequest));
+                request = new DescribeGameSessionDetailsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeGameSessionDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1957,7 +1962,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGameSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGameSessionsRequest));
+                request = new DescribeGameSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGameSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2017,7 +2022,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstancesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancesRequest));
+                request = new DescribeInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2081,7 +2086,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePlayerSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePlayerSessionsRequest));
+                request = new DescribePlayerSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePlayerSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2137,7 +2142,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRuntimeConfigurationRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeRuntimeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeRuntimeConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2198,7 +2203,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalingPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingPoliciesRequest));
+                request = new DescribeScalingPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalingPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2260,7 +2266,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetGameSessionLogUrlRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGameSessionLogUrlRequest));
+                request = new GetGameSessionLogUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGameSessionLogUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2329,7 +2335,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceAccessRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceAccessRequest));
+                request = new GetInstanceAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2386,7 +2392,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2444,7 +2450,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBuildsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
+                request = new ListBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2504,7 +2510,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFleetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFleetsRequest));
+                request = new ListFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2581,7 +2587,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutScalingPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
+                request = new PutScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2648,7 +2654,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RequestUploadCredentialsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(requestUploadCredentialsRequest));
+                request = new RequestUploadCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(requestUploadCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2708,7 +2715,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResolveAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveAliasRequest));
+                request = new ResolveAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2827,7 +2834,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchGameSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchGameSessionsRequest));
+                request = new SearchGameSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchGameSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2883,7 +2890,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2939,7 +2946,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBuildRequest));
+                request = new UpdateBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3003,7 +3010,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetAttributesRequest));
+                request = new UpdateFleetAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3081,7 +3088,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetCapacityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetCapacityRequest));
+                request = new UpdateFleetCapacityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3148,7 +3155,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetPortSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetPortSettingsRequest));
+                request = new UpdateFleetPortSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateFleetPortSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3213,7 +3221,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGameSessionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGameSessionRequest));
+                request = new UpdateGameSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGameSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3283,7 +3291,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRuntimeConfigurationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuntimeConfigurationRequest));
+                request = new UpdateRuntimeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateRuntimeConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

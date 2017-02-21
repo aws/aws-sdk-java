@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteLogStreamRequest Marshaller
+ * DeleteLogStreamRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteLogStreamRequestMarshaller implements Marshaller<Request<DeleteLogStreamRequest>, DeleteLogStreamRequest> {
+@SdkInternalApi
+public class DeleteLogStreamRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<String> LOGSTREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logStreamName").build();
 
-    public DeleteLogStreamRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteLogStreamRequestMarshaller instance = new DeleteLogStreamRequestMarshaller();
+
+    public static DeleteLogStreamRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteLogStreamRequest> marshall(DeleteLogStreamRequest deleteLogStreamRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteLogStreamRequest deleteLogStreamRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteLogStreamRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteLogStreamRequest> request = new DefaultRequest<DeleteLogStreamRequest>(deleteLogStreamRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.DeleteLogStream");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteLogStreamRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(deleteLogStreamRequest.getLogGroupName());
-            }
-            if (deleteLogStreamRequest.getLogStreamName() != null) {
-                jsonGenerator.writeFieldName("logStreamName").writeValue(deleteLogStreamRequest.getLogStreamName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteLogStreamRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(deleteLogStreamRequest.getLogStreamName(), LOGSTREAMNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

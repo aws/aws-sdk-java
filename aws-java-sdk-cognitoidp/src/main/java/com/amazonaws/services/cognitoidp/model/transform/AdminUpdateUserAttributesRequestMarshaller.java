@@ -12,83 +12,51 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AdminUpdateUserAttributesRequest Marshaller
+ * AdminUpdateUserAttributesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AdminUpdateUserAttributesRequestMarshaller implements Marshaller<Request<AdminUpdateUserAttributesRequest>, AdminUpdateUserAttributesRequest> {
+@SdkInternalApi
+public class AdminUpdateUserAttributesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Username").build();
+    private static final MarshallingInfo<List> USERATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserAttributes").build();
 
-    public AdminUpdateUserAttributesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AdminUpdateUserAttributesRequestMarshaller instance = new AdminUpdateUserAttributesRequestMarshaller();
+
+    public static AdminUpdateUserAttributesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AdminUpdateUserAttributesRequest> marshall(AdminUpdateUserAttributesRequest adminUpdateUserAttributesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AdminUpdateUserAttributesRequest adminUpdateUserAttributesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (adminUpdateUserAttributesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AdminUpdateUserAttributesRequest> request = new DefaultRequest<AdminUpdateUserAttributesRequest>(adminUpdateUserAttributesRequest,
-                "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminUpdateUserAttributes");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (adminUpdateUserAttributesRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(adminUpdateUserAttributesRequest.getUserPoolId());
-            }
-            if (adminUpdateUserAttributesRequest.getUsername() != null) {
-                jsonGenerator.writeFieldName("Username").writeValue(adminUpdateUserAttributesRequest.getUsername());
-            }
-
-            java.util.List<AttributeType> userAttributesList = adminUpdateUserAttributesRequest.getUserAttributes();
-            if (userAttributesList != null) {
-                jsonGenerator.writeFieldName("UserAttributes");
-                jsonGenerator.writeStartArray();
-                for (AttributeType userAttributesListValue : userAttributesList) {
-                    if (userAttributesListValue != null) {
-
-                        AttributeTypeJsonMarshaller.getInstance().marshall(userAttributesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(adminUpdateUserAttributesRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(adminUpdateUserAttributesRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(adminUpdateUserAttributesRequest.getUserAttributes(), USERATTRIBUTES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeSchemasRequest Marshaller
+ * DescribeSchemasRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeSchemasRequestMarshaller implements Marshaller<Request<DescribeSchemasRequest>, DescribeSchemasRequest> {
+@SdkInternalApi
+public class DescribeSchemasRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ENDPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointArn").build();
+    private static final MarshallingInfo<Integer> MAXRECORDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRecords").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
 
-    public DescribeSchemasRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeSchemasRequestMarshaller instance = new DescribeSchemasRequestMarshaller();
+
+    public static DescribeSchemasRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeSchemasRequest> marshall(DescribeSchemasRequest describeSchemasRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeSchemasRequest describeSchemasRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeSchemasRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeSchemasRequest> request = new DefaultRequest<DescribeSchemasRequest>(describeSchemasRequest, "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.DescribeSchemas");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeSchemasRequest.getEndpointArn() != null) {
-                jsonGenerator.writeFieldName("EndpointArn").writeValue(describeSchemasRequest.getEndpointArn());
-            }
-            if (describeSchemasRequest.getMaxRecords() != null) {
-                jsonGenerator.writeFieldName("MaxRecords").writeValue(describeSchemasRequest.getMaxRecords());
-            }
-            if (describeSchemasRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(describeSchemasRequest.getMarker());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeSchemasRequest.getEndpointArn(), ENDPOINTARN_BINDING);
+            protocolMarshaller.marshall(describeSchemasRequest.getMaxRecords(), MAXRECORDS_BINDING);
+            protocolMarshaller.marshall(describeSchemasRequest.getMarker(), MARKER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

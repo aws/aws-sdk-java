@@ -15,10 +15,10 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
+
 import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 
 
 public class Metadata {
@@ -381,6 +381,20 @@ public class Metadata {
 
     public boolean isXmlProtocol() {
         return protocolMetadataProvider.isXmlProtocol();
+    }
+
+    /**
+     * @return True for RESTful protocols. False for all other protocols (RPC, Query, etc).
+     */
+    public static boolean isNotRestProtocol(String protocol) {
+        switch (Protocol.fromValue(protocol)) {
+            case API_GATEWAY:
+            case REST_JSON:
+            case REST_XML:
+                return false;
+            default:
+                return true;
+        }
     }
 
     public String getEndpointPrefix() {

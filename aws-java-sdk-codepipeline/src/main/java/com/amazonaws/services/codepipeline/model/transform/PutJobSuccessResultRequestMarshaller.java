@@ -12,75 +12,53 @@
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codepipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutJobSuccessResultRequest Marshaller
+ * PutJobSuccessResultRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutJobSuccessResultRequestMarshaller implements Marshaller<Request<PutJobSuccessResultRequest>, PutJobSuccessResultRequest> {
+@SdkInternalApi
+public class PutJobSuccessResultRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobId").build();
+    private static final MarshallingInfo<StructuredPojo> CURRENTREVISION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentRevision").build();
+    private static final MarshallingInfo<String> CONTINUATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("continuationToken").build();
+    private static final MarshallingInfo<StructuredPojo> EXECUTIONDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionDetails").build();
 
-    public PutJobSuccessResultRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutJobSuccessResultRequestMarshaller instance = new PutJobSuccessResultRequestMarshaller();
+
+    public static PutJobSuccessResultRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutJobSuccessResultRequest> marshall(PutJobSuccessResultRequest putJobSuccessResultRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutJobSuccessResultRequest putJobSuccessResultRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putJobSuccessResultRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutJobSuccessResultRequest> request = new DefaultRequest<PutJobSuccessResultRequest>(putJobSuccessResultRequest, "AWSCodePipeline");
-        request.addHeader("X-Amz-Target", "CodePipeline_20150709.PutJobSuccessResult");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putJobSuccessResultRequest.getJobId() != null) {
-                jsonGenerator.writeFieldName("jobId").writeValue(putJobSuccessResultRequest.getJobId());
-            }
-            if (putJobSuccessResultRequest.getCurrentRevision() != null) {
-                jsonGenerator.writeFieldName("currentRevision");
-                CurrentRevisionJsonMarshaller.getInstance().marshall(putJobSuccessResultRequest.getCurrentRevision(), jsonGenerator);
-            }
-            if (putJobSuccessResultRequest.getContinuationToken() != null) {
-                jsonGenerator.writeFieldName("continuationToken").writeValue(putJobSuccessResultRequest.getContinuationToken());
-            }
-            if (putJobSuccessResultRequest.getExecutionDetails() != null) {
-                jsonGenerator.writeFieldName("executionDetails");
-                ExecutionDetailsJsonMarshaller.getInstance().marshall(putJobSuccessResultRequest.getExecutionDetails(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putJobSuccessResultRequest.getJobId(), JOBID_BINDING);
+            protocolMarshaller.marshall(putJobSuccessResultRequest.getCurrentRevision(), CURRENTREVISION_BINDING);
+            protocolMarshaller.marshall(putJobSuccessResultRequest.getContinuationToken(), CONTINUATIONTOKEN_BINDING);
+            protocolMarshaller.marshall(putJobSuccessResultRequest.getExecutionDetails(), EXECUTIONDETAILS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

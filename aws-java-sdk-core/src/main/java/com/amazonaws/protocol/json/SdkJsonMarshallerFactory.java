@@ -14,9 +14,15 @@
  */
 package com.amazonaws.protocol.json;
 
+import com.amazonaws.annotation.SdkProtectedApi;
+
 /**
  * Factory interface for creating dependencies needed by generated marshallers for JSON services.
+ *
+ * @deprecated By {@link com.amazonaws.protocol.ProtocolRequestMarshaller}
  */
+@Deprecated
+@SdkProtectedApi
 public interface SdkJsonMarshallerFactory {
 
     /**

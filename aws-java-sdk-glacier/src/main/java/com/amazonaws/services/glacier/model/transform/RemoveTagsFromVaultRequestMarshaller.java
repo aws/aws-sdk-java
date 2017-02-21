@@ -12,81 +12,51 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RemoveTagsFromVaultRequest Marshaller
+ * RemoveTagsFromVaultRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RemoveTagsFromVaultRequestMarshaller implements Marshaller<Request<RemoveTagsFromVaultRequest>, RemoveTagsFromVaultRequest> {
+@SdkInternalApi
+public class RemoveTagsFromVaultRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<List> TAGKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagKeys").build();
 
-    public RemoveTagsFromVaultRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RemoveTagsFromVaultRequestMarshaller instance = new RemoveTagsFromVaultRequestMarshaller();
+
+    public static RemoveTagsFromVaultRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RemoveTagsFromVaultRequest> marshall(RemoveTagsFromVaultRequest removeTagsFromVaultRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RemoveTagsFromVaultRequest removeTagsFromVaultRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (removeTagsFromVaultRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RemoveTagsFromVaultRequest> request = new DefaultRequest<RemoveTagsFromVaultRequest>(removeTagsFromVaultRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/tags?operation=remove";
-
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                removeTagsFromVaultRequest.getAccountId() == null ? "-" : removeTagsFromVaultRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", removeTagsFromVaultRequest.getVaultName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> tagKeysList = removeTagsFromVaultRequest.getTagKeys();
-            if (tagKeysList != null) {
-                jsonGenerator.writeFieldName("TagKeys");
-                jsonGenerator.writeStartArray();
-                for (String tagKeysListValue : tagKeysList) {
-                    if (tagKeysListValue != null) {
-                        jsonGenerator.writeValue(tagKeysListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(removeTagsFromVaultRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(removeTagsFromVaultRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(removeTagsFromVaultRequest.getTagKeys(), TAGKEYS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

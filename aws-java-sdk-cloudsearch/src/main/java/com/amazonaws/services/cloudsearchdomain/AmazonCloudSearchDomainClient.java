@@ -315,7 +315,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchRequest));
+                request = new SearchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -373,7 +373,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SuggestRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(suggestRequest));
+                request = new SuggestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(suggestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -435,7 +435,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadDocumentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadDocumentsRequest));
+                request = new UploadDocumentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

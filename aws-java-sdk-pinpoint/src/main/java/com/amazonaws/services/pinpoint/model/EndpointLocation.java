@@ -14,9 +14,11 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointLocation implements Serializable, Cloneable {
+public class EndpointLocation implements Serializable, Cloneable, StructuredPojo {
 
     /** The city where the endpoint is located. */
     private String city;
@@ -320,5 +322,11 @@ public class EndpointLocation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.EndpointLocationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

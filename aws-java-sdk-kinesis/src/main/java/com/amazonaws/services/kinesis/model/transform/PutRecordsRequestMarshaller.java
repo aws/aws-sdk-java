@@ -12,77 +12,48 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutRecordsRequest Marshaller
+ * PutRecordsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutRecordsRequestMarshaller implements Marshaller<Request<PutRecordsRequest>, PutRecordsRequest> {
+@SdkInternalApi
+public class PutRecordsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> RECORDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Records").build();
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
 
-    public PutRecordsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutRecordsRequestMarshaller instance = new PutRecordsRequestMarshaller();
+
+    public static PutRecordsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutRecordsRequest> marshall(PutRecordsRequest putRecordsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutRecordsRequest putRecordsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putRecordsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutRecordsRequest> request = new DefaultRequest<PutRecordsRequest>(putRecordsRequest, "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.PutRecords");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry> recordsList = (com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>) putRecordsRequest
-                    .getRecords();
-            if (!recordsList.isEmpty() || !recordsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Records");
-                jsonGenerator.writeStartArray();
-                for (PutRecordsRequestEntry recordsListValue : recordsList) {
-                    if (recordsListValue != null) {
-
-                        PutRecordsRequestEntryJsonMarshaller.getInstance().marshall(recordsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (putRecordsRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(putRecordsRequest.getStreamName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putRecordsRequest.getRecords(), RECORDS_BINDING);
+            protocolMarshaller.marshall(putRecordsRequest.getStreamName(), STREAMNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

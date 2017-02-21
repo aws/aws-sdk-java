@@ -12,96 +12,64 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDeploymentRequest Marshaller
+ * CreateDeploymentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDeploymentRequestMarshaller implements Marshaller<Request<CreateDeploymentRequest>, CreateDeploymentRequest> {
+@SdkInternalApi
+public class CreateDeploymentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> STAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stageName").build();
+    private static final MarshallingInfo<String> STAGEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stageDescription").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Boolean> CACHECLUSTERENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheClusterEnabled").build();
+    private static final MarshallingInfo<String> CACHECLUSTERSIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheClusterSize").build();
+    private static final MarshallingInfo<Map> VARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("variables").build();
 
-    public CreateDeploymentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDeploymentRequestMarshaller instance = new CreateDeploymentRequestMarshaller();
+
+    public static CreateDeploymentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDeploymentRequest> marshall(CreateDeploymentRequest createDeploymentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDeploymentRequest createDeploymentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDeploymentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDeploymentRequest> request = new DefaultRequest<CreateDeploymentRequest>(createDeploymentRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis/{restapi_id}/deployments";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", createDeploymentRequest.getRestApiId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createDeploymentRequest.getStageName() != null) {
-                jsonGenerator.writeFieldName("stageName").writeValue(createDeploymentRequest.getStageName());
-            }
-            if (createDeploymentRequest.getStageDescription() != null) {
-                jsonGenerator.writeFieldName("stageDescription").writeValue(createDeploymentRequest.getStageDescription());
-            }
-            if (createDeploymentRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(createDeploymentRequest.getDescription());
-            }
-            if (createDeploymentRequest.getCacheClusterEnabled() != null) {
-                jsonGenerator.writeFieldName("cacheClusterEnabled").writeValue(createDeploymentRequest.getCacheClusterEnabled());
-            }
-            if (createDeploymentRequest.getCacheClusterSize() != null) {
-                jsonGenerator.writeFieldName("cacheClusterSize").writeValue(createDeploymentRequest.getCacheClusterSize());
-            }
-
-            java.util.Map<String, String> variablesMap = createDeploymentRequest.getVariables();
-            if (variablesMap != null) {
-                jsonGenerator.writeFieldName("variables");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> variablesMapValue : variablesMap.entrySet()) {
-                    if (variablesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(variablesMapValue.getKey());
-
-                        jsonGenerator.writeValue(variablesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDeploymentRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getStageName(), STAGENAME_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getStageDescription(), STAGEDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getCacheClusterEnabled(), CACHECLUSTERENABLED_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getCacheClusterSize(), CACHECLUSTERSIZE_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getVariables(), VARIABLES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

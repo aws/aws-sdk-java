@@ -12,75 +12,53 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeSubscriptionFiltersRequest Marshaller
+ * DescribeSubscriptionFiltersRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeSubscriptionFiltersRequestMarshaller implements
-        Marshaller<Request<DescribeSubscriptionFiltersRequest>, DescribeSubscriptionFiltersRequest> {
+@SdkInternalApi
+public class DescribeSubscriptionFiltersRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<String> FILTERNAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterNamePrefix").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("limit").build();
 
-    public DescribeSubscriptionFiltersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeSubscriptionFiltersRequestMarshaller instance = new DescribeSubscriptionFiltersRequestMarshaller();
+
+    public static DescribeSubscriptionFiltersRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeSubscriptionFiltersRequest> marshall(DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeSubscriptionFiltersRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeSubscriptionFiltersRequest> request = new DefaultRequest<DescribeSubscriptionFiltersRequest>(describeSubscriptionFiltersRequest,
-                "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.DescribeSubscriptionFilters");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeSubscriptionFiltersRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(describeSubscriptionFiltersRequest.getLogGroupName());
-            }
-            if (describeSubscriptionFiltersRequest.getFilterNamePrefix() != null) {
-                jsonGenerator.writeFieldName("filterNamePrefix").writeValue(describeSubscriptionFiltersRequest.getFilterNamePrefix());
-            }
-            if (describeSubscriptionFiltersRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(describeSubscriptionFiltersRequest.getNextToken());
-            }
-            if (describeSubscriptionFiltersRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("limit").writeValue(describeSubscriptionFiltersRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeSubscriptionFiltersRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(describeSubscriptionFiltersRequest.getFilterNamePrefix(), FILTERNAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(describeSubscriptionFiltersRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeSubscriptionFiltersRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

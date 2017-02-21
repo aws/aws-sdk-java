@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DisableKeyRotationRequest Marshaller
+ * DisableKeyRotationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisableKeyRotationRequestMarshaller implements Marshaller<Request<DisableKeyRotationRequest>, DisableKeyRotationRequest> {
+@SdkInternalApi
+public class DisableKeyRotationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
 
-    public DisableKeyRotationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DisableKeyRotationRequestMarshaller instance = new DisableKeyRotationRequestMarshaller();
+
+    public static DisableKeyRotationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DisableKeyRotationRequest> marshall(DisableKeyRotationRequest disableKeyRotationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DisableKeyRotationRequest disableKeyRotationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (disableKeyRotationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisableKeyRotationRequest> request = new DefaultRequest<DisableKeyRotationRequest>(disableKeyRotationRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.DisableKeyRotation");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (disableKeyRotationRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(disableKeyRotationRequest.getKeyId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(disableKeyRotationRequest.getKeyId(), KEYID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

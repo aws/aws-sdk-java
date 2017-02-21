@@ -391,7 +391,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCustomAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCustomAttributesRequest));
+                request = new AddCustomAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCustomAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -448,7 +448,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminAddUserToGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminAddUserToGroupRequest));
+                request = new AdminAddUserToGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminAddUserToGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -519,7 +519,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminConfirmSignUpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminConfirmSignUpRequest));
+                request = new AdminConfirmSignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminConfirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -604,7 +604,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminCreateUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminCreateUserRequest));
+                request = new AdminCreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminCreateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -662,7 +662,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminDeleteUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDeleteUserRequest));
+                request = new AdminDeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDeleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -720,7 +720,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminDeleteUserAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDeleteUserAttributesRequest));
+                request = new AdminDeleteUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(adminDeleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -779,7 +780,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminDisableUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDisableUserRequest));
+                request = new AdminDisableUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDisableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -837,7 +838,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminEnableUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminEnableUserRequest));
+                request = new AdminEnableUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminEnableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -897,7 +898,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminForgetDeviceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminForgetDeviceRequest));
+                request = new AdminForgetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminForgetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -955,7 +956,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminGetDeviceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetDeviceRequest));
+                request = new AdminGetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1013,7 +1014,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminGetUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetUserRequest));
+                request = new AdminGetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1094,7 +1095,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminInitiateAuthRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminInitiateAuthRequest));
+                request = new AdminInitiateAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminInitiateAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1152,7 +1153,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminListDevicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListDevicesRequest));
+                request = new AdminListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1209,7 +1210,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminListGroupsForUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListGroupsForUserRequest));
+                request = new AdminListGroupsForUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListGroupsForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1267,7 +1268,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminRemoveUserFromGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminRemoveUserFromGroupRequest));
+                request = new AdminRemoveUserFromGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(adminRemoveUserFromGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1344,7 +1346,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminResetUserPasswordRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminResetUserPasswordRequest));
+                request = new AdminResetUserPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminResetUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1436,7 +1438,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminRespondToAuthChallengeRequestMarshaller(protocolFactory).marshall(super
+                request = new AdminRespondToAuthChallengeRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(adminRespondToAuthChallengeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1494,7 +1496,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminSetUserSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminSetUserSettingsRequest));
+                request = new AdminSetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminSetUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1554,7 +1556,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminUpdateDeviceStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminUpdateDeviceStatusRequest));
+                request = new AdminUpdateDeviceStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(adminUpdateDeviceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1625,7 +1628,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminUpdateUserAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminUpdateUserAttributesRequest));
+                request = new AdminUpdateUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(adminUpdateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1684,7 +1688,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminUserGlobalSignOutRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminUserGlobalSignOutRequest));
+                request = new AdminUserGlobalSignOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminUserGlobalSignOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1748,7 +1752,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ChangePasswordRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(changePasswordRequest));
+                request = new ChangePasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(changePasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1815,7 +1819,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConfirmDeviceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmDeviceRequest));
+                request = new ConfirmDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1891,7 +1895,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConfirmForgotPasswordRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmForgotPasswordRequest));
+                request = new ConfirmForgotPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmForgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1968,7 +1972,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConfirmSignUpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmSignUpRequest));
+                request = new ConfirmSignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2027,7 +2031,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
+                request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2084,7 +2088,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserImportJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserImportJobRequest));
+                request = new CreateUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2149,7 +2153,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserPoolRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolRequest));
+                request = new CreateUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2204,7 +2208,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserPoolClientRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolClientRequest));
+                request = new CreateUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2259,7 +2263,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
+                request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2318,7 +2322,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
+                request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2377,7 +2381,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserAttributesRequest));
+                request = new DeleteUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2433,7 +2437,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserPoolRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolRequest));
+                request = new DeleteUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2486,7 +2490,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserPoolClientRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolClientRequest));
+                request = new DeleteUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2539,7 +2543,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserImportJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserImportJobRequest));
+                request = new DescribeUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2595,7 +2599,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserPoolRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolRequest));
+                request = new DescribeUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2648,7 +2652,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserPoolClientRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolClientRequest));
+                request = new DescribeUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2710,7 +2714,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ForgetDeviceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgetDeviceRequest));
+                request = new ForgetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2789,7 +2793,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ForgotPasswordRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgotPasswordRequest));
+                request = new ForgotPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2842,7 +2846,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCSVHeaderRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCSVHeaderRequest));
+                request = new GetCSVHeaderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCSVHeaderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2903,7 +2907,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeviceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRequest));
+                request = new GetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2958,7 +2962,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
+                request = new GetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3017,7 +3021,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserRequest));
+                request = new GetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3099,7 +3103,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUserAttributeVerificationCodeRequestMarshaller(protocolFactory).marshall(super
+                request = new GetUserAttributeVerificationCodeRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getUserAttributeVerificationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -3158,7 +3162,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GlobalSignOutRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(globalSignOutRequest));
+                request = new GlobalSignOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(globalSignOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3227,7 +3231,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InitiateAuthRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateAuthRequest));
+                request = new InitiateAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3288,7 +3292,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDevicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicesRequest));
+                request = new ListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3343,7 +3347,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGroupsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
+                request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3396,7 +3400,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUserImportJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserImportJobsRequest));
+                request = new ListUserImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3449,7 +3453,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUserPoolClientsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolClientsRequest));
+                request = new ListUserPoolClientsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolClientsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3500,7 +3504,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUserPoolsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolsRequest));
+                request = new ListUserPoolsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3553,7 +3557,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUsersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
+                request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3608,7 +3612,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUsersInGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersInGroupRequest));
+                request = new ListUsersInGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersInGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3685,7 +3689,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResendConfirmationCodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendConfirmationCodeRequest));
+                request = new ResendConfirmationCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendConfirmationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3774,7 +3778,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RespondToAuthChallengeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(respondToAuthChallengeRequest));
+                request = new RespondToAuthChallengeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(respondToAuthChallengeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3833,7 +3837,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetUserSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserSettingsRequest));
+                request = new SetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3910,7 +3914,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SignUpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(signUpRequest));
+                request = new SignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(signUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3965,7 +3969,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartUserImportJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startUserImportJobRequest));
+                request = new StartUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4020,7 +4024,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopUserImportJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopUserImportJobRequest));
+                request = new StopUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4081,7 +4085,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDeviceStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceStatusRequest));
+                request = new UpdateDeviceStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4136,7 +4140,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
+                request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4223,7 +4227,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserAttributesRequest));
+                request = new UpdateUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4293,7 +4297,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserPoolRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolRequest));
+                request = new UpdateUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4346,7 +4350,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserPoolClientRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolClientRequest));
+                request = new UpdateUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4411,7 +4415,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new VerifyUserAttributeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyUserAttributeRequest));
+                request = new VerifyUserAttributeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyUserAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

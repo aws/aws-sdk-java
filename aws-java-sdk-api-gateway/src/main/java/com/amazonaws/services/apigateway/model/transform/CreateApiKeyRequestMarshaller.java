@@ -12,96 +12,63 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateApiKeyRequest Marshaller
+ * CreateApiKeyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateApiKeyRequestMarshaller implements Marshaller<Request<CreateApiKeyRequest>, CreateApiKeyRequest> {
+@SdkInternalApi
+public class CreateApiKeyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("enabled").build();
+    private static final MarshallingInfo<Boolean> GENERATEDISTINCTID_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generateDistinctId").build();
+    private static final MarshallingInfo<String> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("value").build();
+    private static final MarshallingInfo<List> STAGEKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stageKeys").build();
+    private static final MarshallingInfo<String> CUSTOMERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerId").build();
 
-    public CreateApiKeyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateApiKeyRequestMarshaller instance = new CreateApiKeyRequestMarshaller();
+
+    public static CreateApiKeyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateApiKeyRequest> marshall(CreateApiKeyRequest createApiKeyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateApiKeyRequest createApiKeyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createApiKeyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateApiKeyRequest> request = new DefaultRequest<CreateApiKeyRequest>(createApiKeyRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/apikeys";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createApiKeyRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(createApiKeyRequest.getName());
-            }
-            if (createApiKeyRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(createApiKeyRequest.getDescription());
-            }
-            if (createApiKeyRequest.getEnabled() != null) {
-                jsonGenerator.writeFieldName("enabled").writeValue(createApiKeyRequest.getEnabled());
-            }
-            if (createApiKeyRequest.getGenerateDistinctId() != null) {
-                jsonGenerator.writeFieldName("generateDistinctId").writeValue(createApiKeyRequest.getGenerateDistinctId());
-            }
-            if (createApiKeyRequest.getValue() != null) {
-                jsonGenerator.writeFieldName("value").writeValue(createApiKeyRequest.getValue());
-            }
-
-            java.util.List<StageKey> stageKeysList = createApiKeyRequest.getStageKeys();
-            if (stageKeysList != null) {
-                jsonGenerator.writeFieldName("stageKeys");
-                jsonGenerator.writeStartArray();
-                for (StageKey stageKeysListValue : stageKeysList) {
-                    if (stageKeysListValue != null) {
-
-                        StageKeyJsonMarshaller.getInstance().marshall(stageKeysListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createApiKeyRequest.getCustomerId() != null) {
-                jsonGenerator.writeFieldName("customerId").writeValue(createApiKeyRequest.getCustomerId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createApiKeyRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createApiKeyRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createApiKeyRequest.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(createApiKeyRequest.getGenerateDistinctId(), GENERATEDISTINCTID_BINDING);
+            protocolMarshaller.marshall(createApiKeyRequest.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(createApiKeyRequest.getStageKeys(), STAGEKEYS_BINDING);
+            protocolMarshaller.marshall(createApiKeyRequest.getCustomerId(), CUSTOMERID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

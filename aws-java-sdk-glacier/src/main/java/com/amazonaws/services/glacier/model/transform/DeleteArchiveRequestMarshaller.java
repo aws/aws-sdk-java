@@ -12,55 +12,50 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteArchiveRequest Marshaller
+ * DeleteArchiveRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteArchiveRequestMarshaller implements Marshaller<Request<DeleteArchiveRequest>, DeleteArchiveRequest> {
+@SdkInternalApi
+public class DeleteArchiveRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<String> ARCHIVEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("archiveId").build();
 
-    public DeleteArchiveRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteArchiveRequestMarshaller instance = new DeleteArchiveRequestMarshaller();
+
+    public static DeleteArchiveRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteArchiveRequest> marshall(DeleteArchiveRequest deleteArchiveRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteArchiveRequest deleteArchiveRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteArchiveRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteArchiveRequest> request = new DefaultRequest<DeleteArchiveRequest>(deleteArchiveRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                deleteArchiveRequest.getAccountId() == null ? "-" : deleteArchiveRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", deleteArchiveRequest.getVaultName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "archiveId", deleteArchiveRequest.getArchiveId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteArchiveRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(deleteArchiveRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(deleteArchiveRequest.getArchiveId(), ARCHIVEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

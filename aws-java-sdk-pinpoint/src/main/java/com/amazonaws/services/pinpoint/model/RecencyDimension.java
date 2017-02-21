@@ -14,9 +14,11 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RecencyDimension implements Serializable, Cloneable {
+public class RecencyDimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * The length of time during which users have been active or inactive with your app. Valid values: HR_24, DAY_7,
@@ -243,5 +245,11 @@ public class RecencyDimension implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.RecencyDimensionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

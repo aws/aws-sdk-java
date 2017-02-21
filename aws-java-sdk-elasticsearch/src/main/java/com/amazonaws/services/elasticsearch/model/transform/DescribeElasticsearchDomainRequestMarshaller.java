@@ -12,55 +12,44 @@
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticsearch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeElasticsearchDomainRequest Marshaller
+ * DescribeElasticsearchDomainRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeElasticsearchDomainRequestMarshaller implements
-        Marshaller<Request<DescribeElasticsearchDomainRequest>, DescribeElasticsearchDomainRequest> {
+@SdkInternalApi
+public class DescribeElasticsearchDomainRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("DomainName").build();
 
-    public DescribeElasticsearchDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeElasticsearchDomainRequestMarshaller instance = new DescribeElasticsearchDomainRequestMarshaller();
+
+    public static DescribeElasticsearchDomainRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeElasticsearchDomainRequest> marshall(DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeElasticsearchDomainRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeElasticsearchDomainRequest> request = new DefaultRequest<DescribeElasticsearchDomainRequest>(describeElasticsearchDomainRequest,
-                "AWSElasticsearch");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-01-01/es/domain/{DomainName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DomainName",
-                describeElasticsearchDomainRequest.getDomainName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(describeElasticsearchDomainRequest.getDomainName(), DOMAINNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

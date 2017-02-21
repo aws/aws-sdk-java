@@ -12,61 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetSdkTypesRequest Marshaller
+ * GetSdkTypesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetSdkTypesRequestMarshaller implements Marshaller<Request<GetSdkTypesRequest>, GetSdkTypesRequest> {
+@SdkInternalApi
+public class GetSdkTypesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("position").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
 
-    public GetSdkTypesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetSdkTypesRequestMarshaller instance = new GetSdkTypesRequestMarshaller();
+
+    public static GetSdkTypesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetSdkTypesRequest> marshall(GetSdkTypesRequest getSdkTypesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetSdkTypesRequest getSdkTypesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getSdkTypesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSdkTypesRequest> request = new DefaultRequest<GetSdkTypesRequest>(getSdkTypesRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/sdktypes";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (getSdkTypesRequest.getPosition() != null) {
-            request.addParameter("position", StringUtils.fromString(getSdkTypesRequest.getPosition()));
+        try {
+            protocolMarshaller.marshall(getSdkTypesRequest.getPosition(), POSITION_BINDING);
+            protocolMarshaller.marshall(getSdkTypesRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getSdkTypesRequest.getLimit() != null) {
-            request.addParameter("limit", StringUtils.fromInteger(getSdkTypesRequest.getLimit()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

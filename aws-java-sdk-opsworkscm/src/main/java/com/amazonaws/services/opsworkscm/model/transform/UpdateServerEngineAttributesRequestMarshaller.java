@@ -12,72 +12,50 @@
  */
 package com.amazonaws.services.opsworkscm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworkscm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateServerEngineAttributesRequest Marshaller
+ * UpdateServerEngineAttributesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateServerEngineAttributesRequestMarshaller implements
-        Marshaller<Request<UpdateServerEngineAttributesRequest>, UpdateServerEngineAttributesRequest> {
+@SdkInternalApi
+public class UpdateServerEngineAttributesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
+    private static final MarshallingInfo<String> ATTRIBUTENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeName").build();
+    private static final MarshallingInfo<String> ATTRIBUTEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeValue").build();
 
-    public UpdateServerEngineAttributesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateServerEngineAttributesRequestMarshaller instance = new UpdateServerEngineAttributesRequestMarshaller();
+
+    public static UpdateServerEngineAttributesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateServerEngineAttributesRequest> marshall(UpdateServerEngineAttributesRequest updateServerEngineAttributesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateServerEngineAttributesRequest updateServerEngineAttributesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateServerEngineAttributesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateServerEngineAttributesRequest> request = new DefaultRequest<UpdateServerEngineAttributesRequest>(updateServerEngineAttributesRequest,
-                "AWSOpsWorksCM");
-        request.addHeader("X-Amz-Target", "OpsWorksCM_V2016_11_01.UpdateServerEngineAttributes");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateServerEngineAttributesRequest.getServerName() != null) {
-                jsonGenerator.writeFieldName("ServerName").writeValue(updateServerEngineAttributesRequest.getServerName());
-            }
-            if (updateServerEngineAttributesRequest.getAttributeName() != null) {
-                jsonGenerator.writeFieldName("AttributeName").writeValue(updateServerEngineAttributesRequest.getAttributeName());
-            }
-            if (updateServerEngineAttributesRequest.getAttributeValue() != null) {
-                jsonGenerator.writeFieldName("AttributeValue").writeValue(updateServerEngineAttributesRequest.getAttributeValue());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateServerEngineAttributesRequest.getServerName(), SERVERNAME_BINDING);
+            protocolMarshaller.marshall(updateServerEngineAttributesRequest.getAttributeName(), ATTRIBUTENAME_BINDING);
+            protocolMarshaller.marshall(updateServerEngineAttributesRequest.getAttributeValue(), ATTRIBUTEVALUE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

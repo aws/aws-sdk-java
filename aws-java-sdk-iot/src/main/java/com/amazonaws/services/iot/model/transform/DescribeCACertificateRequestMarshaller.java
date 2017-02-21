@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeCACertificateRequest Marshaller
+ * DescribeCACertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeCACertificateRequestMarshaller implements Marshaller<Request<DescribeCACertificateRequest>, DescribeCACertificateRequest> {
+@SdkInternalApi
+public class DescribeCACertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("caCertificateId").build();
 
-    public DescribeCACertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeCACertificateRequestMarshaller instance = new DescribeCACertificateRequestMarshaller();
+
+    public static DescribeCACertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeCACertificateRequest> marshall(DescribeCACertificateRequest describeCACertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeCACertificateRequest describeCACertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeCACertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeCACertificateRequest> request = new DefaultRequest<DescribeCACertificateRequest>(describeCACertificateRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/cacertificate/{caCertificateId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "caCertificateId",
-                describeCACertificateRequest.getCertificateId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(describeCACertificateRequest.getCertificateId(), CERTIFICATEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

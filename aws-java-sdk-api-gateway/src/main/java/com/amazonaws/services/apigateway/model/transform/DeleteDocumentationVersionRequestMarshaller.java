@@ -12,56 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteDocumentationVersionRequest Marshaller
+ * DeleteDocumentationVersionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteDocumentationVersionRequestMarshaller implements Marshaller<Request<DeleteDocumentationVersionRequest>, DeleteDocumentationVersionRequest> {
+@SdkInternalApi
+public class DeleteDocumentationVersionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> DOCUMENTATIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("doc_version").build();
 
-    public DeleteDocumentationVersionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteDocumentationVersionRequestMarshaller instance = new DeleteDocumentationVersionRequestMarshaller();
+
+    public static DeleteDocumentationVersionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteDocumentationVersionRequest> marshall(DeleteDocumentationVersionRequest deleteDocumentationVersionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteDocumentationVersionRequest deleteDocumentationVersionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteDocumentationVersionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteDocumentationVersionRequest> request = new DefaultRequest<DeleteDocumentationVersionRequest>(deleteDocumentationVersionRequest,
-                "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/restapis/{restapi_id}/documentation/versions/{doc_version}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
-                deleteDocumentationVersionRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "doc_version",
-                deleteDocumentationVersionRequest.getDocumentationVersion());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteDocumentationVersionRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(deleteDocumentationVersionRequest.getDocumentationVersion(), DOCUMENTATIONVERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

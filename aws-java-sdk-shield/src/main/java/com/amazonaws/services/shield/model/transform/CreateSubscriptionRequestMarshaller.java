@@ -12,60 +12,40 @@
  */
 package com.amazonaws.services.shield.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.shield.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateSubscriptionRequest Marshaller
+ * CreateSubscriptionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateSubscriptionRequestMarshaller implements Marshaller<Request<CreateSubscriptionRequest>, CreateSubscriptionRequest> {
+@SdkInternalApi
+public class CreateSubscriptionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final CreateSubscriptionRequestMarshaller instance = new CreateSubscriptionRequestMarshaller();
 
-    public CreateSubscriptionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static CreateSubscriptionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateSubscriptionRequest> marshall(CreateSubscriptionRequest createSubscriptionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateSubscriptionRequest createSubscriptionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createSubscriptionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateSubscriptionRequest> request = new DefaultRequest<CreateSubscriptionRequest>(createSubscriptionRequest, "AWSShield");
-        request.addHeader("X-Amz-Target", "AWSShield_20160616.CreateSubscription");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,76 +12,47 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateApplicationSettingsRequest Marshaller
+ * UpdateApplicationSettingsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateApplicationSettingsRequestMarshaller implements Marshaller<Request<UpdateApplicationSettingsRequest>, UpdateApplicationSettingsRequest> {
+@SdkInternalApi
+public class UpdateApplicationSettingsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<StructuredPojo> WRITEAPPLICATIONSETTINGSREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
-    public UpdateApplicationSettingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateApplicationSettingsRequestMarshaller instance = new UpdateApplicationSettingsRequestMarshaller();
+
+    public static UpdateApplicationSettingsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateApplicationSettingsRequest> marshall(UpdateApplicationSettingsRequest updateApplicationSettingsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateApplicationSettingsRequest updateApplicationSettingsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateApplicationSettingsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateApplicationSettingsRequest> request = new DefaultRequest<UpdateApplicationSettingsRequest>(updateApplicationSettingsRequest,
-                "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/v1/apps/{application-id}/settings";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                updateApplicationSettingsRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            WriteApplicationSettingsRequest writeApplicationSettingsRequest = updateApplicationSettingsRequest.getWriteApplicationSettingsRequest();
-            if (writeApplicationSettingsRequest != null) {
-                jsonGenerator.writeStartObject();
-                if (writeApplicationSettingsRequest.getLimits() != null) {
-                    jsonGenerator.writeFieldName("Limits");
-                    CampaignLimitsJsonMarshaller.getInstance().marshall(writeApplicationSettingsRequest.getLimits(), jsonGenerator);
-                }
-                if (writeApplicationSettingsRequest.getQuietTime() != null) {
-                    jsonGenerator.writeFieldName("QuietTime");
-                    QuietTimeJsonMarshaller.getInstance().marshall(writeApplicationSettingsRequest.getQuietTime(), jsonGenerator);
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateApplicationSettingsRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(updateApplicationSettingsRequest.getWriteApplicationSettingsRequest(), WRITEAPPLICATIONSETTINGSREQUEST_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

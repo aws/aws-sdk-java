@@ -12,72 +12,47 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ApplySchemaRequest Marshaller
+ * ApplySchemaRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApplySchemaRequestMarshaller implements Marshaller<Request<ApplySchemaRequest>, ApplySchemaRequest> {
+@SdkInternalApi
+public class ApplySchemaRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PUBLISHEDSCHEMAARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublishedSchemaArn").build();
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
 
-    public ApplySchemaRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ApplySchemaRequestMarshaller instance = new ApplySchemaRequestMarshaller();
+
+    public static ApplySchemaRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ApplySchemaRequest> marshall(ApplySchemaRequest applySchemaRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ApplySchemaRequest applySchemaRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (applySchemaRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ApplySchemaRequest> request = new DefaultRequest<ApplySchemaRequest>(applySchemaRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (applySchemaRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(applySchemaRequest.getDirectoryArn()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/schema/apply";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (applySchemaRequest.getPublishedSchemaArn() != null) {
-                jsonGenerator.writeFieldName("PublishedSchemaArn").writeValue(applySchemaRequest.getPublishedSchemaArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(applySchemaRequest.getPublishedSchemaArn(), PUBLISHEDSCHEMAARN_BINDING);
+            protocolMarshaller.marshall(applySchemaRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,80 +12,49 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * BatchGetItemRequest Marshaller
+ * BatchGetItemRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGetItemRequest>, BatchGetItemRequest> {
+@SdkInternalApi
+public class BatchGetItemRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Map> REQUESTITEMS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RequestItems").build();
+    private static final MarshallingInfo<String> RETURNCONSUMEDCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReturnConsumedCapacity").build();
 
-    public BatchGetItemRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final BatchGetItemRequestMarshaller instance = new BatchGetItemRequestMarshaller();
+
+    public static BatchGetItemRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<BatchGetItemRequest> marshall(BatchGetItemRequest batchGetItemRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(BatchGetItemRequest batchGetItemRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (batchGetItemRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<BatchGetItemRequest> request = new DefaultRequest<BatchGetItemRequest>(batchGetItemRequest, "AmazonDynamoDBv2");
-        request.addHeader("X-Amz-Target", "DynamoDB_20120810.BatchGetItem");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.Map<String, KeysAndAttributes> requestItemsMap = batchGetItemRequest.getRequestItems();
-            if (requestItemsMap != null) {
-                jsonGenerator.writeFieldName("RequestItems");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, KeysAndAttributes> requestItemsMapValue : requestItemsMap.entrySet()) {
-                    if (requestItemsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(requestItemsMapValue.getKey());
-
-                        KeysAndAttributesJsonMarshaller.getInstance().marshall(requestItemsMapValue.getValue(), jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (batchGetItemRequest.getReturnConsumedCapacity() != null) {
-                jsonGenerator.writeFieldName("ReturnConsumedCapacity").writeValue(batchGetItemRequest.getReturnConsumedCapacity());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(batchGetItemRequest.getRequestItems(), REQUESTITEMS_BINDING);
+            protocolMarshaller.marshall(batchGetItemRequest.getReturnConsumedCapacity(), RETURNCONSUMEDCAPACITY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

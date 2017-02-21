@@ -12,66 +12,44 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeregisterOnPremisesInstanceRequest Marshaller
+ * DeregisterOnPremisesInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeregisterOnPremisesInstanceRequestMarshaller implements
-        Marshaller<Request<DeregisterOnPremisesInstanceRequest>, DeregisterOnPremisesInstanceRequest> {
+@SdkInternalApi
+public class DeregisterOnPremisesInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceName").build();
 
-    public DeregisterOnPremisesInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeregisterOnPremisesInstanceRequestMarshaller instance = new DeregisterOnPremisesInstanceRequestMarshaller();
+
+    public static DeregisterOnPremisesInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeregisterOnPremisesInstanceRequest> marshall(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deregisterOnPremisesInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeregisterOnPremisesInstanceRequest> request = new DefaultRequest<DeregisterOnPremisesInstanceRequest>(deregisterOnPremisesInstanceRequest,
-                "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.DeregisterOnPremisesInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deregisterOnPremisesInstanceRequest.getInstanceName() != null) {
-                jsonGenerator.writeFieldName("instanceName").writeValue(deregisterOnPremisesInstanceRequest.getInstanceName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deregisterOnPremisesInstanceRequest.getInstanceName(), INSTANCENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

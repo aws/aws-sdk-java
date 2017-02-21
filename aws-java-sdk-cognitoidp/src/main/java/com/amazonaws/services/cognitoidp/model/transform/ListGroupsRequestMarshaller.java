@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListGroupsRequest Marshaller
+ * ListGroupsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListGroupsRequestMarshaller implements Marshaller<Request<ListGroupsRequest>, ListGroupsRequest> {
+@SdkInternalApi
+public class ListGroupsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public ListGroupsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListGroupsRequestMarshaller instance = new ListGroupsRequestMarshaller();
+
+    public static ListGroupsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListGroupsRequest> marshall(ListGroupsRequest listGroupsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListGroupsRequest listGroupsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listGroupsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListGroupsRequest> request = new DefaultRequest<ListGroupsRequest>(listGroupsRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.ListGroups");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listGroupsRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(listGroupsRequest.getUserPoolId());
-            }
-            if (listGroupsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listGroupsRequest.getLimit());
-            }
-            if (listGroupsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listGroupsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listGroupsRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(listGroupsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listGroupsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

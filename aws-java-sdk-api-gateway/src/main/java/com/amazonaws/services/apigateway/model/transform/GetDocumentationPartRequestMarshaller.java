@@ -12,55 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDocumentationPartRequest Marshaller
+ * GetDocumentationPartRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDocumentationPartRequestMarshaller implements Marshaller<Request<GetDocumentationPartRequest>, GetDocumentationPartRequest> {
+@SdkInternalApi
+public class GetDocumentationPartRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> DOCUMENTATIONPARTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("part_id").build();
 
-    public GetDocumentationPartRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDocumentationPartRequestMarshaller instance = new GetDocumentationPartRequestMarshaller();
+
+    public static GetDocumentationPartRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDocumentationPartRequest> marshall(GetDocumentationPartRequest getDocumentationPartRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDocumentationPartRequest getDocumentationPartRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDocumentationPartRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDocumentationPartRequest> request = new DefaultRequest<GetDocumentationPartRequest>(getDocumentationPartRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/restapis/{restapi_id}/documentation/parts/{part_id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "restapi_id", getDocumentationPartRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "part_id",
-                getDocumentationPartRequest.getDocumentationPartId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getDocumentationPartRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(getDocumentationPartRequest.getDocumentationPartId(), DOCUMENTATIONPARTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

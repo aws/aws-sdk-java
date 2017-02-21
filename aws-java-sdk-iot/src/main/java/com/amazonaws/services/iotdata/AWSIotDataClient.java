@@ -333,7 +333,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteThingShadowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingShadowRequest));
+                request = new DeleteThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -395,7 +395,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetThingShadowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getThingShadowRequest));
+                request = new GetThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -448,7 +448,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PublishRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishRequest));
+                request = new PublishRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -512,7 +512,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateThingShadowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingShadowRequest));
+                request = new UpdateThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

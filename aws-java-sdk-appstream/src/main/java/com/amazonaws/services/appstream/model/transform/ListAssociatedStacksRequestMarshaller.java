@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListAssociatedStacksRequest Marshaller
+ * ListAssociatedStacksRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListAssociatedStacksRequestMarshaller implements Marshaller<Request<ListAssociatedStacksRequest>, ListAssociatedStacksRequest> {
+@SdkInternalApi
+public class ListAssociatedStacksRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FLEETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetName").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public ListAssociatedStacksRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListAssociatedStacksRequestMarshaller instance = new ListAssociatedStacksRequestMarshaller();
+
+    public static ListAssociatedStacksRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListAssociatedStacksRequest> marshall(ListAssociatedStacksRequest listAssociatedStacksRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListAssociatedStacksRequest listAssociatedStacksRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listAssociatedStacksRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListAssociatedStacksRequest> request = new DefaultRequest<ListAssociatedStacksRequest>(listAssociatedStacksRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.ListAssociatedStacks");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listAssociatedStacksRequest.getFleetName() != null) {
-                jsonGenerator.writeFieldName("FleetName").writeValue(listAssociatedStacksRequest.getFleetName());
-            }
-            if (listAssociatedStacksRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listAssociatedStacksRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listAssociatedStacksRequest.getFleetName(), FLEETNAME_BINDING);
+            protocolMarshaller.marshall(listAssociatedStacksRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

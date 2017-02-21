@@ -12,82 +12,51 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateContainerInstancesStateRequest Marshaller
+ * UpdateContainerInstancesStateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateContainerInstancesStateRequestMarshaller implements
-        Marshaller<Request<UpdateContainerInstancesStateRequest>, UpdateContainerInstancesStateRequest> {
+@SdkInternalApi
+public class UpdateContainerInstancesStateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
+    private static final MarshallingInfo<List> CONTAINERINSTANCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerInstances").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
 
-    public UpdateContainerInstancesStateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateContainerInstancesStateRequestMarshaller instance = new UpdateContainerInstancesStateRequestMarshaller();
+
+    public static UpdateContainerInstancesStateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateContainerInstancesStateRequest> marshall(UpdateContainerInstancesStateRequest updateContainerInstancesStateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateContainerInstancesStateRequest updateContainerInstancesStateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateContainerInstancesStateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateContainerInstancesStateRequest> request = new DefaultRequest<UpdateContainerInstancesStateRequest>(updateContainerInstancesStateRequest,
-                "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateContainerInstancesStateRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(updateContainerInstancesStateRequest.getCluster());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> containerInstancesList = (com.amazonaws.internal.SdkInternalList<String>) updateContainerInstancesStateRequest
-                    .getContainerInstances();
-            if (!containerInstancesList.isEmpty() || !containerInstancesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("containerInstances");
-                jsonGenerator.writeStartArray();
-                for (String containerInstancesListValue : containerInstancesList) {
-                    if (containerInstancesListValue != null) {
-                        jsonGenerator.writeValue(containerInstancesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (updateContainerInstancesStateRequest.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(updateContainerInstancesStateRequest.getStatus());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateContainerInstancesStateRequest.getCluster(), CLUSTER_BINDING);
+            protocolMarshaller.marshall(updateContainerInstancesStateRequest.getContainerInstances(), CONTAINERINSTANCES_BINDING);
+            protocolMarshaller.marshall(updateContainerInstancesStateRequest.getStatus(), STATUS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteLayerRequest Marshaller
+ * DeleteLayerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteLayerRequestMarshaller implements Marshaller<Request<DeleteLayerRequest>, DeleteLayerRequest> {
+@SdkInternalApi
+public class DeleteLayerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LAYERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LayerId").build();
 
-    public DeleteLayerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteLayerRequestMarshaller instance = new DeleteLayerRequestMarshaller();
+
+    public static DeleteLayerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteLayerRequest> marshall(DeleteLayerRequest deleteLayerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteLayerRequest deleteLayerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteLayerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteLayerRequest> request = new DefaultRequest<DeleteLayerRequest>(deleteLayerRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DeleteLayer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteLayerRequest.getLayerId() != null) {
-                jsonGenerator.writeFieldName("LayerId").writeValue(deleteLayerRequest.getLayerId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteLayerRequest.getLayerId(), LAYERID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutParameterRequest Marshaller
+ * PutParameterRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutParameterRequestMarshaller implements Marshaller<Request<PutParameterRequest>, PutParameterRequest> {
+@SdkInternalApi
+public class PutParameterRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Value").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<Boolean> OVERWRITE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Overwrite").build();
 
-    public PutParameterRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutParameterRequestMarshaller instance = new PutParameterRequestMarshaller();
+
+    public static PutParameterRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutParameterRequest> marshall(PutParameterRequest putParameterRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutParameterRequest putParameterRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putParameterRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutParameterRequest> request = new DefaultRequest<PutParameterRequest>(putParameterRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.PutParameter");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putParameterRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(putParameterRequest.getName());
-            }
-            if (putParameterRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(putParameterRequest.getDescription());
-            }
-            if (putParameterRequest.getValue() != null) {
-                jsonGenerator.writeFieldName("Value").writeValue(putParameterRequest.getValue());
-            }
-            if (putParameterRequest.getType() != null) {
-                jsonGenerator.writeFieldName("Type").writeValue(putParameterRequest.getType());
-            }
-            if (putParameterRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(putParameterRequest.getKeyId());
-            }
-            if (putParameterRequest.getOverwrite() != null) {
-                jsonGenerator.writeFieldName("Overwrite").writeValue(putParameterRequest.getOverwrite());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putParameterRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(putParameterRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(putParameterRequest.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(putParameterRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(putParameterRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(putParameterRequest.getOverwrite(), OVERWRITE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudhsm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteHsmRequest Marshaller
+ * DeleteHsmRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteHsmRequestMarshaller implements Marshaller<Request<DeleteHsmRequest>, DeleteHsmRequest> {
+@SdkInternalApi
+public class DeleteHsmRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> HSMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HsmArn").build();
 
-    public DeleteHsmRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteHsmRequestMarshaller instance = new DeleteHsmRequestMarshaller();
+
+    public static DeleteHsmRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteHsmRequest> marshall(DeleteHsmRequest deleteHsmRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteHsmRequest deleteHsmRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteHsmRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteHsmRequest> request = new DefaultRequest<DeleteHsmRequest>(deleteHsmRequest, "AWSCloudHSM");
-        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.DeleteHsm");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteHsmRequest.getHsmArn() != null) {
-                jsonGenerator.writeFieldName("HsmArn").writeValue(deleteHsmRequest.getHsmArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteHsmRequest.getHsmArn(), HSMARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -312,7 +312,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelClusterRequest));
+                request = new CancelClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -364,7 +364,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
+                request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -415,7 +415,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAddressRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAddressRequest));
+                request = new CreateAddressRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -468,7 +468,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
+                request = new CreateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -524,7 +524,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
+                request = new CreateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -570,7 +570,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAddressRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAddressRequest));
+                request = new DescribeAddressRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -616,7 +616,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAddressesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAddressesRequest));
+                request = new DescribeAddressesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -662,7 +662,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClusterRequest));
+                request = new DescribeClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -708,7 +708,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobRequest));
+                request = new DescribeJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -772,7 +772,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetJobManifestRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobManifestRequest));
+                request = new GetJobManifestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobManifestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -830,7 +830,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetJobUnlockCodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobUnlockCodeRequest));
+                request = new GetJobUnlockCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobUnlockCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -877,7 +877,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSnowballUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSnowballUsageRequest));
+                request = new GetSnowballUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSnowballUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -923,7 +923,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClusterJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClusterJobsRequest));
+                request = new ListClusterJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClusterJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -967,7 +967,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClustersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
+                request = new ListClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1012,7 +1012,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
+                request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1068,7 +1068,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterRequest));
+                request = new UpdateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1128,7 +1128,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateJobRequest));
+                request = new UpdateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

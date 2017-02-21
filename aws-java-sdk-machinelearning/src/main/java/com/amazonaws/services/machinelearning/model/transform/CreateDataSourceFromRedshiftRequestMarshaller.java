@@ -12,79 +12,56 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDataSourceFromRedshiftRequest Marshaller
+ * CreateDataSourceFromRedshiftRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDataSourceFromRedshiftRequestMarshaller implements
-        Marshaller<Request<CreateDataSourceFromRedshiftRequest>, CreateDataSourceFromRedshiftRequest> {
+@SdkInternalApi
+public class CreateDataSourceFromRedshiftRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceId").build();
+    private static final MarshallingInfo<String> DATASOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceName").build();
+    private static final MarshallingInfo<StructuredPojo> DATASPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSpec").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RoleARN").build();
+    private static final MarshallingInfo<Boolean> COMPUTESTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeStatistics").build();
 
-    public CreateDataSourceFromRedshiftRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDataSourceFromRedshiftRequestMarshaller instance = new CreateDataSourceFromRedshiftRequestMarshaller();
+
+    public static CreateDataSourceFromRedshiftRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDataSourceFromRedshiftRequest> marshall(CreateDataSourceFromRedshiftRequest createDataSourceFromRedshiftRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDataSourceFromRedshiftRequest createDataSourceFromRedshiftRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDataSourceFromRedshiftRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDataSourceFromRedshiftRequest> request = new DefaultRequest<CreateDataSourceFromRedshiftRequest>(createDataSourceFromRedshiftRequest,
-                "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.CreateDataSourceFromRedshift");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createDataSourceFromRedshiftRequest.getDataSourceId() != null) {
-                jsonGenerator.writeFieldName("DataSourceId").writeValue(createDataSourceFromRedshiftRequest.getDataSourceId());
-            }
-            if (createDataSourceFromRedshiftRequest.getDataSourceName() != null) {
-                jsonGenerator.writeFieldName("DataSourceName").writeValue(createDataSourceFromRedshiftRequest.getDataSourceName());
-            }
-            if (createDataSourceFromRedshiftRequest.getDataSpec() != null) {
-                jsonGenerator.writeFieldName("DataSpec");
-                RedshiftDataSpecJsonMarshaller.getInstance().marshall(createDataSourceFromRedshiftRequest.getDataSpec(), jsonGenerator);
-            }
-            if (createDataSourceFromRedshiftRequest.getRoleARN() != null) {
-                jsonGenerator.writeFieldName("RoleARN").writeValue(createDataSourceFromRedshiftRequest.getRoleARN());
-            }
-            if (createDataSourceFromRedshiftRequest.getComputeStatistics() != null) {
-                jsonGenerator.writeFieldName("ComputeStatistics").writeValue(createDataSourceFromRedshiftRequest.getComputeStatistics());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDataSourceFromRedshiftRequest.getDataSourceId(), DATASOURCEID_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromRedshiftRequest.getDataSourceName(), DATASOURCENAME_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromRedshiftRequest.getDataSpec(), DATASPEC_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromRedshiftRequest.getRoleARN(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromRedshiftRequest.getComputeStatistics(), COMPUTESTATISTICS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

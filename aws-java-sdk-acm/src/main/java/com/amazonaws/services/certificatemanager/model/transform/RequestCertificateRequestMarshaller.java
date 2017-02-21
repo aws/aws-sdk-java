@@ -12,94 +12,54 @@
  */
 package com.amazonaws.services.certificatemanager.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.certificatemanager.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RequestCertificateRequest Marshaller
+ * RequestCertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestCertificateRequestMarshaller implements Marshaller<Request<RequestCertificateRequest>, RequestCertificateRequest> {
+@SdkInternalApi
+public class RequestCertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<List> SUBJECTALTERNATIVENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubjectAlternativeNames").build();
+    private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
+    private static final MarshallingInfo<List> DOMAINVALIDATIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainValidationOptions").build();
 
-    public RequestCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RequestCertificateRequestMarshaller instance = new RequestCertificateRequestMarshaller();
+
+    public static RequestCertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RequestCertificateRequest> marshall(RequestCertificateRequest requestCertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RequestCertificateRequest requestCertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (requestCertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RequestCertificateRequest> request = new DefaultRequest<RequestCertificateRequest>(requestCertificateRequest, "AWSCertificateManager");
-        request.addHeader("X-Amz-Target", "CertificateManager.RequestCertificate");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (requestCertificateRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(requestCertificateRequest.getDomainName());
-            }
-
-            java.util.List<String> subjectAlternativeNamesList = requestCertificateRequest.getSubjectAlternativeNames();
-            if (subjectAlternativeNamesList != null) {
-                jsonGenerator.writeFieldName("SubjectAlternativeNames");
-                jsonGenerator.writeStartArray();
-                for (String subjectAlternativeNamesListValue : subjectAlternativeNamesList) {
-                    if (subjectAlternativeNamesListValue != null) {
-                        jsonGenerator.writeValue(subjectAlternativeNamesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (requestCertificateRequest.getIdempotencyToken() != null) {
-                jsonGenerator.writeFieldName("IdempotencyToken").writeValue(requestCertificateRequest.getIdempotencyToken());
-            }
-
-            java.util.List<DomainValidationOption> domainValidationOptionsList = requestCertificateRequest.getDomainValidationOptions();
-            if (domainValidationOptionsList != null) {
-                jsonGenerator.writeFieldName("DomainValidationOptions");
-                jsonGenerator.writeStartArray();
-                for (DomainValidationOption domainValidationOptionsListValue : domainValidationOptionsList) {
-                    if (domainValidationOptionsListValue != null) {
-
-                        DomainValidationOptionJsonMarshaller.getInstance().marshall(domainValidationOptionsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(requestCertificateRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(requestCertificateRequest.getSubjectAlternativeNames(), SUBJECTALTERNATIVENAMES_BINDING);
+            protocolMarshaller.marshall(requestCertificateRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
+            protocolMarshaller.marshall(requestCertificateRequest.getDomainValidationOptions(), DOMAINVALIDATIONOPTIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

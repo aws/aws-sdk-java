@@ -12,82 +12,54 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeEcsClustersRequest Marshaller
+ * DescribeEcsClustersRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeEcsClustersRequestMarshaller implements Marshaller<Request<DescribeEcsClustersRequest>, DescribeEcsClustersRequest> {
+@SdkInternalApi
+public class DescribeEcsClustersRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> ECSCLUSTERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EcsClusterArns").build();
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
-    public DescribeEcsClustersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeEcsClustersRequestMarshaller instance = new DescribeEcsClustersRequestMarshaller();
+
+    public static DescribeEcsClustersRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeEcsClustersRequest> marshall(DescribeEcsClustersRequest describeEcsClustersRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeEcsClustersRequest describeEcsClustersRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeEcsClustersRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeEcsClustersRequest> request = new DefaultRequest<DescribeEcsClustersRequest>(describeEcsClustersRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeEcsClusters");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> ecsClusterArnsList = (com.amazonaws.internal.SdkInternalList<String>) describeEcsClustersRequest
-                    .getEcsClusterArns();
-            if (!ecsClusterArnsList.isEmpty() || !ecsClusterArnsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("EcsClusterArns");
-                jsonGenerator.writeStartArray();
-                for (String ecsClusterArnsListValue : ecsClusterArnsList) {
-                    if (ecsClusterArnsListValue != null) {
-                        jsonGenerator.writeValue(ecsClusterArnsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeEcsClustersRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(describeEcsClustersRequest.getStackId());
-            }
-            if (describeEcsClustersRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeEcsClustersRequest.getNextToken());
-            }
-            if (describeEcsClustersRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(describeEcsClustersRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeEcsClustersRequest.getEcsClusterArns(), ECSCLUSTERARNS_BINDING);
+            protocolMarshaller.marshall(describeEcsClustersRequest.getStackId(), STACKID_BINDING);
+            protocolMarshaller.marshall(describeEcsClustersRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeEcsClustersRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,94 +12,74 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeEvaluationsRequest Marshaller
+ * DescribeEvaluationsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeEvaluationsRequestMarshaller implements Marshaller<Request<DescribeEvaluationsRequest>, DescribeEvaluationsRequest> {
+@SdkInternalApi
+public class DescribeEvaluationsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FILTERVARIABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterVariable").build();
+    private static final MarshallingInfo<String> EQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EQ").build();
+    private static final MarshallingInfo<String> GT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GT").build();
+    private static final MarshallingInfo<String> LT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LT").build();
+    private static final MarshallingInfo<String> GE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GE").build();
+    private static final MarshallingInfo<String> LE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LE").build();
+    private static final MarshallingInfo<String> NE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NE").build();
+    private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Prefix").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortOrder").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public DescribeEvaluationsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeEvaluationsRequestMarshaller instance = new DescribeEvaluationsRequestMarshaller();
+
+    public static DescribeEvaluationsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeEvaluationsRequest> marshall(DescribeEvaluationsRequest describeEvaluationsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeEvaluationsRequest describeEvaluationsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeEvaluationsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeEvaluationsRequest> request = new DefaultRequest<DescribeEvaluationsRequest>(describeEvaluationsRequest, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.DescribeEvaluations");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeEvaluationsRequest.getFilterVariable() != null) {
-                jsonGenerator.writeFieldName("FilterVariable").writeValue(describeEvaluationsRequest.getFilterVariable());
-            }
-            if (describeEvaluationsRequest.getEQ() != null) {
-                jsonGenerator.writeFieldName("EQ").writeValue(describeEvaluationsRequest.getEQ());
-            }
-            if (describeEvaluationsRequest.getGT() != null) {
-                jsonGenerator.writeFieldName("GT").writeValue(describeEvaluationsRequest.getGT());
-            }
-            if (describeEvaluationsRequest.getLT() != null) {
-                jsonGenerator.writeFieldName("LT").writeValue(describeEvaluationsRequest.getLT());
-            }
-            if (describeEvaluationsRequest.getGE() != null) {
-                jsonGenerator.writeFieldName("GE").writeValue(describeEvaluationsRequest.getGE());
-            }
-            if (describeEvaluationsRequest.getLE() != null) {
-                jsonGenerator.writeFieldName("LE").writeValue(describeEvaluationsRequest.getLE());
-            }
-            if (describeEvaluationsRequest.getNE() != null) {
-                jsonGenerator.writeFieldName("NE").writeValue(describeEvaluationsRequest.getNE());
-            }
-            if (describeEvaluationsRequest.getPrefix() != null) {
-                jsonGenerator.writeFieldName("Prefix").writeValue(describeEvaluationsRequest.getPrefix());
-            }
-            if (describeEvaluationsRequest.getSortOrder() != null) {
-                jsonGenerator.writeFieldName("SortOrder").writeValue(describeEvaluationsRequest.getSortOrder());
-            }
-            if (describeEvaluationsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeEvaluationsRequest.getNextToken());
-            }
-            if (describeEvaluationsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeEvaluationsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getFilterVariable(), FILTERVARIABLE_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getEQ(), EQ_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getGT(), GT_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getLT(), LT_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getGE(), GE_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getLE(), LE_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getNE(), NE_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getSortOrder(), SORTORDER_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeEvaluationsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

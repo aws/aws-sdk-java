@@ -12,61 +12,47 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListPipelinesRequest Marshaller
+ * ListPipelinesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListPipelinesRequestMarshaller implements Marshaller<Request<ListPipelinesRequest>, ListPipelinesRequest> {
+@SdkInternalApi
+public class ListPipelinesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ASCENDING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Ascending").build();
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("PageToken").build();
 
-    public ListPipelinesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListPipelinesRequestMarshaller instance = new ListPipelinesRequestMarshaller();
+
+    public static ListPipelinesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListPipelinesRequest> marshall(ListPipelinesRequest listPipelinesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListPipelinesRequest listPipelinesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listPipelinesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPipelinesRequest> request = new DefaultRequest<ListPipelinesRequest>(listPipelinesRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2012-09-25/pipelines";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listPipelinesRequest.getAscending() != null) {
-            request.addParameter("Ascending", StringUtils.fromString(listPipelinesRequest.getAscending()));
+        try {
+            protocolMarshaller.marshall(listPipelinesRequest.getAscending(), ASCENDING_BINDING);
+            protocolMarshaller.marshall(listPipelinesRequest.getPageToken(), PAGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listPipelinesRequest.getPageToken() != null) {
-            request.addParameter("PageToken", StringUtils.fromString(listPipelinesRequest.getPageToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

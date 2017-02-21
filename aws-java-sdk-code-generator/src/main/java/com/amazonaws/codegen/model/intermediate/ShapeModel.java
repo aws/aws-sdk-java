@@ -171,6 +171,13 @@ public class ShapeModel extends DocumentationModel {
         return unboundMembers;
     }
 
+    /**
+     * @return True if the shape has an explicit payload member or implicit payload member(s).
+     */
+    public boolean hasPayloadMembers() {
+        return hasPayloadMember || getUnboundMembers().size() > 0;
+    }
+
     public boolean isHasStreamingMember() {
         return hasStreamingMember;
     }

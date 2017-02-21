@@ -12,106 +12,75 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ModifyReplicationInstanceRequest Marshaller
+ * ModifyReplicationInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ModifyReplicationInstanceRequestMarshaller implements Marshaller<Request<ModifyReplicationInstanceRequest>, ModifyReplicationInstanceRequest> {
+@SdkInternalApi
+public class ModifyReplicationInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPLICATIONINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstanceArn").build();
+    private static final MarshallingInfo<Integer> ALLOCATEDSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllocatedStorage").build();
+    private static final MarshallingInfo<Boolean> APPLYIMMEDIATELY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplyImmediately").build();
+    private static final MarshallingInfo<String> REPLICATIONINSTANCECLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstanceClass").build();
+    private static final MarshallingInfo<List> VPCSECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcSecurityGroupIds").build();
+    private static final MarshallingInfo<String> PREFERREDMAINTENANCEWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredMaintenanceWindow").build();
+    private static final MarshallingInfo<Boolean> MULTIAZ_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MultiAZ").build();
+    private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
+    private static final MarshallingInfo<Boolean> ALLOWMAJORVERSIONUPGRADE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowMajorVersionUpgrade").build();
+    private static final MarshallingInfo<Boolean> AUTOMINORVERSIONUPGRADE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoMinorVersionUpgrade").build();
+    private static final MarshallingInfo<String> REPLICATIONINSTANCEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstanceIdentifier").build();
 
-    public ModifyReplicationInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ModifyReplicationInstanceRequestMarshaller instance = new ModifyReplicationInstanceRequestMarshaller();
+
+    public static ModifyReplicationInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ModifyReplicationInstanceRequest> marshall(ModifyReplicationInstanceRequest modifyReplicationInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ModifyReplicationInstanceRequest modifyReplicationInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (modifyReplicationInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyReplicationInstanceRequest> request = new DefaultRequest<ModifyReplicationInstanceRequest>(modifyReplicationInstanceRequest,
-                "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.ModifyReplicationInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (modifyReplicationInstanceRequest.getReplicationInstanceArn() != null) {
-                jsonGenerator.writeFieldName("ReplicationInstanceArn").writeValue(modifyReplicationInstanceRequest.getReplicationInstanceArn());
-            }
-            if (modifyReplicationInstanceRequest.getAllocatedStorage() != null) {
-                jsonGenerator.writeFieldName("AllocatedStorage").writeValue(modifyReplicationInstanceRequest.getAllocatedStorage());
-            }
-            if (modifyReplicationInstanceRequest.getApplyImmediately() != null) {
-                jsonGenerator.writeFieldName("ApplyImmediately").writeValue(modifyReplicationInstanceRequest.getApplyImmediately());
-            }
-            if (modifyReplicationInstanceRequest.getReplicationInstanceClass() != null) {
-                jsonGenerator.writeFieldName("ReplicationInstanceClass").writeValue(modifyReplicationInstanceRequest.getReplicationInstanceClass());
-            }
-
-            java.util.List<String> vpcSecurityGroupIdsList = modifyReplicationInstanceRequest.getVpcSecurityGroupIds();
-            if (vpcSecurityGroupIdsList != null) {
-                jsonGenerator.writeFieldName("VpcSecurityGroupIds");
-                jsonGenerator.writeStartArray();
-                for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
-                    if (vpcSecurityGroupIdsListValue != null) {
-                        jsonGenerator.writeValue(vpcSecurityGroupIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (modifyReplicationInstanceRequest.getPreferredMaintenanceWindow() != null) {
-                jsonGenerator.writeFieldName("PreferredMaintenanceWindow").writeValue(modifyReplicationInstanceRequest.getPreferredMaintenanceWindow());
-            }
-            if (modifyReplicationInstanceRequest.getMultiAZ() != null) {
-                jsonGenerator.writeFieldName("MultiAZ").writeValue(modifyReplicationInstanceRequest.getMultiAZ());
-            }
-            if (modifyReplicationInstanceRequest.getEngineVersion() != null) {
-                jsonGenerator.writeFieldName("EngineVersion").writeValue(modifyReplicationInstanceRequest.getEngineVersion());
-            }
-            if (modifyReplicationInstanceRequest.getAllowMajorVersionUpgrade() != null) {
-                jsonGenerator.writeFieldName("AllowMajorVersionUpgrade").writeValue(modifyReplicationInstanceRequest.getAllowMajorVersionUpgrade());
-            }
-            if (modifyReplicationInstanceRequest.getAutoMinorVersionUpgrade() != null) {
-                jsonGenerator.writeFieldName("AutoMinorVersionUpgrade").writeValue(modifyReplicationInstanceRequest.getAutoMinorVersionUpgrade());
-            }
-            if (modifyReplicationInstanceRequest.getReplicationInstanceIdentifier() != null) {
-                jsonGenerator.writeFieldName("ReplicationInstanceIdentifier").writeValue(modifyReplicationInstanceRequest.getReplicationInstanceIdentifier());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getReplicationInstanceArn(), REPLICATIONINSTANCEARN_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getAllocatedStorage(), ALLOCATEDSTORAGE_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getApplyImmediately(), APPLYIMMEDIATELY_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getReplicationInstanceClass(), REPLICATIONINSTANCECLASS_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getVpcSecurityGroupIds(), VPCSECURITYGROUPIDS_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getPreferredMaintenanceWindow(), PREFERREDMAINTENANCEWINDOW_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getMultiAZ(), MULTIAZ_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getEngineVersion(), ENGINEVERSION_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getAllowMajorVersionUpgrade(), ALLOWMAJORVERSIONUPGRADE_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getAutoMinorVersionUpgrade(), AUTOMINORVERSIONUPGRADE_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getReplicationInstanceIdentifier(), REPLICATIONINSTANCEIDENTIFIER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

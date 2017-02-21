@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDeploymentRequest Marshaller
+ * GetDeploymentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDeploymentRequestMarshaller implements Marshaller<Request<GetDeploymentRequest>, GetDeploymentRequest> {
+@SdkInternalApi
+public class GetDeploymentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
 
-    public GetDeploymentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDeploymentRequestMarshaller instance = new GetDeploymentRequestMarshaller();
+
+    public static GetDeploymentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDeploymentRequest> marshall(GetDeploymentRequest getDeploymentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDeploymentRequest getDeploymentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDeploymentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDeploymentRequest> request = new DefaultRequest<GetDeploymentRequest>(getDeploymentRequest, "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.GetDeployment");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getDeploymentRequest.getDeploymentId() != null) {
-                jsonGenerator.writeFieldName("deploymentId").writeValue(getDeploymentRequest.getDeploymentId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getDeploymentRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

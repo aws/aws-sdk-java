@@ -12,82 +12,62 @@
  */
 package com.amazonaws.services.config.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.config.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetResourceConfigHistoryRequest Marshaller
+ * GetResourceConfigHistoryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetResourceConfigHistoryRequestMarshaller implements Marshaller<Request<GetResourceConfigHistoryRequest>, GetResourceConfigHistoryRequest> {
+@SdkInternalApi
+public class GetResourceConfigHistoryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceId").build();
+    private static final MarshallingInfo<java.util.Date> LATERTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("laterTime").build();
+    private static final MarshallingInfo<java.util.Date> EARLIERTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("earlierTime").build();
+    private static final MarshallingInfo<String> CHRONOLOGICALORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("chronologicalOrder").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("limit").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public GetResourceConfigHistoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetResourceConfigHistoryRequestMarshaller instance = new GetResourceConfigHistoryRequestMarshaller();
+
+    public static GetResourceConfigHistoryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetResourceConfigHistoryRequest> marshall(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getResourceConfigHistoryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetResourceConfigHistoryRequest> request = new DefaultRequest<GetResourceConfigHistoryRequest>(getResourceConfigHistoryRequest, "AmazonConfig");
-        request.addHeader("X-Amz-Target", "StarlingDoveService.GetResourceConfigHistory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getResourceConfigHistoryRequest.getResourceType() != null) {
-                jsonGenerator.writeFieldName("resourceType").writeValue(getResourceConfigHistoryRequest.getResourceType());
-            }
-            if (getResourceConfigHistoryRequest.getResourceId() != null) {
-                jsonGenerator.writeFieldName("resourceId").writeValue(getResourceConfigHistoryRequest.getResourceId());
-            }
-            if (getResourceConfigHistoryRequest.getLaterTime() != null) {
-                jsonGenerator.writeFieldName("laterTime").writeValue(getResourceConfigHistoryRequest.getLaterTime());
-            }
-            if (getResourceConfigHistoryRequest.getEarlierTime() != null) {
-                jsonGenerator.writeFieldName("earlierTime").writeValue(getResourceConfigHistoryRequest.getEarlierTime());
-            }
-            if (getResourceConfigHistoryRequest.getChronologicalOrder() != null) {
-                jsonGenerator.writeFieldName("chronologicalOrder").writeValue(getResourceConfigHistoryRequest.getChronologicalOrder());
-            }
-            if (getResourceConfigHistoryRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("limit").writeValue(getResourceConfigHistoryRequest.getLimit());
-            }
-            if (getResourceConfigHistoryRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(getResourceConfigHistoryRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getResourceConfigHistoryRequest.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(getResourceConfigHistoryRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(getResourceConfigHistoryRequest.getLaterTime(), LATERTIME_BINDING);
+            protocolMarshaller.marshall(getResourceConfigHistoryRequest.getEarlierTime(), EARLIERTIME_BINDING);
+            protocolMarshaller.marshall(getResourceConfigHistoryRequest.getChronologicalOrder(), CHRONOLOGICALORDER_BINDING);
+            protocolMarshaller.marshall(getResourceConfigHistoryRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(getResourceConfigHistoryRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

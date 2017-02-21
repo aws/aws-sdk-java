@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeregisterElasticIpRequest Marshaller
+ * DeregisterElasticIpRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeregisterElasticIpRequestMarshaller implements Marshaller<Request<DeregisterElasticIpRequest>, DeregisterElasticIpRequest> {
+@SdkInternalApi
+public class DeregisterElasticIpRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ELASTICIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ElasticIp").build();
 
-    public DeregisterElasticIpRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeregisterElasticIpRequestMarshaller instance = new DeregisterElasticIpRequestMarshaller();
+
+    public static DeregisterElasticIpRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeregisterElasticIpRequest> marshall(DeregisterElasticIpRequest deregisterElasticIpRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeregisterElasticIpRequest deregisterElasticIpRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deregisterElasticIpRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeregisterElasticIpRequest> request = new DefaultRequest<DeregisterElasticIpRequest>(deregisterElasticIpRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DeregisterElasticIp");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deregisterElasticIpRequest.getElasticIp() != null) {
-                jsonGenerator.writeFieldName("ElasticIp").writeValue(deregisterElasticIpRequest.getElasticIp());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deregisterElasticIpRequest.getElasticIp(), ELASTICIP_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

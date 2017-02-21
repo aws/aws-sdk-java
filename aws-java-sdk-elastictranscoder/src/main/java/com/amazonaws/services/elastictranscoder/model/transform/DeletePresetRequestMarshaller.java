@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeletePresetRequest Marshaller
+ * DeletePresetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeletePresetRequestMarshaller implements Marshaller<Request<DeletePresetRequest>, DeletePresetRequest> {
+@SdkInternalApi
+public class DeletePresetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("Id").build();
 
-    public DeletePresetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeletePresetRequestMarshaller instance = new DeletePresetRequestMarshaller();
+
+    public static DeletePresetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeletePresetRequest> marshall(DeletePresetRequest deletePresetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeletePresetRequest deletePresetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deletePresetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeletePresetRequest> request = new DefaultRequest<DeletePresetRequest>(deletePresetRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/2012-09-25/presets/{Id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deletePresetRequest.getId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deletePresetRequest.getId(), ID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,80 +12,51 @@
  */
 package com.amazonaws.services.config.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.config.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutEvaluationsRequest Marshaller
+ * PutEvaluationsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutEvaluationsRequestMarshaller implements Marshaller<Request<PutEvaluationsRequest>, PutEvaluationsRequest> {
+@SdkInternalApi
+public class PutEvaluationsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> EVALUATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Evaluations").build();
+    private static final MarshallingInfo<String> RESULTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultToken").build();
+    private static final MarshallingInfo<Boolean> TESTMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TestMode").build();
 
-    public PutEvaluationsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutEvaluationsRequestMarshaller instance = new PutEvaluationsRequestMarshaller();
+
+    public static PutEvaluationsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutEvaluationsRequest> marshall(PutEvaluationsRequest putEvaluationsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutEvaluationsRequest putEvaluationsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putEvaluationsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutEvaluationsRequest> request = new DefaultRequest<PutEvaluationsRequest>(putEvaluationsRequest, "AmazonConfig");
-        request.addHeader("X-Amz-Target", "StarlingDoveService.PutEvaluations");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<Evaluation> evaluationsList = (com.amazonaws.internal.SdkInternalList<Evaluation>) putEvaluationsRequest
-                    .getEvaluations();
-            if (!evaluationsList.isEmpty() || !evaluationsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Evaluations");
-                jsonGenerator.writeStartArray();
-                for (Evaluation evaluationsListValue : evaluationsList) {
-                    if (evaluationsListValue != null) {
-
-                        EvaluationJsonMarshaller.getInstance().marshall(evaluationsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (putEvaluationsRequest.getResultToken() != null) {
-                jsonGenerator.writeFieldName("ResultToken").writeValue(putEvaluationsRequest.getResultToken());
-            }
-            if (putEvaluationsRequest.getTestMode() != null) {
-                jsonGenerator.writeFieldName("TestMode").writeValue(putEvaluationsRequest.getTestMode());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putEvaluationsRequest.getEvaluations(), EVALUATIONS_BINDING);
+            protocolMarshaller.marshall(putEvaluationsRequest.getResultToken(), RESULTTOKEN_BINDING);
+            protocolMarshaller.marshall(putEvaluationsRequest.getTestMode(), TESTMODE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

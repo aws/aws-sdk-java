@@ -12,72 +12,47 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteFacetRequest Marshaller
+ * DeleteFacetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteFacetRequestMarshaller implements Marshaller<Request<DeleteFacetRequest>, DeleteFacetRequest> {
+@SdkInternalApi
+public class DeleteFacetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SCHEMAARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amz-data-partition").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
-    public DeleteFacetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteFacetRequestMarshaller instance = new DeleteFacetRequestMarshaller();
+
+    public static DeleteFacetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteFacetRequest> marshall(DeleteFacetRequest deleteFacetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteFacetRequest deleteFacetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteFacetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteFacetRequest> request = new DefaultRequest<DeleteFacetRequest>(deleteFacetRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (deleteFacetRequest.getSchemaArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(deleteFacetRequest.getSchemaArn()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/facet/delete";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (deleteFacetRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(deleteFacetRequest.getName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteFacetRequest.getSchemaArn(), SCHEMAARN_BINDING);
+            protocolMarshaller.marshall(deleteFacetRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

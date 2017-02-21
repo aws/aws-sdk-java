@@ -12,77 +12,48 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.workspaces.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateTagsRequest Marshaller
+ * CreateTagsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTagsRequest>, CreateTagsRequest> {
+@SdkInternalApi
+public class CreateTagsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public CreateTagsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateTagsRequestMarshaller instance = new CreateTagsRequestMarshaller();
+
+    public static CreateTagsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateTagsRequest> marshall(CreateTagsRequest createTagsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateTagsRequest createTagsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createTagsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateTagsRequest> request = new DefaultRequest<CreateTagsRequest>(createTagsRequest, "AmazonWorkspaces");
-        request.addHeader("X-Amz-Target", "WorkspacesService.CreateTags");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createTagsRequest.getResourceId() != null) {
-                jsonGenerator.writeFieldName("ResourceId").writeValue(createTagsRequest.getResourceId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createTagsRequest.getTags();
-            if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Tags");
-                jsonGenerator.writeStartArray();
-                for (Tag tagsListValue : tagsList) {
-                    if (tagsListValue != null) {
-
-                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createTagsRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(createTagsRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

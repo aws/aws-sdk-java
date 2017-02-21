@@ -12,62 +12,40 @@
  */
 package com.amazonaws.services.codebuild.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codebuild.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListCuratedEnvironmentImagesRequest Marshaller
+ * ListCuratedEnvironmentImagesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListCuratedEnvironmentImagesRequestMarshaller implements
-        Marshaller<Request<ListCuratedEnvironmentImagesRequest>, ListCuratedEnvironmentImagesRequest> {
+@SdkInternalApi
+public class ListCuratedEnvironmentImagesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final ListCuratedEnvironmentImagesRequestMarshaller instance = new ListCuratedEnvironmentImagesRequestMarshaller();
 
-    public ListCuratedEnvironmentImagesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static ListCuratedEnvironmentImagesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListCuratedEnvironmentImagesRequest> marshall(ListCuratedEnvironmentImagesRequest listCuratedEnvironmentImagesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListCuratedEnvironmentImagesRequest listCuratedEnvironmentImagesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listCuratedEnvironmentImagesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListCuratedEnvironmentImagesRequest> request = new DefaultRequest<ListCuratedEnvironmentImagesRequest>(listCuratedEnvironmentImagesRequest,
-                "AWSCodeBuild");
-        request.addHeader("X-Amz-Target", "CodeBuild_20161006.ListCuratedEnvironmentImages");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

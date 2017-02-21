@@ -14,6 +14,8 @@ package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Object representing a VM server
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/VmServer" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VmServer implements Serializable, Cloneable {
+public class VmServer implements Serializable, Cloneable, StructuredPojo {
 
     private VmServerAddress vmServerAddress;
 
@@ -264,5 +266,11 @@ public class VmServer implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servermigration.model.transform.VmServerMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

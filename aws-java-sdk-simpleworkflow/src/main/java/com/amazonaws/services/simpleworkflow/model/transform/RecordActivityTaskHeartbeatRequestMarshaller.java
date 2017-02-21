@@ -12,69 +12,47 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RecordActivityTaskHeartbeatRequest Marshaller
+ * RecordActivityTaskHeartbeatRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RecordActivityTaskHeartbeatRequestMarshaller implements
-        Marshaller<Request<RecordActivityTaskHeartbeatRequest>, RecordActivityTaskHeartbeatRequest> {
+@SdkInternalApi
+public class RecordActivityTaskHeartbeatRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TASKTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taskToken").build();
+    private static final MarshallingInfo<String> DETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("details").build();
 
-    public RecordActivityTaskHeartbeatRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RecordActivityTaskHeartbeatRequestMarshaller instance = new RecordActivityTaskHeartbeatRequestMarshaller();
+
+    public static RecordActivityTaskHeartbeatRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RecordActivityTaskHeartbeatRequest> marshall(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (recordActivityTaskHeartbeatRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RecordActivityTaskHeartbeatRequest> request = new DefaultRequest<RecordActivityTaskHeartbeatRequest>(recordActivityTaskHeartbeatRequest,
-                "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.RecordActivityTaskHeartbeat");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (recordActivityTaskHeartbeatRequest.getTaskToken() != null) {
-                jsonGenerator.writeFieldName("taskToken").writeValue(recordActivityTaskHeartbeatRequest.getTaskToken());
-            }
-            if (recordActivityTaskHeartbeatRequest.getDetails() != null) {
-                jsonGenerator.writeFieldName("details").writeValue(recordActivityTaskHeartbeatRequest.getDetails());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(recordActivityTaskHeartbeatRequest.getTaskToken(), TASKTOKEN_BINDING);
+            protocolMarshaller.marshall(recordActivityTaskHeartbeatRequest.getDetails(), DETAILS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

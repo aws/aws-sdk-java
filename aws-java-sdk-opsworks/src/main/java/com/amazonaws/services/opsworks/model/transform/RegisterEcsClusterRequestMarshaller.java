@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterEcsClusterRequest Marshaller
+ * RegisterEcsClusterRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterEcsClusterRequestMarshaller implements Marshaller<Request<RegisterEcsClusterRequest>, RegisterEcsClusterRequest> {
+@SdkInternalApi
+public class RegisterEcsClusterRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ECSCLUSTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EcsClusterArn").build();
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
 
-    public RegisterEcsClusterRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterEcsClusterRequestMarshaller instance = new RegisterEcsClusterRequestMarshaller();
+
+    public static RegisterEcsClusterRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterEcsClusterRequest> marshall(RegisterEcsClusterRequest registerEcsClusterRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterEcsClusterRequest registerEcsClusterRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerEcsClusterRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterEcsClusterRequest> request = new DefaultRequest<RegisterEcsClusterRequest>(registerEcsClusterRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.RegisterEcsCluster");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerEcsClusterRequest.getEcsClusterArn() != null) {
-                jsonGenerator.writeFieldName("EcsClusterArn").writeValue(registerEcsClusterRequest.getEcsClusterArn());
-            }
-            if (registerEcsClusterRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(registerEcsClusterRequest.getStackId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerEcsClusterRequest.getEcsClusterArn(), ECSCLUSTERARN_BINDING);
+            protocolMarshaller.marshall(registerEcsClusterRequest.getStackId(), STACKID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

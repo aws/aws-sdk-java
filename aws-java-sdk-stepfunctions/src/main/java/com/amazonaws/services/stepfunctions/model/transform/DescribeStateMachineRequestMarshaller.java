@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeStateMachineRequest Marshaller
+ * DescribeStateMachineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeStateMachineRequestMarshaller implements Marshaller<Request<DescribeStateMachineRequest>, DescribeStateMachineRequest> {
+@SdkInternalApi
+public class DescribeStateMachineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STATEMACHINEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateMachineArn").build();
 
-    public DescribeStateMachineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeStateMachineRequestMarshaller instance = new DescribeStateMachineRequestMarshaller();
+
+    public static DescribeStateMachineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeStateMachineRequest> marshall(DescribeStateMachineRequest describeStateMachineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeStateMachineRequest describeStateMachineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeStateMachineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeStateMachineRequest> request = new DefaultRequest<DescribeStateMachineRequest>(describeStateMachineRequest, "AWSStepFunctions");
-        request.addHeader("X-Amz-Target", "AWSStepFunctions.DescribeStateMachine");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeStateMachineRequest.getStateMachineArn() != null) {
-                jsonGenerator.writeFieldName("stateMachineArn").writeValue(describeStateMachineRequest.getStateMachineArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeStateMachineRequest.getStateMachineArn(), STATEMACHINEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

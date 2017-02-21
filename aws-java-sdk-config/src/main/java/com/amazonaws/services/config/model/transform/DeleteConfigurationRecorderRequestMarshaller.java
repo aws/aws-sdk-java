@@ -12,66 +12,44 @@
  */
 package com.amazonaws.services.config.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.config.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteConfigurationRecorderRequest Marshaller
+ * DeleteConfigurationRecorderRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteConfigurationRecorderRequestMarshaller implements
-        Marshaller<Request<DeleteConfigurationRecorderRequest>, DeleteConfigurationRecorderRequest> {
+@SdkInternalApi
+public class DeleteConfigurationRecorderRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONFIGURATIONRECORDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationRecorderName").build();
 
-    public DeleteConfigurationRecorderRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteConfigurationRecorderRequestMarshaller instance = new DeleteConfigurationRecorderRequestMarshaller();
+
+    public static DeleteConfigurationRecorderRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteConfigurationRecorderRequest> marshall(DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteConfigurationRecorderRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteConfigurationRecorderRequest> request = new DefaultRequest<DeleteConfigurationRecorderRequest>(deleteConfigurationRecorderRequest,
-                "AmazonConfig");
-        request.addHeader("X-Amz-Target", "StarlingDoveService.DeleteConfigurationRecorder");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteConfigurationRecorderRequest.getConfigurationRecorderName() != null) {
-                jsonGenerator.writeFieldName("ConfigurationRecorderName").writeValue(deleteConfigurationRecorderRequest.getConfigurationRecorderName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteConfigurationRecorderRequest.getConfigurationRecorderName(), CONFIGURATIONRECORDERNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

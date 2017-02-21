@@ -333,7 +333,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLexiconRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLexiconRequest));
+                request = new DeleteLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -397,7 +397,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVoicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVoicesRequest));
+                request = new DescribeVoicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVoicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -448,7 +448,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetLexiconRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLexiconRequest));
+                request = new GetLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -495,7 +495,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLexiconsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLexiconsRequest));
+                request = new ListLexiconsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLexiconsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -560,7 +560,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutLexiconRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLexiconRequest));
+                request = new PutLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -622,7 +622,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SynthesizeSpeechRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(synthesizeSpeechRequest));
+                request = new SynthesizeSpeechRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(synthesizeSpeechRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

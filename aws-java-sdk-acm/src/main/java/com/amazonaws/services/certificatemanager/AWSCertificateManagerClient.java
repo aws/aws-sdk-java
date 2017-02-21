@@ -334,7 +334,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToCertificateRequest));
+                request = new AddTagsToCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -393,7 +393,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
+                request = new DeleteCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -440,7 +440,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificateRequest));
+                request = new DescribeCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -497,7 +497,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCertificateRequest));
+                request = new GetCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -580,7 +580,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importCertificateRequest));
+                request = new ImportCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -623,7 +623,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCertificatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesRequest));
+                request = new ListCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -672,7 +672,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForCertificateRequest));
+                request = new ListTagsForCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -729,7 +729,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromCertificateRequest));
+                request = new RemoveTagsFromCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeTagsFromCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -784,7 +785,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RequestCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(requestCertificateRequest));
+                request = new RequestCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(requestCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -843,7 +844,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResendValidationEmailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendValidationEmailRequest));
+                request = new ResendValidationEmailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendValidationEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

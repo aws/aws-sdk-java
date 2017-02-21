@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -35,7 +37,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AdvancedOptionsStatus implements Serializable, Cloneable {
+public class AdvancedOptionsStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -211,5 +213,11 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticsearch.model.transform.AdvancedOptionsStatusMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

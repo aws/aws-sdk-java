@@ -12,74 +12,45 @@
  */
 package com.amazonaws.services.ecr.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecr.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetAuthorizationTokenRequest Marshaller
+ * GetAuthorizationTokenRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetAuthorizationTokenRequestMarshaller implements Marshaller<Request<GetAuthorizationTokenRequest>, GetAuthorizationTokenRequest> {
+@SdkInternalApi
+public class GetAuthorizationTokenRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> REGISTRYIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("registryIds").build();
 
-    public GetAuthorizationTokenRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetAuthorizationTokenRequestMarshaller instance = new GetAuthorizationTokenRequestMarshaller();
+
+    public static GetAuthorizationTokenRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetAuthorizationTokenRequest> marshall(GetAuthorizationTokenRequest getAuthorizationTokenRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetAuthorizationTokenRequest getAuthorizationTokenRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getAuthorizationTokenRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetAuthorizationTokenRequest> request = new DefaultRequest<GetAuthorizationTokenRequest>(getAuthorizationTokenRequest, "AmazonECR");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> registryIdsList = getAuthorizationTokenRequest.getRegistryIds();
-            if (registryIdsList != null) {
-                jsonGenerator.writeFieldName("registryIds");
-                jsonGenerator.writeStartArray();
-                for (String registryIdsListValue : registryIdsList) {
-                    if (registryIdsListValue != null) {
-                        jsonGenerator.writeValue(registryIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getAuthorizationTokenRequest.getRegistryIds(), REGISTRYIDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.costandusagereport.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.costandusagereport.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteReportDefinitionRequest Marshaller
+ * DeleteReportDefinitionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteReportDefinitionRequestMarshaller implements Marshaller<Request<DeleteReportDefinitionRequest>, DeleteReportDefinitionRequest> {
+@SdkInternalApi
+public class DeleteReportDefinitionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPORTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReportName").build();
 
-    public DeleteReportDefinitionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteReportDefinitionRequestMarshaller instance = new DeleteReportDefinitionRequestMarshaller();
+
+    public static DeleteReportDefinitionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteReportDefinitionRequest> marshall(DeleteReportDefinitionRequest deleteReportDefinitionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteReportDefinitionRequest deleteReportDefinitionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteReportDefinitionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteReportDefinitionRequest> request = new DefaultRequest<DeleteReportDefinitionRequest>(deleteReportDefinitionRequest,
-                "AWSCostAndUsageReport");
-        request.addHeader("X-Amz-Target", "AWSOrigamiServiceGatewayService.DeleteReportDefinition");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteReportDefinitionRequest.getReportName() != null) {
-                jsonGenerator.writeFieldName("ReportName").writeValue(deleteReportDefinitionRequest.getReportName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteReportDefinitionRequest.getReportName(), REPORTNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

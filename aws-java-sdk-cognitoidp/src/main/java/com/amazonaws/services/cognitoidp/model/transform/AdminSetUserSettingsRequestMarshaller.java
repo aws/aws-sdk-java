@@ -12,83 +12,51 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AdminSetUserSettingsRequest Marshaller
+ * AdminSetUserSettingsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AdminSetUserSettingsRequestMarshaller implements Marshaller<Request<AdminSetUserSettingsRequest>, AdminSetUserSettingsRequest> {
+@SdkInternalApi
+public class AdminSetUserSettingsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Username").build();
+    private static final MarshallingInfo<List> MFAOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MFAOptions").build();
 
-    public AdminSetUserSettingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AdminSetUserSettingsRequestMarshaller instance = new AdminSetUserSettingsRequestMarshaller();
+
+    public static AdminSetUserSettingsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AdminSetUserSettingsRequest> marshall(AdminSetUserSettingsRequest adminSetUserSettingsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AdminSetUserSettingsRequest adminSetUserSettingsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (adminSetUserSettingsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AdminSetUserSettingsRequest> request = new DefaultRequest<AdminSetUserSettingsRequest>(adminSetUserSettingsRequest,
-                "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminSetUserSettings");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (adminSetUserSettingsRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(adminSetUserSettingsRequest.getUserPoolId());
-            }
-            if (adminSetUserSettingsRequest.getUsername() != null) {
-                jsonGenerator.writeFieldName("Username").writeValue(adminSetUserSettingsRequest.getUsername());
-            }
-
-            java.util.List<MFAOptionType> mFAOptionsList = adminSetUserSettingsRequest.getMFAOptions();
-            if (mFAOptionsList != null) {
-                jsonGenerator.writeFieldName("MFAOptions");
-                jsonGenerator.writeStartArray();
-                for (MFAOptionType mFAOptionsListValue : mFAOptionsList) {
-                    if (mFAOptionsListValue != null) {
-
-                        MFAOptionTypeJsonMarshaller.getInstance().marshall(mFAOptionsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(adminSetUserSettingsRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(adminSetUserSettingsRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(adminSetUserSettingsRequest.getMFAOptions(), MFAOPTIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

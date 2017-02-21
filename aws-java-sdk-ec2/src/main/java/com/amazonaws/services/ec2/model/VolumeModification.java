@@ -37,8 +37,7 @@ public class VolumeModification implements Serializable, Cloneable {
     private String volumeId;
     /**
      * <p>
-     * Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     * <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     * Current state of modification. Modification state is null for unmodified volumes.
      * </p>
      */
     private String modificationState;
@@ -145,13 +144,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     * <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     * Current state of modification. Modification state is null for unmodified volumes.
      * </p>
      * 
      * @param modificationState
-     *        Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     *        <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     *        Current state of modification. Modification state is null for unmodified volumes.
      * @see VolumeModificationState
      */
 
@@ -161,12 +158,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     * <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     * Current state of modification. Modification state is null for unmodified volumes.
      * </p>
      * 
-     * @return Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     *         <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     * @return Current state of modification. Modification state is null for unmodified volumes.
      * @see VolumeModificationState
      */
 
@@ -176,13 +171,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     * <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     * Current state of modification. Modification state is null for unmodified volumes.
      * </p>
      * 
      * @param modificationState
-     *        Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     *        <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     *        Current state of modification. Modification state is null for unmodified volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeModificationState
      */
@@ -194,13 +187,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     * <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     * Current state of modification. Modification state is null for unmodified volumes.
      * </p>
      * 
      * @param modificationState
-     *        Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     *        <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     *        Current state of modification. Modification state is null for unmodified volumes.
      * @see VolumeModificationState
      */
 
@@ -210,13 +201,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     * <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     * Current state of modification. Modification state is null for unmodified volumes.
      * </p>
      * 
      * @param modificationState
-     *        Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code> |
-     *        <code>complete</code> | <code>failed</code>. Modification state is null for unmodified volumes.
+     *        Current state of modification. Modification state is null for unmodified volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeModificationState
      */
@@ -820,4 +809,5 @@ public class VolumeModification implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

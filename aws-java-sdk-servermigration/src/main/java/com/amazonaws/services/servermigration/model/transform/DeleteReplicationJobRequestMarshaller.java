@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.servermigration.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servermigration.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteReplicationJobRequest Marshaller
+ * DeleteReplicationJobRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteReplicationJobRequestMarshaller implements Marshaller<Request<DeleteReplicationJobRequest>, DeleteReplicationJobRequest> {
+@SdkInternalApi
+public class DeleteReplicationJobRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPLICATIONJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationJobId").build();
 
-    public DeleteReplicationJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteReplicationJobRequestMarshaller instance = new DeleteReplicationJobRequestMarshaller();
+
+    public static DeleteReplicationJobRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteReplicationJobRequest> marshall(DeleteReplicationJobRequest deleteReplicationJobRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteReplicationJobRequest deleteReplicationJobRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteReplicationJobRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteReplicationJobRequest> request = new DefaultRequest<DeleteReplicationJobRequest>(deleteReplicationJobRequest, "AWSServerMigration");
-        request.addHeader("X-Amz-Target", "AWSServerMigrationService_V2016_10_24.DeleteReplicationJob");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteReplicationJobRequest.getReplicationJobId() != null) {
-                jsonGenerator.writeFieldName("replicationJobId").writeValue(deleteReplicationJobRequest.getReplicationJobId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteReplicationJobRequest.getReplicationJobId(), REPLICATIONJOBID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteMaintenanceWindowRequest Marshaller
+ * DeleteMaintenanceWindowRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteMaintenanceWindowRequestMarshaller implements Marshaller<Request<DeleteMaintenanceWindowRequest>, DeleteMaintenanceWindowRequest> {
+@SdkInternalApi
+public class DeleteMaintenanceWindowRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> WINDOWID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WindowId").build();
 
-    public DeleteMaintenanceWindowRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteMaintenanceWindowRequestMarshaller instance = new DeleteMaintenanceWindowRequestMarshaller();
+
+    public static DeleteMaintenanceWindowRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteMaintenanceWindowRequest> marshall(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteMaintenanceWindowRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteMaintenanceWindowRequest> request = new DefaultRequest<DeleteMaintenanceWindowRequest>(deleteMaintenanceWindowRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.DeleteMaintenanceWindow");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteMaintenanceWindowRequest.getWindowId() != null) {
-                jsonGenerator.writeFieldName("WindowId").writeValue(deleteMaintenanceWindowRequest.getWindowId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteMaintenanceWindowRequest.getWindowId(), WINDOWID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

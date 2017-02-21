@@ -12,76 +12,45 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeJobsRequest Marshaller
+ * DescribeJobsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeJobsRequestMarshaller implements Marshaller<Request<DescribeJobsRequest>, DescribeJobsRequest> {
+@SdkInternalApi
+public class DescribeJobsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> JOBS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobs").build();
 
-    public DescribeJobsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeJobsRequestMarshaller instance = new DescribeJobsRequestMarshaller();
+
+    public static DescribeJobsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeJobsRequest> marshall(DescribeJobsRequest describeJobsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeJobsRequest describeJobsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeJobsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeJobsRequest> request = new DefaultRequest<DescribeJobsRequest>(describeJobsRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/describejobs";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> jobsList = describeJobsRequest.getJobs();
-            if (jobsList != null) {
-                jsonGenerator.writeFieldName("jobs");
-                jsonGenerator.writeStartArray();
-                for (String jobsListValue : jobsList) {
-                    if (jobsListValue != null) {
-                        jsonGenerator.writeValue(jobsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeJobsRequest.getJobs(), JOBS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

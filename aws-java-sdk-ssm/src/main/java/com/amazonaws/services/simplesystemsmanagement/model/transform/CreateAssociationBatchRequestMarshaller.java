@@ -12,75 +12,45 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateAssociationBatchRequest Marshaller
+ * CreateAssociationBatchRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateAssociationBatchRequestMarshaller implements Marshaller<Request<CreateAssociationBatchRequest>, CreateAssociationBatchRequest> {
+@SdkInternalApi
+public class CreateAssociationBatchRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> ENTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Entries").build();
 
-    public CreateAssociationBatchRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateAssociationBatchRequestMarshaller instance = new CreateAssociationBatchRequestMarshaller();
+
+    public static CreateAssociationBatchRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateAssociationBatchRequest> marshall(CreateAssociationBatchRequest createAssociationBatchRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateAssociationBatchRequest createAssociationBatchRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createAssociationBatchRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateAssociationBatchRequest> request = new DefaultRequest<CreateAssociationBatchRequest>(createAssociationBatchRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.CreateAssociationBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>) createAssociationBatchRequest
-                    .getEntries();
-            if (!entriesList.isEmpty() || !entriesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Entries");
-                jsonGenerator.writeStartArray();
-                for (CreateAssociationBatchRequestEntry entriesListValue : entriesList) {
-                    if (entriesListValue != null) {
-
-                        CreateAssociationBatchRequestEntryJsonMarshaller.getInstance().marshall(entriesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createAssociationBatchRequest.getEntries(), ENTRIES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

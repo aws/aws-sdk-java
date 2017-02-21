@@ -12,55 +12,53 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetMethodResponseRequest Marshaller
+ * GetMethodResponseRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetMethodResponseRequestMarshaller implements Marshaller<Request<GetMethodResponseRequest>, GetMethodResponseRequest> {
+@SdkInternalApi
+public class GetMethodResponseRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("resource_id").build();
+    private static final MarshallingInfo<String> HTTPMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("http_method").build();
+    private static final MarshallingInfo<String> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("status_code").build();
 
-    public GetMethodResponseRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetMethodResponseRequestMarshaller instance = new GetMethodResponseRequestMarshaller();
+
+    public static GetMethodResponseRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetMethodResponseRequest> marshall(GetMethodResponseRequest getMethodResponseRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetMethodResponseRequest getMethodResponseRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getMethodResponseRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetMethodResponseRequest> request = new DefaultRequest<GetMethodResponseRequest>(getMethodResponseRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getMethodResponseRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", getMethodResponseRequest.getResourceId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", getMethodResponseRequest.getHttpMethod());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "status_code", getMethodResponseRequest.getStatusCode());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getMethodResponseRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(getMethodResponseRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(getMethodResponseRequest.getHttpMethod(), HTTPMETHOD_BINDING);
+            protocolMarshaller.marshall(getMethodResponseRequest.getStatusCode(), STATUSCODE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

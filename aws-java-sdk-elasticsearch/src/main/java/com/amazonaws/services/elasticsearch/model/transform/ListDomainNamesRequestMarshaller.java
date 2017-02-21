@@ -12,51 +12,40 @@
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticsearch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDomainNamesRequest Marshaller
+ * ListDomainNamesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDomainNamesRequestMarshaller implements Marshaller<Request<ListDomainNamesRequest>, ListDomainNamesRequest> {
+@SdkInternalApi
+public class ListDomainNamesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final ListDomainNamesRequestMarshaller instance = new ListDomainNamesRequestMarshaller();
 
-    public ListDomainNamesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static ListDomainNamesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDomainNamesRequest> marshall(ListDomainNamesRequest listDomainNamesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDomainNamesRequest listDomainNamesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDomainNamesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDomainNamesRequest> request = new DefaultRequest<ListDomainNamesRequest>(listDomainNamesRequest, "AWSElasticsearch");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-01-01/domain";
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

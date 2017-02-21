@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ImportKeyPairRequest Marshaller
+ * ImportKeyPairRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImportKeyPairRequestMarshaller implements Marshaller<Request<ImportKeyPairRequest>, ImportKeyPairRequest> {
+@SdkInternalApi
+public class ImportKeyPairRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYPAIRNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("keyPairName").build();
+    private static final MarshallingInfo<String> PUBLICKEYBASE64_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publicKeyBase64").build();
 
-    public ImportKeyPairRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ImportKeyPairRequestMarshaller instance = new ImportKeyPairRequestMarshaller();
+
+    public static ImportKeyPairRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ImportKeyPairRequest> marshall(ImportKeyPairRequest importKeyPairRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ImportKeyPairRequest importKeyPairRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (importKeyPairRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ImportKeyPairRequest> request = new DefaultRequest<ImportKeyPairRequest>(importKeyPairRequest, "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.ImportKeyPair");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (importKeyPairRequest.getKeyPairName() != null) {
-                jsonGenerator.writeFieldName("keyPairName").writeValue(importKeyPairRequest.getKeyPairName());
-            }
-            if (importKeyPairRequest.getPublicKeyBase64() != null) {
-                jsonGenerator.writeFieldName("publicKeyBase64").writeValue(importKeyPairRequest.getPublicKeyBase64());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(importKeyPairRequest.getKeyPairName(), KEYPAIRNAME_BINDING);
+            protocolMarshaller.marshall(importKeyPairRequest.getPublicKeyBase64(), PUBLICKEYBASE64_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -16,6 +16,8 @@
 package com.amazonaws.codegen.internal;
 
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
+import com.amazonaws.codegen.model.intermediate.Metadata;
+import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeMarshaller;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.Input;
@@ -291,11 +293,11 @@ public class Utils {
                 marshaller.setXmlNameSpaceUri(xmlNamespace.getUri());
             }
         }
-        if (!StringUtils.isNullOrEmpty(service.getTargetPrefix())) {
-            marshaller.setTarget(service.getTargetPrefix() + "."
-                    + operation.getName());
+        if (!StringUtils.isNullOrEmpty(service.getTargetPrefix()) && Metadata.isNotRestProtocol(service.getProtocol())) {
+            marshaller.setTarget(service.getTargetPrefix() + "." + operation.getName());
         }
         return marshaller;
 
     }
+
 }

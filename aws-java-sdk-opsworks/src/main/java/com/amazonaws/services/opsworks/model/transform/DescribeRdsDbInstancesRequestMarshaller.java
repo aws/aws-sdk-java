@@ -12,77 +12,48 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeRdsDbInstancesRequest Marshaller
+ * DescribeRdsDbInstancesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeRdsDbInstancesRequestMarshaller implements Marshaller<Request<DescribeRdsDbInstancesRequest>, DescribeRdsDbInstancesRequest> {
+@SdkInternalApi
+public class DescribeRdsDbInstancesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
+    private static final MarshallingInfo<List> RDSDBINSTANCEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RdsDbInstanceArns").build();
 
-    public DescribeRdsDbInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeRdsDbInstancesRequestMarshaller instance = new DescribeRdsDbInstancesRequestMarshaller();
+
+    public static DescribeRdsDbInstancesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeRdsDbInstancesRequest> marshall(DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeRdsDbInstancesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeRdsDbInstancesRequest> request = new DefaultRequest<DescribeRdsDbInstancesRequest>(describeRdsDbInstancesRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeRdsDbInstances");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeRdsDbInstancesRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(describeRdsDbInstancesRequest.getStackId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> rdsDbInstanceArnsList = (com.amazonaws.internal.SdkInternalList<String>) describeRdsDbInstancesRequest
-                    .getRdsDbInstanceArns();
-            if (!rdsDbInstanceArnsList.isEmpty() || !rdsDbInstanceArnsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("RdsDbInstanceArns");
-                jsonGenerator.writeStartArray();
-                for (String rdsDbInstanceArnsListValue : rdsDbInstanceArnsList) {
-                    if (rdsDbInstanceArnsListValue != null) {
-                        jsonGenerator.writeValue(rdsDbInstanceArnsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeRdsDbInstancesRequest.getStackId(), STACKID_BINDING);
+            protocolMarshaller.marshall(describeRdsDbInstancesRequest.getRdsDbInstanceArns(), RDSDBINSTANCEARNS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,88 +12,48 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddTagsToOnPremisesInstancesRequest Marshaller
+ * AddTagsToOnPremisesInstancesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddTagsToOnPremisesInstancesRequestMarshaller implements
-        Marshaller<Request<AddTagsToOnPremisesInstancesRequest>, AddTagsToOnPremisesInstancesRequest> {
+@SdkInternalApi
+public class AddTagsToOnPremisesInstancesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> INSTANCENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("instanceNames").build();
 
-    public AddTagsToOnPremisesInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AddTagsToOnPremisesInstancesRequestMarshaller instance = new AddTagsToOnPremisesInstancesRequestMarshaller();
+
+    public static AddTagsToOnPremisesInstancesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddTagsToOnPremisesInstancesRequest> marshall(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addTagsToOnPremisesInstancesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddTagsToOnPremisesInstancesRequest> request = new DefaultRequest<AddTagsToOnPremisesInstancesRequest>(addTagsToOnPremisesInstancesRequest,
-                "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.AddTagsToOnPremisesInstances");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) addTagsToOnPremisesInstancesRequest.getTags();
-            if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("tags");
-                jsonGenerator.writeStartArray();
-                for (Tag tagsListValue : tagsList) {
-                    if (tagsListValue != null) {
-
-                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> instanceNamesList = (com.amazonaws.internal.SdkInternalList<String>) addTagsToOnPremisesInstancesRequest
-                    .getInstanceNames();
-            if (!instanceNamesList.isEmpty() || !instanceNamesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("instanceNames");
-                jsonGenerator.writeStartArray();
-                for (String instanceNamesListValue : instanceNamesList) {
-                    if (instanceNamesListValue != null) {
-                        jsonGenerator.writeValue(instanceNamesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addTagsToOnPremisesInstancesRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(addTagsToOnPremisesInstancesRequest.getInstanceNames(), INSTANCENAMES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

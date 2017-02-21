@@ -304,7 +304,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
+                request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -372,7 +372,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateComputeEnvironmentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createComputeEnvironmentRequest));
+                request = new CreateComputeEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -428,7 +429,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateJobQueueRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobQueueRequest));
+                request = new CreateJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -481,7 +482,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteComputeEnvironmentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteComputeEnvironmentRequest));
+                request = new DeleteComputeEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -535,7 +537,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteJobQueueRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobQueueRequest));
+                request = new DeleteJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -583,7 +585,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterJobDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterJobDefinitionRequest));
+                request = new DeregisterJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterJobDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -637,7 +640,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeComputeEnvironmentsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeComputeEnvironmentsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeComputeEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -688,7 +691,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeJobDefinitionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobDefinitionsRequest));
+                request = new DescribeJobDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -737,7 +740,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeJobQueuesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobQueuesRequest));
+                request = new DescribeJobQueuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -785,7 +788,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobsRequest));
+                request = new DescribeJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -834,7 +837,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
+                request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -882,7 +885,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterJobDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerJobDefinitionRequest));
+                request = new RegisterJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerJobDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -932,7 +935,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubmitJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitJobRequest));
+                request = new SubmitJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -982,7 +985,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TerminateJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateJobRequest));
+                request = new TerminateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1030,7 +1033,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateComputeEnvironmentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateComputeEnvironmentRequest));
+                request = new UpdateComputeEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1079,7 +1083,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateJobQueueRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateJobQueueRequest));
+                request = new UpdateJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

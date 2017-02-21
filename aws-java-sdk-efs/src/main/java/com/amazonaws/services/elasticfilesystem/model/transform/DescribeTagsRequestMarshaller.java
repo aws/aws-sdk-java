@@ -12,62 +12,50 @@
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticfilesystem.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTagsRequest Marshaller
+ * DescribeTagsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTagsRequestMarshaller implements Marshaller<Request<DescribeTagsRequest>, DescribeTagsRequest> {
+@SdkInternalApi
+public class DescribeTagsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxItems").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Marker").build();
+    private static final MarshallingInfo<String> FILESYSTEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FileSystemId").build();
 
-    public DescribeTagsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTagsRequestMarshaller instance = new DescribeTagsRequestMarshaller();
+
+    public static DescribeTagsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTagsRequest> marshall(DescribeTagsRequest describeTagsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTagsRequest describeTagsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTagsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTagsRequest> request = new DefaultRequest<DescribeTagsRequest>(describeTagsRequest, "AmazonElasticFileSystem");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-02-01/tags/{FileSystemId}/";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FileSystemId", describeTagsRequest.getFileSystemId());
-        request.setResourcePath(uriResourcePath);
-
-        if (describeTagsRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils.fromInteger(describeTagsRequest.getMaxItems()));
+        try {
+            protocolMarshaller.marshall(describeTagsRequest.getMaxItems(), MAXITEMS_BINDING);
+            protocolMarshaller.marshall(describeTagsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(describeTagsRequest.getFileSystemId(), FILESYSTEMID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (describeTagsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils.fromString(describeTagsRequest.getMarker()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

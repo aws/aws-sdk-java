@@ -41,7 +41,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
 
         <#assign serviceNameForRequest = customConfig.customServiceNameForRequest!metadata.syncInterface />
 
-        <@DefaultRequestCreation.content shape serviceNameForRequest/>
+        Request<${shape.shapeName}> request = new DefaultRequest<${shape.shapeName}>(${shape.variable.variableName}, "${serviceNameForRequest}");
 
         <#assign httpVerb = (shape.marshaller.verb)!POST/>
         request.setHttpMethod(HttpMethodName.${httpVerb});

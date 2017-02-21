@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.shield.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.shield.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteProtectionRequest Marshaller
+ * DeleteProtectionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteProtectionRequestMarshaller implements Marshaller<Request<DeleteProtectionRequest>, DeleteProtectionRequest> {
+@SdkInternalApi
+public class DeleteProtectionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PROTECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProtectionId").build();
 
-    public DeleteProtectionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteProtectionRequestMarshaller instance = new DeleteProtectionRequestMarshaller();
+
+    public static DeleteProtectionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteProtectionRequest> marshall(DeleteProtectionRequest deleteProtectionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteProtectionRequest deleteProtectionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteProtectionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteProtectionRequest> request = new DefaultRequest<DeleteProtectionRequest>(deleteProtectionRequest, "AWSShield");
-        request.addHeader("X-Amz-Target", "AWSShield_20160616.DeleteProtection");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteProtectionRequest.getProtectionId() != null) {
-                jsonGenerator.writeFieldName("ProtectionId").writeValue(deleteProtectionRequest.getProtectionId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteProtectionRequest.getProtectionId(), PROTECTIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

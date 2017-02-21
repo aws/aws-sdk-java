@@ -12,53 +12,47 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetCampaignRequest Marshaller
+ * GetCampaignRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetCampaignRequestMarshaller implements Marshaller<Request<GetCampaignRequest>, GetCampaignRequest> {
+@SdkInternalApi
+public class GetCampaignRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> CAMPAIGNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("campaign-id").build();
 
-    public GetCampaignRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetCampaignRequestMarshaller instance = new GetCampaignRequestMarshaller();
+
+    public static GetCampaignRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetCampaignRequest> marshall(GetCampaignRequest getCampaignRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetCampaignRequest getCampaignRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getCampaignRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetCampaignRequest> request = new DefaultRequest<GetCampaignRequest>(getCampaignRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id", getCampaignRequest.getApplicationId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "campaign-id", getCampaignRequest.getCampaignId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getCampaignRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(getCampaignRequest.getCampaignId(), CAMPAIGNID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

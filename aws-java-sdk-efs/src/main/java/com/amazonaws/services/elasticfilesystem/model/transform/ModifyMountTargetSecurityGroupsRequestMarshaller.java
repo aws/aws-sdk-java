@@ -12,79 +12,48 @@
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticfilesystem.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ModifyMountTargetSecurityGroupsRequest Marshaller
+ * ModifyMountTargetSecurityGroupsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ModifyMountTargetSecurityGroupsRequestMarshaller implements
-        Marshaller<Request<ModifyMountTargetSecurityGroupsRequest>, ModifyMountTargetSecurityGroupsRequest> {
+@SdkInternalApi
+public class ModifyMountTargetSecurityGroupsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> MOUNTTARGETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("MountTargetId").build();
+    private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroups").build();
 
-    public ModifyMountTargetSecurityGroupsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ModifyMountTargetSecurityGroupsRequestMarshaller instance = new ModifyMountTargetSecurityGroupsRequestMarshaller();
+
+    public static ModifyMountTargetSecurityGroupsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ModifyMountTargetSecurityGroupsRequest> marshall(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (modifyMountTargetSecurityGroupsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyMountTargetSecurityGroupsRequest> request = new DefaultRequest<ModifyMountTargetSecurityGroupsRequest>(
-                modifyMountTargetSecurityGroupsRequest, "AmazonElasticFileSystem");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}/security-groups";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "MountTargetId",
-                modifyMountTargetSecurityGroupsRequest.getMountTargetId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyMountTargetSecurityGroupsRequest
-                    .getSecurityGroups();
-            if (!securityGroupsList.isEmpty() || !securityGroupsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("SecurityGroups");
-                jsonGenerator.writeStartArray();
-                for (String securityGroupsListValue : securityGroupsList) {
-                    if (securityGroupsListValue != null) {
-                        jsonGenerator.writeValue(securityGroupsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(modifyMountTargetSecurityGroupsRequest.getMountTargetId(), MOUNTTARGETID_BINDING);
+            protocolMarshaller.marshall(modifyMountTargetSecurityGroupsRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeHostedConnectionsRequest Marshaller
+ * DescribeHostedConnectionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeHostedConnectionsRequestMarshaller implements Marshaller<Request<DescribeHostedConnectionsRequest>, DescribeHostedConnectionsRequest> {
+@SdkInternalApi
+public class DescribeHostedConnectionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
 
-    public DescribeHostedConnectionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeHostedConnectionsRequestMarshaller instance = new DescribeHostedConnectionsRequestMarshaller();
+
+    public static DescribeHostedConnectionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeHostedConnectionsRequest> marshall(DescribeHostedConnectionsRequest describeHostedConnectionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeHostedConnectionsRequest describeHostedConnectionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeHostedConnectionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeHostedConnectionsRequest> request = new DefaultRequest<DescribeHostedConnectionsRequest>(describeHostedConnectionsRequest,
-                "AmazonDirectConnect");
-        request.addHeader("X-Amz-Target", "OvertureService.DescribeHostedConnections");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeHostedConnectionsRequest.getConnectionId() != null) {
-                jsonGenerator.writeFieldName("connectionId").writeValue(describeHostedConnectionsRequest.getConnectionId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeHostedConnectionsRequest.getConnectionId(), CONNECTIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53domains.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListTagsForDomainRequest Marshaller
+ * ListTagsForDomainRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListTagsForDomainRequestMarshaller implements Marshaller<Request<ListTagsForDomainRequest>, ListTagsForDomainRequest> {
+@SdkInternalApi
+public class ListTagsForDomainRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
 
-    public ListTagsForDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListTagsForDomainRequestMarshaller instance = new ListTagsForDomainRequestMarshaller();
+
+    public static ListTagsForDomainRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListTagsForDomainRequest> marshall(ListTagsForDomainRequest listTagsForDomainRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListTagsForDomainRequest listTagsForDomainRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listTagsForDomainRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTagsForDomainRequest> request = new DefaultRequest<ListTagsForDomainRequest>(listTagsForDomainRequest, "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.ListTagsForDomain");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listTagsForDomainRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(listTagsForDomainRequest.getDomainName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listTagsForDomainRequest.getDomainName(), DOMAINNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

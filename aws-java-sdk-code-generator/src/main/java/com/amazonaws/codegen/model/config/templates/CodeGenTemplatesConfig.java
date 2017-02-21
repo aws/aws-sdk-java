@@ -46,6 +46,7 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate modelEnum;
     private TopLevelTemplate modelUnmarshaller;
     private TopLevelTemplate modelMarshaller;
+    private TopLevelTemplate requestMarshaller;
     private TopLevelTemplate baseExceptionClass;
     private TopLevelTemplate exceptionClass;
     private TopLevelTemplate exceptionUnmarshaller;
@@ -122,6 +123,8 @@ public class CodeGenTemplatesConfig {
                 config.getModelUnmarshaller(), override.getModelUnmarshaller()));
         merged.setModelMarshaller(TopLevelTemplate.merge(
                 config.getModelMarshaller(), override.getModelMarshaller()));
+        merged.setRequestMarshaller(TopLevelTemplate.merge(
+                config.getRequestMarshaller(), override.getRequestMarshaller()));
 
         merged.setBaseExceptionClass(TopLevelTemplate.merge(
                 config.getBaseExceptionClass(), override.getBaseExceptionClass()));
@@ -286,8 +289,16 @@ public class CodeGenTemplatesConfig {
         return modelMarshaller;
     }
 
+    public TopLevelTemplate getRequestMarshaller() {
+        return requestMarshaller;
+    }
+
     public void setModelMarshaller(TopLevelTemplate modelMarshaller) {
         this.modelMarshaller = modelMarshaller;
+    }
+
+    public void setRequestMarshaller(TopLevelTemplate requestMarshaller) {
+        this.requestMarshaller = requestMarshaller;
     }
 
     public TopLevelTemplate getExceptionClass() {

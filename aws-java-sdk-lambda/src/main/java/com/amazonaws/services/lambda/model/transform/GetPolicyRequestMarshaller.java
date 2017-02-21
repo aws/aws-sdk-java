@@ -12,58 +12,47 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetPolicyRequest Marshaller
+ * GetPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetPolicyRequestMarshaller implements Marshaller<Request<GetPolicyRequest>, GetPolicyRequest> {
+@SdkInternalApi
+public class GetPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
 
-    public GetPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetPolicyRequestMarshaller instance = new GetPolicyRequestMarshaller();
+
+    public static GetPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetPolicyRequest> marshall(GetPolicyRequest getPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetPolicyRequest getPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetPolicyRequest> request = new DefaultRequest<GetPolicyRequest>(getPolicyRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", getPolicyRequest.getFunctionName());
-        request.setResourcePath(uriResourcePath);
-
-        if (getPolicyRequest.getQualifier() != null) {
-            request.addParameter("Qualifier", StringUtils.fromString(getPolicyRequest.getQualifier()));
+        try {
+            protocolMarshaller.marshall(getPolicyRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(getPolicyRequest.getQualifier(), QUALIFIER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

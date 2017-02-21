@@ -12,74 +12,45 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.workspaces.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RebootWorkspacesRequest Marshaller
+ * RebootWorkspacesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RebootWorkspacesRequestMarshaller implements Marshaller<Request<RebootWorkspacesRequest>, RebootWorkspacesRequest> {
+@SdkInternalApi
+public class RebootWorkspacesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> REBOOTWORKSPACEREQUESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RebootWorkspaceRequests").build();
 
-    public RebootWorkspacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RebootWorkspacesRequestMarshaller instance = new RebootWorkspacesRequestMarshaller();
+
+    public static RebootWorkspacesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RebootWorkspacesRequest> marshall(RebootWorkspacesRequest rebootWorkspacesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RebootWorkspacesRequest rebootWorkspacesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (rebootWorkspacesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RebootWorkspacesRequest> request = new DefaultRequest<RebootWorkspacesRequest>(rebootWorkspacesRequest, "AmazonWorkspaces");
-        request.addHeader("X-Amz-Target", "WorkspacesService.RebootWorkspaces");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<RebootRequest> rebootWorkspaceRequestsList = (com.amazonaws.internal.SdkInternalList<RebootRequest>) rebootWorkspacesRequest
-                    .getRebootWorkspaceRequests();
-            if (!rebootWorkspaceRequestsList.isEmpty() || !rebootWorkspaceRequestsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("RebootWorkspaceRequests");
-                jsonGenerator.writeStartArray();
-                for (RebootRequest rebootWorkspaceRequestsListValue : rebootWorkspaceRequestsList) {
-                    if (rebootWorkspaceRequestsListValue != null) {
-
-                        RebootRequestJsonMarshaller.getInstance().marshall(rebootWorkspaceRequestsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(rebootWorkspacesRequest.getRebootWorkspaceRequests(), REBOOTWORKSPACEREQUESTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

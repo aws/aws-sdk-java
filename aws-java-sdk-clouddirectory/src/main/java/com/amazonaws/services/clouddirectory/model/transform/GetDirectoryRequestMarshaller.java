@@ -12,57 +12,44 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDirectoryRequest Marshaller
+ * GetDirectoryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDirectoryRequestMarshaller implements Marshaller<Request<GetDirectoryRequest>, GetDirectoryRequest> {
+@SdkInternalApi
+public class GetDirectoryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
 
-    public GetDirectoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDirectoryRequestMarshaller instance = new GetDirectoryRequestMarshaller();
+
+    public static GetDirectoryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDirectoryRequest> marshall(GetDirectoryRequest getDirectoryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDirectoryRequest getDirectoryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDirectoryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDirectoryRequest> request = new DefaultRequest<GetDirectoryRequest>(getDirectoryRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (getDirectoryRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(getDirectoryRequest.getDirectoryArn()));
+        try {
+            protocolMarshaller.marshall(getDirectoryRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/directory/get";
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

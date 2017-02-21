@@ -359,7 +359,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeliveryStreamRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeliveryStreamRequest));
+                request = new CreateDeliveryStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -418,7 +418,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeliveryStreamRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeliveryStreamRequest));
+                request = new DeleteDeliveryStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -464,7 +464,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeliveryStreamRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeliveryStreamRequest));
+                request = new DescribeDeliveryStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -514,7 +514,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeliveryStreamsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeliveryStreamsRequest));
+                request = new ListDeliveryStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeliveryStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -597,7 +597,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRecordRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRecordRequest));
+                request = new PutRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -701,7 +701,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRecordBatchRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRecordBatchRequest));
+                request = new PutRecordBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRecordBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -780,7 +780,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDestinationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDestinationRequest));
+                request = new UpdateDestinationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

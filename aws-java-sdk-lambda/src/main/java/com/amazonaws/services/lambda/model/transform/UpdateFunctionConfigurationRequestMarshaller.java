@@ -12,100 +12,74 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateFunctionConfigurationRequest Marshaller
+ * UpdateFunctionConfigurationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateFunctionConfigurationRequestMarshaller implements
-        Marshaller<Request<UpdateFunctionConfigurationRequest>, UpdateFunctionConfigurationRequest> {
+@SdkInternalApi
+public class UpdateFunctionConfigurationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Role").build();
+    private static final MarshallingInfo<String> HANDLER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Handler").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Timeout").build();
+    private static final MarshallingInfo<Integer> MEMORYSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemorySize").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Environment").build();
+    private static final MarshallingInfo<String> RUNTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Runtime").build();
+    private static final MarshallingInfo<StructuredPojo> DEADLETTERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeadLetterConfig").build();
+    private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KMSKeyArn").build();
 
-    public UpdateFunctionConfigurationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateFunctionConfigurationRequestMarshaller instance = new UpdateFunctionConfigurationRequestMarshaller();
+
+    public static UpdateFunctionConfigurationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateFunctionConfigurationRequest> marshall(UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateFunctionConfigurationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateFunctionConfigurationRequest> request = new DefaultRequest<UpdateFunctionConfigurationRequest>(updateFunctionConfigurationRequest,
-                "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/configuration";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName",
-                updateFunctionConfigurationRequest.getFunctionName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (updateFunctionConfigurationRequest.getRole() != null) {
-                jsonGenerator.writeFieldName("Role").writeValue(updateFunctionConfigurationRequest.getRole());
-            }
-            if (updateFunctionConfigurationRequest.getHandler() != null) {
-                jsonGenerator.writeFieldName("Handler").writeValue(updateFunctionConfigurationRequest.getHandler());
-            }
-            if (updateFunctionConfigurationRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(updateFunctionConfigurationRequest.getDescription());
-            }
-            if (updateFunctionConfigurationRequest.getTimeout() != null) {
-                jsonGenerator.writeFieldName("Timeout").writeValue(updateFunctionConfigurationRequest.getTimeout());
-            }
-            if (updateFunctionConfigurationRequest.getMemorySize() != null) {
-                jsonGenerator.writeFieldName("MemorySize").writeValue(updateFunctionConfigurationRequest.getMemorySize());
-            }
-            if (updateFunctionConfigurationRequest.getVpcConfig() != null) {
-                jsonGenerator.writeFieldName("VpcConfig");
-                VpcConfigJsonMarshaller.getInstance().marshall(updateFunctionConfigurationRequest.getVpcConfig(), jsonGenerator);
-            }
-            if (updateFunctionConfigurationRequest.getEnvironment() != null) {
-                jsonGenerator.writeFieldName("Environment");
-                EnvironmentJsonMarshaller.getInstance().marshall(updateFunctionConfigurationRequest.getEnvironment(), jsonGenerator);
-            }
-            if (updateFunctionConfigurationRequest.getRuntime() != null) {
-                jsonGenerator.writeFieldName("Runtime").writeValue(updateFunctionConfigurationRequest.getRuntime());
-            }
-            if (updateFunctionConfigurationRequest.getDeadLetterConfig() != null) {
-                jsonGenerator.writeFieldName("DeadLetterConfig");
-                DeadLetterConfigJsonMarshaller.getInstance().marshall(updateFunctionConfigurationRequest.getDeadLetterConfig(), jsonGenerator);
-            }
-            if (updateFunctionConfigurationRequest.getKMSKeyArn() != null) {
-                jsonGenerator.writeFieldName("KMSKeyArn").writeValue(updateFunctionConfigurationRequest.getKMSKeyArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getHandler(), HANDLER_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getMemorySize(), MEMORYSIZE_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getEnvironment(), ENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getRuntime(), RUNTIME_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getDeadLetterConfig(), DEADLETTERCONFIG_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getKMSKeyArn(), KMSKEYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

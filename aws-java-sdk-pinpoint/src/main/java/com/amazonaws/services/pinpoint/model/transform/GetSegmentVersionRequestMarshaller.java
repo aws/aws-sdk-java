@@ -12,55 +12,50 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetSegmentVersionRequest Marshaller
+ * GetSegmentVersionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetSegmentVersionRequestMarshaller implements Marshaller<Request<GetSegmentVersionRequest>, GetSegmentVersionRequest> {
+@SdkInternalApi
+public class GetSegmentVersionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> SEGMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("segment-id").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("version").build();
 
-    public GetSegmentVersionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetSegmentVersionRequestMarshaller instance = new GetSegmentVersionRequestMarshaller();
+
+    public static GetSegmentVersionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetSegmentVersionRequest> marshall(GetSegmentVersionRequest getSegmentVersionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetSegmentVersionRequest getSegmentVersionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getSegmentVersionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSegmentVersionRequest> request = new DefaultRequest<GetSegmentVersionRequest>(getSegmentVersionRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/segments/{segment-id}/versions/{version}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                getSegmentVersionRequest.getApplicationId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "segment-id", getSegmentVersionRequest.getSegmentId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "version", getSegmentVersionRequest.getVersion());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getSegmentVersionRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(getSegmentVersionRequest.getSegmentId(), SEGMENTID_BINDING);
+            protocolMarshaller.marshall(getSegmentVersionRequest.getVersion(), VERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

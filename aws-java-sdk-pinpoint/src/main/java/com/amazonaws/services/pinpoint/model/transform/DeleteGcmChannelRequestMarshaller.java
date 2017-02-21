@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteGcmChannelRequest Marshaller
+ * DeleteGcmChannelRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteGcmChannelRequestMarshaller implements Marshaller<Request<DeleteGcmChannelRequest>, DeleteGcmChannelRequest> {
+@SdkInternalApi
+public class DeleteGcmChannelRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
 
-    public DeleteGcmChannelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteGcmChannelRequestMarshaller instance = new DeleteGcmChannelRequestMarshaller();
+
+    public static DeleteGcmChannelRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteGcmChannelRequest> marshall(DeleteGcmChannelRequest deleteGcmChannelRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteGcmChannelRequest deleteGcmChannelRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteGcmChannelRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteGcmChannelRequest> request = new DefaultRequest<DeleteGcmChannelRequest>(deleteGcmChannelRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/v1/apps/{application-id}/channels/gcm";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                deleteGcmChannelRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteGcmChannelRequest.getApplicationId(), APPLICATIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

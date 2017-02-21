@@ -12,85 +12,51 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ModifyReplicationSubnetGroupRequest Marshaller
+ * ModifyReplicationSubnetGroupRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ModifyReplicationSubnetGroupRequestMarshaller implements
-        Marshaller<Request<ModifyReplicationSubnetGroupRequest>, ModifyReplicationSubnetGroupRequest> {
+@SdkInternalApi
+public class ModifyReplicationSubnetGroupRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPLICATIONSUBNETGROUPIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationSubnetGroupIdentifier").build();
+    private static final MarshallingInfo<String> REPLICATIONSUBNETGROUPDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationSubnetGroupDescription").build();
+    private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetIds").build();
 
-    public ModifyReplicationSubnetGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ModifyReplicationSubnetGroupRequestMarshaller instance = new ModifyReplicationSubnetGroupRequestMarshaller();
+
+    public static ModifyReplicationSubnetGroupRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ModifyReplicationSubnetGroupRequest> marshall(ModifyReplicationSubnetGroupRequest modifyReplicationSubnetGroupRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ModifyReplicationSubnetGroupRequest modifyReplicationSubnetGroupRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (modifyReplicationSubnetGroupRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyReplicationSubnetGroupRequest> request = new DefaultRequest<ModifyReplicationSubnetGroupRequest>(modifyReplicationSubnetGroupRequest,
-                "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.ModifyReplicationSubnetGroup");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (modifyReplicationSubnetGroupRequest.getReplicationSubnetGroupIdentifier() != null) {
-                jsonGenerator.writeFieldName("ReplicationSubnetGroupIdentifier").writeValue(
-                        modifyReplicationSubnetGroupRequest.getReplicationSubnetGroupIdentifier());
-            }
-            if (modifyReplicationSubnetGroupRequest.getReplicationSubnetGroupDescription() != null) {
-                jsonGenerator.writeFieldName("ReplicationSubnetGroupDescription").writeValue(
-                        modifyReplicationSubnetGroupRequest.getReplicationSubnetGroupDescription());
-            }
-
-            java.util.List<String> subnetIdsList = modifyReplicationSubnetGroupRequest.getSubnetIds();
-            if (subnetIdsList != null) {
-                jsonGenerator.writeFieldName("SubnetIds");
-                jsonGenerator.writeStartArray();
-                for (String subnetIdsListValue : subnetIdsList) {
-                    if (subnetIdsListValue != null) {
-                        jsonGenerator.writeValue(subnetIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(modifyReplicationSubnetGroupRequest.getReplicationSubnetGroupIdentifier(), REPLICATIONSUBNETGROUPIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(modifyReplicationSubnetGroupRequest.getReplicationSubnetGroupDescription(), REPLICATIONSUBNETGROUPDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(modifyReplicationSubnetGroupRequest.getSubnetIds(), SUBNETIDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

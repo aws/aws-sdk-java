@@ -16,6 +16,7 @@
 package com.amazonaws.codegen.model.intermediate;
 
 import com.amazonaws.codegen.internal.TypeUtils;
+import com.amazonaws.protocol.MarshallingInfo;
 import com.amazonaws.transform.PathMarshallers;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -407,6 +408,10 @@ public class MemberModel extends DocumentationModel {
         this.idempotencyToken = idempotencyToken;
     }
 
+    public boolean getIsBinary() {
+        return http.getIsStreaming() || (http.getIsPayload() && "java.nio.ByteBuffer".equals(variable.getVariableType()));
+    }
+
     /**
      * @return Implementation of {@link com.amazonaws.transform.PathMarshallers.PathMarshaller} to use if this
      * member is bound the the URI.
@@ -425,6 +430,50 @@ public class MemberModel extends DocumentationModel {
             return prefix + ".IDEMPOTENCY";
         } else {
             return prefix + ".NON_GREEDY";
+        }
+    }
+
+    /**
+     * Used for JSON services. Name of the field containing the {@link MarshallingInfo} for
+     * this member.
+     */
+    @JsonIgnore
+    public String getMarshallerBindingFieldName() {
+        return this.name.toUpperCase() + "_BINDING";
+    }
+
+    /**
+     * Currently used only for JSON services.
+     *
+     * @return Marshalling type to use when creating a {@link MarshallingInfo}. Must be a field of {@link
+     * com.amazonaws.protocol.MarshallingType}.
+     */
+    public String getMarshallingType() {
+        if (isList()) {
+            return "LIST";
+        } else if (isMap()) {
+            return "MAP";
+        } else if (!isSimple()) {
+            return "STRUCTURED";
+        } else {
+            return TypeUtils.getMarshallingType(variable.getSimpleType());
+        }
+    }
+
+    /**
+     * Currently used only for JSON services.
+     *
+     * @return The target class a marshalling type is bound to.
+     */
+    public String getMarshallingTargetClass() {
+        if (isList()) {
+            return "List";
+        } else if (isMap()) {
+            return "Map";
+        } else if (!isSimple()) {
+            return "StructuredPojo";
+        } else {
+            return variable.getVariableType();
         }
     }
 

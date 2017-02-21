@@ -12,111 +12,83 @@
  */
 package com.amazonaws.services.cloudsearchdomain.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudsearchdomain.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SearchRequest Marshaller
+ * SearchRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SearchRequestMarshaller implements Marshaller<Request<SearchRequest>, SearchRequest> {
+@SdkInternalApi
+public class SearchRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CURSOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("cursor").build();
+    private static final MarshallingInfo<String> EXPR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("expr").build();
+    private static final MarshallingInfo<String> FACET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("facet").build();
+    private static final MarshallingInfo<String> FILTERQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("fq").build();
+    private static final MarshallingInfo<String> HIGHLIGHT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("highlight").build();
+    private static final MarshallingInfo<Boolean> PARTIAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("partial").build();
+    private static final MarshallingInfo<String> QUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("q").build();
+    private static final MarshallingInfo<String> QUERYOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("q.options").build();
+    private static final MarshallingInfo<String> QUERYPARSER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("q.parser").build();
+    private static final MarshallingInfo<String> RETURN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("return").build();
+    private static final MarshallingInfo<Long> SIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("size").build();
+    private static final MarshallingInfo<String> SORT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("sort").build();
+    private static final MarshallingInfo<Long> START_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("start").build();
+    private static final MarshallingInfo<String> STATS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("stats").build();
 
-    public SearchRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SearchRequestMarshaller instance = new SearchRequestMarshaller();
+
+    public static SearchRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SearchRequest> marshall(SearchRequest searchRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SearchRequest searchRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (searchRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SearchRequest> request = new DefaultRequest<SearchRequest>(searchRequest, "AmazonCloudSearchDomain");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2013-01-01/search?format=sdk&pretty=true";
-
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
-
-        request.setResourcePath(uriResourcePath);
-
-        if (searchRequest.getCursor() != null) {
-            request.addParameter("cursor", StringUtils.fromString(searchRequest.getCursor()));
+        try {
+            protocolMarshaller.marshall(searchRequest.getCursor(), CURSOR_BINDING);
+            protocolMarshaller.marshall(searchRequest.getExpr(), EXPR_BINDING);
+            protocolMarshaller.marshall(searchRequest.getFacet(), FACET_BINDING);
+            protocolMarshaller.marshall(searchRequest.getFilterQuery(), FILTERQUERY_BINDING);
+            protocolMarshaller.marshall(searchRequest.getHighlight(), HIGHLIGHT_BINDING);
+            protocolMarshaller.marshall(searchRequest.getPartial(), PARTIAL_BINDING);
+            protocolMarshaller.marshall(searchRequest.getQuery(), QUERY_BINDING);
+            protocolMarshaller.marshall(searchRequest.getQueryOptions(), QUERYOPTIONS_BINDING);
+            protocolMarshaller.marshall(searchRequest.getQueryParser(), QUERYPARSER_BINDING);
+            protocolMarshaller.marshall(searchRequest.getReturn(), RETURN_BINDING);
+            protocolMarshaller.marshall(searchRequest.getSize(), SIZE_BINDING);
+            protocolMarshaller.marshall(searchRequest.getSort(), SORT_BINDING);
+            protocolMarshaller.marshall(searchRequest.getStart(), START_BINDING);
+            protocolMarshaller.marshall(searchRequest.getStats(), STATS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (searchRequest.getExpr() != null) {
-            request.addParameter("expr", StringUtils.fromString(searchRequest.getExpr()));
-        }
-
-        if (searchRequest.getFacet() != null) {
-            request.addParameter("facet", StringUtils.fromString(searchRequest.getFacet()));
-        }
-
-        if (searchRequest.getFilterQuery() != null) {
-            request.addParameter("fq", StringUtils.fromString(searchRequest.getFilterQuery()));
-        }
-
-        if (searchRequest.getHighlight() != null) {
-            request.addParameter("highlight", StringUtils.fromString(searchRequest.getHighlight()));
-        }
-
-        if (searchRequest.getPartial() != null) {
-            request.addParameter("partial", StringUtils.fromBoolean(searchRequest.getPartial()));
-        }
-
-        if (searchRequest.getQuery() != null) {
-            request.addParameter("q", StringUtils.fromString(searchRequest.getQuery()));
-        }
-
-        if (searchRequest.getQueryOptions() != null) {
-            request.addParameter("q.options", StringUtils.fromString(searchRequest.getQueryOptions()));
-        }
-
-        if (searchRequest.getQueryParser() != null) {
-            request.addParameter("q.parser", StringUtils.fromString(searchRequest.getQueryParser()));
-        }
-
-        if (searchRequest.getReturn() != null) {
-            request.addParameter("return", StringUtils.fromString(searchRequest.getReturn()));
-        }
-
-        if (searchRequest.getSize() != null) {
-            request.addParameter("size", StringUtils.fromLong(searchRequest.getSize()));
-        }
-
-        if (searchRequest.getSort() != null) {
-            request.addParameter("sort", StringUtils.fromString(searchRequest.getSort()));
-        }
-
-        if (searchRequest.getStart() != null) {
-            request.addParameter("start", StringUtils.fromLong(searchRequest.getStart()));
-        }
-
-        if (searchRequest.getStats() != null) {
-            request.addParameter("stats", StringUtils.fromString(searchRequest.getStats()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

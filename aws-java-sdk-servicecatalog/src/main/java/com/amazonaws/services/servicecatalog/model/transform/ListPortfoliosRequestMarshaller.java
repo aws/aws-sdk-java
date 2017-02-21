@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListPortfoliosRequest Marshaller
+ * ListPortfoliosRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListPortfoliosRequestMarshaller implements Marshaller<Request<ListPortfoliosRequest>, ListPortfoliosRequest> {
+@SdkInternalApi
+public class ListPortfoliosRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PageToken").build();
+    private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PageSize").build();
 
-    public ListPortfoliosRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListPortfoliosRequestMarshaller instance = new ListPortfoliosRequestMarshaller();
+
+    public static ListPortfoliosRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListPortfoliosRequest> marshall(ListPortfoliosRequest listPortfoliosRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListPortfoliosRequest listPortfoliosRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listPortfoliosRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPortfoliosRequest> request = new DefaultRequest<ListPortfoliosRequest>(listPortfoliosRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.ListPortfolios");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listPortfoliosRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(listPortfoliosRequest.getAcceptLanguage());
-            }
-            if (listPortfoliosRequest.getPageToken() != null) {
-                jsonGenerator.writeFieldName("PageToken").writeValue(listPortfoliosRequest.getPageToken());
-            }
-            if (listPortfoliosRequest.getPageSize() != null) {
-                jsonGenerator.writeFieldName("PageSize").writeValue(listPortfoliosRequest.getPageSize());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listPortfoliosRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(listPortfoliosRequest.getPageToken(), PAGETOKEN_BINDING);
+            protocolMarshaller.marshall(listPortfoliosRequest.getPageSize(), PAGESIZE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

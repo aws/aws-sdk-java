@@ -12,80 +12,59 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateFunctionCodeRequest Marshaller
+ * UpdateFunctionCodeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateFunctionCodeRequestMarshaller implements Marshaller<Request<UpdateFunctionCodeRequest>, UpdateFunctionCodeRequest> {
+@SdkInternalApi
+public class UpdateFunctionCodeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> ZIPFILE_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ZipFile").build();
+    private static final MarshallingInfo<String> S3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("S3Bucket").build();
+    private static final MarshallingInfo<String> S3KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("S3Key").build();
+    private static final MarshallingInfo<String> S3OBJECTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3ObjectVersion").build();
+    private static final MarshallingInfo<Boolean> PUBLISH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Publish").build();
 
-    public UpdateFunctionCodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateFunctionCodeRequestMarshaller instance = new UpdateFunctionCodeRequestMarshaller();
+
+    public static UpdateFunctionCodeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateFunctionCodeRequest> marshall(UpdateFunctionCodeRequest updateFunctionCodeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateFunctionCodeRequest updateFunctionCodeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateFunctionCodeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateFunctionCodeRequest> request = new DefaultRequest<UpdateFunctionCodeRequest>(updateFunctionCodeRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/code";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName",
-                updateFunctionCodeRequest.getFunctionName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (updateFunctionCodeRequest.getZipFile() != null) {
-                jsonGenerator.writeFieldName("ZipFile").writeValue(updateFunctionCodeRequest.getZipFile());
-            }
-            if (updateFunctionCodeRequest.getS3Bucket() != null) {
-                jsonGenerator.writeFieldName("S3Bucket").writeValue(updateFunctionCodeRequest.getS3Bucket());
-            }
-            if (updateFunctionCodeRequest.getS3Key() != null) {
-                jsonGenerator.writeFieldName("S3Key").writeValue(updateFunctionCodeRequest.getS3Key());
-            }
-            if (updateFunctionCodeRequest.getS3ObjectVersion() != null) {
-                jsonGenerator.writeFieldName("S3ObjectVersion").writeValue(updateFunctionCodeRequest.getS3ObjectVersion());
-            }
-            if (updateFunctionCodeRequest.getPublish() != null) {
-                jsonGenerator.writeFieldName("Publish").writeValue(updateFunctionCodeRequest.getPublish());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getZipFile(), ZIPFILE_BINDING);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getS3Bucket(), S3BUCKET_BINDING);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getS3Key(), S3KEY_BINDING);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getS3ObjectVersion(), S3OBJECTVERSION_BINDING);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getPublish(), PUBLISH_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

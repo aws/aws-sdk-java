@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteImportedKeyMaterialRequest Marshaller
+ * DeleteImportedKeyMaterialRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteImportedKeyMaterialRequestMarshaller implements Marshaller<Request<DeleteImportedKeyMaterialRequest>, DeleteImportedKeyMaterialRequest> {
+@SdkInternalApi
+public class DeleteImportedKeyMaterialRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
 
-    public DeleteImportedKeyMaterialRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteImportedKeyMaterialRequestMarshaller instance = new DeleteImportedKeyMaterialRequestMarshaller();
+
+    public static DeleteImportedKeyMaterialRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteImportedKeyMaterialRequest> marshall(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteImportedKeyMaterialRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteImportedKeyMaterialRequest> request = new DefaultRequest<DeleteImportedKeyMaterialRequest>(deleteImportedKeyMaterialRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.DeleteImportedKeyMaterial");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteImportedKeyMaterialRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(deleteImportedKeyMaterialRequest.getKeyId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteImportedKeyMaterialRequest.getKeyId(), KEYID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateStackRequest Marshaller
+ * UpdateStackRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateStackRequest>, UpdateStackRequest> {
+@SdkInternalApi
+public class UpdateStackRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
-    public UpdateStackRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateStackRequestMarshaller instance = new UpdateStackRequestMarshaller();
+
+    public static UpdateStackRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateStackRequest> marshall(UpdateStackRequest updateStackRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateStackRequest updateStackRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateStackRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateStackRequest> request = new DefaultRequest<UpdateStackRequest>(updateStackRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.UpdateStack");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateStackRequest.getDisplayName() != null) {
-                jsonGenerator.writeFieldName("DisplayName").writeValue(updateStackRequest.getDisplayName());
-            }
-            if (updateStackRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(updateStackRequest.getDescription());
-            }
-            if (updateStackRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(updateStackRequest.getName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateStackRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

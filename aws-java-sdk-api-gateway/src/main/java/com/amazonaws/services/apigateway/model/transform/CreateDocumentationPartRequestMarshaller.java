@@ -12,72 +12,50 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDocumentationPartRequest Marshaller
+ * CreateDocumentationPartRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDocumentationPartRequestMarshaller implements Marshaller<Request<CreateDocumentationPartRequest>, CreateDocumentationPartRequest> {
+@SdkInternalApi
+public class CreateDocumentationPartRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<StructuredPojo> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
+    private static final MarshallingInfo<String> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("properties").build();
 
-    public CreateDocumentationPartRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDocumentationPartRequestMarshaller instance = new CreateDocumentationPartRequestMarshaller();
+
+    public static CreateDocumentationPartRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDocumentationPartRequest> marshall(CreateDocumentationPartRequest createDocumentationPartRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDocumentationPartRequest createDocumentationPartRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDocumentationPartRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDocumentationPartRequest> request = new DefaultRequest<CreateDocumentationPartRequest>(createDocumentationPartRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis/{restapi_id}/documentation/parts";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
-                createDocumentationPartRequest.getRestApiId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createDocumentationPartRequest.getLocation() != null) {
-                jsonGenerator.writeFieldName("location");
-                DocumentationPartLocationJsonMarshaller.getInstance().marshall(createDocumentationPartRequest.getLocation(), jsonGenerator);
-            }
-            if (createDocumentationPartRequest.getProperties() != null) {
-                jsonGenerator.writeFieldName("properties").writeValue(createDocumentationPartRequest.getProperties());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDocumentationPartRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(createDocumentationPartRequest.getLocation(), LOCATION_BINDING);
+            protocolMarshaller.marshall(createDocumentationPartRequest.getProperties(), PROPERTIES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

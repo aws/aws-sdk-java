@@ -14,12 +14,14 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * A structure to relate notification and a list of subscribers who belong to the notification.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotificationWithSubscribers implements Serializable, Cloneable {
+public class NotificationWithSubscribers implements Serializable, Cloneable, StructuredPojo {
 
     private Notification notification;
 
@@ -160,5 +162,11 @@ public class NotificationWithSubscribers implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.budgets.model.transform.NotificationWithSubscribersMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

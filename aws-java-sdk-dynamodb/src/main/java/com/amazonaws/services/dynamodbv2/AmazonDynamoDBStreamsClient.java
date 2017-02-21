@@ -341,7 +341,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStreamRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStreamRequest));
+                request = new DescribeStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -428,7 +428,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRecordsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRecordsRequest));
+                request = new GetRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -502,7 +502,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetShardIteratorRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getShardIteratorRequest));
+                request = new GetShardIteratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getShardIteratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -555,7 +555,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStreamsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamsRequest));
+                request = new ListStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

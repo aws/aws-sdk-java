@@ -12,97 +12,55 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * EncryptRequest Marshaller
+ * EncryptRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EncryptRequestMarshaller implements Marshaller<Request<EncryptRequest>, EncryptRequest> {
+@SdkInternalApi
+public class EncryptRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> PLAINTEXT_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Plaintext").build();
+    private static final MarshallingInfo<Map> ENCRYPTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionContext").build();
+    private static final MarshallingInfo<List> GRANTTOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GrantTokens").build();
 
-    public EncryptRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final EncryptRequestMarshaller instance = new EncryptRequestMarshaller();
+
+    public static EncryptRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<EncryptRequest> marshall(EncryptRequest encryptRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(EncryptRequest encryptRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (encryptRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<EncryptRequest> request = new DefaultRequest<EncryptRequest>(encryptRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.Encrypt");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (encryptRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(encryptRequest.getKeyId());
-            }
-            if (encryptRequest.getPlaintext() != null) {
-                jsonGenerator.writeFieldName("Plaintext").writeValue(encryptRequest.getPlaintext());
-            }
-
-            com.amazonaws.internal.SdkInternalMap<String, String> encryptionContextMap = (com.amazonaws.internal.SdkInternalMap<String, String>) encryptRequest
-                    .getEncryptionContext();
-            if (!encryptionContextMap.isEmpty() || !encryptionContextMap.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("EncryptionContext");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> encryptionContextMapValue : encryptionContextMap.entrySet()) {
-                    if (encryptionContextMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(encryptionContextMapValue.getKey());
-
-                        jsonGenerator.writeValue(encryptionContextMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> grantTokensList = (com.amazonaws.internal.SdkInternalList<String>) encryptRequest.getGrantTokens();
-            if (!grantTokensList.isEmpty() || !grantTokensList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("GrantTokens");
-                jsonGenerator.writeStartArray();
-                for (String grantTokensListValue : grantTokensList) {
-                    if (grantTokensListValue != null) {
-                        jsonGenerator.writeValue(grantTokensListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(encryptRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(encryptRequest.getPlaintext(), PLAINTEXT_BINDING);
+            protocolMarshaller.marshall(encryptRequest.getEncryptionContext(), ENCRYPTIONCONTEXT_BINDING);
+            protocolMarshaller.marshall(encryptRequest.getGrantTokens(), GRANTTOKENS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

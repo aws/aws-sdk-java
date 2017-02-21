@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.snowball.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.snowball.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetJobUnlockCodeRequest Marshaller
+ * GetJobUnlockCodeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetJobUnlockCodeRequestMarshaller implements Marshaller<Request<GetJobUnlockCodeRequest>, GetJobUnlockCodeRequest> {
+@SdkInternalApi
+public class GetJobUnlockCodeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JobId").build();
 
-    public GetJobUnlockCodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetJobUnlockCodeRequestMarshaller instance = new GetJobUnlockCodeRequestMarshaller();
+
+    public static GetJobUnlockCodeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetJobUnlockCodeRequest> marshall(GetJobUnlockCodeRequest getJobUnlockCodeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetJobUnlockCodeRequest getJobUnlockCodeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getJobUnlockCodeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetJobUnlockCodeRequest> request = new DefaultRequest<GetJobUnlockCodeRequest>(getJobUnlockCodeRequest, "AmazonSnowball");
-        request.addHeader("X-Amz-Target", "AWSIESnowballJobManagementService.GetJobUnlockCode");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getJobUnlockCodeRequest.getJobId() != null) {
-                jsonGenerator.writeFieldName("JobId").writeValue(getJobUnlockCodeRequest.getJobId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getJobUnlockCodeRequest.getJobId(), JOBID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

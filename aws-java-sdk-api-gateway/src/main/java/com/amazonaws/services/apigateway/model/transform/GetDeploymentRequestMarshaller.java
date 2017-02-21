@@ -12,53 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDeploymentRequest Marshaller
+ * GetDeploymentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDeploymentRequestMarshaller implements Marshaller<Request<GetDeploymentRequest>, GetDeploymentRequest> {
+@SdkInternalApi
+public class GetDeploymentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("deployment_id").build();
 
-    public GetDeploymentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDeploymentRequestMarshaller instance = new GetDeploymentRequestMarshaller();
+
+    public static GetDeploymentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDeploymentRequest> marshall(GetDeploymentRequest getDeploymentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDeploymentRequest getDeploymentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDeploymentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDeploymentRequest> request = new DefaultRequest<GetDeploymentRequest>(getDeploymentRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/restapis/{restapi_id}/deployments/{deployment_id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getDeploymentRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "deployment_id", getDeploymentRequest.getDeploymentId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getDeploymentRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(getDeploymentRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

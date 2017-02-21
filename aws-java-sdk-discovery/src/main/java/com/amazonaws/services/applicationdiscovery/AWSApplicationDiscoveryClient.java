@@ -368,7 +368,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateConfigurationItemsToApplicationRequestMarshaller(protocolFactory).marshall(super
+                request = new AssociateConfigurationItemsToApplicationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(associateConfigurationItemsToApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -420,7 +420,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
+                request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -473,7 +473,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
+                request = new CreateTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -523,7 +523,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationsRequest));
+                request = new DeleteApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -576,7 +576,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
+                request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -627,7 +627,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAgentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAgentsRequest));
+                request = new DescribeAgentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -685,7 +685,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigurationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigurationsRequest));
+                request = new DescribeConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -738,7 +738,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeExportConfigurationsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeExportConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeExportConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -793,7 +793,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
+                request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -844,7 +844,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateConfigurationItemsFromApplicationRequestMarshaller(protocolFactory).marshall(super
+                request = new DisassociateConfigurationItemsFromApplicationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(disassociateConfigurationItemsFromApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -901,7 +901,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ExportConfigurationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportConfigurationsRequest));
+                request = new ExportConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -951,7 +951,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDiscoverySummaryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiscoverySummaryRequest));
+                request = new GetDiscoverySummaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiscoverySummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1004,7 +1004,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListConfigurationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConfigurationsRequest));
+                request = new ListConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1054,7 +1054,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListServerNeighborsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServerNeighborsRequest));
+                request = new ListServerNeighborsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServerNeighborsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1104,7 +1104,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartDataCollectionByAgentIdsRequestMarshaller(protocolFactory).marshall(super
+                request = new StartDataCollectionByAgentIdsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(startDataCollectionByAgentIdsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1156,7 +1156,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopDataCollectionByAgentIdsRequestMarshaller(protocolFactory).marshall(super
+                request = new StopDataCollectionByAgentIdsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(stopDataCollectionByAgentIdsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1208,7 +1208,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
+                request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

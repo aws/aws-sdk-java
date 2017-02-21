@@ -12,58 +12,47 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetFunctionRequest Marshaller
+ * GetFunctionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetFunctionRequestMarshaller implements Marshaller<Request<GetFunctionRequest>, GetFunctionRequest> {
+@SdkInternalApi
+public class GetFunctionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
 
-    public GetFunctionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetFunctionRequestMarshaller instance = new GetFunctionRequestMarshaller();
+
+    public static GetFunctionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetFunctionRequest> marshall(GetFunctionRequest getFunctionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetFunctionRequest getFunctionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getFunctionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetFunctionRequest> request = new DefaultRequest<GetFunctionRequest>(getFunctionRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", getFunctionRequest.getFunctionName());
-        request.setResourcePath(uriResourcePath);
-
-        if (getFunctionRequest.getQualifier() != null) {
-            request.addParameter("Qualifier", StringUtils.fromString(getFunctionRequest.getQualifier()));
+        try {
+            protocolMarshaller.marshall(getFunctionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(getFunctionRequest.getQualifier(), QUALIFIER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

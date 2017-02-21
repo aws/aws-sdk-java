@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribePermissionsRequest Marshaller
+ * DescribePermissionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribePermissionsRequestMarshaller implements Marshaller<Request<DescribePermissionsRequest>, DescribePermissionsRequest> {
+@SdkInternalApi
+public class DescribePermissionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IAMUSERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamUserArn").build();
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
 
-    public DescribePermissionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribePermissionsRequestMarshaller instance = new DescribePermissionsRequestMarshaller();
+
+    public static DescribePermissionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribePermissionsRequest> marshall(DescribePermissionsRequest describePermissionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribePermissionsRequest describePermissionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describePermissionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribePermissionsRequest> request = new DefaultRequest<DescribePermissionsRequest>(describePermissionsRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribePermissions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describePermissionsRequest.getIamUserArn() != null) {
-                jsonGenerator.writeFieldName("IamUserArn").writeValue(describePermissionsRequest.getIamUserArn());
-            }
-            if (describePermissionsRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(describePermissionsRequest.getStackId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describePermissionsRequest.getIamUserArn(), IAMUSERARN_BINDING);
+            protocolMarshaller.marshall(describePermissionsRequest.getStackId(), STACKID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

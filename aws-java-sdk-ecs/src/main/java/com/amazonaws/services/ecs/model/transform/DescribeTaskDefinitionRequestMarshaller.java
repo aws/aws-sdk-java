@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTaskDefinitionRequest Marshaller
+ * DescribeTaskDefinitionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTaskDefinitionRequestMarshaller implements Marshaller<Request<DescribeTaskDefinitionRequest>, DescribeTaskDefinitionRequest> {
+@SdkInternalApi
+public class DescribeTaskDefinitionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TASKDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskDefinition").build();
 
-    public DescribeTaskDefinitionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTaskDefinitionRequestMarshaller instance = new DescribeTaskDefinitionRequestMarshaller();
+
+    public static DescribeTaskDefinitionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTaskDefinitionRequest> marshall(DescribeTaskDefinitionRequest describeTaskDefinitionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTaskDefinitionRequest describeTaskDefinitionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTaskDefinitionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTaskDefinitionRequest> request = new DefaultRequest<DescribeTaskDefinitionRequest>(describeTaskDefinitionRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeTaskDefinitionRequest.getTaskDefinition() != null) {
-                jsonGenerator.writeFieldName("taskDefinition").writeValue(describeTaskDefinitionRequest.getTaskDefinition());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeTaskDefinitionRequest.getTaskDefinition(), TASKDEFINITION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

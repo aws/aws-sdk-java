@@ -14,6 +14,8 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchListObjectChildrenResponse implements Serializable, Cloneable {
+public class BatchListObjectChildrenResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -197,5 +199,11 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable 
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchListObjectChildrenResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -15,58 +15,47 @@ package com.amazonaws.services.cloudsearchdomain.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudsearchdomain.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UploadDocumentsRequest Marshaller
+ * UploadDocumentsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UploadDocumentsRequestMarshaller implements Marshaller<Request<UploadDocumentsRequest>, UploadDocumentsRequest> {
+@SdkInternalApi
+public class UploadDocumentsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<java.io.InputStream> DOCUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STREAM)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
+    private static final MarshallingInfo<String> CONTENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Content-Type").build();
+    private static final MarshallingInfo<Long> CONTENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("Content-Length").build();
 
-    public UploadDocumentsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UploadDocumentsRequestMarshaller instance = new UploadDocumentsRequestMarshaller();
+
+    public static UploadDocumentsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UploadDocumentsRequest> marshall(UploadDocumentsRequest uploadDocumentsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UploadDocumentsRequest uploadDocumentsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (uploadDocumentsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UploadDocumentsRequest> request = new DefaultRequest<UploadDocumentsRequest>(uploadDocumentsRequest, "AmazonCloudSearchDomain");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (uploadDocumentsRequest.getContentType() != null) {
-            request.addHeader("Content-Type", StringUtils.fromString(uploadDocumentsRequest.getContentType()));
+        try {
+            protocolMarshaller.marshall(uploadDocumentsRequest.getDocuments(), DOCUMENTS_BINDING);
+            protocolMarshaller.marshall(uploadDocumentsRequest.getContentType(), CONTENTTYPE_BINDING);
+            protocolMarshaller.marshall(uploadDocumentsRequest.getContentLength(), CONTENTLENGTH_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (uploadDocumentsRequest.getContentLength() != null) {
-            request.addHeader("Content-Length", StringUtils.fromLong(uploadDocumentsRequest.getContentLength()));
-        }
-
-        String uriResourcePath = "/2013-01-01/documents/batch?format=sdk";
-
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(uploadDocumentsRequest.getDocuments());
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

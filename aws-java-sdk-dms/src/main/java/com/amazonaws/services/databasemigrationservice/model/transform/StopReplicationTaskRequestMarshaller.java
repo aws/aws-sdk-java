@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StopReplicationTaskRequest Marshaller
+ * StopReplicationTaskRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StopReplicationTaskRequestMarshaller implements Marshaller<Request<StopReplicationTaskRequest>, StopReplicationTaskRequest> {
+@SdkInternalApi
+public class StopReplicationTaskRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPLICATIONTASKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskArn").build();
 
-    public StopReplicationTaskRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StopReplicationTaskRequestMarshaller instance = new StopReplicationTaskRequestMarshaller();
+
+    public static StopReplicationTaskRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StopReplicationTaskRequest> marshall(StopReplicationTaskRequest stopReplicationTaskRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StopReplicationTaskRequest stopReplicationTaskRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (stopReplicationTaskRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StopReplicationTaskRequest> request = new DefaultRequest<StopReplicationTaskRequest>(stopReplicationTaskRequest, "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.StopReplicationTask");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (stopReplicationTaskRequest.getReplicationTaskArn() != null) {
-                jsonGenerator.writeFieldName("ReplicationTaskArn").writeValue(stopReplicationTaskRequest.getReplicationTaskArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(stopReplicationTaskRequest.getReplicationTaskArn(), REPLICATIONTASKARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListIdentitiesRequest Marshaller
+ * ListIdentitiesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListIdentitiesRequestMarshaller implements Marshaller<Request<ListIdentitiesRequest>, ListIdentitiesRequest> {
+@SdkInternalApi
+public class ListIdentitiesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Boolean> HIDEDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HideDisabled").build();
 
-    public ListIdentitiesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListIdentitiesRequestMarshaller instance = new ListIdentitiesRequestMarshaller();
+
+    public static ListIdentitiesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListIdentitiesRequest> marshall(ListIdentitiesRequest listIdentitiesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListIdentitiesRequest listIdentitiesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listIdentitiesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListIdentitiesRequest> request = new DefaultRequest<ListIdentitiesRequest>(listIdentitiesRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.ListIdentities");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listIdentitiesRequest.getIdentityPoolId() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(listIdentitiesRequest.getIdentityPoolId());
-            }
-            if (listIdentitiesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(listIdentitiesRequest.getMaxResults());
-            }
-            if (listIdentitiesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listIdentitiesRequest.getNextToken());
-            }
-            if (listIdentitiesRequest.getHideDisabled() != null) {
-                jsonGenerator.writeFieldName("HideDisabled").writeValue(listIdentitiesRequest.getHideDisabled());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listIdentitiesRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(listIdentitiesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listIdentitiesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listIdentitiesRequest.getHideDisabled(), HIDEDISABLED_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

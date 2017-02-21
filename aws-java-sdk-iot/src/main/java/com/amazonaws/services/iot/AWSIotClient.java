@@ -362,7 +362,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AcceptCertificateTransferRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptCertificateTransferRequest));
+                request = new AcceptCertificateTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(acceptCertificateTransferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -418,7 +419,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachPrincipalPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachPrincipalPolicyRequest));
+                request = new AttachPrincipalPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachPrincipalPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -472,7 +473,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachThingPrincipalRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachThingPrincipalRequest));
+                request = new AttachThingPrincipalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachThingPrincipalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -537,7 +538,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelCertificateTransferRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelCertificateTransferRequest));
+                request = new CancelCertificateTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelCertificateTransferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -633,7 +635,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCertificateFromCsrRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCertificateFromCsrRequest));
+                request = new CreateCertificateFromCsrRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCertificateFromCsrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -689,7 +692,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateKeysAndCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeysAndCertificateRequest));
+                request = new CreateKeysAndCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createKeysAndCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -749,7 +753,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPolicyRequest));
+                request = new CreatePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -812,7 +816,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePolicyVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPolicyVersionRequest));
+                request = new CreatePolicyVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -867,7 +871,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateThingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThingRequest));
+                request = new CreateThingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -920,7 +924,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateThingTypeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThingTypeRequest));
+                request = new CreateThingTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThingTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -972,7 +976,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTopicRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTopicRuleRequest));
+                request = new CreateTopicRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1027,7 +1031,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCACertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCACertificateRequest));
+                request = new DeleteCACertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCACertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1089,7 +1093,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
+                request = new DeleteCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1155,7 +1159,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePolicyRequest));
+                request = new DeletePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1212,7 +1216,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePolicyVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePolicyVersionRequest));
+                request = new DeletePolicyVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1263,7 +1267,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRegistrationCodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRegistrationCodeRequest));
+                request = new DeleteRegistrationCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRegistrationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1320,7 +1324,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteThingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingRequest));
+                request = new DeleteThingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1376,7 +1380,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteThingTypeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingTypeRequest));
+                request = new DeleteThingTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1425,7 +1429,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTopicRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTopicRuleRequest));
+                request = new DeleteTopicRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1478,7 +1482,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeprecateThingTypeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deprecateThingTypeRequest));
+                request = new DeprecateThingTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deprecateThingTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1531,7 +1535,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCACertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCACertificateRequest));
+                request = new DescribeCACertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCACertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1585,7 +1589,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificateRequest));
+                request = new DescribeCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1632,7 +1636,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEndpointRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointRequest));
+                request = new DescribeEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1685,7 +1689,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeThingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThingRequest));
+                request = new DescribeThingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1738,7 +1742,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeThingTypeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThingTypeRequest));
+                request = new DescribeThingTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThingTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1791,7 +1795,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachPrincipalPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachPrincipalPolicyRequest));
+                request = new DetachPrincipalPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachPrincipalPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1845,7 +1849,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachThingPrincipalRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachThingPrincipalRequest));
+                request = new DetachThingPrincipalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachThingPrincipalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1894,7 +1898,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableTopicRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableTopicRuleRequest));
+                request = new DisableTopicRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1943,7 +1947,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableTopicRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableTopicRuleRequest));
+                request = new EnableTopicRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1990,7 +1994,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetLoggingOptionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLoggingOptionsRequest));
+                request = new GetLoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2043,7 +2047,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
+                request = new GetPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2096,7 +2100,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPolicyVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyVersionRequest));
+                request = new GetPolicyVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2147,7 +2151,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRegistrationCodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegistrationCodeRequest));
+                request = new GetRegistrationCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegistrationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2196,7 +2200,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTopicRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTopicRuleRequest));
+                request = new GetTopicRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2251,7 +2255,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCACertificatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCACertificatesRequest));
+                request = new ListCACertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCACertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2306,7 +2310,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCertificatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesRequest));
+                request = new ListCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2357,7 +2361,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCertificatesByCARequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesByCARequest));
+                request = new ListCertificatesByCARequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesByCARequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2408,7 +2412,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListOutgoingCertificatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOutgoingCertificatesRequest));
+                request = new ListOutgoingCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listOutgoingCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2460,7 +2465,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPoliciesRequest));
+                request = new ListPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2513,7 +2518,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPolicyPrincipalsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPolicyPrincipalsRequest));
+                request = new ListPolicyPrincipalsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPolicyPrincipalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2566,7 +2571,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPolicyVersionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPolicyVersionsRequest));
+                request = new ListPolicyVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPolicyVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2622,7 +2627,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPrincipalPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPrincipalPoliciesRequest));
+                request = new ListPrincipalPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPrincipalPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2676,7 +2681,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPrincipalThingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPrincipalThingsRequest));
+                request = new ListPrincipalThingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPrincipalThingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2729,7 +2734,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListThingPrincipalsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThingPrincipalsRequest));
+                request = new ListThingPrincipalsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThingPrincipalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2780,7 +2785,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListThingTypesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThingTypesRequest));
+                request = new ListThingTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThingTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2833,7 +2838,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListThingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThingsRequest));
+                request = new ListThingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2880,7 +2885,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTopicRulesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTopicRulesRequest));
+                request = new ListTopicRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTopicRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2943,7 +2948,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterCACertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerCACertificateRequest));
+                request = new RegisterCACertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerCACertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3006,7 +3011,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerCertificateRequest));
+                request = new RegisterCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3069,7 +3074,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RejectCertificateTransferRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectCertificateTransferRequest));
+                request = new RejectCertificateTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(rejectCertificateTransferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3123,7 +3129,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReplaceTopicRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(replaceTopicRuleRequest));
+                request = new ReplaceTopicRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(replaceTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3178,7 +3184,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetDefaultPolicyVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setDefaultPolicyVersionRequest));
+                request = new SetDefaultPolicyVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(setDefaultPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3226,7 +3233,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetLoggingOptionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setLoggingOptionsRequest));
+                request = new SetLoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3298,7 +3305,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TransferCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(transferCertificateRequest));
+                request = new TransferCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transferCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3351,7 +3358,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateCACertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCACertificateRequest));
+                request = new UpdateCACertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCACertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3413,7 +3420,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCertificateRequest));
+                request = new UpdateCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3469,7 +3476,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateThingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingRequest));
+                request = new UpdateThingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

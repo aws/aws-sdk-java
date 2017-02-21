@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StopStackRequest Marshaller
+ * StopStackRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StopStackRequestMarshaller implements Marshaller<Request<StopStackRequest>, StopStackRequest> {
+@SdkInternalApi
+public class StopStackRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
 
-    public StopStackRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StopStackRequestMarshaller instance = new StopStackRequestMarshaller();
+
+    public static StopStackRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StopStackRequest> marshall(StopStackRequest stopStackRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StopStackRequest stopStackRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (stopStackRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StopStackRequest> request = new DefaultRequest<StopStackRequest>(stopStackRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.StopStack");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (stopStackRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(stopStackRequest.getStackId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(stopStackRequest.getStackId(), STACKID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

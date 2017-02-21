@@ -237,4 +237,5 @@ public class History extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

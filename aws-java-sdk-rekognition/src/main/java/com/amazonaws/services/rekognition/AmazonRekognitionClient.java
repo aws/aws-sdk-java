@@ -359,7 +359,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CompareFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(compareFacesRequest));
+                request = new CompareFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(compareFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -423,7 +423,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCollectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCollectionRequest));
+                request = new CreateCollectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -480,7 +480,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCollectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCollectionRequest));
+                request = new DeleteCollectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -537,7 +537,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFacesRequest));
+                request = new DeleteFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -614,7 +614,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetectFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectFacesRequest));
+                request = new DetectFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -722,7 +722,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetectLabelsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectLabelsRequest));
+                request = new DetectLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectLabelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -808,7 +808,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new IndexFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(indexFacesRequest));
+                request = new IndexFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(indexFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -870,7 +870,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCollectionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCollectionsRequest));
+                request = new ListCollectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCollectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -930,7 +930,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFacesRequest));
+                request = new ListFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1002,7 +1002,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFacesRequest));
+                request = new SearchFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1085,7 +1085,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchFacesByImageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFacesByImageRequest));
+                request = new SearchFacesByImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFacesByImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

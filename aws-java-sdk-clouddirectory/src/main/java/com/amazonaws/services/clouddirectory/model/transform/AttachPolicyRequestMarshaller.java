@@ -12,77 +12,50 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AttachPolicyRequest Marshaller
+ * AttachPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttachPolicyRequestMarshaller implements Marshaller<Request<AttachPolicyRequest>, AttachPolicyRequest> {
+@SdkInternalApi
+public class AttachPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
+    private static final MarshallingInfo<StructuredPojo> POLICYREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyReference").build();
+    private static final MarshallingInfo<StructuredPojo> OBJECTREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObjectReference").build();
 
-    public AttachPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AttachPolicyRequestMarshaller instance = new AttachPolicyRequestMarshaller();
+
+    public static AttachPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AttachPolicyRequest> marshall(AttachPolicyRequest attachPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AttachPolicyRequest attachPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (attachPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AttachPolicyRequest> request = new DefaultRequest<AttachPolicyRequest>(attachPolicyRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (attachPolicyRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(attachPolicyRequest.getDirectoryArn()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/policy/attach";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (attachPolicyRequest.getPolicyReference() != null) {
-                jsonGenerator.writeFieldName("PolicyReference");
-                ObjectReferenceJsonMarshaller.getInstance().marshall(attachPolicyRequest.getPolicyReference(), jsonGenerator);
-            }
-            if (attachPolicyRequest.getObjectReference() != null) {
-                jsonGenerator.writeFieldName("ObjectReference");
-                ObjectReferenceJsonMarshaller.getInstance().marshall(attachPolicyRequest.getObjectReference(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(attachPolicyRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+            protocolMarshaller.marshall(attachPolicyRequest.getPolicyReference(), POLICYREFERENCE_BINDING);
+            protocolMarshaller.marshall(attachPolicyRequest.getObjectReference(), OBJECTREFERENCE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

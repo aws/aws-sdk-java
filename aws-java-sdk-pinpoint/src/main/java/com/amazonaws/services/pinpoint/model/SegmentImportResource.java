@@ -14,9 +14,11 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SegmentImportResource implements Serializable, Cloneable {
+public class SegmentImportResource implements Serializable, Cloneable, StructuredPojo {
 
     /** A unique, custom ID assigned to the IAM role that restricts who can assume the role. */
     private String externalId;
@@ -311,5 +313,11 @@ public class SegmentImportResource implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.SegmentImportResourceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

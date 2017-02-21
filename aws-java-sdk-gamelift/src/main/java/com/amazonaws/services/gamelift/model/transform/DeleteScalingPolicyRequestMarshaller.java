@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteScalingPolicyRequest Marshaller
+ * DeleteScalingPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteScalingPolicyRequestMarshaller implements Marshaller<Request<DeleteScalingPolicyRequest>, DeleteScalingPolicyRequest> {
+@SdkInternalApi
+public class DeleteScalingPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> FLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetId").build();
 
-    public DeleteScalingPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteScalingPolicyRequestMarshaller instance = new DeleteScalingPolicyRequestMarshaller();
+
+    public static DeleteScalingPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteScalingPolicyRequest> marshall(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteScalingPolicyRequest deleteScalingPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteScalingPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteScalingPolicyRequest> request = new DefaultRequest<DeleteScalingPolicyRequest>(deleteScalingPolicyRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.DeleteScalingPolicy");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteScalingPolicyRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(deleteScalingPolicyRequest.getName());
-            }
-            if (deleteScalingPolicyRequest.getFleetId() != null) {
-                jsonGenerator.writeFieldName("FleetId").writeValue(deleteScalingPolicyRequest.getFleetId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteScalingPolicyRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(deleteScalingPolicyRequest.getFleetId(), FLEETID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

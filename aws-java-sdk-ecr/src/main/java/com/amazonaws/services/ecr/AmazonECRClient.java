@@ -344,7 +344,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchCheckLayerAvailabilityRequestMarshaller(protocolFactory).marshall(super
+                request = new BatchCheckLayerAvailabilityRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(batchCheckLayerAvailabilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -405,7 +405,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchDeleteImageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteImageRequest));
+                request = new BatchDeleteImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -455,7 +455,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetImageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetImageRequest));
+                request = new BatchGetImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -523,7 +523,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CompleteLayerUploadRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(completeLayerUploadRequest));
+                request = new CompleteLayerUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(completeLayerUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -576,7 +576,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateRepositoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRepositoryRequest));
+                request = new CreateRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -629,7 +629,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRepositoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryRequest));
+                request = new DeleteRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -680,7 +680,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRepositoryPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryPolicyRequest));
+                request = new DeleteRepositoryPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -739,7 +739,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeImagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImagesRequest));
+                request = new DescribeImagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -788,7 +788,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRepositoriesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRepositoriesRequest));
+                request = new DescribeRepositoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -841,7 +841,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAuthorizationTokenRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAuthorizationTokenRequest));
+                request = new GetAuthorizationTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAuthorizationTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -903,7 +903,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDownloadUrlForLayerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDownloadUrlForLayerRequest));
+                request = new GetDownloadUrlForLayerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDownloadUrlForLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -955,7 +955,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRepositoryPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryPolicyRequest));
+                request = new GetRepositoryPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1010,7 +1010,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InitiateLayerUploadRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateLayerUploadRequest));
+                request = new InitiateLayerUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateLayerUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1065,7 +1065,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListImagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImagesRequest));
+                request = new ListImagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1130,7 +1130,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutImageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putImageRequest));
+                request = new PutImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1179,7 +1179,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetRepositoryPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setRepositoryPolicyRequest));
+                request = new SetRepositoryPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setRepositoryPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1244,7 +1244,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadLayerPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadLayerPartRequest));
+                request = new UploadLayerPartRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadLayerPartRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.kinesisfirehose.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesisfirehose.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeDeliveryStreamRequest Marshaller
+ * DescribeDeliveryStreamRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeDeliveryStreamRequestMarshaller implements Marshaller<Request<DescribeDeliveryStreamRequest>, DescribeDeliveryStreamRequest> {
+@SdkInternalApi
+public class DescribeDeliveryStreamRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DELIVERYSTREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamName").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> EXCLUSIVESTARTDESTINATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusiveStartDestinationId").build();
 
-    public DescribeDeliveryStreamRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeDeliveryStreamRequestMarshaller instance = new DescribeDeliveryStreamRequestMarshaller();
+
+    public static DescribeDeliveryStreamRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeDeliveryStreamRequest> marshall(DescribeDeliveryStreamRequest describeDeliveryStreamRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeDeliveryStreamRequest describeDeliveryStreamRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeDeliveryStreamRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeDeliveryStreamRequest> request = new DefaultRequest<DescribeDeliveryStreamRequest>(describeDeliveryStreamRequest,
-                "AmazonKinesisFirehose");
-        request.addHeader("X-Amz-Target", "Firehose_20150804.DescribeDeliveryStream");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeDeliveryStreamRequest.getDeliveryStreamName() != null) {
-                jsonGenerator.writeFieldName("DeliveryStreamName").writeValue(describeDeliveryStreamRequest.getDeliveryStreamName());
-            }
-            if (describeDeliveryStreamRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeDeliveryStreamRequest.getLimit());
-            }
-            if (describeDeliveryStreamRequest.getExclusiveStartDestinationId() != null) {
-                jsonGenerator.writeFieldName("ExclusiveStartDestinationId").writeValue(describeDeliveryStreamRequest.getExclusiveStartDestinationId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeDeliveryStreamRequest.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
+            protocolMarshaller.marshall(describeDeliveryStreamRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(describeDeliveryStreamRequest.getExclusiveStartDestinationId(), EXCLUSIVESTARTDESTINATIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

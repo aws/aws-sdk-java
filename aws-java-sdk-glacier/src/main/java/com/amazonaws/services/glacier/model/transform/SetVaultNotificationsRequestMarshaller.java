@@ -12,86 +12,50 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
-import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetVaultNotificationsRequest Marshaller
+ * SetVaultNotificationsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetVaultNotificationsRequestMarshaller implements Marshaller<Request<SetVaultNotificationsRequest>, SetVaultNotificationsRequest> {
+@SdkInternalApi
+public class SetVaultNotificationsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<StructuredPojo> VAULTNOTIFICATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
-    public SetVaultNotificationsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetVaultNotificationsRequestMarshaller instance = new SetVaultNotificationsRequestMarshaller();
+
+    public static SetVaultNotificationsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetVaultNotificationsRequest> marshall(SetVaultNotificationsRequest setVaultNotificationsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetVaultNotificationsRequest setVaultNotificationsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setVaultNotificationsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetVaultNotificationsRequest> request = new DefaultRequest<SetVaultNotificationsRequest>(setVaultNotificationsRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                setVaultNotificationsRequest.getAccountId() == null ? "-" : setVaultNotificationsRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "vaultName", setVaultNotificationsRequest.getVaultName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            VaultNotificationConfig vaultNotificationConfig = setVaultNotificationsRequest.getVaultNotificationConfig();
-            if (vaultNotificationConfig != null) {
-                jsonGenerator.writeStartObject();
-                if (vaultNotificationConfig.getSNSTopic() != null) {
-                    jsonGenerator.writeFieldName("SNSTopic").writeValue(vaultNotificationConfig.getSNSTopic());
-                }
-
-                java.util.List<String> eventsList = vaultNotificationConfig.getEvents();
-                if (eventsList != null) {
-                    jsonGenerator.writeFieldName("Events");
-                    jsonGenerator.writeStartArray();
-                    for (String eventsListValue : eventsList) {
-                        if (eventsListValue != null) {
-                            jsonGenerator.writeValue(eventsListValue);
-                        }
-                    }
-                    jsonGenerator.writeEndArray();
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setVaultNotificationsRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(setVaultNotificationsRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(setVaultNotificationsRequest.getVaultNotificationConfig(), VAULTNOTIFICATIONCONFIG_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,78 +12,48 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteAttributesRequest Marshaller
+ * DeleteAttributesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteAttributesRequestMarshaller implements Marshaller<Request<DeleteAttributesRequest>, DeleteAttributesRequest> {
+@SdkInternalApi
+public class DeleteAttributesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
+    private static final MarshallingInfo<List> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attributes").build();
 
-    public DeleteAttributesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteAttributesRequestMarshaller instance = new DeleteAttributesRequestMarshaller();
+
+    public static DeleteAttributesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteAttributesRequest> marshall(DeleteAttributesRequest deleteAttributesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteAttributesRequest deleteAttributesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteAttributesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteAttributesRequest> request = new DefaultRequest<DeleteAttributesRequest>(deleteAttributesRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.DeleteAttributes");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteAttributesRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(deleteAttributesRequest.getCluster());
-            }
-
-            com.amazonaws.internal.SdkInternalList<Attribute> attributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) deleteAttributesRequest
-                    .getAttributes();
-            if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("attributes");
-                jsonGenerator.writeStartArray();
-                for (Attribute attributesListValue : attributesList) {
-                    if (attributesListValue != null) {
-
-                        AttributeJsonMarshaller.getInstance().marshall(attributesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteAttributesRequest.getCluster(), CLUSTER_BINDING);
+            protocolMarshaller.marshall(deleteAttributesRequest.getAttributes(), ATTRIBUTES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

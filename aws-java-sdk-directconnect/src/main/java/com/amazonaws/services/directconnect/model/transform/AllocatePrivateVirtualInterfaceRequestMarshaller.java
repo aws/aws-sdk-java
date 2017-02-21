@@ -12,74 +12,51 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AllocatePrivateVirtualInterfaceRequest Marshaller
+ * AllocatePrivateVirtualInterfaceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AllocatePrivateVirtualInterfaceRequestMarshaller implements
-        Marshaller<Request<AllocatePrivateVirtualInterfaceRequest>, AllocatePrivateVirtualInterfaceRequest> {
+@SdkInternalApi
+public class AllocatePrivateVirtualInterfaceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
+    private static final MarshallingInfo<String> OWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ownerAccount").build();
+    private static final MarshallingInfo<StructuredPojo> NEWPRIVATEVIRTUALINTERFACEALLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("newPrivateVirtualInterfaceAllocation").build();
 
-    public AllocatePrivateVirtualInterfaceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AllocatePrivateVirtualInterfaceRequestMarshaller instance = new AllocatePrivateVirtualInterfaceRequestMarshaller();
+
+    public static AllocatePrivateVirtualInterfaceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AllocatePrivateVirtualInterfaceRequest> marshall(AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (allocatePrivateVirtualInterfaceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AllocatePrivateVirtualInterfaceRequest> request = new DefaultRequest<AllocatePrivateVirtualInterfaceRequest>(
-                allocatePrivateVirtualInterfaceRequest, "AmazonDirectConnect");
-        request.addHeader("X-Amz-Target", "OvertureService.AllocatePrivateVirtualInterface");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (allocatePrivateVirtualInterfaceRequest.getConnectionId() != null) {
-                jsonGenerator.writeFieldName("connectionId").writeValue(allocatePrivateVirtualInterfaceRequest.getConnectionId());
-            }
-            if (allocatePrivateVirtualInterfaceRequest.getOwnerAccount() != null) {
-                jsonGenerator.writeFieldName("ownerAccount").writeValue(allocatePrivateVirtualInterfaceRequest.getOwnerAccount());
-            }
-            if (allocatePrivateVirtualInterfaceRequest.getNewPrivateVirtualInterfaceAllocation() != null) {
-                jsonGenerator.writeFieldName("newPrivateVirtualInterfaceAllocation");
-                NewPrivateVirtualInterfaceAllocationJsonMarshaller.getInstance().marshall(
-                        allocatePrivateVirtualInterfaceRequest.getNewPrivateVirtualInterfaceAllocation(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(allocatePrivateVirtualInterfaceRequest.getConnectionId(), CONNECTIONID_BINDING);
+            protocolMarshaller.marshall(allocatePrivateVirtualInterfaceRequest.getOwnerAccount(), OWNERACCOUNT_BINDING);
+            protocolMarshaller.marshall(allocatePrivateVirtualInterfaceRequest.getNewPrivateVirtualInterfaceAllocation(),
+                    NEWPRIVATEVIRTUALINTERFACEALLOCATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

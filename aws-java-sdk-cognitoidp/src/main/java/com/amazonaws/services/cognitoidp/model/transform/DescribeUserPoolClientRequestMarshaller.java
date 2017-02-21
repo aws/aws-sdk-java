@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeUserPoolClientRequest Marshaller
+ * DescribeUserPoolClientRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeUserPoolClientRequestMarshaller implements Marshaller<Request<DescribeUserPoolClientRequest>, DescribeUserPoolClientRequest> {
+@SdkInternalApi
+public class DescribeUserPoolClientRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientId").build();
 
-    public DescribeUserPoolClientRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeUserPoolClientRequestMarshaller instance = new DescribeUserPoolClientRequestMarshaller();
+
+    public static DescribeUserPoolClientRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeUserPoolClientRequest> marshall(DescribeUserPoolClientRequest describeUserPoolClientRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeUserPoolClientRequest describeUserPoolClientRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeUserPoolClientRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeUserPoolClientRequest> request = new DefaultRequest<DescribeUserPoolClientRequest>(describeUserPoolClientRequest,
-                "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.DescribeUserPoolClient");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeUserPoolClientRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(describeUserPoolClientRequest.getUserPoolId());
-            }
-            if (describeUserPoolClientRequest.getClientId() != null) {
-                jsonGenerator.writeFieldName("ClientId").writeValue(describeUserPoolClientRequest.getClientId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeUserPoolClientRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(describeUserPoolClientRequest.getClientId(), CLIENTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

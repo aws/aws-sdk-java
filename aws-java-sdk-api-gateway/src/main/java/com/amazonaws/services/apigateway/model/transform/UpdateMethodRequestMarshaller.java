@@ -12,80 +12,54 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateMethodRequest Marshaller
+ * UpdateMethodRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateMethodRequestMarshaller implements Marshaller<Request<UpdateMethodRequest>, UpdateMethodRequest> {
+@SdkInternalApi
+public class UpdateMethodRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("resource_id").build();
+    private static final MarshallingInfo<String> HTTPMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("http_method").build();
+    private static final MarshallingInfo<List> PATCHOPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("patchOperations").build();
 
-    public UpdateMethodRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateMethodRequestMarshaller instance = new UpdateMethodRequestMarshaller();
+
+    public static UpdateMethodRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateMethodRequest> marshall(UpdateMethodRequest updateMethodRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateMethodRequest updateMethodRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateMethodRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateMethodRequest> request = new DefaultRequest<UpdateMethodRequest>(updateMethodRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.PATCH);
-
-        String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", updateMethodRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", updateMethodRequest.getResourceId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", updateMethodRequest.getHttpMethod());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<PatchOperation> patchOperationsList = updateMethodRequest.getPatchOperations();
-            if (patchOperationsList != null) {
-                jsonGenerator.writeFieldName("patchOperations");
-                jsonGenerator.writeStartArray();
-                for (PatchOperation patchOperationsListValue : patchOperationsList) {
-                    if (patchOperationsListValue != null) {
-
-                        PatchOperationJsonMarshaller.getInstance().marshall(patchOperationsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateMethodRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(updateMethodRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(updateMethodRequest.getHttpMethod(), HTTPMETHOD_BINDING);
+            protocolMarshaller.marshall(updateMethodRequest.getPatchOperations(), PATCHOPERATIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,91 +12,47 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateImportJobRequest Marshaller
+ * CreateImportJobRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateImportJobRequestMarshaller implements Marshaller<Request<CreateImportJobRequest>, CreateImportJobRequest> {
+@SdkInternalApi
+public class CreateImportJobRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<StructuredPojo> IMPORTJOBREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
-    public CreateImportJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateImportJobRequestMarshaller instance = new CreateImportJobRequestMarshaller();
+
+    public static CreateImportJobRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateImportJobRequest> marshall(CreateImportJobRequest createImportJobRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateImportJobRequest createImportJobRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createImportJobRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateImportJobRequest> request = new DefaultRequest<CreateImportJobRequest>(createImportJobRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/apps/{application-id}/jobs/import";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                createImportJobRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            ImportJobRequest importJobRequest = createImportJobRequest.getImportJobRequest();
-            if (importJobRequest != null) {
-                jsonGenerator.writeStartObject();
-                if (importJobRequest.getDefineSegment() != null) {
-                    jsonGenerator.writeFieldName("DefineSegment").writeValue(importJobRequest.getDefineSegment());
-                }
-                if (importJobRequest.getExternalId() != null) {
-                    jsonGenerator.writeFieldName("ExternalId").writeValue(importJobRequest.getExternalId());
-                }
-                if (importJobRequest.getFormat() != null) {
-                    jsonGenerator.writeFieldName("Format").writeValue(importJobRequest.getFormat());
-                }
-                if (importJobRequest.getRegisterEndpoints() != null) {
-                    jsonGenerator.writeFieldName("RegisterEndpoints").writeValue(importJobRequest.getRegisterEndpoints());
-                }
-                if (importJobRequest.getRoleArn() != null) {
-                    jsonGenerator.writeFieldName("RoleArn").writeValue(importJobRequest.getRoleArn());
-                }
-                if (importJobRequest.getS3Url() != null) {
-                    jsonGenerator.writeFieldName("S3Url").writeValue(importJobRequest.getS3Url());
-                }
-                if (importJobRequest.getSegmentId() != null) {
-                    jsonGenerator.writeFieldName("SegmentId").writeValue(importJobRequest.getSegmentId());
-                }
-                if (importJobRequest.getSegmentName() != null) {
-                    jsonGenerator.writeFieldName("SegmentName").writeValue(importJobRequest.getSegmentName());
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createImportJobRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(createImportJobRequest.getImportJobRequest(), IMPORTJOBREQUEST_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

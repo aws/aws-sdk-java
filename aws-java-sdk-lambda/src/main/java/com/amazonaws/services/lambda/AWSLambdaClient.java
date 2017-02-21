@@ -381,7 +381,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddPermissionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addPermissionRequest));
+                request = new AddPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -439,7 +439,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -521,7 +521,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateEventSourceMappingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEventSourceMappingRequest));
+                request = new CreateEventSourceMappingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -590,7 +591,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFunctionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFunctionRequest));
+                request = new CreateFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -643,7 +644,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -699,7 +700,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteEventSourceMappingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventSourceMappingRequest));
+                request = new DeleteEventSourceMappingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -769,7 +771,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFunctionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFunctionRequest));
+                request = new DeleteFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -819,7 +821,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAccountSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
+                request = new GetAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -876,7 +878,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAliasRequest));
+                request = new GetAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -931,7 +933,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetEventSourceMappingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventSourceMappingRequest));
+                request = new GetEventSourceMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -997,7 +999,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFunctionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionRequest));
+                request = new GetFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1061,7 +1063,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFunctionConfigurationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionConfigurationRequest));
+                request = new GetFunctionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1127,7 +1130,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
+                request = new GetPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1230,7 +1233,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InvokeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeRequest));
+                request = new InvokeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1289,7 +1292,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InvokeAsyncRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeAsyncRequest));
+                request = new InvokeAsyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeAsyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1346,7 +1349,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1412,7 +1415,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListEventSourceMappingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventSourceMappingsRequest));
+                request = new ListEventSourceMappingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listEventSourceMappingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1473,7 +1477,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFunctionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFunctionsRequest));
+                request = new ListFunctionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFunctionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1532,7 +1536,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVersionsByFunctionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVersionsByFunctionRequest));
+                request = new ListVersionsByFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVersionsByFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1592,7 +1596,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PublishVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishVersionRequest));
+                request = new PublishVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1657,7 +1661,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemovePermissionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
+                request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1714,7 +1718,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1784,7 +1788,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateEventSourceMappingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEventSourceMappingRequest));
+                request = new UpdateEventSourceMappingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1850,7 +1855,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFunctionCodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFunctionCodeRequest));
+                request = new UpdateFunctionCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFunctionCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1913,7 +1918,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFunctionConfigurationRequestMarshaller(protocolFactory).marshall(super
+                request = new UpdateFunctionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(updateFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);

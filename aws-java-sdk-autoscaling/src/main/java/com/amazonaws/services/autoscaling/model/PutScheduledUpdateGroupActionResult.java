@@ -68,4 +68,5 @@ public class PutScheduledUpdateGroupActionResult extends com.amazonaws.AmazonWeb
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

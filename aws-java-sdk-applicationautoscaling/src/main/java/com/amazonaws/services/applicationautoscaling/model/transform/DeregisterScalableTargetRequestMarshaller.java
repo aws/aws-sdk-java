@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.applicationautoscaling.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.applicationautoscaling.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeregisterScalableTargetRequest Marshaller
+ * DeregisterScalableTargetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeregisterScalableTargetRequestMarshaller implements Marshaller<Request<DeregisterScalableTargetRequest>, DeregisterScalableTargetRequest> {
+@SdkInternalApi
+public class DeregisterScalableTargetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SERVICENAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceNamespace").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceId").build();
+    private static final MarshallingInfo<String> SCALABLEDIMENSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalableDimension").build();
 
-    public DeregisterScalableTargetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeregisterScalableTargetRequestMarshaller instance = new DeregisterScalableTargetRequestMarshaller();
+
+    public static DeregisterScalableTargetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeregisterScalableTargetRequest> marshall(DeregisterScalableTargetRequest deregisterScalableTargetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeregisterScalableTargetRequest deregisterScalableTargetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deregisterScalableTargetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeregisterScalableTargetRequest> request = new DefaultRequest<DeregisterScalableTargetRequest>(deregisterScalableTargetRequest,
-                "AWSApplicationAutoScaling");
-        request.addHeader("X-Amz-Target", "AnyScaleFrontendService.DeregisterScalableTarget");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deregisterScalableTargetRequest.getServiceNamespace() != null) {
-                jsonGenerator.writeFieldName("ServiceNamespace").writeValue(deregisterScalableTargetRequest.getServiceNamespace());
-            }
-            if (deregisterScalableTargetRequest.getResourceId() != null) {
-                jsonGenerator.writeFieldName("ResourceId").writeValue(deregisterScalableTargetRequest.getResourceId());
-            }
-            if (deregisterScalableTargetRequest.getScalableDimension() != null) {
-                jsonGenerator.writeFieldName("ScalableDimension").writeValue(deregisterScalableTargetRequest.getScalableDimension());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deregisterScalableTargetRequest.getServiceNamespace(), SERVICENAMESPACE_BINDING);
+            protocolMarshaller.marshall(deregisterScalableTargetRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(deregisterScalableTargetRequest.getScalableDimension(), SCALABLEDIMENSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

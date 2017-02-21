@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateEvaluationRequest Marshaller
+ * UpdateEvaluationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateEvaluationRequestMarshaller implements Marshaller<Request<UpdateEvaluationRequest>, UpdateEvaluationRequest> {
+@SdkInternalApi
+public class UpdateEvaluationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> EVALUATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationId").build();
+    private static final MarshallingInfo<String> EVALUATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationName").build();
 
-    public UpdateEvaluationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateEvaluationRequestMarshaller instance = new UpdateEvaluationRequestMarshaller();
+
+    public static UpdateEvaluationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateEvaluationRequest> marshall(UpdateEvaluationRequest updateEvaluationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateEvaluationRequest updateEvaluationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateEvaluationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateEvaluationRequest> request = new DefaultRequest<UpdateEvaluationRequest>(updateEvaluationRequest, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.UpdateEvaluation");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateEvaluationRequest.getEvaluationId() != null) {
-                jsonGenerator.writeFieldName("EvaluationId").writeValue(updateEvaluationRequest.getEvaluationId());
-            }
-            if (updateEvaluationRequest.getEvaluationName() != null) {
-                jsonGenerator.writeFieldName("EvaluationName").writeValue(updateEvaluationRequest.getEvaluationName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateEvaluationRequest.getEvaluationId(), EVALUATIONID_BINDING);
+            protocolMarshaller.marshall(updateEvaluationRequest.getEvaluationName(), EVALUATIONNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

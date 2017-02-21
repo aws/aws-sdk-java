@@ -12,73 +12,56 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListThingsRequest Marshaller
+ * ListThingsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListThingsRequestMarshaller implements Marshaller<Request<ListThingsRequest>, ListThingsRequest> {
+@SdkInternalApi
+public class ListThingsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> ATTRIBUTENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("attributeName").build();
+    private static final MarshallingInfo<String> ATTRIBUTEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("attributeValue").build();
+    private static final MarshallingInfo<String> THINGTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("thingTypeName").build();
 
-    public ListThingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListThingsRequestMarshaller instance = new ListThingsRequestMarshaller();
+
+    public static ListThingsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListThingsRequest> marshall(ListThingsRequest listThingsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListThingsRequest listThingsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listThingsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListThingsRequest> request = new DefaultRequest<ListThingsRequest>(listThingsRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/things";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listThingsRequest.getNextToken() != null) {
-            request.addParameter("nextToken", StringUtils.fromString(listThingsRequest.getNextToken()));
+        try {
+            protocolMarshaller.marshall(listThingsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listThingsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listThingsRequest.getAttributeName(), ATTRIBUTENAME_BINDING);
+            protocolMarshaller.marshall(listThingsRequest.getAttributeValue(), ATTRIBUTEVALUE_BINDING);
+            protocolMarshaller.marshall(listThingsRequest.getThingTypeName(), THINGTYPENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listThingsRequest.getMaxResults() != null) {
-            request.addParameter("maxResults", StringUtils.fromInteger(listThingsRequest.getMaxResults()));
-        }
-
-        if (listThingsRequest.getAttributeName() != null) {
-            request.addParameter("attributeName", StringUtils.fromString(listThingsRequest.getAttributeName()));
-        }
-
-        if (listThingsRequest.getAttributeValue() != null) {
-            request.addParameter("attributeValue", StringUtils.fromString(listThingsRequest.getAttributeValue()));
-        }
-
-        if (listThingsRequest.getThingTypeName() != null) {
-            request.addParameter("thingTypeName", StringUtils.fromString(listThingsRequest.getThingTypeName()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

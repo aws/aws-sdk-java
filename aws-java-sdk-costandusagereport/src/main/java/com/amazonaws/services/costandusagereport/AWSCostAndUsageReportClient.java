@@ -293,7 +293,7 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteReportDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReportDefinitionRequest));
+                request = new DeleteReportDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReportDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -337,7 +337,8 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReportDefinitionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReportDefinitionsRequest));
+                request = new DescribeReportDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReportDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -388,7 +389,7 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutReportDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putReportDefinitionRequest));
+                request = new PutReportDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putReportDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

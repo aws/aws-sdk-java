@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTableStatisticsRequest Marshaller
+ * DescribeTableStatisticsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTableStatisticsRequestMarshaller implements Marshaller<Request<DescribeTableStatisticsRequest>, DescribeTableStatisticsRequest> {
+@SdkInternalApi
+public class DescribeTableStatisticsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPLICATIONTASKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskArn").build();
+    private static final MarshallingInfo<Integer> MAXRECORDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRecords").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
 
-    public DescribeTableStatisticsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTableStatisticsRequestMarshaller instance = new DescribeTableStatisticsRequestMarshaller();
+
+    public static DescribeTableStatisticsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTableStatisticsRequest> marshall(DescribeTableStatisticsRequest describeTableStatisticsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTableStatisticsRequest describeTableStatisticsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTableStatisticsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTableStatisticsRequest> request = new DefaultRequest<DescribeTableStatisticsRequest>(describeTableStatisticsRequest,
-                "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.DescribeTableStatistics");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeTableStatisticsRequest.getReplicationTaskArn() != null) {
-                jsonGenerator.writeFieldName("ReplicationTaskArn").writeValue(describeTableStatisticsRequest.getReplicationTaskArn());
-            }
-            if (describeTableStatisticsRequest.getMaxRecords() != null) {
-                jsonGenerator.writeFieldName("MaxRecords").writeValue(describeTableStatisticsRequest.getMaxRecords());
-            }
-            if (describeTableStatisticsRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(describeTableStatisticsRequest.getMarker());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeTableStatisticsRequest.getReplicationTaskArn(), REPLICATIONTASKARN_BINDING);
+            protocolMarshaller.marshall(describeTableStatisticsRequest.getMaxRecords(), MAXRECORDS_BINDING);
+            protocolMarshaller.marshall(describeTableStatisticsRequest.getMarker(), MARKER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

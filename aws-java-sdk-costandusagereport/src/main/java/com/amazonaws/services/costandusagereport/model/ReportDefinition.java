@@ -14,6 +14,8 @@ package com.amazonaws.services.costandusagereport.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * The definition of AWS Cost and Usage Report. Customer can specify the report name, time unit, report format,
@@ -23,7 +25,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReportDefinition implements Serializable, Cloneable {
+public class ReportDefinition implements Serializable, Cloneable, StructuredPojo {
 
     private String reportName;
 
@@ -573,5 +575,11 @@ public class ReportDefinition implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.costandusagereport.model.transform.ReportDefinitionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

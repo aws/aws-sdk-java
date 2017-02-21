@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codepipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListActionTypesRequest Marshaller
+ * ListActionTypesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListActionTypesRequestMarshaller implements Marshaller<Request<ListActionTypesRequest>, ListActionTypesRequest> {
+@SdkInternalApi
+public class ListActionTypesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACTIONOWNERFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionOwnerFilter").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListActionTypesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListActionTypesRequestMarshaller instance = new ListActionTypesRequestMarshaller();
+
+    public static ListActionTypesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListActionTypesRequest> marshall(ListActionTypesRequest listActionTypesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListActionTypesRequest listActionTypesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listActionTypesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListActionTypesRequest> request = new DefaultRequest<ListActionTypesRequest>(listActionTypesRequest, "AWSCodePipeline");
-        request.addHeader("X-Amz-Target", "CodePipeline_20150709.ListActionTypes");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listActionTypesRequest.getActionOwnerFilter() != null) {
-                jsonGenerator.writeFieldName("actionOwnerFilter").writeValue(listActionTypesRequest.getActionOwnerFilter());
-            }
-            if (listActionTypesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listActionTypesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listActionTypesRequest.getActionOwnerFilter(), ACTIONOWNERFILTER_BINDING);
+            protocolMarshaller.marshall(listActionTypesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

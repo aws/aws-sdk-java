@@ -12,97 +12,64 @@
  */
 package com.amazonaws.services.marketplacecommerceanalytics.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartSupportDataExportRequest Marshaller
+ * StartSupportDataExportRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartSupportDataExportRequestMarshaller implements Marshaller<Request<StartSupportDataExportRequest>, StartSupportDataExportRequest> {
+@SdkInternalApi
+public class StartSupportDataExportRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DATASETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSetType").build();
+    private static final MarshallingInfo<java.util.Date> FROMDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fromDate").build();
+    private static final MarshallingInfo<String> ROLENAMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("roleNameArn").build();
+    private static final MarshallingInfo<String> DESTINATIONS3BUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationS3BucketName").build();
+    private static final MarshallingInfo<String> DESTINATIONS3PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationS3Prefix").build();
+    private static final MarshallingInfo<String> SNSTOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("snsTopicArn").build();
+    private static final MarshallingInfo<Map> CUSTOMERDEFINEDVALUES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerDefinedValues").build();
 
-    public StartSupportDataExportRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartSupportDataExportRequestMarshaller instance = new StartSupportDataExportRequestMarshaller();
+
+    public static StartSupportDataExportRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartSupportDataExportRequest> marshall(StartSupportDataExportRequest startSupportDataExportRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartSupportDataExportRequest startSupportDataExportRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startSupportDataExportRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartSupportDataExportRequest> request = new DefaultRequest<StartSupportDataExportRequest>(startSupportDataExportRequest,
-                "AWSMarketplaceCommerceAnalytics");
-        request.addHeader("X-Amz-Target", "MarketplaceCommerceAnalytics20150701.StartSupportDataExport");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startSupportDataExportRequest.getDataSetType() != null) {
-                jsonGenerator.writeFieldName("dataSetType").writeValue(startSupportDataExportRequest.getDataSetType());
-            }
-            if (startSupportDataExportRequest.getFromDate() != null) {
-                jsonGenerator.writeFieldName("fromDate").writeValue(startSupportDataExportRequest.getFromDate());
-            }
-            if (startSupportDataExportRequest.getRoleNameArn() != null) {
-                jsonGenerator.writeFieldName("roleNameArn").writeValue(startSupportDataExportRequest.getRoleNameArn());
-            }
-            if (startSupportDataExportRequest.getDestinationS3BucketName() != null) {
-                jsonGenerator.writeFieldName("destinationS3BucketName").writeValue(startSupportDataExportRequest.getDestinationS3BucketName());
-            }
-            if (startSupportDataExportRequest.getDestinationS3Prefix() != null) {
-                jsonGenerator.writeFieldName("destinationS3Prefix").writeValue(startSupportDataExportRequest.getDestinationS3Prefix());
-            }
-            if (startSupportDataExportRequest.getSnsTopicArn() != null) {
-                jsonGenerator.writeFieldName("snsTopicArn").writeValue(startSupportDataExportRequest.getSnsTopicArn());
-            }
-
-            java.util.Map<String, String> customerDefinedValuesMap = startSupportDataExportRequest.getCustomerDefinedValues();
-            if (customerDefinedValuesMap != null) {
-                jsonGenerator.writeFieldName("customerDefinedValues");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> customerDefinedValuesMapValue : customerDefinedValuesMap.entrySet()) {
-                    if (customerDefinedValuesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(customerDefinedValuesMapValue.getKey());
-
-                        jsonGenerator.writeValue(customerDefinedValuesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startSupportDataExportRequest.getDataSetType(), DATASETTYPE_BINDING);
+            protocolMarshaller.marshall(startSupportDataExportRequest.getFromDate(), FROMDATE_BINDING);
+            protocolMarshaller.marshall(startSupportDataExportRequest.getRoleNameArn(), ROLENAMEARN_BINDING);
+            protocolMarshaller.marshall(startSupportDataExportRequest.getDestinationS3BucketName(), DESTINATIONS3BUCKETNAME_BINDING);
+            protocolMarshaller.marshall(startSupportDataExportRequest.getDestinationS3Prefix(), DESTINATIONS3PREFIX_BINDING);
+            protocolMarshaller.marshall(startSupportDataExportRequest.getSnsTopicArn(), SNSTOPICARN_BINDING);
+            protocolMarshaller.marshall(startSupportDataExportRequest.getCustomerDefinedValues(), CUSTOMERDEFINEDVALUES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -412,7 +412,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateByteMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createByteMatchSetRequest));
+                request = new CreateByteMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createByteMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -552,7 +552,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateIPSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIPSetRequest));
+                request = new CreateIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -719,7 +719,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRuleRequest));
+                request = new CreateRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -861,7 +861,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSizeConstraintSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSizeConstraintSetRequest));
+                request = new CreateSizeConstraintSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSizeConstraintSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1003,7 +1004,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSqlInjectionMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSqlInjectionMatchSetRequest));
+                request = new CreateSqlInjectionMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSqlInjectionMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1163,7 +1165,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateWebACLRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebACLRequest));
+                request = new CreateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1304,7 +1306,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateXssMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createXssMatchSetRequest));
+                request = new CreateXssMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createXssMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1420,7 +1422,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteByteMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteByteMatchSetRequest));
+                request = new DeleteByteMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteByteMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1535,7 +1537,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIPSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIPSetRequest));
+                request = new DeleteIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1650,7 +1652,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
+                request = new DeleteRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1766,7 +1768,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSizeConstraintSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSizeConstraintSetRequest));
+                request = new DeleteSizeConstraintSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSizeConstraintSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1884,7 +1887,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSqlInjectionMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSqlInjectionMatchSetRequest));
+                request = new DeleteSqlInjectionMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSqlInjectionMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1998,7 +2002,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteWebACLRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebACLRequest));
+                request = new DeleteWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2115,7 +2119,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteXssMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteXssMatchSetRequest));
+                request = new DeleteXssMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteXssMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2164,7 +2168,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetByteMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getByteMatchSetRequest));
+                request = new GetByteMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getByteMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2221,7 +2225,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetChangeTokenRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getChangeTokenRequest));
+                request = new GetChangeTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getChangeTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2286,7 +2290,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetChangeTokenStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getChangeTokenStatusRequest));
+                request = new GetChangeTokenStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getChangeTokenStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2335,7 +2339,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIPSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIPSetRequest));
+                request = new GetIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2385,7 +2389,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRuleRequest));
+                request = new GetRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2439,7 +2443,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSampledRequestsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSampledRequestsRequest));
+                request = new GetSampledRequestsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSampledRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2488,7 +2492,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSizeConstraintSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSizeConstraintSetRequest));
+                request = new GetSizeConstraintSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSizeConstraintSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2538,7 +2542,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSqlInjectionMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSqlInjectionMatchSetRequest));
+                request = new GetSqlInjectionMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSqlInjectionMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2588,7 +2593,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetWebACLRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWebACLRequest));
+                request = new GetWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2638,7 +2643,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetXssMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getXssMatchSetRequest));
+                request = new GetXssMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getXssMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2685,7 +2690,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListByteMatchSetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listByteMatchSetsRequest));
+                request = new ListByteMatchSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listByteMatchSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2732,7 +2737,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIPSetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIPSetsRequest));
+                request = new ListIPSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIPSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2779,7 +2784,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRulesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesRequest));
+                request = new ListRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2826,7 +2831,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListSizeConstraintSetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSizeConstraintSetsRequest));
+                request = new ListSizeConstraintSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSizeConstraintSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2875,7 +2880,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListSqlInjectionMatchSetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSqlInjectionMatchSetsRequest));
+                request = new ListSqlInjectionMatchSetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSqlInjectionMatchSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2923,7 +2929,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListWebACLsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWebACLsRequest));
+                request = new ListWebACLsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWebACLsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2971,7 +2977,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListXssMatchSetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listXssMatchSetsRequest));
+                request = new ListXssMatchSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listXssMatchSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3207,7 +3213,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateByteMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateByteMatchSetRequest));
+                request = new UpdateByteMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateByteMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3479,7 +3485,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateIPSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIPSetRequest));
+                request = new UpdateIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3724,7 +3730,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuleRequest));
+                request = new UpdateRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3974,7 +3980,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSizeConstraintSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSizeConstraintSetRequest));
+                request = new UpdateSizeConstraintSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSizeConstraintSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4201,7 +4208,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSqlInjectionMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSqlInjectionMatchSetRequest));
+                request = new UpdateSqlInjectionMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSqlInjectionMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4466,7 +4474,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateWebACLRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWebACLRequest));
+                request = new UpdateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4692,7 +4700,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateXssMatchSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateXssMatchSetRequest));
+                request = new UpdateXssMatchSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateXssMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

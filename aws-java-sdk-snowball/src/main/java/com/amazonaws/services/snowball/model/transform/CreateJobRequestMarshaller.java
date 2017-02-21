@@ -12,96 +12,74 @@
  */
 package com.amazonaws.services.snowball.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.snowball.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateJobRequest Marshaller
+ * CreateJobRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobRequest>, CreateJobRequest> {
+@SdkInternalApi
+public class CreateJobRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JobType").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Resources").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> ADDRESSID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AddressId").build();
+    private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyARN").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RoleARN").build();
+    private static final MarshallingInfo<String> SNOWBALLCAPACITYPREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnowballCapacityPreference").build();
+    private static final MarshallingInfo<String> SHIPPINGOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShippingOption").build();
+    private static final MarshallingInfo<StructuredPojo> NOTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Notification").build();
+    private static final MarshallingInfo<String> CLUSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClusterId").build();
+    private static final MarshallingInfo<String> SNOWBALLTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnowballType").build();
 
-    public CreateJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateJobRequestMarshaller instance = new CreateJobRequestMarshaller();
+
+    public static CreateJobRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateJobRequest> marshall(CreateJobRequest createJobRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateJobRequest createJobRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createJobRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateJobRequest> request = new DefaultRequest<CreateJobRequest>(createJobRequest, "AmazonSnowball");
-        request.addHeader("X-Amz-Target", "AWSIESnowballJobManagementService.CreateJob");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createJobRequest.getJobType() != null) {
-                jsonGenerator.writeFieldName("JobType").writeValue(createJobRequest.getJobType());
-            }
-            if (createJobRequest.getResources() != null) {
-                jsonGenerator.writeFieldName("Resources");
-                JobResourceJsonMarshaller.getInstance().marshall(createJobRequest.getResources(), jsonGenerator);
-            }
-            if (createJobRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(createJobRequest.getDescription());
-            }
-            if (createJobRequest.getAddressId() != null) {
-                jsonGenerator.writeFieldName("AddressId").writeValue(createJobRequest.getAddressId());
-            }
-            if (createJobRequest.getKmsKeyARN() != null) {
-                jsonGenerator.writeFieldName("KmsKeyARN").writeValue(createJobRequest.getKmsKeyARN());
-            }
-            if (createJobRequest.getRoleARN() != null) {
-                jsonGenerator.writeFieldName("RoleARN").writeValue(createJobRequest.getRoleARN());
-            }
-            if (createJobRequest.getSnowballCapacityPreference() != null) {
-                jsonGenerator.writeFieldName("SnowballCapacityPreference").writeValue(createJobRequest.getSnowballCapacityPreference());
-            }
-            if (createJobRequest.getShippingOption() != null) {
-                jsonGenerator.writeFieldName("ShippingOption").writeValue(createJobRequest.getShippingOption());
-            }
-            if (createJobRequest.getNotification() != null) {
-                jsonGenerator.writeFieldName("Notification");
-                NotificationJsonMarshaller.getInstance().marshall(createJobRequest.getNotification(), jsonGenerator);
-            }
-            if (createJobRequest.getClusterId() != null) {
-                jsonGenerator.writeFieldName("ClusterId").writeValue(createJobRequest.getClusterId());
-            }
-            if (createJobRequest.getSnowballType() != null) {
-                jsonGenerator.writeFieldName("SnowballType").writeValue(createJobRequest.getSnowballType());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createJobRequest.getJobType(), JOBTYPE_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getResources(), RESOURCES_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getAddressId(), ADDRESSID_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getKmsKeyARN(), KMSKEYARN_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getRoleARN(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getSnowballCapacityPreference(), SNOWBALLCAPACITYPREFERENCE_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getShippingOption(), SHIPPINGOPTION_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getNotification(), NOTIFICATION_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getClusterId(), CLUSTERID_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getSnowballType(), SNOWBALLTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

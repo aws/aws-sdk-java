@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListResourceTagsRequest Marshaller
+ * ListResourceTagsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListResourceTagsRequestMarshaller implements Marshaller<Request<ListResourceTagsRequest>, ListResourceTagsRequest> {
+@SdkInternalApi
+public class ListResourceTagsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
 
-    public ListResourceTagsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListResourceTagsRequestMarshaller instance = new ListResourceTagsRequestMarshaller();
+
+    public static ListResourceTagsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListResourceTagsRequest> marshall(ListResourceTagsRequest listResourceTagsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListResourceTagsRequest listResourceTagsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listResourceTagsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListResourceTagsRequest> request = new DefaultRequest<ListResourceTagsRequest>(listResourceTagsRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.ListResourceTags");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listResourceTagsRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(listResourceTagsRequest.getKeyId());
-            }
-            if (listResourceTagsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listResourceTagsRequest.getLimit());
-            }
-            if (listResourceTagsRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(listResourceTagsRequest.getMarker());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listResourceTagsRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(listResourceTagsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listResourceTagsRequest.getMarker(), MARKER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,79 +12,48 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeConditionalForwardersRequest Marshaller
+ * DescribeConditionalForwardersRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeConditionalForwardersRequestMarshaller implements
-        Marshaller<Request<DescribeConditionalForwardersRequest>, DescribeConditionalForwardersRequest> {
+@SdkInternalApi
+public class DescribeConditionalForwardersRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
+    private static final MarshallingInfo<List> REMOTEDOMAINNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoteDomainNames").build();
 
-    public DescribeConditionalForwardersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeConditionalForwardersRequestMarshaller instance = new DescribeConditionalForwardersRequestMarshaller();
+
+    public static DescribeConditionalForwardersRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeConditionalForwardersRequest> marshall(DescribeConditionalForwardersRequest describeConditionalForwardersRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeConditionalForwardersRequest describeConditionalForwardersRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeConditionalForwardersRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeConditionalForwardersRequest> request = new DefaultRequest<DescribeConditionalForwardersRequest>(describeConditionalForwardersRequest,
-                "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.DescribeConditionalForwarders");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeConditionalForwardersRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(describeConditionalForwardersRequest.getDirectoryId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> remoteDomainNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeConditionalForwardersRequest
-                    .getRemoteDomainNames();
-            if (!remoteDomainNamesList.isEmpty() || !remoteDomainNamesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("RemoteDomainNames");
-                jsonGenerator.writeStartArray();
-                for (String remoteDomainNamesListValue : remoteDomainNamesList) {
-                    if (remoteDomainNamesListValue != null) {
-                        jsonGenerator.writeValue(remoteDomainNamesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeConditionalForwardersRequest.getDirectoryId(), DIRECTORYID_BINDING);
+            protocolMarshaller.marshall(describeConditionalForwardersRequest.getRemoteDomainNames(), REMOTEDOMAINNAMES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

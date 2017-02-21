@@ -12,74 +12,53 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ConfirmDeviceRequest Marshaller
+ * ConfirmDeviceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConfirmDeviceRequestMarshaller implements Marshaller<Request<ConfirmDeviceRequest>, ConfirmDeviceRequest> {
+@SdkInternalApi
+public class ConfirmDeviceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCESSTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessToken").build();
+    private static final MarshallingInfo<String> DEVICEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DeviceKey").build();
+    private static final MarshallingInfo<StructuredPojo> DEVICESECRETVERIFIERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceSecretVerifierConfig").build();
+    private static final MarshallingInfo<String> DEVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceName").build();
 
-    public ConfirmDeviceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ConfirmDeviceRequestMarshaller instance = new ConfirmDeviceRequestMarshaller();
+
+    public static ConfirmDeviceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ConfirmDeviceRequest> marshall(ConfirmDeviceRequest confirmDeviceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ConfirmDeviceRequest confirmDeviceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (confirmDeviceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ConfirmDeviceRequest> request = new DefaultRequest<ConfirmDeviceRequest>(confirmDeviceRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.ConfirmDevice");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (confirmDeviceRequest.getAccessToken() != null) {
-                jsonGenerator.writeFieldName("AccessToken").writeValue(confirmDeviceRequest.getAccessToken());
-            }
-            if (confirmDeviceRequest.getDeviceKey() != null) {
-                jsonGenerator.writeFieldName("DeviceKey").writeValue(confirmDeviceRequest.getDeviceKey());
-            }
-            if (confirmDeviceRequest.getDeviceSecretVerifierConfig() != null) {
-                jsonGenerator.writeFieldName("DeviceSecretVerifierConfig");
-                DeviceSecretVerifierConfigTypeJsonMarshaller.getInstance().marshall(confirmDeviceRequest.getDeviceSecretVerifierConfig(), jsonGenerator);
-            }
-            if (confirmDeviceRequest.getDeviceName() != null) {
-                jsonGenerator.writeFieldName("DeviceName").writeValue(confirmDeviceRequest.getDeviceName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(confirmDeviceRequest.getAccessToken(), ACCESSTOKEN_BINDING);
+            protocolMarshaller.marshall(confirmDeviceRequest.getDeviceKey(), DEVICEKEY_BINDING);
+            protocolMarshaller.marshall(confirmDeviceRequest.getDeviceSecretVerifierConfig(), DEVICESECRETVERIFIERCONFIG_BINDING);
+            protocolMarshaller.marshall(confirmDeviceRequest.getDeviceName(), DEVICENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

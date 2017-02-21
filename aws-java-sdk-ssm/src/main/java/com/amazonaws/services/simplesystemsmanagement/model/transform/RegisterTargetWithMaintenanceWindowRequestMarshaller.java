@@ -12,89 +12,60 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.util.IdempotentUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterTargetWithMaintenanceWindowRequest Marshaller
+ * RegisterTargetWithMaintenanceWindowRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterTargetWithMaintenanceWindowRequestMarshaller implements
-        Marshaller<Request<RegisterTargetWithMaintenanceWindowRequest>, RegisterTargetWithMaintenanceWindowRequest> {
+@SdkInternalApi
+public class RegisterTargetWithMaintenanceWindowRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> WINDOWID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WindowId").build();
+    private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
+    private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Targets").build();
+    private static final MarshallingInfo<String> OWNERINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerInformation").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
-    public RegisterTargetWithMaintenanceWindowRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterTargetWithMaintenanceWindowRequestMarshaller instance = new RegisterTargetWithMaintenanceWindowRequestMarshaller();
+
+    public static RegisterTargetWithMaintenanceWindowRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterTargetWithMaintenanceWindowRequest> marshall(RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerTargetWithMaintenanceWindowRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterTargetWithMaintenanceWindowRequest> request = new DefaultRequest<RegisterTargetWithMaintenanceWindowRequest>(
-                registerTargetWithMaintenanceWindowRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.RegisterTargetWithMaintenanceWindow");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerTargetWithMaintenanceWindowRequest.getWindowId() != null) {
-                jsonGenerator.writeFieldName("WindowId").writeValue(registerTargetWithMaintenanceWindowRequest.getWindowId());
-            }
-            if (registerTargetWithMaintenanceWindowRequest.getResourceType() != null) {
-                jsonGenerator.writeFieldName("ResourceType").writeValue(registerTargetWithMaintenanceWindowRequest.getResourceType());
-            }
-
-            com.amazonaws.internal.SdkInternalList<Target> targetsList = (com.amazonaws.internal.SdkInternalList<Target>) registerTargetWithMaintenanceWindowRequest
-                    .getTargets();
-            if (!targetsList.isEmpty() || !targetsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Targets");
-                jsonGenerator.writeStartArray();
-                for (Target targetsListValue : targetsList) {
-                    if (targetsListValue != null) {
-
-                        TargetJsonMarshaller.getInstance().marshall(targetsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (registerTargetWithMaintenanceWindowRequest.getOwnerInformation() != null) {
-                jsonGenerator.writeFieldName("OwnerInformation").writeValue(registerTargetWithMaintenanceWindowRequest.getOwnerInformation());
-            }
-            jsonGenerator.writeFieldName("ClientToken").writeValue(IdempotentUtils.resolveString(registerTargetWithMaintenanceWindowRequest.getClientToken()));
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getWindowId(), WINDOWID_BINDING);
+            protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getOwnerInformation(), OWNERINFORMATION_BINDING);
+            protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getClientToken(), CLIENTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

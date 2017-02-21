@@ -12,62 +12,50 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDeploymentsRequest Marshaller
+ * GetDeploymentsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDeploymentsRequestMarshaller implements Marshaller<Request<GetDeploymentsRequest>, GetDeploymentsRequest> {
+@SdkInternalApi
+public class GetDeploymentsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("position").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
 
-    public GetDeploymentsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDeploymentsRequestMarshaller instance = new GetDeploymentsRequestMarshaller();
+
+    public static GetDeploymentsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDeploymentsRequest> marshall(GetDeploymentsRequest getDeploymentsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDeploymentsRequest getDeploymentsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDeploymentsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDeploymentsRequest> request = new DefaultRequest<GetDeploymentsRequest>(getDeploymentsRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/restapis/{restapi_id}/deployments";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getDeploymentsRequest.getRestApiId());
-        request.setResourcePath(uriResourcePath);
-
-        if (getDeploymentsRequest.getPosition() != null) {
-            request.addParameter("position", StringUtils.fromString(getDeploymentsRequest.getPosition()));
+        try {
+            protocolMarshaller.marshall(getDeploymentsRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(getDeploymentsRequest.getPosition(), POSITION_BINDING);
+            protocolMarshaller.marshall(getDeploymentsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getDeploymentsRequest.getLimit() != null) {
-            request.addParameter("limit", StringUtils.fromInteger(getDeploymentsRequest.getLimit()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

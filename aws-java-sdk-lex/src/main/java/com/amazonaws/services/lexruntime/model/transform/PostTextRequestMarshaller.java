@@ -12,85 +12,58 @@
  */
 package com.amazonaws.services.lexruntime.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lexruntime.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PostTextRequest Marshaller
+ * PostTextRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PostTextRequestMarshaller implements Marshaller<Request<PostTextRequest>, PostTextRequest> {
+@SdkInternalApi
+public class PostTextRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("botName").build();
+    private static final MarshallingInfo<String> BOTALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("botAlias").build();
+    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("userId").build();
+    private static final MarshallingInfo<Map> SESSIONATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sessionAttributes").build();
+    private static final MarshallingInfo<String> INPUTTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("inputText").build();
 
-    public PostTextRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PostTextRequestMarshaller instance = new PostTextRequestMarshaller();
+
+    public static PostTextRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PostTextRequest> marshall(PostTextRequest postTextRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PostTextRequest postTextRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (postTextRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PostTextRequest> request = new DefaultRequest<PostTextRequest>(postTextRequest, "AmazonLexRuntime");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/text";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "botName", postTextRequest.getBotName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "botAlias", postTextRequest.getBotAlias());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "userId", postTextRequest.getUserId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.Map<String, String> sessionAttributesMap = postTextRequest.getSessionAttributes();
-            if (sessionAttributesMap != null) {
-                jsonGenerator.writeFieldName("sessionAttributes");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> sessionAttributesMapValue : sessionAttributesMap.entrySet()) {
-                    if (sessionAttributesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(sessionAttributesMapValue.getKey());
-
-                        jsonGenerator.writeValue(sessionAttributesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (postTextRequest.getInputText() != null) {
-                jsonGenerator.writeFieldName("inputText").writeValue(postTextRequest.getInputText());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(postTextRequest.getBotName(), BOTNAME_BINDING);
+            protocolMarshaller.marshall(postTextRequest.getBotAlias(), BOTALIAS_BINDING);
+            protocolMarshaller.marshall(postTextRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(postTextRequest.getSessionAttributes(), SESSIONATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(postTextRequest.getInputText(), INPUTTEXT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -43,11 +43,11 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Target EBS volume type of the volume to be modified
      * </p>
      * <p>
-     * Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     * </p>
-     * <p>
      * The API does not support modifications for volume type <code>standard</code>. You also cannot change the type of
      * a volume to <code>standard</code>.
+     * </p>
+     * <p>
+     * Default: If no type is specified, the existing type is retained.
      * </p>
      */
     private String volumeType;
@@ -60,6 +60,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * configuration, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
      * >http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
+     * </p>
+     * <p>
+     * Default: If no IOPS value is specified, the existing value is retained.
      * </p>
      */
     private Integer iops;
@@ -168,21 +171,21 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Target EBS volume type of the volume to be modified
      * </p>
      * <p>
-     * Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     * </p>
-     * <p>
      * The API does not support modifications for volume type <code>standard</code>. You also cannot change the type of
      * a volume to <code>standard</code>.
+     * </p>
+     * <p>
+     * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @param volumeType
      *        Target EBS volume type of the volume to be modified</p>
      *        <p>
-     *        Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     *        </p>
-     *        <p>
      *        The API does not support modifications for volume type <code>standard</code>. You also cannot change the
      *        type of a volume to <code>standard</code>.
+     *        </p>
+     *        <p>
+     *        Default: If no type is specified, the existing type is retained.
      * @see VolumeType
      */
 
@@ -195,20 +198,20 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Target EBS volume type of the volume to be modified
      * </p>
      * <p>
-     * Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     * </p>
-     * <p>
      * The API does not support modifications for volume type <code>standard</code>. You also cannot change the type of
      * a volume to <code>standard</code>.
+     * </p>
+     * <p>
+     * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @return Target EBS volume type of the volume to be modified</p>
      *         <p>
-     *         Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     *         </p>
-     *         <p>
      *         The API does not support modifications for volume type <code>standard</code>. You also cannot change the
      *         type of a volume to <code>standard</code>.
+     *         </p>
+     *         <p>
+     *         Default: If no type is specified, the existing type is retained.
      * @see VolumeType
      */
 
@@ -221,21 +224,21 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Target EBS volume type of the volume to be modified
      * </p>
      * <p>
-     * Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     * </p>
-     * <p>
      * The API does not support modifications for volume type <code>standard</code>. You also cannot change the type of
      * a volume to <code>standard</code>.
+     * </p>
+     * <p>
+     * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @param volumeType
      *        Target EBS volume type of the volume to be modified</p>
      *        <p>
-     *        Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     *        </p>
-     *        <p>
      *        The API does not support modifications for volume type <code>standard</code>. You also cannot change the
      *        type of a volume to <code>standard</code>.
+     *        </p>
+     *        <p>
+     *        Default: If no type is specified, the existing type is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -250,21 +253,21 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Target EBS volume type of the volume to be modified
      * </p>
      * <p>
-     * Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     * </p>
-     * <p>
      * The API does not support modifications for volume type <code>standard</code>. You also cannot change the type of
      * a volume to <code>standard</code>.
+     * </p>
+     * <p>
+     * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @param volumeType
      *        Target EBS volume type of the volume to be modified</p>
      *        <p>
-     *        Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     *        </p>
-     *        <p>
      *        The API does not support modifications for volume type <code>standard</code>. You also cannot change the
      *        type of a volume to <code>standard</code>.
+     *        </p>
+     *        <p>
+     *        Default: If no type is specified, the existing type is retained.
      * @see VolumeType
      */
 
@@ -277,21 +280,21 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Target EBS volume type of the volume to be modified
      * </p>
      * <p>
-     * Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     * </p>
-     * <p>
      * The API does not support modifications for volume type <code>standard</code>. You also cannot change the type of
      * a volume to <code>standard</code>.
+     * </p>
+     * <p>
+     * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @param volumeType
      *        Target EBS volume type of the volume to be modified</p>
      *        <p>
-     *        Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-     *        </p>
-     *        <p>
      *        The API does not support modifications for volume type <code>standard</code>. You also cannot change the
      *        type of a volume to <code>standard</code>.
+     *        </p>
+     *        <p>
+     *        Default: If no type is specified, the existing type is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -311,6 +314,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
      * >http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
      * </p>
+     * <p>
+     * Default: If no IOPS value is specified, the existing value is retained.
+     * </p>
      * 
      * @param iops
      *        Target IOPS rate of the volume to be modified.</p>
@@ -319,6 +325,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <code>io1</code> IOPS configuration, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
      *        >http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
+     *        </p>
+     *        <p>
+     *        Default: If no IOPS value is specified, the existing value is retained.
      */
 
     public void setIops(Integer iops) {
@@ -335,6 +344,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
      * >http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
      * </p>
+     * <p>
+     * Default: If no IOPS value is specified, the existing value is retained.
+     * </p>
      * 
      * @return Target IOPS rate of the volume to be modified.</p>
      *         <p>
@@ -342,6 +354,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <code>io1</code> IOPS configuration, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
      *         >http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
+     *         </p>
+     *         <p>
+     *         Default: If no IOPS value is specified, the existing value is retained.
      */
 
     public Integer getIops() {
@@ -358,6 +373,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
      * >http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
      * </p>
+     * <p>
+     * Default: If no IOPS value is specified, the existing value is retained.
+     * </p>
      * 
      * @param iops
      *        Target IOPS rate of the volume to be modified.</p>
@@ -366,6 +384,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <code>io1</code> IOPS configuration, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
      *        >http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
+     *        </p>
+     *        <p>
+     *        Default: If no IOPS value is specified, the existing value is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

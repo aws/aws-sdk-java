@@ -12,53 +12,47 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetEndpointRequest Marshaller
+ * GetEndpointRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetEndpointRequestMarshaller implements Marshaller<Request<GetEndpointRequest>, GetEndpointRequest> {
+@SdkInternalApi
+public class GetEndpointRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> ENDPOINTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("endpoint-id").build();
 
-    public GetEndpointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetEndpointRequestMarshaller instance = new GetEndpointRequestMarshaller();
+
+    public static GetEndpointRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetEndpointRequest> marshall(GetEndpointRequest getEndpointRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetEndpointRequest getEndpointRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getEndpointRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetEndpointRequest> request = new DefaultRequest<GetEndpointRequest>(getEndpointRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/endpoints/{endpoint-id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id", getEndpointRequest.getApplicationId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "endpoint-id", getEndpointRequest.getEndpointId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getEndpointRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(getEndpointRequest.getEndpointId(), ENDPOINTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

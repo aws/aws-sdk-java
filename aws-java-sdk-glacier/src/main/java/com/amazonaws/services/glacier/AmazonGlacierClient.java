@@ -378,7 +378,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AbortMultipartUploadRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(abortMultipartUploadRequest));
+                request = new AbortMultipartUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(abortMultipartUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -443,7 +443,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AbortVaultLockRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(abortVaultLockRequest));
+                request = new AbortVaultLockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(abortVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -498,7 +498,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToVaultRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToVaultRequest));
+                request = new AddTagsToVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -591,7 +591,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CompleteMultipartUploadRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(completeMultipartUploadRequest));
+                request = new CompleteMultipartUploadRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(completeMultipartUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -656,7 +657,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CompleteVaultLockRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(completeVaultLockRequest));
+                request = new CompleteVaultLockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(completeVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -738,7 +739,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateVaultRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVaultRequest));
+                request = new CreateVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -819,7 +820,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteArchiveRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteArchiveRequest));
+                request = new DeleteArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -892,7 +893,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteVaultRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVaultRequest));
+                request = new DeleteVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -949,7 +950,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteVaultAccessPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVaultAccessPolicyRequest));
+                request = new DeleteVaultAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1015,7 +1017,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteVaultNotificationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVaultNotificationsRequest));
+                request = new DeleteVaultNotificationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1089,7 +1092,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobRequest));
+                request = new DescribeJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1159,7 +1162,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVaultRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVaultRequest));
+                request = new DescribeVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1209,7 +1212,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDataRetrievalPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataRetrievalPolicyRequest));
+                request = new GetDataRetrievalPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataRetrievalPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1303,7 +1306,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetJobOutputRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobOutputRequest));
+                request = new GetJobOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1367,7 +1370,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetVaultAccessPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultAccessPolicyRequest));
+                request = new GetVaultAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1451,7 +1454,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetVaultLockRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultLockRequest));
+                request = new GetVaultLockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1521,7 +1524,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetVaultNotificationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultNotificationsRequest));
+                request = new GetVaultNotificationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1747,7 +1750,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InitiateJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateJobRequest));
+                request = new InitiateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1834,7 +1837,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InitiateMultipartUploadRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateMultipartUploadRequest));
+                request = new InitiateMultipartUploadRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(initiateMultipartUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1927,7 +1931,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InitiateVaultLockRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateVaultLockRequest));
+                request = new InitiateVaultLockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2015,7 +2019,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
+                request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2093,7 +2097,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListMultipartUploadsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultipartUploadsRequest));
+                request = new ListMultipartUploadsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultipartUploadsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2168,7 +2172,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPartsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPartsRequest));
+                request = new ListPartsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPartsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2214,7 +2218,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListProvisionedCapacityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProvisionedCapacityRequest));
+                request = new ListProvisionedCapacityRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listProvisionedCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2266,7 +2271,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForVaultRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForVaultRequest));
+                request = new ListTagsForVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2338,7 +2343,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVaultsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVaultsRequest));
+                request = new ListVaultsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVaultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2386,7 +2391,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PurchaseProvisionedCapacityRequestMarshaller(protocolFactory).marshall(super
+                request = new PurchaseProvisionedCapacityRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(purchaseProvisionedCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2440,7 +2445,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromVaultRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromVaultRequest));
+                request = new RemoveTagsFromVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2495,7 +2500,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetDataRetrievalPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setDataRetrievalPolicyRequest));
+                request = new SetDataRetrievalPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setDataRetrievalPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2550,7 +2555,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetVaultAccessPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setVaultAccessPolicyRequest));
+                request = new SetVaultAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2639,7 +2644,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetVaultNotificationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setVaultNotificationsRequest));
+                request = new SetVaultNotificationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2728,7 +2733,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadArchiveRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadArchiveRequest));
+                request = new UploadArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2833,7 +2838,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadMultipartPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadMultipartPartRequest));
+                request = new UploadMultipartPartRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadMultipartPartRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

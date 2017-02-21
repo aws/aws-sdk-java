@@ -14,9 +14,11 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Message implements Serializable, Cloneable {
+public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
@@ -586,5 +588,11 @@ public class Message implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.MessageMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

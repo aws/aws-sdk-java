@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * VerifyTrustRequest Marshaller
+ * VerifyTrustRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VerifyTrustRequestMarshaller implements Marshaller<Request<VerifyTrustRequest>, VerifyTrustRequest> {
+@SdkInternalApi
+public class VerifyTrustRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TRUSTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TrustId").build();
 
-    public VerifyTrustRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final VerifyTrustRequestMarshaller instance = new VerifyTrustRequestMarshaller();
+
+    public static VerifyTrustRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<VerifyTrustRequest> marshall(VerifyTrustRequest verifyTrustRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(VerifyTrustRequest verifyTrustRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (verifyTrustRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<VerifyTrustRequest> request = new DefaultRequest<VerifyTrustRequest>(verifyTrustRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.VerifyTrust");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (verifyTrustRequest.getTrustId() != null) {
-                jsonGenerator.writeFieldName("TrustId").writeValue(verifyTrustRequest.getTrustId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(verifyTrustRequest.getTrustId(), TRUSTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

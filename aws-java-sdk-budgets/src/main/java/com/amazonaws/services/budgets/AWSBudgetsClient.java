@@ -303,7 +303,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBudgetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBudgetRequest));
+                request = new CreateBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -355,7 +355,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateNotificationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNotificationRequest));
+                request = new CreateNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -404,7 +404,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSubscriberRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriberRequest));
+                request = new CreateSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -451,7 +451,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBudgetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBudgetRequest));
+                request = new DeleteBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -498,7 +498,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteNotificationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNotificationRequest));
+                request = new DeleteNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -545,7 +545,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSubscriberRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriberRequest));
+                request = new DeleteSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -592,7 +592,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBudgetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetRequest));
+                request = new DescribeBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -644,7 +644,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBudgetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetsRequest));
+                request = new DescribeBudgetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -696,7 +696,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeNotificationsForBudgetRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeNotificationsForBudgetRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeNotificationsForBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -751,7 +751,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSubscribersForNotificationRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeSubscribersForNotificationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeSubscribersForNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -800,7 +800,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBudgetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBudgetRequest));
+                request = new UpdateBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -847,7 +847,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateNotificationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotificationRequest));
+                request = new UpdateNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -894,7 +894,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSubscriberRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSubscriberRequest));
+                request = new UpdateSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

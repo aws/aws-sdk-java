@@ -310,7 +310,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateApiKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApiKeyRequest));
+                request = new CreateApiKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApiKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -358,7 +358,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAuthorizerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAuthorizerRequest));
+                request = new CreateAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAuthorizerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -404,7 +404,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBasePathMappingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBasePathMappingRequest));
+                request = new CreateBasePathMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBasePathMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -453,7 +453,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentRequest));
+                request = new CreateDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -496,7 +496,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDocumentationPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDocumentationPartRequest));
+                request = new CreateDocumentationPartRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDocumentationPartRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -540,7 +541,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDocumentationVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDocumentationVersionRequest));
+                request = new CreateDocumentationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDocumentationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -586,7 +588,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDomainNameRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainNameRequest));
+                request = new CreateDomainNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -633,7 +635,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateModelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createModelRequest));
+                request = new CreateModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -680,7 +682,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceRequest));
+                request = new CreateResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -725,7 +727,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateRestApiRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRestApiRequest));
+                request = new CreateRestApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -772,7 +774,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStageRequest));
+                request = new CreateStageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -821,7 +823,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUsagePlanRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUsagePlanRequest));
+                request = new CreateUsagePlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUsagePlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -867,7 +869,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUsagePlanKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUsagePlanKeyRequest));
+                request = new CreateUsagePlanKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUsagePlanKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -911,7 +913,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApiKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApiKeyRequest));
+                request = new DeleteApiKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApiKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -959,7 +961,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAuthorizerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAuthorizerRequest));
+                request = new DeleteAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAuthorizerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1003,7 +1005,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBasePathMappingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBasePathMappingRequest));
+                request = new DeleteBasePathMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBasePathMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1049,7 +1051,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteClientCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteClientCertificateRequest));
+                request = new DeleteClientCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1096,7 +1099,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeploymentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeploymentRequest));
+                request = new DeleteDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1138,7 +1141,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDocumentationPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentationPartRequest));
+                request = new DeleteDocumentationPartRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDocumentationPartRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1181,7 +1185,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDocumentationVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentationVersionRequest));
+                request = new DeleteDocumentationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDocumentationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1226,7 +1231,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDomainNameRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainNameRequest));
+                request = new DeleteDomainNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1271,7 +1276,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIntegrationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIntegrationRequest));
+                request = new DeleteIntegrationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1317,7 +1322,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIntegrationResponseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIntegrationResponseRequest));
+                request = new DeleteIntegrationResponseRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteIntegrationResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1363,7 +1369,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMethodRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMethodRequest));
+                request = new DeleteMethodRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1409,7 +1415,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMethodResponseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMethodResponseRequest));
+                request = new DeleteMethodResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMethodResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1455,7 +1461,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteModelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelRequest));
+                request = new DeleteModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1501,7 +1507,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceRequest));
+                request = new DeleteResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1546,7 +1552,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRestApiRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRestApiRequest));
+                request = new DeleteRestApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1591,7 +1597,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStageRequest));
+                request = new DeleteStageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1636,7 +1642,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUsagePlanRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUsagePlanRequest));
+                request = new DeleteUsagePlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUsagePlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1683,7 +1689,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUsagePlanKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUsagePlanKeyRequest));
+                request = new DeleteUsagePlanKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUsagePlanKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1728,7 +1734,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new FlushStageAuthorizersCacheRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(flushStageAuthorizersCacheRequest));
+                request = new FlushStageAuthorizersCacheRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(flushStageAuthorizersCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1774,7 +1781,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new FlushStageCacheRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(flushStageCacheRequest));
+                request = new FlushStageCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(flushStageCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1818,7 +1825,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateClientCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateClientCertificateRequest));
+                request = new GenerateClientCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(generateClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1863,7 +1871,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAccountRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountRequest));
+                request = new GetAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1907,7 +1915,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApiKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApiKeyRequest));
+                request = new GetApiKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApiKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1951,7 +1959,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApiKeysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApiKeysRequest));
+                request = new GetApiKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApiKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1997,7 +2005,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAuthorizerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAuthorizerRequest));
+                request = new GetAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAuthorizerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2044,7 +2052,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAuthorizersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAuthorizersRequest));
+                request = new GetAuthorizersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAuthorizersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2088,7 +2096,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBasePathMappingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBasePathMappingRequest));
+                request = new GetBasePathMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBasePathMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2132,7 +2140,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBasePathMappingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBasePathMappingsRequest));
+                request = new GetBasePathMappingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBasePathMappingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2176,7 +2184,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetClientCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getClientCertificateRequest));
+                request = new GetClientCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2220,7 +2228,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetClientCertificatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getClientCertificatesRequest));
+                request = new GetClientCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getClientCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2266,7 +2274,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentRequest));
+                request = new GetDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2311,7 +2319,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentsRequest));
+                request = new GetDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2351,7 +2359,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDocumentationPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationPartRequest));
+                request = new GetDocumentationPartRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationPartRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2393,7 +2401,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDocumentationPartsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationPartsRequest));
+                request = new GetDocumentationPartsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationPartsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2434,7 +2442,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDocumentationVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationVersionRequest));
+                request = new GetDocumentationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDocumentationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2476,7 +2485,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDocumentationVersionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationVersionsRequest));
+                request = new GetDocumentationVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDocumentationVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2522,7 +2532,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainNameRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainNameRequest));
+                request = new GetDomainNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2566,7 +2576,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainNamesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainNamesRequest));
+                request = new GetDomainNamesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2611,7 +2621,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetExportRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExportRequest));
+                request = new GetExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2655,7 +2665,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIntegrationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIntegrationRequest));
+                request = new GetIntegrationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2699,7 +2709,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIntegrationResponseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIntegrationResponseRequest));
+                request = new GetIntegrationResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIntegrationResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2744,7 +2754,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetMethodRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMethodRequest));
+                request = new GetMethodRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2788,7 +2798,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetMethodResponseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMethodResponseRequest));
+                request = new GetMethodResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMethodResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2832,7 +2842,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetModelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getModelRequest));
+                request = new GetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2877,7 +2887,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetModelTemplateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getModelTemplateRequest));
+                request = new GetModelTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getModelTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2922,7 +2932,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetModelsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getModelsRequest));
+                request = new GetModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2966,7 +2976,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceRequest));
+                request = new GetResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3011,7 +3021,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetResourcesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcesRequest));
+                request = new GetResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3055,7 +3065,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRestApiRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRestApiRequest));
+                request = new GetRestApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3099,7 +3109,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRestApisRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRestApisRequest));
+                request = new GetRestApisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRestApisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3144,7 +3154,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSdkRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSdkRequest));
+                request = new GetSdkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSdkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3184,7 +3194,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSdkTypeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSdkTypeRequest));
+                request = new GetSdkTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSdkTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3223,7 +3233,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSdkTypesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSdkTypesRequest));
+                request = new GetSdkTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSdkTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3267,7 +3277,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetStageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStageRequest));
+                request = new GetStageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3311,7 +3321,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetStagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStagesRequest));
+                request = new GetStagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3356,7 +3366,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsageRequest));
+                request = new GetUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3401,7 +3411,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUsagePlanRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsagePlanRequest));
+                request = new GetUsagePlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsagePlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3446,7 +3456,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUsagePlanKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsagePlanKeyRequest));
+                request = new GetUsagePlanKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsagePlanKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3491,7 +3501,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUsagePlanKeysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsagePlanKeysRequest));
+                request = new GetUsagePlanKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsagePlanKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3537,7 +3547,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUsagePlansRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsagePlansRequest));
+                request = new GetUsagePlansRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsagePlansRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3584,7 +3594,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportApiKeysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importApiKeysRequest));
+                request = new ImportApiKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importApiKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3626,7 +3636,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportDocumentationPartsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importDocumentationPartsRequest));
+                request = new ImportDocumentationPartsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(importDocumentationPartsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3673,7 +3684,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportRestApiRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importRestApiRequest));
+                request = new ImportRestApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3719,7 +3730,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutIntegrationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putIntegrationRequest));
+                request = new PutIntegrationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3766,7 +3777,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutIntegrationResponseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putIntegrationResponseRequest));
+                request = new PutIntegrationResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putIntegrationResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3814,7 +3825,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMethodRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMethodRequest));
+                request = new PutMethodRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3861,7 +3872,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMethodResponseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMethodResponseRequest));
+                request = new PutMethodResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMethodResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3910,7 +3921,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRestApiRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRestApiRequest));
+                request = new PutRestApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3959,7 +3970,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestInvokeAuthorizerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(testInvokeAuthorizerRequest));
+                request = new TestInvokeAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testInvokeAuthorizerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4005,7 +4016,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestInvokeMethodRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(testInvokeMethodRequest));
+                request = new TestInvokeMethodRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testInvokeMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4050,7 +4061,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAccountRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccountRequest));
+                request = new UpdateAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4096,7 +4107,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApiKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApiKeyRequest));
+                request = new UpdateApiKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApiKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4143,7 +4154,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAuthorizerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAuthorizerRequest));
+                request = new UpdateAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAuthorizerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4189,7 +4200,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBasePathMappingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBasePathMappingRequest));
+                request = new UpdateBasePathMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBasePathMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4235,7 +4246,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateClientCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClientCertificateRequest));
+                request = new UpdateClientCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4282,7 +4294,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDeploymentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeploymentRequest));
+                request = new UpdateDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4325,7 +4337,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDocumentationPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentationPartRequest));
+                request = new UpdateDocumentationPartRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDocumentationPartRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4368,7 +4381,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDocumentationVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentationVersionRequest));
+                request = new UpdateDocumentationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDocumentationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4415,7 +4429,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainNameRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainNameRequest));
+                request = new UpdateDomainNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4461,7 +4475,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateIntegrationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIntegrationRequest));
+                request = new UpdateIntegrationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4507,7 +4521,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateIntegrationResponseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIntegrationResponseRequest));
+                request = new UpdateIntegrationResponseRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateIntegrationResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4554,7 +4569,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMethodRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMethodRequest));
+                request = new UpdateMethodRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4601,7 +4616,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMethodResponseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMethodResponseRequest));
+                request = new UpdateMethodResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMethodResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4647,7 +4662,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateModelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateModelRequest));
+                request = new UpdateModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4693,7 +4708,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceRequest));
+                request = new UpdateResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4739,7 +4754,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRestApiRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRestApiRequest));
+                request = new UpdateRestApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4785,7 +4800,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStageRequest));
+                request = new UpdateStageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4831,7 +4846,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUsageRequest));
+                request = new UpdateUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4877,7 +4892,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUsagePlanRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUsagePlanRequest));
+                request = new UpdateUsagePlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUsagePlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -315,7 +315,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddAttributesToFindingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addAttributesToFindingsRequest));
+                request = new AddAttributesToFindingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(addAttributesToFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -374,7 +375,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssessmentTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssessmentTargetRequest));
+                request = new CreateAssessmentTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -429,7 +430,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssessmentTemplateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssessmentTemplateRequest));
+                request = new CreateAssessmentTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAssessmentTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -483,7 +485,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateResourceGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceGroupRequest));
+                request = new CreateResourceGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -536,7 +538,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentRunRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentRunRequest));
+                request = new DeleteAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -589,7 +591,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentTargetRequest));
+                request = new DeleteAssessmentTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -643,7 +645,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentTemplateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentTemplateRequest));
+                request = new DeleteAssessmentTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAssessmentTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -690,7 +693,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentRunsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssessmentRunsRequest));
+                request = new DescribeAssessmentRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssessmentRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -737,7 +740,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssessmentTargetsRequest));
+                request = new DescribeAssessmentTargetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAssessmentTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -784,7 +788,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentTemplatesRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeAssessmentTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeAssessmentTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -830,7 +834,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCrossAccountAccessRoleRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeCrossAccountAccessRoleRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeCrossAccountAccessRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -878,7 +882,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFindingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFindingsRequest));
+                request = new DescribeFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -924,7 +928,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeResourceGroupsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceGroupsRequest));
+                request = new DescribeResourceGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -971,7 +975,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRulesPackagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRulesPackagesRequest));
+                request = new DescribeRulesPackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1023,7 +1027,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTelemetryMetadataRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTelemetryMetadataRequest));
+                request = new GetTelemetryMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTelemetryMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1074,7 +1078,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentRunAgentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentRunAgentsRequest));
+                request = new ListAssessmentRunAgentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAssessmentRunAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1127,7 +1132,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentRunsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentRunsRequest));
+                request = new ListAssessmentRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1177,7 +1182,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentTargetsRequest));
+                request = new ListAssessmentTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1230,7 +1235,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentTemplatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentTemplatesRequest));
+                request = new ListAssessmentTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAssessmentTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1283,7 +1289,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListEventSubscriptionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventSubscriptionsRequest));
+                request = new ListEventSubscriptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1335,7 +1341,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFindingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsRequest));
+                request = new ListFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1383,7 +1389,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRulesPackagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesPackagesRequest));
+                request = new ListRulesPackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1434,7 +1440,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1488,7 +1494,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PreviewAgentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(previewAgentsRequest));
+                request = new PreviewAgentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(previewAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1540,7 +1546,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterCrossAccountAccessRoleRequestMarshaller(protocolFactory).marshall(super
+                request = new RegisterCrossAccountAccessRoleRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(registerCrossAccountAccessRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1594,7 +1600,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveAttributesFromFindingsRequestMarshaller(protocolFactory).marshall(super
+                request = new RemoveAttributesFromFindingsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(removeAttributesFromFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1648,7 +1654,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setTagsForResourceRequest));
+                request = new SetTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1709,7 +1715,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartAssessmentRunRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAssessmentRunRequest));
+                request = new StartAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1760,7 +1766,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopAssessmentRunRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopAssessmentRunRequest));
+                request = new StopAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1815,7 +1821,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubscribeToEventRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToEventRequest));
+                request = new SubscribeToEventRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1867,7 +1873,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnsubscribeFromEventRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromEventRequest));
+                request = new UnsubscribeFromEventRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1918,7 +1924,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAssessmentTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssessmentTargetRequest));
+                request = new UpdateAssessmentTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

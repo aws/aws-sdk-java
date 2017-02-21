@@ -12,90 +12,60 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateNFSFileShareRequest Marshaller
+ * UpdateNFSFileShareRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateNFSFileShareRequestMarshaller implements Marshaller<Request<UpdateNFSFileShareRequest>, UpdateNFSFileShareRequest> {
+@SdkInternalApi
+public class UpdateNFSFileShareRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FILESHAREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareARN").build();
+    private static final MarshallingInfo<Boolean> KMSENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSEncrypted").build();
+    private static final MarshallingInfo<String> KMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KMSKey").build();
+    private static final MarshallingInfo<StructuredPojo> NFSFILESHAREDEFAULTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NFSFileShareDefaults").build();
+    private static final MarshallingInfo<String> DEFAULTSTORAGECLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultStorageClass").build();
+    private static final MarshallingInfo<List> CLIENTLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientList").build();
 
-    public UpdateNFSFileShareRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateNFSFileShareRequestMarshaller instance = new UpdateNFSFileShareRequestMarshaller();
+
+    public static UpdateNFSFileShareRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateNFSFileShareRequest> marshall(UpdateNFSFileShareRequest updateNFSFileShareRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateNFSFileShareRequest updateNFSFileShareRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateNFSFileShareRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateNFSFileShareRequest> request = new DefaultRequest<UpdateNFSFileShareRequest>(updateNFSFileShareRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.UpdateNFSFileShare");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateNFSFileShareRequest.getFileShareARN() != null) {
-                jsonGenerator.writeFieldName("FileShareARN").writeValue(updateNFSFileShareRequest.getFileShareARN());
-            }
-            if (updateNFSFileShareRequest.getKMSEncrypted() != null) {
-                jsonGenerator.writeFieldName("KMSEncrypted").writeValue(updateNFSFileShareRequest.getKMSEncrypted());
-            }
-            if (updateNFSFileShareRequest.getKMSKey() != null) {
-                jsonGenerator.writeFieldName("KMSKey").writeValue(updateNFSFileShareRequest.getKMSKey());
-            }
-            if (updateNFSFileShareRequest.getNFSFileShareDefaults() != null) {
-                jsonGenerator.writeFieldName("NFSFileShareDefaults");
-                NFSFileShareDefaultsJsonMarshaller.getInstance().marshall(updateNFSFileShareRequest.getNFSFileShareDefaults(), jsonGenerator);
-            }
-            if (updateNFSFileShareRequest.getDefaultStorageClass() != null) {
-                jsonGenerator.writeFieldName("DefaultStorageClass").writeValue(updateNFSFileShareRequest.getDefaultStorageClass());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> clientListList = (com.amazonaws.internal.SdkInternalList<String>) updateNFSFileShareRequest
-                    .getClientList();
-            if (!clientListList.isEmpty() || !clientListList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("ClientList");
-                jsonGenerator.writeStartArray();
-                for (String clientListListValue : clientListList) {
-                    if (clientListListValue != null) {
-                        jsonGenerator.writeValue(clientListListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateNFSFileShareRequest.getFileShareARN(), FILESHAREARN_BINDING);
+            protocolMarshaller.marshall(updateNFSFileShareRequest.getKMSEncrypted(), KMSENCRYPTED_BINDING);
+            protocolMarshaller.marshall(updateNFSFileShareRequest.getKMSKey(), KMSKEY_BINDING);
+            protocolMarshaller.marshall(updateNFSFileShareRequest.getNFSFileShareDefaults(), NFSFILESHAREDEFAULTS_BINDING);
+            protocolMarshaller.marshall(updateNFSFileShareRequest.getDefaultStorageClass(), DEFAULTSTORAGECLASS_BINDING);
+            protocolMarshaller.marshall(updateNFSFileShareRequest.getClientList(), CLIENTLIST_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

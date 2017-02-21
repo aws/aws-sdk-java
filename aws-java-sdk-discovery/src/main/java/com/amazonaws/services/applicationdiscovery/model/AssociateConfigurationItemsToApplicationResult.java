@@ -63,4 +63,5 @@ public class AssociateConfigurationItemsToApplicationResult extends com.amazonaw
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -12,82 +12,62 @@
  */
 package com.amazonaws.services.codecommit.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codecommit.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDifferencesRequest Marshaller
+ * GetDifferencesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDifferencesRequestMarshaller implements Marshaller<Request<GetDifferencesRequest>, GetDifferencesRequest> {
+@SdkInternalApi
+public class GetDifferencesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryName").build();
+    private static final MarshallingInfo<String> BEFORECOMMITSPECIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("beforeCommitSpecifier").build();
+    private static final MarshallingInfo<String> AFTERCOMMITSPECIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("afterCommitSpecifier").build();
+    private static final MarshallingInfo<String> BEFOREPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("beforePath").build();
+    private static final MarshallingInfo<String> AFTERPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("afterPath").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public GetDifferencesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDifferencesRequestMarshaller instance = new GetDifferencesRequestMarshaller();
+
+    public static GetDifferencesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDifferencesRequest> marshall(GetDifferencesRequest getDifferencesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDifferencesRequest getDifferencesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDifferencesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDifferencesRequest> request = new DefaultRequest<GetDifferencesRequest>(getDifferencesRequest, "AWSCodeCommit");
-        request.addHeader("X-Amz-Target", "CodeCommit_20150413.GetDifferences");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getDifferencesRequest.getRepositoryName() != null) {
-                jsonGenerator.writeFieldName("repositoryName").writeValue(getDifferencesRequest.getRepositoryName());
-            }
-            if (getDifferencesRequest.getBeforeCommitSpecifier() != null) {
-                jsonGenerator.writeFieldName("beforeCommitSpecifier").writeValue(getDifferencesRequest.getBeforeCommitSpecifier());
-            }
-            if (getDifferencesRequest.getAfterCommitSpecifier() != null) {
-                jsonGenerator.writeFieldName("afterCommitSpecifier").writeValue(getDifferencesRequest.getAfterCommitSpecifier());
-            }
-            if (getDifferencesRequest.getBeforePath() != null) {
-                jsonGenerator.writeFieldName("beforePath").writeValue(getDifferencesRequest.getBeforePath());
-            }
-            if (getDifferencesRequest.getAfterPath() != null) {
-                jsonGenerator.writeFieldName("afterPath").writeValue(getDifferencesRequest.getAfterPath());
-            }
-            if (getDifferencesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(getDifferencesRequest.getMaxResults());
-            }
-            if (getDifferencesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(getDifferencesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getDifferencesRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
+            protocolMarshaller.marshall(getDifferencesRequest.getBeforeCommitSpecifier(), BEFORECOMMITSPECIFIER_BINDING);
+            protocolMarshaller.marshall(getDifferencesRequest.getAfterCommitSpecifier(), AFTERCOMMITSPECIFIER_BINDING);
+            protocolMarshaller.marshall(getDifferencesRequest.getBeforePath(), BEFOREPATH_BINDING);
+            protocolMarshaller.marshall(getDifferencesRequest.getAfterPath(), AFTERPATH_BINDING);
+            protocolMarshaller.marshall(getDifferencesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(getDifferencesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

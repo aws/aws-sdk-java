@@ -12,83 +12,56 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListAttachedIndicesRequest Marshaller
+ * ListAttachedIndicesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListAttachedIndicesRequestMarshaller implements Marshaller<Request<ListAttachedIndicesRequest>, ListAttachedIndicesRequest> {
+@SdkInternalApi
+public class ListAttachedIndicesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetReference").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> CONSISTENCYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-consistency-level").build();
 
-    public ListAttachedIndicesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListAttachedIndicesRequestMarshaller instance = new ListAttachedIndicesRequestMarshaller();
+
+    public static ListAttachedIndicesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListAttachedIndicesRequest> marshall(ListAttachedIndicesRequest listAttachedIndicesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListAttachedIndicesRequest listAttachedIndicesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listAttachedIndicesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListAttachedIndicesRequest> request = new DefaultRequest<ListAttachedIndicesRequest>(listAttachedIndicesRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (listAttachedIndicesRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(listAttachedIndicesRequest.getDirectoryArn()));
-        }
-
-        if (listAttachedIndicesRequest.getConsistencyLevel() != null) {
-            request.addHeader("x-amz-consistency-level", StringUtils.fromString(listAttachedIndicesRequest.getConsistencyLevel()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/object/indices";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (listAttachedIndicesRequest.getTargetReference() != null) {
-                jsonGenerator.writeFieldName("TargetReference");
-                ObjectReferenceJsonMarshaller.getInstance().marshall(listAttachedIndicesRequest.getTargetReference(), jsonGenerator);
-            }
-            if (listAttachedIndicesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listAttachedIndicesRequest.getNextToken());
-            }
-            if (listAttachedIndicesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(listAttachedIndicesRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listAttachedIndicesRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+            protocolMarshaller.marshall(listAttachedIndicesRequest.getTargetReference(), TARGETREFERENCE_BINDING);
+            protocolMarshaller.marshall(listAttachedIndicesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAttachedIndicesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listAttachedIndicesRequest.getConsistencyLevel(), CONSISTENCYLEVEL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

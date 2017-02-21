@@ -7684,9 +7684,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about
-     * CloudWatch Events, see the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html"
-     * >Amazon CloudWatch Events User Guide</a>. For more information, see <a
+     * CloudWatch Events, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch
+     * Events User Guide</a>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
      * Volume Modifications"</a>.
      * </p>
@@ -10040,37 +10039,33 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * an EBS volume running Linux, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
      * Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Expanding
-     * the Storage Space of an EBS Volume on Windows</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
+     * Type of an EBS Volume on Windows</a>.
      * </p>
      * <p>
      * When you complete a resize operation on your volume, you need to extend the volume's file-system size to take
      * advantage of the new storage capacity. For information about extending a Linux file system, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux"
      * >Extending a Linux File System</a>. For information about extending a Windows file system, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows"
+     * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows"
      * >Extending a Windows File System</a>.
      * </p>
      * <p>
      * You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about
-     * CloudWatch Events, see the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html"
-     * >Amazon CloudWatch Events User Guide</a>. You can also track the status of a modification using the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html"
-     * > <code>DescribeVolumesModifications</code> API</a>. For information about tracking status changes using either
-     * method, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-     * Volume Modifications"</a>.
+     * CloudWatch Events, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch
+     * Events User Guide</a>. You can also track the status of a modification using the
+     * <a>DescribeVolumesModifications</a> API. For information about tracking status changes using either method, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+     * Volume Modifications</a>.
      * </p>
      * <note>
      * <p>
-     * With previous-generation volumes and instance types, resizing an EBS volume may require detaching and reattaching
-     * the volume or stopping and restarting the instance. For more information about modifying an EBS volume running
-     * Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the
-     * Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running
-     * Windows, see <a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-     * the Size, IOPS, or Type of an EBS Volume on Windows</a>.
+     * With previous-generation instance types, resizing an EBS volume may require detaching and reattaching the volume
+     * or stopping and restarting the instance. For more information about modifying an EBS volume running Linux, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
+     * Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
+     * Type of an EBS Volume on Windows</a>.
      * </p>
      * </note> <note>
      * <p>
@@ -10639,36 +10634,25 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </note>
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root
-     * device volume. For more information, see <a
+     * device volume. You specify the snapshot using the block device mapping. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching an
      * Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
-     * <important>
+     * <p>
+     * You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.
+     * </p>
      * <p>
      * Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use
-     * the EC2 <code>billingProduct</code> code associated with an AMI to verify subscription status for package
-     * updates. Creating an AMI from an EBS snapshot does not maintain this billing code, and subsequent instances
-     * launched from such an AMI will not be able to connect to package update infrastructure.
+     * the EC2 billing product code associated with an AMI to verify the subscription status for package updates.
+     * Creating an AMI from an EBS snapshot does not maintain this billing code, and subsequent instances launched from
+     * such an AMI will not be able to connect to package update infrastructure. To create an AMI that must retain
+     * billing codes, see <a>CreateImage</a>.
      * </p>
-     * <p>
-     * Similarly, although you can create a Windows AMI from a snapshot, you can't successfully launch an instance from
-     * the AMI.
-     * </p>
-     * <p>
-     * To create Windows AMIs or to create AMIs for Linux operating systems that must retain AMI billing codes to work
-     * properly, see <a>CreateImage</a>.
-     * </p>
-     * </important>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance
      * store volume invalidates its registration. If you make changes to an image, deregister the previous image and
      * register the new image.
      * </p>
-     * <note>
-     * <p>
-     * You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.
-     * </p>
-     * </note>
      * 
      * @param registerImageRequest
      *        Contains the parameters for RegisterImage.

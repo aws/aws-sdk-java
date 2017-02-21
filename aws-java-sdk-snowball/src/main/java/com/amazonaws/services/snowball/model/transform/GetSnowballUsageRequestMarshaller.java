@@ -12,60 +12,40 @@
  */
 package com.amazonaws.services.snowball.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.snowball.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetSnowballUsageRequest Marshaller
+ * GetSnowballUsageRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetSnowballUsageRequestMarshaller implements Marshaller<Request<GetSnowballUsageRequest>, GetSnowballUsageRequest> {
+@SdkInternalApi
+public class GetSnowballUsageRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final GetSnowballUsageRequestMarshaller instance = new GetSnowballUsageRequestMarshaller();
 
-    public GetSnowballUsageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static GetSnowballUsageRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetSnowballUsageRequest> marshall(GetSnowballUsageRequest getSnowballUsageRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetSnowballUsageRequest getSnowballUsageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getSnowballUsageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSnowballUsageRequest> request = new DefaultRequest<GetSnowballUsageRequest>(getSnowballUsageRequest, "AmazonSnowball");
-        request.addHeader("X-Amz-Target", "AWSIESnowballJobManagementService.GetSnowballUsage");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

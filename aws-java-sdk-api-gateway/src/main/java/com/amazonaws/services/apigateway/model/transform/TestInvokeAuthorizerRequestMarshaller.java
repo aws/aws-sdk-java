@@ -12,119 +12,64 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * TestInvokeAuthorizerRequest Marshaller
+ * TestInvokeAuthorizerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TestInvokeAuthorizerRequestMarshaller implements Marshaller<Request<TestInvokeAuthorizerRequest>, TestInvokeAuthorizerRequest> {
+@SdkInternalApi
+public class TestInvokeAuthorizerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> AUTHORIZERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("authorizer_id").build();
+    private static final MarshallingInfo<Map> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("headers").build();
+    private static final MarshallingInfo<String> PATHWITHQUERYSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pathWithQueryString").build();
+    private static final MarshallingInfo<String> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("body").build();
+    private static final MarshallingInfo<Map> STAGEVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stageVariables").build();
+    private static final MarshallingInfo<Map> ADDITIONALCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalContext").build();
 
-    public TestInvokeAuthorizerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final TestInvokeAuthorizerRequestMarshaller instance = new TestInvokeAuthorizerRequestMarshaller();
+
+    public static TestInvokeAuthorizerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<TestInvokeAuthorizerRequest> marshall(TestInvokeAuthorizerRequest testInvokeAuthorizerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(TestInvokeAuthorizerRequest testInvokeAuthorizerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (testInvokeAuthorizerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TestInvokeAuthorizerRequest> request = new DefaultRequest<TestInvokeAuthorizerRequest>(testInvokeAuthorizerRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis/{restapi_id}/authorizers/{authorizer_id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "restapi_id", testInvokeAuthorizerRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "authorizer_id",
-                testInvokeAuthorizerRequest.getAuthorizerId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.Map<String, String> headersMap = testInvokeAuthorizerRequest.getHeaders();
-            if (headersMap != null) {
-                jsonGenerator.writeFieldName("headers");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> headersMapValue : headersMap.entrySet()) {
-                    if (headersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(headersMapValue.getKey());
-
-                        jsonGenerator.writeValue(headersMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (testInvokeAuthorizerRequest.getPathWithQueryString() != null) {
-                jsonGenerator.writeFieldName("pathWithQueryString").writeValue(testInvokeAuthorizerRequest.getPathWithQueryString());
-            }
-            if (testInvokeAuthorizerRequest.getBody() != null) {
-                jsonGenerator.writeFieldName("body").writeValue(testInvokeAuthorizerRequest.getBody());
-            }
-
-            java.util.Map<String, String> stageVariablesMap = testInvokeAuthorizerRequest.getStageVariables();
-            if (stageVariablesMap != null) {
-                jsonGenerator.writeFieldName("stageVariables");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap.entrySet()) {
-                    if (stageVariablesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(stageVariablesMapValue.getKey());
-
-                        jsonGenerator.writeValue(stageVariablesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.Map<String, String> additionalContextMap = testInvokeAuthorizerRequest.getAdditionalContext();
-            if (additionalContextMap != null) {
-                jsonGenerator.writeFieldName("additionalContext");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> additionalContextMapValue : additionalContextMap.entrySet()) {
-                    if (additionalContextMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(additionalContextMapValue.getKey());
-
-                        jsonGenerator.writeValue(additionalContextMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getAuthorizerId(), AUTHORIZERID_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getHeaders(), HEADERS_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getPathWithQueryString(), PATHWITHQUERYSTRING_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getBody(), BODY_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getStageVariables(), STAGEVARIABLES_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getAdditionalContext(), ADDITIONALCONTEXT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

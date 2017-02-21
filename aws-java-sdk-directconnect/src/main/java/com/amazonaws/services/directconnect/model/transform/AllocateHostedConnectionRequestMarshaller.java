@@ -12,77 +12,56 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AllocateHostedConnectionRequest Marshaller
+ * AllocateHostedConnectionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AllocateHostedConnectionRequestMarshaller implements Marshaller<Request<AllocateHostedConnectionRequest>, AllocateHostedConnectionRequest> {
+@SdkInternalApi
+public class AllocateHostedConnectionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
+    private static final MarshallingInfo<String> OWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ownerAccount").build();
+    private static final MarshallingInfo<String> BANDWIDTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("bandwidth").build();
+    private static final MarshallingInfo<String> CONNECTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionName").build();
+    private static final MarshallingInfo<Integer> VLAN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("vlan").build();
 
-    public AllocateHostedConnectionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AllocateHostedConnectionRequestMarshaller instance = new AllocateHostedConnectionRequestMarshaller();
+
+    public static AllocateHostedConnectionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AllocateHostedConnectionRequest> marshall(AllocateHostedConnectionRequest allocateHostedConnectionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AllocateHostedConnectionRequest allocateHostedConnectionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (allocateHostedConnectionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AllocateHostedConnectionRequest> request = new DefaultRequest<AllocateHostedConnectionRequest>(allocateHostedConnectionRequest,
-                "AmazonDirectConnect");
-        request.addHeader("X-Amz-Target", "OvertureService.AllocateHostedConnection");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (allocateHostedConnectionRequest.getConnectionId() != null) {
-                jsonGenerator.writeFieldName("connectionId").writeValue(allocateHostedConnectionRequest.getConnectionId());
-            }
-            if (allocateHostedConnectionRequest.getOwnerAccount() != null) {
-                jsonGenerator.writeFieldName("ownerAccount").writeValue(allocateHostedConnectionRequest.getOwnerAccount());
-            }
-            if (allocateHostedConnectionRequest.getBandwidth() != null) {
-                jsonGenerator.writeFieldName("bandwidth").writeValue(allocateHostedConnectionRequest.getBandwidth());
-            }
-            if (allocateHostedConnectionRequest.getConnectionName() != null) {
-                jsonGenerator.writeFieldName("connectionName").writeValue(allocateHostedConnectionRequest.getConnectionName());
-            }
-            if (allocateHostedConnectionRequest.getVlan() != null) {
-                jsonGenerator.writeFieldName("vlan").writeValue(allocateHostedConnectionRequest.getVlan());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(allocateHostedConnectionRequest.getConnectionId(), CONNECTIONID_BINDING);
+            protocolMarshaller.marshall(allocateHostedConnectionRequest.getOwnerAccount(), OWNERACCOUNT_BINDING);
+            protocolMarshaller.marshall(allocateHostedConnectionRequest.getBandwidth(), BANDWIDTH_BINDING);
+            protocolMarshaller.marshall(allocateHostedConnectionRequest.getConnectionName(), CONNECTIONNAME_BINDING);
+            protocolMarshaller.marshall(allocateHostedConnectionRequest.getVlan(), VLAN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

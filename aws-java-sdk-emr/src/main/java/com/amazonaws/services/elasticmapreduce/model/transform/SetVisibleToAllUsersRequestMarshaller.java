@@ -12,76 +12,48 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetVisibleToAllUsersRequest Marshaller
+ * SetVisibleToAllUsersRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetVisibleToAllUsersRequestMarshaller implements Marshaller<Request<SetVisibleToAllUsersRequest>, SetVisibleToAllUsersRequest> {
+@SdkInternalApi
+public class SetVisibleToAllUsersRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> JOBFLOWIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JobFlowIds").build();
+    private static final MarshallingInfo<Boolean> VISIBLETOALLUSERS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibleToAllUsers").build();
 
-    public SetVisibleToAllUsersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetVisibleToAllUsersRequestMarshaller instance = new SetVisibleToAllUsersRequestMarshaller();
+
+    public static SetVisibleToAllUsersRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetVisibleToAllUsersRequest> marshall(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setVisibleToAllUsersRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetVisibleToAllUsersRequest> request = new DefaultRequest<SetVisibleToAllUsersRequest>(setVisibleToAllUsersRequest, "AmazonElasticMapReduce");
-        request.addHeader("X-Amz-Target", "ElasticMapReduce.SetVisibleToAllUsers");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> jobFlowIdsList = (com.amazonaws.internal.SdkInternalList<String>) setVisibleToAllUsersRequest
-                    .getJobFlowIds();
-            if (!jobFlowIdsList.isEmpty() || !jobFlowIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("JobFlowIds");
-                jsonGenerator.writeStartArray();
-                for (String jobFlowIdsListValue : jobFlowIdsList) {
-                    if (jobFlowIdsListValue != null) {
-                        jsonGenerator.writeValue(jobFlowIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (setVisibleToAllUsersRequest.getVisibleToAllUsers() != null) {
-                jsonGenerator.writeFieldName("VisibleToAllUsers").writeValue(setVisibleToAllUsersRequest.getVisibleToAllUsers());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setVisibleToAllUsersRequest.getJobFlowIds(), JOBFLOWIDS_BINDING);
+            protocolMarshaller.marshall(setVisibleToAllUsersRequest.getVisibleToAllUsers(), VISIBLETOALLUSERS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

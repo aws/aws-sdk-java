@@ -14,6 +14,8 @@ package com.amazonaws.services.lexruntime.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GenericAttachment implements Serializable, Cloneable {
+public class GenericAttachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -347,5 +349,11 @@ public class GenericAttachment implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lexruntime.model.transform.GenericAttachmentMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

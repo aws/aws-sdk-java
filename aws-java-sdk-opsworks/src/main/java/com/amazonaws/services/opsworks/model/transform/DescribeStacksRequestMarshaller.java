@@ -12,72 +12,45 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeStacksRequest Marshaller
+ * DescribeStacksRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeStacksRequestMarshaller implements Marshaller<Request<DescribeStacksRequest>, DescribeStacksRequest> {
+@SdkInternalApi
+public class DescribeStacksRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> STACKIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackIds").build();
 
-    public DescribeStacksRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeStacksRequestMarshaller instance = new DescribeStacksRequestMarshaller();
+
+    public static DescribeStacksRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeStacksRequest> marshall(DescribeStacksRequest describeStacksRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeStacksRequest describeStacksRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeStacksRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeStacksRequest> request = new DefaultRequest<DescribeStacksRequest>(describeStacksRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeStacks");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> stackIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeStacksRequest.getStackIds();
-            if (!stackIdsList.isEmpty() || !stackIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("StackIds");
-                jsonGenerator.writeStartArray();
-                for (String stackIdsListValue : stackIdsList) {
-                    if (stackIdsListValue != null) {
-                        jsonGenerator.writeValue(stackIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeStacksRequest.getStackIds(), STACKIDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

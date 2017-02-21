@@ -12,84 +12,52 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetIdRequest Marshaller
+ * GetIdRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetIdRequestMarshaller implements Marshaller<Request<GetIdRequest>, GetIdRequest> {
+@SdkInternalApi
+public class GetIdRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<Map> LOGINS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Logins").build();
 
-    public GetIdRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetIdRequestMarshaller instance = new GetIdRequestMarshaller();
+
+    public static GetIdRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetIdRequest> marshall(GetIdRequest getIdRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetIdRequest getIdRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getIdRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetIdRequest> request = new DefaultRequest<GetIdRequest>(getIdRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.GetId");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getIdRequest.getAccountId() != null) {
-                jsonGenerator.writeFieldName("AccountId").writeValue(getIdRequest.getAccountId());
-            }
-            if (getIdRequest.getIdentityPoolId() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(getIdRequest.getIdentityPoolId());
-            }
-
-            java.util.Map<String, String> loginsMap = getIdRequest.getLogins();
-            if (loginsMap != null) {
-                jsonGenerator.writeFieldName("Logins");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> loginsMapValue : loginsMap.entrySet()) {
-                    if (loginsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(loginsMapValue.getKey());
-
-                        jsonGenerator.writeValue(loginsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getIdRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(getIdRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(getIdRequest.getLogins(), LOGINS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

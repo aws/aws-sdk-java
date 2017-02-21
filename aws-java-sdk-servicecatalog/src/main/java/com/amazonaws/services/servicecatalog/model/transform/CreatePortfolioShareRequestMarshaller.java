@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreatePortfolioShareRequest Marshaller
+ * CreatePortfolioShareRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreatePortfolioShareRequestMarshaller implements Marshaller<Request<CreatePortfolioShareRequest>, CreatePortfolioShareRequest> {
+@SdkInternalApi
+public class CreatePortfolioShareRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PORTFOLIOID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PortfolioId").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
 
-    public CreatePortfolioShareRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreatePortfolioShareRequestMarshaller instance = new CreatePortfolioShareRequestMarshaller();
+
+    public static CreatePortfolioShareRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreatePortfolioShareRequest> marshall(CreatePortfolioShareRequest createPortfolioShareRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreatePortfolioShareRequest createPortfolioShareRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createPortfolioShareRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreatePortfolioShareRequest> request = new DefaultRequest<CreatePortfolioShareRequest>(createPortfolioShareRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.CreatePortfolioShare");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createPortfolioShareRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(createPortfolioShareRequest.getAcceptLanguage());
-            }
-            if (createPortfolioShareRequest.getPortfolioId() != null) {
-                jsonGenerator.writeFieldName("PortfolioId").writeValue(createPortfolioShareRequest.getPortfolioId());
-            }
-            if (createPortfolioShareRequest.getAccountId() != null) {
-                jsonGenerator.writeFieldName("AccountId").writeValue(createPortfolioShareRequest.getAccountId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createPortfolioShareRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(createPortfolioShareRequest.getPortfolioId(), PORTFOLIOID_BINDING);
+            protocolMarshaller.marshall(createPortfolioShareRequest.getAccountId(), ACCOUNTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

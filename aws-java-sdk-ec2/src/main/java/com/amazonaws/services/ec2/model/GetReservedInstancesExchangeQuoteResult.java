@@ -32,7 +32,11 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ReservedInstanceReservationValue> reservedInstanceValueSet;
-
+    /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     */
     private ReservationValue reservedInstanceValueRollup;
     /**
      * <p>
@@ -40,7 +44,11 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetReservationValue> targetConfigurationValueSet;
-
+    /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     */
     private ReservationValue targetConfigurationValueRollup;
     /**
      * <p>
@@ -147,7 +155,12 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
      * @param reservedInstanceValueRollup
+     *        The cost associated with the Reserved Instance.
      */
 
     public void setReservedInstanceValueRollup(ReservationValue reservedInstanceValueRollup) {
@@ -155,7 +168,11 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     }
 
     /**
-     * @return
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
+     * @return The cost associated with the Reserved Instance.
      */
 
     public ReservationValue getReservedInstanceValueRollup() {
@@ -163,7 +180,12 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
      * @param reservedInstanceValueRollup
+     *        The cost associated with the Reserved Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,7 +268,12 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
      * @param targetConfigurationValueRollup
+     *        The cost associated with the Reserved Instance.
      */
 
     public void setTargetConfigurationValueRollup(ReservationValue targetConfigurationValueRollup) {
@@ -254,7 +281,11 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     }
 
     /**
-     * @return
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
+     * @return The cost associated with the Reserved Instance.
      */
 
     public ReservationValue getTargetConfigurationValueRollup() {
@@ -262,7 +293,12 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
      * @param targetConfigurationValueRollup
+     *        The cost associated with the Reserved Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

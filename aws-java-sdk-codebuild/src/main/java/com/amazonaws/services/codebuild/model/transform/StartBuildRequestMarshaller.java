@@ -12,92 +12,60 @@
  */
 package com.amazonaws.services.codebuild.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codebuild.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartBuildRequest Marshaller
+ * StartBuildRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartBuildRequestMarshaller implements Marshaller<Request<StartBuildRequest>, StartBuildRequest> {
+@SdkInternalApi
+public class StartBuildRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectName").build();
+    private static final MarshallingInfo<String> SOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceVersion").build();
+    private static final MarshallingInfo<StructuredPojo> ARTIFACTSOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactsOverride").build();
+    private static final MarshallingInfo<List> ENVIRONMENTVARIABLESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentVariablesOverride").build();
+    private static final MarshallingInfo<String> BUILDSPECOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildspecOverride").build();
+    private static final MarshallingInfo<Integer> TIMEOUTINMINUTESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMinutesOverride").build();
 
-    public StartBuildRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartBuildRequestMarshaller instance = new StartBuildRequestMarshaller();
+
+    public static StartBuildRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartBuildRequest> marshall(StartBuildRequest startBuildRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartBuildRequest startBuildRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startBuildRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartBuildRequest> request = new DefaultRequest<StartBuildRequest>(startBuildRequest, "AWSCodeBuild");
-        request.addHeader("X-Amz-Target", "CodeBuild_20161006.StartBuild");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startBuildRequest.getProjectName() != null) {
-                jsonGenerator.writeFieldName("projectName").writeValue(startBuildRequest.getProjectName());
-            }
-            if (startBuildRequest.getSourceVersion() != null) {
-                jsonGenerator.writeFieldName("sourceVersion").writeValue(startBuildRequest.getSourceVersion());
-            }
-            if (startBuildRequest.getArtifactsOverride() != null) {
-                jsonGenerator.writeFieldName("artifactsOverride");
-                ProjectArtifactsJsonMarshaller.getInstance().marshall(startBuildRequest.getArtifactsOverride(), jsonGenerator);
-            }
-
-            java.util.List<EnvironmentVariable> environmentVariablesOverrideList = startBuildRequest.getEnvironmentVariablesOverride();
-            if (environmentVariablesOverrideList != null) {
-                jsonGenerator.writeFieldName("environmentVariablesOverride");
-                jsonGenerator.writeStartArray();
-                for (EnvironmentVariable environmentVariablesOverrideListValue : environmentVariablesOverrideList) {
-                    if (environmentVariablesOverrideListValue != null) {
-
-                        EnvironmentVariableJsonMarshaller.getInstance().marshall(environmentVariablesOverrideListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (startBuildRequest.getBuildspecOverride() != null) {
-                jsonGenerator.writeFieldName("buildspecOverride").writeValue(startBuildRequest.getBuildspecOverride());
-            }
-            if (startBuildRequest.getTimeoutInMinutesOverride() != null) {
-                jsonGenerator.writeFieldName("timeoutInMinutesOverride").writeValue(startBuildRequest.getTimeoutInMinutesOverride());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startBuildRequest.getProjectName(), PROJECTNAME_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getSourceVersion(), SOURCEVERSION_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getArtifactsOverride(), ARTIFACTSOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getEnvironmentVariablesOverride(), ENVIRONMENTVARIABLESOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getBuildspecOverride(), BUILDSPECOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getTimeoutInMinutesOverride(), TIMEOUTINMINUTESOVERRIDE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

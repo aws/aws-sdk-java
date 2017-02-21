@@ -12,72 +12,50 @@
  */
 package com.amazonaws.services.xray.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.xray.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetServiceGraphRequest Marshaller
+ * GetServiceGraphRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetServiceGraphRequestMarshaller implements Marshaller<Request<GetServiceGraphRequest>, GetServiceGraphRequest> {
+@SdkInternalApi
+public class GetServiceGraphRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public GetServiceGraphRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetServiceGraphRequestMarshaller instance = new GetServiceGraphRequestMarshaller();
+
+    public static GetServiceGraphRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetServiceGraphRequest> marshall(GetServiceGraphRequest getServiceGraphRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetServiceGraphRequest getServiceGraphRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getServiceGraphRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetServiceGraphRequest> request = new DefaultRequest<GetServiceGraphRequest>(getServiceGraphRequest, "AWSXRay");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/ServiceGraph";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (getServiceGraphRequest.getStartTime() != null) {
-                jsonGenerator.writeFieldName("StartTime").writeValue(getServiceGraphRequest.getStartTime());
-            }
-            if (getServiceGraphRequest.getEndTime() != null) {
-                jsonGenerator.writeFieldName("EndTime").writeValue(getServiceGraphRequest.getEndTime());
-            }
-            if (getServiceGraphRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(getServiceGraphRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getServiceGraphRequest.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(getServiceGraphRequest.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(getServiceGraphRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

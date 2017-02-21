@@ -12,84 +12,54 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * TestRoleRequest Marshaller
+ * TestRoleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleRequest>, TestRoleRequest> {
+@SdkInternalApi
+public class TestRoleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Role").build();
+    private static final MarshallingInfo<String> INPUTBUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputBucket").build();
+    private static final MarshallingInfo<String> OUTPUTBUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputBucket").build();
+    private static final MarshallingInfo<List> TOPICS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Topics").build();
 
-    public TestRoleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final TestRoleRequestMarshaller instance = new TestRoleRequestMarshaller();
+
+    public static TestRoleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<TestRoleRequest> marshall(TestRoleRequest testRoleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(TestRoleRequest testRoleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (testRoleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TestRoleRequest> request = new DefaultRequest<TestRoleRequest>(testRoleRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2012-09-25/roleTests";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (testRoleRequest.getRole() != null) {
-                jsonGenerator.writeFieldName("Role").writeValue(testRoleRequest.getRole());
-            }
-            if (testRoleRequest.getInputBucket() != null) {
-                jsonGenerator.writeFieldName("InputBucket").writeValue(testRoleRequest.getInputBucket());
-            }
-            if (testRoleRequest.getOutputBucket() != null) {
-                jsonGenerator.writeFieldName("OutputBucket").writeValue(testRoleRequest.getOutputBucket());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> topicsList = (com.amazonaws.internal.SdkInternalList<String>) testRoleRequest.getTopics();
-            if (!topicsList.isEmpty() || !topicsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Topics");
-                jsonGenerator.writeStartArray();
-                for (String topicsListValue : topicsList) {
-                    if (topicsListValue != null) {
-                        jsonGenerator.writeValue(topicsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(testRoleRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(testRoleRequest.getInputBucket(), INPUTBUCKET_BINDING);
+            protocolMarshaller.marshall(testRoleRequest.getOutputBucket(), OUTPUTBUCKET_BINDING);
+            protocolMarshaller.marshall(testRoleRequest.getTopics(), TOPICS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

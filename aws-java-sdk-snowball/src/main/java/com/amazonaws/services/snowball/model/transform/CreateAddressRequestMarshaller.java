@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.snowball.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.snowball.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateAddressRequest Marshaller
+ * CreateAddressRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateAddressRequestMarshaller implements Marshaller<Request<CreateAddressRequest>, CreateAddressRequest> {
+@SdkInternalApi
+public class CreateAddressRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<StructuredPojo> ADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Address").build();
 
-    public CreateAddressRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateAddressRequestMarshaller instance = new CreateAddressRequestMarshaller();
+
+    public static CreateAddressRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateAddressRequest> marshall(CreateAddressRequest createAddressRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateAddressRequest createAddressRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createAddressRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateAddressRequest> request = new DefaultRequest<CreateAddressRequest>(createAddressRequest, "AmazonSnowball");
-        request.addHeader("X-Amz-Target", "AWSIESnowballJobManagementService.CreateAddress");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createAddressRequest.getAddress() != null) {
-                jsonGenerator.writeFieldName("Address");
-                AddressJsonMarshaller.getInstance().marshall(createAddressRequest.getAddress(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createAddressRequest.getAddress(), ADDRESS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

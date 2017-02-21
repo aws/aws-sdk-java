@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateAssessmentTargetRequest Marshaller
+ * CreateAssessmentTargetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateAssessmentTargetRequestMarshaller implements Marshaller<Request<CreateAssessmentTargetRequest>, CreateAssessmentTargetRequest> {
+@SdkInternalApi
+public class CreateAssessmentTargetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ASSESSMENTTARGETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTargetName").build();
+    private static final MarshallingInfo<String> RESOURCEGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceGroupArn").build();
 
-    public CreateAssessmentTargetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateAssessmentTargetRequestMarshaller instance = new CreateAssessmentTargetRequestMarshaller();
+
+    public static CreateAssessmentTargetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateAssessmentTargetRequest> marshall(CreateAssessmentTargetRequest createAssessmentTargetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateAssessmentTargetRequest createAssessmentTargetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createAssessmentTargetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateAssessmentTargetRequest> request = new DefaultRequest<CreateAssessmentTargetRequest>(createAssessmentTargetRequest, "AmazonInspector");
-        request.addHeader("X-Amz-Target", "InspectorService.CreateAssessmentTarget");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createAssessmentTargetRequest.getAssessmentTargetName() != null) {
-                jsonGenerator.writeFieldName("assessmentTargetName").writeValue(createAssessmentTargetRequest.getAssessmentTargetName());
-            }
-            if (createAssessmentTargetRequest.getResourceGroupArn() != null) {
-                jsonGenerator.writeFieldName("resourceGroupArn").writeValue(createAssessmentTargetRequest.getResourceGroupArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createAssessmentTargetRequest.getAssessmentTargetName(), ASSESSMENTTARGETNAME_BINDING);
+            protocolMarshaller.marshall(createAssessmentTargetRequest.getResourceGroupArn(), RESOURCEGROUPARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,57 +12,44 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * EnableDirectoryRequest Marshaller
+ * EnableDirectoryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnableDirectoryRequestMarshaller implements Marshaller<Request<EnableDirectoryRequest>, EnableDirectoryRequest> {
+@SdkInternalApi
+public class EnableDirectoryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
 
-    public EnableDirectoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final EnableDirectoryRequestMarshaller instance = new EnableDirectoryRequestMarshaller();
+
+    public static EnableDirectoryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<EnableDirectoryRequest> marshall(EnableDirectoryRequest enableDirectoryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(EnableDirectoryRequest enableDirectoryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (enableDirectoryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<EnableDirectoryRequest> request = new DefaultRequest<EnableDirectoryRequest>(enableDirectoryRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (enableDirectoryRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(enableDirectoryRequest.getDirectoryArn()));
+        try {
+            protocolMarshaller.marshall(enableDirectoryRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/directory/enable";
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

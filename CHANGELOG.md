@@ -1,3 +1,12 @@
+# __1.11.94__ __2017-02-21__
+## __AWS SDK for Java__
+  - <h3>Features</h3>
+    - Major refactoring of marshallers for all JSON based services. This may have different performance characteristics than previous releases.
+
+## __Amazon EC2__
+  - <h3>Features</h3>
+    - Added the billingProduct parameter to the RegisterImage API.
+
 # __1.11.93__ __2017-02-17__
 ## __AWS Direct Connect__
   - <h3>Features</h3>

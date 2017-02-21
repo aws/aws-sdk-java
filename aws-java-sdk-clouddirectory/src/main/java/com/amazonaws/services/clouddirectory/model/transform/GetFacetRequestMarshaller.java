@@ -12,72 +12,47 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetFacetRequest Marshaller
+ * GetFacetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetFacetRequestMarshaller implements Marshaller<Request<GetFacetRequest>, GetFacetRequest> {
+@SdkInternalApi
+public class GetFacetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SCHEMAARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amz-data-partition").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
-    public GetFacetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetFacetRequestMarshaller instance = new GetFacetRequestMarshaller();
+
+    public static GetFacetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetFacetRequest> marshall(GetFacetRequest getFacetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetFacetRequest getFacetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getFacetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetFacetRequest> request = new DefaultRequest<GetFacetRequest>(getFacetRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (getFacetRequest.getSchemaArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(getFacetRequest.getSchemaArn()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/facet";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (getFacetRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(getFacetRequest.getName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getFacetRequest.getSchemaArn(), SCHEMAARN_BINDING);
+            protocolMarshaller.marshall(getFacetRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

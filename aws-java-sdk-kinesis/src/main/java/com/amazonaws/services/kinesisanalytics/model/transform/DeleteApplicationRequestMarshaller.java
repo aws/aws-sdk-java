@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.kinesisanalytics.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesisanalytics.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteApplicationRequest Marshaller
+ * DeleteApplicationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteApplicationRequestMarshaller implements Marshaller<Request<DeleteApplicationRequest>, DeleteApplicationRequest> {
+@SdkInternalApi
+public class DeleteApplicationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationName").build();
+    private static final MarshallingInfo<java.util.Date> CREATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").build();
 
-    public DeleteApplicationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteApplicationRequestMarshaller instance = new DeleteApplicationRequestMarshaller();
+
+    public static DeleteApplicationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteApplicationRequest> marshall(DeleteApplicationRequest deleteApplicationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteApplicationRequest deleteApplicationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteApplicationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteApplicationRequest> request = new DefaultRequest<DeleteApplicationRequest>(deleteApplicationRequest, "AmazonKinesisAnalytics");
-        request.addHeader("X-Amz-Target", "KinesisAnalytics_20150814.DeleteApplication");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteApplicationRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("ApplicationName").writeValue(deleteApplicationRequest.getApplicationName());
-            }
-            if (deleteApplicationRequest.getCreateTimestamp() != null) {
-                jsonGenerator.writeFieldName("CreateTimestamp").writeValue(deleteApplicationRequest.getCreateTimestamp());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteApplicationRequest.getApplicationName(), APPLICATIONNAME_BINDING);
+            protocolMarshaller.marshall(deleteApplicationRequest.getCreateTimestamp(), CREATETIMESTAMP_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

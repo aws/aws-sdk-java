@@ -12,133 +12,97 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateStackRequest Marshaller
+ * UpdateStackRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateStackRequest>, UpdateStackRequest> {
+@SdkInternalApi
+public class UpdateStackRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Attributes").build();
+    private static final MarshallingInfo<String> SERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRoleArn").build();
+    private static final MarshallingInfo<String> DEFAULTINSTANCEPROFILEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultInstanceProfileArn").build();
+    private static final MarshallingInfo<String> DEFAULTOS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DefaultOs").build();
+    private static final MarshallingInfo<String> HOSTNAMETHEME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HostnameTheme").build();
+    private static final MarshallingInfo<String> DEFAULTAVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultAvailabilityZone").build();
+    private static final MarshallingInfo<String> DEFAULTSUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubnetId").build();
+    private static final MarshallingInfo<String> CUSTOMJSON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomJson").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATIONMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationManager").build();
+    private static final MarshallingInfo<StructuredPojo> CHEFCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChefConfiguration").build();
+    private static final MarshallingInfo<Boolean> USECUSTOMCOOKBOOKS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseCustomCookbooks").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMCOOKBOOKSSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomCookbooksSource").build();
+    private static final MarshallingInfo<String> DEFAULTSSHKEYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSshKeyName").build();
+    private static final MarshallingInfo<String> DEFAULTROOTDEVICETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultRootDeviceType").build();
+    private static final MarshallingInfo<Boolean> USEOPSWORKSSECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseOpsworksSecurityGroups").build();
+    private static final MarshallingInfo<String> AGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AgentVersion").build();
 
-    public UpdateStackRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateStackRequestMarshaller instance = new UpdateStackRequestMarshaller();
+
+    public static UpdateStackRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateStackRequest> marshall(UpdateStackRequest updateStackRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateStackRequest updateStackRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateStackRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateStackRequest> request = new DefaultRequest<UpdateStackRequest>(updateStackRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.UpdateStack");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateStackRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(updateStackRequest.getStackId());
-            }
-            if (updateStackRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(updateStackRequest.getName());
-            }
-
-            com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) updateStackRequest
-                    .getAttributes();
-            if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Attributes");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> attributesMapValue : attributesMap.entrySet()) {
-                    if (attributesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(attributesMapValue.getKey());
-
-                        jsonGenerator.writeValue(attributesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (updateStackRequest.getServiceRoleArn() != null) {
-                jsonGenerator.writeFieldName("ServiceRoleArn").writeValue(updateStackRequest.getServiceRoleArn());
-            }
-            if (updateStackRequest.getDefaultInstanceProfileArn() != null) {
-                jsonGenerator.writeFieldName("DefaultInstanceProfileArn").writeValue(updateStackRequest.getDefaultInstanceProfileArn());
-            }
-            if (updateStackRequest.getDefaultOs() != null) {
-                jsonGenerator.writeFieldName("DefaultOs").writeValue(updateStackRequest.getDefaultOs());
-            }
-            if (updateStackRequest.getHostnameTheme() != null) {
-                jsonGenerator.writeFieldName("HostnameTheme").writeValue(updateStackRequest.getHostnameTheme());
-            }
-            if (updateStackRequest.getDefaultAvailabilityZone() != null) {
-                jsonGenerator.writeFieldName("DefaultAvailabilityZone").writeValue(updateStackRequest.getDefaultAvailabilityZone());
-            }
-            if (updateStackRequest.getDefaultSubnetId() != null) {
-                jsonGenerator.writeFieldName("DefaultSubnetId").writeValue(updateStackRequest.getDefaultSubnetId());
-            }
-            if (updateStackRequest.getCustomJson() != null) {
-                jsonGenerator.writeFieldName("CustomJson").writeValue(updateStackRequest.getCustomJson());
-            }
-            if (updateStackRequest.getConfigurationManager() != null) {
-                jsonGenerator.writeFieldName("ConfigurationManager");
-                StackConfigurationManagerJsonMarshaller.getInstance().marshall(updateStackRequest.getConfigurationManager(), jsonGenerator);
-            }
-            if (updateStackRequest.getChefConfiguration() != null) {
-                jsonGenerator.writeFieldName("ChefConfiguration");
-                ChefConfigurationJsonMarshaller.getInstance().marshall(updateStackRequest.getChefConfiguration(), jsonGenerator);
-            }
-            if (updateStackRequest.getUseCustomCookbooks() != null) {
-                jsonGenerator.writeFieldName("UseCustomCookbooks").writeValue(updateStackRequest.getUseCustomCookbooks());
-            }
-            if (updateStackRequest.getCustomCookbooksSource() != null) {
-                jsonGenerator.writeFieldName("CustomCookbooksSource");
-                SourceJsonMarshaller.getInstance().marshall(updateStackRequest.getCustomCookbooksSource(), jsonGenerator);
-            }
-            if (updateStackRequest.getDefaultSshKeyName() != null) {
-                jsonGenerator.writeFieldName("DefaultSshKeyName").writeValue(updateStackRequest.getDefaultSshKeyName());
-            }
-            if (updateStackRequest.getDefaultRootDeviceType() != null) {
-                jsonGenerator.writeFieldName("DefaultRootDeviceType").writeValue(updateStackRequest.getDefaultRootDeviceType());
-            }
-            if (updateStackRequest.getUseOpsworksSecurityGroups() != null) {
-                jsonGenerator.writeFieldName("UseOpsworksSecurityGroups").writeValue(updateStackRequest.getUseOpsworksSecurityGroups());
-            }
-            if (updateStackRequest.getAgentVersion() != null) {
-                jsonGenerator.writeFieldName("AgentVersion").writeValue(updateStackRequest.getAgentVersion());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateStackRequest.getStackId(), STACKID_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getAttributes(), ATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getServiceRoleArn(), SERVICEROLEARN_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getDefaultInstanceProfileArn(), DEFAULTINSTANCEPROFILEARN_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getDefaultOs(), DEFAULTOS_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getHostnameTheme(), HOSTNAMETHEME_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getDefaultAvailabilityZone(), DEFAULTAVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getDefaultSubnetId(), DEFAULTSUBNETID_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getCustomJson(), CUSTOMJSON_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getConfigurationManager(), CONFIGURATIONMANAGER_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getChefConfiguration(), CHEFCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getUseCustomCookbooks(), USECUSTOMCOOKBOOKS_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getCustomCookbooksSource(), CUSTOMCOOKBOOKSSOURCE_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getDefaultSshKeyName(), DEFAULTSSHKEYNAME_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getDefaultRootDeviceType(), DEFAULTROOTDEVICETYPE_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getUseOpsworksSecurityGroups(), USEOPSWORKSSECURITYGROUPS_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getAgentVersion(), AGENTVERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,72 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateCertificateFromCsrRequest Marshaller
+ * CreateCertificateFromCsrRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateCertificateFromCsrRequestMarshaller implements Marshaller<Request<CreateCertificateFromCsrRequest>, CreateCertificateFromCsrRequest> {
+@SdkInternalApi
+public class CreateCertificateFromCsrRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATESIGNINGREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateSigningRequest").build();
+    private static final MarshallingInfo<Boolean> SETASACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("setAsActive").build();
 
-    public CreateCertificateFromCsrRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateCertificateFromCsrRequestMarshaller instance = new CreateCertificateFromCsrRequestMarshaller();
+
+    public static CreateCertificateFromCsrRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateCertificateFromCsrRequest> marshall(CreateCertificateFromCsrRequest createCertificateFromCsrRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateCertificateFromCsrRequest createCertificateFromCsrRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createCertificateFromCsrRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateCertificateFromCsrRequest> request = new DefaultRequest<CreateCertificateFromCsrRequest>(createCertificateFromCsrRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/certificates";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (createCertificateFromCsrRequest.getSetAsActive() != null) {
-            request.addParameter("setAsActive", StringUtils.fromBoolean(createCertificateFromCsrRequest.getSetAsActive()));
-        }
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createCertificateFromCsrRequest.getCertificateSigningRequest() != null) {
-                jsonGenerator.writeFieldName("certificateSigningRequest").writeValue(createCertificateFromCsrRequest.getCertificateSigningRequest());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createCertificateFromCsrRequest.getCertificateSigningRequest(), CERTIFICATESIGNINGREQUEST_BINDING);
+            protocolMarshaller.marshall(createCertificateFromCsrRequest.getSetAsActive(), SETASACTIVE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

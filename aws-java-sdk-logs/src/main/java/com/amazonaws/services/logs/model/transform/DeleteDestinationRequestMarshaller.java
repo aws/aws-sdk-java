@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteDestinationRequest Marshaller
+ * DeleteDestinationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteDestinationRequestMarshaller implements Marshaller<Request<DeleteDestinationRequest>, DeleteDestinationRequest> {
+@SdkInternalApi
+public class DeleteDestinationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DESTINATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationName").build();
 
-    public DeleteDestinationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteDestinationRequestMarshaller instance = new DeleteDestinationRequestMarshaller();
+
+    public static DeleteDestinationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteDestinationRequest> marshall(DeleteDestinationRequest deleteDestinationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteDestinationRequest deleteDestinationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteDestinationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteDestinationRequest> request = new DefaultRequest<DeleteDestinationRequest>(deleteDestinationRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.DeleteDestination");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteDestinationRequest.getDestinationName() != null) {
-                jsonGenerator.writeFieldName("destinationName").writeValue(deleteDestinationRequest.getDestinationName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteDestinationRequest.getDestinationName(), DESTINATIONNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

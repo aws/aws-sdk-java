@@ -12,78 +12,56 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDomainNameRequest Marshaller
+ * CreateDomainNameRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDomainNameRequestMarshaller implements Marshaller<Request<CreateDomainNameRequest>, CreateDomainNameRequest> {
+@SdkInternalApi
+public class CreateDomainNameRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
+    private static final MarshallingInfo<String> CERTIFICATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateName").build();
+    private static final MarshallingInfo<String> CERTIFICATEBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateBody").build();
+    private static final MarshallingInfo<String> CERTIFICATEPRIVATEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificatePrivateKey").build();
+    private static final MarshallingInfo<String> CERTIFICATECHAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateChain").build();
 
-    public CreateDomainNameRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDomainNameRequestMarshaller instance = new CreateDomainNameRequestMarshaller();
+
+    public static CreateDomainNameRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDomainNameRequest> marshall(CreateDomainNameRequest createDomainNameRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDomainNameRequest createDomainNameRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDomainNameRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDomainNameRequest> request = new DefaultRequest<CreateDomainNameRequest>(createDomainNameRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/domainnames";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createDomainNameRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("domainName").writeValue(createDomainNameRequest.getDomainName());
-            }
-            if (createDomainNameRequest.getCertificateName() != null) {
-                jsonGenerator.writeFieldName("certificateName").writeValue(createDomainNameRequest.getCertificateName());
-            }
-            if (createDomainNameRequest.getCertificateBody() != null) {
-                jsonGenerator.writeFieldName("certificateBody").writeValue(createDomainNameRequest.getCertificateBody());
-            }
-            if (createDomainNameRequest.getCertificatePrivateKey() != null) {
-                jsonGenerator.writeFieldName("certificatePrivateKey").writeValue(createDomainNameRequest.getCertificatePrivateKey());
-            }
-            if (createDomainNameRequest.getCertificateChain() != null) {
-                jsonGenerator.writeFieldName("certificateChain").writeValue(createDomainNameRequest.getCertificateChain());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDomainNameRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getCertificateName(), CERTIFICATENAME_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getCertificateBody(), CERTIFICATEBODY_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getCertificatePrivateKey(), CERTIFICATEPRIVATEKEY_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getCertificateChain(), CERTIFICATECHAIN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

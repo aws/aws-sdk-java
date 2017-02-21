@@ -360,7 +360,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAffectedEntitiesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAffectedEntitiesRequest));
+                request = new DescribeAffectedEntitiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAffectedEntitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -404,7 +405,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEntityAggregatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEntityAggregatesRequest));
+                request = new DescribeEntityAggregatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEntityAggregatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -450,7 +452,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventAggregatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventAggregatesRequest));
+                request = new DescribeEventAggregatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEventAggregatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -501,7 +504,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventDetailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventDetailsRequest));
+                request = new DescribeEventDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -548,7 +551,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventTypesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTypesRequest));
+                request = new DescribeEventTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -601,7 +604,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventsRequest));
+                request = new DescribeEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

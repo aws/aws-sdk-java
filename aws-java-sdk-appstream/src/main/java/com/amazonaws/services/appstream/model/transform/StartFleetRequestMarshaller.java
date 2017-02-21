@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartFleetRequest Marshaller
+ * StartFleetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartFleetRequestMarshaller implements Marshaller<Request<StartFleetRequest>, StartFleetRequest> {
+@SdkInternalApi
+public class StartFleetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
-    public StartFleetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartFleetRequestMarshaller instance = new StartFleetRequestMarshaller();
+
+    public static StartFleetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartFleetRequest> marshall(StartFleetRequest startFleetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartFleetRequest startFleetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startFleetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartFleetRequest> request = new DefaultRequest<StartFleetRequest>(startFleetRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.StartFleet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startFleetRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(startFleetRequest.getName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startFleetRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

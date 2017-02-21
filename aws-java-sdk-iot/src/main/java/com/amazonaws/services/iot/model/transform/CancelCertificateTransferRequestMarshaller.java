@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CancelCertificateTransferRequest Marshaller
+ * CancelCertificateTransferRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CancelCertificateTransferRequestMarshaller implements Marshaller<Request<CancelCertificateTransferRequest>, CancelCertificateTransferRequest> {
+@SdkInternalApi
+public class CancelCertificateTransferRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("certificateId").build();
 
-    public CancelCertificateTransferRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CancelCertificateTransferRequestMarshaller instance = new CancelCertificateTransferRequestMarshaller();
+
+    public static CancelCertificateTransferRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CancelCertificateTransferRequest> marshall(CancelCertificateTransferRequest cancelCertificateTransferRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CancelCertificateTransferRequest cancelCertificateTransferRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (cancelCertificateTransferRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CancelCertificateTransferRequest> request = new DefaultRequest<CancelCertificateTransferRequest>(cancelCertificateTransferRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.PATCH);
-
-        String uriResourcePath = "/cancel-certificate-transfer/{certificateId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "certificateId",
-                cancelCertificateTransferRequest.getCertificateId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(cancelCertificateTransferRequest.getCertificateId(), CERTIFICATEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -328,7 +328,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
+                request = new AddTagsToResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -382,7 +382,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateEndpointRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEndpointRequest));
+                request = new CreateEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -445,7 +445,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateReplicationInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createReplicationInstanceRequest));
+                request = new CreateReplicationInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createReplicationInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -501,7 +502,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateReplicationSubnetGroupRequestMarshaller(protocolFactory).marshall(super
+                request = new CreateReplicationSubnetGroupRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(createReplicationSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -555,7 +556,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateReplicationTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createReplicationTaskRequest));
+                request = new CreateReplicationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createReplicationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -602,7 +603,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
+                request = new DeleteCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -654,7 +655,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteEndpointRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEndpointRequest));
+                request = new DeleteEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -706,7 +707,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteReplicationInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReplicationInstanceRequest));
+                request = new DeleteReplicationInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteReplicationInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -753,7 +755,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteReplicationSubnetGroupRequestMarshaller(protocolFactory).marshall(super
+                request = new DeleteReplicationSubnetGroupRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(deleteReplicationSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -801,7 +803,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteReplicationTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReplicationTaskRequest));
+                request = new DeleteReplicationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReplicationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -849,7 +851,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAccountAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccountAttributesRequest));
+                request = new DescribeAccountAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAccountAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -894,7 +897,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCertificatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificatesRequest));
+                request = new DescribeCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -939,7 +942,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConnectionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionsRequest));
+                request = new DescribeConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -981,7 +984,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEndpointTypesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointTypesRequest));
+                request = new DescribeEndpointTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1026,7 +1029,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEndpointsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointsRequest));
+                request = new DescribeEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1069,7 +1072,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeOrderableReplicationInstancesRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeOrderableReplicationInstancesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeOrderableReplicationInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1117,7 +1120,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRefreshSchemasStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeRefreshSchemasStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeRefreshSchemasStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1163,7 +1166,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReplicationInstancesRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeReplicationInstancesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeReplicationInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1209,7 +1212,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReplicationSubnetGroupsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeReplicationSubnetGroupsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeReplicationSubnetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1255,7 +1258,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReplicationTasksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReplicationTasksRequest));
+                request = new DescribeReplicationTasksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReplicationTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1303,7 +1307,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSchemasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSchemasRequest));
+                request = new DescribeSchemasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSchemasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1350,7 +1354,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTableStatisticsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTableStatisticsRequest));
+                request = new DescribeTableStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTableStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1397,7 +1402,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importCertificateRequest));
+                request = new ImportCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1441,7 +1446,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1491,7 +1496,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyEndpointRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyEndpointRequest));
+                request = new ModifyEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1550,7 +1555,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyReplicationInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyReplicationInstanceRequest));
+                request = new ModifyReplicationInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(modifyReplicationInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1606,7 +1612,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyReplicationSubnetGroupRequestMarshaller(protocolFactory).marshall(super
+                request = new ModifyReplicationSubnetGroupRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(modifyReplicationSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1661,7 +1667,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyReplicationTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyReplicationTaskRequest));
+                request = new ModifyReplicationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyReplicationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1713,7 +1719,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RefreshSchemasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(refreshSchemasRequest));
+                request = new RefreshSchemasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(refreshSchemasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1757,7 +1763,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
+                request = new RemoveTagsFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1804,7 +1810,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartReplicationTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startReplicationTaskRequest));
+                request = new StartReplicationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startReplicationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1851,7 +1857,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopReplicationTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopReplicationTaskRequest));
+                request = new StopReplicationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopReplicationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1901,7 +1907,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestConnectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(testConnectionRequest));
+                request = new TestConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

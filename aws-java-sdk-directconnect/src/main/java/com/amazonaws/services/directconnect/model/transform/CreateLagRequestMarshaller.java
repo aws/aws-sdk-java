@@ -12,76 +12,56 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateLagRequest Marshaller
+ * CreateLagRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateLagRequestMarshaller implements Marshaller<Request<CreateLagRequest>, CreateLagRequest> {
+@SdkInternalApi
+public class CreateLagRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Integer> NUMBEROFCONNECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfConnections").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("location").build();
+    private static final MarshallingInfo<String> CONNECTIONSBANDWIDTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionsBandwidth").build();
+    private static final MarshallingInfo<String> LAGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("lagName").build();
+    private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
 
-    public CreateLagRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateLagRequestMarshaller instance = new CreateLagRequestMarshaller();
+
+    public static CreateLagRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateLagRequest> marshall(CreateLagRequest createLagRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateLagRequest createLagRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createLagRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateLagRequest> request = new DefaultRequest<CreateLagRequest>(createLagRequest, "AmazonDirectConnect");
-        request.addHeader("X-Amz-Target", "OvertureService.CreateLag");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createLagRequest.getNumberOfConnections() != null) {
-                jsonGenerator.writeFieldName("numberOfConnections").writeValue(createLagRequest.getNumberOfConnections());
-            }
-            if (createLagRequest.getLocation() != null) {
-                jsonGenerator.writeFieldName("location").writeValue(createLagRequest.getLocation());
-            }
-            if (createLagRequest.getConnectionsBandwidth() != null) {
-                jsonGenerator.writeFieldName("connectionsBandwidth").writeValue(createLagRequest.getConnectionsBandwidth());
-            }
-            if (createLagRequest.getLagName() != null) {
-                jsonGenerator.writeFieldName("lagName").writeValue(createLagRequest.getLagName());
-            }
-            if (createLagRequest.getConnectionId() != null) {
-                jsonGenerator.writeFieldName("connectionId").writeValue(createLagRequest.getConnectionId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createLagRequest.getNumberOfConnections(), NUMBEROFCONNECTIONS_BINDING);
+            protocolMarshaller.marshall(createLagRequest.getLocation(), LOCATION_BINDING);
+            protocolMarshaller.marshall(createLagRequest.getConnectionsBandwidth(), CONNECTIONSBANDWIDTH_BINDING);
+            protocolMarshaller.marshall(createLagRequest.getLagName(), LAGNAME_BINDING);
+            protocolMarshaller.marshall(createLagRequest.getConnectionId(), CONNECTIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

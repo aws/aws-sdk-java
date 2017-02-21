@@ -64,6 +64,19 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
             request.addParameter("RamdiskId", StringUtils.fromString(registerImageRequest.getRamdiskId()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> registerImageRequestBillingProductsList = (com.amazonaws.internal.SdkInternalList<String>) registerImageRequest
+                .getBillingProducts();
+        if (!registerImageRequestBillingProductsList.isEmpty() || !registerImageRequestBillingProductsList.isAutoConstruct()) {
+            int billingProductsListIndex = 1;
+
+            for (String registerImageRequestBillingProductsListValue : registerImageRequestBillingProductsList) {
+                if (registerImageRequestBillingProductsListValue != null) {
+                    request.addParameter("BillingProduct." + billingProductsListIndex, StringUtils.fromString(registerImageRequestBillingProductsListValue));
+                }
+                billingProductsListIndex++;
+            }
+        }
+
         if (registerImageRequest.getRootDeviceName() != null) {
             request.addParameter("RootDeviceName", StringUtils.fromString(registerImageRequest.getRootDeviceName()));
         }

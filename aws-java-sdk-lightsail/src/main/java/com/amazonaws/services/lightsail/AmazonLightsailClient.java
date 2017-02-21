@@ -328,7 +328,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AllocateStaticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(allocateStaticIpRequest));
+                request = new AllocateStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(allocateStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -386,7 +386,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachStaticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachStaticIpRequest));
+                request = new AttachStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -444,7 +444,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CloseInstancePublicPortsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(closeInstancePublicPortsRequest));
+                request = new CloseInstancePublicPortsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(closeInstancePublicPortsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -503,7 +504,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainRequest));
+                request = new CreateDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -562,7 +563,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDomainEntryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainEntryRequest));
+                request = new CreateDomainEntryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -621,7 +622,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstanceSnapshotRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstanceSnapshotRequest));
+                request = new CreateInstanceSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstanceSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -680,7 +681,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstancesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstancesRequest));
+                request = new CreateInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -739,7 +740,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstancesFromSnapshotRequestMarshaller(protocolFactory).marshall(super
+                request = new CreateInstancesFromSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(createInstancesFromSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -799,7 +800,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateKeyPairRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeyPairRequest));
+                request = new CreateKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -857,7 +858,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainRequest));
+                request = new DeleteDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -915,7 +916,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDomainEntryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainEntryRequest));
+                request = new DeleteDomainEntryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -973,7 +974,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceRequest));
+                request = new DeleteInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1031,7 +1032,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteInstanceSnapshotRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceSnapshotRequest));
+                request = new DeleteInstanceSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1090,7 +1091,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteKeyPairRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteKeyPairRequest));
+                request = new DeleteKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1148,7 +1149,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachStaticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachStaticIpRequest));
+                request = new DetachStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1206,7 +1207,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DownloadDefaultKeyPairRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(downloadDefaultKeyPairRequest));
+                request = new DownloadDefaultKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(downloadDefaultKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1265,7 +1266,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetActiveNamesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getActiveNamesRequest));
+                request = new GetActiveNamesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getActiveNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1325,7 +1326,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBlueprintsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlueprintsRequest));
+                request = new GetBlueprintsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlueprintsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1384,7 +1385,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBundlesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBundlesRequest));
+                request = new GetBundlesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBundlesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1442,7 +1443,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainRequest));
+                request = new GetDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1500,7 +1501,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainsRequest));
+                request = new GetDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1558,7 +1559,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceRequest));
+                request = new GetInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1616,7 +1617,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceAccessDetailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceAccessDetailsRequest));
+                request = new GetInstanceAccessDetailsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getInstanceAccessDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1675,7 +1677,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceMetricDataRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceMetricDataRequest));
+                request = new GetInstanceMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1734,7 +1736,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstancePortStatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstancePortStatesRequest));
+                request = new GetInstancePortStatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstancePortStatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1793,7 +1795,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceSnapshotRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceSnapshotRequest));
+                request = new GetInstanceSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1851,7 +1853,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceSnapshotsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceSnapshotsRequest));
+                request = new GetInstanceSnapshotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1909,7 +1911,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceStateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceStateRequest));
+                request = new GetInstanceStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1967,7 +1969,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstancesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstancesRequest));
+                request = new GetInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2025,7 +2027,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyPairRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPairRequest));
+                request = new GetKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2083,7 +2085,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyPairsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPairsRequest));
+                request = new GetKeyPairsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPairsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2142,7 +2144,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOperationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationRequest));
+                request = new GetOperationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2205,7 +2207,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOperationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationsRequest));
+                request = new GetOperationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2263,7 +2265,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOperationsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationsForResourceRequest));
+                request = new GetOperationsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getOperationsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2322,7 +2325,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRegionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegionsRequest));
+                request = new GetRegionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2380,7 +2383,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetStaticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStaticIpRequest));
+                request = new GetStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2438,7 +2441,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetStaticIpsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStaticIpsRequest));
+                request = new GetStaticIpsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStaticIpsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2496,7 +2499,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportKeyPairRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importKeyPairRequest));
+                request = new ImportKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2554,7 +2557,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new IsVpcPeeredRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(isVpcPeeredRequest));
+                request = new IsVpcPeeredRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(isVpcPeeredRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2612,7 +2615,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new OpenInstancePublicPortsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(openInstancePublicPortsRequest));
+                request = new OpenInstancePublicPortsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(openInstancePublicPortsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2671,7 +2675,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PeerVpcRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(peerVpcRequest));
+                request = new PeerVpcRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(peerVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2731,7 +2735,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebootInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebootInstanceRequest));
+                request = new RebootInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebootInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2789,7 +2793,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReleaseStaticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(releaseStaticIpRequest));
+                request = new ReleaseStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(releaseStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2848,7 +2852,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startInstanceRequest));
+                request = new StartInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2906,7 +2910,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopInstanceRequest));
+                request = new StopInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2964,7 +2968,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnpeerVpcRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(unpeerVpcRequest));
+                request = new UnpeerVpcRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unpeerVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3022,7 +3026,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainEntryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainEntryRequest));
+                request = new UpdateDomainEntryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

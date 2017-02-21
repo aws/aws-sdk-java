@@ -187,4 +187,5 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

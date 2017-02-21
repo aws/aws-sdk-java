@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetInstancesRequest Marshaller
+ * GetInstancesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetInstancesRequestMarshaller implements Marshaller<Request<GetInstancesRequest>, GetInstancesRequest> {
+@SdkInternalApi
+public class GetInstancesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("pageToken").build();
 
-    public GetInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetInstancesRequestMarshaller instance = new GetInstancesRequestMarshaller();
+
+    public static GetInstancesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetInstancesRequest> marshall(GetInstancesRequest getInstancesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetInstancesRequest getInstancesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getInstancesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetInstancesRequest> request = new DefaultRequest<GetInstancesRequest>(getInstancesRequest, "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.GetInstances");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getInstancesRequest.getPageToken() != null) {
-                jsonGenerator.writeFieldName("pageToken").writeValue(getInstancesRequest.getPageToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getInstancesRequest.getPageToken(), PAGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

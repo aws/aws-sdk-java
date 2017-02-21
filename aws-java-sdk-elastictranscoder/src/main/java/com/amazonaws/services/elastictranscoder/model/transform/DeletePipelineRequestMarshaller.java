@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeletePipelineRequest Marshaller
+ * DeletePipelineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeletePipelineRequestMarshaller implements Marshaller<Request<DeletePipelineRequest>, DeletePipelineRequest> {
+@SdkInternalApi
+public class DeletePipelineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("Id").build();
 
-    public DeletePipelineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeletePipelineRequestMarshaller instance = new DeletePipelineRequestMarshaller();
+
+    public static DeletePipelineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeletePipelineRequest> marshall(DeletePipelineRequest deletePipelineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeletePipelineRequest deletePipelineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deletePipelineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeletePipelineRequest> request = new DefaultRequest<DeletePipelineRequest>(deletePipelineRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/2012-09-25/pipelines/{Id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deletePipelineRequest.getId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deletePipelineRequest.getId(), ID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

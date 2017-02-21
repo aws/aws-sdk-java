@@ -12,73 +12,62 @@
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListRecordsRequest Marshaller
+ * ListRecordsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListRecordsRequestMarshaller implements Marshaller<Request<ListRecordsRequest>, ListRecordsRequest> {
+@SdkInternalApi
+public class ListRecordsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("IdentityId").build();
+    private static final MarshallingInfo<String> DATASETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("DatasetName").build();
+    private static final MarshallingInfo<Long> LASTSYNCCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("lastSyncCount").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> SYNCSESSIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("syncSessionToken").build();
 
-    public ListRecordsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListRecordsRequestMarshaller instance = new ListRecordsRequestMarshaller();
+
+    public static ListRecordsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListRecordsRequest> marshall(ListRecordsRequest listRecordsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListRecordsRequest listRecordsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listRecordsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListRecordsRequest> request = new DefaultRequest<ListRecordsRequest>(listRecordsRequest, "AmazonCognitoSync");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "IdentityPoolId", listRecordsRequest.getIdentityPoolId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId", listRecordsRequest.getIdentityId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DatasetName", listRecordsRequest.getDatasetName());
-        request.setResourcePath(uriResourcePath);
-
-        if (listRecordsRequest.getLastSyncCount() != null) {
-            request.addParameter("lastSyncCount", StringUtils.fromLong(listRecordsRequest.getLastSyncCount()));
+        try {
+            protocolMarshaller.marshall(listRecordsRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(listRecordsRequest.getIdentityId(), IDENTITYID_BINDING);
+            protocolMarshaller.marshall(listRecordsRequest.getDatasetName(), DATASETNAME_BINDING);
+            protocolMarshaller.marshall(listRecordsRequest.getLastSyncCount(), LASTSYNCCOUNT_BINDING);
+            protocolMarshaller.marshall(listRecordsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listRecordsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listRecordsRequest.getSyncSessionToken(), SYNCSESSIONTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listRecordsRequest.getNextToken() != null) {
-            request.addParameter("nextToken", StringUtils.fromString(listRecordsRequest.getNextToken()));
-        }
-
-        if (listRecordsRequest.getMaxResults() != null) {
-            request.addParameter("maxResults", StringUtils.fromInteger(listRecordsRequest.getMaxResults()));
-        }
-
-        if (listRecordsRequest.getSyncSessionToken() != null) {
-            request.addParameter("syncSessionToken", StringUtils.fromString(listRecordsRequest.getSyncSessionToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

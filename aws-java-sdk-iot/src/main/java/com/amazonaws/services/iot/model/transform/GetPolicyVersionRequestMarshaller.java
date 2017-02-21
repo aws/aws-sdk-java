@@ -12,54 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetPolicyVersionRequest Marshaller
+ * GetPolicyVersionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetPolicyVersionRequestMarshaller implements Marshaller<Request<GetPolicyVersionRequest>, GetPolicyVersionRequest> {
+@SdkInternalApi
+public class GetPolicyVersionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> POLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("policyName").build();
+    private static final MarshallingInfo<String> POLICYVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("policyVersionId").build();
 
-    public GetPolicyVersionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetPolicyVersionRequestMarshaller instance = new GetPolicyVersionRequestMarshaller();
+
+    public static GetPolicyVersionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetPolicyVersionRequest> marshall(GetPolicyVersionRequest getPolicyVersionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetPolicyVersionRequest getPolicyVersionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getPolicyVersionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetPolicyVersionRequest> request = new DefaultRequest<GetPolicyVersionRequest>(getPolicyVersionRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyName", getPolicyVersionRequest.getPolicyName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyVersionId",
-                getPolicyVersionRequest.getPolicyVersionId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getPolicyVersionRequest.getPolicyName(), POLICYNAME_BINDING);
+            protocolMarshaller.marshall(getPolicyVersionRequest.getPolicyVersionId(), POLICYVERSIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

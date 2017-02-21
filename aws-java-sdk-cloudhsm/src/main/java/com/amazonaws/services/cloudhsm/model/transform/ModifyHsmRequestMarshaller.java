@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudhsm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ModifyHsmRequest Marshaller
+ * ModifyHsmRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ModifyHsmRequestMarshaller implements Marshaller<Request<ModifyHsmRequest>, ModifyHsmRequest> {
+@SdkInternalApi
+public class ModifyHsmRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> HSMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HsmArn").build();
+    private static final MarshallingInfo<String> SUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetId").build();
+    private static final MarshallingInfo<String> ENIIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EniIp").build();
+    private static final MarshallingInfo<String> IAMROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamRoleArn").build();
+    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalId").build();
+    private static final MarshallingInfo<String> SYSLOGIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SyslogIp").build();
 
-    public ModifyHsmRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ModifyHsmRequestMarshaller instance = new ModifyHsmRequestMarshaller();
+
+    public static ModifyHsmRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ModifyHsmRequest> marshall(ModifyHsmRequest modifyHsmRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ModifyHsmRequest modifyHsmRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (modifyHsmRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyHsmRequest> request = new DefaultRequest<ModifyHsmRequest>(modifyHsmRequest, "AWSCloudHSM");
-        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.ModifyHsm");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (modifyHsmRequest.getHsmArn() != null) {
-                jsonGenerator.writeFieldName("HsmArn").writeValue(modifyHsmRequest.getHsmArn());
-            }
-            if (modifyHsmRequest.getSubnetId() != null) {
-                jsonGenerator.writeFieldName("SubnetId").writeValue(modifyHsmRequest.getSubnetId());
-            }
-            if (modifyHsmRequest.getEniIp() != null) {
-                jsonGenerator.writeFieldName("EniIp").writeValue(modifyHsmRequest.getEniIp());
-            }
-            if (modifyHsmRequest.getIamRoleArn() != null) {
-                jsonGenerator.writeFieldName("IamRoleArn").writeValue(modifyHsmRequest.getIamRoleArn());
-            }
-            if (modifyHsmRequest.getExternalId() != null) {
-                jsonGenerator.writeFieldName("ExternalId").writeValue(modifyHsmRequest.getExternalId());
-            }
-            if (modifyHsmRequest.getSyslogIp() != null) {
-                jsonGenerator.writeFieldName("SyslogIp").writeValue(modifyHsmRequest.getSyslogIp());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(modifyHsmRequest.getHsmArn(), HSMARN_BINDING);
+            protocolMarshaller.marshall(modifyHsmRequest.getSubnetId(), SUBNETID_BINDING);
+            protocolMarshaller.marshall(modifyHsmRequest.getEniIp(), ENIIP_BINDING);
+            protocolMarshaller.marshall(modifyHsmRequest.getIamRoleArn(), IAMROLEARN_BINDING);
+            protocolMarshaller.marshall(modifyHsmRequest.getExternalId(), EXTERNALID_BINDING);
+            protocolMarshaller.marshall(modifyHsmRequest.getSyslogIp(), SYSLOGIP_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

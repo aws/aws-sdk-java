@@ -564,7 +564,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetRepositoriesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetRepositoriesRequest));
+                request = new BatchGetRepositoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -646,7 +646,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBranchRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBranchRequest));
+                request = new CreateBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -713,7 +713,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateRepositoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRepositoryRequest));
+                request = new CreateRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -780,7 +780,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRepositoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryRequest));
+                request = new DeleteRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -853,7 +853,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBlobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlobRequest));
+                request = new GetBlobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -922,7 +922,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBranchRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBranchRequest));
+                request = new GetBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -991,7 +991,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCommitRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommitRequest));
+                request = new GetCommitRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1071,7 +1071,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDifferencesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDifferencesRequest));
+                request = new GetDifferencesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDifferencesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1142,7 +1142,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRepositoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryRequest));
+                request = new GetRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1205,7 +1205,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRepositoryTriggersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryTriggersRequest));
+                request = new GetRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1271,7 +1271,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBranchesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBranchesRequest));
+                request = new ListBranchesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBranchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1320,7 +1320,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRepositoriesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRepositoriesRequest));
+                request = new ListRepositoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1412,7 +1412,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRepositoryTriggersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRepositoryTriggersRequest));
+                request = new PutRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1507,7 +1507,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestRepositoryTriggersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(testRepositoryTriggersRequest));
+                request = new TestRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1583,7 +1583,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDefaultBranchRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDefaultBranchRequest));
+                request = new UpdateDefaultBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDefaultBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1656,7 +1656,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRepositoryDescriptionRequestMarshaller(protocolFactory).marshall(super
+                request = new UpdateRepositoryDescriptionRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(updateRepositoryDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1717,7 +1717,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRepositoryNameRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRepositoryNameRequest));
+                request = new UpdateRepositoryNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRepositoryNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

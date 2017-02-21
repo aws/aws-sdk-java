@@ -12,67 +12,55 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetSdkRequest Marshaller
+ * GetSdkRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetSdkRequestMarshaller implements Marshaller<Request<GetSdkRequest>, GetSdkRequest> {
+@SdkInternalApi
+public class GetSdkRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> STAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("stage_name").build();
+    private static final MarshallingInfo<String> SDKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("sdk_type").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("parameters").build();
 
-    public GetSdkRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetSdkRequestMarshaller instance = new GetSdkRequestMarshaller();
+
+    public static GetSdkRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetSdkRequest> marshall(GetSdkRequest getSdkRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetSdkRequest getSdkRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getSdkRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSdkRequest> request = new DefaultRequest<GetSdkRequest>(getSdkRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/sdks/{sdk_type}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getSdkRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "stage_name", getSdkRequest.getStageName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "sdk_type", getSdkRequest.getSdkType());
-        request.setResourcePath(uriResourcePath);
-
-        java.util.Map<String, String> parameters = getSdkRequest.getParameters();
-        if (parameters != null) {
-            for (Map.Entry<String, String> entry : parameters.entrySet()) {
-                if (entry.getValue() != null) {
-                    request.addParameter(StringUtils.fromString(entry.getKey()), StringUtils.fromString(entry.getValue()));
-                }
-            }
+        try {
+            protocolMarshaller.marshall(getSdkRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(getSdkRequest.getStageName(), STAGENAME_BINDING);
+            protocolMarshaller.marshall(getSdkRequest.getSdkType(), SDKTYPE_BINDING);
+            protocolMarshaller.marshall(getSdkRequest.getParameters(), PARAMETERS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

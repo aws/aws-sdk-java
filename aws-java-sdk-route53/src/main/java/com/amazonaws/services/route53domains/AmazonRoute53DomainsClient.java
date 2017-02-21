@@ -302,7 +302,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CheckDomainAvailabilityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkDomainAvailabilityRequest));
+                request = new CheckDomainAvailabilityRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(checkDomainAvailabilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -358,7 +359,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsForDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsForDomainRequest));
+                request = new DeleteTagsForDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -406,7 +407,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableDomainAutoRenewRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableDomainAutoRenewRequest));
+                request = new DisableDomainAutoRenewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableDomainAutoRenewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -466,7 +467,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableDomainTransferLockRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableDomainTransferLockRequest));
+                request = new DisableDomainTransferLockRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disableDomainTransferLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -525,7 +527,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableDomainAutoRenewRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableDomainAutoRenewRequest));
+                request = new EnableDomainAutoRenewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableDomainAutoRenewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -584,7 +586,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableDomainTransferLockRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableDomainTransferLockRequest));
+                request = new EnableDomainTransferLockRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(enableDomainTransferLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -639,7 +642,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetContactReachabilityStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new GetContactReachabilityStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getContactReachabilityStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -691,7 +694,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainDetailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainDetailRequest));
+                request = new GetDomainDetailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainDetailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -752,7 +755,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainSuggestionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainSuggestionsRequest));
+                request = new GetDomainSuggestionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainSuggestionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -799,7 +802,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOperationDetailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationDetailRequest));
+                request = new GetOperationDetailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationDetailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -846,7 +849,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDomainsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainsRequest));
+                request = new ListDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -898,7 +901,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListOperationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOperationsRequest));
+                request = new ListOperationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOperationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -958,7 +961,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForDomainRequest));
+                request = new ListTagsForDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1032,7 +1035,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDomainRequest));
+                request = new RegisterDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1095,7 +1098,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RenewDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(renewDomainRequest));
+                request = new RenewDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(renewDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1147,7 +1150,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResendContactReachabilityEmailRequestMarshaller(protocolFactory).marshall(super
+                request = new ResendContactReachabilityEmailRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(resendContactReachabilityEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1199,7 +1202,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveDomainAuthCodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(retrieveDomainAuthCodeRequest));
+                request = new RetrieveDomainAuthCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retrieveDomainAuthCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1279,7 +1282,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TransferDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(transferDomainRequest));
+                request = new TransferDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transferDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1340,7 +1343,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainContactRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainContactRequest));
+                request = new UpdateDomainContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1404,7 +1407,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainContactPrivacyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainContactPrivacyRequest));
+                request = new UpdateDomainContactPrivacyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDomainContactPrivacyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1466,7 +1470,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainNameserversRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainNameserversRequest));
+                request = new UpdateDomainNameserversRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDomainNameserversRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1522,7 +1527,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateTagsForDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTagsForDomainRequest));
+                request = new UpdateTagsForDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1569,7 +1574,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ViewBillingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(viewBillingRequest));
+                request = new ViewBillingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(viewBillingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

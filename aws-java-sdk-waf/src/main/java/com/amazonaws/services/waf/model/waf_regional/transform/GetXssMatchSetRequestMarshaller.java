@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetXssMatchSetRequest Marshaller
+ * GetXssMatchSetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetXssMatchSetRequestMarshaller implements Marshaller<Request<GetXssMatchSetRequest>, GetXssMatchSetRequest> {
+@SdkInternalApi
+public class GetXssMatchSetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> XSSMATCHSETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XssMatchSetId").build();
 
-    public GetXssMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetXssMatchSetRequestMarshaller instance = new GetXssMatchSetRequestMarshaller();
+
+    public static GetXssMatchSetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetXssMatchSetRequest> marshall(GetXssMatchSetRequest getXssMatchSetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetXssMatchSetRequest getXssMatchSetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getXssMatchSetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetXssMatchSetRequest> request = new DefaultRequest<GetXssMatchSetRequest>(getXssMatchSetRequest, "AWSWAFRegional");
-        request.addHeader("X-Amz-Target", "AWSWAF_Regional_20161128.GetXssMatchSet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getXssMatchSetRequest.getXssMatchSetId() != null) {
-                jsonGenerator.writeFieldName("XssMatchSetId").writeValue(getXssMatchSetRequest.getXssMatchSetId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getXssMatchSetRequest.getXssMatchSetId(), XSSMATCHSETID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

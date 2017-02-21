@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteVirtualInterfaceRequest Marshaller
+ * DeleteVirtualInterfaceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteVirtualInterfaceRequestMarshaller implements Marshaller<Request<DeleteVirtualInterfaceRequest>, DeleteVirtualInterfaceRequest> {
+@SdkInternalApi
+public class DeleteVirtualInterfaceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> VIRTUALINTERFACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualInterfaceId").build();
 
-    public DeleteVirtualInterfaceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteVirtualInterfaceRequestMarshaller instance = new DeleteVirtualInterfaceRequestMarshaller();
+
+    public static DeleteVirtualInterfaceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteVirtualInterfaceRequest> marshall(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteVirtualInterfaceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteVirtualInterfaceRequest> request = new DefaultRequest<DeleteVirtualInterfaceRequest>(deleteVirtualInterfaceRequest, "AmazonDirectConnect");
-        request.addHeader("X-Amz-Target", "OvertureService.DeleteVirtualInterface");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteVirtualInterfaceRequest.getVirtualInterfaceId() != null) {
-                jsonGenerator.writeFieldName("virtualInterfaceId").writeValue(deleteVirtualInterfaceRequest.getVirtualInterfaceId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteVirtualInterfaceRequest.getVirtualInterfaceId(), VIRTUALINTERFACEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

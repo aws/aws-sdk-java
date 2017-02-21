@@ -317,7 +317,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AllocateConnectionOnInterconnectRequestMarshaller(protocolFactory).marshall(super
+                request = new AllocateConnectionOnInterconnectRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(allocateConnectionOnInterconnectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -377,7 +377,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AllocateHostedConnectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(allocateHostedConnectionRequest));
+                request = new AllocateHostedConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(allocateHostedConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -432,7 +433,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AllocatePrivateVirtualInterfaceRequestMarshaller(protocolFactory).marshall(super
+                request = new AllocatePrivateVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(allocatePrivateVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -496,7 +497,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AllocatePublicVirtualInterfaceRequestMarshaller(protocolFactory).marshall(super
+                request = new AllocatePublicVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(allocatePublicVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -563,7 +564,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateConnectionWithLagRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateConnectionWithLagRequest));
+                request = new AssociateConnectionWithLagRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateConnectionWithLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -621,7 +623,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateHostedConnectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateHostedConnectionRequest));
+                request = new AssociateHostedConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateHostedConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -681,7 +684,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateVirtualInterfaceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateVirtualInterfaceRequest));
+                request = new AssociateVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -735,7 +739,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConfirmConnectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmConnectionRequest));
+                request = new ConfirmConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -788,7 +792,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConfirmPrivateVirtualInterfaceRequestMarshaller(protocolFactory).marshall(super
+                request = new ConfirmPrivateVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(confirmPrivateVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -843,7 +847,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConfirmPublicVirtualInterfaceRequestMarshaller(protocolFactory).marshall(super
+                request = new ConfirmPublicVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(confirmPublicVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -907,7 +911,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBGPPeerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBGPPeerRequest));
+                request = new CreateBGPPeerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBGPPeerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -969,7 +973,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateConnectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectionRequest));
+                request = new CreateConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1042,7 +1046,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInterconnectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInterconnectRequest));
+                request = new CreateInterconnectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInterconnectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1114,7 +1118,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLagRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLagRequest));
+                request = new CreateLagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1164,7 +1168,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePrivateVirtualInterfaceRequestMarshaller(protocolFactory).marshall(super
+                request = new CreatePrivateVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(createPrivateVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1221,7 +1225,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePublicVirtualInterfaceRequestMarshaller(protocolFactory).marshall(super
+                request = new CreatePublicVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(createPublicVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1273,7 +1277,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBGPPeerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBGPPeerRequest));
+                request = new DeleteBGPPeerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBGPPeerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1327,7 +1331,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteConnectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectionRequest));
+                request = new DeleteConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1381,7 +1385,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteInterconnectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInterconnectRequest));
+                request = new DeleteInterconnectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInterconnectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1431,7 +1435,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLagRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLagRequest));
+                request = new DeleteLagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1480,7 +1484,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteVirtualInterfaceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualInterfaceRequest));
+                request = new DeleteVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1539,7 +1543,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConnectionLoaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionLoaRequest));
+                request = new DescribeConnectionLoaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionLoaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1592,7 +1596,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConnectionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionsRequest));
+                request = new DescribeConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1655,7 +1659,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConnectionsOnInterconnectRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeConnectionsOnInterconnectRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeConnectionsOnInterconnectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1712,7 +1716,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHostedConnectionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHostedConnectionsRequest));
+                request = new DescribeHostedConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeHostedConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1771,7 +1776,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInterconnectLoaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInterconnectLoaRequest));
+                request = new DescribeInterconnectLoaRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInterconnectLoaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1824,7 +1830,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInterconnectsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInterconnectsRequest));
+                request = new DescribeInterconnectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInterconnectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1882,7 +1888,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLagsRequest));
+                request = new DescribeLagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1937,7 +1943,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLoaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLoaRequest));
+                request = new DescribeLoaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLoaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1986,7 +1992,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLocationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLocationsRequest));
+                request = new DescribeLocationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2040,7 +2046,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
+                request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2094,7 +2100,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVirtualGatewaysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualGatewaysRequest));
+                request = new DescribeVirtualGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeVirtualGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2155,7 +2162,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVirtualInterfacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualInterfacesRequest));
+                request = new DescribeVirtualInterfacesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeVirtualInterfacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2219,7 +2227,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateConnectionFromLagRequestMarshaller(protocolFactory).marshall(super
+                request = new DisassociateConnectionFromLagRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(disassociateConnectionFromLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2279,7 +2287,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2328,7 +2336,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UntagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2399,7 +2407,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateLagRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLagRequest));
+                request = new UpdateLagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

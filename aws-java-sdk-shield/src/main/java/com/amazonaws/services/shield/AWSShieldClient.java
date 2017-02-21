@@ -325,7 +325,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateProtectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProtectionRequest));
+                request = new CreateProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -372,7 +372,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSubscriptionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriptionRequest));
+                request = new CreateSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -422,7 +422,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteProtectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProtectionRequest));
+                request = new DeleteProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -472,7 +472,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSubscriptionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriptionRequest));
+                request = new DeleteSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -519,7 +519,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAttackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAttackRequest));
+                request = new DescribeAttackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAttackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -566,7 +566,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeProtectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProtectionRequest));
+                request = new DescribeProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -613,7 +613,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSubscriptionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSubscriptionRequest));
+                request = new DescribeSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -662,7 +662,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttacksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttacksRequest));
+                request = new ListAttacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -709,7 +709,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListProtectionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtectionsRequest));
+                request = new ListProtectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

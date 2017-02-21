@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetKeyPairRequest Marshaller
+ * GetKeyPairRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetKeyPairRequestMarshaller implements Marshaller<Request<GetKeyPairRequest>, GetKeyPairRequest> {
+@SdkInternalApi
+public class GetKeyPairRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYPAIRNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("keyPairName").build();
 
-    public GetKeyPairRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetKeyPairRequestMarshaller instance = new GetKeyPairRequestMarshaller();
+
+    public static GetKeyPairRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetKeyPairRequest> marshall(GetKeyPairRequest getKeyPairRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetKeyPairRequest getKeyPairRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getKeyPairRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetKeyPairRequest> request = new DefaultRequest<GetKeyPairRequest>(getKeyPairRequest, "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.GetKeyPair");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getKeyPairRequest.getKeyPairName() != null) {
-                jsonGenerator.writeFieldName("keyPairName").writeValue(getKeyPairRequest.getKeyPairName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getKeyPairRequest.getKeyPairName(), KEYPAIRNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

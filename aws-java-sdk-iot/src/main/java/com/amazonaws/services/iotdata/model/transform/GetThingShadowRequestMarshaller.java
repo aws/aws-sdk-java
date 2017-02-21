@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.iotdata.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iotdata.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetThingShadowRequest Marshaller
+ * GetThingShadowRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetThingShadowRequestMarshaller implements Marshaller<Request<GetThingShadowRequest>, GetThingShadowRequest> {
+@SdkInternalApi
+public class GetThingShadowRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("thingName").build();
 
-    public GetThingShadowRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetThingShadowRequestMarshaller instance = new GetThingShadowRequestMarshaller();
+
+    public static GetThingShadowRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetThingShadowRequest> marshall(GetThingShadowRequest getThingShadowRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetThingShadowRequest getThingShadowRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getThingShadowRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetThingShadowRequest> request = new DefaultRequest<GetThingShadowRequest>(getThingShadowRequest, "AWSIotData");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/things/{thingName}/shadow";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", getThingShadowRequest.getThingName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getThingShadowRequest.getThingName(), THINGNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

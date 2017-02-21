@@ -12,70 +12,47 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateSnapshotFromVolumeRecoveryPointRequest Marshaller
+ * CreateSnapshotFromVolumeRecoveryPointRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateSnapshotFromVolumeRecoveryPointRequestMarshaller implements
-        Marshaller<Request<CreateSnapshotFromVolumeRecoveryPointRequest>, CreateSnapshotFromVolumeRecoveryPointRequest> {
+@SdkInternalApi
+public class CreateSnapshotFromVolumeRecoveryPointRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> VOLUMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VolumeARN").build();
+    private static final MarshallingInfo<String> SNAPSHOTDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotDescription").build();
 
-    public CreateSnapshotFromVolumeRecoveryPointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateSnapshotFromVolumeRecoveryPointRequestMarshaller instance = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
+
+    public static CreateSnapshotFromVolumeRecoveryPointRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateSnapshotFromVolumeRecoveryPointRequest> marshall(
-            CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createSnapshotFromVolumeRecoveryPointRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateSnapshotFromVolumeRecoveryPointRequest> request = new DefaultRequest<CreateSnapshotFromVolumeRecoveryPointRequest>(
-                createSnapshotFromVolumeRecoveryPointRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.CreateSnapshotFromVolumeRecoveryPoint");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createSnapshotFromVolumeRecoveryPointRequest.getVolumeARN() != null) {
-                jsonGenerator.writeFieldName("VolumeARN").writeValue(createSnapshotFromVolumeRecoveryPointRequest.getVolumeARN());
-            }
-            if (createSnapshotFromVolumeRecoveryPointRequest.getSnapshotDescription() != null) {
-                jsonGenerator.writeFieldName("SnapshotDescription").writeValue(createSnapshotFromVolumeRecoveryPointRequest.getSnapshotDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createSnapshotFromVolumeRecoveryPointRequest.getVolumeARN(), VOLUMEARN_BINDING);
+            protocolMarshaller.marshall(createSnapshotFromVolumeRecoveryPointRequest.getSnapshotDescription(), SNAPSHOTDESCRIPTION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

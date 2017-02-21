@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GrantAccessRequest Marshaller
+ * GrantAccessRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GrantAccessRequestMarshaller implements Marshaller<Request<GrantAccessRequest>, GrantAccessRequest> {
+@SdkInternalApi
+public class GrantAccessRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<Integer> VALIDFORINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidForInMinutes").build();
 
-    public GrantAccessRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GrantAccessRequestMarshaller instance = new GrantAccessRequestMarshaller();
+
+    public static GrantAccessRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GrantAccessRequest> marshall(GrantAccessRequest grantAccessRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GrantAccessRequest grantAccessRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (grantAccessRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GrantAccessRequest> request = new DefaultRequest<GrantAccessRequest>(grantAccessRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.GrantAccess");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (grantAccessRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(grantAccessRequest.getInstanceId());
-            }
-            if (grantAccessRequest.getValidForInMinutes() != null) {
-                jsonGenerator.writeFieldName("ValidForInMinutes").writeValue(grantAccessRequest.getValidForInMinutes());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(grantAccessRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(grantAccessRequest.getValidForInMinutes(), VALIDFORINMINUTES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

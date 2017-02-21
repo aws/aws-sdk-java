@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDevicePoolCompatibilityRequest Marshaller
+ * GetDevicePoolCompatibilityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDevicePoolCompatibilityRequestMarshaller implements Marshaller<Request<GetDevicePoolCompatibilityRequest>, GetDevicePoolCompatibilityRequest> {
+@SdkInternalApi
+public class GetDevicePoolCompatibilityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DEVICEPOOLARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("devicePoolArn").build();
+    private static final MarshallingInfo<String> APPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("appArn").build();
+    private static final MarshallingInfo<String> TESTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("testType").build();
 
-    public GetDevicePoolCompatibilityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDevicePoolCompatibilityRequestMarshaller instance = new GetDevicePoolCompatibilityRequestMarshaller();
+
+    public static GetDevicePoolCompatibilityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDevicePoolCompatibilityRequest> marshall(GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDevicePoolCompatibilityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDevicePoolCompatibilityRequest> request = new DefaultRequest<GetDevicePoolCompatibilityRequest>(getDevicePoolCompatibilityRequest,
-                "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.GetDevicePoolCompatibility");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getDevicePoolCompatibilityRequest.getDevicePoolArn() != null) {
-                jsonGenerator.writeFieldName("devicePoolArn").writeValue(getDevicePoolCompatibilityRequest.getDevicePoolArn());
-            }
-            if (getDevicePoolCompatibilityRequest.getAppArn() != null) {
-                jsonGenerator.writeFieldName("appArn").writeValue(getDevicePoolCompatibilityRequest.getAppArn());
-            }
-            if (getDevicePoolCompatibilityRequest.getTestType() != null) {
-                jsonGenerator.writeFieldName("testType").writeValue(getDevicePoolCompatibilityRequest.getTestType());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getDevicePoolCompatibilityRequest.getDevicePoolArn(), DEVICEPOOLARN_BINDING);
+            protocolMarshaller.marshall(getDevicePoolCompatibilityRequest.getAppArn(), APPARN_BINDING);
+            protocolMarshaller.marshall(getDevicePoolCompatibilityRequest.getTestType(), TESTTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

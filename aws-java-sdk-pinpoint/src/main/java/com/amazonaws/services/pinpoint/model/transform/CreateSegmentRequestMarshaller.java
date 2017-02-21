@@ -12,74 +12,47 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateSegmentRequest Marshaller
+ * CreateSegmentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateSegmentRequestMarshaller implements Marshaller<Request<CreateSegmentRequest>, CreateSegmentRequest> {
+@SdkInternalApi
+public class CreateSegmentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<StructuredPojo> WRITESEGMENTREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
-    public CreateSegmentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateSegmentRequestMarshaller instance = new CreateSegmentRequestMarshaller();
+
+    public static CreateSegmentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateSegmentRequest> marshall(CreateSegmentRequest createSegmentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateSegmentRequest createSegmentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createSegmentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateSegmentRequest> request = new DefaultRequest<CreateSegmentRequest>(createSegmentRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/apps/{application-id}/segments";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                createSegmentRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            WriteSegmentRequest writeSegmentRequest = createSegmentRequest.getWriteSegmentRequest();
-            if (writeSegmentRequest != null) {
-                jsonGenerator.writeStartObject();
-                if (writeSegmentRequest.getDimensions() != null) {
-                    jsonGenerator.writeFieldName("Dimensions");
-                    SegmentDimensionsJsonMarshaller.getInstance().marshall(writeSegmentRequest.getDimensions(), jsonGenerator);
-                }
-                if (writeSegmentRequest.getName() != null) {
-                    jsonGenerator.writeFieldName("Name").writeValue(writeSegmentRequest.getName());
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createSegmentRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(createSegmentRequest.getWriteSegmentRequest(), WRITESEGMENTREQUEST_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

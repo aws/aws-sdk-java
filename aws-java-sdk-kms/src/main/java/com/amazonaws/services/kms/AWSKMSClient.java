@@ -456,7 +456,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelKeyDeletionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelKeyDeletionRequest));
+                request = new CancelKeyDeletionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -528,7 +528,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -598,7 +598,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGrantRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGrantRequest));
+                request = new CreateGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -675,7 +675,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeyRequest));
+                request = new CreateKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -768,7 +768,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DecryptRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(decryptRequest));
+                request = new DecryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(decryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -822,7 +822,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -892,7 +892,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteImportedKeyMaterialRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImportedKeyMaterialRequest));
+                request = new DeleteImportedKeyMaterialRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteImportedKeyMaterialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -943,7 +944,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeKeyRequest));
+                request = new DescribeKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1002,7 +1003,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRequest));
+                request = new DisableKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1063,7 +1064,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRotationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRotationRequest));
+                request = new DisableKeyRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1123,7 +1124,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRequest));
+                request = new EnableKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1184,7 +1185,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRotationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRotationRequest));
+                request = new EnableKeyRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1274,7 +1275,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EncryptRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(encryptRequest));
+                request = new EncryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(encryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1396,7 +1397,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataKeyRequest));
+                request = new GenerateDataKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1469,7 +1470,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyWithoutPlaintextRequestMarshaller(protocolFactory).marshall(super
+                request = new GenerateDataKeyWithoutPlaintextRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(generateDataKeyWithoutPlaintextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1517,7 +1518,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateRandomRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateRandomRequest));
+                request = new GenerateRandomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateRandomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1578,7 +1579,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPolicyRequest));
+                request = new GetKeyPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1637,7 +1638,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyRotationStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyRotationStatusRequest));
+                request = new GetKeyRotationStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyRotationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1711,7 +1712,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetParametersForImportRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersForImportRequest));
+                request = new GetParametersForImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersForImportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1803,7 +1804,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportKeyMaterialRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importKeyMaterialRequest));
+                request = new ImportKeyMaterialRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importKeyMaterialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1852,7 +1853,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1916,7 +1917,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGrantsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGrantsRequest));
+                request = new ListGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1972,7 +1973,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeyPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeyPoliciesRequest));
+                request = new ListKeyPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeyPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2021,7 +2022,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeysRequest));
+                request = new ListKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2077,7 +2078,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListResourceTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceTagsRequest));
+                request = new ListResourceTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2133,7 +2134,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRetirableGrantsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRetirableGrantsRequest));
+                request = new ListRetirableGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRetirableGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2203,7 +2204,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutKeyPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putKeyPolicyRequest));
+                request = new PutKeyPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2278,7 +2279,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReEncryptRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(reEncryptRequest));
+                request = new ReEncryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(reEncryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2359,7 +2360,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetireGrantRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(retireGrantRequest));
+                request = new RetireGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retireGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2422,7 +2423,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RevokeGrantRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeGrantRequest));
+                request = new RevokeGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2494,7 +2495,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ScheduleKeyDeletionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(scheduleKeyDeletionRequest));
+                request = new ScheduleKeyDeletionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(scheduleKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2564,7 +2565,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2624,7 +2625,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UntagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2690,7 +2691,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2746,7 +2747,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateKeyDescriptionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateKeyDescriptionRequest));
+                request = new UpdateKeyDescriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateKeyDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

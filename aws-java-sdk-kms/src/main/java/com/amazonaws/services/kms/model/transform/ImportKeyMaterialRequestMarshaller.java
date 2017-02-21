@@ -12,76 +12,56 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ImportKeyMaterialRequest Marshaller
+ * ImportKeyMaterialRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImportKeyMaterialRequestMarshaller implements Marshaller<Request<ImportKeyMaterialRequest>, ImportKeyMaterialRequest> {
+@SdkInternalApi
+public class ImportKeyMaterialRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> IMPORTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportToken").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> ENCRYPTEDKEYMATERIAL_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptedKeyMaterial").build();
+    private static final MarshallingInfo<java.util.Date> VALIDTO_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidTo").build();
+    private static final MarshallingInfo<String> EXPIRATIONMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationModel").build();
 
-    public ImportKeyMaterialRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ImportKeyMaterialRequestMarshaller instance = new ImportKeyMaterialRequestMarshaller();
+
+    public static ImportKeyMaterialRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ImportKeyMaterialRequest> marshall(ImportKeyMaterialRequest importKeyMaterialRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ImportKeyMaterialRequest importKeyMaterialRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (importKeyMaterialRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ImportKeyMaterialRequest> request = new DefaultRequest<ImportKeyMaterialRequest>(importKeyMaterialRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.ImportKeyMaterial");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (importKeyMaterialRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(importKeyMaterialRequest.getKeyId());
-            }
-            if (importKeyMaterialRequest.getImportToken() != null) {
-                jsonGenerator.writeFieldName("ImportToken").writeValue(importKeyMaterialRequest.getImportToken());
-            }
-            if (importKeyMaterialRequest.getEncryptedKeyMaterial() != null) {
-                jsonGenerator.writeFieldName("EncryptedKeyMaterial").writeValue(importKeyMaterialRequest.getEncryptedKeyMaterial());
-            }
-            if (importKeyMaterialRequest.getValidTo() != null) {
-                jsonGenerator.writeFieldName("ValidTo").writeValue(importKeyMaterialRequest.getValidTo());
-            }
-            if (importKeyMaterialRequest.getExpirationModel() != null) {
-                jsonGenerator.writeFieldName("ExpirationModel").writeValue(importKeyMaterialRequest.getExpirationModel());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(importKeyMaterialRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(importKeyMaterialRequest.getImportToken(), IMPORTTOKEN_BINDING);
+            protocolMarshaller.marshall(importKeyMaterialRequest.getEncryptedKeyMaterial(), ENCRYPTEDKEYMATERIAL_BINDING);
+            protocolMarshaller.marshall(importKeyMaterialRequest.getValidTo(), VALIDTO_BINDING);
+            protocolMarshaller.marshall(importKeyMaterialRequest.getExpirationModel(), EXPIRATIONMODEL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

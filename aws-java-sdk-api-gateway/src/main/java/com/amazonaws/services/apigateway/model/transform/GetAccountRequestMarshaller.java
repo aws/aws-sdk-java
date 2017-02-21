@@ -12,51 +12,40 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetAccountRequest Marshaller
+ * GetAccountRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetAccountRequestMarshaller implements Marshaller<Request<GetAccountRequest>, GetAccountRequest> {
+@SdkInternalApi
+public class GetAccountRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final GetAccountRequestMarshaller instance = new GetAccountRequestMarshaller();
 
-    public GetAccountRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static GetAccountRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetAccountRequest> marshall(GetAccountRequest getAccountRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetAccountRequest getAccountRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getAccountRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetAccountRequest> request = new DefaultRequest<GetAccountRequest>(getAccountRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/account";
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -15,22 +15,42 @@
 
 package com.amazonaws.util;
 
-import java.util.UUID;
 import com.amazonaws.annotation.SdkProtectedApi;
+import com.amazonaws.annotation.SdkTestInternalApi;
+import com.amazonaws.protocol.DefaultValueSupplier;
+
+import java.util.UUID;
 
 /**
  * Utility class to manage idempotency token
  */
 @SdkProtectedApi
 public final class IdempotentUtils {
+
+    private static DefaultValueSupplier<String> generator = new DefaultValueSupplier<String>() {
+        @Override
+        public String get() {
+            return UUID.randomUUID().toString();
+        }
+    };
+
     /**
-     * This method is intended for internal use only.
-     * if input token is null, create and return a new unique token.
-     * Otherwise return the existing token.
-     * @param token
-     * @return if input token is not null, return the same. Else return new token.
+     * @deprecated By {@link #getGenerator()}
      */
+    @Deprecated
+    @SdkProtectedApi
     public static String resolveString(String token) {
-        return token != null ? token : UUID.randomUUID().toString();
+        return token != null ? token : generator.get();
+    }
+
+    @SdkProtectedApi
+    public static DefaultValueSupplier<String> getGenerator() {
+        return generator;
+    }
+
+
+    @SdkTestInternalApi
+    public static void setGenerator(DefaultValueSupplier<String> newGenerator) {
+        generator = newGenerator;
     }
 }

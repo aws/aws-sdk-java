@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteProvisioningArtifactRequest Marshaller
+ * DeleteProvisioningArtifactRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteProvisioningArtifactRequestMarshaller implements Marshaller<Request<DeleteProvisioningArtifactRequest>, DeleteProvisioningArtifactRequest> {
+@SdkInternalApi
+public class DeleteProvisioningArtifactRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
 
-    public DeleteProvisioningArtifactRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteProvisioningArtifactRequestMarshaller instance = new DeleteProvisioningArtifactRequestMarshaller();
+
+    public static DeleteProvisioningArtifactRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteProvisioningArtifactRequest> marshall(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteProvisioningArtifactRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteProvisioningArtifactRequest> request = new DefaultRequest<DeleteProvisioningArtifactRequest>(deleteProvisioningArtifactRequest,
-                "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.DeleteProvisioningArtifact");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteProvisioningArtifactRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(deleteProvisioningArtifactRequest.getAcceptLanguage());
-            }
-            if (deleteProvisioningArtifactRequest.getProductId() != null) {
-                jsonGenerator.writeFieldName("ProductId").writeValue(deleteProvisioningArtifactRequest.getProductId());
-            }
-            if (deleteProvisioningArtifactRequest.getProvisioningArtifactId() != null) {
-                jsonGenerator.writeFieldName("ProvisioningArtifactId").writeValue(deleteProvisioningArtifactRequest.getProvisioningArtifactId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteProvisioningArtifactRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(deleteProvisioningArtifactRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(deleteProvisioningArtifactRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

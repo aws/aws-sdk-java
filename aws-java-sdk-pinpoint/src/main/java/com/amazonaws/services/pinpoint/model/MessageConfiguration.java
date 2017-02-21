@@ -14,9 +14,11 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MessageConfiguration implements Serializable, Cloneable {
+public class MessageConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /** The message that the campaign delivers to APNS channels. Overrides the default message. */
     private Message aPNSMessage;
@@ -191,5 +193,11 @@ public class MessageConfiguration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.MessageConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

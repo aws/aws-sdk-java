@@ -307,7 +307,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateFleetRequest));
+                request = new AssociateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -360,7 +360,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
+                request = new CreateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -406,7 +406,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStackRequest));
+                request = new CreateStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -455,7 +455,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStreamingURLRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStreamingURLRequest));
+                request = new CreateStreamingURLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStreamingURLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -501,7 +501,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
+                request = new DeleteFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -548,7 +548,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStackRequest));
+                request = new DeleteStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -593,7 +593,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetsRequest));
+                request = new DescribeFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -638,7 +638,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeImagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImagesRequest));
+                request = new DescribeImagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -682,7 +682,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSessionsRequest));
+                request = new DescribeSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -728,7 +728,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStacksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStacksRequest));
+                request = new DescribeStacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -774,7 +774,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateFleetRequest));
+                request = new DisassociateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -816,7 +816,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ExpireSessionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(expireSessionRequest));
+                request = new ExpireSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(expireSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -858,7 +858,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssociatedFleetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedFleetsRequest));
+                request = new ListAssociatedFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -900,7 +900,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssociatedStacksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedStacksRequest));
+                request = new ListAssociatedStacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -946,7 +946,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFleetRequest));
+                request = new StartFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -990,7 +990,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopFleetRequest));
+                request = new StopFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1041,7 +1041,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetRequest));
+                request = new UpdateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1087,7 +1087,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStackRequest));
+                request = new UpdateStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

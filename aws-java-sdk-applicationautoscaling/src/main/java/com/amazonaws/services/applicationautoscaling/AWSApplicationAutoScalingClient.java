@@ -370,7 +370,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteScalingPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
+                request = new DeleteScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -431,7 +431,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterScalableTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterScalableTargetRequest));
+                request = new DeregisterScalableTargetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterScalableTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -490,7 +491,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalableTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalableTargetsRequest));
+                request = new DescribeScalableTargetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalableTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -552,7 +554,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalingActivitiesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingActivitiesRequest));
+                request = new DescribeScalingActivitiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalingActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -619,7 +622,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalingPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingPoliciesRequest));
+                request = new DescribeScalingPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalingPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -693,7 +697,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutScalingPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
+                request = new PutScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -754,7 +758,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterScalableTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerScalableTargetRequest));
+                request = new RegisterScalableTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerScalableTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

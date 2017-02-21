@@ -12,92 +12,57 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateUsagePlanRequest Marshaller
+ * CreateUsagePlanRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateUsagePlanRequestMarshaller implements Marshaller<Request<CreateUsagePlanRequest>, CreateUsagePlanRequest> {
+@SdkInternalApi
+public class CreateUsagePlanRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> APISTAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("apiStages").build();
+    private static final MarshallingInfo<StructuredPojo> THROTTLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("throttle").build();
+    private static final MarshallingInfo<StructuredPojo> QUOTA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("quota").build();
 
-    public CreateUsagePlanRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateUsagePlanRequestMarshaller instance = new CreateUsagePlanRequestMarshaller();
+
+    public static CreateUsagePlanRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateUsagePlanRequest> marshall(CreateUsagePlanRequest createUsagePlanRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateUsagePlanRequest createUsagePlanRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createUsagePlanRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateUsagePlanRequest> request = new DefaultRequest<CreateUsagePlanRequest>(createUsagePlanRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/usageplans";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createUsagePlanRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(createUsagePlanRequest.getName());
-            }
-            if (createUsagePlanRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(createUsagePlanRequest.getDescription());
-            }
-
-            java.util.List<ApiStage> apiStagesList = createUsagePlanRequest.getApiStages();
-            if (apiStagesList != null) {
-                jsonGenerator.writeFieldName("apiStages");
-                jsonGenerator.writeStartArray();
-                for (ApiStage apiStagesListValue : apiStagesList) {
-                    if (apiStagesListValue != null) {
-
-                        ApiStageJsonMarshaller.getInstance().marshall(apiStagesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createUsagePlanRequest.getThrottle() != null) {
-                jsonGenerator.writeFieldName("throttle");
-                ThrottleSettingsJsonMarshaller.getInstance().marshall(createUsagePlanRequest.getThrottle(), jsonGenerator);
-            }
-            if (createUsagePlanRequest.getQuota() != null) {
-                jsonGenerator.writeFieldName("quota");
-                QuotaSettingsJsonMarshaller.getInstance().marshall(createUsagePlanRequest.getQuota(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createUsagePlanRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createUsagePlanRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createUsagePlanRequest.getApiStages(), APISTAGES_BINDING);
+            protocolMarshaller.marshall(createUsagePlanRequest.getThrottle(), THROTTLE_BINDING);
+            protocolMarshaller.marshall(createUsagePlanRequest.getQuota(), QUOTA_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

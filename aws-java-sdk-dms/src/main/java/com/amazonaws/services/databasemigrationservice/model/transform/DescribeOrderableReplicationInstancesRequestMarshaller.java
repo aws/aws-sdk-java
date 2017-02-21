@@ -12,70 +12,47 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeOrderableReplicationInstancesRequest Marshaller
+ * DescribeOrderableReplicationInstancesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeOrderableReplicationInstancesRequestMarshaller implements
-        Marshaller<Request<DescribeOrderableReplicationInstancesRequest>, DescribeOrderableReplicationInstancesRequest> {
+@SdkInternalApi
+public class DescribeOrderableReplicationInstancesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Integer> MAXRECORDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRecords").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
 
-    public DescribeOrderableReplicationInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeOrderableReplicationInstancesRequestMarshaller instance = new DescribeOrderableReplicationInstancesRequestMarshaller();
+
+    public static DescribeOrderableReplicationInstancesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeOrderableReplicationInstancesRequest> marshall(
-            DescribeOrderableReplicationInstancesRequest describeOrderableReplicationInstancesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeOrderableReplicationInstancesRequest describeOrderableReplicationInstancesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeOrderableReplicationInstancesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeOrderableReplicationInstancesRequest> request = new DefaultRequest<DescribeOrderableReplicationInstancesRequest>(
-                describeOrderableReplicationInstancesRequest, "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.DescribeOrderableReplicationInstances");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeOrderableReplicationInstancesRequest.getMaxRecords() != null) {
-                jsonGenerator.writeFieldName("MaxRecords").writeValue(describeOrderableReplicationInstancesRequest.getMaxRecords());
-            }
-            if (describeOrderableReplicationInstancesRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(describeOrderableReplicationInstancesRequest.getMarker());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeOrderableReplicationInstancesRequest.getMaxRecords(), MAXRECORDS_BINDING);
+            protocolMarshaller.marshall(describeOrderableReplicationInstancesRequest.getMarker(), MARKER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

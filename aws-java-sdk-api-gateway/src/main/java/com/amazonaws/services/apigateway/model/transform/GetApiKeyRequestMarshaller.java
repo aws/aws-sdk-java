@@ -12,58 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetApiKeyRequest Marshaller
+ * GetApiKeyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetApiKeyRequestMarshaller implements Marshaller<Request<GetApiKeyRequest>, GetApiKeyRequest> {
+@SdkInternalApi
+public class GetApiKeyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APIKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("api_Key").build();
+    private static final MarshallingInfo<Boolean> INCLUDEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeValue").build();
 
-    public GetApiKeyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetApiKeyRequestMarshaller instance = new GetApiKeyRequestMarshaller();
+
+    public static GetApiKeyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetApiKeyRequest> marshall(GetApiKeyRequest getApiKeyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetApiKeyRequest getApiKeyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getApiKeyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetApiKeyRequest> request = new DefaultRequest<GetApiKeyRequest>(getApiKeyRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/apikeys/{api_Key}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "api_Key", getApiKeyRequest.getApiKey());
-        request.setResourcePath(uriResourcePath);
-
-        if (getApiKeyRequest.getIncludeValue() != null) {
-            request.addParameter("includeValue", StringUtils.fromBoolean(getApiKeyRequest.getIncludeValue()));
+        try {
+            protocolMarshaller.marshall(getApiKeyRequest.getApiKey(), APIKEY_BINDING);
+            protocolMarshaller.marshall(getApiKeyRequest.getIncludeValue(), INCLUDEVALUE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

@@ -364,7 +364,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetBuildsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetBuildsRequest));
+                request = new BatchGetBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -408,7 +408,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetProjectsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetProjectsRequest));
+                request = new BatchGetProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -457,7 +457,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateProjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
+                request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -501,7 +501,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteProjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
+                request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -545,7 +545,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBuildsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
+                request = new ListBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -591,7 +591,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBuildsForProjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsForProjectRequest));
+                request = new ListBuildsForProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsForProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -633,7 +633,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCuratedEnvironmentImagesRequestMarshaller(protocolFactory).marshall(super
+                request = new ListCuratedEnvironmentImagesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(listCuratedEnvironmentImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -679,7 +679,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListProjectsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
+                request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -727,7 +727,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBuildRequest));
+                request = new StartBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -773,7 +773,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBuildRequest));
+                request = new StopBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -819,7 +819,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateProjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
+                request = new UpdateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

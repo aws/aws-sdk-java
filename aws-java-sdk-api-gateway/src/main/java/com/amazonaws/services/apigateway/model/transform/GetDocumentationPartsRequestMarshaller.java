@@ -12,75 +12,59 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDocumentationPartsRequest Marshaller
+ * GetDocumentationPartsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDocumentationPartsRequestMarshaller implements Marshaller<Request<GetDocumentationPartsRequest>, GetDocumentationPartsRequest> {
+@SdkInternalApi
+public class GetDocumentationPartsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> NAMEQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("name").build();
+    private static final MarshallingInfo<String> PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("path").build();
+    private static final MarshallingInfo<String> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("position").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
 
-    public GetDocumentationPartsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDocumentationPartsRequestMarshaller instance = new GetDocumentationPartsRequestMarshaller();
+
+    public static GetDocumentationPartsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDocumentationPartsRequest> marshall(GetDocumentationPartsRequest getDocumentationPartsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDocumentationPartsRequest getDocumentationPartsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDocumentationPartsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDocumentationPartsRequest> request = new DefaultRequest<GetDocumentationPartsRequest>(getDocumentationPartsRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/restapis/{restapi_id}/documentation/parts";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
-                getDocumentationPartsRequest.getRestApiId());
-        request.setResourcePath(uriResourcePath);
-
-        if (getDocumentationPartsRequest.getType() != null) {
-            request.addParameter("type", StringUtils.fromString(getDocumentationPartsRequest.getType()));
+        try {
+            protocolMarshaller.marshall(getDocumentationPartsRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(getDocumentationPartsRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(getDocumentationPartsRequest.getNameQuery(), NAMEQUERY_BINDING);
+            protocolMarshaller.marshall(getDocumentationPartsRequest.getPath(), PATH_BINDING);
+            protocolMarshaller.marshall(getDocumentationPartsRequest.getPosition(), POSITION_BINDING);
+            protocolMarshaller.marshall(getDocumentationPartsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getDocumentationPartsRequest.getNameQuery() != null) {
-            request.addParameter("name", StringUtils.fromString(getDocumentationPartsRequest.getNameQuery()));
-        }
-
-        if (getDocumentationPartsRequest.getPath() != null) {
-            request.addParameter("path", StringUtils.fromString(getDocumentationPartsRequest.getPath()));
-        }
-
-        if (getDocumentationPartsRequest.getPosition() != null) {
-            request.addParameter("position", StringUtils.fromString(getDocumentationPartsRequest.getPosition()));
-        }
-
-        if (getDocumentationPartsRequest.getLimit() != null) {
-            request.addParameter("limit", StringUtils.fromInteger(getDocumentationPartsRequest.getLimit()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

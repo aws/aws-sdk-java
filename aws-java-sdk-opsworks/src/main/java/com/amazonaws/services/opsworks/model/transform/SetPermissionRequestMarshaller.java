@@ -12,76 +12,56 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetPermissionRequest Marshaller
+ * SetPermissionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetPermissionRequestMarshaller implements Marshaller<Request<SetPermissionRequest>, SetPermissionRequest> {
+@SdkInternalApi
+public class SetPermissionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
+    private static final MarshallingInfo<String> IAMUSERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamUserArn").build();
+    private static final MarshallingInfo<Boolean> ALLOWSSH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowSsh").build();
+    private static final MarshallingInfo<Boolean> ALLOWSUDO_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowSudo").build();
+    private static final MarshallingInfo<String> LEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Level").build();
 
-    public SetPermissionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetPermissionRequestMarshaller instance = new SetPermissionRequestMarshaller();
+
+    public static SetPermissionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetPermissionRequest> marshall(SetPermissionRequest setPermissionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetPermissionRequest setPermissionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setPermissionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetPermissionRequest> request = new DefaultRequest<SetPermissionRequest>(setPermissionRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.SetPermission");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (setPermissionRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(setPermissionRequest.getStackId());
-            }
-            if (setPermissionRequest.getIamUserArn() != null) {
-                jsonGenerator.writeFieldName("IamUserArn").writeValue(setPermissionRequest.getIamUserArn());
-            }
-            if (setPermissionRequest.getAllowSsh() != null) {
-                jsonGenerator.writeFieldName("AllowSsh").writeValue(setPermissionRequest.getAllowSsh());
-            }
-            if (setPermissionRequest.getAllowSudo() != null) {
-                jsonGenerator.writeFieldName("AllowSudo").writeValue(setPermissionRequest.getAllowSudo());
-            }
-            if (setPermissionRequest.getLevel() != null) {
-                jsonGenerator.writeFieldName("Level").writeValue(setPermissionRequest.getLevel());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setPermissionRequest.getStackId(), STACKID_BINDING);
+            protocolMarshaller.marshall(setPermissionRequest.getIamUserArn(), IAMUSERARN_BINDING);
+            protocolMarshaller.marshall(setPermissionRequest.getAllowSsh(), ALLOWSSH_BINDING);
+            protocolMarshaller.marshall(setPermissionRequest.getAllowSudo(), ALLOWSUDO_BINDING);
+            protocolMarshaller.marshall(setPermissionRequest.getLevel(), LEVEL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

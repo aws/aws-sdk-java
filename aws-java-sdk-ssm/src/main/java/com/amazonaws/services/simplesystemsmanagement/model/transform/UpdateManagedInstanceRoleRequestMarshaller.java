@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateManagedInstanceRoleRequest Marshaller
+ * UpdateManagedInstanceRoleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateManagedInstanceRoleRequestMarshaller implements Marshaller<Request<UpdateManagedInstanceRoleRequest>, UpdateManagedInstanceRoleRequest> {
+@SdkInternalApi
+public class UpdateManagedInstanceRoleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<String> IAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IamRole").build();
 
-    public UpdateManagedInstanceRoleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateManagedInstanceRoleRequestMarshaller instance = new UpdateManagedInstanceRoleRequestMarshaller();
+
+    public static UpdateManagedInstanceRoleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateManagedInstanceRoleRequest> marshall(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateManagedInstanceRoleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateManagedInstanceRoleRequest> request = new DefaultRequest<UpdateManagedInstanceRoleRequest>(updateManagedInstanceRoleRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.UpdateManagedInstanceRole");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateManagedInstanceRoleRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(updateManagedInstanceRoleRequest.getInstanceId());
-            }
-            if (updateManagedInstanceRoleRequest.getIamRole() != null) {
-                jsonGenerator.writeFieldName("IamRole").writeValue(updateManagedInstanceRoleRequest.getIamRole());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateManagedInstanceRoleRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(updateManagedInstanceRoleRequest.getIamRole(), IAMROLE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

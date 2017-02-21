@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteAssessmentTemplateRequest Marshaller
+ * DeleteAssessmentTemplateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteAssessmentTemplateRequestMarshaller implements Marshaller<Request<DeleteAssessmentTemplateRequest>, DeleteAssessmentTemplateRequest> {
+@SdkInternalApi
+public class DeleteAssessmentTemplateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ASSESSMENTTEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTemplateArn").build();
 
-    public DeleteAssessmentTemplateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteAssessmentTemplateRequestMarshaller instance = new DeleteAssessmentTemplateRequestMarshaller();
+
+    public static DeleteAssessmentTemplateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteAssessmentTemplateRequest> marshall(DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteAssessmentTemplateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteAssessmentTemplateRequest> request = new DefaultRequest<DeleteAssessmentTemplateRequest>(deleteAssessmentTemplateRequest,
-                "AmazonInspector");
-        request.addHeader("X-Amz-Target", "InspectorService.DeleteAssessmentTemplate");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteAssessmentTemplateRequest.getAssessmentTemplateArn() != null) {
-                jsonGenerator.writeFieldName("assessmentTemplateArn").writeValue(deleteAssessmentTemplateRequest.getAssessmentTemplateArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteAssessmentTemplateRequest.getAssessmentTemplateArn(), ASSESSMENTTEMPLATEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

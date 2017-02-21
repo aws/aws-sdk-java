@@ -68,6 +68,9 @@ public class ModelClassGeneratorTasks extends BaseGeneratorTasks {
                 .put("customConfig", model.getCustomizationConfig())
                 .put("shouldGenerateSdkRequestConfigSetter", shouldGenerateSdkRequestConfigSetter(shapeModel))
                 .put("awsDocsUrl", createLinkToServiceDocumentation(metadata, shapeModel))
+                .put("shouldEmitStructuredPojoInterface", model.getMetadata().isJsonProtocol()
+                                                          && shapeModel.getShapeType() == ShapeType.Model)
+                .put("transformPackage", model.getTransformPackage())
                 .build();
 
         // Submit task for generating the

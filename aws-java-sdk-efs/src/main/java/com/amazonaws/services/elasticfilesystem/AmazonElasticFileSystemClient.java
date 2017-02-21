@@ -403,7 +403,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFileSystemRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFileSystemRequest));
+                request = new CreateFileSystemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFileSystemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -627,7 +627,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateMountTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMountTargetRequest));
+                request = new CreateMountTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMountTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -682,7 +682,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
+                request = new CreateTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -749,7 +749,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFileSystemRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFileSystemRequest));
+                request = new DeleteFileSystemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFileSystemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -836,7 +836,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMountTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMountTargetRequest));
+                request = new DeleteMountTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMountTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -891,7 +891,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
+                request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -965,7 +965,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFileSystemsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFileSystemsRequest));
+                request = new DescribeFileSystemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFileSystemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1040,7 +1040,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMountTargetSecurityGroupsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeMountTargetSecurityGroupsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeMountTargetSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1099,7 +1099,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMountTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMountTargetsRequest));
+                request = new DescribeMountTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMountTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1153,7 +1153,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
+                request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1231,7 +1231,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyMountTargetSecurityGroupsRequestMarshaller(protocolFactory).marshall(super
+                request = new ModifyMountTargetSecurityGroupsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(modifyMountTargetSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);

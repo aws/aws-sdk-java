@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UnsubscribeFromEventRequest Marshaller
+ * UnsubscribeFromEventRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsubscribeFromEventRequestMarshaller implements Marshaller<Request<UnsubscribeFromEventRequest>, UnsubscribeFromEventRequest> {
+@SdkInternalApi
+public class UnsubscribeFromEventRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
+    private static final MarshallingInfo<String> EVENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("event").build();
+    private static final MarshallingInfo<String> TOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("topicArn").build();
 
-    public UnsubscribeFromEventRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UnsubscribeFromEventRequestMarshaller instance = new UnsubscribeFromEventRequestMarshaller();
+
+    public static UnsubscribeFromEventRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UnsubscribeFromEventRequest> marshall(UnsubscribeFromEventRequest unsubscribeFromEventRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UnsubscribeFromEventRequest unsubscribeFromEventRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (unsubscribeFromEventRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UnsubscribeFromEventRequest> request = new DefaultRequest<UnsubscribeFromEventRequest>(unsubscribeFromEventRequest, "AmazonInspector");
-        request.addHeader("X-Amz-Target", "InspectorService.UnsubscribeFromEvent");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (unsubscribeFromEventRequest.getResourceArn() != null) {
-                jsonGenerator.writeFieldName("resourceArn").writeValue(unsubscribeFromEventRequest.getResourceArn());
-            }
-            if (unsubscribeFromEventRequest.getEvent() != null) {
-                jsonGenerator.writeFieldName("event").writeValue(unsubscribeFromEventRequest.getEvent());
-            }
-            if (unsubscribeFromEventRequest.getTopicArn() != null) {
-                jsonGenerator.writeFieldName("topicArn").writeValue(unsubscribeFromEventRequest.getTopicArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(unsubscribeFromEventRequest.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(unsubscribeFromEventRequest.getEvent(), EVENT_BINDING);
+            protocolMarshaller.marshall(unsubscribeFromEventRequest.getTopicArn(), TOPICARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

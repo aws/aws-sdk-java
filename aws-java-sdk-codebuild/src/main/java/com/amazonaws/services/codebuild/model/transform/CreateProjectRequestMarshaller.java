@@ -12,103 +12,69 @@
  */
 package com.amazonaws.services.codebuild.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codebuild.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateProjectRequest Marshaller
+ * CreateProjectRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateProjectRequestMarshaller implements Marshaller<Request<CreateProjectRequest>, CreateProjectRequest> {
+@SdkInternalApi
+public class CreateProjectRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
+    private static final MarshallingInfo<StructuredPojo> ARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifacts").build();
+    private static final MarshallingInfo<StructuredPojo> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environment").build();
+    private static final MarshallingInfo<String> SERVICEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRole").build();
+    private static final MarshallingInfo<Integer> TIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMinutes").build();
+    private static final MarshallingInfo<String> ENCRYPTIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionKey").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
-    public CreateProjectRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateProjectRequestMarshaller instance = new CreateProjectRequestMarshaller();
+
+    public static CreateProjectRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateProjectRequest> marshall(CreateProjectRequest createProjectRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateProjectRequest createProjectRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createProjectRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateProjectRequest> request = new DefaultRequest<CreateProjectRequest>(createProjectRequest, "AWSCodeBuild");
-        request.addHeader("X-Amz-Target", "CodeBuild_20161006.CreateProject");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createProjectRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(createProjectRequest.getName());
-            }
-            if (createProjectRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(createProjectRequest.getDescription());
-            }
-            if (createProjectRequest.getSource() != null) {
-                jsonGenerator.writeFieldName("source");
-                ProjectSourceJsonMarshaller.getInstance().marshall(createProjectRequest.getSource(), jsonGenerator);
-            }
-            if (createProjectRequest.getArtifacts() != null) {
-                jsonGenerator.writeFieldName("artifacts");
-                ProjectArtifactsJsonMarshaller.getInstance().marshall(createProjectRequest.getArtifacts(), jsonGenerator);
-            }
-            if (createProjectRequest.getEnvironment() != null) {
-                jsonGenerator.writeFieldName("environment");
-                ProjectEnvironmentJsonMarshaller.getInstance().marshall(createProjectRequest.getEnvironment(), jsonGenerator);
-            }
-            if (createProjectRequest.getServiceRole() != null) {
-                jsonGenerator.writeFieldName("serviceRole").writeValue(createProjectRequest.getServiceRole());
-            }
-            if (createProjectRequest.getTimeoutInMinutes() != null) {
-                jsonGenerator.writeFieldName("timeoutInMinutes").writeValue(createProjectRequest.getTimeoutInMinutes());
-            }
-            if (createProjectRequest.getEncryptionKey() != null) {
-                jsonGenerator.writeFieldName("encryptionKey").writeValue(createProjectRequest.getEncryptionKey());
-            }
-
-            java.util.List<Tag> tagsList = createProjectRequest.getTags();
-            if (tagsList != null) {
-                jsonGenerator.writeFieldName("tags");
-                jsonGenerator.writeStartArray();
-                for (Tag tagsListValue : tagsList) {
-                    if (tagsListValue != null) {
-
-                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createProjectRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getArtifacts(), ARTIFACTS_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getEnvironment(), ENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getServiceRole(), SERVICEROLE_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getTimeoutInMinutes(), TIMEOUTINMINUTES_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

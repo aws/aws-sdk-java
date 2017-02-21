@@ -12,87 +12,54 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateJobQueueRequest Marshaller
+ * CreateJobQueueRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateJobQueueRequestMarshaller implements Marshaller<Request<CreateJobQueueRequest>, CreateJobQueueRequest> {
+@SdkInternalApi
+public class CreateJobQueueRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBQUEUENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobQueueName").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("state").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
+    private static final MarshallingInfo<List> COMPUTEENVIRONMENTORDER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeEnvironmentOrder").build();
 
-    public CreateJobQueueRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateJobQueueRequestMarshaller instance = new CreateJobQueueRequestMarshaller();
+
+    public static CreateJobQueueRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateJobQueueRequest> marshall(CreateJobQueueRequest createJobQueueRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateJobQueueRequest createJobQueueRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createJobQueueRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateJobQueueRequest> request = new DefaultRequest<CreateJobQueueRequest>(createJobQueueRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/createjobqueue";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createJobQueueRequest.getJobQueueName() != null) {
-                jsonGenerator.writeFieldName("jobQueueName").writeValue(createJobQueueRequest.getJobQueueName());
-            }
-            if (createJobQueueRequest.getState() != null) {
-                jsonGenerator.writeFieldName("state").writeValue(createJobQueueRequest.getState());
-            }
-            if (createJobQueueRequest.getPriority() != null) {
-                jsonGenerator.writeFieldName("priority").writeValue(createJobQueueRequest.getPriority());
-            }
-
-            java.util.List<ComputeEnvironmentOrder> computeEnvironmentOrderList = createJobQueueRequest.getComputeEnvironmentOrder();
-            if (computeEnvironmentOrderList != null) {
-                jsonGenerator.writeFieldName("computeEnvironmentOrder");
-                jsonGenerator.writeStartArray();
-                for (ComputeEnvironmentOrder computeEnvironmentOrderListValue : computeEnvironmentOrderList) {
-                    if (computeEnvironmentOrderListValue != null) {
-
-                        ComputeEnvironmentOrderJsonMarshaller.getInstance().marshall(computeEnvironmentOrderListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createJobQueueRequest.getJobQueueName(), JOBQUEUENAME_BINDING);
+            protocolMarshaller.marshall(createJobQueueRequest.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(createJobQueueRequest.getPriority(), PRIORITY_BINDING);
+            protocolMarshaller.marshall(createJobQueueRequest.getComputeEnvironmentOrder(), COMPUTEENVIRONMENTORDER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

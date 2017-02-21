@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteEndpointRequest Marshaller
+ * DeleteEndpointRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteEndpointRequestMarshaller implements Marshaller<Request<DeleteEndpointRequest>, DeleteEndpointRequest> {
+@SdkInternalApi
+public class DeleteEndpointRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ENDPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointArn").build();
 
-    public DeleteEndpointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteEndpointRequestMarshaller instance = new DeleteEndpointRequestMarshaller();
+
+    public static DeleteEndpointRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteEndpointRequest> marshall(DeleteEndpointRequest deleteEndpointRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteEndpointRequest deleteEndpointRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteEndpointRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteEndpointRequest> request = new DefaultRequest<DeleteEndpointRequest>(deleteEndpointRequest, "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.DeleteEndpoint");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteEndpointRequest.getEndpointArn() != null) {
-                jsonGenerator.writeFieldName("EndpointArn").writeValue(deleteEndpointRequest.getEndpointArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteEndpointRequest.getEndpointArn(), ENDPOINTARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

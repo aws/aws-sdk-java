@@ -14,6 +14,8 @@ package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -23,7 +25,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Image" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Image implements Serializable, Cloneable {
+public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -281,5 +283,11 @@ public class Image implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecr.model.transform.ImageMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

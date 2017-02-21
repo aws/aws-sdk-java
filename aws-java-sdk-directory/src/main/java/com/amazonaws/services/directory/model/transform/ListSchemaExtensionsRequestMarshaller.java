@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListSchemaExtensionsRequest Marshaller
+ * ListSchemaExtensionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListSchemaExtensionsRequestMarshaller implements Marshaller<Request<ListSchemaExtensionsRequest>, ListSchemaExtensionsRequest> {
+@SdkInternalApi
+public class ListSchemaExtensionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public ListSchemaExtensionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListSchemaExtensionsRequestMarshaller instance = new ListSchemaExtensionsRequestMarshaller();
+
+    public static ListSchemaExtensionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListSchemaExtensionsRequest> marshall(ListSchemaExtensionsRequest listSchemaExtensionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListSchemaExtensionsRequest listSchemaExtensionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listSchemaExtensionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListSchemaExtensionsRequest> request = new DefaultRequest<ListSchemaExtensionsRequest>(listSchemaExtensionsRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.ListSchemaExtensions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listSchemaExtensionsRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(listSchemaExtensionsRequest.getDirectoryId());
-            }
-            if (listSchemaExtensionsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listSchemaExtensionsRequest.getNextToken());
-            }
-            if (listSchemaExtensionsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listSchemaExtensionsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listSchemaExtensionsRequest.getDirectoryId(), DIRECTORYID_BINDING);
+            protocolMarshaller.marshall(listSchemaExtensionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listSchemaExtensionsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

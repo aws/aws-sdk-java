@@ -12,81 +12,49 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetOpenIdTokenRequest Marshaller
+ * GetOpenIdTokenRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetOpenIdTokenRequestMarshaller implements Marshaller<Request<GetOpenIdTokenRequest>, GetOpenIdTokenRequest> {
+@SdkInternalApi
+public class GetOpenIdTokenRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityId").build();
+    private static final MarshallingInfo<Map> LOGINS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Logins").build();
 
-    public GetOpenIdTokenRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetOpenIdTokenRequestMarshaller instance = new GetOpenIdTokenRequestMarshaller();
+
+    public static GetOpenIdTokenRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetOpenIdTokenRequest> marshall(GetOpenIdTokenRequest getOpenIdTokenRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetOpenIdTokenRequest getOpenIdTokenRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getOpenIdTokenRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetOpenIdTokenRequest> request = new DefaultRequest<GetOpenIdTokenRequest>(getOpenIdTokenRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.GetOpenIdToken");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getOpenIdTokenRequest.getIdentityId() != null) {
-                jsonGenerator.writeFieldName("IdentityId").writeValue(getOpenIdTokenRequest.getIdentityId());
-            }
-
-            java.util.Map<String, String> loginsMap = getOpenIdTokenRequest.getLogins();
-            if (loginsMap != null) {
-                jsonGenerator.writeFieldName("Logins");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> loginsMapValue : loginsMap.entrySet()) {
-                    if (loginsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(loginsMapValue.getKey());
-
-                        jsonGenerator.writeValue(loginsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getOpenIdTokenRequest.getIdentityId(), IDENTITYID_BINDING);
+            protocolMarshaller.marshall(getOpenIdTokenRequest.getLogins(), LOGINS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }
