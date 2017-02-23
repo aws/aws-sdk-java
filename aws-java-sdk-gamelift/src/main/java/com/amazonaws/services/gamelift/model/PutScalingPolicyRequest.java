@@ -30,14 +30,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Descriptive label associated with a scaling policy. Policy names do not need to be unique. A fleet can have only
-     * one scaling policy with the same name.
+     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can
+     * have only one scaling policy with the same name.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Unique identity for the fleet to scale with this policy.
+     * Unique identifier for a fleet to apply this policy to.
      * </p>
      */
     private String fleetId;
@@ -138,13 +138,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Descriptive label associated with a scaling policy. Policy names do not need to be unique. A fleet can have only
-     * one scaling policy with the same name.
+     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can
+     * have only one scaling policy with the same name.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a scaling policy. Policy names do not need to be unique. A fleet can
-     *        have only one scaling policy with the same name.
+     *        Descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet
+     *        can have only one scaling policy with the same name.
      */
 
     public void setName(String name) {
@@ -153,12 +153,12 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Descriptive label associated with a scaling policy. Policy names do not need to be unique. A fleet can have only
-     * one scaling policy with the same name.
+     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can
+     * have only one scaling policy with the same name.
      * </p>
      * 
-     * @return Descriptive label associated with a scaling policy. Policy names do not need to be unique. A fleet can
-     *         have only one scaling policy with the same name.
+     * @return Descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A
+     *         fleet can have only one scaling policy with the same name.
      */
 
     public String getName() {
@@ -167,13 +167,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Descriptive label associated with a scaling policy. Policy names do not need to be unique. A fleet can have only
-     * one scaling policy with the same name.
+     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can
+     * have only one scaling policy with the same name.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a scaling policy. Policy names do not need to be unique. A fleet can
-     *        have only one scaling policy with the same name.
+     *        Descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet
+     *        can have only one scaling policy with the same name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identity for the fleet to scale with this policy.
+     * Unique identifier for a fleet to apply this policy to.
      * </p>
      * 
      * @param fleetId
-     *        Unique identity for the fleet to scale with this policy.
+     *        Unique identifier for a fleet to apply this policy to.
      */
 
     public void setFleetId(String fleetId) {
@@ -197,10 +197,10 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identity for the fleet to scale with this policy.
+     * Unique identifier for a fleet to apply this policy to.
      * </p>
      * 
-     * @return Unique identity for the fleet to scale with this policy.
+     * @return Unique identifier for a fleet to apply this policy to.
      */
 
     public String getFleetId() {
@@ -209,11 +209,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identity for the fleet to scale with this policy.
+     * Unique identifier for a fleet to apply this policy to.
      * </p>
      * 
      * @param fleetId
-     *        Unique identity for the fleet to scale with this policy.
+     *        Unique identifier for a fleet to apply this policy to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

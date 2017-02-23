@@ -1,4 +1,21 @@
-# __1.11.94__ __2017-02-21__
+# __1.11.95__ __2017-02-22__
+## __AWS Elastic Beanstalk__
+  - <h3>Features</h3>
+    - Elastic Beanstalk adds support for creating and managing custom platform.
+
+## __Amazon Cloud Directory__
+  - <h3>Features</h3>
+    - ListObjectAttributes documentation updated based on forum feedback
+
+## __Amazon GameLift__
+  - <h3>Features</h3>
+    - Allow developers to configure global queues for creating GameSessions. Allow PlayerData on PlayerSessions to store player-specific data.
+
+## __Amazon Route 53__
+  - <h3>Features</h3>
+    - Added support for operations CreateVPCAssociationAuthorization and DeleteVPCAssociationAuthorization to throw a ConcurrentModification error when a conflicting modification occurs in parallel to the authorizations in place for a given hosted zone.
+
+# __1.11.94__ __2017-02-22__
 ## __AWS SDK for Java__
   - <h3>Features</h3>
     - Major refactoring of marshallers for all JSON based services. This may have different performance characteristics than previous releases.

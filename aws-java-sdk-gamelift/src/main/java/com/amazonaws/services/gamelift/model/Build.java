@@ -21,6 +21,36 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Properties describing a game build.
  * </p>
+ * <p>
+ * Build-related operations include:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateBuild</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListBuilds</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeBuild</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateBuild</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteBuild</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Build" target="_top">AWS API
  *      Documentation</a>
@@ -36,15 +66,15 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     private String buildId;
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     * Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
      * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build. This value can be set
-     * using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Version that is associated with this build. Version strings do not need to be unique. This value can be set using
+     * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      */
     private String version;
@@ -92,7 +122,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
@@ -139,13 +169,13 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     * Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
      * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a build. Build names do not need to be unique. It can be set using
-     *        <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     *        Descriptive label that is associated with a build. Build names do not need to be unique. It can be set
+     *        using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public void setName(String name) {
@@ -154,12 +184,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     * Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
      * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
-     * @return Descriptive label associated with a build. Build names do not need to be unique. It can be set using
-     *         <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * @return Descriptive label that is associated with a build. Build names do not need to be unique. It can be set
+     *         using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public String getName() {
@@ -168,13 +198,13 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique. It can be set using
+     * Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
      * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a build. Build names do not need to be unique. It can be set using
-     *        <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     *        Descriptive label that is associated with a build. Build names do not need to be unique. It can be set
+     *        using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,12 +215,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build. This value can be set
-     * using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Version that is associated with this build. Version strings do not need to be unique. This value can be set using
+     * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param version
-     *        Version associated with this build. Version strings do not need to be unique to a build. This value can be
+     *        Version that is associated with this build. Version strings do not need to be unique. This value can be
      *        set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
@@ -200,12 +230,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build. This value can be set
-     * using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Version that is associated with this build. Version strings do not need to be unique. This value can be set using
+     * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
-     * @return Version associated with this build. Version strings do not need to be unique to a build. This value can
-     *         be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * @return Version that is associated with this build. Version strings do not need to be unique. This value can be
+     *         set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public String getVersion() {
@@ -214,12 +244,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build. This value can be set
-     * using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Version that is associated with this build. Version strings do not need to be unique. This value can be set using
+     * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param version
-     *        Version associated with this build. Version strings do not need to be unique to a build. This value can be
+     *        Version that is associated with this build. Version strings do not need to be unique. This value can be
      *        set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -649,12 +679,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -664,11 +694,11 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057").
+     *         milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -678,12 +708,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

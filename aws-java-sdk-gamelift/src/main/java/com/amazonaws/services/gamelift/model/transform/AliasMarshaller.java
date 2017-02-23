@@ -31,6 +31,8 @@ public class AliasMarshaller {
             .marshallLocationName("AliasId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> ALIASARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AliasArn").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<StructuredPojo> ROUTINGSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -58,6 +60,7 @@ public class AliasMarshaller {
         try {
             protocolMarshaller.marshall(alias.getAliasId(), ALIASID_BINDING);
             protocolMarshaller.marshall(alias.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(alias.getAliasArn(), ALIASARN_BINDING);
             protocolMarshaller.marshall(alias.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(alias.getRoutingStrategy(), ROUTINGSTRATEGY_BINDING);
             protocolMarshaller.marshall(alias.getCreationTime(), CREATIONTIME_BINDING);

@@ -49,7 +49,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     /**
      * <p>
      * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
-     * seconds with one milisecond resolution.
+     * seconds with one millisecond resolution.
      * </p>
      */
     private Latency latency;
@@ -189,12 +189,12 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     /**
      * <p>
      * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
-     * seconds with one milisecond resolution.
+     * seconds with one millisecond resolution.
      * </p>
      * 
      * @param latency
      *        Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
-     *        are in seconds with one milisecond resolution.
+     *        are in seconds with one millisecond resolution.
      */
 
     public void setLatency(Latency latency) {
@@ -204,11 +204,11 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     /**
      * <p>
      * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
-     * seconds with one milisecond resolution.
+     * seconds with one millisecond resolution.
      * </p>
      * 
      * @return Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
-     *         are in seconds with one milisecond resolution.
+     *         are in seconds with one millisecond resolution.
      */
 
     public Latency getLatency() {
@@ -218,12 +218,12 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     /**
      * <p>
      * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
-     * seconds with one milisecond resolution.
+     * seconds with one millisecond resolution.
      * </p>
      * 
      * @param latency
      *        Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
-     *        are in seconds with one milisecond resolution.
+     *        are in seconds with one millisecond resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,24 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * endpoint.
      * </p>
      * <p>
+     * Use one of the following formats for the value of <code>IPAddress</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example,
+     * <code>192.0.2.44</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC
+     * 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
      * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
      * your instance will never change.
@@ -222,7 +240,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check
      * for each endpoint. For example, create a health check for each HTTP server that is serving content for
      * www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as us-east-1-www.example.com), not the name of the resource record sets (www.example.com).
+     * (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).
      * </p>
      * <important>
      * <p>
@@ -254,13 +272,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that
-     * it sends the next health-check request. Each Amazon Route 53 health checker makes requests at this interval.
+     * it sends the next health check request. Each Amazon Route 53 health checker makes requests at this interval.
      * </p>
      * <important>
      * <p>
      * You can't change the value of <code>RequestInterval</code> after you create a health check.
      * </p>
      * </important>
+     * <p>
+     * If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.
+     * </p>
      */
     private Integer requestInterval;
     /**
@@ -269,6 +290,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
      * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.
      * </p>
      */
     private Integer failureThreshold;
@@ -349,8 +373,17 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     private Boolean enableSNI;
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53
+     * health checkers to check the specified endpoint.
+     * </p>
+     * <p>
+     * If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all of the
+     * regions that are listed under <b>Valid Values</b>.
+     * </p>
+     * <p>
+     * If you update a health check to remove a region that has been performing health checks, Amazon Route 53 will
+     * briefly continue to perform checks from that region to ensure that some health checkers are always checking the
+     * endpoint (for example, if you replace three regions with four different regions).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regions;
@@ -397,6 +430,24 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * endpoint.
      * </p>
      * <p>
+     * Use one of the following formats for the value of <code>IPAddress</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example,
+     * <code>192.0.2.44</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC
+     * 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
      * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
      * your instance will never change.
@@ -437,6 +488,24 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
      *        <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health
      *        of the endpoint.</p>
+     *        <p>
+     *        Use one of the following formats for the value of <code>IPAddress</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example,
+     *        <code>192.0.2.44</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example,
+     *        <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in
+     *        RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *        your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
@@ -486,6 +555,24 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * endpoint.
      * </p>
      * <p>
+     * Use one of the following formats for the value of <code>IPAddress</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example,
+     * <code>192.0.2.44</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC
+     * 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
      * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
      * your instance will never change.
@@ -525,6 +612,24 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
      *         <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health
      *         of the endpoint.</p>
+     *         <p>
+     *         Use one of the following formats for the value of <code>IPAddress</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example,
+     *         <code>192.0.2.44</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example,
+     *         <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in
+     *         RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *         your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the
@@ -574,6 +679,24 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * endpoint.
      * </p>
      * <p>
+     * Use one of the following formats for the value of <code>IPAddress</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example,
+     * <code>192.0.2.44</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC
+     * 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
      * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
      * your instance will never change.
@@ -614,6 +737,24 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
      *        <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health
      *        of the endpoint.</p>
+     *        <p>
+     *        Use one of the following formats for the value of <code>IPAddress</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example,
+     *        <code>192.0.2.44</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example,
+     *        <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in
+     *        RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *        your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
@@ -1560,7 +1701,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check
      * for each endpoint. For example, create a health check for each HTTP server that is serving content for
      * www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as us-east-1-www.example.com), not the name of the resource record sets (www.example.com).
+     * (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).
      * </p>
      * <important>
      * <p>
@@ -1639,7 +1780,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a
      *        separate health check for each endpoint. For example, create a health check for each HTTP server that is
      *        serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     *        domain name of the server (such as us-east-1-www.example.com), not the name of the resource record sets
+     *        domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets
      *        (www.example.com).
      *        </p>
      *        <important>
@@ -1724,7 +1865,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check
      * for each endpoint. For example, create a health check for each HTTP server that is serving content for
      * www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as us-east-1-www.example.com), not the name of the resource record sets (www.example.com).
+     * (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).
      * </p>
      * <important>
      * <p>
@@ -1802,7 +1943,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a
      *         separate health check for each endpoint. For example, create a health check for each HTTP server that is
      *         serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     *         domain name of the server (such as us-east-1-www.example.com), not the name of the resource record sets
+     *         domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets
      *         (www.example.com).
      *         </p>
      *         <important>
@@ -1886,7 +2027,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check
      * for each endpoint. For example, create a health check for each HTTP server that is serving content for
      * www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as us-east-1-www.example.com), not the name of the resource record sets (www.example.com).
+     * (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).
      * </p>
      * <important>
      * <p>
@@ -1965,7 +2106,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a
      *        separate health check for each endpoint. For example, create a health check for each HTTP server that is
      *        serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     *        domain name of the server (such as us-east-1-www.example.com), not the name of the resource record sets
+     *        domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets
      *        (www.example.com).
      *        </p>
      *        <important>
@@ -2059,21 +2200,28 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that
-     * it sends the next health-check request. Each Amazon Route 53 health checker makes requests at this interval.
+     * it sends the next health check request. Each Amazon Route 53 health checker makes requests at this interval.
      * </p>
      * <important>
      * <p>
      * You can't change the value of <code>RequestInterval</code> after you create a health check.
      * </p>
      * </important>
+     * <p>
+     * If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.
+     * </p>
      * 
      * @param requestInterval
      *        The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the
-     *        time that it sends the next health-check request. Each Amazon Route 53 health checker makes requests at
+     *        time that it sends the next health check request. Each Amazon Route 53 health checker makes requests at
      *        this interval.</p> <important>
      *        <p>
      *        You can't change the value of <code>RequestInterval</code> after you create a health check.
      *        </p>
+     *        </important>
+     *        <p>
+     *        If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code>
+     *        seconds.
      */
 
     public void setRequestInterval(Integer requestInterval) {
@@ -2083,20 +2231,27 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that
-     * it sends the next health-check request. Each Amazon Route 53 health checker makes requests at this interval.
+     * it sends the next health check request. Each Amazon Route 53 health checker makes requests at this interval.
      * </p>
      * <important>
      * <p>
      * You can't change the value of <code>RequestInterval</code> after you create a health check.
      * </p>
      * </important>
+     * <p>
+     * If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.
+     * </p>
      * 
      * @return The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the
-     *         time that it sends the next health-check request. Each Amazon Route 53 health checker makes requests at
+     *         time that it sends the next health check request. Each Amazon Route 53 health checker makes requests at
      *         this interval.</p> <important>
      *         <p>
      *         You can't change the value of <code>RequestInterval</code> after you create a health check.
      *         </p>
+     *         </important>
+     *         <p>
+     *         If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code>
+     *         seconds.
      */
 
     public Integer getRequestInterval() {
@@ -2106,21 +2261,28 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that
-     * it sends the next health-check request. Each Amazon Route 53 health checker makes requests at this interval.
+     * it sends the next health check request. Each Amazon Route 53 health checker makes requests at this interval.
      * </p>
      * <important>
      * <p>
      * You can't change the value of <code>RequestInterval</code> after you create a health check.
      * </p>
      * </important>
+     * <p>
+     * If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.
+     * </p>
      * 
      * @param requestInterval
      *        The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the
-     *        time that it sends the next health-check request. Each Amazon Route 53 health checker makes requests at
+     *        time that it sends the next health check request. Each Amazon Route 53 health checker makes requests at
      *        this interval.</p> <important>
      *        <p>
      *        You can't change the value of <code>RequestInterval</code> after you create a health check.
      *        </p>
+     *        </important>
+     *        <p>
+     *        If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code>
+     *        seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2136,6 +2298,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
+     * <p>
+     * If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.
+     * </p>
      * 
      * @param failureThreshold
      *        The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
@@ -2143,7 +2308,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        href=
      *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
-     *        Guide</i>.
+     *        Guide</i>.</p>
+     *        <p>
+     *        If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.
      */
 
     public void setFailureThreshold(Integer failureThreshold) {
@@ -2157,13 +2324,18 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
+     * <p>
+     * If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.
+     * </p>
      * 
      * @return The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
      *         the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
      *         href=
      *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *         >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
-     *         Guide</i>.
+     *         Guide</i>.</p>
+     *         <p>
+     *         If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.
      */
 
     public Integer getFailureThreshold() {
@@ -2177,6 +2349,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
+     * <p>
+     * If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.
+     * </p>
      * 
      * @param failureThreshold
      *        The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
@@ -2184,7 +2359,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        href=
      *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
-     *        Guide</i>.
+     *        Guide</i>.</p>
+     *        <p>
+     *        If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2778,12 +2955,29 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53
+     * health checkers to check the specified endpoint.
+     * </p>
+     * <p>
+     * If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all of the
+     * regions that are listed under <b>Valid Values</b>.
+     * </p>
+     * <p>
+     * If you update a health check to remove a region that has been performing health checks, Amazon Route 53 will
+     * briefly continue to perform checks from that region to ensure that some health checkers are always checking the
+     * endpoint (for example, if you replace three regions with four different regions).
      * </p>
      * 
-     * @return A complex type that contains one Region element for each region from which you want Amazon Route 53
-     *         health checkers to check the specified endpoint.
+     * @return A complex type that contains one <code>Region</code> element for each region from which you want Amazon
+     *         Route 53 health checkers to check the specified endpoint.</p>
+     *         <p>
+     *         If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all
+     *         of the regions that are listed under <b>Valid Values</b>.
+     *         </p>
+     *         <p>
+     *         If you update a health check to remove a region that has been performing health checks, Amazon Route 53
+     *         will briefly continue to perform checks from that region to ensure that some health checkers are always
+     *         checking the endpoint (for example, if you replace three regions with four different regions).
      * @see HealthCheckRegion
      */
 
@@ -2796,13 +2990,30 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53
+     * health checkers to check the specified endpoint.
+     * </p>
+     * <p>
+     * If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all of the
+     * regions that are listed under <b>Valid Values</b>.
+     * </p>
+     * <p>
+     * If you update a health check to remove a region that has been performing health checks, Amazon Route 53 will
+     * briefly continue to perform checks from that region to ensure that some health checkers are always checking the
+     * endpoint (for example, if you replace three regions with four different regions).
      * </p>
      * 
      * @param regions
-     *        A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     *        checkers to check the specified endpoint.
+     *        A complex type that contains one <code>Region</code> element for each region from which you want Amazon
+     *        Route 53 health checkers to check the specified endpoint.</p>
+     *        <p>
+     *        If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all
+     *        of the regions that are listed under <b>Valid Values</b>.
+     *        </p>
+     *        <p>
+     *        If you update a health check to remove a region that has been performing health checks, Amazon Route 53
+     *        will briefly continue to perform checks from that region to ensure that some health checkers are always
+     *        checking the endpoint (for example, if you replace three regions with four different regions).
      * @see HealthCheckRegion
      */
 
@@ -2817,8 +3028,17 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53
+     * health checkers to check the specified endpoint.
+     * </p>
+     * <p>
+     * If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all of the
+     * regions that are listed under <b>Valid Values</b>.
+     * </p>
+     * <p>
+     * If you update a health check to remove a region that has been performing health checks, Amazon Route 53 will
+     * briefly continue to perform checks from that region to ensure that some health checkers are always checking the
+     * endpoint (for example, if you replace three regions with four different regions).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2827,8 +3047,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param regions
-     *        A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     *        checkers to check the specified endpoint.
+     *        A complex type that contains one <code>Region</code> element for each region from which you want Amazon
+     *        Route 53 health checkers to check the specified endpoint.</p>
+     *        <p>
+     *        If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all
+     *        of the regions that are listed under <b>Valid Values</b>.
+     *        </p>
+     *        <p>
+     *        If you update a health check to remove a region that has been performing health checks, Amazon Route 53
+     *        will briefly continue to perform checks from that region to ensure that some health checkers are always
+     *        checking the endpoint (for example, if you replace three regions with four different regions).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */
@@ -2845,13 +3073,30 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53
+     * health checkers to check the specified endpoint.
+     * </p>
+     * <p>
+     * If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all of the
+     * regions that are listed under <b>Valid Values</b>.
+     * </p>
+     * <p>
+     * If you update a health check to remove a region that has been performing health checks, Amazon Route 53 will
+     * briefly continue to perform checks from that region to ensure that some health checkers are always checking the
+     * endpoint (for example, if you replace three regions with four different regions).
      * </p>
      * 
      * @param regions
-     *        A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     *        checkers to check the specified endpoint.
+     *        A complex type that contains one <code>Region</code> element for each region from which you want Amazon
+     *        Route 53 health checkers to check the specified endpoint.</p>
+     *        <p>
+     *        If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all
+     *        of the regions that are listed under <b>Valid Values</b>.
+     *        </p>
+     *        <p>
+     *        If you update a health check to remove a region that has been performing health checks, Amazon Route 53
+     *        will briefly continue to perform checks from that region to ensure that some health checkers are always
+     *        checking the endpoint (for example, if you replace three regions with four different regions).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */
@@ -2863,13 +3108,30 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53
+     * health checkers to check the specified endpoint.
+     * </p>
+     * <p>
+     * If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all of the
+     * regions that are listed under <b>Valid Values</b>.
+     * </p>
+     * <p>
+     * If you update a health check to remove a region that has been performing health checks, Amazon Route 53 will
+     * briefly continue to perform checks from that region to ensure that some health checkers are always checking the
+     * endpoint (for example, if you replace three regions with four different regions).
      * </p>
      * 
      * @param regions
-     *        A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     *        checkers to check the specified endpoint.
+     *        A complex type that contains one <code>Region</code> element for each region from which you want Amazon
+     *        Route 53 health checkers to check the specified endpoint.</p>
+     *        <p>
+     *        If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all
+     *        of the regions that are listed under <b>Valid Values</b>.
+     *        </p>
+     *        <p>
+     *        If you update a health check to remove a region that has been performing health checks, Amazon Route 53
+     *        will briefly continue to perform checks from that region to ensure that some health checkers are always
+     *        checking the endpoint (for example, if you replace three regions with four different regions).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */

@@ -28,32 +28,30 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Set of properties for the newly created build.
+     * The newly created build record, including a unique build ID and status.
      * </p>
      */
     private Build build;
     /**
      * <p>
-     * AWS credentials required when uploading a game build to the storage location. These credentials have a limited
-     * lifespan and are valid only for the build they were issued for. If you need to get fresh credentials, call
-     * <code> <a>RequestUploadCredentials</a> </code>.
+     * This element is not currently in use.
      * </p>
      */
     private Credentials uploadCredentials;
     /**
      * <p>
-     * Amazon S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 location specified in the request.
      * </p>
      */
     private S3Location storageLocation;
 
     /**
      * <p>
-     * Set of properties for the newly created build.
+     * The newly created build record, including a unique build ID and status.
      * </p>
      * 
      * @param build
-     *        Set of properties for the newly created build.
+     *        The newly created build record, including a unique build ID and status.
      */
 
     public void setBuild(Build build) {
@@ -62,10 +60,10 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Set of properties for the newly created build.
+     * The newly created build record, including a unique build ID and status.
      * </p>
      * 
-     * @return Set of properties for the newly created build.
+     * @return The newly created build record, including a unique build ID and status.
      */
 
     public Build getBuild() {
@@ -74,11 +72,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Set of properties for the newly created build.
+     * The newly created build record, including a unique build ID and status.
      * </p>
      * 
      * @param build
-     *        Set of properties for the newly created build.
+     *        The newly created build record, including a unique build ID and status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,15 +87,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * AWS credentials required when uploading a game build to the storage location. These credentials have a limited
-     * lifespan and are valid only for the build they were issued for. If you need to get fresh credentials, call
-     * <code> <a>RequestUploadCredentials</a> </code>.
+     * This element is not currently in use.
      * </p>
      * 
      * @param uploadCredentials
-     *        AWS credentials required when uploading a game build to the storage location. These credentials have a
-     *        limited lifespan and are valid only for the build they were issued for. If you need to get fresh
-     *        credentials, call<code> <a>RequestUploadCredentials</a> </code>.
+     *        This element is not currently in use.
      */
 
     public void setUploadCredentials(Credentials uploadCredentials) {
@@ -106,14 +100,10 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * AWS credentials required when uploading a game build to the storage location. These credentials have a limited
-     * lifespan and are valid only for the build they were issued for. If you need to get fresh credentials, call
-     * <code> <a>RequestUploadCredentials</a> </code>.
+     * This element is not currently in use.
      * </p>
      * 
-     * @return AWS credentials required when uploading a game build to the storage location. These credentials have a
-     *         limited lifespan and are valid only for the build they were issued for. If you need to get fresh
-     *         credentials, call<code> <a>RequestUploadCredentials</a> </code>.
+     * @return This element is not currently in use.
      */
 
     public Credentials getUploadCredentials() {
@@ -122,15 +112,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * AWS credentials required when uploading a game build to the storage location. These credentials have a limited
-     * lifespan and are valid only for the build they were issued for. If you need to get fresh credentials, call
-     * <code> <a>RequestUploadCredentials</a> </code>.
+     * This element is not currently in use.
      * </p>
      * 
      * @param uploadCredentials
-     *        AWS credentials required when uploading a game build to the storage location. These credentials have a
-     *        limited lifespan and are valid only for the build they were issued for. If you need to get fresh
-     *        credentials, call<code> <a>RequestUploadCredentials</a> </code>.
+     *        This element is not currently in use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +127,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Amazon S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 location specified in the request.
      * </p>
      * 
      * @param storageLocation
-     *        Amazon S3 path and key, identifying where the game build files are stored.
+     *        Amazon S3 location specified in the request.
      */
 
     public void setStorageLocation(S3Location storageLocation) {
@@ -154,10 +140,10 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Amazon S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 location specified in the request.
      * </p>
      * 
-     * @return Amazon S3 path and key, identifying where the game build files are stored.
+     * @return Amazon S3 location specified in the request.
      */
 
     public S3Location getStorageLocation() {
@@ -166,11 +152,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Amazon S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 location specified in the request.
      * </p>
      * 
      * @param storageLocation
-     *        Amazon S3 path and key, identifying where the game build files are stored.
+     *        Amazon S3 location specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

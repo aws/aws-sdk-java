@@ -60,6 +60,10 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
             request.addParameter("EnvironmentName", StringUtils.fromString(describeEventsRequest.getEnvironmentName()));
         }
 
+        if (describeEventsRequest.getPlatformArn() != null) {
+            request.addParameter("PlatformArn", StringUtils.fromString(describeEventsRequest.getPlatformArn()));
+        }
+
         if (describeEventsRequest.getRequestId() != null) {
             request.addParameter("RequestId", StringUtils.fromString(describeEventsRequest.getRequestId()));
         }

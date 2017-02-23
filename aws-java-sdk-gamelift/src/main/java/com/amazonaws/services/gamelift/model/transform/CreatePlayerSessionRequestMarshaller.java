@@ -31,6 +31,8 @@ public class CreatePlayerSessionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionId").build();
     private static final MarshallingInfo<String> PLAYERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PlayerId").build();
+    private static final MarshallingInfo<String> PLAYERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlayerData").build();
 
     private static final CreatePlayerSessionRequestMarshaller instance = new CreatePlayerSessionRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class CreatePlayerSessionRequestMarshaller {
         try {
             protocolMarshaller.marshall(createPlayerSessionRequest.getGameSessionId(), GAMESESSIONID_BINDING);
             protocolMarshaller.marshall(createPlayerSessionRequest.getPlayerId(), PLAYERID_BINDING);
+            protocolMarshaller.marshall(createPlayerSessionRequest.getPlayerData(), PLAYERDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

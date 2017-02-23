@@ -16,11 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The health check you're attempting to create already exists.
- * </p>
- * <p>
- * Amazon Route 53 returns this error when a health check has already been created with the specified value for
- * <code>CallerReference</code>.
+ * The health check you're attempting to create already exists. Amazon Route 53 returns this error when a health check
+ * has already been created with the specified value for <code>CallerReference</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

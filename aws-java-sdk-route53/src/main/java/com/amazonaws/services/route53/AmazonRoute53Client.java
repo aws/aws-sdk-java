@@ -391,6 +391,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code> resource.
      * </p>
      * <p>
+     * <b>Change Batches and Transactional Changes</b>
+     * </p>
+     * <p>
      * The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code> element. The request
      * body contains a list of change items, known as a change batch. Change batches are considered transactional
      * changes. When using the Amazon Route 53 API to change resource record sets, Amazon Route 53 either makes all or
@@ -410,7 +413,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * single change batch. If you attempt to delete the same change batch more than once, Amazon Route 53 returns an
      * <code>InvalidChangeBatch</code> error.
      * </p>
-     * </important> <note>
+     * </important>
+     * <p>
+     * <b>Traffic Flow</b>
+     * </p>
      * <p>
      * To create resource record sets for complex routing configurations, use either the traffic flow visual editor in
      * the Amazon Route 53 console or the API actions for traffic policies and traffic policy instances. Save the
@@ -420,7 +426,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using Traffic Flow to Route DNS
      * Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
-     * </note>
+     * <p>
+     * <b>Create, Delete, and Upsert</b>
+     * </p>
      * <p>
      * Use <code>ChangeResourceRecordsSetsRequest</code> to perform the following actions:
      * </p>
@@ -443,88 +451,32 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </li>
      * </ul>
      * <p>
-     * The values that you need to include in the request depend on the type of resource record set that you're
-     * creating, deleting, or updating:
+     * <b>Syntaxes for Creating, Updating, and Deleting Resource Record Sets</b>
      * </p>
      * <p>
-     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
-     * sets)</b>
+     * The syntax for a request depends on the type of resource record set that you want to create, delete, or update,
+     * such as weighted, alias, or failover. The XML elements in your request must appear in the order listed in the
+     * syntax.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>Name</code>
+     * For an example for each type of resource record set, see "Examples."
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>Type</code>
+     * Don't refer to the syntax in the "Parameter Syntax" section, which includes all of the elements for every kind of
+     * resource record set that you can create, delete, or update by using <code>ChangeResourceRecordSets</code>.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>TTL</code>
+     * <b>Change Propagation to Amazon Route 53 DNS Servers</b>
      * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
-     * resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your changes to all
      * of the Amazon Route 53 authoritative DNS servers. While your changes are propagating, <code>GetChange</code>
      * returns a status of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns a status
      * of <code>INSYNC</code>. Changes generally propagate to all Amazon Route 53 name servers in a few minutes. In rare
-     * circumstances, propagation can take up to 30 minutes. For more information, see <a>GetChange</a>
+     * circumstances, propagation can take up to 30 minutes. For more information, see <a>GetChange</a>.
+     * </p>
+     * <p>
+     * <b>Limits on ChangeResourceRecordSets Requests</b>
      * </p>
      * <p>
      * For information about the limits on a <code>ChangeResourceRecordSets</code> request, see <a
@@ -609,6 +561,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonRoute53.ChangeTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -656,7 +609,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * sets, see <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>.
      * </p>
      * <p>
-     * If you are registering EC2 instances with an Elastic Load Balancing (ELB) load balancer, do not create Amazon
+     * If you're registering EC2 instances with an Elastic Load Balancing (ELB) load balancer, do not create Amazon
      * Route 53 health checks for the EC2 instances. When you register an EC2 instance with a load balancer, you
      * configure settings for an ELB health check, which performs a similar function to an Amazon Route 53 health check.
      * </p>
@@ -697,10 +650,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
      *         Support Center.
      * @throws HealthCheckAlreadyExistsException
-     *         The health check you're attempting to create already exists.</p>
-     *         <p>
-     *         Amazon Route 53 returns this error when a health check has already been created with the specified value
-     *         for <code>CallerReference</code>.
+     *         The health check you're attempting to create already exists. Amazon Route 53 returns this error when a
+     *         health check has already been created with the specified value for <code>CallerReference</code>.
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.CreateHealthCheck
@@ -800,7 +751,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidDomainNameException
      *         The specified domain name is not valid.
      * @throws HostedZoneAlreadyExistsException
-     *         The hosted zone you are trying to create already exists. Amazon Route 53 returns this error when a hosted
+     *         The hosted zone you're trying to create already exists. Amazon Route 53 returns this error when a hosted
      *         zone has already been created with the specified <code>CallerReference</code>.
      * @throws TooManyHostedZonesException
      *         This hosted zone can't be created because the hosted zone limit is exceeded. To request a limit increase,
@@ -890,7 +841,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
-     *         Parameter name and problem.
+     *         Parameter name is invalid.
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws DelegationSetNotAvailableException
@@ -1151,6 +1102,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *        private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by
      *        using different accounts.
      * @return Result of the CreateVPCAssociationAuthorization operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to update the object at the same time that you did. Retry the request.
      * @throws TooManyVPCAssociationAuthorizationsException
      *         You've created the maximum number of authorizations that can be created for the specified hosted zone. To
      *         authorize another VPC to be associated with the hosted zone, submit a
@@ -1530,6 +1483,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *        A complex type that contains information about the request to remove authorization to associate a VPC that
      *        was created by one AWS account with a hosted zone that was created with a different AWS account.
      * @return Result of the DeleteVPCAssociationAuthorization operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to update the object at the same time that you did. Retry the request.
      * @throws VPCAssociationAuthorizationNotFoundException
      *         The VPC that you specified is not authorized to be associated with the hosted zone.
      * @throws NoSuchHostedZoneException
@@ -1709,14 +1664,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves a list of the IP ranges used by Amazon Route 53 health checkers to check the health of your resources.
-     * Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/checkeripranges</code> resource.
-     * Use these IP addresses to configure router and firewall rules to allow health checkers to check the health of
-     * your resources.
+     * <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json, which includes IP
+     * address ranges for all AWS services. For more information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP Address Ranges of
+     * Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param getCheckerIpRangesRequest
-     *        Empty request.
      * @return Result of the GetCheckerIpRanges operation returned by the service.
      * @sample AmazonRoute53.GetCheckerIpRanges
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges" target="_top">AWS API
@@ -1836,8 +1790,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws IncompatibleVersionException
-     *         The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider
-     *         using a newer endpoint or a tool that does so.
+     *         The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
      * @sample AmazonRoute53.GetHealthCheck
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck" target="_top">AWS API
      *      Documentation</a>
@@ -2307,8 +2260,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * 
      * @param getTrafficPolicyInstanceCountRequest
-     *        To retrieve a count of all your traffic policy instances, send a <code>GET</code> request to the
-     *        <code>/2013-04-01/trafficpolicyinstancecount</code> resource.
+     *        Request to get the number of traffic policy instances that are associated with the current AWS account.
      * @return Result of the GetTrafficPolicyInstanceCount operation returned by the service.
      * @sample AmazonRoute53.GetTrafficPolicyInstanceCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"
@@ -2444,8 +2396,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws IncompatibleVersionException
-     *         The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider
-     *         using a newer endpoint or a tool that does so.
+     *         The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
      * @sample AmazonRoute53.ListHealthChecks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks" target="_top">AWS API
      *      Documentation</a>
@@ -3002,6 +2953,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonRoute53.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -3063,6 +3015,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonRoute53.ListTagsForResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources" target="_top">AWS
      *      API Documentation</a>
@@ -3262,7 +3215,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </ul>
      * 
      * @param listTrafficPolicyInstancesRequest
-     *        A complex type that contains the information about the request to list your traffic policy instances.
+     *        A request to get information about the traffic policy instances that you created by using the current AWS
+     *        account.
      * @return Result of the ListTrafficPolicyInstances operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.

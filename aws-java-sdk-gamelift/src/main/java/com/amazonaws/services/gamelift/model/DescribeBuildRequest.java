@@ -30,18 +30,18 @@ public class DescribeBuildRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier of the build that you want to retrieve properties for.
+     * Unique identifier for a build to retrieve properties for.
      * </p>
      */
     private String buildId;
 
     /**
      * <p>
-     * Unique identifier of the build that you want to retrieve properties for.
+     * Unique identifier for a build to retrieve properties for.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier of the build that you want to retrieve properties for.
+     *        Unique identifier for a build to retrieve properties for.
      */
 
     public void setBuildId(String buildId) {
@@ -50,10 +50,10 @@ public class DescribeBuildRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier of the build that you want to retrieve properties for.
+     * Unique identifier for a build to retrieve properties for.
      * </p>
      * 
-     * @return Unique identifier of the build that you want to retrieve properties for.
+     * @return Unique identifier for a build to retrieve properties for.
      */
 
     public String getBuildId() {
@@ -62,11 +62,11 @@ public class DescribeBuildRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier of the build that you want to retrieve properties for.
+     * Unique identifier for a build to retrieve properties for.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier of the build that you want to retrieve properties for.
+     *        Unique identifier for a build to retrieve properties for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

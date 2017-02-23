@@ -265,6 +265,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ManagedActionInvalidStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientPrivilegesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyPlatformsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyApplicationVersionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CodeBuildNotInServiceRegionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new S3SubscriptionRequiredExceptionUnmarshaller());
@@ -275,6 +276,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new TooManyEnvironmentsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyBucketsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ElasticBeanstalkServiceExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PlatformVersionStillReferencedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -734,6 +736,55 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Create a new version of your custom platform.
+     * </p>
+     * 
+     * @param createPlatformVersionRequest
+     *        Request to create a new platform version.
+     * @return Result of the CreatePlatformVersion operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws TooManyPlatformsException
+     *         You have exceeded the maximum number of allowed platforms associated with the account.
+     * @sample AWSElasticBeanstalk.CreatePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePlatformVersionResult createPlatformVersion(CreatePlatformVersionRequest createPlatformVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPlatformVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePlatformVersionRequest> request = null;
+        Response<CreatePlatformVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(createPlatformVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreatePlatformVersionResult> responseHandler = new StaxResponseHandler<CreatePlatformVersionResult>(
+                    new CreatePlatformVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates the Amazon S3 storage location for the account.
      * </p>
      * <p>
@@ -1018,6 +1069,57 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes the specified version of a custom platform.
+     * </p>
+     * 
+     * @param deletePlatformVersionRequest
+     * @return Result of the DeletePlatformVersion operation returned by the service.
+     * @throws OperationInProgressException
+     *         Unable to perform the specified operation because another operation that effects an element in this
+     *         activity is already in progress.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws PlatformVersionStillReferencedException
+     *         You cannot delete the platform version because there are still environments running on it.
+     * @sample AWSElasticBeanstalk.DeletePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeletePlatformVersionResult deletePlatformVersion(DeletePlatformVersionRequest deletePlatformVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePlatformVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePlatformVersionRequest> request = null;
+        Response<DeletePlatformVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(deletePlatformVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeletePlatformVersionResult> responseHandler = new StaxResponseHandler<DeletePlatformVersionResult>(
+                    new DeletePlatformVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieve a list of application versions.
      * </p>
      * 
@@ -1120,7 +1222,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeConfigurationOptionsRequest
-     *        Result message containig a list of application version descriptions.
+     *        Result message containing a list of application version descriptions.
      * @return Result of the DescribeConfigurationOptions operation returned by the service.
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
@@ -1563,7 +1665,54 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns a list of the available solution stack names.
+     * Describes the version of the platform.
+     * </p>
+     * 
+     * @param describePlatformVersionRequest
+     * @return Result of the DescribePlatformVersion operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribePlatformVersionResult describePlatformVersion(DescribePlatformVersionRequest describePlatformVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePlatformVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePlatformVersionRequest> request = null;
+        Response<DescribePlatformVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(describePlatformVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribePlatformVersionResult> responseHandler = new StaxResponseHandler<DescribePlatformVersionResult>(
+                    new DescribePlatformVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the available solution stack names, with the public version first and then in reverse
+     * chronological order.
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
@@ -1606,6 +1755,52 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     @Override
     public ListAvailableSolutionStacksResult listAvailableSolutionStacks() {
         return listAvailableSolutionStacks(new ListAvailableSolutionStacksRequest());
+    }
+
+    /**
+     * <p>
+     * Lists the available platforms.
+     * </p>
+     * 
+     * @param listPlatformVersionsRequest
+     * @return Result of the ListPlatformVersions operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.ListPlatformVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPlatformVersionsResult listPlatformVersions(ListPlatformVersionsRequest listPlatformVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPlatformVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPlatformVersionsRequest> request = null;
+        Response<ListPlatformVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPlatformVersionsRequestMarshaller().marshall(super.beforeMarshalling(listPlatformVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListPlatformVersionsResult> responseHandler = new StaxResponseHandler<ListPlatformVersionsResult>(
+                    new ListPlatformVersionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

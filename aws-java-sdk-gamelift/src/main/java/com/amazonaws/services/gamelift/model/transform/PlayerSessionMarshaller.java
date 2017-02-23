@@ -45,6 +45,8 @@ public class PlayerSessionMarshaller {
             .marshallLocationName("IpAddress").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Port").build();
+    private static final MarshallingInfo<String> PLAYERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlayerData").build();
 
     private static final PlayerSessionMarshaller instance = new PlayerSessionMarshaller();
 
@@ -71,6 +73,7 @@ public class PlayerSessionMarshaller {
             protocolMarshaller.marshall(playerSession.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(playerSession.getIpAddress(), IPADDRESS_BINDING);
             protocolMarshaller.marshall(playerSession.getPort(), PORT_BINDING);
+            protocolMarshaller.marshall(playerSession.getPlayerData(), PLAYERDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

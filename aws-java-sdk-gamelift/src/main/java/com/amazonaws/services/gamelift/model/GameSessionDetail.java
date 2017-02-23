@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A game session's properties and the protection policy currently in force.
+ * A game session's properties plus the protection policy currently in force.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionDetail" target="_top">AWS API
@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GameSessionDetail implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Object that describes a game session.
+     * </p>
+     */
     private GameSession gameSession;
     /**
      * <p>
@@ -50,7 +55,12 @@ public class GameSessionDetail implements Serializable, Cloneable, StructuredPoj
     private String protectionPolicy;
 
     /**
+     * <p>
+     * Object that describes a game session.
+     * </p>
+     * 
      * @param gameSession
+     *        Object that describes a game session.
      */
 
     public void setGameSession(GameSession gameSession) {
@@ -58,7 +68,11 @@ public class GameSessionDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * Object that describes a game session.
+     * </p>
+     * 
+     * @return Object that describes a game session.
      */
 
     public GameSession getGameSession() {
@@ -66,7 +80,12 @@ public class GameSessionDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Object that describes a game session.
+     * </p>
+     * 
      * @param gameSession
+     *        Object that describes a game session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

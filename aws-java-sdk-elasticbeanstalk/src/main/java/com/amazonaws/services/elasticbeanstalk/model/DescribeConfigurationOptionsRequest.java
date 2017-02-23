@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Result message containig a list of application version descriptions.
+ * Result message containing a list of application version descriptions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions"
@@ -53,6 +53,12 @@ public class DescribeConfigurationOptionsRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String solutionStackName;
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     */
+    private String platformArn;
     /**
      * <p>
      * If specified, restricts the descriptions to only the specified options.
@@ -231,6 +237,46 @@ public class DescribeConfigurationOptionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custom platform.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @return The ARN of the custom platform.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custom platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigurationOptionsRequest withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * If specified, restricts the descriptions to only the specified options.
      * </p>
      * 
@@ -321,6 +367,8 @@ public class DescribeConfigurationOptionsRequest extends com.amazonaws.AmazonWeb
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getSolutionStackName() != null)
             sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getOptions() != null)
             sb.append("Options: ").append(getOptions());
         sb.append("}");
@@ -353,6 +401,10 @@ public class DescribeConfigurationOptionsRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
             return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
+            return false;
         if (other.getOptions() == null ^ this.getOptions() == null)
             return false;
         if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
@@ -369,6 +421,7 @@ public class DescribeConfigurationOptionsRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }

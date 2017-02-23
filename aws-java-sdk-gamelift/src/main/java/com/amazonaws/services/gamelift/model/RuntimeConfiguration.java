@@ -31,9 +31,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * same server executable but with different launch parameters.
  * </p>
  * <p>
- * A GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes
- * specified in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each
- * <code> <a>ServerProcess</a> </code> object in the runtime configuration.
+ * A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of
+ * processes specified in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for
+ * each <code> <a>ServerProcess</a> </code> object in the runtime configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration" target="_top">AWS API

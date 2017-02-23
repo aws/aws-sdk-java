@@ -41,6 +41,8 @@ public enum ElasticBeanstalkActions implements Action {
     CreateConfigurationTemplate("elasticbeanstalk:CreateConfigurationTemplate"),
     /** Action for the CreateEnvironment operation. */
     CreateEnvironment("elasticbeanstalk:CreateEnvironment"),
+    /** Action for the CreatePlatformVersion operation. */
+    CreatePlatformVersion("elasticbeanstalk:CreatePlatformVersion"),
     /** Action for the CreateStorageLocation operation. */
     CreateStorageLocation("elasticbeanstalk:CreateStorageLocation"),
     /** Action for the DeleteApplication operation. */
@@ -51,6 +53,8 @@ public enum ElasticBeanstalkActions implements Action {
     DeleteConfigurationTemplate("elasticbeanstalk:DeleteConfigurationTemplate"),
     /** Action for the DeleteEnvironmentConfiguration operation. */
     DeleteEnvironmentConfiguration("elasticbeanstalk:DeleteEnvironmentConfiguration"),
+    /** Action for the DeletePlatformVersion operation. */
+    DeletePlatformVersion("elasticbeanstalk:DeletePlatformVersion"),
     /** Action for the DescribeApplicationVersions operation. */
     DescribeApplicationVersions("elasticbeanstalk:DescribeApplicationVersions"),
     /** Action for the DescribeApplications operation. */
@@ -73,8 +77,12 @@ public enum ElasticBeanstalkActions implements Action {
     DescribeEvents("elasticbeanstalk:DescribeEvents"),
     /** Action for the DescribeInstancesHealth operation. */
     DescribeInstancesHealth("elasticbeanstalk:DescribeInstancesHealth"),
+    /** Action for the DescribePlatformVersion operation. */
+    DescribePlatformVersion("elasticbeanstalk:DescribePlatformVersion"),
     /** Action for the ListAvailableSolutionStacks operation. */
     ListAvailableSolutionStacks("elasticbeanstalk:ListAvailableSolutionStacks"),
+    /** Action for the ListPlatformVersions operation. */
+    ListPlatformVersions("elasticbeanstalk:ListPlatformVersions"),
     /** Action for the RebuildEnvironment operation. */
     RebuildEnvironment("elasticbeanstalk:RebuildEnvironment"),
     /** Action for the RequestEnvironmentInfo operation. */

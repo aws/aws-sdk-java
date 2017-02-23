@@ -30,13 +30,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata for.
+     * Unique identifier for a fleet to update attribute metadata for.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      */
     private String name;
@@ -75,11 +75,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata for.
+     * Unique identifier for a fleet to update attribute metadata for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update attribute metadata for.
+     *        Unique identifier for a fleet to update attribute metadata for.
      */
 
     public void setFleetId(String fleetId) {
@@ -88,10 +88,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata for.
+     * Unique identifier for a fleet to update attribute metadata for.
      * </p>
      * 
-     * @return Unique identifier for the fleet you want to update attribute metadata for.
+     * @return Unique identifier for a fleet to update attribute metadata for.
      */
 
     public String getFleetId() {
@@ -100,11 +100,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata for.
+     * Unique identifier for a fleet to update attribute metadata for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update attribute metadata for.
+     *        Unique identifier for a fleet to update attribute metadata for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,11 +115,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -128,10 +128,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * @return Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public String getName() {
@@ -140,11 +140,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -232,7 +232,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you create latency resource record sets.
      * </p>
      * </li>
@@ -399,7 +399,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      */
@@ -407,7 +407,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are
+     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you're
      * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
      * </p>
      * <p>
@@ -462,8 +462,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For information about how Amazon Route 53 determines whether a health check is healthy, see
-     * <a>CreateHealthCheck</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.
      * </p>
      * <p>
      * The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
@@ -473,17 +474,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover resource
-     * record set, and you specify health check IDs for all of the resource record sets. If the health check for one
-     * resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-     * the value for that resource record set.
+     * You're checking the health of the resource record sets in a group of weighted, latency, geolocation, or failover
+     * resource record sets, and you specify health check IDs for all of the resource record sets. If the health check
+     * for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to
+     * queries using the value for that resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted alias,
-     * latency alias, geolocation alias, or failover alias resource record set, and you specify health check IDs for all
-     * of the resource record sets that are referenced by the alias resource record sets.
+     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in a group of alias, weighted
+     * alias, latency alias, geolocation alias, or failover alias resource record sets, and you specify health check IDs
+     * for all of the resource record sets that are referenced by the alias resource record sets.
      * </p>
      * </li>
      * </ul>
@@ -507,7 +508,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
      * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
      * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     * domain name of the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource record
+     * domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record
      * sets (example.com).
      * </p>
      * <important>
@@ -2153,7 +2154,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you create latency resource record sets.
      * </p>
      * </li>
@@ -2196,7 +2197,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
+     *        You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
      *        will choose the region with the best latency from among the regions for which you create latency resource
      *        record sets.
      *        </p>
@@ -2247,7 +2248,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you create latency resource record sets.
      * </p>
      * </li>
@@ -2289,7 +2290,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
+     *         You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
      *         will choose the region with the best latency from among the regions for which you create latency resource
      *         record sets.
      *         </p>
@@ -2340,7 +2341,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you create latency resource record sets.
      * </p>
      * </li>
@@ -2383,7 +2384,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
+     *        You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
      *        will choose the region with the best latency from among the regions for which you create latency resource
      *        record sets.
      *        </p>
@@ -2436,7 +2437,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you create latency resource record sets.
      * </p>
      * </li>
@@ -2479,7 +2480,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
+     *        You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
      *        will choose the region with the best latency from among the regions for which you create latency resource
      *        record sets.
      *        </p>
@@ -2530,7 +2531,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you create latency resource record sets.
      * </p>
      * </li>
@@ -2573,7 +2574,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
+     *        You aren't required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
      *        will choose the region with the best latency from among the regions for which you create latency resource
      *        record sets.
      *        </p>
@@ -3799,13 +3800,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      * 
      * @return Information about the resource records to act upon.</p> <note>
      *         <p>
-     *         If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     *         If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      *         </p>
      */
 
@@ -3822,14 +3823,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      * 
      * @param resourceRecords
      *        Information about the resource records to act upon.</p> <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     *        If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      *        </p>
      */
 
@@ -3848,7 +3849,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      * <p>
@@ -3860,7 +3861,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @param resourceRecords
      *        Information about the resource records to act upon.</p> <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     *        If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3881,14 +3882,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      * 
      * @param resourceRecords
      *        Information about the resource records to act upon.</p> <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     *        If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3901,7 +3902,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are
+     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you're
      * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
      * </p>
      * <p>
@@ -3931,7 +3932,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @param aliasTarget
      *        <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
      *        Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *        which you are redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
+     *        which you're redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
      *        subdomain.</p>
      *        <p>
      *        If you're creating resource records sets for a private hosted zone, note the following:
@@ -3964,7 +3965,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are
+     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you're
      * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
      * </p>
      * <p>
@@ -3993,7 +3994,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * 
      * @return <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
      *         Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *         which you are redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
+     *         which you're redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
      *         subdomain.</p>
      *         <p>
      *         If you're creating resource records sets for a private hosted zone, note the following:
@@ -4026,7 +4027,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are
+     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you're
      * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
      * </p>
      * <p>
@@ -4056,7 +4057,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @param aliasTarget
      *        <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
      *        Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *        which you are redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
+     *        which you're redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
      *        subdomain.</p>
      *        <p>
      *        If you're creating resource records sets for a private hosted zone, note the following:
@@ -4115,8 +4116,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For information about how Amazon Route 53 determines whether a health check is healthy, see
-     * <a>CreateHealthCheck</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.
      * </p>
      * <p>
      * The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
@@ -4126,17 +4128,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover resource
-     * record set, and you specify health check IDs for all of the resource record sets. If the health check for one
-     * resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-     * the value for that resource record set.
+     * You're checking the health of the resource record sets in a group of weighted, latency, geolocation, or failover
+     * resource record sets, and you specify health check IDs for all of the resource record sets. If the health check
+     * for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to
+     * queries using the value for that resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted alias,
-     * latency alias, geolocation alias, or failover alias resource record set, and you specify health check IDs for all
-     * of the resource record sets that are referenced by the alias resource record sets.
+     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in a group of alias, weighted
+     * alias, latency alias, geolocation alias, or failover alias resource record sets, and you specify health check IDs
+     * for all of the resource record sets that are referenced by the alias resource record sets.
      * </p>
      * </li>
      * </ul>
@@ -4160,7 +4162,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
      * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
      * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     * domain name of the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource record
+     * domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record
      * sets (example.com).
      * </p>
      * <important>
@@ -4213,8 +4215,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For information about how Amazon Route 53 determines whether a health check is healthy, see
-     *        <a>CreateHealthCheck</a>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.
      *        </p>
      *        <p>
      *        The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
@@ -4224,17 +4227,18 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover
-     *        resource record set, and you specify health check IDs for all of the resource record sets. If the health
-     *        check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops
-     *        responding to queries using the value for that resource record set.
+     *        You're checking the health of the resource record sets in a group of weighted, latency, geolocation, or
+     *        failover resource record sets, and you specify health check IDs for all of the resource record sets. If
+     *        the health check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53
+     *        stops responding to queries using the value for that resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted
-     *        alias, latency alias, geolocation alias, or failover alias resource record set, and you specify health
-     *        check IDs for all of the resource record sets that are referenced by the alias resource record sets.
+     *        You set <code>EvaluateTargetHealth</code> to true for the resource record sets in a group of alias,
+     *        weighted alias, latency alias, geolocation alias, or failover alias resource record sets, and you specify
+     *        health check IDs for all of the resource record sets that are referenced by the alias resource record
+     *        sets.
      *        </p>
      *        </li>
      *        </ul>
@@ -4260,7 +4264,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
      *        is serving content for <code>www.example.com</code>. For the value of
      *        <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
-     *        <code>us-east-1-www.example.com</code>), not the name of the resource record sets (example.com).
+     *        <code>us-east-2-www.example.com</code>), not the name of the resource record sets (example.com).
      *        </p>
      *        <important>
      *        <p>
@@ -4318,8 +4322,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For information about how Amazon Route 53 determines whether a health check is healthy, see
-     * <a>CreateHealthCheck</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.
      * </p>
      * <p>
      * The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
@@ -4329,17 +4334,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover resource
-     * record set, and you specify health check IDs for all of the resource record sets. If the health check for one
-     * resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-     * the value for that resource record set.
+     * You're checking the health of the resource record sets in a group of weighted, latency, geolocation, or failover
+     * resource record sets, and you specify health check IDs for all of the resource record sets. If the health check
+     * for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to
+     * queries using the value for that resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted alias,
-     * latency alias, geolocation alias, or failover alias resource record set, and you specify health check IDs for all
-     * of the resource record sets that are referenced by the alias resource record sets.
+     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in a group of alias, weighted
+     * alias, latency alias, geolocation alias, or failover alias resource record sets, and you specify health check IDs
+     * for all of the resource record sets that are referenced by the alias resource record sets.
      * </p>
      * </li>
      * </ul>
@@ -4363,7 +4368,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
      * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
      * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     * domain name of the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource record
+     * domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record
      * sets (example.com).
      * </p>
      * <important>
@@ -4415,8 +4420,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For information about how Amazon Route 53 determines whether a health check is healthy, see
-     *         <a>CreateHealthCheck</a>.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.
      *         </p>
      *         <p>
      *         The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or
@@ -4427,17 +4433,18 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover
-     *         resource record set, and you specify health check IDs for all of the resource record sets. If the health
-     *         check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops
-     *         responding to queries using the value for that resource record set.
+     *         You're checking the health of the resource record sets in a group of weighted, latency, geolocation, or
+     *         failover resource record sets, and you specify health check IDs for all of the resource record sets. If
+     *         the health check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53
+     *         stops responding to queries using the value for that resource record set.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted
-     *         alias, latency alias, geolocation alias, or failover alias resource record set, and you specify health
-     *         check IDs for all of the resource record sets that are referenced by the alias resource record sets.
+     *         You set <code>EvaluateTargetHealth</code> to true for the resource record sets in a group of alias,
+     *         weighted alias, latency alias, geolocation alias, or failover alias resource record sets, and you specify
+     *         health check IDs for all of the resource record sets that are referenced by the alias resource record
+     *         sets.
      *         </p>
      *         </li>
      *         </ul>
@@ -4463,7 +4470,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
      *         is serving content for <code>www.example.com</code>. For the value of
      *         <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
-     *         <code>us-east-1-www.example.com</code>), not the name of the resource record sets (example.com).
+     *         <code>us-east-2-www.example.com</code>), not the name of the resource record sets (example.com).
      *         </p>
      *         <important>
      *         <p>
@@ -4522,8 +4529,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For information about how Amazon Route 53 determines whether a health check is healthy, see
-     * <a>CreateHealthCheck</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.
      * </p>
      * <p>
      * The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
@@ -4533,17 +4541,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover resource
-     * record set, and you specify health check IDs for all of the resource record sets. If the health check for one
-     * resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-     * the value for that resource record set.
+     * You're checking the health of the resource record sets in a group of weighted, latency, geolocation, or failover
+     * resource record sets, and you specify health check IDs for all of the resource record sets. If the health check
+     * for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to
+     * queries using the value for that resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted alias,
-     * latency alias, geolocation alias, or failover alias resource record set, and you specify health check IDs for all
-     * of the resource record sets that are referenced by the alias resource record sets.
+     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in a group of alias, weighted
+     * alias, latency alias, geolocation alias, or failover alias resource record sets, and you specify health check IDs
+     * for all of the resource record sets that are referenced by the alias resource record sets.
      * </p>
      * </li>
      * </ul>
@@ -4567,7 +4575,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
      * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
      * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     * domain name of the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource record
+     * domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record
      * sets (example.com).
      * </p>
      * <important>
@@ -4620,8 +4628,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For information about how Amazon Route 53 determines whether a health check is healthy, see
-     *        <a>CreateHealthCheck</a>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.
      *        </p>
      *        <p>
      *        The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
@@ -4631,17 +4640,18 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover
-     *        resource record set, and you specify health check IDs for all of the resource record sets. If the health
-     *        check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops
-     *        responding to queries using the value for that resource record set.
+     *        You're checking the health of the resource record sets in a group of weighted, latency, geolocation, or
+     *        failover resource record sets, and you specify health check IDs for all of the resource record sets. If
+     *        the health check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53
+     *        stops responding to queries using the value for that resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted
-     *        alias, latency alias, geolocation alias, or failover alias resource record set, and you specify health
-     *        check IDs for all of the resource record sets that are referenced by the alias resource record sets.
+     *        You set <code>EvaluateTargetHealth</code> to true for the resource record sets in a group of alias,
+     *        weighted alias, latency alias, geolocation alias, or failover alias resource record sets, and you specify
+     *        health check IDs for all of the resource record sets that are referenced by the alias resource record
+     *        sets.
      *        </p>
      *        </li>
      *        </ul>
@@ -4667,7 +4677,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
      *        is serving content for <code>www.example.com</code>. For the value of
      *        <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
-     *        <code>us-east-1-www.example.com</code>), not the name of the resource record sets (example.com).
+     *        <code>us-east-2-www.example.com</code>), not the name of the resource record sets (example.com).
      *        </p>
      *        <important>
      *        <p>

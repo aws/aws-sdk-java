@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -32,6 +33,8 @@ public class CreatePlayerSessionsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionId").build();
     private static final MarshallingInfo<List> PLAYERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PlayerIds").build();
+    private static final MarshallingInfo<Map> PLAYERDATAMAP_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PlayerDataMap").build();
 
     private static final CreatePlayerSessionsRequestMarshaller instance = new CreatePlayerSessionsRequestMarshaller();
 
@@ -51,6 +54,7 @@ public class CreatePlayerSessionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(createPlayerSessionsRequest.getGameSessionId(), GAMESESSIONID_BINDING);
             protocolMarshaller.marshall(createPlayerSessionsRequest.getPlayerIds(), PLAYERIDS_BINDING);
+            protocolMarshaller.marshall(createPlayerSessionsRequest.getPlayerDataMap(), PLAYERDATAMAP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

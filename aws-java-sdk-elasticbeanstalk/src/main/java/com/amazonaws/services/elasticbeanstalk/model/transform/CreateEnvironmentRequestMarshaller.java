@@ -105,6 +105,10 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             request.addParameter("SolutionStackName", StringUtils.fromString(createEnvironmentRequest.getSolutionStackName()));
         }
 
+        if (createEnvironmentRequest.getPlatformArn() != null) {
+            request.addParameter("PlatformArn", StringUtils.fromString(createEnvironmentRequest.getPlatformArn()));
+        }
+
         com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createEnvironmentRequest
                 .getOptionSettings();
         if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {

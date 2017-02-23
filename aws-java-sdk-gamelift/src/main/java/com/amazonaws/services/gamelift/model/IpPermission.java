@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on GameLift. Each
- * game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into
- * the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
+ * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on Amazon
+ * GameLift. Each game session hosted on a fleet is assigned a unique combination of IP address and port number, which
+ * must fall into the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission" target="_top">AWS API
@@ -45,8 +45,8 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
     private Integer toPort;
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      */
@@ -146,14 +146,13 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @param ipRange
-     *        Range of allowed IP addresses. This value must be expressed in <a
-     *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     *        Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *        <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *        <code>0.0.0.0/[subnet mask]</code>".
      */
@@ -164,13 +163,12 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
-     * @return Range of allowed IP addresses. This value must be expressed in <a
-     *         href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * @return Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *         <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *         <code>0.0.0.0/[subnet mask]</code>".
      */
@@ -181,14 +179,13 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @param ipRange
-     *        Range of allowed IP addresses. This value must be expressed in <a
-     *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     *        Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *        <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *        <code>0.0.0.0/[subnet mask]</code>".
      * @return Returns a reference to this object so that method calls can be chained together.

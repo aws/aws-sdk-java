@@ -30,18 +30,18 @@ public class DescribeFleetPortSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to retrieve port settings for.
+     * Unique identifier for a fleet to retrieve port settings for.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to retrieve port settings for.
+     * Unique identifier for a fleet to retrieve port settings for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to retrieve port settings for.
+     *        Unique identifier for a fleet to retrieve port settings for.
      */
 
     public void setFleetId(String fleetId) {
@@ -50,10 +50,10 @@ public class DescribeFleetPortSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to retrieve port settings for.
+     * Unique identifier for a fleet to retrieve port settings for.
      * </p>
      * 
-     * @return Unique identifier for the fleet you want to retrieve port settings for.
+     * @return Unique identifier for a fleet to retrieve port settings for.
      */
 
     public String getFleetId() {
@@ -62,11 +62,11 @@ public class DescribeFleetPortSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to retrieve port settings for.
+     * Unique identifier for a fleet to retrieve port settings for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to retrieve port settings for.
+     *        Unique identifier for a fleet to retrieve port settings for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

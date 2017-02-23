@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * A complex type that contains the <code>CheckerIpRanges</code> element.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges" target="_top">AWS API
  *      Documentation</a>
@@ -26,19 +23,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCheckerIpRangesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
-     * </p>
-     */
     private com.amazonaws.internal.SdkInternalList<String> checkerIpRanges;
 
     /**
-     * <p>
-     * A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
-     * </p>
-     * 
-     * @return A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
+     * @return
      */
 
     public java.util.List<String> getCheckerIpRanges() {
@@ -49,12 +37,7 @@ public class GetCheckerIpRangesResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * <p>
-     * A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
-     * </p>
-     * 
      * @param checkerIpRanges
-     *        A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
      */
 
     public void setCheckerIpRanges(java.util.Collection<String> checkerIpRanges) {
@@ -68,16 +51,12 @@ public class GetCheckerIpRangesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCheckerIpRanges(java.util.Collection)} or {@link #withCheckerIpRanges(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param checkerIpRanges
-     *        A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,12 +71,7 @@ public class GetCheckerIpRangesResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * <p>
-     * A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
-     * </p>
-     * 
      * @param checkerIpRanges
-     *        A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

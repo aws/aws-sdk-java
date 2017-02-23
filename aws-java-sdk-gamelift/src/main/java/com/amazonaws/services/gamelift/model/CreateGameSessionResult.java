@@ -28,18 +28,18 @@ public class CreateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing the newly created game session record.
+     * Object that describes the newly created game session record.
      * </p>
      */
     private GameSession gameSession;
 
     /**
      * <p>
-     * Object containing the newly created game session record.
+     * Object that describes the newly created game session record.
      * </p>
      * 
      * @param gameSession
-     *        Object containing the newly created game session record.
+     *        Object that describes the newly created game session record.
      */
 
     public void setGameSession(GameSession gameSession) {
@@ -48,10 +48,10 @@ public class CreateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing the newly created game session record.
+     * Object that describes the newly created game session record.
      * </p>
      * 
-     * @return Object containing the newly created game session record.
+     * @return Object that describes the newly created game session record.
      */
 
     public GameSession getGameSession() {
@@ -60,11 +60,11 @@ public class CreateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing the newly created game session record.
+     * Object that describes the newly created game session record.
      * </p>
      * 
      * @param gameSession
-     *        Object containing the newly created game session record.
+     *        Object that describes the newly created game session record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

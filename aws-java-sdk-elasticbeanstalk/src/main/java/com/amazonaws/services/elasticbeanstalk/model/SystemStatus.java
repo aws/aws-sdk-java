@@ -34,7 +34,7 @@ public class SystemStatus implements Serializable, Cloneable {
     private CPUUtilization cPUUtilization;
     /**
      * <p>
-     * Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     * Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      * >Operating System Metrics</a>.
      * </p>
@@ -83,12 +83,12 @@ public class SystemStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     * Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      * >Operating System Metrics</a>.
      * </p>
      * 
-     * @return Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     * @return Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      *         >Operating System Metrics</a>.
      */
@@ -102,13 +102,13 @@ public class SystemStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     * Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      * >Operating System Metrics</a>.
      * </p>
      * 
      * @param loadAverage
-     *        Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     *        Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      *        >Operating System Metrics</a>.
      */
@@ -124,7 +124,7 @@ public class SystemStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     * Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      * >Operating System Metrics</a>.
      * </p>
@@ -135,7 +135,7 @@ public class SystemStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param loadAverage
-     *        Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     *        Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      *        >Operating System Metrics</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -153,13 +153,13 @@ public class SystemStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     * Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      * >Operating System Metrics</a>.
      * </p>
      * 
      * @param loadAverage
-     *        Load average in the last 1-minute and 5-minute periods. For more information, see <a href=
+     *        Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=
      *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      *        >Operating System Metrics</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

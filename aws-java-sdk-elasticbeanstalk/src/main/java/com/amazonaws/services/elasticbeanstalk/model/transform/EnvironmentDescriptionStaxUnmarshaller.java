@@ -70,6 +70,11 @@ public class EnvironmentDescriptionStaxUnmarshaller implements Unmarshaller<Envi
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    environmentDescription.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TemplateName", targetDepth)) {
                     environmentDescription.setTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

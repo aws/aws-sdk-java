@@ -37,7 +37,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String eventId;
     /**
      * <p>
-     * Unique identifier for the resource, such as a fleet ID.
+     * Unique identifier for an event resource, such as a fleet ID.
      * </p>
      */
     private String resourceId;
@@ -55,8 +55,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String message;
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").
      * </p>
      */
     private java.util.Date eventTime;
@@ -103,11 +103,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the resource, such as a fleet ID.
+     * Unique identifier for an event resource, such as a fleet ID.
      * </p>
      * 
      * @param resourceId
-     *        Unique identifier for the resource, such as a fleet ID.
+     *        Unique identifier for an event resource, such as a fleet ID.
      */
 
     public void setResourceId(String resourceId) {
@@ -116,10 +116,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the resource, such as a fleet ID.
+     * Unique identifier for an event resource, such as a fleet ID.
      * </p>
      * 
-     * @return Unique identifier for the resource, such as a fleet ID.
+     * @return Unique identifier for an event resource, such as a fleet ID.
      */
 
     public String getResourceId() {
@@ -128,11 +128,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the resource, such as a fleet ID.
+     * Unique identifier for an event resource, such as a fleet ID.
      * </p>
      * 
      * @param resourceId
-     *        Unique identifier for the resource, such as a fleet ID.
+     *        Unique identifier for an event resource, such as a fleet ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,13 +256,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *        (ex: "1469498468.057").
+     *        (for example "1469498468.057").
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -271,12 +271,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *         (ex: "1469498468.057").
+     *         (for example "1469498468.057").
      */
 
     public java.util.Date getEventTime() {
@@ -285,13 +285,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *        (ex: "1469498468.057").
+     *        (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

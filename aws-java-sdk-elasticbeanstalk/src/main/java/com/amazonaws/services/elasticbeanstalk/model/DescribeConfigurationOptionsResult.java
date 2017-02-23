@@ -34,6 +34,12 @@ public class DescribeConfigurationOptionsResult extends com.amazonaws.AmazonWebS
     private String solutionStackName;
     /**
      * <p>
+     * The ARN of the custom platform.
+     * </p>
+     */
+    private String platformArn;
+    /**
+     * <p>
      * A list of <a>ConfigurationOptionDescription</a>.
      * </p>
      */
@@ -76,6 +82,46 @@ public class DescribeConfigurationOptionsResult extends com.amazonaws.AmazonWebS
 
     public DescribeConfigurationOptionsResult withSolutionStackName(String solutionStackName) {
         setSolutionStackName(solutionStackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custom platform.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @return The ARN of the custom platform.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custom platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigurationOptionsResult withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
         return this;
     }
 
@@ -165,6 +211,8 @@ public class DescribeConfigurationOptionsResult extends com.amazonaws.AmazonWebS
         sb.append("{");
         if (getSolutionStackName() != null)
             sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getOptions() != null)
             sb.append("Options: ").append(getOptions());
         sb.append("}");
@@ -185,6 +233,10 @@ public class DescribeConfigurationOptionsResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
             return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
+            return false;
         if (other.getOptions() == null ^ this.getOptions() == null)
             return false;
         if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
@@ -198,6 +250,7 @@ public class DescribeConfigurationOptionsResult extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }

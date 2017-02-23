@@ -88,6 +88,10 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
             request.addParameter("SolutionStackName", StringUtils.fromString(updateEnvironmentRequest.getSolutionStackName()));
         }
 
+        if (updateEnvironmentRequest.getPlatformArn() != null) {
+            request.addParameter("PlatformArn", StringUtils.fromString(updateEnvironmentRequest.getPlatformArn()));
+        }
+
         com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateEnvironmentRequest
                 .getOptionSettings();
         if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {

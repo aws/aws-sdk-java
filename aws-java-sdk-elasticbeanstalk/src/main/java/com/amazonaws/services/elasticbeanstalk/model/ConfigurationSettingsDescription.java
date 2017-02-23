@@ -34,6 +34,12 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
     private String solutionStackName;
     /**
      * <p>
+     * The ARN of the custom platform.
+     * </p>
+     */
+    private String platformArn;
+    /**
+     * <p>
      * The name of the application associated with this configuration set.
      * </p>
      */
@@ -143,6 +149,46 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
 
     public ConfigurationSettingsDescription withSolutionStackName(String solutionStackName) {
         setSolutionStackName(solutionStackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custom platform.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @return The ARN of the custom platform.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custom platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigurationSettingsDescription withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
         return this;
     }
 
@@ -790,6 +836,8 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
         sb.append("{");
         if (getSolutionStackName() != null)
             sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getApplicationName() != null)
             sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTemplateName() != null)
@@ -823,6 +871,10 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
         if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null)
             return false;
         if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
+            return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
             return false;
         if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
@@ -865,6 +917,7 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

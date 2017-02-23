@@ -19,8 +19,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Properties describing a player session.
+ * Properties describing a player session. A player session represents either a player reservation for a game session or
+ * actual player activity in a game session. A player session object (including player data) is automatically passed to
+ * a game session when the player connects to the game session and is validated.
  * </p>
+ * <p>
+ * Player session-related operations include:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreatePlayerSession</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreatePlayerSessions</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribePlayerSessions</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession" target="_top">AWS API
  *      Documentation</a>
@@ -36,7 +58,7 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     private String playerSessionId;
     /**
      * <p>
-     * Unique identifier for a player.
+     * Unique identifier for a player that is associated with this player session.
      * </p>
      */
     private String playerId;
@@ -48,21 +70,21 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     private String gameSessionId;
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * Unique identifier for a fleet that the player's game session is running on.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date terminationTime;
@@ -107,11 +129,18 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     private String ipAddress;
     /**
      * <p>
-     * Port number for the game session. To connect to a GameLift server process, an app needs both the IP address and
-     * port number.
+     * Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP
+     * address and port number.
      * </p>
      */
     private Integer port;
+    /**
+     * <p>
+     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
+     * as needed for use in the game.
+     * </p>
+     */
+    private String playerData;
 
     /**
      * <p>
@@ -155,11 +184,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player.
+     * Unique identifier for a player that is associated with this player session.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player.
+     *        Unique identifier for a player that is associated with this player session.
      */
 
     public void setPlayerId(String playerId) {
@@ -168,10 +197,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player.
+     * Unique identifier for a player that is associated with this player session.
      * </p>
      * 
-     * @return Unique identifier for a player.
+     * @return Unique identifier for a player that is associated with this player session.
      */
 
     public String getPlayerId() {
@@ -180,11 +209,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player.
+     * Unique identifier for a player that is associated with this player session.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player.
+     *        Unique identifier for a player that is associated with this player session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +264,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * Unique identifier for a fleet that the player's game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet.
+     *        Unique identifier for a fleet that the player's game session is running on.
      */
 
     public void setFleetId(String fleetId) {
@@ -248,10 +277,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * Unique identifier for a fleet that the player's game session is running on.
      * </p>
      * 
-     * @return Unique identifier for a fleet.
+     * @return Unique identifier for a fleet that the player's game session is running on.
      */
 
     public String getFleetId() {
@@ -260,11 +289,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * Unique identifier for a fleet that the player's game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet.
+     *        Unique identifier for a fleet that the player's game session is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,12 +305,12 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -291,11 +320,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057").
+     *         milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -305,12 +334,12 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,12 +351,12 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -337,11 +366,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057").
+     *         milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getTerminationTime() {
@@ -351,12 +380,12 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -745,12 +774,12 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Port number for the game session. To connect to a GameLift server process, an app needs both the IP address and
-     * port number.
+     * Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP
+     * address and port number.
      * </p>
      * 
      * @param port
-     *        Port number for the game session. To connect to a GameLift server process, an app needs both the IP
+     *        Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP
      *        address and port number.
      */
 
@@ -760,12 +789,12 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Port number for the game session. To connect to a GameLift server process, an app needs both the IP address and
-     * port number.
+     * Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP
+     * address and port number.
      * </p>
      * 
-     * @return Port number for the game session. To connect to a GameLift server process, an app needs both the IP
-     *         address and port number.
+     * @return Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the
+     *         IP address and port number.
      */
 
     public Integer getPort() {
@@ -774,18 +803,64 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Port number for the game session. To connect to a GameLift server process, an app needs both the IP address and
-     * port number.
+     * Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP
+     * address and port number.
      * </p>
      * 
      * @param port
-     *        Port number for the game session. To connect to a GameLift server process, an app needs both the IP
+     *        Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP
      *        address and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlayerSession withPort(Integer port) {
         setPort(port);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
+     * as needed for use in the game.
+     * </p>
+     * 
+     * @param playerData
+     *        Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
+     *        formatted as needed for use in the game.
+     */
+
+    public void setPlayerData(String playerData) {
+        this.playerData = playerData;
+    }
+
+    /**
+     * <p>
+     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
+     * as needed for use in the game.
+     * </p>
+     * 
+     * @return Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
+     *         formatted as needed for use in the game.
+     */
+
+    public String getPlayerData() {
+        return this.playerData;
+    }
+
+    /**
+     * <p>
+     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
+     * as needed for use in the game.
+     * </p>
+     * 
+     * @param playerData
+     *        Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
+     *        formatted as needed for use in the game.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlayerSession withPlayerData(String playerData) {
+        setPlayerData(playerData);
         return this;
     }
 
@@ -817,7 +892,9 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getPort() != null)
-            sb.append("Port: ").append(getPort());
+            sb.append("Port: ").append(getPort()).append(",");
+        if (getPlayerData() != null)
+            sb.append("PlayerData: ").append(getPlayerData());
         sb.append("}");
         return sb.toString();
     }
@@ -868,6 +945,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
+        if (other.getPlayerData() == null ^ this.getPlayerData() == null)
+            return false;
+        if (other.getPlayerData() != null && other.getPlayerData().equals(this.getPlayerData()) == false)
+            return false;
         return true;
     }
 
@@ -885,6 +966,7 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getPlayerData() == null) ? 0 : getPlayerData().hashCode());
         return hashCode;
     }
 

@@ -73,6 +73,11 @@ public class EventDescriptionStaxUnmarshaller implements Unmarshaller<EventDescr
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    eventDescription.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("RequestId", targetDepth)) {
                     eventDescription.setRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -30,7 +30,7 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier of the fleet to update runtime configuration for.
+     * Unique identifier for a fleet to update runtime configuration for.
      * </p>
      */
     private String fleetId;
@@ -46,11 +46,11 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier of the fleet to update runtime configuration for.
+     * Unique identifier for a fleet to update runtime configuration for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier of the fleet to update runtime configuration for.
+     *        Unique identifier for a fleet to update runtime configuration for.
      */
 
     public void setFleetId(String fleetId) {
@@ -59,10 +59,10 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier of the fleet to update runtime configuration for.
+     * Unique identifier for a fleet to update runtime configuration for.
      * </p>
      * 
-     * @return Unique identifier of the fleet to update runtime configuration for.
+     * @return Unique identifier for a fleet to update runtime configuration for.
      */
 
     public String getFleetId() {
@@ -71,11 +71,11 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier of the fleet to update runtime configuration for.
+     * Unique identifier for a fleet to update runtime configuration for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier of the fleet to update runtime configuration for.
+     *        Unique identifier for a fleet to update runtime configuration for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

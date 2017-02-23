@@ -25,18 +25,18 @@ public class GetInstanceAccessResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing connection information for a fleet instance, including IP address and access credentials.
+     * Object that contains connection information for a fleet instance, including IP address and access credentials.
      * </p>
      */
     private InstanceAccess instanceAccess;
 
     /**
      * <p>
-     * Object containing connection information for a fleet instance, including IP address and access credentials.
+     * Object that contains connection information for a fleet instance, including IP address and access credentials.
      * </p>
      * 
      * @param instanceAccess
-     *        Object containing connection information for a fleet instance, including IP address and access
+     *        Object that contains connection information for a fleet instance, including IP address and access
      *        credentials.
      */
 
@@ -46,10 +46,10 @@ public class GetInstanceAccessResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing connection information for a fleet instance, including IP address and access credentials.
+     * Object that contains connection information for a fleet instance, including IP address and access credentials.
      * </p>
      * 
-     * @return Object containing connection information for a fleet instance, including IP address and access
+     * @return Object that contains connection information for a fleet instance, including IP address and access
      *         credentials.
      */
 
@@ -59,11 +59,11 @@ public class GetInstanceAccessResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing connection information for a fleet instance, including IP address and access credentials.
+     * Object that contains connection information for a fleet instance, including IP address and access credentials.
      * </p>
      * 
      * @param instanceAccess
-     *        Object containing connection information for a fleet instance, including IP address and access
+     *        Object that contains connection information for a fleet instance, including IP address and access
      *        credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

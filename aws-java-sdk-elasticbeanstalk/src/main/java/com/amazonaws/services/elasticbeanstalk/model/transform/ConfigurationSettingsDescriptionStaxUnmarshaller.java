@@ -50,6 +50,11 @@ public class ConfigurationSettingsDescriptionStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    configurationSettingsDescription.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ApplicationName", targetDepth)) {
                     configurationSettingsDescription.setApplicationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -543,6 +543,38 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePlatformVersionResult> createPlatformVersionAsync(CreatePlatformVersionRequest request) {
+
+        return createPlatformVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePlatformVersionResult> createPlatformVersionAsync(final CreatePlatformVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePlatformVersionRequest, CreatePlatformVersionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePlatformVersionResult>() {
+            @Override
+            public CreatePlatformVersionResult call() throws Exception {
+                CreatePlatformVersionResult result;
+
+                try {
+                    result = createPlatformVersion(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(CreateStorageLocationRequest request) {
 
         return createStorageLocationAsync(request, null);
@@ -710,6 +742,38 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
 
                 try {
                     result = deleteEnvironmentConfiguration(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePlatformVersionResult> deletePlatformVersionAsync(DeletePlatformVersionRequest request) {
+
+        return deletePlatformVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePlatformVersionResult> deletePlatformVersionAsync(final DeletePlatformVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePlatformVersionRequest, DeletePlatformVersionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePlatformVersionResult>() {
+            @Override
+            public DeletePlatformVersionResult call() throws Exception {
+                DeletePlatformVersionResult result;
+
+                try {
+                    result = deletePlatformVersion(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1171,6 +1235,38 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(DescribePlatformVersionRequest request) {
+
+        return describePlatformVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(final DescribePlatformVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePlatformVersionRequest, DescribePlatformVersionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePlatformVersionResult>() {
+            @Override
+            public DescribePlatformVersionResult call() throws Exception {
+                DescribePlatformVersionResult result;
+
+                try {
+                    result = describePlatformVersion(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest request) {
 
         return listAvailableSolutionStacksAsync(request, null);
@@ -1222,6 +1318,38 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
             com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult> asyncHandler) {
 
         return listAvailableSolutionStacksAsync(new ListAvailableSolutionStacksRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(ListPlatformVersionsRequest request) {
+
+        return listPlatformVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(final ListPlatformVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPlatformVersionsRequest, ListPlatformVersionsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPlatformVersionsResult>() {
+            @Override
+            public ListPlatformVersionsResult call() throws Exception {
+                ListPlatformVersionsResult result;
+
+                try {
+                    result = listPlatformVersions(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

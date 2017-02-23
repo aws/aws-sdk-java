@@ -30,18 +30,18 @@ public class RequestUploadCredentialsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier for the build you want to get credentials for.
+     * Unique identifier for a build to get credentials for.
      * </p>
      */
     private String buildId;
 
     /**
      * <p>
-     * Unique identifier for the build you want to get credentials for.
+     * Unique identifier for a build to get credentials for.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for the build you want to get credentials for.
+     *        Unique identifier for a build to get credentials for.
      */
 
     public void setBuildId(String buildId) {
@@ -50,10 +50,10 @@ public class RequestUploadCredentialsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier for the build you want to get credentials for.
+     * Unique identifier for a build to get credentials for.
      * </p>
      * 
-     * @return Unique identifier for the build you want to get credentials for.
+     * @return Unique identifier for a build to get credentials for.
      */
 
     public String getBuildId() {
@@ -62,11 +62,11 @@ public class RequestUploadCredentialsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier for the build you want to get credentials for.
+     * Unique identifier for a build to get credentials for.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for the build you want to get credentials for.
+     *        Unique identifier for a build to get credentials for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

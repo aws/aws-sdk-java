@@ -25,7 +25,9 @@ public enum MetricName {
     ActiveInstances("ActiveInstances"),
     AvailablePlayerSessions("AvailablePlayerSessions"),
     CurrentPlayerSessions("CurrentPlayerSessions"),
-    IdleInstances("IdleInstances");
+    IdleInstances("IdleInstances"),
+    QueueDepth("QueueDepth"),
+    WaitTime("WaitTime");
 
     private String value;
 
