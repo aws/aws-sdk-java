@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Represents an HTTP response returned by an AWS service in response to a
@@ -37,7 +38,7 @@ public class HttpResponse {
     private String statusText;
     private int statusCode;
     private InputStream content;
-    private Map<String, String> headers = new HashMap<String, String>();
+    private Map<String, String> headers = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
     private HttpContext context;
 
     /**
