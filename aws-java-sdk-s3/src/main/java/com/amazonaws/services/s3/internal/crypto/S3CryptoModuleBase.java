@@ -869,10 +869,6 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             throw new IllegalArgumentException(
                 "S3 object is not encrypted: " + s3w);
         }
-        if (!orig_ifile.isInstructionFile()) {
-            throw new SdkClientException(
-                "Invalid instruction file for S3 object: " + s3w);
-        }
         String json = orig_ifile.toJsonString();
         return ccmFromJson(json);
     }

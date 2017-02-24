@@ -16,26 +16,22 @@
  */
 package com.amazonaws.http;
 
-import java.io.IOException;
-import java.util.Map;
-
-import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.util.ValidationUtils;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.JsonUnmarshallerContextImpl;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidJsonUnmarshaller;
-import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
+import com.amazonaws.util.IOUtils;
+import com.amazonaws.util.ValidationUtils;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
+import java.io.IOException;
+import java.util.Map;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful response from an AWS
@@ -117,6 +113,12 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             registerAdditionalMetadataExpressions(unmarshallerContext);
 
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);
+
+            // Make sure we read all the data to get an accurate CRC32 calculation.
+            // See https://github.com/aws/aws-sdk-java/issues/1018
+            if (shouldParsePayloadAsJson() && response.getContent() != null) {
+                IOUtils.drainInputStream(response.getContent());
+            }
 
             if (CRC32Checksum != null) {
                 long serverSideCRC = Long.parseLong(CRC32Checksum);

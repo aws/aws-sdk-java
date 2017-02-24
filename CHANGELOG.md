@@ -1,3 +1,8 @@
+# __1.11.96__ __2017-02-23__
+## __Amazon EC2__
+  - <h3>Features</h3>
+    - New EC2 I3 instance type
+
 # __1.11.95__ __2017-02-22__
 ## __AWS Elastic Beanstalk__
   - <h3>Features</h3>

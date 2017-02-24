@@ -14,16 +14,14 @@
  */
 package com.amazonaws.util;
 
+import com.amazonaws.internal.Releasable;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.internal.Releasable;
 
 
 /**
@@ -62,7 +60,8 @@ public enum IOUtils {
 
     /**
      * Closes the given Closeable quietly.
-     * @param is the given closeable
+     *
+     * @param is  the given closeable
      * @param log logger used to log any failure should the close fail
      */
     public static void closeQuietly(Closeable is, Log log) {
@@ -71,8 +70,9 @@ public enum IOUtils {
                 is.close();
             } catch (IOException ex) {
                 Log logger = log == null ? defaultLog : log;
-                if (logger.isDebugEnabled())
+                if (logger.isDebugEnabled()) {
                     logger.debug("Ignore failure in closing the Closeable", ex);
+                }
             }
         }
     }
@@ -86,7 +86,7 @@ public enum IOUtils {
      * (in a finally block) by the very same code block that created it, then it
      * is necessary that the release method must not be called while the
      * execution is made in other stack frames.
-     * 
+     *
      * In such case, as other stack frames may inadvertently or indirectly call
      * the close method of the stream, the creator of the stream would need to
      * explicitly disable the accidental closing via
@@ -104,9 +104,8 @@ public enum IOUtils {
     /**
      * Copies all bytes from the given input stream to the given output stream.
      * Caller is responsible for closing the streams.
-     * 
-     * @throws IOException
-     *             if there is any IO exception during read or write.
+     *
+     * @throws IOException if there is any IO exception during read or write.
      */
     public static long copy(InputStream in, OutputStream out)
             throws IOException {
@@ -118,5 +117,20 @@ public enum IOUtils {
             count += n;
         }
         return count;
+    }
+
+    /**
+     * Read all remaining data in the stream.
+     *
+     * @param in InputStream to read.
+     */
+    public static void drainInputStream(InputStream in) {
+        try {
+            while (in.read() != -1) {
+                // Do nothing.
+            }
+        } catch (IOException ignored) {
+            // Stream may be self closed by HTTP client so we ignore any failures.
+        }
     }
 }
