@@ -253,6 +253,41 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain,
+     * specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying.
+     * </p>
+     * 
+     * @param describeElasticsearchInstanceTypeLimitsRequest
+     *        Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.
+     * @return A Java Future containing the result of the DescribeElasticsearchInstanceTypeLimits operation returned by
+     *         the service.
+     * @sample AWSElasticsearchAsync.DescribeElasticsearchInstanceTypeLimits
+     */
+    java.util.concurrent.Future<DescribeElasticsearchInstanceTypeLimitsResult> describeElasticsearchInstanceTypeLimitsAsync(
+            DescribeElasticsearchInstanceTypeLimitsRequest describeElasticsearchInstanceTypeLimitsRequest);
+
+    /**
+     * <p>
+     * Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain,
+     * specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying.
+     * </p>
+     * 
+     * @param describeElasticsearchInstanceTypeLimitsRequest
+     *        Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeElasticsearchInstanceTypeLimits operation returned by
+     *         the service.
+     * @sample AWSElasticsearchAsyncHandler.DescribeElasticsearchInstanceTypeLimits
+     */
+    java.util.concurrent.Future<DescribeElasticsearchInstanceTypeLimitsResult> describeElasticsearchInstanceTypeLimitsAsync(
+            DescribeElasticsearchInstanceTypeLimitsRequest describeElasticsearchInstanceTypeLimitsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchInstanceTypeLimitsRequest, DescribeElasticsearchInstanceTypeLimitsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the name of all Elasticsearch domains owned by the current user's account.
      * </p>
      * 
@@ -277,6 +312,86 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      */
     java.util.concurrent.Future<ListDomainNamesResult> listDomainNamesAsync(ListDomainNamesRequest listDomainNamesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDomainNamesRequest, ListDomainNamesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
+     * </p>
+     * 
+     * @param listElasticsearchInstanceTypesRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.
+     * @return A Java Future containing the result of the ListElasticsearchInstanceTypes operation returned by the
+     *         service.
+     * @sample AWSElasticsearchAsync.ListElasticsearchInstanceTypes
+     */
+    java.util.concurrent.Future<ListElasticsearchInstanceTypesResult> listElasticsearchInstanceTypesAsync(
+            ListElasticsearchInstanceTypesRequest listElasticsearchInstanceTypesRequest);
+
+    /**
+     * <p>
+     * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
+     * </p>
+     * 
+     * @param listElasticsearchInstanceTypesRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListElasticsearchInstanceTypes operation returned by the
+     *         service.
+     * @sample AWSElasticsearchAsyncHandler.ListElasticsearchInstanceTypes
+     */
+    java.util.concurrent.Future<ListElasticsearchInstanceTypesResult> listElasticsearchInstanceTypesAsync(
+            ListElasticsearchInstanceTypesRequest listElasticsearchInstanceTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListElasticsearchInstanceTypesRequest, ListElasticsearchInstanceTypesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List all supported Elasticsearch versions
+     * </p>
+     * 
+     * @param listElasticsearchVersionsRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation.
+     *        <p>
+     *        Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single
+     *        call.
+     *        </p>
+     *        <p>
+     *        Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does
+     *        not contain a NextToken, then there are no more results to retrieve.
+     *        </p>
+     * @return A Java Future containing the result of the ListElasticsearchVersions operation returned by the service.
+     * @sample AWSElasticsearchAsync.ListElasticsearchVersions
+     */
+    java.util.concurrent.Future<ListElasticsearchVersionsResult> listElasticsearchVersionsAsync(
+            ListElasticsearchVersionsRequest listElasticsearchVersionsRequest);
+
+    /**
+     * <p>
+     * List all supported Elasticsearch versions
+     * </p>
+     * 
+     * @param listElasticsearchVersionsRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation.
+     *        <p>
+     *        Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single
+     *        call.
+     *        </p>
+     *        <p>
+     *        Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does
+     *        not contain a NextToken, then there are no more results to retrieve.
+     *        </p>
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListElasticsearchVersions operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.ListElasticsearchVersions
+     */
+    java.util.concurrent.Future<ListElasticsearchVersionsResult> listElasticsearchVersionsAsync(
+            ListElasticsearchVersionsRequest listElasticsearchVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListElasticsearchVersionsRequest, ListElasticsearchVersionsResult> asyncHandler);
 
     /**
      * <p>

@@ -79,17 +79,17 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.ValidationException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BaseException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.BaseException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DisabledOperationException").withModeledClass(
                                     com.amazonaws.services.elasticsearch.model.DisabledOperationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.elasticsearch.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
+                                    com.amazonaws.services.elasticsearch.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BaseException").withModeledClass(
+                                    com.amazonaws.services.elasticsearch.model.BaseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.elasticsearch.model.ResourceAlreadyExistsException.class))
@@ -620,6 +620,66 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain,
+     * specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying.
+     * </p>
+     * 
+     * @param describeElasticsearchInstanceTypeLimitsRequest
+     *        Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.
+     * @return Result of the DescribeElasticsearchInstanceTypeLimits operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws InvalidTypeException
+     *         An exception for trying to create or access sub-resource that is either invalid or not supported. Gives
+     *         http status code of 409.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchInstanceTypeLimits
+     */
+    @Override
+    public DescribeElasticsearchInstanceTypeLimitsResult describeElasticsearchInstanceTypeLimits(
+            DescribeElasticsearchInstanceTypeLimitsRequest describeElasticsearchInstanceTypeLimitsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeElasticsearchInstanceTypeLimitsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeElasticsearchInstanceTypeLimitsRequest> request = null;
+        Response<DescribeElasticsearchInstanceTypeLimitsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeElasticsearchInstanceTypeLimitsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeElasticsearchInstanceTypeLimitsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticsearchInstanceTypeLimitsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeElasticsearchInstanceTypeLimitsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the name of all Elasticsearch domains owned by the current user's account.
      * </p>
      * 
@@ -652,6 +712,118 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDomainNamesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDomainNamesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
+     * </p>
+     * 
+     * @param listElasticsearchInstanceTypesRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.
+     * @return Result of the ListElasticsearchInstanceTypes operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListElasticsearchInstanceTypes
+     */
+    @Override
+    public ListElasticsearchInstanceTypesResult listElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest listElasticsearchInstanceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listElasticsearchInstanceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListElasticsearchInstanceTypesRequest> request = null;
+        Response<ListElasticsearchInstanceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListElasticsearchInstanceTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listElasticsearchInstanceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListElasticsearchInstanceTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListElasticsearchInstanceTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all supported Elasticsearch versions
+     * </p>
+     * 
+     * @param listElasticsearchVersionsRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation.
+     *        <p>
+     *        Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single
+     *        call.
+     *        </p>
+     *        <p>
+     *        Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does
+     *        not contain a NextToken, then there are no more results to retrieve.
+     *        </p>
+     * @return Result of the ListElasticsearchVersions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListElasticsearchVersions
+     */
+    @Override
+    public ListElasticsearchVersionsResult listElasticsearchVersions(ListElasticsearchVersionsRequest listElasticsearchVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listElasticsearchVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListElasticsearchVersionsRequest> request = null;
+        Response<ListElasticsearchVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListElasticsearchVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listElasticsearchVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListElasticsearchVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListElasticsearchVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

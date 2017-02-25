@@ -38,7 +38,22 @@ public enum ESPartitionInstanceType {
     R34xlargeElasticsearch("r3.4xlarge.elasticsearch"),
     R38xlargeElasticsearch("r3.8xlarge.elasticsearch"),
     I2XlargeElasticsearch("i2.xlarge.elasticsearch"),
-    I22xlargeElasticsearch("i2.2xlarge.elasticsearch");
+    I22xlargeElasticsearch("i2.2xlarge.elasticsearch"),
+    D2XlargeElasticsearch("d2.xlarge.elasticsearch"),
+    D22xlargeElasticsearch("d2.2xlarge.elasticsearch"),
+    D24xlargeElasticsearch("d2.4xlarge.elasticsearch"),
+    D28xlargeElasticsearch("d2.8xlarge.elasticsearch"),
+    C4LargeElasticsearch("c4.large.elasticsearch"),
+    C4XlargeElasticsearch("c4.xlarge.elasticsearch"),
+    C42xlargeElasticsearch("c4.2xlarge.elasticsearch"),
+    C44xlargeElasticsearch("c4.4xlarge.elasticsearch"),
+    C48xlargeElasticsearch("c4.8xlarge.elasticsearch"),
+    R4LargeElasticsearch("r4.large.elasticsearch"),
+    R4XlargeElasticsearch("r4.xlarge.elasticsearch"),
+    R42xlargeElasticsearch("r4.2xlarge.elasticsearch"),
+    R44xlargeElasticsearch("r4.4xlarge.elasticsearch"),
+    R48xlargeElasticsearch("r4.8xlarge.elasticsearch"),
+    R416xlargeElasticsearch("r4.16xlarge.elasticsearch");
 
     private String value;
 

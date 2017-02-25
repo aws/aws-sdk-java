@@ -22,7 +22,6 @@ import org.apache.http.protocol.HttpContext;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -88,18 +87,13 @@ public class HttpResponse {
     }
 
     /**
-     * Looks up a header by name and returns it's value. Does case insensitive comparison.
+     * Looks up a header by name and returns its value. Does case insensitive comparison.
      *
      * @param headerName Name of header to get value for.
      * @return The header value of the given header. Null if header is not present.
      */
     public String getHeader(String headerName) {
-        for (Map.Entry<String, String> header : headers.entrySet()) {
-            if (header.getKey().equalsIgnoreCase(headerName)) {
-                return header.getValue();
-            }
-        }
-        return null;
+        return headers.get(headerName);
     }
 
     /**

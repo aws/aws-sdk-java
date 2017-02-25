@@ -26,7 +26,6 @@ import com.amazonaws.protocol.ProtocolRequestMarshaller;
 import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.UriResourcePathUtils;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -187,7 +186,9 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
                 request.addHeader("Content-Length", Integer.toString(content.length));
             }
         }
-        request.addHeader("Content-Type", contentType);
+        if (!request.getHeaders().containsKey("Content-Type")) {
+            request.addHeader("Content-Type", contentType);
+        }
         return request;
     }
 

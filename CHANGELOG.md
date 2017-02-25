@@ -1,4 +1,17 @@
+# __1.11.97__ __2017-02-24__
+## __AWS SDK for Java__
+  - <h3>Bugfixes</h3>
+    - Fixes a **serious regression** introduced in 1.11.94 where an overridden Content-Type was not being respected. This can cause issues with Amazon CloudSearch Domains, see [Issue [#1034](https://github.com/aws/aws-sdk-java/issues/1034)](https://github.com/aws/aws-sdk-java/issues/1034) for more details.
+
+## __Amazon Elasticsearch Service__
+  - <h3>Features</h3>
+    - Added three new API calls to existing Amazon Elasticsearch service to expose Amazon Elasticsearch imposed limits to customers
+
 # __1.11.96__ __2017-02-23__
+## __AWS SDK for Java__
+  - <h3>Bugfixes</h3>
+    - Fixed bug reported in [Issue #1018](https://github.com/aws/aws-sdk-java/issues/1018) where CRC32 was not always calculated correctly.
+
 ## __Amazon EC2__
   - <h3>Features</h3>
     - New EC2 I3 instance type
