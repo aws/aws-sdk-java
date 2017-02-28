@@ -68,6 +68,13 @@ public class EvaluationResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> missingContextValues;
     /**
      * <p>
+     * A structure that details how AWS Organizations and its service control policies affect the results of the
+     * simulation. Only applies if the simulated user's account is part of an organization.
+     * </p>
+     */
+    private OrganizationsDecisionDetail organizationsDecisionDetail;
+    /**
+     * <p>
      * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
@@ -441,6 +448,52 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A structure that details how AWS Organizations and its service control policies affect the results of the
+     * simulation. Only applies if the simulated user's account is part of an organization.
+     * </p>
+     * 
+     * @param organizationsDecisionDetail
+     *        A structure that details how AWS Organizations and its service control policies affect the results of the
+     *        simulation. Only applies if the simulated user's account is part of an organization.
+     */
+
+    public void setOrganizationsDecisionDetail(OrganizationsDecisionDetail organizationsDecisionDetail) {
+        this.organizationsDecisionDetail = organizationsDecisionDetail;
+    }
+
+    /**
+     * <p>
+     * A structure that details how AWS Organizations and its service control policies affect the results of the
+     * simulation. Only applies if the simulated user's account is part of an organization.
+     * </p>
+     * 
+     * @return A structure that details how AWS Organizations and its service control policies affect the results of the
+     *         simulation. Only applies if the simulated user's account is part of an organization.
+     */
+
+    public OrganizationsDecisionDetail getOrganizationsDecisionDetail() {
+        return this.organizationsDecisionDetail;
+    }
+
+    /**
+     * <p>
+     * A structure that details how AWS Organizations and its service control policies affect the results of the
+     * simulation. Only applies if the simulated user's account is part of an organization.
+     * </p>
+     * 
+     * @param organizationsDecisionDetail
+     *        A structure that details how AWS Organizations and its service control policies affect the results of the
+     *        simulation. Only applies if the simulated user's account is part of an organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EvaluationResult withOrganizationsDecisionDetail(OrganizationsDecisionDetail organizationsDecisionDetail) {
+        setOrganizationsDecisionDetail(organizationsDecisionDetail);
+        return this;
+    }
+
+    /**
+     * <p>
      * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
@@ -627,6 +680,8 @@ public class EvaluationResult implements Serializable, Cloneable {
             sb.append("MatchedStatements: ").append(getMatchedStatements()).append(",");
         if (getMissingContextValues() != null)
             sb.append("MissingContextValues: ").append(getMissingContextValues()).append(",");
+        if (getOrganizationsDecisionDetail() != null)
+            sb.append("OrganizationsDecisionDetail: ").append(getOrganizationsDecisionDetail()).append(",");
         if (getEvalDecisionDetails() != null)
             sb.append("EvalDecisionDetails: ").append(getEvalDecisionDetails()).append(",");
         if (getResourceSpecificResults() != null)
@@ -665,6 +720,10 @@ public class EvaluationResult implements Serializable, Cloneable {
             return false;
         if (other.getMissingContextValues() != null && other.getMissingContextValues().equals(this.getMissingContextValues()) == false)
             return false;
+        if (other.getOrganizationsDecisionDetail() == null ^ this.getOrganizationsDecisionDetail() == null)
+            return false;
+        if (other.getOrganizationsDecisionDetail() != null && other.getOrganizationsDecisionDetail().equals(this.getOrganizationsDecisionDetail()) == false)
+            return false;
         if (other.getEvalDecisionDetails() == null ^ this.getEvalDecisionDetails() == null)
             return false;
         if (other.getEvalDecisionDetails() != null && other.getEvalDecisionDetails().equals(this.getEvalDecisionDetails()) == false)
@@ -686,6 +745,7 @@ public class EvaluationResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEvalDecision() == null) ? 0 : getEvalDecision().hashCode());
         hashCode = prime * hashCode + ((getMatchedStatements() == null) ? 0 : getMatchedStatements().hashCode());
         hashCode = prime * hashCode + ((getMissingContextValues() == null) ? 0 : getMissingContextValues().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationsDecisionDetail() == null) ? 0 : getOrganizationsDecisionDetail().hashCode());
         hashCode = prime * hashCode + ((getEvalDecisionDetails() == null) ? 0 : getEvalDecisionDetails().hashCode());
         hashCode = prime * hashCode + ((getResourceSpecificResults() == null) ? 0 : getResourceSpecificResults().hashCode());
         return hashCode;

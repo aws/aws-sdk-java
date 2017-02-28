@@ -211,6 +211,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         LONG(ScalarAttributeType.N, new ConverterMap(Long.class, Long.TYPE)
             .with(Date.class, ToLong.FromDate)
             .with(DateTime.class, ToLong.FromDate.join(ToDate.FromDateTime))
+            .with(Calendar.class, ToLong.FromDate.join(ToDate.FromCalendar))
             .with(Number.class, ToLong.FromNumber)
             .with(String.class, ToLong.FromString)
         ),

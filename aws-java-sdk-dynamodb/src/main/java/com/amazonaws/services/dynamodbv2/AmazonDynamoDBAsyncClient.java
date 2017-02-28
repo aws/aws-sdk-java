@@ -664,6 +664,38 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest request) {
+
+        return describeTimeToLiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(final DescribeTimeToLiveRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTimeToLiveRequest, DescribeTimeToLiveResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTimeToLiveResult>() {
+            @Override
+            public DescribeTimeToLiveResult call() throws Exception {
+                DescribeTimeToLiveResult result;
+
+                try {
+                    result = describeTimeToLive(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetItemResult> getItemAsync(GetItemRequest request) {
 
         return getItemAsync(request, null);
@@ -1295,6 +1327,38 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
             com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler) {
 
         return updateTableAsync(new UpdateTableRequest().withTableName(tableName).withProvisionedThroughput(provisionedThroughput), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTimeToLiveResult> updateTimeToLiveAsync(UpdateTimeToLiveRequest request) {
+
+        return updateTimeToLiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTimeToLiveResult> updateTimeToLiveAsync(final UpdateTimeToLiveRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTimeToLiveRequest, UpdateTimeToLiveResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTimeToLiveResult>() {
+            @Override
+            public UpdateTimeToLiveResult call() throws Exception {
+                UpdateTimeToLiveResult result;
+
+                try {
+                    result = updateTimeToLive(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     /**

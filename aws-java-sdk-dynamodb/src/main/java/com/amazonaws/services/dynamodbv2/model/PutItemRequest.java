@@ -129,7 +129,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -1212,7 +1212,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -1245,7 +1245,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *        Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *        </p>
      *        </li>
      *        <li>
@@ -1282,7 +1282,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -1314,7 +1314,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *         Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *         </p>
      *         </li>
      *         <li>
@@ -1351,7 +1351,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -1384,7 +1384,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *        Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *        </p>
      *        </li>
      *        <li>

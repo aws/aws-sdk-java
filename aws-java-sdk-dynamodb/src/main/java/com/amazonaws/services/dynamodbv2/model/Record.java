@@ -59,25 +59,25 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     private String eventName;
     /**
      * <p>
-     * The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is
-     * modified.
+     * The version number of the stream record format. This number is updated whenever the structure of
+     * <code>Record</code> is modified.
      * </p>
      * <p>
-     * Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is
-     * subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB
-     * Streams API evolves.
+     * Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this
+     * number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the
+     * low-level DynamoDB Streams API evolves.
      * </p>
      */
     private String eventVersion;
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.
+     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.
      * </p>
      */
     private String eventSource;
     /**
      * <p>
-     * The region in which the <i>GetRecords</i> request was received.
+     * The region in which the <code>GetRecords</code> request was received.
      * </p>
      */
     private String awsRegion;
@@ -87,6 +87,30 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private StreamRecord dynamodb;
+    /**
+     * <p>
+     * Items that are deleted by the Time to Live process after expiration have the following fields:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Records[].userIdentity.type
+     * </p>
+     * <p>
+     * "Service"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Records[].userIdentity.principalId
+     * </p>
+     * <p>
+     * "dynamodb.amazonaws.com"
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Identity userIdentity;
 
     /**
      * <p>
@@ -368,22 +392,22 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is
-     * modified.
+     * The version number of the stream record format. This number is updated whenever the structure of
+     * <code>Record</code> is modified.
      * </p>
      * <p>
-     * Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is
-     * subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB
-     * Streams API evolves.
+     * Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this
+     * number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the
+     * low-level DynamoDB Streams API evolves.
      * </p>
      * 
      * @param eventVersion
      *        The version number of the stream record format. This number is updated whenever the structure of
-     *        <i>Record</i> is modified.</p>
+     *        <code>Record</code> is modified.</p>
      *        <p>
-     *        Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this
-     *        number is subject to change at any time. In general, <i>eventVersion</i> will only increase as the
-     *        low-level DynamoDB Streams API evolves.
+     *        Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as
+     *        this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as
+     *        the low-level DynamoDB Streams API evolves.
      */
 
     public void setEventVersion(String eventVersion) {
@@ -392,21 +416,21 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is
-     * modified.
+     * The version number of the stream record format. This number is updated whenever the structure of
+     * <code>Record</code> is modified.
      * </p>
      * <p>
-     * Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is
-     * subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB
-     * Streams API evolves.
+     * Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this
+     * number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the
+     * low-level DynamoDB Streams API evolves.
      * </p>
      * 
      * @return The version number of the stream record format. This number is updated whenever the structure of
-     *         <i>Record</i> is modified.</p>
+     *         <code>Record</code> is modified.</p>
      *         <p>
-     *         Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this
-     *         number is subject to change at any time. In general, <i>eventVersion</i> will only increase as the
-     *         low-level DynamoDB Streams API evolves.
+     *         Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as
+     *         this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as
+     *         the low-level DynamoDB Streams API evolves.
      */
 
     public String getEventVersion() {
@@ -415,22 +439,22 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is
-     * modified.
+     * The version number of the stream record format. This number is updated whenever the structure of
+     * <code>Record</code> is modified.
      * </p>
      * <p>
-     * Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is
-     * subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB
-     * Streams API evolves.
+     * Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this
+     * number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the
+     * low-level DynamoDB Streams API evolves.
      * </p>
      * 
      * @param eventVersion
      *        The version number of the stream record format. This number is updated whenever the structure of
-     *        <i>Record</i> is modified.</p>
+     *        <code>Record</code> is modified.</p>
      *        <p>
-     *        Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this
-     *        number is subject to change at any time. In general, <i>eventVersion</i> will only increase as the
-     *        low-level DynamoDB Streams API evolves.
+     *        Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as
+     *        this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as
+     *        the low-level DynamoDB Streams API evolves.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,12 +465,12 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.
+     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.
      * </p>
      * 
      * @param eventSource
      *        The AWS service from which the stream record originated. For DynamoDB Streams, this is
-     *        <i>aws:dynamodb</i>.
+     *        <code>aws:dynamodb</code>.
      */
 
     public void setEventSource(String eventSource) {
@@ -455,11 +479,11 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.
+     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.
      * </p>
      * 
      * @return The AWS service from which the stream record originated. For DynamoDB Streams, this is
-     *         <i>aws:dynamodb</i>.
+     *         <code>aws:dynamodb</code>.
      */
 
     public String getEventSource() {
@@ -468,12 +492,12 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.
+     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.
      * </p>
      * 
      * @param eventSource
      *        The AWS service from which the stream record originated. For DynamoDB Streams, this is
-     *        <i>aws:dynamodb</i>.
+     *        <code>aws:dynamodb</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,11 +508,11 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region in which the <i>GetRecords</i> request was received.
+     * The region in which the <code>GetRecords</code> request was received.
      * </p>
      * 
      * @param awsRegion
-     *        The region in which the <i>GetRecords</i> request was received.
+     *        The region in which the <code>GetRecords</code> request was received.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -497,10 +521,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region in which the <i>GetRecords</i> request was received.
+     * The region in which the <code>GetRecords</code> request was received.
      * </p>
      * 
-     * @return The region in which the <i>GetRecords</i> request was received.
+     * @return The region in which the <code>GetRecords</code> request was received.
      */
 
     public String getAwsRegion() {
@@ -509,11 +533,11 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region in which the <i>GetRecords</i> request was received.
+     * The region in which the <code>GetRecords</code> request was received.
      * </p>
      * 
      * @param awsRegion
-     *        The region in which the <i>GetRecords</i> request was received.
+     *        The region in which the <code>GetRecords</code> request was received.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,6 +587,151 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Items that are deleted by the Time to Live process after expiration have the following fields:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Records[].userIdentity.type
+     * </p>
+     * <p>
+     * "Service"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Records[].userIdentity.principalId
+     * </p>
+     * <p>
+     * "dynamodb.amazonaws.com"
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param userIdentity
+     *        Items that are deleted by the Time to Live process after expiration have the following fields: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Records[].userIdentity.type
+     *        </p>
+     *        <p>
+     *        "Service"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Records[].userIdentity.principalId
+     *        </p>
+     *        <p>
+     *        "dynamodb.amazonaws.com"
+     *        </p>
+     *        </li>
+     */
+
+    public void setUserIdentity(Identity userIdentity) {
+        this.userIdentity = userIdentity;
+    }
+
+    /**
+     * <p>
+     * Items that are deleted by the Time to Live process after expiration have the following fields:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Records[].userIdentity.type
+     * </p>
+     * <p>
+     * "Service"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Records[].userIdentity.principalId
+     * </p>
+     * <p>
+     * "dynamodb.amazonaws.com"
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Items that are deleted by the Time to Live process after expiration have the following fields: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Records[].userIdentity.type
+     *         </p>
+     *         <p>
+     *         "Service"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Records[].userIdentity.principalId
+     *         </p>
+     *         <p>
+     *         "dynamodb.amazonaws.com"
+     *         </p>
+     *         </li>
+     */
+
+    public Identity getUserIdentity() {
+        return this.userIdentity;
+    }
+
+    /**
+     * <p>
+     * Items that are deleted by the Time to Live process after expiration have the following fields:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Records[].userIdentity.type
+     * </p>
+     * <p>
+     * "Service"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Records[].userIdentity.principalId
+     * </p>
+     * <p>
+     * "dynamodb.amazonaws.com"
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param userIdentity
+     *        Items that are deleted by the Time to Live process after expiration have the following fields: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Records[].userIdentity.type
+     *        </p>
+     *        <p>
+     *        "Service"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Records[].userIdentity.principalId
+     *        </p>
+     *        <p>
+     *        "dynamodb.amazonaws.com"
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Record withUserIdentity(Identity userIdentity) {
+        setUserIdentity(userIdentity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -584,7 +753,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
         if (getAwsRegion() != null)
             sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getDynamodb() != null)
-            sb.append("Dynamodb: ").append(getDynamodb());
+            sb.append("Dynamodb: ").append(getDynamodb()).append(",");
+        if (getUserIdentity() != null)
+            sb.append("UserIdentity: ").append(getUserIdentity());
         sb.append("}");
         return sb.toString();
     }
@@ -623,6 +794,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDynamodb() != null && other.getDynamodb().equals(this.getDynamodb()) == false)
             return false;
+        if (other.getUserIdentity() == null ^ this.getUserIdentity() == null)
+            return false;
+        if (other.getUserIdentity() != null && other.getUserIdentity().equals(this.getUserIdentity()) == false)
+            return false;
         return true;
     }
 
@@ -637,6 +812,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEventSource() == null) ? 0 : getEventSource().hashCode());
         hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getDynamodb() == null) ? 0 : getDynamodb().hashCode());
+        hashCode = prime * hashCode + ((getUserIdentity() == null) ? 0 : getUserIdentity().hashCode());
         return hashCode;
     }
 

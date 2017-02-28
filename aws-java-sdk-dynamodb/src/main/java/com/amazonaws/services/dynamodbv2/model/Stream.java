@@ -45,7 +45,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * A timestamp, in ISO 8601 format, for this stream.
      * </p>
      * <p>
-     * Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a
+     * Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a
      * stream from another table might have the same timestamp. However, the combination of the following three elements
      * is guaranteed to be unique:
      * </p>
@@ -62,7 +62,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * the <i>StreamLabel</i>
+     * the <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -154,7 +154,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * A timestamp, in ISO 8601 format, for this stream.
      * </p>
      * <p>
-     * Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a
+     * Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a
      * stream from another table might have the same timestamp. However, the combination of the following three elements
      * is guaranteed to be unique:
      * </p>
@@ -171,7 +171,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * the <i>StreamLabel</i>
+     * the <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -179,9 +179,9 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * @param streamLabel
      *        A timestamp, in ISO 8601 format, for this stream.</p>
      *        <p>
-     *        Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that
-     *        a stream from another table might have the same timestamp. However, the combination of the following three
-     *        elements is guaranteed to be unique:
+     *        Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible
+     *        that a stream from another table might have the same timestamp. However, the combination of the following
+     *        three elements is guaranteed to be unique:
      *        </p>
      *        <ul>
      *        <li>
@@ -196,7 +196,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        the <i>StreamLabel</i>
+     *        the <code>StreamLabel</code>
      *        </p>
      *        </li>
      */
@@ -210,7 +210,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * A timestamp, in ISO 8601 format, for this stream.
      * </p>
      * <p>
-     * Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a
+     * Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a
      * stream from another table might have the same timestamp. However, the combination of the following three elements
      * is guaranteed to be unique:
      * </p>
@@ -227,16 +227,16 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * the <i>StreamLabel</i>
+     * the <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @return A timestamp, in ISO 8601 format, for this stream.</p>
      *         <p>
-     *         Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that
-     *         a stream from another table might have the same timestamp. However, the combination of the following
-     *         three elements is guaranteed to be unique:
+     *         Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
+     *         possible that a stream from another table might have the same timestamp. However, the combination of the
+     *         following three elements is guaranteed to be unique:
      *         </p>
      *         <ul>
      *         <li>
@@ -251,7 +251,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         the <i>StreamLabel</i>
+     *         the <code>StreamLabel</code>
      *         </p>
      *         </li>
      */
@@ -265,7 +265,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * A timestamp, in ISO 8601 format, for this stream.
      * </p>
      * <p>
-     * Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a
+     * Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a
      * stream from another table might have the same timestamp. However, the combination of the following three elements
      * is guaranteed to be unique:
      * </p>
@@ -282,7 +282,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * the <i>StreamLabel</i>
+     * the <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -290,9 +290,9 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * @param streamLabel
      *        A timestamp, in ISO 8601 format, for this stream.</p>
      *        <p>
-     *        Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that
-     *        a stream from another table might have the same timestamp. However, the combination of the following three
-     *        elements is guaranteed to be unique:
+     *        Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible
+     *        that a stream from another table might have the same timestamp. However, the combination of the following
+     *        three elements is guaranteed to be unique:
      *        </p>
      *        <ul>
      *        <li>
@@ -307,7 +307,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        the <i>StreamLabel</i>
+     *        the <code>StreamLabel</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

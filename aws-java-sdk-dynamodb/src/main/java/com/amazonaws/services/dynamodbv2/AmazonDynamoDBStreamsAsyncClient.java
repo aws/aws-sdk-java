@@ -37,32 +37,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with
  * DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
  * </p>
- * <p>
- * The following are short descriptions of each low-level DynamoDB Streams action:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <i>DescribeStream</i> - Returns detailed information about a particular stream.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>GetRecords</i> - Retrieves the stream records from within a shard.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>GetShardIterator</i> - Returns information on how to retrieve the streams record from a shard with a given shard
- * ID.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>ListStreams</i> - Returns a list of all the streams associated with the current AWS account and endpoint.
- * </p>
- * </li>
- * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

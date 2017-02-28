@@ -642,6 +642,24 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
+     * Gives a description of the Time to Live (TTL) status on the specified table.
+     * </p>
+     * 
+     * @param describeTimeToLiveRequest
+     * @return Result of the DescribeTimeToLive operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeTimeToLive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeTimeToLiveResult describeTimeToLive(DescribeTimeToLiveRequest describeTimeToLiveRequest);
+
+    /**
+     * <p>
      * The <code>GetItem</code> operation returns a set of attributes for the item with the given primary key. If there
      * is no matching item, <code>GetItem</code> does not return any data and there will be no <code>Item</code> element
      * in the response.
@@ -1137,6 +1155,69 @@ public interface AmazonDynamoDB {
      * @see #updateTable(UpdateTableRequest)
      */
     UpdateTableResult updateTable(String tableName, ProvisionedThroughput provisionedThroughput);
+
+    /**
+     * <p>
+     * Specify the lifetime of individual table items. The database automatically removes the item at the expiration of
+     * the item. The UpdateTimeToLive method will enable or disable TTL for the specified table. A successful
+     * <code>UpdateTimeToLive</code> call returns the current <code>TimeToLiveSpecification</code>; it may take up to
+     * one hour for the change to fully process.
+     * </p>
+     * <p>
+     * TTL compares the current time in epoch time format to the time stored in the TTL attribute of an item. If the
+     * epoch time value stored in the attribute is less than the current time, the item is marked as expired and
+     * subsequently deleted.
+     * </p>
+     * <note>
+     * <p>
+     * The epoch time format is the number of seconds elapsed since 12:00:00 AM January 1st, 1970 UTC.
+     * </p>
+     * </note>
+     * <p>
+     * DynamoDB deletes expired items on a best-effort basis to ensure availability of throughput for other data
+     * operations.
+     * </p>
+     * <important>
+     * <p>
+     * DynamoDB typically deletes expired items within two days of expiration. The exact duration within which an item
+     * gets deleted after expiration is specific to the nature of the workload. Items that have expired and not been
+     * deleted will still show up in reads, queries, and scans.
+     * </p>
+     * </important>
+     * <p>
+     * As items are deleted, they are removed from any Local Secondary Index and Global Secondary Index immediately in
+     * the same eventually consistent way as a standard delete operation.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+     * To Live</a> in the Amazon DynamoDB Developer Guide.
+     * </p>
+     * 
+     * @param updateTimeToLiveRequest
+     *        Represents the input of an <code>UpdateTimeToLive</code> operation.
+     * @return Result of the UpdateTimeToLive operation returned by the service.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateTimeToLive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateTimeToLiveResult updateTimeToLive(UpdateTimeToLiveRequest updateTimeToLiveRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

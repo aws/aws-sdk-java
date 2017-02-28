@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.97</version>
+    <version>1.11.98</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.97</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.98</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.97</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.98</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -458,6 +458,14 @@
                     <group>
                       <title>AWS Lex</title>
                       <packages>com.amazonaws.services.lex*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Mechanical Turk Requester</title>
+                      <packages>com.amazonaws.services.mechanicalturkrequester*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Organizations</title>
+                      <packages>com.amazonaws.services.organizations*</packages>
                     </group>
                     <group>
                       <title>Common</title>
@@ -591,10 +599,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.97</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.98</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.97</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.98</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -937,6 +945,14 @@
                       <packages>com.amazonaws.services.lex*</packages>
                     </group>
                     <group>
+                      <title>AWS Mechanical Turk Requester</title>
+                      <packages>com.amazonaws.services.mechanicalturkrequester*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Organizations</title>
+                      <packages>com.amazonaws.services.organizations*</packages>
+                    </group>
+                    <group>
                       <title>Common</title>
                       <packages>com.amazonaws*</packages>
                     </group>
@@ -1064,10 +1080,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.97</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.98</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.97</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.98</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1410,6 +1426,14 @@
                   <packages>com.amazonaws.services.lex*</packages>
                 </group>
                 <group>
+                  <title>AWS Mechanical Turk Requester</title>
+                  <packages>com.amazonaws.services.mechanicalturkrequester*</packages>
+                </group>
+                <group>
+                  <title>AWS Organizations</title>
+                  <packages>com.amazonaws.services.organizations*</packages>
+                </group>
+                <group>
                   <title>Common</title>
                   <packages>com.amazonaws*</packages>
                 </group>
@@ -1734,7 +1758,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.97-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.98-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

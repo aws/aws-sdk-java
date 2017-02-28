@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.98-SNAPSHOT</version>
+    <version>1.11.98</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -526,6 +526,18 @@
         <version>${awsjavasdk.version}</version>
     </dependency>
     <dependency>
+        <artifactId>aws-java-sdk-mechanicalturkrequester</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-organizations</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
@@ -1013,6 +1025,14 @@
                               <group>
                                   <title>AWS Lex</title>
                                   <packages>com.amazonaws.services.lex*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mechanical Turk Requester</title>
+                                  <packages>com.amazonaws.services.mechanicalturkrequester*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Organizations</title>
+                                  <packages>com.amazonaws.services.organizations*</packages>
                               </group>
                               <group>
                                   <title>Common</title>

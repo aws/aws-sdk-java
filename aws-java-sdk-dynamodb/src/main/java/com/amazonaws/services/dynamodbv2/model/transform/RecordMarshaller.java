@@ -39,6 +39,8 @@ public class RecordMarshaller {
             .marshallLocationName("awsRegion").build();
     private static final MarshallingInfo<StructuredPojo> DYNAMODB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamodb").build();
+    private static final MarshallingInfo<StructuredPojo> USERIDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userIdentity").build();
 
     private static final RecordMarshaller instance = new RecordMarshaller();
 
@@ -62,6 +64,7 @@ public class RecordMarshaller {
             protocolMarshaller.marshall(record.getEventSource(), EVENTSOURCE_BINDING);
             protocolMarshaller.marshall(record.getAwsRegion(), AWSREGION_BINDING);
             protocolMarshaller.marshall(record.getDynamodb(), DYNAMODB_BINDING);
+            protocolMarshaller.marshall(record.getUserIdentity(), USERIDENTITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

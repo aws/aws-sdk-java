@@ -2412,7 +2412,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
-     * specify a sample size of up to 100 requests, and you can specify any time range in the previous three hours.
+     * specify a sample size of up to 500 requests, and you can specify any time range in the previous three hours.
      * </p>
      * <p>
      * <code>GetSampledRequests</code> returns a time range, which is usually the time range that you specified.
@@ -4264,11 +4264,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * (such as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes
      * the corresponding action, allow or block, and doesn't evaluate the request against the remaining
      * <code>Rules</code> in the <code>WebACL</code>, if any.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The CloudFront distribution that you want to associate with the <code>WebACL</code>.
      * </p>
      * </li>
      * </ul>

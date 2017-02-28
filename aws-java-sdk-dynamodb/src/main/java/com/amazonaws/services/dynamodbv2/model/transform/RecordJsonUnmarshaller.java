@@ -72,6 +72,10 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
                     context.nextToken();
                     record.setDynamodb(StreamRecordJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("userIdentity", targetDepth)) {
+                    context.nextToken();
+                    record.setUserIdentity(IdentityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

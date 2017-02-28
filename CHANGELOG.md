@@ -1,3 +1,20 @@
+# __1.11.98__ __2017-02-27__
+## __AWS Organizations__
+  - <h3>Features</h3>
+    - **(New Service)** AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
+
+## __Amazon DynamoDB__
+  - <h3>Features</h3>
+    - Time to Live (TTL) is a feature that allows you to define when items in a table expire and can be purged from the database, so that you don't have to track expired data and delete it manually. With TTL enabled on a DynamoDB table, you can set a timestamp for deletion on a per-item basis, allowing you to limit storage usage to only those records that are relevant.
+
+## __Amazon Identity and Access Management__
+  - <h3>Features</h3>
+    - This release adds support for AWS Organizations service control policies (SCPs) to SimulatePrincipalPolicy operation. If there are SCPs associated with the simulated user's account, their effect on the result is captured in the OrganizationDecisionDetail element in the EvaluationResult.
+
+## __Amazon Mechanical Turk__
+  - <h3>Features</h3>
+    - **(New Service)** Amazon Mechanical Turk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos.
+
 # __1.11.97__ __2017-02-24__
 ## __AWS SDK for Java__
   - <h3>Bugfixes</h3>
