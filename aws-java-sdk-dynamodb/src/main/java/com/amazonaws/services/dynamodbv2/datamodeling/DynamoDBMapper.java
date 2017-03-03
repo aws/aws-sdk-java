@@ -664,7 +664,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
          * @param object            The model object to be saved.
          * @param clazz             The domain class of the object.
          * @param tableName         The table name.
-         * @param saveConifg        The mapper configuration used for this save.
+         * @param saveConfig        The mapper configuration used for this save.
          * @param saveExpression    The save expression, including the user-provided conditions and an optional logic operator.
          */
         public SaveObjectHandler(
