@@ -760,6 +760,19 @@ public class StandardModelFactoriesTest {
         assertEquals(java.util.Currency.getInstance("CAD"), val.generate(null));
     }
 
+    @Test
+    public void testAtomicIntegerIncrValue() {
+        final Object obj = new AutoKeyAndVal<Integer>() {
+            @DynamoDBAtomicInteger(attributeName = "AI", incr = 2)
+            public Integer getVal() { return super.getVal(); }
+            public void setVal(final Integer val) { super.setVal(val); }
+        };
+
+        final DynamoDBMapperTableModel<Object> model = getTable(obj);
+        final DynamoDBMapperFieldModel<Object, Object> val = model.field("val");
+        System.out.println(val);
+    }
+
     /**
      * Test mappings.
      */
