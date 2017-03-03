@@ -382,6 +382,22 @@ final class StandardAnnotationMaps {
             }
             return Collections.<String>emptyList();
         }
+
+        @Override
+        public DynamoDBAutoIncrementor autoIncrementor() {
+
+            final DynamoDBAtomicInteger atomicInteger = actualOf(DynamoDBAtomicInteger.class);
+            if (null != atomicInteger) {
+                final DynamoDBAutoIncrementor autoIncrementor = new DynamoDBAutoIncrementor() {
+                    @Override
+                    public DynamoDBAutoIncrementorStrategy getGenerateStrategy() {
+                        return new DynamoDBAutoIncrementorStrategy(atomicInteger.incr());
+                    }
+                };
+                return autoIncrementor;
+            }
+            return null;
+        }
     }
 
     /**

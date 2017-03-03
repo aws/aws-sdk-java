@@ -1,9 +1,6 @@
 package com.amazonaws.services.dynamodbv2.pojos;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAtomicInteger;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.datamodeling.*;
 
 /**
  * Created by magrnw on 3/3/17.
@@ -19,6 +16,9 @@ public class AtomicInteger {
 
     @DynamoDBAtomicInteger(attributeName = "AI", incr = 2)
     private Integer atomicInt;
+
+    @DynamoDBVersionAttribute(attributeName = "version")
+    private Integer version;
 
     public String getJobId() {
         return jobId;
@@ -42,5 +42,13 @@ public class AtomicInteger {
 
     public void setAtomicInt(Integer atomicInt) {
         this.atomicInt = atomicInt;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 }
