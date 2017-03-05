@@ -124,7 +124,13 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
 
     @Override
     public <T> void incr(T object) {
-        incr(object, config);
+        // By default we apply an append behavior here since we simply want to add the values rather than apply them as raw
+        // values.  In the save method we disallow the persistence of incremental values @DynamoDBAtomicIncrementor attributes
+        // unless the save behavior is APPEND_SET this way the value can never be squashed
+        incr(object,
+                config.merge(
+                        DynamoDBMapperConfig.builder().withSaveBehavior(DynamoDBMapperConfig.SaveBehavior.APPEND_SET).build())
+        );
     }
 
     @Override
