@@ -24,6 +24,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.Batch
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.BatchWriteRetryStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
+import com.amazonaws.services.dynamodbv2.document.Attribute;
 import com.amazonaws.services.dynamodbv2.model.AttributeAction;
 import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
@@ -488,6 +489,70 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
+    public <T> void incr(T object, DynamoDBMapperConfig config) {
+        final DynamoDBMapperConfig finalConfig = mergeConfig(config);
+
+        @SuppressWarnings("unchecked")
+        Class<T> clazz = (Class<T>) object.getClass();
+        String tableName = getTableName(clazz, object, finalConfig);
+
+        final DynamoDBMapperTableModel<T> model = getTableModel(clazz, finalConfig);
+        SaveObjectHandler saveObjectHandler = this.new SaveObjectHandler(clazz, object,
+                tableName, finalConfig, null) {
+
+            @Override
+            protected void onPrimaryKeyAttributeValue(String attributeName,
+                                                      AttributeValue keyAttributeValue) {
+                /* Put it in the key collection which is later used in the updateItem request. */
+                getPrimaryKeyAttributeValues().put(attributeName, keyAttributeValue);
+            }
+
+
+            @Override
+            protected void onNonKeyAttribute(String attributeName,
+                                             AttributeValue currentValue) {
+                // don't write out any incr attributes
+            }
+
+            @Override
+            protected void onNullNonKeyAttribute(String attributeName) {
+                // ignore all null attributes, don't overwrite them here
+            }
+
+            @Override
+            protected void executeLowLevelRequest() {
+                UpdateItemResult updateItemResult = doUpdateItem();
+
+                // The UpdateItem request is specified to return ALL_NEW
+                // attributes of the affected item. So if the returned
+                // UpdateItemResult does not include any ReturnedAttributes,
+                // it indicates the UpdateItem failed silently (e.g. the
+                // key-only-put nightmare -
+                // https://forums.aws.amazon.com/thread.jspa?threadID=86798&tstart=25),
+                // in which case we should re-send a PutItem
+                // request instead.
+                if (updateItemResult.getAttributes() == null
+                        || updateItemResult.getAttributes().isEmpty()) {
+                    // Before we proceed with PutItem, we need to put all
+                    // the key attributes (prepared for the
+                    // UpdateItemRequest) into the AttributeValueUpdates
+                    // collection.
+                    for (String keyAttributeName : getPrimaryKeyAttributeValues().keySet()) {
+                        getAttributeValueUpdates().put(keyAttributeName,
+                                new AttributeValueUpdate()
+                                        .withValue(getPrimaryKeyAttributeValues().get(keyAttributeName))
+                                        .withAction("PUT"));
+                    }
+
+                    doPutItem();
+                }
+            }
+        };
+
+        saveObjectHandler.execute();
+    }
+
+    @Override
     public <T extends Object> void save(T object,
                                         DynamoDBSaveExpression saveExpression,
                                         final DynamoDBMapperConfig config) {
@@ -717,6 +782,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         );
                     }
                     onPrimaryKeyAttributeValue(field.name(), newAttributeValue);
+                } else if (field.autoIncrementor() != null) {
+                    onAutoIncremented(field);
                 } else {
                     AttributeValue currentValue = field.convert(field.get(object));
                     if ( currentValue != null ) {
@@ -891,6 +958,15 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             AttributeValue value = field.convert(field.generate(field.get(object)));
             updateValues.put(field.name(),  new AttributeValueUpdate().withAction("PUT").withValue(value));
             inMemoryUpdates.add(new ValueUpdate(field, value, object));
+        }
+
+        private void onAutoIncremented(DynamoDBMapperFieldModel<Object, Object> field) {
+            AttributeValue incrValue = new AttributeValue().withN(String.valueOf(field.autoIncrementor().getGenerateStrategy().getIncrBy()));
+            updateValues.put(field.name(),
+                    new AttributeValueUpdate()
+                            .withAction(AttributeAction.ADD)
+                            .withValue(incrValue));
+            inMemoryUpdates.add(new ValueUpdate(field, incrValue, object));
         }
 
         /**

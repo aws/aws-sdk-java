@@ -188,6 +188,10 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
         return properties.versioned();
     }
 
+    public final DynamoDBAutoIncrementor autoIncrementor() {
+        return properties.autoIncrementor();
+    }
+
     /**
      * Gets the global secondary indexes.
      * @param keyType The key type.

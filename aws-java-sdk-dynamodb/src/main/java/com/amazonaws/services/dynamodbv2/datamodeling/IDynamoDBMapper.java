@@ -687,4 +687,15 @@ public interface IDynamoDBMapper {
      */
     DeleteTableRequest generateDeleteTableRequest(Class<?> clazz);
 
+    /**
+     * Increments the object given into DynamoDB, using the default configuration\ for any attributes that are
+     * Atomic incrementors
+     */
+    <T extends Object> void incr(T object);
+
+    /**
+     * Increments the object given into DynamoDB, using the default configuration\ for any attributes that are
+     * Atomic incrementors
+     */
+    <T> void incr(T object, DynamoDBMapperConfig config);
 }

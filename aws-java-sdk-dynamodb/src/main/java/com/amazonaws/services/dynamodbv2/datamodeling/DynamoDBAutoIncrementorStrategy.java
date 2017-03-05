@@ -6,8 +6,6 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 public class DynamoDBAutoIncrementorStrategy {
     private Integer incrBy;
 
-    public DynamoDBAutoIncrementorStrategy() {}
-
     public DynamoDBAutoIncrementorStrategy(int incr) {
         this.incrBy = incr;
     }

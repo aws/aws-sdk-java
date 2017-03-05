@@ -15,9 +15,8 @@
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.FailedBatch;
-import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
-import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
+import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.services.kms.model.UnsupportedOperationException;
 import com.amazonaws.services.s3.model.Region;
 
 import java.util.Arrays;
@@ -121,6 +120,16 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     @Override
     public <T> void save(T object) {
         save(object, (DynamoDBSaveExpression)null, config);
+    }
+
+    @Override
+    public <T> void incr(T object) {
+        incr(object, config);
+    }
+
+    @Override
+    public <T> void incr(T object, DynamoDBMapperConfig config) {
+        throw new UnsupportedOperationException("operation not supported in " + getClass());
     }
 
     @Override
