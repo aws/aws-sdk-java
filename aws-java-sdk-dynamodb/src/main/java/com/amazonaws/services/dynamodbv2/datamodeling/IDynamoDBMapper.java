@@ -689,7 +689,7 @@ public interface IDynamoDBMapper {
 
     /**
      * Increments the object given into DynamoDB, using the default configuration\ for any attributes that are
-     * Atomic incrementors
+     * see @com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAtomicIncrementor
      */
     <T extends Object> void incr(T object);
 

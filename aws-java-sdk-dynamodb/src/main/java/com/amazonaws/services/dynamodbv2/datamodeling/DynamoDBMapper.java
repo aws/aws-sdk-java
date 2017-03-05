@@ -511,7 +511,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             @Override
             protected void onNonKeyAttribute(String attributeName,
                                              AttributeValue currentValue) {
-                // don't write out any incr attributes
+                // don't write out any attributes that we're not incrementing, the intent here is that
+                // the model of the incremented object be effectively empty with the exception of the
+                // attributes we're incrementing and the key value
             }
 
             @Override
@@ -782,7 +784,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         );
                     }
                     onPrimaryKeyAttributeValue(field.name(), newAttributeValue);
-                } else if (field.autoIncrementor() != null) {
+                } else if (field.autoIncrementor() != null && SaveBehavior.APPEND_SET == saveConfig.getSaveBehavior()) {
+                    // when we call save rather than incr we need to be certain that we're just adding the value rather
+                    // than setting the value to the value stored in the domain model
                     onAutoIncremented(field);
                 } else {
                     AttributeValue currentValue = field.convert(field.get(object));
@@ -960,6 +964,13 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             inMemoryUpdates.add(new ValueUpdate(field, value, object));
         }
 
+        /**
+         * Defines the value we're going to increment by to the update routine.  The intent here is we always perform
+         * an add operation rather than a PUT
+         *
+         * @param field
+         *      The field whose model we're applying the add operation onto
+         */
         private void onAutoIncremented(DynamoDBMapperFieldModel<Object, Object> field) {
             AttributeValue incrValue = new AttributeValue().withN(String.valueOf(field.autoIncrementor().getGenerateStrategy().getIncrBy()));
             updateValues.put(field.name(),

@@ -760,19 +760,6 @@ public class StandardModelFactoriesTest {
         assertEquals(java.util.Currency.getInstance("CAD"), val.generate(null));
     }
 
-    @Test
-    public void testAtomicIntegerIncrValue() {
-        final Object obj = new AutoKeyAndVal<Integer>() {
-            @DynamoDBAtomicInteger(attributeName = "AI", incr = 2)
-            public Integer getVal() { return super.getVal(); }
-            public void setVal(final Integer val) { super.setVal(val); }
-        };
-
-        final DynamoDBMapperTableModel<Object> model = getTable(obj);
-        final DynamoDBMapperFieldModel<Object, Object> val = model.field("val");
-        System.out.println(val);
-    }
-
     /**
      * Test mappings.
      */
@@ -1280,12 +1267,26 @@ public class StandardModelFactoriesTest {
         indexRangeKey(null, null),
         actualAttrName(null, null),
         versionedAttr(null, DynamoDBAutoGenerateStrategy.ALWAYS),
-        marshallingAttr(null, null);
+        marshallingAttr(null, null),
+        intIncr(null, null, new DynamoDBAutoIncrementor() {
+            @Override
+            public DynamoDBAutoIncrementorStrategy getGenerateStrategy() {
+                return new DynamoDBAutoIncrementorStrategy(2);
+            }
+        });
+
+        private final DynamoDBAutoIncrementor autoIncrementor;
         private final DynamoDBAutoGenerateStrategy generateStrategy;
         private final KeyType keyType;
-        private PojoAsserts(final KeyType keyType, final DynamoDBAutoGenerateStrategy generateStrategy) {
+
+        private PojoAsserts(final KeyType keyType, final DynamoDBAutoGenerateStrategy generatedStrategy) {
+            this(keyType, generatedStrategy, null);
+        }
+
+        private PojoAsserts(final KeyType keyType, final DynamoDBAutoGenerateStrategy generateStrategy, final DynamoDBAutoIncrementor autoIncrementor) {
             this.generateStrategy = generateStrategy;
             this.keyType = keyType;
+            this.autoIncrementor = autoIncrementor;
         }
         public static <T> void assertAll(final DynamoDBMapperTableModel<T> model) {
             for (final PojoAsserts asserts : PojoAsserts.values()) {
@@ -1294,6 +1295,12 @@ public class StandardModelFactoriesTest {
                 assertFieldKeyType(asserts.keyType, field, model);
                 assertEquals(asserts.generateStrategy, field.getGenerateStrategy());
                 assertEquals(0, field.localSecondaryIndexNames().size());
+                if (null != asserts.autoIncrementor) {
+                    assertEquals(asserts.autoIncrementor.getGenerateStrategy(), field.autoIncrementor().getGenerateStrategy());
+                } else {
+                    assertEquals(asserts.autoIncrementor, field.autoIncrementor());
+                }
+
             }
             assertEquals(PojoAsserts.values().length, model.fields().size());
         }
@@ -1312,6 +1319,7 @@ public class StandardModelFactoriesTest {
         private Long versionedAttr;
         private String marshallingAttr;
         private String ignoredAttr;
+        private Integer intIncr;
         @DynamoDBHashKey
         public String getHashKey() { return hashKey; }
         public void setHashKey(String hashKey) { this.hashKey = hashKey; }
@@ -1336,6 +1344,9 @@ public class StandardModelFactoriesTest {
         @DynamoDBIgnore
         public String getIgnoredAttr() { return ignoredAttr; }
         public void setIgnoredAttr(String ignoredAttr) { this.ignoredAttr = ignoredAttr; }
+        @DynamoDBAtomicIncrementor(attributeName="incr", incr=2)
+        public Integer getIntIncr() { return intIncr; }
+        public void setIntIncr(Integer intIncr) { this.intIncr = intIncr; }
     }
 
     /**
@@ -1360,6 +1371,8 @@ public class StandardModelFactoriesTest {
         private String marshallingAttr;
         @DynamoDBIgnore
         private String ignoredAttr;
+        @DynamoDBAtomicIncrementor(attributeName = "intIncr", incr=2)
+        private Integer intIncr;
         public String getHashKey() { return hashKey; }
         public void setHashKey(String hashKey) { this.hashKey = hashKey; }
         public String getRangeKey() { return rangeKey; }
@@ -1376,6 +1389,8 @@ public class StandardModelFactoriesTest {
         public void setMarshallingAttr(String marshallingAttr) { this.marshallingAttr = marshallingAttr; }
         public String getIgnoredAttr() { return ignoredAttr; }
         public void setIgnoredAttr(String ignoredAttr) { this.ignoredAttr = ignoredAttr; }
+        public Integer getIntIncr() {return intIncr;}
+        public void setIntIncr(Integer incr) { this.intIncr = incr;}
     }
 
     /**
@@ -1396,6 +1411,7 @@ public class StandardModelFactoriesTest {
         @DynamoDBTypeConverted(converter=RandomUUIDMarshaller.class)
         private String marshallingAttr;
         private String ignoredAttr;
+        private Integer intIncr;
         public String getHashKey() { return hashKey; }
         public void setHashKey(String hashKey) { this.hashKey = hashKey; }
         @DynamoDBRangeKey @DynamoDBAutoGeneratedKey
@@ -1416,6 +1432,9 @@ public class StandardModelFactoriesTest {
         @DynamoDBIgnore
         public String getIgnoredAttr() { return ignoredAttr; }
         public void setIgnoredAttr(String ignoredAttr) { this.ignoredAttr = ignoredAttr; }
+        @DynamoDBAtomicIncrementor(attributeName="incr", incr=2)
+        public Integer getIntIncr() { return intIncr; }
+        public void setIntIncr(Integer intIncr) { this.intIncr = intIncr; }
     }
 
     /**
