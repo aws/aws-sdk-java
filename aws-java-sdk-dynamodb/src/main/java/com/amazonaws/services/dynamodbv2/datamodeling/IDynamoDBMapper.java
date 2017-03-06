@@ -691,11 +691,11 @@ public interface IDynamoDBMapper {
      * Increments the object given into DynamoDB, using the default configuration\ for any attributes that are
      * see @com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAtomicIncrementor
      */
-    <T extends Object> void incr(T object);
+    <T extends Object> void increment(T object);
 
     /**
      * Increments the object given into DynamoDB, using the default configuration\ for any attributes that are
      * Atomic incrementors
      */
-    <T> void incr(T object, DynamoDBMapperConfig config);
+    <T> void increment(T object, DynamoDBMapperConfig config);
 }

@@ -489,7 +489,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T> void incr(T object, DynamoDBMapperConfig config) {
+    public <T> void increment(T object, DynamoDBMapperConfig config) {
         final DynamoDBMapperConfig finalConfig = mergeConfig(config);
 
         @SuppressWarnings("unchecked")
@@ -786,7 +786,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                     onPrimaryKeyAttributeValue(field.name(), newAttributeValue);
                 } else if (field.autoIncrementor()) {
                     if (SaveBehavior.APPEND_SET == saveConfig.getSaveBehavior()) {
-                        // when we call save rather than incr we need to be certain that we're just adding the value rather
+                        // when we call save rather than increment we need to be certain that we're just adding the value rather
                         // than setting the value to the value stored in the domain model
                         onAutoIncremented(field, model.field(field.name()).getAndConvert(this.object));
                     }

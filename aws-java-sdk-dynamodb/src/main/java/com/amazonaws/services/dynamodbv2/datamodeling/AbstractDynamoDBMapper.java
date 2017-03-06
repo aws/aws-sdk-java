@@ -125,18 +125,18 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     }
 
     @Override
-    public <T> void incr(T object) {
+    public <T> void increment(T object) {
         // By default we apply an append behavior here since we simply want to add the values rather than apply them as raw
         // values.  In the save method we disallow the persistence of incremental values @DynamoDBAtomicIncrementor attributes
         // unless the save behavior is APPEND_SET this way the value can never be squashed
-        incr(object,
+        increment(object,
                 config.merge(
                         DynamoDBMapperConfig.builder().withSaveBehavior(DynamoDBMapperConfig.SaveBehavior.APPEND_SET).build())
         );
     }
 
     @Override
-    public <T> void incr(T object, DynamoDBMapperConfig config) {
+    public <T> void increment(T object, DynamoDBMapperConfig config) {
         throw new UnsupportedOperationException("operation not supported in " + getClass());
     }
 
