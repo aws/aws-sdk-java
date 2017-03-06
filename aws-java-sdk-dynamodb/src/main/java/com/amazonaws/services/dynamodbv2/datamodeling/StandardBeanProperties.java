@@ -21,6 +21,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.Fie
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.TableMap;
 import com.amazonaws.util.StringUtils;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -94,6 +95,12 @@ final class StandardBeanProperties {
             this.reflect = reflect;
         }
 
+        public Bean(Field field, FieldMap<V> annotations, Reflect<T, V> reflect) {
+            this.properties = new DynamoDBMapperFieldModel.Properties.Immutable<V>(annotations);
+            this.type = ConvertibleType.<V>of(field, annotations);
+            this.reflect = reflect;
+        }
+
         final DynamoDBMapperFieldModel.Properties<V> properties() {
             return this.properties;
         }
@@ -104,6 +111,40 @@ final class StandardBeanProperties {
 
         final Reflect<T,V> reflect() {
             return this.reflect;
+        }
+    }
+
+    static final class FieldReflect<T,V> implements Reflect<T,V> {
+
+        private final Field field;
+        private final boolean isAccessible;
+        private FieldReflect(Field field) {
+            this.field = field;
+            isAccessible = field.isAccessible();
+        }
+
+        @Override
+        public V get(T object) {
+            if (!isAccessible) {
+                field.setAccessible(true);
+            }
+            try {
+                return (V)field.get(object);
+            } catch (final Exception e) {
+                throw new DynamoDBMappingException("could not obtain field value directly " + field.getName() + " on " + object.getClass(), e);
+            }
+        }
+
+        @Override
+        public void set(T object, V value) {
+            if (!isAccessible) {
+                field.setAccessible(true);
+            }
+            try {
+                field.set(object, value);
+            } catch (final Exception e) {
+                throw new DynamoDBMappingException("could not invoke setter directly " + field.getName() + " on " + object.getClass(), e);
+            }
         }
     }
 
@@ -196,6 +237,31 @@ final class StandardBeanProperties {
         BeanMap(Class<T> clazz, boolean inherited) {
             this.clazz = clazz;
             putAll(clazz, inherited);
+            putMissing(clazz, inherited);
+        }
+
+        private void putMissing(Class<T> clazz, boolean inherited) {
+            for (final Field field : clazz.getFields()) {
+                String name = field.getName();
+                Method getter = getGetter(name, clazz);
+                FieldMap<V> annotations = StandardAnnotationMaps.<V>of(field, field.getName());
+                if (null == getter && !annotations.ignored()) {
+                    final Reflect<T,V> reflect = new FieldReflect<T,V>(field);
+                    final Bean<T,V> bean = new Bean<T,V>(field, annotations, reflect);
+                    if (put(bean.properties().attributeName(), bean) != null) {
+                        throw new DynamoDBMappingException("duplicate attribute name");
+                    }
+                }
+            }
+        }
+
+        private Method getGetter(String name, Class<T> clazz) {
+            for (final Method method : clazz.getMethods()) {
+                if (canMap(method, true)) {
+                    return method;
+                }
+            }
+            return null;
         }
 
         private void putAll(Class<T> clazz, boolean inherited) {

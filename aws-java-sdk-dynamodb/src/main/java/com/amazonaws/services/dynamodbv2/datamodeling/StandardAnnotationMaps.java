@@ -69,12 +69,21 @@ final class StandardAnnotationMaps {
             defaultName = fieldName;
         }
 
+        FieldMap<T> annotations = of(declaredField, defaultName);
+        annotations.putAll(getter);
+        annotations.putAll(targetType);
+        return annotations;
+    }
+
+    static final <T> FieldMap<T> of(Field declaredField, String defaultName) {
+        final Class<T> targetType = (Class<T>) declaredField.getType();
         final FieldMap<T> annotations = new FieldMap<T>(targetType, defaultName);
         annotations.putAll(targetType);
         annotations.putAll(declaredField);
-        annotations.putAll(getter);
         return annotations;
     }
+
+
 
     /**
      * Common type-conversions properties.

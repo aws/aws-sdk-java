@@ -21,6 +21,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Sca
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector;
 import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -65,6 +66,29 @@ final class ConvertibleType<T> {
 
         this.setter = getter == null ? null : StandardBeanProperties.MethodReflect.setterOf(getter);
         this.getter = getter;
+    }
+
+    public ConvertibleType(Type genericType, TypedMap<T> annotations) {
+        this.typeConverter = annotations.typeConverter();
+        this.attributeType = annotations.attributeType();
+
+        if (typeConverter != null) {
+            final ConvertibleType<T> target = ConvertibleType.<T>of(typeConverter);
+            this.targetType = target.targetType;
+            this.params = target.params;
+        } else if (genericType instanceof ParameterizedType) {
+            final Type[] paramTypes = ((ParameterizedType)genericType).getActualTypeArguments();
+            this.targetType = annotations.targetType();
+            this.params = new ConvertibleType[paramTypes.length];
+            for (int i = 0; i < paramTypes.length; i++) {
+                this.params[i] = ConvertibleType.<T>of(paramTypes[i]);
+            }
+        } else {
+            this.targetType = annotations.targetType();
+            this.params = new ConvertibleType[0];
+        }
+        this.getter = null;
+        this.setter = null;
     }
 
     /**
@@ -167,6 +191,10 @@ final class ConvertibleType<T> {
      */
     static <T> ConvertibleType<T> of(Method getter, TypedMap<T> annotations) {
         return new ConvertibleType<T>(getter.getGenericReturnType(), annotations, getter);
+    }
+
+    static <T> ConvertibleType<T> of(Field field, TypedMap<T> annotations) {
+        return new ConvertibleType<T>(field.getType(), annotations);
     }
 
     /**
