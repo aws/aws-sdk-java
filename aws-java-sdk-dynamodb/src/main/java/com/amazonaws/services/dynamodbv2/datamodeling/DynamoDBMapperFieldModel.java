@@ -188,7 +188,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
         return properties.versioned();
     }
 
-    public final DynamoDBAutoIncrementor autoIncrementor() {
+    public final boolean autoIncrementor() {
         return properties.autoIncrementor();
     }
 
@@ -447,7 +447,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
         public Map<KeyType,List<String>> globalSecondaryIndexNames();
         public List<String> localSecondaryIndexNames();
         public DynamoDBAutoGenerator<V> autoGenerator();
-        public DynamoDBAutoIncrementor autoIncrementor();
+        public boolean autoIncrementor();
 
         static final class Immutable<V> implements Properties<V> {
             private final String attributeName;
@@ -456,7 +456,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
             private final Map<KeyType,List<String>> globalSecondaryIndexNames;
             private final List<String> localSecondaryIndexNames;
             private final DynamoDBAutoGenerator<V> autoGenerator;
-            private final DynamoDBAutoIncrementor autoIncrementor;
+            private final boolean autoIncrementor;
 
             public Immutable(final Properties<V> properties) {
                 this.attributeName = properties.attributeName();
@@ -499,7 +499,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
             }
 
             @Override
-            public DynamoDBAutoIncrementor autoIncrementor() {
+            public boolean autoIncrementor() {
                 return this.autoIncrementor;
             }
         }

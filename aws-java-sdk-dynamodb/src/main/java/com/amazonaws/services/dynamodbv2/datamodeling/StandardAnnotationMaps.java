@@ -383,19 +383,8 @@ final class StandardAnnotationMaps {
         }
 
         @Override
-        public DynamoDBAutoIncrementor autoIncrementor() {
-
-            final DynamoDBAtomicIncrementor atomicInteger = actualOf(DynamoDBAtomicIncrementor.class);
-            if (null != atomicInteger) {
-                final DynamoDBAutoIncrementor autoIncrementor = new DynamoDBAutoIncrementor() {
-                    @Override
-                    public DynamoDBAutoIncrementorStrategy getGenerateStrategy() {
-                        return new DynamoDBAutoIncrementorStrategy(atomicInteger.incr());
-                    }
-                };
-                return autoIncrementor;
-            }
-            return null;
+        public boolean autoIncrementor() {
+            return null != actualOf(DynamoDBAtomicIncrementor.class);
         }
     }
 

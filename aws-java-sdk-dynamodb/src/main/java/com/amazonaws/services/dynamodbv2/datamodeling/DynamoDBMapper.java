@@ -784,10 +784,12 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         );
                     }
                     onPrimaryKeyAttributeValue(field.name(), newAttributeValue);
-                } else if (field.autoIncrementor() != null && SaveBehavior.APPEND_SET == saveConfig.getSaveBehavior()) {
-                    // when we call save rather than incr we need to be certain that we're just adding the value rather
-                    // than setting the value to the value stored in the domain model
-                    onAutoIncremented(field);
+                } else if (field.autoIncrementor()) {
+                    if (SaveBehavior.APPEND_SET == saveConfig.getSaveBehavior()) {
+                        // when we call save rather than incr we need to be certain that we're just adding the value rather
+                        // than setting the value to the value stored in the domain model
+                        onAutoIncremented(field, model.field(field.name()).getAndConvert(this.object));
+                    }
                 } else {
                     AttributeValue currentValue = field.convert(field.get(object));
                     if ( currentValue != null ) {
@@ -970,14 +972,17 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
          *
          * @param field
          *      The field whose model we're applying the add operation onto
+         * @param incrValue
+         *      The value that originates from the object we're interrogating for use in incrementing the value
          */
-        private void onAutoIncremented(DynamoDBMapperFieldModel<Object, Object> field) {
-            AttributeValue incrValue = new AttributeValue().withN(String.valueOf(field.autoIncrementor().getGenerateStrategy().getIncrBy()));
-            updateValues.put(field.name(),
-                    new AttributeValueUpdate()
-                            .withAction(AttributeAction.ADD)
-                            .withValue(incrValue));
-            inMemoryUpdates.add(new ValueUpdate(field, incrValue, object));
+        private void onAutoIncremented(DynamoDBMapperFieldModel<Object, Object> field, AttributeValue incrValue) {
+            if (null != incrValue) {
+                updateValues.put(field.name(),
+                        new AttributeValueUpdate()
+                                .withAction(AttributeAction.ADD)
+                                .withValue(incrValue));
+                inMemoryUpdates.add(new ValueUpdate(field, incrValue, object));
+            }
         }
 
         /**
