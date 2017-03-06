@@ -241,11 +241,14 @@ final class StandardBeanProperties {
         }
 
         private void putMissing(Class<T> clazz, boolean inherited) {
-            for (final Field field : clazz.getFields()) {
+            for (final Field field : clazz.getDeclaredFields()) {
                 String name = field.getName();
                 Method getter = getGetter(name, clazz);
                 FieldMap<V> annotations = StandardAnnotationMaps.<V>of(field, field.getName());
-                if (null == getter && !annotations.ignored()) {
+                if (null == getter
+                        && !annotations.ignored()
+                        // Don't include this$0, etc
+                        && !field.getName().startsWith("this")) {
                     final Reflect<T,V> reflect = new FieldReflect<T,V>(field);
                     final Bean<T,V> bean = new Bean<T,V>(field, annotations, reflect);
                     if (put(bean.properties().attributeName(), bean) != null) {
