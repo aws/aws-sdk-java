@@ -15,7 +15,29 @@ package com.amazonaws.services.opsworkscm.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The status of the association or disassociation request.
+ * </p>
+ * <p class="title">
+ * <b>Possible values:</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>SUCCESS</code>: The association or disassociation succeeded.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FAILED</code>: The association or disassociation failed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum NodeAssociationStatus {

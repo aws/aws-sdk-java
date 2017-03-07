@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use event selectors to specify the types of events that you want your trail to log. When an event occurs in your
- * account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event
- * selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't
- * log the event.
+ * Use event selectors to specify whether you want your trail to log management and/or data events. When an event occurs
+ * in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any
+ * event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail
+ * doesn't log the event.
  * </p>
  * <p>
  * You can configure up to five event selectors for a trail.
@@ -51,7 +51,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -61,12 +61,12 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
     private Boolean includeManagementEvents;
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and object
+     * prefixes for a trail.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      */
@@ -196,7 +196,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -207,7 +207,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        Specify if you want your event selector to include management events for your trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      *        >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      *        </p>
      *        <p>
@@ -224,7 +224,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -234,7 +234,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      *         >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      *         </p>
      *         <p>
@@ -251,7 +251,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -262,7 +262,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        Specify if you want your event selector to include management events for your trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      *        >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      *        </p>
      *        <p>
@@ -281,7 +281,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -291,7 +291,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      *         >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      *         </p>
      *         <p>
@@ -304,20 +304,20 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and object
+     * prefixes for a trail.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
-     * @return CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and
-     *         object prefixes for an event selector.</p>
+     * @return CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and
+     *         object prefixes for a trail.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      *         >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      */
 
@@ -330,21 +330,21 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and object
+     * prefixes for a trail.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and
-     *        object prefixes for an event selector.</p>
+     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and
+     *        object prefixes for a trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      *        >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      */
 
@@ -359,12 +359,12 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and object
+     * prefixes for a trail.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -374,11 +374,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and
-     *        object prefixes for an event selector.</p>
+     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and
+     *        object prefixes for a trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      *        >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -395,21 +395,21 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and object
+     * prefixes for a trail.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and
-     *        object prefixes for an event selector.</p>
+     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 250 S3 buckets and
+     *        object prefixes for a trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
      *        >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

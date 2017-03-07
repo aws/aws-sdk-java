@@ -27,7 +27,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * Specify a valid number of data resources (1 to 50) for an event selector.
+ * Specify a valid number of data resources (1 to 250) for an event selector.
  * </p>
  * </li>
  * <li>

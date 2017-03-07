@@ -234,9 +234,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html"
-     * >Configuring Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param getEventSelectorsRequest
@@ -270,9 +270,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html"
-     * >Configuring Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param getEventSelectorsRequest
@@ -443,6 +443,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * <li>
      * <p>
+     * Event source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Resource name
      * </p>
      * </li>
@@ -497,6 +502,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <li>
      * <p>
      * Event name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event source
      * </p>
      * </li>
      * <li>
@@ -561,10 +571,10 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Configures an event selector for your trail. Use event selectors to specify the type of events that you want your
-     * trail to log. When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For
-     * each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't
-     * match any event selector, the trail doesn't log the event.
+     * Configures an event selector for your trail. Use event selectors to specify whether you want your trail to log
+     * management and/or data events. When an event occurs in your account, CloudTrail evaluates the event selectors in
+     * all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If
+     * the event doesn't match any event selector, the trail doesn't log the event.
      * </p>
      * <p>
      * Example
@@ -602,9 +612,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * otherwise, an <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * <p>
-     * You can configure up to five event selectors for each trail. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html"
-     * >Configuring Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * You can configure up to five event selectors for each trail. For more information, see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -617,10 +627,10 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Configures an event selector for your trail. Use event selectors to specify the type of events that you want your
-     * trail to log. When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For
-     * each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't
-     * match any event selector, the trail doesn't log the event.
+     * Configures an event selector for your trail. Use event selectors to specify whether you want your trail to log
+     * management and/or data events. When an event occurs in your account, CloudTrail evaluates the event selectors in
+     * all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If
+     * the event doesn't match any event selector, the trail doesn't log the event.
      * </p>
      * <p>
      * Example
@@ -658,9 +668,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * otherwise, an <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * <p>
-     * You can configure up to five event selectors for each trail. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html"
-     * >Configuring Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * You can configure up to five event selectors for each trail. For more information, see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest

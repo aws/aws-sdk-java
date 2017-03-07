@@ -28,12 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ServerMarshaller {
 
+    private static final MarshallingInfo<Boolean> ASSOCIATEPUBLICIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatePublicIpAddress").build();
     private static final MarshallingInfo<Integer> BACKUPRETENTIONCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupRetentionCount").build();
     private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").build();
+    private static final MarshallingInfo<String> CLOUDFORMATIONSTACKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudFormationStackArn").build();
     private static final MarshallingInfo<Boolean> DISABLEAUTOMATEDBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableAutomatedBackup").build();
     private static final MarshallingInfo<String> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -87,9 +91,11 @@ public class ServerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(server.getAssociatePublicIpAddress(), ASSOCIATEPUBLICIPADDRESS_BINDING);
             protocolMarshaller.marshall(server.getBackupRetentionCount(), BACKUPRETENTIONCOUNT_BINDING);
             protocolMarshaller.marshall(server.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(server.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(server.getCloudFormationStackArn(), CLOUDFORMATIONSTACKARN_BINDING);
             protocolMarshaller.marshall(server.getDisableAutomatedBackup(), DISABLEAUTOMATEDBACKUP_BINDING);
             protocolMarshaller.marshall(server.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(server.getEngine(), ENGINE_BINDING);

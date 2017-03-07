@@ -27,6 +27,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     * <code>false</code>. The default value is <code>true</code>.
+     * </p>
+     */
+    private Boolean associatePublicIpAddress;
+    /**
+     * <p>
      * Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value
      * is <code>true</code>.
      * </p>
@@ -52,7 +59,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String engineVersion;
     /**
      * <p>
-     * Engine attributes on a specified server.
+     * Optional engine attributes on a specified server.
      * </p>
      * <p class="title">
      * <b>Attributes accepted in a createServer request:</b>
@@ -60,8 +67,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef
-     * Automate. This private key is required to access the Chef API.
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef. This
+     * private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The
+     * password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers,
+     * and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper
+     * case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated
+     * and returned in the response.
      * </p>
      * </li>
      * </ul>
@@ -77,31 +94,32 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the server. The server name must be unique within your AWS account, within each region. Server names
-     * must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
     private String serverName;
     /**
      * <p>
      * The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically
-     * creates the instance profile for you, in this release of AWS OpsWorks for Chef Automate, run the
-     * service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack that
-     * includes the instance profile you need.
+     * creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml
+     * AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template
+     * creates a CloudFormation stack that includes the instance profile you need.
      * </p>
      */
     private String instanceProfileArn;
     /**
      * <p>
      * The Amazon EC2 instance type to use. Valid values must be specified in the following format:
-     * <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>.
+     * <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The Amazon EC2 key pair to set for the instance. You may specify this parameter to connect to your instances by
-     * using SSH.
+     * The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this
+     * parameter to connect to your instances by using SSH.
      * </p>
      */
     private String keyPair;
@@ -120,7 +138,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period during which AWS OpsWorks for Chef Automate backs up application-level data
-     * on your server if backups are enabled. Valid values must be specified in one of the following formats:
+     * on your server if automated backups are enabled. Valid values must be specified in one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -159,10 +177,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account. Although
-     * the AWS OpsWorks console typically creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack that
-     * includes the service role that you need.
+     * the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or
+     * API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a CloudFormation
+     * stack that includes the service role that you need.
      * </p>
      */
     private String serviceRoleArn;
@@ -193,6 +211,66 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String backupId;
+
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     * <code>false</code>. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @param associatePublicIpAddress
+     *        Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     *        <code>false</code>. The default value is <code>true</code>.
+     */
+
+    public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        this.associatePublicIpAddress = associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     * <code>false</code>. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @return Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     *         <code>false</code>. The default value is <code>true</code>.
+     */
+
+    public Boolean getAssociatePublicIpAddress() {
+        return this.associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     * <code>false</code>. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @param associatePublicIpAddress
+     *        Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     *        <code>false</code>. The default value is <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServerRequest withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        setAssociatePublicIpAddress(associatePublicIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     * <code>false</code>. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @return Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or
+     *         <code>false</code>. The default value is <code>true</code>.
+     */
+
+    public Boolean isAssociatePublicIpAddress() {
+        return this.associatePublicIpAddress;
+    }
 
     /**
      * <p>
@@ -377,7 +455,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Engine attributes on a specified server.
+     * Optional engine attributes on a specified server.
      * </p>
      * <p class="title">
      * <b>Attributes accepted in a createServer request:</b>
@@ -385,13 +463,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef
-     * Automate. This private key is required to access the Chef API.
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef. This
+     * private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The
+     * password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers,
+     * and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper
+     * case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated
+     * and returned in the response.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Engine attributes on a specified server. </p>
+     * @return Optional engine attributes on a specified server. </p>
      *         <p class="title">
      *         <b>Attributes accepted in a createServer request:</b>
      *         </p>
@@ -399,7 +487,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for
-     *         Chef Automate. This private key is required to access the Chef API.
+     *         Chef. This private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is
+     *         generated and returned in the response.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate
+     *         GUI. The password length is a minimum of eight characters, and a maximum of 32. The password can contain
+     *         letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower
+     *         case letter, one upper case letter, one number, and one special character. When no
+     *         CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated and returned in the response.
      *         </p>
      *         </li>
      */
@@ -410,7 +508,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Engine attributes on a specified server.
+     * Optional engine attributes on a specified server.
      * </p>
      * <p class="title">
      * <b>Attributes accepted in a createServer request:</b>
@@ -418,14 +516,24 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef
-     * Automate. This private key is required to access the Chef API.
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef. This
+     * private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The
+     * password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers,
+     * and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper
+     * case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated
+     * and returned in the response.
      * </p>
      * </li>
      * </ul>
      * 
      * @param engineAttributes
-     *        Engine attributes on a specified server. </p>
+     *        Optional engine attributes on a specified server. </p>
      *        <p class="title">
      *        <b>Attributes accepted in a createServer request:</b>
      *        </p>
@@ -433,7 +541,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for
-     *        Chef Automate. This private key is required to access the Chef API.
+     *        Chef. This private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is
+     *        generated and returned in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate
+     *        GUI. The password length is a minimum of eight characters, and a maximum of 32. The password can contain
+     *        letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower
+     *        case letter, one upper case letter, one number, and one special character. When no
+     *        CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated and returned in the response.
      *        </p>
      *        </li>
      */
@@ -449,7 +567,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Engine attributes on a specified server.
+     * Optional engine attributes on a specified server.
      * </p>
      * <p class="title">
      * <b>Attributes accepted in a createServer request:</b>
@@ -457,8 +575,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef
-     * Automate. This private key is required to access the Chef API.
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef. This
+     * private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The
+     * password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers,
+     * and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper
+     * case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated
+     * and returned in the response.
      * </p>
      * </li>
      * </ul>
@@ -469,7 +597,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param engineAttributes
-     *        Engine attributes on a specified server. </p>
+     *        Optional engine attributes on a specified server. </p>
      *        <p class="title">
      *        <b>Attributes accepted in a createServer request:</b>
      *        </p>
@@ -477,7 +605,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for
-     *        Chef Automate. This private key is required to access the Chef API.
+     *        Chef. This private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is
+     *        generated and returned in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate
+     *        GUI. The password length is a minimum of eight characters, and a maximum of 32. The password can contain
+     *        letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower
+     *        case letter, one upper case letter, one number, and one special character. When no
+     *        CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated and returned in the response.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -495,7 +633,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Engine attributes on a specified server.
+     * Optional engine attributes on a specified server.
      * </p>
      * <p class="title">
      * <b>Attributes accepted in a createServer request:</b>
@@ -503,14 +641,24 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef
-     * Automate. This private key is required to access the Chef API.
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef. This
+     * private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The
+     * password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers,
+     * and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper
+     * case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated
+     * and returned in the response.
      * </p>
      * </li>
      * </ul>
      * 
      * @param engineAttributes
-     *        Engine attributes on a specified server. </p>
+     *        Optional engine attributes on a specified server. </p>
      *        <p class="title">
      *        <b>Attributes accepted in a createServer request:</b>
      *        </p>
@@ -518,7 +666,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for
-     *        Chef Automate. This private key is required to access the Chef API.
+     *        Chef. This private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is
+     *        generated and returned in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate
+     *        GUI. The password length is a minimum of eight characters, and a maximum of 32. The password can contain
+     *        letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower
+     *        case letter, one upper case letter, one number, and one special character. When no
+     *        CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated and returned in the response.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -578,12 +736,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the server. The server name must be unique within your AWS account, within each region. Server names
-     * must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      * 
      * @param serverName
      *        The name of the server. The server name must be unique within your AWS account, within each region. Server
-     *        names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 32
+     *        names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40
      *        characters.
      */
 
@@ -594,12 +752,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the server. The server name must be unique within your AWS account, within each region. Server names
-     * must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      * 
      * @return The name of the server. The server name must be unique within your AWS account, within each region.
      *         Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum
-     *         of 32 characters.
+     *         of 40 characters.
      */
 
     public String getServerName() {
@@ -609,12 +767,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the server. The server name must be unique within your AWS account, within each region. Server names
-     * must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      * 
      * @param serverName
      *        The name of the server. The server name must be unique within your AWS account, within each region. Server
-     *        names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 32
+     *        names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40
      *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -627,18 +785,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically
-     * creates the instance profile for you, in this release of AWS OpsWorks for Chef Automate, run the
-     * service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack that
-     * includes the instance profile you need.
+     * creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml
+     * AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template
+     * creates a CloudFormation stack that includes the instance profile you need.
      * </p>
      * 
      * @param instanceProfileArn
      *        The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console
-     *        typically creates the instance profile for you, in this release of AWS OpsWorks for Chef Automate, run the
+     *        typically creates the instance profile for you, if you are using API commands instead, run the
      *        service-role-creation.yaml AWS CloudFormation template, located at
-     *        https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack
-     *        that includes the instance profile you need.
+     *        https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This
+     *        template creates a CloudFormation stack that includes the instance profile you need.
      */
 
     public void setInstanceProfileArn(String instanceProfileArn) {
@@ -648,17 +806,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically
-     * creates the instance profile for you, in this release of AWS OpsWorks for Chef Automate, run the
-     * service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack that
-     * includes the instance profile you need.
+     * creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml
+     * AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template
+     * creates a CloudFormation stack that includes the instance profile you need.
      * </p>
      * 
      * @return The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console
-     *         typically creates the instance profile for you, in this release of AWS OpsWorks for Chef Automate, run
-     *         the service-role-creation.yaml AWS CloudFormation template, located at
-     *         https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack
-     *         that includes the instance profile you need.
+     *         typically creates the instance profile for you, if you are using API commands instead, run the
+     *         service-role-creation.yaml AWS CloudFormation template, located at
+     *         https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This
+     *         template creates a CloudFormation stack that includes the instance profile you need.
      */
 
     public String getInstanceProfileArn() {
@@ -668,18 +826,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically
-     * creates the instance profile for you, in this release of AWS OpsWorks for Chef Automate, run the
-     * service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack that
-     * includes the instance profile you need.
+     * creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml
+     * AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template
+     * creates a CloudFormation stack that includes the instance profile you need.
      * </p>
      * 
      * @param instanceProfileArn
      *        The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console
-     *        typically creates the instance profile for you, in this release of AWS OpsWorks for Chef Automate, run the
+     *        typically creates the instance profile for you, if you are using API commands instead, run the
      *        service-role-creation.yaml AWS CloudFormation template, located at
-     *        https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack
-     *        that includes the instance profile you need.
+     *        https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This
+     *        template creates a CloudFormation stack that includes the instance profile you need.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -691,12 +849,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The Amazon EC2 instance type to use. Valid values must be specified in the following format:
-     * <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>.
+     * <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>.
      * </p>
      * 
      * @param instanceType
      *        The Amazon EC2 instance type to use. Valid values must be specified in the following format:
-     *        <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>.
+     *        <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     *        <code>m4.large</code>, or <code>m4.2xlarge</code>.
      */
 
     public void setInstanceType(String instanceType) {
@@ -706,11 +866,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The Amazon EC2 instance type to use. Valid values must be specified in the following format:
-     * <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>.
+     * <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>.
      * </p>
      * 
      * @return The Amazon EC2 instance type to use. Valid values must be specified in the following format:
-     *         <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>.
+     *         <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>
+     *         , <code>m4.large</code>, or <code>m4.2xlarge</code>.
      */
 
     public String getInstanceType() {
@@ -720,12 +882,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The Amazon EC2 instance type to use. Valid values must be specified in the following format:
-     * <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>.
+     * <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>.
      * </p>
      * 
      * @param instanceType
      *        The Amazon EC2 instance type to use. Valid values must be specified in the following format:
-     *        <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>.
+     *        <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     *        <code>m4.large</code>, or <code>m4.2xlarge</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -736,13 +900,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon EC2 key pair to set for the instance. You may specify this parameter to connect to your instances by
-     * using SSH.
+     * The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this
+     * parameter to connect to your instances by using SSH.
      * </p>
      * 
      * @param keyPair
-     *        The Amazon EC2 key pair to set for the instance. You may specify this parameter to connect to your
-     *        instances by using SSH.
+     *        The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify
+     *        this parameter to connect to your instances by using SSH.
      */
 
     public void setKeyPair(String keyPair) {
@@ -751,12 +915,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon EC2 key pair to set for the instance. You may specify this parameter to connect to your instances by
-     * using SSH.
+     * The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this
+     * parameter to connect to your instances by using SSH.
      * </p>
      * 
-     * @return The Amazon EC2 key pair to set for the instance. You may specify this parameter to connect to your
-     *         instances by using SSH.
+     * @return The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify
+     *         this parameter to connect to your instances by using SSH.
      */
 
     public String getKeyPair() {
@@ -765,13 +929,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon EC2 key pair to set for the instance. You may specify this parameter to connect to your instances by
-     * using SSH.
+     * The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this
+     * parameter to connect to your instances by using SSH.
      * </p>
      * 
      * @param keyPair
-     *        The Amazon EC2 key pair to set for the instance. You may specify this parameter to connect to your
-     *        instances by using SSH.
+     *        The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify
+     *        this parameter to connect to your instances by using SSH.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -862,7 +1026,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period during which AWS OpsWorks for Chef Automate backs up application-level data
-     * on your server if backups are enabled. Valid values must be specified in one of the following formats:
+     * on your server if automated backups are enabled. Valid values must be specified in one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -888,8 +1052,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param preferredBackupWindow
      *        The start time for a one-hour period during which AWS OpsWorks for Chef Automate backs up
-     *        application-level data on your server if backups are enabled. Valid values must be specified in one of the
-     *        following formats: </p>
+     *        application-level data on your server if automated backups are enabled. Valid values must be specified in
+     *        one of the following formats: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -921,7 +1085,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period during which AWS OpsWorks for Chef Automate backs up application-level data
-     * on your server if backups are enabled. Valid values must be specified in one of the following formats:
+     * on your server if automated backups are enabled. Valid values must be specified in one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -946,8 +1110,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @return The start time for a one-hour period during which AWS OpsWorks for Chef Automate backs up
-     *         application-level data on your server if backups are enabled. Valid values must be specified in one of
-     *         the following formats: </p>
+     *         application-level data on your server if automated backups are enabled. Valid values must be specified in
+     *         one of the following formats: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -979,7 +1143,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period during which AWS OpsWorks for Chef Automate backs up application-level data
-     * on your server if backups are enabled. Valid values must be specified in one of the following formats:
+     * on your server if automated backups are enabled. Valid values must be specified in one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -1005,8 +1169,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param preferredBackupWindow
      *        The start time for a one-hour period during which AWS OpsWorks for Chef Automate backs up
-     *        application-level data on your server if backups are enabled. Valid values must be specified in one of the
-     *        following formats: </p>
+     *        application-level data on your server if automated backups are enabled. Valid values must be specified in
+     *        one of the following formats: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1146,18 +1310,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account. Although
-     * the AWS OpsWorks console typically creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack that
-     * includes the service role that you need.
+     * the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or
+     * API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a CloudFormation
+     * stack that includes the service role that you need.
      * </p>
      * 
      * @param serviceRoleArn
      *        The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account.
-     *        Although the AWS OpsWorks console typically creates the service role for you, in this release of AWS
-     *        OpsWorks for Chef Automate, run the service-role-creation.yaml AWS CloudFormation template, located at
-     *        https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack
-     *        that includes the service role that you need.
+     *        Although the AWS OpsWorks management console typically creates the service role for you, if you are using
+     *        the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
+     *        https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a
+     *        CloudFormation stack that includes the service role that you need.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -1167,17 +1331,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account. Although
-     * the AWS OpsWorks console typically creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack that
-     * includes the service role that you need.
+     * the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or
+     * API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a CloudFormation
+     * stack that includes the service role that you need.
      * </p>
      * 
      * @return The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account.
-     *         Although the AWS OpsWorks console typically creates the service role for you, in this release of AWS
-     *         OpsWorks for Chef Automate, run the service-role-creation.yaml AWS CloudFormation template, located at
-     *         https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack
-     *         that includes the service role that you need.
+     *         Although the AWS OpsWorks management console typically creates the service role for you, if you are using
+     *         the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
+     *         https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a
+     *         CloudFormation stack that includes the service role that you need.
      */
 
     public String getServiceRoleArn() {
@@ -1187,18 +1351,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account. Although
-     * the AWS OpsWorks console typically creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack that
-     * includes the service role that you need.
+     * the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or
+     * API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a CloudFormation
+     * stack that includes the service role that you need.
      * </p>
      * 
      * @param serviceRoleArn
      *        The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account.
-     *        Although the AWS OpsWorks console typically creates the service role for you, in this release of AWS
-     *        OpsWorks for Chef Automate, run the service-role-creation.yaml AWS CloudFormation template, located at
-     *        https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a stack
-     *        that includes the service role that you need.
+     *        Although the AWS OpsWorks management console typically creates the service role for you, if you are using
+     *        the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
+     *        https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a
+     *        CloudFormation stack that includes the service role that you need.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1442,6 +1606,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssociatePublicIpAddress() != null)
+            sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
         if (getDisableAutomatedBackup() != null)
             sb.append("DisableAutomatedBackup: ").append(getDisableAutomatedBackup()).append(",");
         if (getEngine() != null)
@@ -1488,6 +1654,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof CreateServerRequest == false)
             return false;
         CreateServerRequest other = (CreateServerRequest) obj;
+        if (other.getAssociatePublicIpAddress() == null ^ this.getAssociatePublicIpAddress() == null)
+            return false;
+        if (other.getAssociatePublicIpAddress() != null && other.getAssociatePublicIpAddress().equals(this.getAssociatePublicIpAddress()) == false)
+            return false;
         if (other.getDisableAutomatedBackup() == null ^ this.getDisableAutomatedBackup() == null)
             return false;
         if (other.getDisableAutomatedBackup() != null && other.getDisableAutomatedBackup().equals(this.getDisableAutomatedBackup()) == false)
@@ -1560,6 +1730,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
         hashCode = prime * hashCode + ((getDisableAutomatedBackup() == null) ? 0 : getDisableAutomatedBackup().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getEngineModel() == null) ? 0 : getEngineModel().hashCode());

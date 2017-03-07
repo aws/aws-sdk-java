@@ -209,11 +209,14 @@ public class UploadCallable implements Callable<UploadResult> {
      * operation for the given multi-part upload.
      */
     void performAbortMultipartUpload() {
+        if (multipartUploadId == null) {
+            return;
+        }
         try {
-            if (multipartUploadId != null)
-                s3.abortMultipartUpload(new AbortMultipartUploadRequest(
-                        origReq.getBucketName(), origReq
-                                .getKey(), multipartUploadId));
+            AbortMultipartUploadRequest abortRequest = new AbortMultipartUploadRequest(origReq.getBucketName(), origReq.getKey(),
+                    multipartUploadId)
+                    .withRequesterPays(origReq.isRequesterPays());
+            s3.abortMultipartUpload(abortRequest);
         } catch (Exception e2) {
             log.info(
                     "Unable to abort multipart upload, you may need to manually remove uploaded parts: "
@@ -261,6 +264,7 @@ public class UploadCallable implements Callable<UploadResult> {
             new CompleteMultipartUploadRequest(
                 origReq.getBucketName(), origReq.getKey(), multipartUploadId,
                     partETags)
+                    .withRequesterPays(origReq.isRequesterPays())
             .withGeneralProgressListener(origReq.getGeneralProgressListener())
             .withRequestMetricCollector(origReq.getRequestMetricCollector())
             ;
@@ -308,7 +312,8 @@ public class UploadCallable implements Callable<UploadResult> {
             PartListing parts = s3.listParts(new ListPartsRequest(
                     origReq.getBucketName(),
                     origReq.getKey(), uploadId)
-                    .withPartNumberMarker(partNumber));
+                    .withPartNumberMarker(partNumber)
+                    .withRequesterPays(origReq.isRequesterPays()));
             for (PartSummary partSummary : parts.getParts()) {
                 partNumbers.put(partSummary.getPartNumber(), partSummary);
             }
@@ -341,6 +346,7 @@ public class UploadCallable implements Callable<UploadResult> {
         TransferManager.appendMultipartUserAgent(req);
 
         req.withAccessControlList(origReq.getAccessControlList())
+           .withRequesterPays(origReq.isRequesterPays())
            .withStorageClass(origReq.getStorageClass())
            .withRedirectLocation(origReq.getRedirectLocation())
            .withSSECustomerKey(origReq.getSSECustomerKey())

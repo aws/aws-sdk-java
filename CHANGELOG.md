@@ -1,3 +1,19 @@
+# __1.11.99__ __2017-03-07__
+## __AWS Budgets__
+  - <h3>Features</h3>
+    - When creating or editing a budget via the AWS Budgets API you can define notifications that are sent to subscribers when the actual or forecasted value for cost or usage exceeds the notificationThreshold associated with the budget notification object. Starting today, the maximum allowed value for the notificationThreshold was raised from 100 to 300. This change was made to give you more flexibility when setting budget notifications.
+
+## __AWS OpsWorks for Chef Automate__
+  - <h3>Features</h3>
+    - OpsWorks for Chef Automate has added a new field "AssociatePublicIpAddress" to the CreateServer request, "CloudFormationStackArn" to the Server model and "TERMINATED" server state.
+
+## __Amazon S3__
+  - <h3>Features</h3>
+    - Add improved detection of end-of-stream for object input streams and improved logging when the stream is aborted.
+
+  - <h3>Bugfixes</h3>
+    - Fix a bug in `TransferManager` where the Requester Pays flag set on a `CopyObjectRequest` or `PutObjectRequest` was not being preserved in the multipart copy or upload requests if the original request was promoted to multipart.
+
 # __1.11.98__ __2017-02-27__
 ## __AWS Organizations__
   - <h3>Features</h3>

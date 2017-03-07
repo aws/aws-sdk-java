@@ -148,6 +148,9 @@ public interface AWSBudgets {
      *         already exceeds the limitation.
      * @throws DuplicateRecordException
      *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
+     * @throws NotFoundException
+     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
+     *         account ID.
      * @sample AWSBudgets.CreateSubscriber
      */
     CreateSubscriberResult createSubscriber(CreateSubscriberRequest createSubscriberRequest);

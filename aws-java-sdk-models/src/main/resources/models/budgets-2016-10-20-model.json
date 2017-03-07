@@ -148,6 +148,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "DuplicateRecordException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
       } ],
       "http" : {
         "method" : "POST",
@@ -2432,7 +2438,7 @@
       "fault" : false,
       "flattened" : false,
       "key" : null,
-      "max" : 100,
+      "max" : 300,
       "member" : null,
       "members" : { },
       "min" : 0,
@@ -2592,7 +2598,7 @@
       "member" : null,
       "members" : { },
       "min" : 0,
-      "pattern" : "[0-9]+(\\.)?[0-9]*",
+      "pattern" : "[0-9]*(\\.)?[0-9]+",
       "payload" : null,
       "required" : null,
       "streaming" : false,

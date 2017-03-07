@@ -96,6 +96,7 @@ public class UploadPartRequestFactory {
                 .withPartNumber(partNumber++)
                 .withPartSize(partSize);
         }
+        req.withRequesterPays(origReq.isRequesterPays());
         TransferManager.appendMultipartUserAgent(req);
 
         if (sseCustomerKey != null) req.setSSECustomerKey(sseCustomerKey);

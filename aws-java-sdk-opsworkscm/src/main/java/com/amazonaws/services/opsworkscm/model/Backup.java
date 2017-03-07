@@ -109,15 +109,17 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * This field is deprecated and is no longer used.
      * </p>
      */
+    @Deprecated
     private Integer s3DataSize;
     /**
      * <p>
-     * The Amazon S3 URL of the backup's tar.gz file.
+     * This field is deprecated and is no longer used.
      * </p>
      */
+    @Deprecated
     private String s3DataUrl;
     /**
      * <p>
@@ -737,39 +739,39 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
      * @param s3DataSize
-     *        The size of the backup, in bytes. The size is returned by the instance in the command results.
+     *        This field is deprecated and is no longer used.
      */
-
+    @Deprecated
     public void setS3DataSize(Integer s3DataSize) {
         this.s3DataSize = s3DataSize;
     }
 
     /**
      * <p>
-     * The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
-     * @return The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * @return This field is deprecated and is no longer used.
      */
-
+    @Deprecated
     public Integer getS3DataSize() {
         return this.s3DataSize;
     }
 
     /**
      * <p>
-     * The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
      * @param s3DataSize
-     *        The size of the backup, in bytes. The size is returned by the instance in the command results.
+     *        This field is deprecated and is no longer used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Backup withS3DataSize(Integer s3DataSize) {
         setS3DataSize(s3DataSize);
         return this;
@@ -777,39 +779,39 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 URL of the backup's tar.gz file.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
      * @param s3DataUrl
-     *        The Amazon S3 URL of the backup's tar.gz file.
+     *        This field is deprecated and is no longer used.
      */
-
+    @Deprecated
     public void setS3DataUrl(String s3DataUrl) {
         this.s3DataUrl = s3DataUrl;
     }
 
     /**
      * <p>
-     * The Amazon S3 URL of the backup's tar.gz file.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
-     * @return The Amazon S3 URL of the backup's tar.gz file.
+     * @return This field is deprecated and is no longer used.
      */
-
+    @Deprecated
     public String getS3DataUrl() {
         return this.s3DataUrl;
     }
 
     /**
      * <p>
-     * The Amazon S3 URL of the backup's tar.gz file.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
      * @param s3DataUrl
-     *        The Amazon S3 URL of the backup's tar.gz file.
+     *        This field is deprecated and is no longer used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Backup withS3DataUrl(String s3DataUrl) {
         setS3DataUrl(s3DataUrl);
         return this;

@@ -35,14 +35,14 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers can be
-     * created.
+     * <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a
+     * maximum of 10 servers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By default 50
-     * manual backups can be created.
+     * <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you
+     * can have a maximum of 50 manual backups saved.
      * </p>
      * </li>
      * </ul>
@@ -56,7 +56,7 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
     private Integer maximum;
     /**
      * <p>
-     * The current usage, such as the current number of servers associated with the account.
+     * The current usage, such as the current number of servers that are associated with the account.
      * </p>
      */
     private Integer used;
@@ -68,14 +68,14 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers can be
-     * created.
+     * <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a
+     * maximum of 10 servers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By default 50
-     * manual backups can be created.
+     * <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you
+     * can have a maximum of 50 manual backups saved.
      * </p>
      * </li>
      * </ul>
@@ -85,14 +85,14 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers
-     *        can be created.
+     *        <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can
+     *        have a maximum of 10 servers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By
-     *        default 50 manual backups can be created.
+     *        <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By
+     *        default, you can have a maximum of 50 manual backups saved.
      *        </p>
      *        </li>
      */
@@ -108,14 +108,14 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers can be
-     * created.
+     * <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a
+     * maximum of 10 servers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By default 50
-     * manual backups can be created.
+     * <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you
+     * can have a maximum of 50 manual backups saved.
      * </p>
      * </li>
      * </ul>
@@ -124,14 +124,14 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10
-     *         servers can be created.
+     *         <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can
+     *         have a maximum of 10 servers.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By
-     *         default 50 manual backups can be created.
+     *         <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By
+     *         default, you can have a maximum of 50 manual backups saved.
      *         </p>
      *         </li>
      */
@@ -147,14 +147,14 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers can be
-     * created.
+     * <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a
+     * maximum of 10 servers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By default 50
-     * manual backups can be created.
+     * <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you
+     * can have a maximum of 50 manual backups saved.
      * </p>
      * </li>
      * </ul>
@@ -164,14 +164,14 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers
-     *        can be created.
+     *        <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can
+     *        have a maximum of 10 servers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By
-     *        default 50 manual backups can be created.
+     *        <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By
+     *        default, you can have a maximum of 50 manual backups saved.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -224,11 +224,11 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current usage, such as the current number of servers associated with the account.
+     * The current usage, such as the current number of servers that are associated with the account.
      * </p>
      * 
      * @param used
-     *        The current usage, such as the current number of servers associated with the account.
+     *        The current usage, such as the current number of servers that are associated with the account.
      */
 
     public void setUsed(Integer used) {
@@ -237,10 +237,10 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current usage, such as the current number of servers associated with the account.
+     * The current usage, such as the current number of servers that are associated with the account.
      * </p>
      * 
-     * @return The current usage, such as the current number of servers associated with the account.
+     * @return The current usage, such as the current number of servers that are associated with the account.
      */
 
     public Integer getUsed() {
@@ -249,11 +249,11 @@ public class AccountAttribute implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current usage, such as the current number of servers associated with the account.
+     * The current usage, such as the current number of servers that are associated with the account.
      * </p>
      * 
      * @param used
-     *        The current usage, such as the current number of servers associated with the account.
+     *        The current usage, such as the current number of servers that are associated with the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

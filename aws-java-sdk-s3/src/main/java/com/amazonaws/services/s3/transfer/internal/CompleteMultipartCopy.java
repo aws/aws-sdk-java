@@ -77,6 +77,7 @@ public class CompleteMultipartCopy implements Callable<CopyResult> {
             CompleteMultipartUploadRequest req = new CompleteMultipartUploadRequest(
                     origReq.getDestinationBucketName(), origReq.getDestinationKey(), uploadId,
                     collectPartETags())
+                    .withRequesterPays(origReq.isRequesterPays())
                     .withGeneralProgressListener(origReq.getGeneralProgressListener())
                     .withRequestMetricCollector(origReq.getRequestMetricCollector())
                     ;
