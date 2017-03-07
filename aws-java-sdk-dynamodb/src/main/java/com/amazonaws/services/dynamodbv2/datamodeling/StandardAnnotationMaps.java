@@ -69,9 +69,10 @@ final class StandardAnnotationMaps {
             defaultName = fieldName;
         }
 
-        FieldMap<T> annotations = of(declaredField, defaultName);
-        annotations.putAll(getter);
+        final FieldMap<T> annotations = new FieldMap<T>(targetType, defaultName);
         annotations.putAll(targetType);
+        annotations.putAll(declaredField);
+        annotations.putAll(getter);
         return annotations;
     }
 
@@ -82,7 +83,6 @@ final class StandardAnnotationMaps {
         annotations.putAll(declaredField);
         return annotations;
     }
-
 
 
     /**
