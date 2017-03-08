@@ -709,7 +709,93 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
+     * Copies a snapshot of a DB cluster.
+     * </p>
+     * <p>
+     * To copy a DB cluster snapshot from a shared manual DB cluster snapshot,
+     * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster
+     * snapshot.
+     * </p>
+     * <p>
+     * You can copy an encrypted DB cluster snapshot from another AWS region. In that case, the region where you call
+     * the <code>CopyDBClusterSnapshot</code> action is the destination region for the encrypted DB cluster snapshot to
+     * be copied to. To copy an encrypted DB cluster snapshot from another region, you must provide the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the key to use to encrypt the copy
+     * of the DB cluster snapshot in the destination region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
+     * <code>CopyDBClusterSnapshot</code> action to be called in the source region where the DB cluster snapshot will be
+     * copied from. The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
+     * that can be executed in the source region that contains the encrypted DB cluster snapshot to be copied.
+     * </p>
+     * <p>
+     * The pre-signed URL request must contain the following parameter values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster snapshot
+     * in the destination region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action
+     * that is called in the destination region, and the action contained in the pre-signed URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DestinationRegion</code> - The name of the region that the DB cluster snapshot will be created in.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
+     * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region.
+     * For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 region, then your
+     * <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To learn how to generate a Signature Version 4 signed request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * Process</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy of the DB cluster snapshot in
+     * the destination region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
+     * snapshot to be copied. This identifier must be in the ARN format for the source region and is the same value as
+     * the <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To cancel the copy operation once it is in progress, delete the target DB cluster snapshot identified by
+     * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in "copying" status.
+     * </p>
+     * <p>
+     * For more information on copying encrypted DB cluster snapshots from one region to another, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion"
+     * > Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across Regions</a> in the
+     * Amazon RDS User Guide.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora on Amazon RDS</a> in the
      * <i>Amazon RDS User Guide.</i>
      * </p>
@@ -995,7 +1081,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of
-     * another DB cluster or Amazon RDS MySQL DB instance.
+     * another DB cluster or Amazon RDS MySQL DB instance. For cross-region replication where the DB cluster identified
+     * by <code>ReplicationSourceIdentifier</code> is encrypted, you must also specify the <code>PreSignedUrl</code>
+     * parameter.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a

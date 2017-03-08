@@ -50,6 +50,18 @@ public class CopyDBClusterSnapshotRequestMarshaller implements Marshaller<Reques
                     StringUtils.fromString(copyDBClusterSnapshotRequest.getTargetDBClusterSnapshotIdentifier()));
         }
 
+        if (copyDBClusterSnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(copyDBClusterSnapshotRequest.getKmsKeyId()));
+        }
+
+        if (copyDBClusterSnapshotRequest.getPreSignedUrl() != null) {
+            request.addParameter("PreSignedUrl", StringUtils.fromString(copyDBClusterSnapshotRequest.getPreSignedUrl()));
+        }
+
+        if (copyDBClusterSnapshotRequest.getCopyTags() != null) {
+            request.addParameter("CopyTags", StringUtils.fromBoolean(copyDBClusterSnapshotRequest.getCopyTags()));
+        }
+
         com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBClusterSnapshotRequest.getTags();
         if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
             int tagsListIndex = 1;
@@ -65,6 +77,10 @@ public class CopyDBClusterSnapshotRequestMarshaller implements Marshaller<Reques
                 }
                 tagsListIndex++;
             }
+        }
+
+        if (copyDBClusterSnapshotRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(copyDBClusterSnapshotRequest.getSourceRegion()));
         }
 
         return request;

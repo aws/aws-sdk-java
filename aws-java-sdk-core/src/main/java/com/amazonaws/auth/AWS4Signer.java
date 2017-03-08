@@ -110,7 +110,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
      *            the canonical request.
      */
     public AWS4Signer(boolean doubleUrlEncoding) {
-        this(doubleUrlEncoding, SdkClock.STANDARD);
+        this(doubleUrlEncoding, SdkClock.Instance.get());
     }
 
     @SdkTestInternalApi
